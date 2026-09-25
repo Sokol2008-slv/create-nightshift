@@ -17,17 +17,20 @@
 | Поезда | Steam 'n' Rails, Railways Navigator, Blocks & Bogies |
 | Оружие | Create Big Cannons (+ Advanced Technologies), Create: Gunsmithing |
 | Автоматизация ресурсов | Ore Excavation (бесконечные жилы), Mechanical Spawner (мобы), Sifting, Molten Vents, Enchantment Industry, фермы и кухня |
-| Хоррор | The Knocker, Cave Dweller ReEvolved, The Obsessed, Imposter, измерение The Afterdark, объёмный звук |
+| Хоррор | Страх через атмосферу, а не толпы: The Knocker, Cave Dweller, The Obsessed, Imposter, Face of Horror, Boy and the Bath, Server-Side Horror, измерение The Afterdark; кромешная тьма ночью и в пещерах, свет факела в руке, объёмный звук |
 | Мир | Tectonic + Terralith, все YUNG's, Towns & Towers, Structory, Create-структуры |
 | Графика | Sodium + Iris, шейдеры Complementary Reimagined / Unbound / MakeUp Ultra Fast, Distant Horizons |
+| Оптимизация | ModernFix (ресурсы по требованию), FerriteCore, Lithium, More Culling, Entity Culling, ImmediatelyFast, FastSuite, Ksyxis, Let Me Despawn и др. |
 
 ## Как поставить (каждому из троих)
 
 1. Скачать и поставить **Prism Launcher** (prismlauncher.org) или **Modrinth App**.
 2. Импортировать файл `Create-Nochnaya-Smena-<версия>.mrpack`:
    Prism → «Добавить экземпляр» → «Импорт» → выбрать файл.
-3. В настройках экземпляра выставить память **10–12 ГБ** (минимум 8) и в «Аргументы JVM»
-   вписать `-XX:+UseZGC -XX:+ZGenerational` — меньше подтормаживаний (совет Distant Horizons).
+3. Память в настройках экземпляра:
+   - ПК с **16 ГБ** ОЗУ → выставить **8 ГБ**, больше не давать (иначе система убьёт игру);
+   - ПК с **32 ГБ+** → **10 ГБ** и в «Аргументы JVM» вписать `-XX:+UseZGC -XX:+ZGenerational`.
+   Перед игрой закрыть браузер с кучей вкладок и прочие тяжёлые программы.
 4. Установить и запустить **Steam** (войти в аккаунт) — он нужен для приглашений.
    Minecraft запускать уже после Steam.
 5. **Linux + Prism из Flatpak**: песочница не видит Steam. Один раз выполнить
@@ -43,14 +46,16 @@
 
 Версия сборки у всех троих должна совпадать. Мир живёт на компьютере хоста.
 
-Голосовой чат в игре — клавиша **V** (Simple Voice Chat), e4steam сам пробрасывает его через Steam.
+Голосовой чат в игре — Simple Voice Chat, настройки и клавиша разговора — на **M**.
+e4steam сам пробрасывает голос через Steam.
 
 Хоррор-мод **Imposter** слушает голосовой чат и может передразнивать ваши голоса —
-это его фишка. Кому некомфортно — выключить микрофон в меню голосового чата (V).
+это его фишка. Кому некомфортно — выключить микрофон в меню голосового чата (M).
 
 ## Горячие клавиши
 
-- **K** — шейдеры вкл/выкл (если лагает или в полёте глючит отрисовка кораблей)
+- **K** — шейдеры вкл/выкл (если лагает или в полёте глючит отрисовка кораблей).
+  С шейдером ночь и пещеры кромешно тёмные — носите факел в руке, он светит.
 - **O** — выбор шейдера (MakeUp Ultra Fast — для слабых видеокарт)
 - **W** (над предметом в JEI) — Ponder, анимированная подсказка Create
 

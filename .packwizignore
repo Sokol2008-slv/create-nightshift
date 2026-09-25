@@ -3,3 +3,4 @@ modlist.txt
 README.md
 CHANGELOG.md
 dist/
+.gitignore

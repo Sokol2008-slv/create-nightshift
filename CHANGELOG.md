@@ -1,5 +1,26 @@
 # CHANGELOG — Create: Ночная смена
 
+## [0.2.0] — 2026-09-25
+
+### Added
+- Хоррор через атмосферу: Face of Horror (лица в тёмных углах, шёпот, скримеры), Server-Side
+  Horror (тихие жуткие события, фейковые игроки), The Boy And The Bath.
+- Кромешная тьма: True Darkness Biomes (без шейдеров) и настройки Complementary — пещеры без
+  минимального света, ночь ×0.35, новолуние почти чёрное, мерцание факелов.
+- LambDynamicLights — факел в руке светит (важно при полной темноте).
+- Оптимизация: More Culling, FastSuite/FastWorkbench/FastFurnace (быстрый поиск рецептов при
+  автокрафте), Ksyxis, Let Me Despawn, Flerovium; ModernFix dynamic resources.
+
+### Changed
+- Память по умолчанию 10 ГБ; инструкция: 8 ГБ для ПК с 16 ГБ ОЗУ, ZGC только при 32 ГБ+.
+
+### Removed
+- Пробовали и убрали: Kenny, ArPhEx, Enhanced Celestials — бегают толпой и убивают, а нужен
+  страх, а не раздражение; Create LazyTick — перезаписывает тот же метод, что Enchantable Machinery.
+
+### Validation
+- Сервер: `Done`, ошибок загрузки нет. Клиент: старт 48 с, вход в мир, шейдер и темнота активны.
+
 ## [0.1.0] — 2026-09-25
 
 ### Added

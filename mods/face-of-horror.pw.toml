@@ -1,0 +1,13 @@
+name = "Face of Horror"
+filename = "face_of_horror-3.2-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/LWhRxaou/versions/dEJnHcFj/face_of_horror-3.2-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "89214c25fbb3e9a4698d0b2ebf2ffd9482f97e6f50818b5e94e8d3bb920075c6b82b6ba1e622595d25f455dd02837ed3287934700c4f2b3fb9c22461e992d954"
+
+[update]
+[update.modrinth]
+mod-id = "LWhRxaou"
+version = "dEJnHcFj"
