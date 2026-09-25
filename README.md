@@ -75,5 +75,6 @@ bash ~/mc-nightshift-server/run_verify.sh             # проверка заг�
 packwiz mr export -o dist/Create-Nochnaya-Smena-<версия>.mrpack
 ```
 
-e4steam есть только на CurseForge, поэтому его jar лежит прямо в `mods/`
-и уходит в сборку как override.
+Моды только с CurseForge (FTB Quests/Library/Teams/XMod Compat/Ultimine) подключены
+CurseForge-метаданными packwiz (`mode = metadata:curseforge`): автообновление и `tools/sync.py`
+качают их по file-id. Jar-файлы в репозиторий не кладём.
