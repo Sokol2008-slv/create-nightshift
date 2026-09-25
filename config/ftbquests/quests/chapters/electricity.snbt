@@ -10,7 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "EA24AF99B3061795"
+			id: "6A24AF99B3061795"
 			rewards: [{ id: "5BFBACC2334A08BB", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -19,7 +19,7 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["EA24AF99B3061795"]
+			dependencies: ["6A24AF99B3061795"]
 			id: "20DA09E339E199EE"
 			rewards: [{ id: "2FDA93E85AD70A4A", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -30,11 +30,11 @@
 		}
 		{
 			dependencies: ["20DA09E339E199EE"]
-			id: "EB4A80C8D04DFF1C"
+			id: "6B4A80C8D04DFF1C"
 			rewards: [{ id: "358E9B4B2A0B6DC6", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "A0D2E1E8F2AB075B", count: 4L, item: { count: 1, id: "createaddition:connector" }, type: "item" }]
+			tasks: [{ id: "20D2E1E8F2AB075B", count: 4L, item: { count: 1, id: "createaddition:connector" }, type: "item" }]
 			x: 4.40d
 			y: -2.80d
 		}
@@ -50,7 +50,7 @@
 		}
 		{
 			dependencies: ["20DA09E339E199EE"]
-			id: "9F2A1A9AED2364A7"
+			id: "1F2A1A9AED2364A7"
 			rewards: [{ id: "60198CAC4ECC2413", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -59,9 +59,9 @@
 			y: 0.40d
 		}
 		{
-			dependencies: ["0B8DDB0E251F417E", "9F2A1A9AED2364A7"]
-			id: "C48B006147B5FDA1"
-			rewards: [{ id: "971B556CD067C3C0", type: "xp", xp: 10 }]
+			dependencies: ["0B8DDB0E251F417E", "1F2A1A9AED2364A7"]
+			id: "448B006147B5FDA1"
+			rewards: [{ id: "171B556CD067C3C0", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "492354D4CA2B013C", item: { count: 1, id: "createaddition:modular_accumulator" }, type: "item" }]
@@ -69,18 +69,18 @@
 			y: -0.40d
 		}
 		{
-			dependencies: ["C48B006147B5FDA1"]
+			dependencies: ["448B006147B5FDA1"]
 			icon: { id: "createaddition:large_connector" }
-			id: "E4ED4267E88744E6"
-			rewards: [{ id: "D92F5253360C892C", type: "xp", xp: 50 }]
+			id: "64ED4267E88744E6"
+			rewards: [{ id: "592F5253360C892C", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "89A0024F4E11AA16", type: "checkmark" }]
+			tasks: [{ id: "09A0024F4E11AA16", type: "checkmark" }]
 			x: 8.80d
 			y: -0.93d
 		}
 		{
-			dependencies: ["EA24AF99B3061795"]
+			dependencies: ["6A24AF99B3061795"]
 			id: "7225CD4C5B6131AC"
 			rewards: [{ id: "764F9EF8B808843A", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -91,8 +91,8 @@
 		}
 		{
 			dependencies: ["7225CD4C5B6131AC"]
-			id: "E9B53E0B6FA14ADE"
-			rewards: [{ id: "94BFB7FF28B9B797", type: "xp", xp: 10 }]
+			id: "69B53E0B6FA14ADE"
+			rewards: [{ id: "14BFB7FF28B9B797", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0041DB57E2CCB81A", item: { count: 1, id: "tfmg:generator" }, type: "item" }]
@@ -100,29 +100,29 @@
 			y: 2.00d
 		}
 		{
-			dependencies: ["E9B53E0B6FA14ADE"]
+			dependencies: ["69B53E0B6FA14ADE"]
 			icon: { id: "create_new_age:generator_coil" }
 			id: "6098697A991695C9"
-			rewards: [{ id: "D20E8BDC11B53AE5", type: "xp", xp: 10 }]
+			rewards: [{ id: "520E8BDC11B53AE5", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "E33EC11346411322", type: "checkmark" }]
+			tasks: [{ id: "633EC11346411322", type: "checkmark" }]
 			x: 6.60d
 			y: 2.00d
 		}
 		{
 			dependencies: ["6098697A991695C9"]
-			id: "DDA20D7514DF8398"
-			rewards: [{ id: "C58F880FD046DE7F", type: "xp", xp: 10 }]
+			id: "5DA20D7514DF8398"
+			rewards: [{ id: "458F880FD046DE7F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "DDCCD99C0D3B0E40", item: { count: 1, id: "create_new_age:basic_motor" }, type: "item" }]
+			tasks: [{ id: "5DCCD99C0D3B0E40", item: { count: 1, id: "create_new_age:basic_motor" }, type: "item" }]
 			x: 8.80d
 			y: 3.07d
 		}
 		{
 			dependencies: ["6098697A991695C9"]
-			id: "F9713E00CE3F45AC"
+			id: "79713E00CE3F45AC"
 			rewards: [{ id: "763C46579DF274CE", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -131,12 +131,12 @@
 			y: 1.47d
 		}
 		{
-			dependencies: ["F9713E00CE3F45AC"]
-			id: "9E4BD02D9BF9BE76"
-			rewards: [{ id: "B43E825C7215C31C", type: "xp", xp: 50 }]
+			dependencies: ["79713E00CE3F45AC"]
+			id: "1E4BD02D9BF9BE76"
+			rewards: [{ id: "343E825C7215C31C", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "A96EB64246CADBE6", item: { count: 1, id: "create_new_age:reactor_rod" }, type: "item" }]
+			tasks: [{ id: "296EB64246CADBE6", item: { count: 1, id: "create_new_age:reactor_rod" }, type: "item" }]
 			x: 11.00d
 			y: 1.47d
 		}

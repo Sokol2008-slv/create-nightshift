@@ -10,8 +10,8 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "AB3F74E1D633B85A"
-			rewards: [{ id: "C8C180E773D1D8F5", type: "xp", xp: 10 }]
+			id: "2B3F74E1D633B85A"
+			rewards: [{ id: "48C180E773D1D8F5", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "55B3885E9C7C64BD", item: { count: 1, id: "create_mechanical_spawner:mechanical_spawner" }, type: "item" }]
@@ -19,9 +19,9 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["AB3F74E1D633B85A"]
+			dependencies: ["2B3F74E1D633B85A"]
 			id: "58CBE83DFE54E852"
-			rewards: [{ id: "8B8141311B262430", type: "xp", xp: 10 }]
+			rewards: [{ id: "0B8141311B262430", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "56536DB68BA95B13", item: { count: 1, id: "create_mechanical_spawner:spawn_fluid_random_bucket" }, type: "item" }]
@@ -30,28 +30,28 @@
 		}
 		{
 			dependencies: ["58CBE83DFE54E852"]
-			id: "EED17F493EBED118"
-			rewards: [{ id: "F92EB4F16DFFBF3C", type: "xp", xp: 10 }]
+			id: "6ED17F493EBED118"
+			rewards: [{ id: "792EB4F16DFFBF3C", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "E472B8E1DADD6501", item: { count: 1, id: "create_mechanical_spawner:loot_collector" }, type: "item" }]
+			tasks: [{ id: "6472B8E1DADD6501", item: { count: 1, id: "create_mechanical_spawner:loot_collector" }, type: "item" }]
 			x: 4.40d
 			y: -2.40d
 		}
 		{
-			dependencies: ["AB3F74E1D633B85A"]
+			dependencies: ["2B3F74E1D633B85A"]
 			id: "676D2249E255B12B"
 			rewards: [{ id: "3EB66EA50DC9EB4C", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "A241BA088D0D6969", item: { count: 1, id: "create_enchantment_industry:experience_hatch" }, type: "item" }]
+			tasks: [{ id: "2241BA088D0D6969", item: { count: 1, id: "create_enchantment_industry:experience_hatch" }, type: "item" }]
 			x: 2.20d
 			y: -0.80d
 		}
 		{
 			dependencies: ["676D2249E255B12B"]
 			id: "5988745A12ACBC81"
-			rewards: [{ id: "DF6A9F1BD1A81BBD", type: "xp", xp: 10 }]
+			rewards: [{ id: "5F6A9F1BD1A81BBD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "709E3969EEC59128", item: { count: 1, id: "create_enchantment_industry:mechanical_grindstone" }, type: "item" }]
@@ -69,18 +69,18 @@
 			y: -0.80d
 		}
 		{
-			dependencies: ["AB3F74E1D633B85A"]
+			dependencies: ["2B3F74E1D633B85A"]
 			id: "31884BC4276B531D"
 			rewards: [{ id: "62E1CA2FFB46415B", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "E7E73B9DF1A7C58F", item: { count: 1, id: "create_power_loader:empty_andesite_chunk_loader" }, type: "item" }]
+			tasks: [{ id: "67E73B9DF1A7C58F", item: { count: 1, id: "create_power_loader:empty_andesite_chunk_loader" }, type: "item" }]
 			x: 2.20d
 			y: 2.40d
 		}
 		{
 			dependencies: ["31884BC4276B531D"]
-			id: "9861EF00B945866F"
+			id: "1861EF00B945866F"
 			rewards: [{ id: "6772A38C60D66E5E", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -89,19 +89,19 @@
 			y: 2.40d
 		}
 		{
-			dependencies: ["AB3F74E1D633B85A"]
+			dependencies: ["2B3F74E1D633B85A"]
 			id: "0DA29650B2A99689"
 			rewards: [{ id: "4FEBF94E42113999", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "A659A94DD751C389", item: { count: 1, id: "create_jetpack:jetpack" }, type: "item" }]
+			tasks: [{ id: "2659A94DD751C389", item: { count: 1, id: "create_jetpack:jetpack" }, type: "item" }]
 			x: 2.20d
 			y: 0.80d
 		}
 		{
 			dependencies: ["0DA29650B2A99689"]
-			id: "D98870E2C08934FE"
-			rewards: [{ id: "83C5D49B41F408D2", type: "xp", xp: 10 }]
+			id: "598870E2C08934FE"
+			rewards: [{ id: "03C5D49B41F408D2", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3B7763F42CB1FF8C", item: { count: 1, id: "create_sa:portable_drill" }, type: "item" }]
@@ -109,9 +109,9 @@
 			y: 0.80d
 		}
 		{
-			dependencies: ["D98870E2C08934FE"]
+			dependencies: ["598870E2C08934FE"]
 			id: "27FDDAEDB93E2BEF"
-			rewards: [{ id: "D464CE351F71FB9C", type: "xp", xp: 10 }]
+			rewards: [{ id: "5464CE351F71FB9C", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4682594E43D6AE0D", item: { count: 1, id: "create_sa:andesite_exoskeleton_chestplate" }, type: "item" }]
@@ -124,17 +124,17 @@
 			rewards: [{ id: "69DDB3616F89ACA7", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "CC11DE5CFC41AF7C", item: { count: 1, id: "create_sa:block_picker" }, type: "item" }]
+			tasks: [{ id: "4C11DE5CFC41AF7C", item: { count: 1, id: "create_sa:block_picker" }, type: "item" }]
 			x: 8.80d
 			y: 0.80d
 		}
 		{
 			dependencies: ["1A3B36E257B08F8E"]
-			id: "EF3FDF1B1C44B4CF"
+			id: "6F3FDF1B1C44B4CF"
 			rewards: [{ id: "6517ED66265F4BDA", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "840FDD192758CE06", item: { count: 1, id: "create_sa:brass_drone_item" }, type: "item" }]
+			tasks: [{ id: "040FDD192758CE06", item: { count: 1, id: "create_sa:brass_drone_item" }, type: "item" }]
 			x: 11.00d
 			y: 0.80d
 		}

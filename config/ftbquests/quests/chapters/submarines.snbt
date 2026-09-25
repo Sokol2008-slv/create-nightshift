@@ -4,13 +4,13 @@
 	filename: "submarines"
 	group: ""
 	icon: { id: "create_submarine:ballast_tank" }
-	id: "E58076B113EF7AA0"
+	id: "658076B113EF7AA0"
 	images: [ ]
 	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
-			id: "ACC8CCC2EDA2288D"
+			id: "2CC8CCC2EDA2288D"
 			rewards: [{ id: "48D4ABC477256223", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -19,43 +19,43 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["ACC8CCC2EDA2288D"]
-			id: "DCC2972B8E23DC31"
-			rewards: [{ id: "8D214160D44319B4", type: "xp", xp: 10 }]
+			dependencies: ["2CC8CCC2EDA2288D"]
+			id: "5CC2972B8E23DC31"
+			rewards: [{ id: "0D214160D44319B4", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "F1E1D3C07C32079D", item: { count: 1, id: "create_submarine:ballast_vent" }, type: "item" }]
+			tasks: [{ id: "71E1D3C07C32079D", item: { count: 1, id: "create_submarine:ballast_vent" }, type: "item" }]
 			x: 2.20d
 			y: -0.80d
 		}
 		{
-			dependencies: ["DCC2972B8E23DC31"]
+			dependencies: ["5CC2972B8E23DC31"]
 			icon: { id: "create_submarine:ballast_vent" }
 			id: "0A3DAD1655477A4B"
-			rewards: [{ id: "BEA807AD5C2AB090", type: "xp", xp: 10 }]
+			rewards: [{ id: "3EA807AD5C2AB090", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "DE4E0B551474ABE6", type: "checkmark" }]
+			tasks: [{ id: "5E4E0B551474ABE6", type: "checkmark" }]
 			x: 4.40d
 			y: -0.80d
 		}
 		{
-			dependencies: ["ACC8CCC2EDA2288D"]
+			dependencies: ["2CC8CCC2EDA2288D"]
 			id: "2B93C5ECE763DE47"
-			rewards: [{ id: "BCCFE8D608A3301D", type: "xp", xp: 10 }]
+			rewards: [{ id: "3CCFE8D608A3301D", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "AB684FB4F0929565", item: { count: 1, id: "create_submarine:iron_pressurizer" }, type: "item" }]
+			tasks: [{ id: "2B684FB4F0929565", item: { count: 1, id: "create_submarine:iron_pressurizer" }, type: "item" }]
 			x: 2.20d
 			y: 0.80d
 		}
 		{
 			dependencies: ["2B93C5ECE763DE47"]
 			id: "52952F3FB17A8AC6"
-			rewards: [{ id: "FC83F12BE47CBCE8", type: "xp", xp: 10 }]
+			rewards: [{ id: "7C83F12BE47CBCE8", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "AB077DA40D8674AD", item: { count: 1, id: "create_submarine:barometer" }, type: "item" }]
+			tasks: [{ id: "2B077DA40D8674AD", item: { count: 1, id: "create_submarine:barometer" }, type: "item" }]
 			x: 4.40d
 			y: 0.80d
 		}
@@ -72,8 +72,8 @@
 		{
 			dependencies: ["52952F3FB17A8AC6", "556DE5924DA9D57F"]
 			icon: { id: "create_submarine:iron_pressurizer" }
-			id: "87393EA56E1D767B"
-			rewards: [{ id: "8571295DCE04ACCD", type: "xp", xp: 10 }]
+			id: "07393EA56E1D767B"
+			rewards: [{ id: "0571295DCE04ACCD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "33FD4AFA67704FA1", type: "checkmark" }]
@@ -82,7 +82,7 @@
 		}
 		{
 			dependencies: ["0A3DAD1655477A4B"]
-			id: "C6097C31CBD877FE"
+			id: "46097C31CBD877FE"
 			rewards: [{ id: "4FA1C5FD9408B765", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -91,8 +91,8 @@
 			y: -2.76d
 		}
 		{
-			dependencies: ["C6097C31CBD877FE"]
-			id: "B683F15199866889"
+			dependencies: ["46097C31CBD877FE"]
+			id: "3683F15199866889"
 			rewards: [{ id: "5430772DC986EBEB", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
@@ -101,13 +101,13 @@
 			y: -2.76d
 		}
 		{
-			dependencies: ["B683F15199866889"]
+			dependencies: ["3683F15199866889"]
 			icon: { id: "create_submarine:oxygene_diffuser" }
-			id: "B715CDDF1DE29D67"
-			rewards: [{ id: "AF8B62E615993E2F", type: "xp", xp: 10 }]
+			id: "3715CDDF1DE29D67"
+			rewards: [{ id: "2F8B62E615993E2F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "8793E7D057B01CEA", type: "checkmark" }]
+			tasks: [{ id: "0793E7D057B01CEA", type: "checkmark" }]
 			x: 11.00d
 			y: -2.76d
 		}
@@ -122,9 +122,9 @@
 			y: 1.94d
 		}
 		{
-			dependencies: ["87393EA56E1D767B", "B715CDDF1DE29D67"]
+			dependencies: ["07393EA56E1D767B", "3715CDDF1DE29D67"]
 			icon: { id: "create_submarine:water_thruster" }
-			id: "D050456F7CF14F06"
+			id: "5050456F7CF14F06"
 			rewards: [{ id: "1891C8C99562C3DC", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d

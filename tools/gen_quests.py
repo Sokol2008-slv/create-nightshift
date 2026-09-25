@@ -53,7 +53,10 @@ def known_items():
 
 
 def qid(*parts):
-    return hashlib.md5(":".join(parts).encode()).hexdigest()[:16].upper()
+    # FTB Quests 2101 не находит перевод для id со старшим битом (отрицательный long) —
+    # такие главы/квесты показываются «Безымянный» и без описания. Держим id положительным.
+    v = int(hashlib.md5(":".join(parts).encode()).hexdigest()[:16], 16) & 0x7FFFFFFFFFFFFFFF
+    return f"{v or 1:016X}"
 
 
 def snbt_str(s):
