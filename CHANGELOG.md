@@ -16,8 +16,17 @@
 - **Автообновление**: Prism-инстанс с pre-launch packwiz-installer — сборка подтягивает изменения
   при каждом запуске с `raw.githubusercontent.com/Sokol2008-slv/create-nightshift/main/pack.toml`.
 
+### Removed
+- e4steam: для этой сборки не годится (лимит Steam ~256 КБ/с → таймаут входа), а при сбое IPC
+  Steam-клиента («fatal stalled cross-thread pipe») ронял игру при запуске.
+
+### Fixed
+- id квестов/глав теперь без старшего бита: FTB Quests 2101 не находит перевод для отрицательных id
+  (главы «Безымянный», квесты без описаний).
+- PreLaunchCommand в instance.cfg экранируется (`"\"$INST_JAVA\" -jar …"`), иначе Prism склеивал `java-jar`.
+
 ### Changed
-- e4steam и моды FTB подключены как CurseForge-метаданные (packwiz), а не jar в репозитории —
+- Моды FTB подключены как CurseForge-метаданные (packwiz), а не jar в репозитории —
   лицензии позволяют стороннее скачивание, jar в публичный репозиторий не кладём.
 - Основной способ совместной игры — выделенный сервер; e4steam для этой сборки не тянет (лимит Steam ~256 КБ/с).
 

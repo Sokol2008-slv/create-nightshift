@@ -6,59 +6,59 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/airships_cars.snbt"
-hash = "d291af35486da5a666d83ab05f5dbf27a12dab5bb52b27f9f759abc1d087e092"
+hash = "3ddddc7a3cff704b2374669be56c86b64951039c9079005149e74c1a94daacf8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "bb97865cc06160039566bfec93e4055967082401f3d04aca7113723ce93adc98"
+hash = "63bffa86f82d9a78f763c007f932c0e21e00f51c0155a0393576b96db7cd7290"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
-hash = "f5dbd1179f70bff94835a44924eaf31bb27e719b445b3e836b3e3e8b3438b6a1"
+hash = "03795d7d506c3129378768074e5b443bd0aadc2ae552633f33401569f84c3527"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
-hash = "0c16cb0f08710623af67746d9f283a1c13a742559b685628ef7346087f8d025a"
+hash = "7e957afedab3b8cfea27ba424d055397d224047a7c49b3468b5cec4ab2a38cce"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "c20e270c36ca74d205d536370a48a1c9c468a3a3b8a9b15539934713dd6fc804"
+hash = "4c4b152236c9df30b3dd81bde19e7d0a5564d9427284150317ad5a00a754ca28"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "30e243295416bfc6628e538dcb0383b32c1effbde17097c7924612338e7afb5a"
+hash = "ca43764194ad8ed370f306363ea3c906fbb804a3ee3bbede11ad318fe909f45e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "b54efe582670f68e5e2d4246b58289c9cfb6627f8864e79c9e06d8e645206068"
+hash = "3f7249ef72f09e03d4600b0c79da66f6dd1e4d5d851c7945f97615ab5f9172f8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/fuel_engines.snbt"
-hash = "907c7fde87366206a1433c7328479e825aa51e6bbf5ef28857eb7de2722185b7"
+hash = "5f3ae1d20da8e8b9d7af369d71d18ec4b29480bdbbc633d5db189fc071b8fc30"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
-hash = "eed59f4e2672018c8c36e200157fc80aefb7a598904689788bf2c38002a584fa"
+hash = "9becabc559eb7b24f674471ec3c763096b53acbc05d9bf310b2e0f0ba3296c53"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "9cea870bde54a49bf794de8c963552c38fc18a17d0a931e363a47afd97f72b4d"
+hash = "57fc4423ab344e60e0c443c297255d9e3bb5eae660e1866f925a5b568eeb95b0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "ae6af2690092bc58f175417bd140b9d53db44761d09ae63e191cf7d9ef4897de"
+hash = "40c4f26f60594b5ecd6d0442412f4ede5888fdb71dd3c6475fee19f658027406"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
-hash = "2377eca8a2020fbfcb8e9a6a7243449056f1aadf0fe6758ae4e12a81d5370c08"
+hash = "3613d3c533d978a028d90c79180e06375fe88b0e7e73018e3063577cf88224a2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/submarines.snbt"
-hash = "5e53eb8ad9ea6052104ecc7a0784856a193e52dcdd5c11a91a968e25a4ce84a0"
+hash = "d1e2a446971cba4a1d8647b3fc967f2f9274fbea8af9dc58e6cfc93af7081317"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
-hash = "fb9769012566751aa91103d7d30105c73deb943039cdd1946daafe8861b25098"
+hash = "42aa83ea81eeecca5376786d7b67056d506f7ba8de9b0d1ebe7bbc5823f775ad"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -66,11 +66,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "24faa851ece452711cac87fb0adfc6a4d5ee9dcff5ca9ba71028b23081347202"
+hash = "973363323ee2e9fc81d8d122fc4cfe1034577dabd70b8160268849552621a9f1"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "24faa851ece452711cac87fb0adfc6a4d5ee9dcff5ca9ba71028b23081347202"
+hash = "973363323ee2e9fc81d8d122fc4cfe1034577dabd70b8160268849552621a9f1"
 
 [[files]]
 file = "config/iris.properties"
@@ -613,11 +613,6 @@ metafile = true
 [[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
-metafile = true
-
-[[files]]
-file = "mods/e4steam.pw.toml"
-hash = "22b0367d83505794cb3b211cde25e7c37e71721d2d97614bd442e656c4f2b629"
 metafile = true
 
 [[files]]
