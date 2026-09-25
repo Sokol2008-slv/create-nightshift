@@ -166,11 +166,6 @@ hash = "838dbcb90c93bab58691e82c95045bd97c3e096e3a2680a00cf063e56ce35ce3"
 metafile = true
 
 [[files]]
-file = "mods/carryon-aeronautics-compat.pw.toml"
-hash = "575ebf4c7a4d60e8db84e1dbbfed2c9bc73cd50abd61e5f37d92ac9a97cfd900"
-metafile = true
-
-[[files]]
 file = "mods/cave-dweller-reevolved.pw.toml"
 hash = "11974c0d81204d919175190916a2badb4aecb77a62be3f3201b5f7f6d1233db8"
 metafile = true

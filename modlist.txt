@@ -166,7 +166,6 @@ yeetus-experimentus
 create-ultimine
 inventory-profiles-next
 carry-on
-carryon-aeronautics-compat
 trashslot
 just-enough-resources-jer
 comforts

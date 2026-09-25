@@ -17,6 +17,8 @@
   при каждом запуске с `raw.githubusercontent.com/Sokol2008-slv/create-nightshift/main/pack.toml`.
 
 ### Removed
+- Carry On + Create Aeronautics Compat: его redirect-миксин не совпадает с Carry On 2.2.6 и ронял сервер
+  («Critical injection failure … CarryOnAeroCompat$distanceTo») через ~15 с после входа игрока.
 - e4steam: для этой сборки не годится (лимит Steam ~256 КБ/с → таймаут входа), а при сбое IPC
   Steam-клиента («fatal stalled cross-thread pipe») ронял игру при запуске.
 
