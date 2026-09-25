@@ -1,0 +1,119 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "night_shift"
+	group: ""
+	icon: { id: "minecraft:lantern" }
+	id: "7E76287511290763"
+	images: [ ]
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "minecraft:clock" }
+			id: "8503A513927D11DF"
+			rewards: [{ id: "C5AF9BC6BB11CA8A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "DDCBB7416A89CC49", type: "checkmark" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["8503A513927D11DF"]
+			id: "5B2534CC31A2A47B"
+			rewards: [{ id: "F6377FD6CA7C87F6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "10E9C8C062A4DDBF", count: 32L, item: { count: 1, id: "minecraft:torch" }, type: "item" }]
+			x: 2.20d
+			y: -1.60d
+		}
+		{
+			dependencies: ["5B2534CC31A2A47B"]
+			id: "CC9E71FFB7D05E1D"
+			rewards: [{ id: "01F5FC53BEDDAEBC", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "DF098699FE01921F", item: { count: 1, id: "minecraft:lantern" }, type: "item" }]
+			x: 4.40d
+			y: -3.87d
+		}
+		{
+			dependencies: ["8503A513927D11DF"]
+			id: "C2B84590A81466C4"
+			rewards: [{ id: "F666D1407CC155DB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "DD0029788361EF78", item: { count: 1, id: "minecraft:red_bed" }, type: "item" }]
+			x: 2.20d
+			y: -0.00d
+		}
+		{
+			dependencies: ["8503A513927D11DF"]
+			icon: { id: "minecraft:sculk_sensor" }
+			id: "3E5CB0645B9A0F13"
+			rewards: [{ id: "739989431AE9C5FB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3D2C019E55016E49", type: "checkmark" }]
+			x: 2.20d
+			y: 1.60d
+		}
+		{
+			dependencies: ["3E5CB0645B9A0F13"]
+			icon: { id: "minecraft:deepslate" }
+			id: "EC3AD885DB6C2F69"
+			rewards: [{ id: "6DD0F643C8FFF19E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0917CDE21094128C", type: "checkmark" }]
+			x: 4.40d
+			y: 0.73d
+		}
+		{
+			dependencies: ["3E5CB0645B9A0F13"]
+			icon: { id: "minecraft:ender_eye" }
+			id: "4FDF72692CE527F9"
+			rewards: [{ id: "EDC22DD88D9DD6E2", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "BA3FB9352504015A", type: "checkmark" }]
+			x: 4.40d
+			y: 2.33d
+		}
+		{
+			dependencies: ["4FDF72692CE527F9"]
+			icon: { id: "minecraft:player_head" }
+			id: "81DBFD6E5104C114"
+			rewards: [{ id: "516D8467F977BEB7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2FA121BC9FD75912", type: "checkmark" }]
+			x: 6.60d
+			y: 2.33d
+		}
+		{
+			dependencies: ["C2B84590A81466C4"]
+			icon: { id: "minecraft:skeleton_skull" }
+			id: "529610133ACB2780"
+			rewards: [{ id: "7C1A48C03CDFF85C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2791597DB577460A", type: "checkmark" }]
+			x: 4.40d
+			y: 3.93d
+		}
+		{
+			dependencies: ["5B2534CC31A2A47B", "C2B84590A81466C4", "EC3AD885DB6C2F69"]
+			icon: { id: "minecraft:sunflower" }
+			id: "6C1319E4F7619FC0"
+			rewards: [{ id: "FD53B546CD55AD07", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "BC5851C64B15389C", type: "checkmark" }]
+			x: 6.60d
+			y: -0.80d
+		}
+	]
+}

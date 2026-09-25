@@ -12,6 +12,7 @@ import pathlib
 import re
 import shutil
 import sys
+import urllib.parse
 import urllib.request
 
 PACK = pathlib.Path(__file__).resolve().parent.parent
@@ -40,7 +41,13 @@ def collect(folder):
         # сервер не получает клиентские моды и наоборот
         if (side == "server" and s == "client") or (side == "client" and s == "server"):
             continue
-        entries.append((folder, field(t, "filename"), field(t, "url"), field(t, "hash-format"), field(t, "hash")))
+        url = field(t, "url")
+        fn = field(t, "filename")
+        if not url:
+            # мод CurseForge (mode = metadata:curseforge): качаем с их CDN по file-id
+            fid = int(re.search(r"^file-id\s*=\s*(\d+)", t, re.M).group(1))
+            url = f"https://mediafilez.forgecdn.net/files/{fid // 1000}/{fid % 1000}/{urllib.parse.quote(fn)}"
+        entries.append((folder, fn, url, field(t, "hash-format"), field(t, "hash")))
     return entries
 
 

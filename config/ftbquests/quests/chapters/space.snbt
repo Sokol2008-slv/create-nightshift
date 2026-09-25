@@ -1,0 +1,205 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "space"
+	group: ""
+	icon: { id: "northstar:space_atlas" }
+	id: "0096249BA19EA3EF"
+	images: [ ]
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			id: "773E1E8AE9F7B7CF"
+			rewards: [{ id: "77A9851A75BC121B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2BFF29109A6D0C45", item: { count: 1, id: "northstar:titanium_ingot" }, type: "item" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "33444D6CF34F28A8"
+			rewards: [{ id: "3F65F7D496A33C0C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "398B3DD2807B1822", item: { count: 1, id: "northstar:circuit" }, type: "item" }]
+			x: 2.20d
+			y: -2.40d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "D374E61F4F20603E"
+			rewards: [{ id: "D866F06F39F27A8F", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0BD6B1DEFE71D224", item: { count: 1, id: "northstar:hardened_precision_mechanism" }, type: "item" }]
+			x: 2.20d
+			y: -0.80d
+		}
+		{
+			dependencies: ["33444D6CF34F28A8", "D374E61F4F20603E"]
+			id: "AB29212FBD9DC938"
+			rewards: [{ id: "6F32CA53420EFA3A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "A7E62AF318CF4AA9", item: { count: 1, id: "northstar:targeting_computer" }, type: "item" }]
+			x: 4.40d
+			y: -1.46d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "688253BB8696726D"
+			rewards: [{ id: "A2DD950E3CA94EEC", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "61D52D11D1537115", item: { count: 1, id: "northstar:telescope" }, type: "item" }]
+			x: 2.20d
+			y: 0.80d
+		}
+		{
+			dependencies: ["688253BB8696726D"]
+			id: "577D5A25C2A53FC5"
+			rewards: [{ id: "27094BF110D8E9F9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2B281E591AA31FAF", item: { count: 1, id: "northstar:astronomical_reading" }, type: "item" }]
+			x: 4.40d
+			y: 2.41d
+		}
+		{
+			dependencies: ["577D5A25C2A53FC5"]
+			id: "ECA219A30AA20749"
+			rewards: [{ id: "C00858E8EAE2CD0B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "946DAE8D76BA1B69", item: { count: 1, id: "northstar:space_atlas" }, type: "item" }]
+			x: 6.60d
+			y: 6.25d
+		}
+		{
+			dependencies: ["D374E61F4F20603E"]
+			id: "A00EF6B4A3B73B4B"
+			rewards: [{ id: "623E7FBC76189636", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4E213AC91640BDB6", item: { count: 1, id: "northstar:rocket_thruster" }, type: "item" }]
+			x: 4.40d
+			y: 0.14d
+		}
+		{
+			dependencies: ["AB29212FBD9DC938", "A00EF6B4A3B73B4B"]
+			id: "E3D73C7D0A577B48"
+			rewards: [{ id: "C27D59FF11831500", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "678EE2CB4163A4B9", item: { count: 1, id: "northstar:rocket_station" }, type: "item" }]
+			x: 6.60d
+			y: -0.75d
+		}
+		{
+			dependencies: ["33444D6CF34F28A8"]
+			id: "5419BEC0D04A20F0"
+			rewards: [{ id: "80D3954FD4283D18", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "29E01CFB1B8B1AC6", item: { count: 1, id: "northstar:rocket_controls" }, type: "item" }]
+			x: 4.40d
+			y: -4.66d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "206F6135673F26E9"
+			rewards: [{ id: "2BA272A29F8CBCAD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "12F4781CEC34DB97", item: { count: 1, id: "northstar:iron_space_suit_chestpiece" }, type: "item" }]
+			x: 2.20d
+			y: 2.40d
+		}
+		{
+			dependencies: ["33444D6CF34F28A8"]
+			id: "48E881DFD6B3194F"
+			rewards: [{ id: "CB401B1CED7BEC97", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "43F1755C03BCE9AD", item: { count: 1, id: "northstar:oxygen_filler" }, type: "item" }]
+			x: 4.40d
+			y: -3.06d
+		}
+		{
+			dependencies: ["E3D73C7D0A577B48", "5419BEC0D04A20F0", "A00EF6B4A3B73B4B", "206F6135673F26E9", "48E881DFD6B3194F", "ECA219A30AA20749"]
+			icon: { id: "northstar:rocket_controls" }
+			id: "B69117D4B69EA320"
+			rewards: [{ id: "222EC3A2EEE11ABB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "737064C1274CF65D", type: "checkmark" }]
+			x: 8.80d
+			y: -0.13d
+		}
+		{
+			dependencies: ["B69117D4B69EA320"]
+			icon: { id: "northstar:rocket_thruster" }
+			id: "2BB90C762D8DE0FB"
+			rewards: [{ id: "BC1E734A267AFA86", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "14C1E2B3BC9EABF7", type: "checkmark" }]
+			x: 11.00d
+			y: -0.13d
+		}
+		{
+			dependencies: ["2BB90C762D8DE0FB"]
+			icon: { id: "northstar:moon_stone" }
+			id: "08F1549241E129A6"
+			rewards: [{ id: "994D25A78AA30810", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "D8E253F42321264F", type: "checkmark" }]
+			x: 13.20d
+			y: -0.13d
+		}
+		{
+			dependencies: ["08F1549241E129A6"]
+			id: "7D06BCB9E657D0AA"
+			rewards: [{ id: "7D9A7133CF40B338", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "D273CA80C867EF9E", item: { count: 1, id: "northstar:auto_lander" }, type: "item" }]
+			x: 15.40d
+			y: -0.67d
+		}
+		{
+			dependencies: ["0811D15A56819E96"]
+			id: "54836B2556E2C657"
+			rewards: [{ id: "D22996F232689689", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "C144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
+			x: 17.60d
+			y: 0.93d
+		}
+		{
+			dependencies: ["08F1549241E129A6"]
+			id: "0811D15A56819E96"
+			rewards: [{ id: "7E7C7F27FD1410B3", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "315AD4B641EE139B", item: { count: 1, id: "northstar:interplanetary_navigator" }, type: "item" }]
+			x: 15.40d
+			y: 0.93d
+		}
+		{
+			dependencies: ["48E881DFD6B3194F", "54836B2556E2C657"]
+			id: "FE6E32EBF6D0D98A"
+			rewards: [{ id: "E188FD6237DAB2B0", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5824B3BF551EF814", item: { count: 1, id: "northstar:electrolysis_machine" }, type: "item" }]
+			x: 19.80d
+			y: -2.53d
+		}
+	]
+}

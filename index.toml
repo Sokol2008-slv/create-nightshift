@@ -1,6 +1,78 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ftbquests/quests/chapter_groups.snbt"
+hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/airships_cars.snbt"
+hash = "d291af35486da5a666d83ab05f5dbf27a12dab5bb52b27f9f759abc1d087e092"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/automation_extras.snbt"
+hash = "bb97865cc06160039566bfec93e4055967082401f3d04aca7113723ce93adc98"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/big_cannons.snbt"
+hash = "f5dbd1179f70bff94835a44924eaf31bb27e719b445b3e836b3e3e8b3438b6a1"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
+hash = "0c16cb0f08710623af67746d9f283a1c13a742559b685628ef7346087f8d025a"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/create_basics.snbt"
+hash = "c20e270c36ca74d205d536370a48a1c9c468a3a3b8a9b15539934713dd6fc804"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/electricity.snbt"
+hash = "30e243295416bfc6628e538dcb0383b32c1effbde17097c7924612338e7afb5a"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/first_plane.snbt"
+hash = "b54efe582670f68e5e2d4246b58289c9cfb6627f8864e79c9e06d8e645206068"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/fuel_engines.snbt"
+hash = "907c7fde87366206a1433c7328479e825aa51e6bbf5ef28857eb7de2722185b7"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/night_shift.snbt"
+hash = "eed59f4e2672018c8c36e200157fc80aefb7a598904689788bf2c38002a584fa"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/ore_processing.snbt"
+hash = "9cea870bde54a49bf794de8c963552c38fc18a17d0a931e363a47afd97f72b4d"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/space.snbt"
+hash = "ae6af2690092bc58f175417bd140b9d53db44761d09ae63e191cf7d9ef4897de"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/steel_oil.snbt"
+hash = "2377eca8a2020fbfcb8e9a6a7243449056f1aadf0fe6758ae4e12a81d5370c08"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/submarines.snbt"
+hash = "5e53eb8ad9ea6052104ecc7a0784856a193e52dcdd5c11a91a968e25a4ce84a0"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/welcome.snbt"
+hash = "fb9769012566751aa91103d7d30105c73deb943039cdd1946daafe8861b25098"
+
+[[files]]
+file = "config/ftbquests/quests/data.snbt"
+hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
+
+[[files]]
+file = "config/ftbquests/quests/lang/en_us.snbt"
+hash = "24faa851ece452711cac87fb0adfc6a4d5ee9dcff5ca9ba71028b23081347202"
+
+[[files]]
+file = "config/ftbquests/quests/lang/ru_ru.snbt"
+hash = "24faa851ece452711cac87fb0adfc6a4d5ee9dcff5ca9ba71028b23081347202"
+
+[[files]]
 file = "config/iris.properties"
 hash = "15f93180796d7b14223617424f981d8676e15f47b7716af5150a22af5891f671"
 
@@ -89,6 +161,16 @@ hash = "a04d87f3b0009f6d7681d4388201ef96822f72ff14a0336da875e806eca347b5"
 metafile = true
 
 [[files]]
+file = "mods/carry-on.pw.toml"
+hash = "838dbcb90c93bab58691e82c95045bd97c3e096e3a2680a00cf063e56ce35ce3"
+metafile = true
+
+[[files]]
+file = "mods/carryon-aeronautics-compat.pw.toml"
+hash = "575ebf4c7a4d60e8db84e1dbbfed2c9bc73cd50abd61e5f37d92ac9a97cfd900"
+metafile = true
+
+[[files]]
 file = "mods/cave-dweller-reevolved.pw.toml"
 hash = "11974c0d81204d919175190916a2badb4aecb77a62be3f3201b5f7f6d1233db8"
 metafile = true
@@ -111,6 +193,11 @@ metafile = true
 [[files]]
 file = "mods/clumps.pw.toml"
 hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
+metafile = true
+
+[[files]]
+file = "mods/comforts.pw.toml"
+hash = "36f2f6e74b7dbeccb504572d47006582207544fa234a095093b97adfc7ecd5ac"
 metafile = true
 
 [[files]]
@@ -449,6 +536,11 @@ hash = "34d808989e71221b8e01a44bc8031f20af1c94981acb0cba4669e0e58be69629"
 metafile = true
 
 [[files]]
+file = "mods/create-ultimine.pw.toml"
+hash = "6adbe018fa82d595b6679edb045d66e266b031eca2bc1b6f243b1ae50bef92ab"
+metafile = true
+
+[[files]]
 file = "mods/create-vibrant-vaults.pw.toml"
 hash = "960645d7f385081b108208e58bbbdfc6b93288b7bd7da90e6f229a57b237234a"
 metafile = true
@@ -524,8 +616,9 @@ hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
 metafile = true
 
 [[files]]
-file = "mods/e4steam-neoforge-mc1.20.2-26.2-v0.3.2.jar"
-hash = "4f182b2560a6e001f248cd59cc063dd1c99d92a9b1b38ef099bc8ee822fe0418"
+file = "mods/e4steam.pw.toml"
+hash = "22b0367d83505794cb3b211cde25e7c37e71721d2d97614bd442e656c4f2b629"
+metafile = true
 
 [[files]]
 file = "mods/entity-model-features.pw.toml"
@@ -598,6 +691,31 @@ hash = "4ae505d63fe067cdf0bbc364283eb0e5d90ebdb409cf1633326d10cfdeea28a8"
 metafile = true
 
 [[files]]
+file = "mods/ftb-library-forge.pw.toml"
+hash = "2e72d40c6d7b128981b19b71c19d45eb6813f1af87ae1abe1cf92adfa5e8223f"
+metafile = true
+
+[[files]]
+file = "mods/ftb-quests-forge.pw.toml"
+hash = "93330f6ec85532067df176c6baee0e0f6d685c78088b1a2217726f6421899148"
+metafile = true
+
+[[files]]
+file = "mods/ftb-teams-forge.pw.toml"
+hash = "c21c2308684a75cda7dd9d557d129c9f89f49be527da3d5aa675fff444c11f5e"
+metafile = true
+
+[[files]]
+file = "mods/ftb-ultimine-forge.pw.toml"
+hash = "3529bc9c3a7b54933869be1d1d84a948d091c3d6064bbb6b17874d7c153b4dca"
+metafile = true
+
+[[files]]
+file = "mods/ftb-xmod-compat.pw.toml"
+hash = "6ad22c468d67dcbb65784e161d4af9e671d3437cb5bfb1e86a42ae25207cf25b"
+metafile = true
+
+[[files]]
 file = "mods/fusion-connected-textures.pw.toml"
 hash = "7411c38665af0ee0b17613ac80daaa040a5f59b046d418421297acf2c6fa8c9c"
 metafile = true
@@ -638,6 +756,11 @@ hash = "e7e6b3effe3022cf1fdb900c857111fdcbfd6b385c2d5bd28c914efaed436ecb"
 metafile = true
 
 [[files]]
+file = "mods/inventory-profiles-next.pw.toml"
+hash = "ab503e89461dff879ee793253e173625b6ab868f570a371323ef725e567cf5ea"
+metafile = true
+
+[[files]]
 file = "mods/iris.pw.toml"
 hash = "db1c1e6382878b78e994dba1b9026935f8d1c5ca685c89d2437858e0a0dcab58"
 metafile = true
@@ -653,8 +776,18 @@ hash = "4de3e4a1a49e332c1ad313283e0403c4273b628d634c17a9ff0c9da3d6b67f9a"
 metafile = true
 
 [[files]]
+file = "mods/jamlib.pw.toml"
+hash = "750f4b552490779af147a9c70a558ab2aa1cbfd8331d5ad69efefa099854dfae"
+metafile = true
+
+[[files]]
 file = "mods/jei.pw.toml"
 hash = "fb3233553d7a88373fcd54e6fbeac1f593fdfbe44f00e0c24790a01774545e2f"
+metafile = true
+
+[[files]]
+file = "mods/just-enough-resources-jer.pw.toml"
+hash = "7905c08f37d8ebde50a5330a7dd10029de6259b0cb8adbde1170d93ea20218a7"
 metafile = true
 
 [[files]]
@@ -680,6 +813,11 @@ metafile = true
 [[files]]
 file = "mods/lambdynamiclights.pw.toml"
 hash = "ebf0dae777cc19c354a662dc8144009dff7269b2d05624b4591fcb7de56fc14e"
+metafile = true
+
+[[files]]
+file = "mods/libipn.pw.toml"
+hash = "0d2a00252d64ed7d2d9b19994f7accb780304be61f3903d36e810714b414c6cb"
 metafile = true
 
 [[files]]
@@ -758,6 +896,11 @@ hash = "70a1250e9612f8194f88e9c14b405907d16e7b2df7742d6b4d1c42473486395e"
 metafile = true
 
 [[files]]
+file = "mods/pick-up-notifier.pw.toml"
+hash = "49c0bacf8e4cb3ade6c384ad379282f92d7fa3075f2affd8e3093feb685288dd"
+metafile = true
+
+[[files]]
 file = "mods/placebo.pw.toml"
 hash = "2f9f0f8c05ce7e410a70cfed595e623fe8031df89a8a9ba9a8aaaa419eb4d18b"
 metafile = true
@@ -770,6 +913,11 @@ metafile = true
 [[files]]
 file = "mods/polymorph.pw.toml"
 hash = "d935e4ce118d15c88b10809df85e801f0e9577855f870f3c28e5a0bd5e7fecf6"
+metafile = true
+
+[[files]]
+file = "mods/puzzles-lib.pw.toml"
+hash = "391e5d415c0754ad210b8efa54fc9ded4f99e6ab8562d6faf960f3b65d84a66a"
 metafile = true
 
 [[files]]
@@ -790,6 +938,11 @@ metafile = true
 [[files]]
 file = "mods/rhino.pw.toml"
 hash = "e55ca32b338a0e0540f4fec5170675d860566255ae0f45692a00cb4ebf2eb535"
+metafile = true
+
+[[files]]
+file = "mods/rightclickharvest.pw.toml"
+hash = "87708c5cf041f2c7eede5dc1a5ee0dd517a13c0c7e8c40c359669a5ffabef7db"
 metafile = true
 
 [[files]]
@@ -940,6 +1093,16 @@ metafile = true
 [[files]]
 file = "mods/towns-and-towers.pw.toml"
 hash = "a9afe82b3d1b4975dd9f8b3272898450aeb29365678b3779059977301f88c101"
+metafile = true
+
+[[files]]
+file = "mods/trashslot.pw.toml"
+hash = "c1e0c805d5ccd49535a6820aa8a2461a516437f90312fcadd393f928e3ce7bf2"
+metafile = true
+
+[[files]]
+file = "mods/travelers-titles.pw.toml"
+hash = "01cab903b1a7f77aa4f28c7fab24e7fa09b376b18c77b487b7ba34e0afc57813"
 metafile = true
 
 [[files]]

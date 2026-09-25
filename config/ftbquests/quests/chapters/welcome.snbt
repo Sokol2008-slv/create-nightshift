@@ -1,0 +1,75 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "welcome"
+	group: ""
+	icon: { id: "create:goggles" }
+	id: "A22972F518CA85E0"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "minecraft:written_book" }
+			id: "E5323940C7E98B08"
+			rewards: [{ id: "40FCF04CEDA6BB25", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "F8E25C3B5587E1EB", type: "checkmark" }]
+			x: 0.00d
+			y: -0.80d
+		}
+		{
+			dependencies: ["E5323940C7E98B08"]
+			icon: { id: "minecraft:crafting_table" }
+			id: "2DDBA2AB73BF01A6"
+			rewards: [{ id: "08D56781DA3EAADB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "C81E56D5FBCE9322", type: "checkmark" }]
+			x: 2.20d
+			y: -1.60d
+		}
+		{
+			dependencies: ["E5323940C7E98B08"]
+			icon: { id: "create:andesite_alloy" }
+			id: "AF27FD3FABF74065"
+			rewards: [{ id: "9723AB8F50AF514A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7EAEC97356ABAA08", type: "checkmark" }]
+			x: 2.20d
+			y: -0.00d
+		}
+		{
+			dependencies: ["AF27FD3FABF74065"]
+			id: "4C3550A20ABDE71C"
+			rewards: [{ id: "B7F79FD518483961", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "F721713BA337ACFC", item: { count: 1, id: "create:goggles" }, type: "item" }]
+			x: 4.40d
+			y: -0.95d
+		}
+		{
+			dependencies: ["AF27FD3FABF74065"]
+			id: "CF2010ED01E72F75"
+			rewards: [{ id: "D000A49051B159E2", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "3C2BDC214C4FAA0D", item: { count: 1, id: "create:wrench" }, type: "item" }]
+			x: 4.40d
+			y: 0.95d
+		}
+		{
+			icon: { id: "minecraft:white_banner" }
+			id: "944751B87537B6D6"
+			rewards: [{ id: "81CB31268991FC05", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "310CC532D4BE9E56", type: "checkmark" }]
+			x: 0.00d
+			y: 0.80d
+		}
+	]
+}

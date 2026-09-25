@@ -1,0 +1,154 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "steel_oil"
+	group: ""
+	icon: { id: "tfmg:steel_ingot" }
+	id: "EB800B0BDBD97B68"
+	images: [ ]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "53DF778E5B05A4F3"
+			rewards: [{ id: "0FF8D6B8C15B291D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "76919A7FF1963435", item: { count: 1, id: "tfmg:cast_iron_ingot" }, type: "item" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["53DF778E5B05A4F3"]
+			id: "D4D2D1744EDB509D"
+			rewards: [{ id: "0C503170D413A292", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "93946F7A2BFA0B5A", item: { count: 1, id: "tfmg:coke_oven" }, type: "item" }]
+			x: 2.20d
+			y: -2.40d
+		}
+		{
+			dependencies: ["D4D2D1744EDB509D"]
+			id: "FD1C2E958E9CA27B"
+			rewards: [{ id: "9993F6945C3959C6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2B731B63E10E1ADD", count: 8L, item: { count: 1, id: "tfmg:coal_coke" }, type: "item" }]
+			x: 4.40d
+			y: -2.40d
+		}
+		{
+			dependencies: ["53DF778E5B05A4F3"]
+			id: "2E084D0D4BD44A58"
+			rewards: [{ id: "0C980185B3029A46", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "C915DE07FAB642BA", count: 4L, item: { count: 1, id: "tfmg:fireproof_bricks" }, type: "item" }]
+			x: 2.20d
+			y: -0.80d
+		}
+		{
+			dependencies: ["FD1C2E958E9CA27B", "2E084D0D4BD44A58"]
+			icon: { id: "tfmg:blast_furnace_output" }
+			id: "E1FD7D8079AA53C1"
+			rewards: [{ id: "34052632607B967E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4D57CB77280AC546", type: "checkmark" }]
+			x: 6.60d
+			y: -1.60d
+		}
+		{
+			dependencies: ["53DF778E5B05A4F3"]
+			id: "8A0C129FCF5B1753"
+			rewards: [{ id: "70CA322D80DFD436", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "FA235C8881603EB4", count: 3L, item: { count: 1, id: "tfmg:blast_stove" }, type: "item" }]
+			x: 2.20d
+			y: 0.80d
+		}
+		{
+			dependencies: ["53DF778E5B05A4F3"]
+			id: "63F586606A40A32E"
+			rewards: [{ id: "0EC0A58621825EA7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7E50F73867DAFAEF", count: 8L, item: { count: 1, id: "tfmg:limesand" }, type: "item" }]
+			x: 2.20d
+			y: 2.40d
+		}
+		{
+			dependencies: ["E1FD7D8079AA53C1", "8A0C129FCF5B1753", "63F586606A40A32E"]
+			id: "431F293EFF616CE7"
+			rewards: [{ id: "80C4209D7695AC39", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "C23F9E3FB28A7664", count: 4L, item: { count: 1, id: "tfmg:steel_ingot" }, type: "item" }]
+			x: 8.80d
+			y: 0.53d
+		}
+		{
+			dependencies: ["431F293EFF616CE7"]
+			id: "E14B14F253B142DB"
+			rewards: [{ id: "93687367EE49628A", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "0E629353C9167663", count: 4L, item: { count: 1, id: "tfmg:blast_furnace_reinforcement" }, type: "item" }]
+			x: 11.00d
+			y: -1.27d
+		}
+		{
+			dependencies: ["431F293EFF616CE7"]
+			id: "59DE800C3269A551"
+			rewards: [{ id: "0D168840FBE358AD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "A58309865347EFD9", item: { count: 1, id: "tfmg:surface_scanner" }, type: "item" }]
+			x: 11.00d
+			y: 0.63d
+		}
+		{
+			dependencies: ["431F293EFF616CE7"]
+			id: "2DD8BE57B5EF1798"
+			rewards: [{ id: "BFDB416FA95213B0", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1D8349BE95E061C0", count: 16L, item: { count: 1, id: "tfmg:industrial_pipe" }, type: "item" }]
+			x: 11.00d
+			y: 2.23d
+		}
+		{
+			dependencies: ["59DE800C3269A551", "2DD8BE57B5EF1798"]
+			icon: { id: "tfmg:pumpjack_base" }
+			id: "DC6DE81149094BAE"
+			rewards: [{ id: "5BE4030F0438E1C2", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2BA3E4454BD5ED5F", type: "checkmark" }]
+			x: 13.20d
+			y: 1.43d
+		}
+		{
+			dependencies: ["DC6DE81149094BAE"]
+			id: "F56309A2E9194896"
+			rewards: [{ id: "C45146B5352CE2F4", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "DEFB7B88B95E1435", count: 4L, item: { count: 1, id: "tfmg:crude_oil_bucket" }, type: "item" }]
+			x: 15.40d
+			y: 1.43d
+		}
+		{
+			dependencies: ["F56309A2E9194896"]
+			id: "E3AD86706AFFB36A"
+			rewards: [{ id: "09AB50F506C15E52", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "115CDF5BBD1C5DB8", count: 2L, item: { count: 1, id: "tfmg:steel_fluid_tank" }, type: "item" }]
+			x: 17.60d
+			y: 1.43d
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{"chapters":[
+ {"key":"welcome","title":"Добро пожаловать","icon":"create:goggles","quests":[
+  {"key":"team","type":"checkmark","item":"minecraft:white_banner","title":"Одна смена — одна команда",
+   "desc":["Объединитесь, чтобы прогресс книги был общим на троих:",
+           "&e/ftbteams party create НочнаяСмена&r — создать команду,",
+           "&e/ftbteams party invite <ник>&r — позвать друга (он принимает приглашение в чате)."],
+   "deps":[],"goal":false}
+ ]},
+ {"key":"night_shift","title":"Ночная смена","icon":"minecraft:lantern","subtitle":"Как пережить темноту и тех, кто в ней живёт","quests":[
+  {"key":"start","type":"checkmark","item":"minecraft:clock","title":"Ночи здесь другие",
+   "desc":["Ночью и в пещерах здесь по-настоящему темно — без света не видно почти ничего.",
+           "Факел в руке светит на ходу: носи его в свободной руке (F — сменить руку)."],"deps":[],"goal":false},
+  {"key":"torches","type":"item","item":"minecraft:torch","count":32,"title":"Запас света",
+   "desc":["Собери 32 факела. Ставь их по пути назад — так проще найти выход из пещеры."],"deps":["start"],"goal":false},
+  {"key":"lantern","type":"item","item":"minecraft:lantern","count":1,"title":"Фонарь",
+   "desc":["Факел в обрамлении железных самородков. Красиво светит на базе и не гаснет под дождём."],"deps":["torches"],"goal":false},
+  {"key":"bed","type":"item","item":"minecraft:red_bed","count":1,"title":"Точка возрождения",
+   "desc":["Поставь кровать на базе и поспи — это твоя точка возрождения."],"deps":["start"],"goal":false},
+  {"key":"sound","type":"checkmark","item":"minecraft:sculk_sensor","title":"Прислушивайся",
+   "desc":["Звук здесь объёмный: по нему слышно, откуда шорох и за какой стеной шаги.",
+           "Играйте в наушниках — так страшнее и честнее."],"deps":["start"],"goal":false},
+  {"key":"dweller","type":"checkmark","item":"minecraft:deepslate","title":"Ниже сорокового",
+   "desc":["В пещерах ниже 40-го уровня обитает &cПещерный житель&r. На поверхность он не выходит.",
+           "Он очень живучий — драться бесполезно. Услышал его — уходи к свету и наверх."],"deps":["sound"],"goal":false},
+  {"key":"watcher","type":"checkmark","item":"minecraft:ender_eye","title":"Тот, кто смотрит",
+   "desc":["Если в тёмном углу мелькнуло лицо — тебе не показалось.",
+           "Не стой к темноте спиной слишком долго."],"deps":["sound"],"goal":false},
+  {"key":"imposter","type":"checkmark","item":"minecraft:player_head","title":"Свои ли это?",
+   "desc":["Здесь есть тот, кто умеет выдавать себя за друга.",
+           "Договоритесь о кодовом слове, прежде чем идти навстречу «своему»."],"deps":["watcher"],"goal":false},
+  {"key":"corpse","type":"checkmark","item":"minecraft:skeleton_skull","title":"Если не повезло",
+   "desc":["После смерти вещи не рассыпаются — они ждут в теле на месте гибели.",
+           "Возвращайся за ними со светом и не один."],"deps":["bed"],"goal":false},
+  {"key":"first_night","type":"checkmark","item":"minecraft:sunflower","title":"Пережить первую ночь",
+   "desc":["Дождись рассвета живым. Отметь галочку, когда взойдёт солнце."],"deps":["torches","bed","dweller"],"goal":true}
+ ]}
+]}
