@@ -21,3 +21,13 @@
 - Убран Extra Gauges: его библиотека Deployer API несовместима с Create Factory Logistics.
 - Убран Reese's Sodium Options: несовместим с Sodium Options API (нужен Sodium Extra).
 - Голосовой чат на стандартном порту: e4steam сам находит порт Simple Voice Chat.
+- Убраны Sodium Dynamic Lights и Sodium Options API: заброшены с 2025, конфликтуют с Sodium 0.8.
+- Все «серверные» моды (YUNG's, Lithostitched, Liquid Fuel и др.) помечены как общие: мир
+  хостится внутри клиента, без них у игроков падает Tectonic и не генерируются структуры.
+- Добавлен Yeetus Experimentus — убирает окно «экспериментальные настройки» при входе в мир.
+
+### Validation
+- Выделенный сервер: 165 модов, `Done (9.9s)`, ошибок загрузки нет (только лут/рецепты под
+  отсутствующие моды — безобидно).
+- Клиент (Prism, RTX 4070 Ti SUPER): загрузка ~40 с, вход в мир, шейдер Complementary активен.
+- e4steam: «Steam LAN share ready», голосовой чат проброшен через Steam (UDP).

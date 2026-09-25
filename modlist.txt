@@ -131,7 +131,6 @@ visuality-forge
 not-enough-animations
 entitytexturefeatures
 entity-model-features
-sodium-dynamic-lights
 createbetterfps
 create-smart-bounds
 big-contraptions
@@ -163,3 +162,4 @@ corpse
 chunky
 simple-backups
 crafting-tweaks
+yeetus-experimentus

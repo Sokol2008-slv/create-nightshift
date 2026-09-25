@@ -1,6 +1,6 @@
 name = "Create: Liquid Fuel"
 filename = "createliquidfuel-3.0.0-1.21.1.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/sH9tXU9f/versions/rLn2bDVE/createliquidfuel-3.0.0-1.21.1.jar"
