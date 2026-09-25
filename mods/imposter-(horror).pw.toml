@@ -1,0 +1,13 @@
+name = "Imposter (horror)"
+filename = "imposter-neoforge-1.21.1-2.5.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/gNHHGenp/versions/vDobwKtY/imposter-neoforge-1.21.1-2.5.0.jar"
+hash-format = "sha512"
+hash = "cec3be833b3610c96c145ea0d0a3885395a8c6bf74045fe4d07488ca1830b703cb92d64d20423a68980a54ab00014556a13f8b2c2d63529482fc5dd7088b8b90"
+
+[update]
+[update.modrinth]
+mod-id = "gNHHGenp"
+version = "vDobwKtY"
