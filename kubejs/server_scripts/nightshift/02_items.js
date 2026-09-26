@@ -27,7 +27,9 @@
 var NS_ITEMS = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').ITEM
 var NS_RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
 
-// Подсказки игроку по-русски: чего нельзя и с какой фазы можно
+// Запертый по фазе предмет можно подобрать, носить и хранить в сундуках (лут данжей, добыча
+// руды), но нельзя поставить, надеть, использовать и бить им до его фазы (решение 26.09).
+// Название видно, в подсказке — с какой фазы можно пользоваться.
 function nsLockMessages(r, stage) {
     var n = String(stage).replace('nightshift_p', '')
     var msg = function (what) {
@@ -35,8 +37,9 @@ function nsLockMessages(r, stage) {
             return Text.red(what + ' — откроется в фазе ' + n)
         }
     }
-    return r.pickupMessage(msg('Не взять')).useMessage(msg('Не использовать')).placeMessage(msg('Не поставить'))
-        .dropMessage(msg('Выпало из рук'))
+    return r.allowPickup().allowInventoryStorage().allowContainerStorage().globalShowName().showInRecipeViewer()
+        .useMessage(msg('Пока не использовать')).placeMessage(msg('Пока не поставить')).attackMessage(msg('Пока не оружие'))
+        .tooltipMessage(msg('Заперто'))
 }
 
 function lockItems(id, stage) {

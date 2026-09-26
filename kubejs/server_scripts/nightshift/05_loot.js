@@ -25,6 +25,10 @@
 // ---------------------------------------------------------------------------
 // P0 «Выживший» — уголь как лут (не как крафт/руда — руды у P0 нет)
 // ---------------------------------------------------------------------------
+// Лут данжей и сундуков НЕ режем (решение 26.09): найденное можно забрать, но пользоваться им
+// можно только с его фазы (02_items.js). Вернуть урезанный лут — поставить true.
+var NS_RESTRICT_LOOT = false
+if (NS_RESTRICT_LOOT) {
 AStages.addRestrictionForLoot('nightshift:loot/p0_coal', 'nightshift_p1')
     .restrictItems('minecraft:coal')
     .restrictForLootTables(
@@ -101,3 +105,4 @@ AStages.addRestrictionForLoot('nightshift:loot/p3_structures', 'nightshift_p3')
 // Northstar lunar_base_chest/martian_base_chest c редстоуном — leak_audit.json
 // прямо пишет "это уже P6-локация, редстоун там не проблема" — сознательно НЕ
 // ограничиваем.
+}

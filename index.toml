@@ -102,11 +102,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "5d5cad8b0c0c9ad1e5a6732efb426b7bed6d66341b0980c286f73bf1c4328420"
+hash = "ed48ad456c8c06dcf0b459fc4795bcc3ba3da8dad52768ebf8305dd0a871f07b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "5d5cad8b0c0c9ad1e5a6732efb426b7bed6d66341b0980c286f73bf1c4328420"
+hash = "ed48ad456c8c06dcf0b459fc4795bcc3ba3da8dad52768ebf8305dd0a871f07b"
 
 [[files]]
 file = "config/iris.properties"
@@ -370,11 +370,11 @@ hash = "8df51d4072658e5e849cce2e37cb9ace9b23082e9726f1740a79da3736a3ad2e"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/01_ores.js"
-hash = "bd50b85d3d5b95bf034cf1c585afec5317be653f72e18b9ef29b10ffb909217e"
+hash = "9f1dd9d8d783dcdd4349583761297f8c9a6c06c9e34b6df111962b04e5f466d9"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/02_items.js"
-hash = "1df654bb8151844896160bc84d776495497a9364de14e0ed19c6e89143d61c09"
+hash = "e7946368f6c70626a427e9c99d02b3871f6f06e2bba73949b6993a9bf7d6a606"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/03_leak_recipe_fixes.js"
@@ -386,7 +386,7 @@ hash = "9e59584aff8a3dbb5bb3276409dac25e1baef2e025b24382097141e756211bc5"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/05_loot.js"
-hash = "cc2a027fedd48a33ddaf5e65cd3364ae0f61c32dea842d1cb3fcf8d3aa8494f8"
+hash = "1a37a01242fc9206991ae9221f8b6d9fa8a6747df85e285097c27785a1a877b2"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/06_villager_trade.js"
