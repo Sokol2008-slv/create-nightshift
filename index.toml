@@ -94,11 +94,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "847d7cbe0f44c870a2eeb7319eb96661d692558006ba8b1b9baeb2157d6b413a"
+hash = "d6c151a2c0b7cf2b489e33a4c6504d0e3212ad74d5ffcbc64cfd54141e5edd98"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "847d7cbe0f44c870a2eeb7319eb96661d692558006ba8b1b9baeb2157d6b413a"
+hash = "d6c151a2c0b7cf2b489e33a4c6504d0e3212ad74d5ffcbc64cfd54141e5edd98"
 
 [[files]]
 file = "config/iris.properties"
@@ -366,7 +366,7 @@ hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "131ce369eaafb9724e2ae810cc7f381e7591b3b698b5de1bf1a4d77a2f5fd145"
+hash = "bbc2ba001e3c9f794ab8d4715e67e9b0c09b440a93d04e36535bcfb07baeecbe"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"

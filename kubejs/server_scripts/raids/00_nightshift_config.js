@@ -201,22 +201,24 @@ NSG.NIGHTSHIFT_CONFIG = {
 			],
 		},
 		6: {
-			// Мобы планет Northstar — ID подтверждены по jar (data/northstar/loot_table/entities/*)
+			// Вторая половина Великой орды (финальная жертва P5→P6 идёт волнами P5, затем этими).
+			// Мобы планет Northstar и рядовые твари ArPhEx в Верхнем мире исчезают сразу после
+			// призыва (проверено на сервере 26.09) — поэтому здесь ванильные тяжёлые мобы.
 			waves: [
-				[{ id: 'northstar:frozen_zombie', count: 6 }],
+				[{ id: 'minecraft:wither_skeleton', count: 8 }],
 				[
-					{ id: 'northstar:mercury_raptor', count: 4 },
-					{ id: 'northstar:venus_vulture', count: 3 },
+					{ id: 'minecraft:evoker', count: 2 },
+					{ id: 'minecraft:vindicator', count: 6 },
 				],
 				[
-					{ id: 'northstar:venus_stone_bull', count: 4 },
-					{ id: 'northstar:mars_cobra', count: 3 },
+					{ id: 'minecraft:stray', count: 8 },
+					{ id: 'minecraft:husk', count: 8 },
 				],
 				[
-					{ id: 'northstar:mars_toad', count: 6 },
-					{ id: 'northstar:moon_eel', count: 4 },
+					{ id: 'minecraft:ravager', count: 2 },
+					{ id: 'minecraft:pillager', count: 6 },
 				],
-			], // ~600 HP обычных волн, план ждёт ~700 без босса — донастроить
+			],
 			// Финальный босс. В паке физически нет ни одной boss-сущности
 			// (проверено: Northstar, ArPhEx и др. хоррор-моды не установлены/без
 			// боссов). Решение по плану (§12, п.2) — выбрать между ArPhEx и
@@ -248,6 +250,7 @@ NSG.NIGHTSHIFT_MOB_HP = {
 	'minecraft:creeper': 20,
 	'minecraft:witch': 26,
 	'minecraft:vindicator': 24,
+	'minecraft:evoker': 24,
 	'minecraft:pillager': 24,
 	'minecraft:ravager': 100,
 	'minecraft:phantom': 20,
