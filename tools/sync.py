@@ -89,6 +89,14 @@ for p in mods_dir.glob("*.jar"):
         print(f"удалён лишний {p.name}")
         p.unlink()
 
+# Эти папки зеркалим точно: удалённый из пака скрипт/глава должен исчезнуть и с цели
+# (иначе на сервере живут старые скрипты KubeJS и старые главы книги).
+MIRROR = ("kubejs/server_scripts", "kubejs/startup_scripts", "kubejs/client_scripts", "kubejs/data",
+          "kubejs/assets", "config/ftbquests")
+for d in MIRROR:
+    if (PACK / d).exists() and (target / d).exists():
+        shutil.rmtree(target / d)
+
 for d in ("config", "kubejs", "defaultconfigs"):
     src = PACK / d
     if src.exists():
