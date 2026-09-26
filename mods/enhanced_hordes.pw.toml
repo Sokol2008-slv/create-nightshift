@@ -1,0 +1,13 @@
+name = "Enhanced Hordes"
+filename = "eh2.0-neoforge1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WzjqFyWg/versions/ObJh2tRg/eh2.0-neoforge1.21.1.jar"
+hash-format = "sha512"
+hash = "5b0b259d8eafedbb13b30f6d3002091fbbe2967a36fa63a692e7cef9f18f6d51961c91bf30ed70019e27f0cc136f6a9507bd8dbf7de21129d330ddb6040ce727"
+
+[update]
+[update.modrinth]
+mod-id = "WzjqFyWg"
+version = "ObJh2tRg"

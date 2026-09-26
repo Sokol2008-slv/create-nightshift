@@ -1,64 +1,92 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ArPhEx Configurations.toml"
+hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
+
+[[files]]
+file = "config/ProjectE/server.toml"
+hash = "f6418703acaad2e013931f5a901c2da4f00b45de8e3486650b02d7ba0a3bbe4c"
+
+[[files]]
+file = "config/createdieselgenerators-server.toml"
+hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
+
+[[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/airships_cars.snbt"
-hash = "3ddddc7a3cff704b2374669be56c86b64951039c9079005149e74c1a94daacf8"
+hash = "9aa45298c0aa2237045fc5ab2107c88d4c380946afde89894c3151833236e392"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/altar.snbt"
+hash = "30fbaa90d6d6350ac6c5ec06aab4f81b8f796dd62c92bdea5eae4527bd862fe8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "63bffa86f82d9a78f763c007f932c0e21e00f51c0155a0393576b96db7cd7290"
+hash = "ace4bf5d1fc6407b8af6634265ef20bb67094bf59b1c0566d1ecaebf6f164bf0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
-hash = "03795d7d506c3129378768074e5b443bd0aadc2ae552633f33401569f84c3527"
+hash = "11a111e73580b7a2483f163c4ed3f42e92ca7d52c41f90e3e1322d92dd9ddfaf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
-hash = "7e957afedab3b8cfea27ba424d055397d224047a7c49b3468b5cec4ab2a38cce"
+hash = "9c830bba9292bc8872ec37bc2417c68c5c72e1705d8838cf7a4c6ab55efd4f9e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "4c4b152236c9df30b3dd81bde19e7d0a5564d9427284150317ad5a00a754ca28"
+hash = "572719702e4fb422030e0934bcaa154fe226f749dc5cb1f04a8b4d6b72124c9a"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/defense.snbt"
+hash = "63b6c378b0e0a419ab8365634239c1a75c5de6c200f929e49a7b749600edf0bd"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/economy.snbt"
+hash = "b9dc01c2dbf056d0e44d8b38cc950ce38c4649d6f0f1473db877fbb20d698f5a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "ca43764194ad8ed370f306363ea3c906fbb804a3ee3bbede11ad318fe909f45e"
+hash = "e76b9a3637766848f375cb7af8b69a70177590590ac009503d7f8159011a010c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "3f7249ef72f09e03d4600b0c79da66f6dd1e4d5d851c7945f97615ab5f9172f8"
+hash = "69bd2e823696c7b50ce1e606416965f944fe7a926734d166e8d0d44e793560d2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/fuel_engines.snbt"
-hash = "5f3ae1d20da8e8b9d7af369d71d18ec4b29480bdbbc633d5db189fc071b8fc30"
+hash = "2748429a401591797aa6027c3d66f3239571097c4304a735e9aaa5535555e7ac"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/logistics_food.snbt"
+hash = "08c54058fd01c67df6f6da99ebf1f67d6d76159e9aa266c9e69facb139621c3f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
-hash = "9becabc559eb7b24f674471ec3c763096b53acbc05d9bf310b2e0f0ba3296c53"
+hash = "304d6efd0719909c712e056b2d398549fa18222795409b1b80b1b03707c07254"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "57fc4423ab344e60e0c443c297255d9e3bb5eae660e1866f925a5b568eeb95b0"
+hash = "cea7bc80a3f3a85783b59784fcc9fb9a2bdb6b6bce8cebc92ad3bd4ce2191408"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "40c4f26f60594b5ecd6d0442412f4ede5888fdb71dd3c6475fee19f658027406"
+hash = "536dc76018a7a0e0086951873a22918325596db76a7a9c5dc589c2233c6424c8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
-hash = "3613d3c533d978a028d90c79180e06375fe88b0e7e73018e3063577cf88224a2"
+hash = "0c70e5301a5843c6d9b7f9b858d10e596f5faf05594581ae9327a075a749a8e8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/submarines.snbt"
-hash = "d1e2a446971cba4a1d8647b3fc967f2f9274fbea8af9dc58e6cfc93af7081317"
+hash = "a1fe2b3085698c89bebe64d7f133eb6a73b5d0d676f726fb04c1d5f48ad3b4ea"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
-hash = "42aa83ea81eeecca5376786d7b67056d506f7ba8de9b0d1ebe7bbc5823f775ad"
+hash = "197a3f375eacb047b97b5284ac0bc7398ffdcebacfb3c72eb61e2869388216f4"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -66,11 +94,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "973363323ee2e9fc81d8d122fc4cfe1034577dabd70b8160268849552621a9f1"
+hash = "d6c151a2c0b7cf2b489e33a4c6504d0e3212ad74d5ffcbc64cfd54141e5edd98"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "973363323ee2e9fc81d8d122fc4cfe1034577dabd70b8160268849552621a9f1"
+hash = "d6c151a2c0b7cf2b489e33a4c6504d0e3212ad74d5ffcbc64cfd54141e5edd98"
 
 [[files]]
 file = "config/iris.properties"
@@ -79,6 +107,314 @@ hash = "15f93180796d7b14223617424f981d8676e15f47b7716af5150a22af5891f671"
 [[files]]
 file = "config/modernfix-mixins.properties"
 hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
+
+[[files]]
+file = "config/sanity_renewed/default.toml"
+hash = "23cfc69bfe955d12278fd35841905baf8484690aa399c9bea975d7d80836f583"
+
+[[files]]
+file = "config/simplebackups-common.toml"
+hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
+
+[[files]]
+file = "kubejs/assets/nightshift/lang/en_us.json"
+hash = "6b0c29c514a5170334838547c8424d66cfaeaaf4dab88d97621953a70983e5c0"
+
+[[files]]
+file = "kubejs/assets/nightshift/lang/ru_ru.json"
+hash = "f173f0bc977a2fca06ea60cdc6654737449a0842cfd4265422872b1a03ae2b41"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/sedative.png"
+hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_cleaner.png"
+hash = "bb19321a198372e740dd88c94ca53ead66f665c0928301d8e928423b8ed499c4"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_scanner.png"
+hash = "c91ad7550d0377382ab91276429fd68c133bb3b7d41bd49272ce4f258e085abe"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_coal.png"
+hash = "8d68d9aae350731fff245ccc20588424600a6b95df3cc0163a45fd3da60d33ef"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_copper.png"
+hash = "b237ba33ebf728cf9b76e3df61184130b826d3d8e6a062849c0f55c2509352f1"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_diamond.png"
+hash = "a513d3cf95820441584dea1b3073fef2d1530d8ca355d94d1291e4f34177dd1f"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_emerald.png"
+hash = "108fe0fdf953d4d36e98af9820a4409ff220161d90f9975351c514dd6e4a5bae"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_glowstone.png"
+hash = "3acaab45dc3b9fbd5ca24ca4b6eba80fd080f0cd5e88f40a670db4166b7b41e7"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_gold.png"
+hash = "36ae5637f57f47f71da698aadf17a6e8b8c29232167dd4e9c85024c818c6fef4"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_hardened_diamond.png"
+hash = "41b1f71c8708bdc0553a6ebb6e9b03ec94977b604f54f4708f5919b1451dfa95"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_iron.png"
+hash = "71f75654fe91c1c5836ea29a3bce4f67c795ac18c9ae0c02ec85f3f0764e5612"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_lapis.png"
+hash = "c4aed026afe5ae6a90dc49aac19258db12005275e66d977443dc7b3c4beb6e5b"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_lead.png"
+hash = "c028f61b44ea44f3a2fac7f8d52f57cdf868df55cd3d61116b41405af0cc542c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_lithium.png"
+hash = "b045cfb53de107bdcf65aa21d48d9e0d745da2fc473a67070304620b680fc6e6"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_martian_iron.png"
+hash = "6855c19b9604fcc3dbfa9d3dd682a374403c473ece1a9bf3e70bf2337bef127a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_netherite.png"
+hash = "bbeedf279d98c19eccd2400965958c3a69cef0d5564cabcf10266521613aca7d"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_nickel.png"
+hash = "e91975c9ba6c67bdbb2181afad2ab786e495d2695f2d3fe890debfb65cbf5b72"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_platinum.png"
+hash = "89fef1fedd415ec8b5fc50fbdaba83cc0d50781c9e657d0d37a7a74256da0700"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_quartz.png"
+hash = "e44219397d3e07c3d426a7db21a6abb6c27f448383a0d4f3cb79b3799a3ca332"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_redstone.png"
+hash = "28a352ef6409572f1abdcdb369f5adef6a2d9708f90ab899e5170ffc2863a2c8"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_sulfur.png"
+hash = "4f7719709e84dcc0d5270cc7a98d13ae53ad658ae954644db474001ad3da5487"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_thorium.png"
+hash = "b0b6df433d41db064546063e6778d36ee2a71956461691aa3eae5b655fee2024"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_titanium.png"
+hash = "87ecf33d17993f91895a906ed5abd35852081b5d05a92b4a9fd28ddae65cc9b1"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_tungsten.png"
+hash = "d493b17985302befb61af2643269c0a1c2dbf9c27c9f31ae08f59538a421685f"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_zinc.png"
+hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
+
+[[files]]
+file = "kubejs/client_scripts/nightshift_rerender.js"
+hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
+
+[[files]]
+file = "kubejs/config/common.json"
+hash = "21b1aa77bebcc5a4557c4f90ee7a6bf80a049fd20fd7508c427a9f3f549ed6e4"
+
+[[files]]
+file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_probes.json"
+hash = "1d8c04da3329702197d4d38dda107344aa1dccfd4d2e00e65119c108a4bed46a"
+
+[[files]]
+file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_units.json"
+hash = "11c6da32fa5244f9385b6f7bafe4fbeb107a9bd494055b5df768717cb6ddba88"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/lead.json"
+hash = "ea41272512d870e15394d42d8a7468b9ec47e68c9ee736bc68d4af66a994daf4"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/lithium.json"
+hash = "5a662ccccf8a3a6fdf502f89e12f78facc6817b7a6a3ab509824452c4ee9eeb5"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/martian_iron.json"
+hash = "355b803e4a85f89aef663979cbfc0f27145ef95fa749f8a7a069a00547785548"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/nickel.json"
+hash = "ccc95d916ad6a6b0a3da1a16ea0cf08455b99ff71ccca7c0f3089897ba31c8fe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/platinum.json"
+hash = "ec5471212623c719cf97b1a1867f06dd13623b2e5fd484f5f84d3d8568197c69"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/sulfur.json"
+hash = "6eed56d559f542277eda00bafc16a32ed2ca0ae8892815bd49423cac023b7690"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/thorium.json"
+hash = "329e6e6d35dd029293234f3b7c68194fcbc4a961314ce0eb3737ea505f7e54be"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/titanium.json"
+hash = "850faeb3555cb99b6c96005645bbc984af571bdd4ea2b960470852d272eaefd2"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/tungsten.json"
+hash = "b15f819ef6e42114389b526fdb7b559dcb5ceb9d3d953e2c94810447e3548cbe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/lead.json"
+hash = "41b6a84cd94bc81ce472bad08107d470c792abceca11695301c38e4d28897037"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/lithium.json"
+hash = "d6cf29e05a83e04f8bf4e9cf09dca1bce16da7e22948564ba20e36dd9c8e13ae"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/martian_iron.json"
+hash = "43452f169950eea5f91c2b809d365a5f8bd60797d7ba11db4af66e175a99b9a3"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/nickel.json"
+hash = "c7a32716e60c80062d837ca5b1785a2c4e76c362a048959e30c5d86da18314fe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/platinum.json"
+hash = "de2927a065c22f64e545db7d17203cafd73a3dd26ead785cf4d667666e453232"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/sulfur.json"
+hash = "3275ae8215b45a70ddfbc312533364afe1a34753307c344f1c1ae139a30160cc"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/thorium.json"
+hash = "8dddd09775569b77913843e756878d4b7edf412ea799e557b9773092e21f25e6"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/titanium.json"
+hash = "f4a9ad1bb189a1b0b9806568d4da55e12adaa54b74a28c3853f79b684f468124"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/tungsten.json"
+hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
+hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
+
+[[files]]
+file = "kubejs/server_scripts/economy/10_probes.js"
+hash = "867eb1b7bfeca67fa9fd5ae7fcbb50a65cc4b894b5f7be1036b036d1e92f94c1"
+
+[[files]]
+file = "kubejs/server_scripts/economy/20_scanner.js"
+hash = "20d99af793662833d1abd8e66d5a649e22344d0ec05de8aa69843d8a1bad41ff"
+
+[[files]]
+file = "kubejs/server_scripts/economy/30_recipes.js"
+hash = "437147372e690eea68cfc0070a00e7ef361f7d120fa0ca6371baf2026dbea4da"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/00_stages.js"
+hash = "8df51d4072658e5e849cce2e37cb9ace9b23082e9726f1740a79da3736a3ad2e"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/01_ores.js"
+hash = "bd50b85d3d5b95bf034cf1c585afec5317be653f72e18b9ef29b10ffb909217e"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/02_items.js"
+hash = "a0ea59dab1406581bc49eeb95e92addb35d3741a0b8a342dbb6f3a2adecbdc3a"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/03_leak_recipe_fixes.js"
+hash = "21917a29a6182619070c56a96e4d0ef29532fa39af6897597f0692894f5e26f0"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/04_drilling_gate.js"
+hash = "9e59584aff8a3dbb5bb3276409dac25e1baef2e025b24382097141e756211bc5"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/05_loot.js"
+hash = "cc2a027fedd48a33ddaf5e65cd3364ae0f61c32dea842d1cb3fcf8d3aa8494f8"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/06_villager_trade.js"
+hash = "f8b0711b0c14f5aabbee9a5b0df74b90bdb894c8c4a8cf5a1d7a70adef3f8174"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/07_dimensions.js"
+hash = "fa8a1bbe6d3b52807b2aff761dd0e104ca044d1ca6e71431fe71f420f66b889c"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
+hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
+
+[[files]]
+file = "kubejs/server_scripts/raids/00_nightshift_config.js"
+hash = "bbc2ba001e3c9f794ab8d4715e67e9b0c09b440a93d04e36535bcfb07baeecbe"
+
+[[files]]
+file = "kubejs/server_scripts/raids/10_nightshift_state.js"
+hash = "9ee9f103ce62a5fb140e9543b38ba4adcd30031d6816178ef0d2a2abf66171c9"
+
+[[files]]
+file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
+hash = "84937c77ebc88789a078485595ea773d526eced3f231b9b85d4fb6fcb60ef211"
+
+[[files]]
+file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
+hash = "e4df18b1772c84d87701de06bf0048b621c9a2e08ac0084aed8867dc05f32628"
+
+[[files]]
+file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
+hash = "a03b73b9301a7b8539c5f577d4b51d999e3dcc5e787cf232ddcd79e8f96c523e"
+
+[[files]]
+file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
+hash = "9890deae5567740cb0fc45c36ed7bc7de3500a931fedc7386855926056cd0adf"
+
+[[files]]
+file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
+hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
+
+[[files]]
+file = "kubejs/server_scripts/sanity/10_sedative.js"
+hash = "4ef0b91b53867a2dd67f74adaffed733957a7bc8be9865eee82f4ca0919acb76"
+
+[[files]]
+file = "kubejs/server_scripts/sanity/20_darkness.js"
+hash = "65178ee0bc9644e6e4649ba569147617c86ba61edf71e6a442c742bcc45fea02"
+
+[[files]]
+file = "kubejs/server_scripts/sanity/30_hordes_safety.js"
+hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_economy_items.js"
+hash = "ddbccf8a914a9f993a3f1cf83e116ef2f9f84f99046a075a53635ee109d8f9d5"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_items_blocks.js"
+hash = "8e5a4549c93f1eccce445ceb0f0246ff7a7830f1eb77d44935e286ec3b6ad9f9"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_sanity_items.js"
+hash = "4c4d744de9b7bf1c731008dbb0dd26443792f9b3bc106b917a9afefc07c2d666"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -121,6 +457,16 @@ hash = "187eafde5974beee1263538b462b7b8fe2fc8948c5d413980d9796d55928580b"
 metafile = true
 
 [[files]]
+file = "mods/arphex.pw.toml"
+hash = "c8c4a22ac6593f4a430842069b6d1736beff6a6d279e71b5c7797201808f1020"
+metafile = true
+
+[[files]]
+file = "mods/astages.pw.toml"
+hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
+metafile = true
+
+[[files]]
 file = "mods/azimuth-api.pw.toml"
 hash = "3f829f54e19ebb32f23f554e05bd49c005dfc057933e07d0df4f85e7085d314d"
 metafile = true
@@ -156,11 +502,6 @@ hash = "07f30551060d5eb77a36ad9eb26131751d790d8e43378faf4143c6f53f0da245"
 metafile = true
 
 [[files]]
-file = "mods/boy-and-the-bath.pw.toml"
-hash = "a04d87f3b0009f6d7681d4388201ef96822f72ff14a0336da875e806eca347b5"
-metafile = true
-
-[[files]]
 file = "mods/carry-on.pw.toml"
 hash = "838dbcb90c93bab58691e82c95045bd97c3e096e3a2680a00cf063e56ce35ce3"
 metafile = true
@@ -177,7 +518,7 @@ metafile = true
 
 [[files]]
 file = "mods/chunky.pw.toml"
-hash = "1d5cc2b6dcfd1fc3adba4566b1c29b57ff1175316678c1f22e63cbc3e28a5ba0"
+hash = "68cc51e721e993a8b7a2cbaf45369933b22b07a9c82327ab14757ee10684aa81"
 metafile = true
 
 [[files]]
@@ -373,6 +714,11 @@ metafile = true
 [[files]]
 file = "mods/create-goggles.pw.toml"
 hash = "5de2bbab0826b5241e16746b0b739ca5169b0a9df38181d58e8519e6ea7f535f"
+metafile = true
+
+[[files]]
+file = "mods/create-guardian-beam-defense.pw.toml"
+hash = "adad52f3c6aaca9125efd69b00c6c4584fa4aa6d11e18a629433cb503b7440af"
 metafile = true
 
 [[files]]
@@ -591,11 +937,6 @@ hash = "36debf7653e95a855b4fedacc19027cf2e01960fc0b6d55ef2ffbffbcb455690"
 metafile = true
 
 [[files]]
-file = "mods/deimos.pw.toml"
-hash = "8fa452b9f04851f6c190c5e77caa0b81023e9f99b2c969ca28e92bca48748f02"
-metafile = true
-
-[[files]]
 file = "mods/distanthorizons.pw.toml"
 hash = "6d3e312dbf8db12dd1b6fb3bd1d29f210ab48024a0b2ebdf02fd32c265955c5d"
 metafile = true
@@ -608,6 +949,11 @@ metafile = true
 [[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
+metafile = true
+
+[[files]]
+file = "mods/enhanced_hordes.pw.toml"
+hash = "ba9f6c66e31657070aad3ee6aae26709fdfe02572d863414a7750532c3331f4b"
 metafile = true
 
 [[files]]
@@ -638,11 +984,6 @@ metafile = true
 [[files]]
 file = "mods/extended-wrenches.pw.toml"
 hash = "59cfcbd44968549b7dc2f6e13b691d50c9c65af6bad966b47e097c7c937e6cfc"
-metafile = true
-
-[[files]]
-file = "mods/face-of-horror.pw.toml"
-hash = "16ebdf047b2118f27797dd502a546a05e39a0758551708cd41a90172aed48480"
 metafile = true
 
 [[files]]
@@ -906,6 +1247,21 @@ hash = "d935e4ce118d15c88b10809df85e801f0e9577855f870f3c28e5a0bd5e7fecf6"
 metafile = true
 
 [[files]]
+file = "mods/project-expansion.pw.toml"
+hash = "ef0c68778d0e0ed3855fe43d6bf33450739a6129655d30db19abb58a18ae2991"
+metafile = true
+
+[[files]]
+file = "mods/projecte-integration.pw.toml"
+hash = "8489d43b285016961d411c225418c543e859e717a93f7e11effae2756cdae0c0"
+metafile = true
+
+[[files]]
+file = "mods/projecte.pw.toml"
+hash = "bdca798ffe4124bf43ea13f1fa5f0593a7539762240edb56c47b1976b413ebc4"
+metafile = true
+
+[[files]]
 file = "mods/puzzles-lib.pw.toml"
 hash = "391e5d415c0754ad210b8efa54fc9ded4f99e6ab8562d6faf960f3b65d84a66a"
 metafile = true
@@ -946,13 +1302,13 @@ hash = "a1fa121ed5d0207e4cdd3f545d043f68f9a4bb38dcb21278b968fad5e4cefe4a"
 metafile = true
 
 [[files]]
-file = "mods/searchables.pw.toml"
-hash = "ce9ddada6ffd55a512149cc474c6a453281a997a5fdf1b7b4a2cc73f875e704a"
+file = "mods/sanity-renewed.pw.toml"
+hash = "f3cb71973241c73786873f848e2098a11ff83b7bbb4fddd1479dfa381e5eaaea"
 metafile = true
 
 [[files]]
-file = "mods/server-side-horror.pw.toml"
-hash = "1754065da38f457882eee4fbff94c6ebcb5aeb8e88eae68b723819367db3c10f"
+file = "mods/searchables.pw.toml"
+hash = "ce9ddada6ffd55a512149cc474c6a453281a997a5fdf1b7b4a2cc73f875e704a"
 metafile = true
 
 [[files]]
@@ -1056,6 +1412,11 @@ hash = "68ef590d29c127c6b38d81662edfa45a2e1339d38f60aee345e31164c7c10017"
 metafile = true
 
 [[files]]
+file = "mods/teamprojecte.pw.toml"
+hash = "9453cef6e93c428f8c7b941c1ecbda8e401a3fdb1c5b79a5ac9f68c444fa8ddd"
+metafile = true
+
+[[files]]
 file = "mods/tectonic.pw.toml"
 hash = "dd46fad79cf33a00123be0a74c73581da72cd98503ef23822a624a08f4b10ff2"
 metafile = true
@@ -1073,11 +1434,6 @@ metafile = true
 [[files]]
 file = "mods/the-afterdark.pw.toml"
 hash = "79c500952f474fcba455c37f9ec62f4ed2f8222de607c8269c0fef50f4b54ad6"
-metafile = true
-
-[[files]]
-file = "mods/the-knocker.pw.toml"
-hash = "a96d14bcc58f21a1b1af5e0147543ea224342f7e636106c1a73c0818fd69eeb6"
 metafile = true
 
 [[files]]

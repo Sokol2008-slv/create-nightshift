@@ -1,0 +1,11 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMax": 20.0,
+  "amountMultiplierMin": 6.0,
+  "biomeWhitelist": "northstar:mars_biomes",
+  "finite": "default",
+  "icon": { "count": 1, "id": "northstar:raw_martian_iron_ore" },
+  "name": "{\"translate\":\"item.northstar.raw_martian_iron_ore\"}",
+  "placement": { "salt": 583920019, "separation": 8, "spacing": 128 },
+  "priority": 0
+}

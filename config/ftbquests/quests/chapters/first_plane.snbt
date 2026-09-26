@@ -6,10 +6,11 @@
 	icon: { id: "simulated:physics_assembler" }
 	id: "5431D93E250BCB8C"
 	images: [ ]
-	order_index: 4
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["20D753939FFD3F93"]
 			id: "7A39018E4BE93584"
 			rewards: [{ id: "064727D6BE0D73EF", type: "xp", xp: 10 }]
 			shape: "rsquare"

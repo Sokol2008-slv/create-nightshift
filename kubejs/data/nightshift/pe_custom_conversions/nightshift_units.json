@@ -1,0 +1,20 @@
+{
+  "comment": "Explicit EMC base values for ingots/materials that ProjectE + ProjectE Integration do NOT resolve automatically (verified by decompiling ProjectE-1.21.1-PE1.1.0.jar and ProjectE_Integration-8.3.1.jar — see scratchpad/projecte/design.md and the economy README for the derivation of every number). Carried over from the P2-gating draft: tfmg:steel_ingot and northstar:martian_steel_ingot. titanium is RE-OVERRIDDEN here from the earlier draft's 8192 to 10240 per the updated pricing target (probe = 1000x unit EMC, ~10M for the planetary tier). tungsten is overridden from PEI's own default of 356 (too cheap for a P6-only resource) to the same 10240 planetary tier. Everything below uses an id-based 'before' entry so it wins over any tag-based default from ProjectE/PEI (id > tag priority is ProjectE's documented convention, but has NOT been confirmed by an actual server log in this pack — check the ProjectE EMC-remap log on first boot).",
+  "values": {
+    "before": [
+      { "type": "projecte:item", "id": "tfmg:steel_ingot", "emc_value": 2048 },
+      { "type": "projecte:item", "id": "northstar:martian_steel_ingot", "emc_value": 16384 },
+
+      { "type": "projecte:item", "id": "tfmg:lead_ingot", "emc_value": 512 },
+      { "type": "projecte:item", "id": "tfmg:nickel_ingot", "emc_value": 1024 },
+      { "type": "projecte:item", "id": "tfmg:lithium_ingot", "emc_value": 2048 },
+      { "type": "projecte:item", "id": "tfmg:sulfur", "emc_value": 128 },
+      { "type": "projecte:item", "id": "createpropulsion:platinum_ingot", "emc_value": 4096 },
+      { "type": "projecte:item", "id": "create_new_age:thorium", "emc_value": 6144 },
+
+      { "type": "projecte:item", "id": "northstar:titanium_ingot", "emc_value": 10240 },
+      { "type": "projecte:item", "id": "northstar:tungsten_ingot", "emc_value": 10240 },
+      { "type": "projecte:item", "id": "northstar:raw_martian_iron_ore", "emc_value": 10240 }
+    ]
+  }
+}

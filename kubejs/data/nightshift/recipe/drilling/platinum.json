@@ -1,0 +1,9 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": { "item": "createoreexcavation:diamond_drill" },
+  "output": [ { "id": "createpropulsion:raw_platinum" } ],
+  "priority": 0,
+  "stress": 384,
+  "ticks": 900,
+  "veinId": "nightshift:ore_vein_type/platinum"
+}

@@ -1,0 +1,31 @@
+{
+  "comment": "EMC value of every vein probe (nightshift:vein_seed_<type>) = 1000 x the EMC of the refined unit (ingot/gem/dust) of that resource, per PLAN.md section 6. Values are hardcoded here (not computed via a conversion recipe) because pe_custom_conversions 'before' entries only accept a literal number. The 13 base types reuse EMC numbers that ProjectE/ProjectE Integration already assign automatically to the vanilla/Create items (verified against data/projecte/pe_custom_conversions/*.json and data/projecteintegration/pe_custom_conversions/*.json inside the real jars) — see the README table for the exact source of each number. The 9 new types (lead..martian_iron) use the values set in nightshift_units.json.",
+  "values": {
+    "before": [
+      { "type": "projecte:item", "id": "nightshift:vein_seed_coal", "emc_value": 128000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_copper", "emc_value": 128000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_iron", "emc_value": 256000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_gold", "emc_value": 2048000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_zinc", "emc_value": 128000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_redstone", "emc_value": 64000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_lapis", "emc_value": 864000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_diamond", "emc_value": 8192000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_emerald", "emc_value": 16384000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_quartz", "emc_value": 256000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_glowstone", "emc_value": 384000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_netherite", "emc_value": 12288000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_hardened_diamond", "emc_value": 8192000 },
+
+      { "type": "projecte:item", "id": "nightshift:vein_seed_lead", "emc_value": 512000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_nickel", "emc_value": 1024000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_lithium", "emc_value": 2048000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_sulfur", "emc_value": 128000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_platinum", "emc_value": 4096000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_thorium", "emc_value": 6144000 },
+
+      { "type": "projecte:item", "id": "nightshift:vein_seed_titanium", "emc_value": 10240000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_tungsten", "emc_value": 10240000 },
+      { "type": "projecte:item", "id": "nightshift:vein_seed_martian_iron", "emc_value": 10240000 }
+    ]
+  }
+}

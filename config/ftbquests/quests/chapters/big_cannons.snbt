@@ -6,10 +6,11 @@
 	icon: { id: "createbigcannons:cast_iron_cannon_barrel" }
 	id: "47BE67043C78FD72"
 	images: [ ]
-	order_index: 11
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7FFFE63128BF62E6"]
 			id: "22689166CC61803D"
 			rewards: [{ id: "41355CF5A28B973F", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -79,7 +80,7 @@
 			y: -1.60d
 		}
 		{
-			dependencies: ["23C6E8B8A1FF42FB"]
+			dependencies: ["23C6E8B8A1FF42FB", "3AC5FBC11AD0E3EE"]
 			id: "686F94EE226A9895"
 			rewards: [{ id: "7AEE791257DA7D99", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -89,7 +90,7 @@
 			y: -1.60d
 		}
 		{
-			dependencies: ["686F94EE226A9895"]
+			dependencies: ["686F94EE226A9895", "20D753939FFD3F93"]
 			id: "3245368928B123AE"
 			rewards: [{ id: "16565F7432CEB298", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -99,7 +100,7 @@
 			y: -1.60d
 		}
 		{
-			dependencies: ["22689166CC61803D"]
+			dependencies: ["22689166CC61803D", "3AC5FBC11AD0E3EE"]
 			id: "6A226AA9E85F7950"
 			rewards: [{ id: "2533A7BBF872F543", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -119,7 +120,7 @@
 			y: 3.20d
 		}
 		{
-			dependencies: ["43AB898E82F67601", "6A226AA9E85F7950"]
+			dependencies: ["43AB898E82F67601", "6A226AA9E85F7950", "3AC5FBC11AD0E3EE"]
 			id: "3BCE829443992885"
 			rewards: [{ id: "3F82E471482EB9A6", type: "xp", xp: 10 }]
 			shape: "rsquare"

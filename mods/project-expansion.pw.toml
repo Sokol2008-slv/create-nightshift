@@ -1,0 +1,13 @@
+name = "Project Expansion"
+filename = "projectexpansion-1.21.1-1.0.6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/a7yNQPzW/versions/F5C1OobM/projectexpansion-1.21.1-1.0.6.jar"
+hash-format = "sha512"
+hash = "97e832da2ca03309f4ef875b42a9250bba3798453f271f82b441e7c0bf739e103ee9f4274839b5e4d9a154a44167cc0f8169bd97ed37b3d16e7e09d34cfe3c85"
+
+[update]
+[update.modrinth]
+mod-id = "a7yNQPzW"
+version = "F5C1OobM"

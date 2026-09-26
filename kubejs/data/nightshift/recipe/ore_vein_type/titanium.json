@@ -1,0 +1,11 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMax": 16.0,
+  "amountMultiplierMin": 5.0,
+  "biomeWhitelist": "nightshift:titanium_planets",
+  "finite": "default",
+  "icon": { "count": 1, "id": "northstar:raw_titanium_ore" },
+  "name": "{\"translate\":\"item.northstar.raw_titanium_ore\"}",
+  "placement": { "salt": 583920017, "separation": 8, "spacing": 128 },
+  "priority": 0
+}

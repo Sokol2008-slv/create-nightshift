@@ -22,14 +22,25 @@ import zipfile
 PACK = pathlib.Path(__file__).resolve().parent.parent
 SPEC_DIR = PACK / "tools" / "quests"
 OUT = PACK / "config" / "ftbquests" / "quests"
-MODS = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/CreateNightshift/.minecraft/mods"
+MODS = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/NightshiftDev/.minecraft/mods"
+STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
-# Порядок глав в книге
-ORDER = ["welcome", "create_basics", "ore_processing", "brass_logistics_trains",
-         "first_plane", "airships_cars", "submarines",
-         "steel_oil", "fuel_engines", "electricity",
-         "space", "big_cannons", "automation_extras", "night_shift"]
+# Порядок глав в книге — по фазам Ночной смены
+ORDER = ["welcome", "night_shift", "altar",
+         "create_basics", "ore_processing", "defense", "logistics_food",
+         "brass_logistics_trains", "automation_extras", "big_cannons",
+         "first_plane", "airships_cars", "submarines", "economy",
+         "steel_oil", "fuel_engines",
+         "electricity", "space"]
+
+# Фаза главы: название получает префикс, а стартовые квесты главы заперты
+# до квеста «Фаза N открыта» (altar:phase_N — задача-стадия, тег игрока nightshift_pN)
+PHASE = {"create_basics": 1, "ore_processing": 1, "defense": 1, "logistics_food": 1,
+         "brass_logistics_trains": 2, "automation_extras": 2, "big_cannons": 2,
+         "first_plane": 3, "airships_cars": 3, "submarines": 3, "economy": 3,
+         "steel_oil": 4, "fuel_engines": 4,
+         "electricity": 5, "space": 6}
 
 ITEM_RE = re.compile(r"^assets/([^/]+)/models/item/(.+)\.json$")
 
@@ -49,6 +60,12 @@ def known_items():
     for jar in list(MODS.glob("*.jar")) + [VANILLA]:
         with zipfile.ZipFile(jar) as zf:
             scan_zip(zf, items)
+    # предметы Ночной смены регистрирует KubeJS — их нет в jar
+    for js in STARTUP.glob("*.js"):
+        text = js.read_text()
+        items.update(re.findall(r"create\('(nightshift:[a-z0-9_]+)'", text))
+        for t in re.findall(r"'([a-z_]+)'", text.split("NS_PROBE_TYPES = [", 1)[1].split("]", 1)[0]) if "NS_PROBE_TYPES = [" in text else []:
+            items.add("nightshift:vein_seed_" + t)
     return items
 
 
@@ -184,9 +201,31 @@ def layout(quests):
     return {k: (X[k], y[k]) for k in by_key}
 
 
+def raise_phases(specs):
+    """Фаза квеста не ниже фазы предмета: dist/item_phases.json считает tools/phase_audit.py
+    по графу рецептов. Квест, чей предмет доступен позже главы, запирается до нужной фазы."""
+    f = PACK / "dist" / "item_phases.json"
+    if not f.exists():
+        print("нет dist/item_phases.json — запусти tools/phase_audit.py")
+        return
+    phases = json.loads(f.read_text())
+    raised = 0
+    for ch in specs:
+        cp = PHASE.get(ch["key"], 0)
+        for q in ch["quests"]:
+            if q["type"] != "item":
+                continue
+            need = phases.get(q["item"], 0)
+            if need > q.get("phase", cp):
+                q["phase"] = need
+                raised += 1
+    print(f"фаза поднята у {raised} квестов (по графу рецептов)")
+
+
 def main():
     items = known_items()
     specs = load_specs()
+    raise_phases(specs)
     errors = []
     lang = {"file.0000000000000001.title": "Create: Ночная смена"}
     chapter_dir = OUT / "chapters"
@@ -195,6 +234,8 @@ def main():
         old.unlink()
 
     total = 0
+    all_keys = {c["key"]: {q["key"] for q in c["quests"]} for c in specs}
+    ext_checks = []
     for order, ch in enumerate(specs):
         ck = ch["key"]
         cid = qid("chapter", ck)
@@ -204,24 +245,37 @@ def main():
         if ch.get("subtitle"):
             lang[f"chapter.{cid}.chapter_subtitle"] = [ch["subtitle"]]
         keys = {q["key"] for q in ch["quests"]}
-        pos = layout(ch["quests"])
+        phase = PHASE.get(ck, 0)
+        if phase:
+            lang[f"chapter.{cid}.title"] = f"Фаза {phase} · {ch['title']}"
+        # внешние зависимости (другая глава или фаза) не участвуют в раскладке
+        pos = layout([dict(q, deps=[d for d in q.get("deps", []) if ":" not in d]) for q in ch["quests"]])
         out_quests = []
         for q in ch["quests"]:
             k = q["key"]
             if q["item"] not in items:
                 errors.append(f"{ck}/{k}: предмет {q['item']} не найден")
+            ext = [d for d in q.get("deps", []) if ":" in d]
+            need_phase = q.get("phase", phase if not [d for d in q.get("deps", []) if ":" not in d] else 0)
+            if need_phase:
+                ext.append(f"altar:phase_{need_phase}")
             for dep in q.get("deps", []):
-                if dep not in keys:
+                if ":" not in dep and dep not in keys:
                     errors.append(f"{ck}/{k}: зависимость {dep} не найдена")
+            for dep in ext:
+                dch, dk = dep.split(":", 1)
+                all_keys.setdefault(dch, set())
+                ext_checks.append((f"{ck}/{k}", dch, dk))
             quest_id = qid(ck, k)
             task_id = qid(ck, k, "task")
             goal = q.get("goal", False)
             x, y = pos[k]
             lines = ["\t\t{"]
-            deps = [qid(ck, dep) for dep in q.get("deps", []) if dep in keys]
+            deps = [qid(ck, dep) for dep in q.get("deps", []) if dep in keys] + \
+                   [qid(*dep.split(":", 1)) for dep in ext]
             if deps:
                 lines.append("\t\t\tdependencies: [" + ", ".join(snbt_str(x) for x in deps) + "]")
-            if q["type"] == "checkmark":
+            if q["type"] in ("checkmark", "stage"):
                 lines.append("\t\t\ticon: { id: " + snbt_str(q["item"]) + " }")
             lines.append(f"\t\t\tid: {snbt_str(quest_id)}")
             lines.append("\t\t\trewards: [{ id: " + snbt_str(qid(ck, k, "reward")) +
@@ -230,6 +284,10 @@ def main():
             lines.append(f"\t\t\tsize: {1.6 if goal else 1.0}d")
             if q["type"] == "checkmark":
                 lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ', type: "checkmark" }]')
+            elif q["type"] == "stage":
+                # стадия FTB = тег игрока (EntityTagStageProvider); тег выдаёт KubeJS при открытии фазы
+                lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ", stage: " + snbt_str(q["stage"]) +
+                             ', team_stage: false, type: "gamestage" }]')
             else:
                 cnt = int(q.get("count", 1))
                 extra = f", count: {cnt}L" if cnt > 1 else ""
@@ -261,6 +319,9 @@ def main():
         ])
         (chapter_dir / f"{ck}.snbt").write_text(body + "\n")
 
+    for where, dch, dk in ext_checks:
+        if dk not in all_keys.get(dch, set()):
+            errors.append(f"{where}: внешняя зависимость {dch}:{dk} не найдена")
     (OUT / "chapter_groups.snbt").write_text("{\n\tchapter_groups: [ ]\n}\n")
     (OUT / "data.snbt").write_text("""{
 \tdefault_autoclaim_rewards: "disabled"

@@ -6,10 +6,11 @@
 	icon: { id: "create_mechanical_spawner:mechanical_spawner" }
 	id: "731F21B1388F0EC9"
 	images: [ ]
-	order_index: 12
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["20D753939FFD3F93"]
 			id: "2B3F74E1D633B85A"
 			rewards: [{ id: "48C180E773D1D8F5", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -59,7 +60,7 @@
 			y: -0.80d
 		}
 		{
-			dependencies: ["5988745A12ACBC81"]
+			dependencies: ["5988745A12ACBC81", "20D753939FFD3F93"]
 			id: "7036B8873470BA20"
 			rewards: [{ id: "3BF1CB5A1EC02EA6", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -69,7 +70,7 @@
 			y: -0.80d
 		}
 		{
-			dependencies: ["2B3F74E1D633B85A"]
+			dependencies: ["2B3F74E1D633B85A", "20D753939FFD3F93"]
 			id: "31884BC4276B531D"
 			rewards: [{ id: "62E1CA2FFB46415B", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -79,7 +80,7 @@
 			y: 2.40d
 		}
 		{
-			dependencies: ["31884BC4276B531D"]
+			dependencies: ["31884BC4276B531D", "20D753939FFD3F93"]
 			id: "1861EF00B945866F"
 			rewards: [{ id: "6772A38C60D66E5E", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -119,7 +120,7 @@
 			y: 0.80d
 		}
 		{
-			dependencies: ["27FDDAEDB93E2BEF"]
+			dependencies: ["27FDDAEDB93E2BEF", "20D753939FFD3F93"]
 			id: "1A3B36E257B08F8E"
 			rewards: [{ id: "69DDB3616F89ACA7", type: "xp", xp: 10 }]
 			shape: "rsquare"

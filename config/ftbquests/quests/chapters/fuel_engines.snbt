@@ -6,10 +6,11 @@
 	icon: { id: "tfmg:diesel_bucket" }
 	id: "5E4EF322BC43BC6E"
 	images: [ ]
-	order_index: 8
+	order_index: 15
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["3AC5FBC11AD0E3EE"]
 			id: "5097DA3954C254B0"
 			rewards: [{ id: "6AF3D8451113EC3A", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -102,23 +103,12 @@
 		}
 		{
 			dependencies: ["2C866220A120C30C"]
-			icon: { id: "createdieselgenerators:pumpjack_head" }
-			id: "7AF2B4072396877F"
-			rewards: [{ id: "369F704F58F13598", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "71FCEEBD03CFB3C4", type: "checkmark" }]
-			x: 4.40d
-			y: 1.33d
-		}
-		{
-			dependencies: ["7AF2B4072396877F"]
 			id: "306674C596F9135A"
 			rewards: [{ id: "2EB283062305993F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1238154503A25EBC", count: 2L, item: { count: 1, id: "createdieselgenerators:diesel_bucket" }, type: "item" }]
-			x: 6.60d
+			x: 4.40d
 			y: 1.33d
 		}
 		{
@@ -128,7 +118,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3075041854986AA4", item: { count: 1, id: "createdieselgenerators:diesel_engine" }, type: "item" }]
-			x: 8.80d
+			x: 6.60d
 			y: 1.33d
 		}
 		{
@@ -138,7 +128,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "0952121091B08A50", item: { count: 1, id: "createdieselgenerators:bulk_fermenter" }, type: "item" }]
-			x: 11.00d
+			x: 8.80d
 			y: 1.33d
 		}
 	]

@@ -6,10 +6,11 @@
 	icon: { id: "createoreexcavation:drilling_machine" }
 	id: "4F949985ED97D8E8"
 	images: [ ]
-	order_index: 2
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["6C6F1BB21939360A"]
 			id: "0CA383208BFFC4DA"
 			rewards: [{ id: "0189B1AE591DAFA5", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -27,17 +28,17 @@
 			size: 1.0d
 			tasks: [{ id: "3139F0363EBFCF36", type: "checkmark" }]
 			x: 2.20d
-			y: -2.40d
+			y: -0.80d
 		}
 		{
-			dependencies: ["3EBBDDF54338D1DE"]
+			dependencies: ["3EBBDDF54338D1DE", "7FFFE63128BF62E6"]
 			id: "24B6838B62FA28AD"
 			rewards: [{ id: "60344EB6B84FAE1A", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "26787F4EBDD997D0", count: 4L, item: { count: 1, id: "create:zinc_ingot" }, type: "item" }]
 			x: 4.40d
-			y: -3.60d
+			y: -1.87d
 		}
 		{
 			dependencies: ["3EBBDDF54338D1DE"]
@@ -47,17 +48,17 @@
 			size: 1.0d
 			tasks: [{ id: "0FBDAF1A841EBF9A", count: 4L, item: { count: 1, id: "minecraft:copper_ingot" }, type: "item" }]
 			x: 4.40d
-			y: -2.00d
+			y: -0.27d
 		}
 		{
-			dependencies: ["24B6838B62FA28AD", "4721E222E1118F06"]
+			dependencies: ["24B6838B62FA28AD", "4721E222E1118F06", "7FFFE63128BF62E6"]
 			id: "773E29288CF753D6"
 			rewards: [{ id: "1AEFC0ED93971A96", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "3630415A1733F9C8", count: 4L, item: { count: 1, id: "create:brass_ingot" }, type: "item" }]
 			x: 6.60d
-			y: -2.80d
+			y: -1.07d
 		}
 		{
 			dependencies: ["773E29288CF753D6"]
@@ -67,57 +68,7 @@
 			size: 1.0d
 			tasks: [{ id: "6DEA1F5CC8240E63", item: { count: 1, id: "create:filter" }, type: "item" }]
 			x: 8.80d
-			y: -2.94d
-		}
-		{
-			dependencies: ["0CA383208BFFC4DA"]
-			id: "58D5D180DE28BA81"
-			rewards: [{ id: "4A681D87E0619C54", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "1C93011348525158", item: { count: 1, id: "createoreexcavation:vein_finder" }, type: "item" }]
-			x: 2.20d
-			y: -0.80d
-		}
-		{
-			dependencies: ["0CA383208BFFC4DA"]
-			id: "6F8FAC118FD342E2"
-			rewards: [{ id: "3ECF6AC433746AC3", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "6DC3B97FF0BBFA76", item: { count: 1, id: "createoreexcavation:drill" }, type: "item" }]
-			x: 2.20d
-			y: 0.80d
-		}
-		{
-			dependencies: ["58D5D180DE28BA81", "773E29288CF753D6"]
-			id: "2D661EE43239305F"
-			rewards: [{ id: "0E028E145A1102F6", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "5DCC4FE541938D14", item: { count: 1, id: "createoreexcavation:sample_drill" }, type: "item" }]
-			x: 8.80d
-			y: -1.34d
-		}
-		{
-			dependencies: ["2D661EE43239305F"]
-			id: "1FA91ECF61C71B72"
-			rewards: [{ id: "6B23E689046EA42B", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4420A6C7B6F715D0", item: { count: 1, id: "createoreexcavation:vein_atlas" }, type: "item" }]
-			x: 11.00d
-			y: -1.34d
-		}
-		{
-			dependencies: ["6F8FAC118FD342E2", "1FA91ECF61C71B72"]
-			id: "359D4A14EC1F82C2"
-			rewards: [{ id: "0445B29D32DEC115", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "3C459E31720734F3", item: { count: 1, id: "createoreexcavation:drilling_machine" }, type: "item" }]
-			x: 13.20d
-			y: -0.22d
+			y: -1.07d
 		}
 		{
 			dependencies: ["0CA383208BFFC4DA"]
@@ -127,7 +78,7 @@
 			size: 1.0d
 			tasks: [{ id: "04516BA347ACC619", item: { count: 1, id: "createsifter:sifter" }, type: "item" }]
 			x: 2.20d
-			y: 2.40d
+			y: 0.80d
 		}
 		{
 			dependencies: ["11AE4E7F06713FBD"]
@@ -137,7 +88,7 @@
 			size: 1.0d
 			tasks: [{ id: "766D99418CB57441", item: { count: 1, id: "createsifter:andesite_mesh" }, type: "item" }]
 			x: 4.40d
-			y: 2.60d
+			y: 1.33d
 		}
 	]
 }

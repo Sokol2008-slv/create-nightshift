@@ -1,0 +1,9 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": { "item": "createoreexcavation:diamond_drill" },
+  "output": [ { "id": "create_new_age:thorium" } ],
+  "priority": 0,
+  "stress": 512,
+  "ticks": 1000,
+  "veinId": "nightshift:ore_vein_type/thorium"
+}

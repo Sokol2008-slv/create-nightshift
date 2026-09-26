@@ -1,0 +1,13 @@
+name = "TeamProjectE"
+filename = "teamprojecte-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HWkPxwcn/versions/UPPEgtd1/teamprojecte-1.0.0.jar"
+hash-format = "sha512"
+hash = "62b059d3663128d1d13f509cf482506dc72f8a332960fe20817675e67b2fe9e0b3a8ada1aaa5131ae8844bb21367bfd0dd92abd99544d27d87a70ecb7be9ca72"
+
+[update]
+[update.modrinth]
+mod-id = "HWkPxwcn"
+version = "UPPEgtd1"

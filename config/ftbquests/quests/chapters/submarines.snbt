@@ -6,10 +6,11 @@
 	icon: { id: "create_submarine:ballast_tank" }
 	id: "658076B113EF7AA0"
 	images: [ ]
-	order_index: 6
+	order_index: 12
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["20D753939FFD3F93"]
 			id: "2CC8CCC2EDA2288D"
 			rewards: [{ id: "48D4ABC477256223", type: "xp", xp: 10 }]
 			shape: "rsquare"

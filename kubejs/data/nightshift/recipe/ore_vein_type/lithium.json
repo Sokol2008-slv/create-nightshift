@@ -1,0 +1,11 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMax": 10.0,
+  "amountMultiplierMin": 3.0,
+  "biomeWhitelist": "minecraft:is_overworld",
+  "finite": "default",
+  "icon": { "count": 1, "id": "tfmg:raw_lithium" },
+  "name": "{\"translate\":\"item.tfmg.raw_lithium\"}",
+  "placement": { "salt": 583920013, "separation": 16, "spacing": 192 },
+  "priority": 0
+}

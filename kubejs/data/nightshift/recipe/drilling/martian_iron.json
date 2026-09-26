@@ -1,0 +1,9 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": { "item": "createoreexcavation:netherite_drill" },
+  "output": [ { "id": "northstar:raw_martian_iron_ore" } ],
+  "priority": 0,
+  "stress": 1024,
+  "ticks": 900,
+  "veinId": "nightshift:ore_vein_type/martian_iron"
+}

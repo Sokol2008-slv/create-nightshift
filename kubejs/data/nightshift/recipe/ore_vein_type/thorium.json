@@ -1,0 +1,11 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMax": 4.0,
+  "amountMultiplierMin": 1.0,
+  "biomeWhitelist": "minecraft:is_overworld",
+  "finite": "default",
+  "icon": { "count": 1, "id": "create_new_age:thorium" },
+  "name": "{\"translate\":\"item.create_new_age.thorium\"}",
+  "placement": { "salt": 583920016, "separation": 32, "spacing": 384 },
+  "priority": 0
+}
