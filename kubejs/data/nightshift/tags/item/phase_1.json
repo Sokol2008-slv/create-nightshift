@@ -30,6 +30,10 @@
    "required": false
   },
   {
+   "id": "aeroworks:copper_lever_module",
+   "required": false
+  },
+  {
    "id": "aeroworks:copper_throttle_quadrant_module",
    "required": false
   },
@@ -43,6 +47,10 @@
   },
   {
    "id": "aeroworks:joystick_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:lever_module",
    "required": false
   },
   {
@@ -115,6 +123,10 @@
   },
   {
    "id": "bellsandwhistles:metro_window",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:ornate_iron_trapdoor",
    "required": false
   },
   {
@@ -430,10 +442,6 @@
    "required": false
   },
   {
-   "id": "create:linear_chassis",
-   "required": false
-  },
-  {
    "id": "create:mechanical_bearing",
    "required": false
   },
@@ -490,6 +498,14 @@
    "required": false
   },
   {
+   "id": "create:ornate_iron_window",
+   "required": false
+  },
+  {
+   "id": "create:ornate_iron_window_pane",
+   "required": false
+  },
+  {
    "id": "create:piston_extension_pole",
    "required": false
   },
@@ -511,10 +527,6 @@
   },
   {
    "id": "create:rope_pulley",
-   "required": false
-  },
-  {
-   "id": "create:secondary_linear_chassis",
    "required": false
   },
   {
@@ -998,19 +1010,11 @@
    "required": false
   },
   {
-   "id": "createaddition:electrum_spool",
-   "required": false
-  },
-  {
    "id": "createaddition:iron_rod",
    "required": false
   },
   {
    "id": "createaddition:iron_wire",
-   "required": false
-  },
-  {
-   "id": "createaddition:large_connector",
    "required": false
   },
   {
@@ -1238,6 +1242,10 @@
    "required": false
   },
   {
+   "id": "createcasing:copper_gearbox",
+   "required": false
+  },
+  {
    "id": "createcasing:copper_large_cogwheel",
    "required": false
   },
@@ -1295,6 +1303,10 @@
   },
   {
    "id": "createcasing:industrial_iron_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_gearbox",
    "required": false
   },
   {
@@ -1407,6 +1419,14 @@
   },
   {
    "id": "createcasing:shadow_steel_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:vertical_copper_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:vertical_industrial_iron_gearbox",
    "required": false
   },
   {
@@ -1555,14 +1575,6 @@
   },
   {
    "id": "createdeco:copper_catwalk_stairs",
-   "required": false
-  },
-  {
-   "id": "createdeco:copper_coin",
-   "required": false
-  },
-  {
-   "id": "createdeco:copper_coinstack",
    "required": false
   },
   {
@@ -1778,14 +1790,6 @@
    "required": false
   },
   {
-   "id": "createdeco:iron_coin",
-   "required": false
-  },
-  {
-   "id": "createdeco:iron_coinstack",
-   "required": false
-  },
-  {
    "id": "createdeco:iron_hull",
    "required": false
   },
@@ -1982,14 +1986,6 @@
    "required": false
   },
   {
-   "id": "createshufflefilter:shuffle_filter",
-   "required": false
-  },
-  {
-   "id": "createshufflefilter:weighted_shuffle_filter",
-   "required": false
-  },
-  {
    "id": "createsifter:andesite_mesh",
    "required": false
   },
@@ -2023,6 +2019,14 @@
   },
   {
    "id": "dndecor:andesite_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_lamp",
    "required": false
   },
   {
@@ -2134,6 +2138,14 @@
    "required": false
   },
   {
+   "id": "dndecor:iron_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_lamp",
+   "required": false
+  },
+  {
    "id": "dndecor:iron_sheet_metal",
    "required": false
   },
@@ -2170,6 +2182,14 @@
    "required": false
   },
   {
+   "id": "dndecor:ornate_iron_glass",
+   "required": false
+  },
+  {
+   "id": "dndecor:ornate_iron_glass_pane",
+   "required": false
+  },
+  {
    "id": "dndecor:text_plate",
    "required": false
   },
@@ -2198,6 +2218,10 @@
    "required": false
   },
   {
+   "id": "dndesires:glowberry_milkshake",
+   "required": false
+  },
+  {
    "id": "dndesires:handheld_saw",
    "required": false
   },
@@ -2218,10 +2242,6 @@
    "required": false
   },
   {
-   "id": "dndesires:pumpkin_milkshake",
-   "required": false
-  },
-  {
    "id": "dndesires:roll_table",
    "required": false
   },
@@ -2231,10 +2251,6 @@
   },
   {
    "id": "dndesires:splashing_sail",
-   "required": false
-  },
-  {
-   "id": "dndesires:vanilla_milkshake",
    "required": false
   },
   {
@@ -2459,14 +2475,6 @@
   },
   {
    "id": "minecraft:heavy_weighted_pressure_plate",
-   "required": false
-  },
-  {
-   "id": "minecraft:hopper",
-   "required": false
-  },
-  {
-   "id": "minecraft:hopper_minecart",
    "required": false
   },
   {
@@ -2742,11 +2750,47 @@
    "required": false
   },
   {
+   "id": "projecte:arcana_ring",
+   "required": false
+  },
+  {
+   "id": "projecte:archangel_smite",
+   "required": false
+  },
+  {
+   "id": "projecte:black_hole_band",
+   "required": false
+  },
+  {
    "id": "projecte:destruction_catalyst",
    "required": false
   },
   {
+   "id": "projecte:evertide_amulet",
+   "required": false
+  },
+  {
+   "id": "projecte:harvest_goddess_band",
+   "required": false
+  },
+  {
+   "id": "projecte:ignition_ring",
+   "required": false
+  },
+  {
    "id": "projecte:iron_band",
+   "required": false
+  },
+  {
+   "id": "projecte:swiftwolf_rending_gale",
+   "required": false
+  },
+  {
+   "id": "projecte:volcanite_amulet",
+   "required": false
+  },
+  {
+   "id": "projecte:zero_ring",
    "required": false
   },
   {
@@ -3058,14 +3102,6 @@
    "required": false
   },
   {
-   "id": "sophisticatedbackpacks:auto_blasting_upgrade",
-   "required": false
-  },
-  {
-   "id": "sophisticatedbackpacks:blasting_upgrade",
-   "required": false
-  },
-  {
    "id": "sophisticatedbackpacks:copper_backpack",
    "required": false
   },
@@ -3082,14 +3118,6 @@
    "required": false
   },
   {
-   "id": "sophisticatedbackpacks:stack_downgrade_tier_1",
-   "required": false
-  },
-  {
-   "id": "sophisticatedbackpacks:stack_downgrade_tier_2",
-   "required": false
-  },
-  {
    "id": "sophisticatedbackpacks:stack_upgrade_starter_tier_to_tier_1_conversion",
    "required": false
   },
@@ -3102,19 +3130,11 @@
    "required": false
   },
   {
-   "id": "sophisticatedstorage:auto_blasting_upgrade",
-   "required": false
-  },
-  {
    "id": "sophisticatedstorage:basic_to_copper_tier_upgrade",
    "required": false
   },
   {
    "id": "sophisticatedstorage:basic_to_iron_tier_upgrade",
-   "required": false
-  },
-  {
-   "id": "sophisticatedstorage:blasting_upgrade",
    "required": false
   },
   {
@@ -3179,14 +3199,6 @@
   },
   {
    "id": "sophisticatedstorage:limited_iron_barrel_4",
-   "required": false
-  },
-  {
-   "id": "sophisticatedstorage:stack_downgrade_tier_1",
-   "required": false
-  },
-  {
-   "id": "sophisticatedstorage:stack_downgrade_tier_2",
    "required": false
   },
   {

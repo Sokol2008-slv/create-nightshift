@@ -22,19 +22,11 @@
    "required": false
   },
   {
-   "id": "aeroworks:copper_lever_module",
-   "required": false
-  },
-  {
    "id": "aeroworks:copper_pedal_module",
    "required": false
   },
   {
    "id": "aeroworks:joystick",
-   "required": false
-  },
-  {
-   "id": "aeroworks:lever_module",
    "required": false
   },
   {
@@ -210,6 +202,10 @@
    "required": false
   },
   {
+   "id": "copycats:copycat_folding_door",
+   "required": false
+  },
+  {
    "id": "copycats:copycat_ghost_block",
    "required": false
   },
@@ -238,6 +234,10 @@
    "required": false
   },
   {
+   "id": "copycats:copycat_layer",
+   "required": false
+  },
+  {
    "id": "copycats:copycat_light_weighted_pressure_plate",
    "required": false
   },
@@ -250,6 +250,14 @@
    "required": false
   },
   {
+   "id": "copycats:copycat_slice",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_sliding_door",
+   "required": false
+  },
+  {
    "id": "copycats:copycat_slope",
    "required": false
   },
@@ -258,11 +266,23 @@
    "required": false
   },
   {
+   "id": "copycats:copycat_stacked_half_layer",
+   "required": false
+  },
+  {
    "id": "copycats:copycat_stone_button",
    "required": false
   },
   {
    "id": "copycats:copycat_stone_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_vertical_half_layer",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_vertical_slice",
    "required": false
   },
   {
@@ -275,6 +295,10 @@
   },
   {
    "id": "copycats:copycat_wooden_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "create:attribute_filter",
    "required": false
   },
   {
@@ -806,6 +830,34 @@
    "required": false
   },
   {
+   "id": "createaddition:electrum_block",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_ingot",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_nugget",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_rod",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_sheet",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_spool",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_wire",
+   "required": false
+  },
+  {
    "id": "createaddition:gold_rod",
    "required": false
   },
@@ -815,6 +867,10 @@
   },
   {
    "id": "createaddition:gold_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:large_connector",
    "required": false
   },
   {
@@ -1098,6 +1154,14 @@
    "required": false
   },
   {
+   "id": "createdeco:brass_coin",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_coinstack",
+   "required": false
+  },
+  {
    "id": "createdeco:brass_door",
    "required": false
   },
@@ -1167,6 +1231,14 @@
   },
   {
    "id": "createdeco:zinc_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_coin",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_coinstack",
    "required": false
   },
   {
@@ -1603,6 +1675,14 @@
   },
   {
    "id": "garnished:zinc_hatchet",
+   "required": false
+  },
+  {
+   "id": "immersiveengineering:plate_electrum",
+   "required": false
+  },
+  {
+   "id": "immersiveengineering:wire_electrum",
    "required": false
   },
   {

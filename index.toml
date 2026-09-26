@@ -26,7 +26,7 @@ hash = "2c82aeba608891c86ee0bcd67fc8d547178a2b1d0e0341a4e890fb495b21a498"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "111298ff06579cb39c41994c9365e6973f4c3de7a584f36035258d83c8cdd0a6"
+hash = "c2cb2a553a83777121a9df98ed564183e0c7a27d2f1d0260ca2755f8ad0d802b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
@@ -102,11 +102,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "ed48ad456c8c06dcf0b459fc4795bcc3ba3da8dad52768ebf8305dd0a871f07b"
+hash = "c248e2a4deaff43ef2b0f5ec1d685c4c9ccfa5a591bf08e85e5753693cb507cb"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "ed48ad456c8c06dcf0b459fc4795bcc3ba3da8dad52768ebf8305dd0a871f07b"
+hash = "c248e2a4deaff43ef2b0f5ec1d685c4c9ccfa5a591bf08e85e5753693cb507cb"
 
 [[files]]
 file = "config/iris.properties"
@@ -326,19 +326,19 @@ hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_1.json"
-hash = "3825aeb6c150858b0640f3dcdd2fcaae47c378aeb5c05131f9ebbc9e8ee6fcd2"
+hash = "b3beb8fdc26225e6c1748a0f430a829d95923bd6d0a51e0306a7e4a21e4b2b02"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_2.json"
-hash = "b20ff31aebef8582865b5d694886a41be07dfd15198e01192e5deb9ce958c30e"
+hash = "38e7999825d03151a55595d94dd51ae61faed7605267bb40db57b2be5eec809c"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_3.json"
-hash = "bb6992d5090f619287b525cb68342e6b9c15a30d0be88253be3f7a4fd2324f8d"
+hash = "5e99c008f002ee4339a15efb8255d5d20d26a4dffa4f9a30d20c76b6a3da97d8"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_4.json"
-hash = "37a8a75af9751592b8ee419c21b93ee9e5aad41e71994aec30c31169c21e5265"
+hash = "4fa08561835760c7f4b190e1f3557c43899428c6b2f7f351762e0ac54ba23cb8"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_5.json"
@@ -363,6 +363,10 @@ hash = "20d99af793662833d1abd8e66d5a649e22344d0ec05de8aa69843d8a1bad41ff"
 [[files]]
 file = "kubejs/server_scripts/economy/30_recipes.js"
 hash = "437147372e690eea68cfc0070a00e7ef361f7d120fa0ca6371baf2026dbea4da"
+
+[[files]]
+file = "kubejs/server_scripts/economy/40_blocks.js"
+hash = "479fee6478caa6b1d27a34c598bf8d2f46adac1158ff048b88377ab585f6e95e"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"

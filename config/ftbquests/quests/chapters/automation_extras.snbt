@@ -17,7 +17,7 @@
 			size: 1.0d
 			tasks: [{ id: "55B3885E9C7C64BD", item: { count: 1, id: "create_mechanical_spawner:mechanical_spawner" }, type: "item" }]
 			x: 0.00d
-			y: 0.00d
+			y: -0.80d
 		}
 		{
 			dependencies: ["2B3F74E1D633B85A"]
@@ -27,7 +27,7 @@
 			size: 1.0d
 			tasks: [{ id: "56536DB68BA95B13", item: { count: 1, id: "create_mechanical_spawner:spawn_fluid_random_bucket" }, type: "item" }]
 			x: 2.20d
-			y: -2.40d
+			y: -4.91d
 		}
 		{
 			dependencies: ["58CBE83DFE54E852"]
@@ -37,7 +37,7 @@
 			size: 1.0d
 			tasks: [{ id: "6472B8E1DADD6501", item: { count: 1, id: "create_mechanical_spawner:loot_collector" }, type: "item" }]
 			x: 4.40d
-			y: -2.40d
+			y: -5.90d
 		}
 		{
 			dependencies: ["2B3F74E1D633B85A"]
@@ -47,7 +47,7 @@
 			size: 1.0d
 			tasks: [{ id: "2241BA088D0D6969", item: { count: 1, id: "create_enchantment_industry:experience_hatch" }, type: "item" }]
 			x: 2.20d
-			y: -0.80d
+			y: -3.31d
 		}
 		{
 			dependencies: ["676D2249E255B12B"]
@@ -57,7 +57,7 @@
 			size: 1.0d
 			tasks: [{ id: "709E3969EEC59128", item: { count: 1, id: "create_enchantment_industry:mechanical_grindstone" }, type: "item" }]
 			x: 4.40d
-			y: -0.80d
+			y: -4.30d
 		}
 		{
 			dependencies: ["5988745A12ACBC81", "20D753939FFD3F93"]
@@ -67,7 +67,7 @@
 			size: 1.0d
 			tasks: [{ id: "21C65528A60D1B80", item: { count: 1, id: "create_enchantment_industry:blaze_enchanter" }, type: "item" }]
 			x: 6.60d
-			y: -0.80d
+			y: -5.85d
 		}
 		{
 			dependencies: ["2B3F74E1D633B85A", "20D753939FFD3F93"]
@@ -77,7 +77,7 @@
 			size: 1.0d
 			tasks: [{ id: "67E73B9DF1A7C58F", item: { count: 1, id: "create_power_loader:empty_andesite_chunk_loader" }, type: "item" }]
 			x: 2.20d
-			y: 2.40d
+			y: -0.11d
 		}
 		{
 			dependencies: ["31884BC4276B531D", "20D753939FFD3F93"]
@@ -87,7 +87,7 @@
 			size: 1.0d
 			tasks: [{ id: "6A965B2936DE4D31", item: { count: 1, id: "create_power_loader:empty_brass_chunk_loader" }, type: "item" }]
 			x: 4.40d
-			y: 2.40d
+			y: -1.10d
 		}
 		{
 			dependencies: ["2B3F74E1D633B85A"]
@@ -97,7 +97,7 @@
 			size: 1.0d
 			tasks: [{ id: "2659A94DD751C389", item: { count: 1, id: "create_jetpack:jetpack" }, type: "item" }]
 			x: 2.20d
-			y: 0.80d
+			y: -1.71d
 		}
 		{
 			dependencies: ["0DA29650B2A99689"]
@@ -107,7 +107,7 @@
 			size: 1.0d
 			tasks: [{ id: "3B7763F42CB1FF8C", item: { count: 1, id: "create_sa:portable_drill" }, type: "item" }]
 			x: 4.40d
-			y: 0.80d
+			y: -2.70d
 		}
 		{
 			dependencies: ["598870E2C08934FE"]
@@ -117,7 +117,7 @@
 			size: 1.0d
 			tasks: [{ id: "4682594E43D6AE0D", item: { count: 1, id: "create_sa:andesite_exoskeleton_chestplate" }, type: "item" }]
 			x: 6.60d
-			y: 0.80d
+			y: -4.25d
 		}
 		{
 			dependencies: ["27FDDAEDB93E2BEF", "20D753939FFD3F93"]
@@ -127,7 +127,7 @@
 			size: 1.0d
 			tasks: [{ id: "4C11DE5CFC41AF7C", item: { count: 1, id: "create_sa:block_picker" }, type: "item" }]
 			x: 8.80d
-			y: 0.80d
+			y: -5.07d
 		}
 		{
 			dependencies: ["1A3B36E257B08F8E"]
@@ -137,7 +137,167 @@
 			size: 1.0d
 			tasks: [{ id: "040FDD192758CE06", item: { count: 1, id: "create_sa:brass_drone_item" }, type: "item" }]
 			x: 11.00d
+			y: -5.07d
+		}
+		{
+			dependencies: ["7FFFE63128BF62E6"]
+			id: "56EDC75D5444BC7E"
+			rewards: [{ id: "090F40D2FCC58A0B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "48D9DBAF99BB8D39", item: { count: 1, id: "create_mechanical_extruder:mechanical_extruder" }, type: "item" }]
+			x: 0.00d
 			y: 0.80d
+		}
+		{
+			dependencies: ["56EDC75D5444BC7E"]
+			id: "286DA7E6FA44D1A0"
+			rewards: [{ id: "7B41E0D9488C35F7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3451964A18A47F04", count: 64L, item: { count: 1, id: "minecraft:gravel" }, type: "item" }]
+			x: 2.20d
+			y: 1.49d
+		}
+		{
+			dependencies: ["286DA7E6FA44D1A0"]
+			id: "3CC38EECAC712063"
+			rewards: [{ id: "330864AAB675C01A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "198ECC9310BE95DD", count: 64L, item: { count: 1, id: "minecraft:sand" }, type: "item" }]
+			x: 4.40d
+			y: 0.50d
+		}
+		{
+			dependencies: ["3CC38EECAC712063"]
+			id: "1B033AEB9786CBF5"
+			rewards: [{ id: "5289CF43A1393B5D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2269197D81B9AAE5", count: 64L, item: { count: 1, id: "createsifter:dust" }, type: "item" }]
+			x: 6.60d
+			y: -1.05d
+		}
+		{
+			dependencies: ["3CC38EECAC712063"]
+			id: "1AD77E9FFCC09760"
+			rewards: [{ id: "4DC58CD86C7553C2", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2E124CD4C258A917", count: 64L, item: { count: 1, id: "minecraft:dirt" }, type: "item" }]
+			x: 6.60d
+			y: 3.70d
+		}
+		{
+			dependencies: ["1AD77E9FFCC09760"]
+			id: "6FFAFFECC8AF68E4"
+			rewards: [{ id: "1EF48805686B7EE6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "31554E078D0E2FF1", count: 32L, item: { count: 1, id: "minecraft:mud" }, type: "item" }]
+			x: 8.80d
+			y: 2.88d
+		}
+		{
+			dependencies: ["1AD77E9FFCC09760"]
+			id: "041D05C7BDDA1E2F"
+			rewards: [{ id: "58B2459C9C6879CB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "17ED1B36328438CD", item: { count: 1, id: "minecraft:podzol" }, type: "item" }]
+			x: 8.80d
+			y: 8.05d
+		}
+		{
+			dependencies: ["3CC38EECAC712063", "20D753939FFD3F93"]
+			id: "590411A05AAAE42D"
+			rewards: [{ id: "4E14D57C067B232A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "043AE35AEC09B178", count: 32L, item: { count: 1, id: "minecraft:soul_sand" }, type: "item" }]
+			x: 6.60d
+			y: 0.55d
+		}
+		{
+			dependencies: ["590411A05AAAE42D", "20D753939FFD3F93"]
+			id: "5F7379E660E31AB1"
+			rewards: [{ id: "429DFCCD95FA656A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2AA3E40B41DC4D41", count: 64L, item: { count: 1, id: "minecraft:blackstone" }, type: "item" }]
+			x: 8.80d
+			y: -0.27d
+		}
+		{
+			dependencies: ["56EDC75D5444BC7E"]
+			id: "01B7C3894344A90F"
+			rewards: [{ id: "68BDDE25B4531B54", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "70C335846B677D0E", count: 16L, item: { count: 1, id: "minecraft:obsidian" }, type: "item" }]
+			x: 2.20d
+			y: 3.09d
+		}
+		{
+			dependencies: ["286DA7E6FA44D1A0"]
+			id: "3ACD1946BC62D931"
+			rewards: [{ id: "58417173531F1B05", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2633A15861FD0399", count: 16L, item: { count: 1, id: "minecraft:tuff" }, type: "item" }]
+			x: 4.40d
+			y: 5.62d
+		}
+		{
+			dependencies: ["56EDC75D5444BC7E"]
+			id: "742E217E8017112E"
+			rewards: [{ id: "52FCC6075A508094", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5466E5F7F07B3954", count: 4L, item: { count: 1, id: "minecraft:blue_ice" }, type: "item" }]
+			x: 2.20d
+			y: 4.69d
+		}
+		{
+			dependencies: ["742E217E8017112E", "590411A05AAAE42D", "20D753939FFD3F93"]
+			id: "75F82658768FAA4D"
+			rewards: [{ id: "0A304838F53E426D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6EB851F7521800DF", count: 32L, item: { count: 1, id: "minecraft:basalt" }, type: "item" }]
+			x: 8.80d
+			y: 4.95d
+		}
+		{
+			dependencies: ["742E217E8017112E", "20D753939FFD3F93"]
+			id: "5D619F38B169BB70"
+			rewards: [{ id: "6D38E58F121B8DF8", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1BBE823D3D1E2550", count: 64L, item: { count: 1, id: "minecraft:netherrack" }, type: "item" }]
+			x: 4.40d
+			y: 7.22d
+		}
+		{
+			dependencies: ["5D619F38B169BB70"]
+			id: "48E420D53A0BA874"
+			rewards: [{ id: "740A126EBC257121", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4D40EAD185A619D5", count: 64L, item: { count: 1, id: "minecraft:end_stone" }, type: "item" }]
+			x: 6.60d
+			y: 5.94d
+		}
+		{
+			dependencies: ["1B033AEB9786CBF5", "5F7379E660E31AB1", "48E420D53A0BA874", "75F82658768FAA4D", "6FFAFFECC8AF68E4", "20D753939FFD3F93"]
+			id: "054A25D32F75CDFE"
+			rewards: [{ id: "2873D9E42BA1E6BF", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "00E99D0B32073199", item: { count: 1, id: "createsifter:brass_sifter" }, type: "item" }]
+			x: 11.00d
+			y: 2.25d
 		}
 	]
 }
