@@ -5,6 +5,10 @@ file = "config/ArPhEx Configurations.toml"
 hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
+file = "config/ProjectE/server.toml"
+hash = "f6418703acaad2e013931f5a901c2da4f00b45de8e3486650b02d7ba0a3bbe4c"
+
+[[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
@@ -90,19 +94,215 @@ hash = "efc3a76fc696c39aa2a98e356252282feef02d8ca9a7aae7e85d503448a9f67b"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "5b8dd75c52214e1cce6acf234a1d0c725f4a28e2f397c84bca175da0e4b6a699"
+hash = "6b0c29c514a5170334838547c8424d66cfaeaaf4dab88d97621953a70983e5c0"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "a805989a977d96ba3696c43b1464c8fa66e0aa403be28931f9d0c4dd8c753aee"
+hash = "f173f0bc977a2fca06ea60cdc6654737449a0842cfd4265422872b1a03ae2b41"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/sedative.png"
 hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_cleaner.png"
+hash = "bb19321a198372e740dd88c94ca53ead66f665c0928301d8e928423b8ed499c4"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_scanner.png"
+hash = "c91ad7550d0377382ab91276429fd68c133bb3b7d41bd49272ce4f258e085abe"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_coal.png"
+hash = "8d68d9aae350731fff245ccc20588424600a6b95df3cc0163a45fd3da60d33ef"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_copper.png"
+hash = "b237ba33ebf728cf9b76e3df61184130b826d3d8e6a062849c0f55c2509352f1"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_diamond.png"
+hash = "a513d3cf95820441584dea1b3073fef2d1530d8ca355d94d1291e4f34177dd1f"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_emerald.png"
+hash = "108fe0fdf953d4d36e98af9820a4409ff220161d90f9975351c514dd6e4a5bae"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_glowstone.png"
+hash = "3acaab45dc3b9fbd5ca24ca4b6eba80fd080f0cd5e88f40a670db4166b7b41e7"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_gold.png"
+hash = "36ae5637f57f47f71da698aadf17a6e8b8c29232167dd4e9c85024c818c6fef4"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_hardened_diamond.png"
+hash = "41b1f71c8708bdc0553a6ebb6e9b03ec94977b604f54f4708f5919b1451dfa95"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_iron.png"
+hash = "71f75654fe91c1c5836ea29a3bce4f67c795ac18c9ae0c02ec85f3f0764e5612"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_lapis.png"
+hash = "c4aed026afe5ae6a90dc49aac19258db12005275e66d977443dc7b3c4beb6e5b"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_lead.png"
+hash = "c028f61b44ea44f3a2fac7f8d52f57cdf868df55cd3d61116b41405af0cc542c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_lithium.png"
+hash = "b045cfb53de107bdcf65aa21d48d9e0d745da2fc473a67070304620b680fc6e6"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_martian_iron.png"
+hash = "6855c19b9604fcc3dbfa9d3dd682a374403c473ece1a9bf3e70bf2337bef127a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_netherite.png"
+hash = "bbeedf279d98c19eccd2400965958c3a69cef0d5564cabcf10266521613aca7d"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_nickel.png"
+hash = "e91975c9ba6c67bdbb2181afad2ab786e495d2695f2d3fe890debfb65cbf5b72"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_platinum.png"
+hash = "89fef1fedd415ec8b5fc50fbdaba83cc0d50781c9e657d0d37a7a74256da0700"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_quartz.png"
+hash = "e44219397d3e07c3d426a7db21a6abb6c27f448383a0d4f3cb79b3799a3ca332"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_redstone.png"
+hash = "28a352ef6409572f1abdcdb369f5adef6a2d9708f90ab899e5170ffc2863a2c8"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_sulfur.png"
+hash = "4f7719709e84dcc0d5270cc7a98d13ae53ad658ae954644db474001ad3da5487"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_thorium.png"
+hash = "b0b6df433d41db064546063e6778d36ee2a71956461691aa3eae5b655fee2024"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_titanium.png"
+hash = "87ecf33d17993f91895a906ed5abd35852081b5d05a92b4a9fd28ddae65cc9b1"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_tungsten.png"
+hash = "d493b17985302befb61af2643269c0a1c2dbf9c27c9f31ae08f59538a421685f"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/vein_seed_zinc.png"
+hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
+
+[[files]]
 file = "kubejs/client_scripts/nightshift_rerender.js"
 hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
+
+[[files]]
+file = "kubejs/config/common.json"
+hash = "21b1aa77bebcc5a4557c4f90ee7a6bf80a049fd20fd7508c427a9f3f549ed6e4"
+
+[[files]]
+file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_probes.json"
+hash = "1d8c04da3329702197d4d38dda107344aa1dccfd4d2e00e65119c108a4bed46a"
+
+[[files]]
+file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_units.json"
+hash = "11c6da32fa5244f9385b6f7bafe4fbeb107a9bd494055b5df768717cb6ddba88"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/lead.json"
+hash = "ea41272512d870e15394d42d8a7468b9ec47e68c9ee736bc68d4af66a994daf4"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/lithium.json"
+hash = "5a662ccccf8a3a6fdf502f89e12f78facc6817b7a6a3ab509824452c4ee9eeb5"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/martian_iron.json"
+hash = "355b803e4a85f89aef663979cbfc0f27145ef95fa749f8a7a069a00547785548"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/nickel.json"
+hash = "ccc95d916ad6a6b0a3da1a16ea0cf08455b99ff71ccca7c0f3089897ba31c8fe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/platinum.json"
+hash = "ec5471212623c719cf97b1a1867f06dd13623b2e5fd484f5f84d3d8568197c69"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/sulfur.json"
+hash = "6eed56d559f542277eda00bafc16a32ed2ca0ae8892815bd49423cac023b7690"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/thorium.json"
+hash = "329e6e6d35dd029293234f3b7c68194fcbc4a961314ce0eb3737ea505f7e54be"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/titanium.json"
+hash = "850faeb3555cb99b6c96005645bbc984af571bdd4ea2b960470852d272eaefd2"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/drilling/tungsten.json"
+hash = "b15f819ef6e42114389b526fdb7b559dcb5ceb9d3d953e2c94810447e3548cbe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/lead.json"
+hash = "41b6a84cd94bc81ce472bad08107d470c792abceca11695301c38e4d28897037"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/lithium.json"
+hash = "d6cf29e05a83e04f8bf4e9cf09dca1bce16da7e22948564ba20e36dd9c8e13ae"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/martian_iron.json"
+hash = "43452f169950eea5f91c2b809d365a5f8bd60797d7ba11db4af66e175a99b9a3"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/nickel.json"
+hash = "c7a32716e60c80062d837ca5b1785a2c4e76c362a048959e30c5d86da18314fe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/platinum.json"
+hash = "de2927a065c22f64e545db7d17203cafd73a3dd26ead785cf4d667666e453232"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/sulfur.json"
+hash = "3275ae8215b45a70ddfbc312533364afe1a34753307c344f1c1ae139a30160cc"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/thorium.json"
+hash = "8dddd09775569b77913843e756878d4b7edf412ea799e557b9773092e21f25e6"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/titanium.json"
+hash = "f4a9ad1bb189a1b0b9806568d4da55e12adaa54b74a28c3853f79b684f468124"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/ore_vein_type/tungsten.json"
+hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
+hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
+
+[[files]]
+file = "kubejs/server_scripts/economy/10_probes.js"
+hash = "9c37965a0092c472e9bc83ffdaf90a7b587ff6436973d866c1fc8134be243959"
+
+[[files]]
+file = "kubejs/server_scripts/economy/20_scanner.js"
+hash = "20d99af793662833d1abd8e66d5a649e22344d0ec05de8aa69843d8a1bad41ff"
+
+[[files]]
+file = "kubejs/server_scripts/economy/30_recipes.js"
+hash = "437147372e690eea68cfc0070a00e7ef361f7d120fa0ca6371baf2026dbea4da"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
@@ -122,7 +322,7 @@ hash = "21917a29a6182619070c56a96e4d0ef29532fa39af6897597f0692894f5e26f0"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/04_drilling_gate.js"
-hash = "4535e31c85bf9ed260d31e3dfaba437776f4e02c62bc2b5623186f3c09062d2c"
+hash = "9e59584aff8a3dbb5bb3276409dac25e1baef2e025b24382097141e756211bc5"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/05_loot.js"
@@ -146,7 +346,7 @@ hash = "9c14c210dc01dd3213b4e63b0600fc9ede2e2ddb4e127b419d6b84ccc10729c3"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
-hash = "cb57058bb67ca8c7d1f10d9208335bb018f8e18605eb5b8d2f5bc86fc5170a23"
+hash = "2d62a865edb7149ec88e97c39c19ceada83f280a718561452061dd5cd9c05ec1"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
@@ -179,6 +379,10 @@ hash = "65178ee0bc9644e6e4649ba569147617c86ba61edf71e6a442c742bcc45fea02"
 [[files]]
 file = "kubejs/server_scripts/sanity/30_hordes_safety.js"
 hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_economy_items.js"
+hash = "ddbccf8a914a9f993a3f1cf83e116ef2f9f84f99046a075a53635ee109d8f9d5"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_items_blocks.js"

@@ -1,0 +1,11 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMax": 24.0,
+  "amountMultiplierMin": 8.0,
+  "biomeWhitelist": "minecraft:is_overworld",
+  "finite": "default",
+  "icon": { "count": 1, "id": "tfmg:raw_lead" },
+  "name": "{\"translate\":\"item.tfmg.raw_lead\"}",
+  "placement": { "salt": 583920011, "separation": 8, "spacing": 128 },
+  "priority": 0
+}

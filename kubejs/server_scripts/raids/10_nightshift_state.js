@@ -29,7 +29,21 @@
 
 ServerEvents.loaded(event => {
 	NSG.nsServer = event.server
+	nsSyncPhaseFile(event.server)
 })
+
+// Фаза мира живёт в persistentData (state.phase), а файл nightshift_phase.json —
+// в корне сервера и переживает смену мира. На старте выравниваем файл и стадии
+// AStages по миру: новый мир → фаза 0, перенесённый мир → его фаза.
+function nsSyncPhaseFile(server) {
+	var worldPhase = nsGetState().phase
+	var filePhase = nightshiftReadPhase()
+	if (worldPhase === filePhase) return
+	console.warn('[nightshift] файл фазы ' + filePhase + ' ≠ фаза мира ' + worldPhase + ' — выравниваю')
+	nightshiftWritePhase(worldPhase) // заранее: тогда whenGranted не зовёт /reload на каждую стадию
+	for (var p = 1; p <= 6; p++) server.runCommandSilent('astages server ' + (p <= worldPhase ? 'add' : 'remove') + ' nightshift_p' + p)
+	server.runCommandSilent('reload')
+}
 
 function nsDefaultState() {
 	return {

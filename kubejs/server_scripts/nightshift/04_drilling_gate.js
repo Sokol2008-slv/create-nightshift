@@ -64,7 +64,17 @@ var NIGHTSHIFT_DRILLING_PHASE = {
     'createoreexcavation:drilling/nether_gold': 3,
     'createoreexcavation:drilling/hardened_diamond': 3,   // решение §12: закалённый алмаз -> P3
     'createoreexcavation:drilling/netherite': 3,          // требует netherite_drill — де-факто P3+ и так
-    'cgs:drilling/lead': 4                                 // НАХОДКА: жила свинца от Gunsmithing -> P4
+    // жилы Ночной смены (kubejs/data/nightshift/recipe/drilling). Рецепты Gunsmithing
+    // лежат в старой папке recipes/ и в 1.21 не грузятся — своей жилы свинца у них нет.
+    'nightshift:drilling/lead': 4,
+    'nightshift:drilling/nickel': 4,
+    'nightshift:drilling/lithium': 4,
+    'nightshift:drilling/sulfur': 4,
+    'nightshift:drilling/platinum': 4,
+    'nightshift:drilling/thorium': 5,
+    'nightshift:drilling/titanium': 6,
+    'nightshift:drilling/tungsten': 6,
+    'nightshift:drilling/martian_iron': 6
 }
 
 ServerEvents.recipes(function (event) {

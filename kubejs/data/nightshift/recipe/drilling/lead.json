@@ -1,0 +1,9 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": { "tag": "createoreexcavation:drills" },
+  "output": [ { "id": "tfmg:raw_lead" } ],
+  "priority": 0,
+  "stress": 256,
+  "ticks": 600,
+  "veinId": "nightshift:ore_vein_type/lead"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMax": 6.0,
+  "amountMultiplierMin": 2.0,
+  "biomeWhitelist": "northstar:mercury_biomes",
+  "finite": "default",
+  "icon": { "count": 1, "id": "northstar:raw_tungsten_ore" },
+  "name": "{\"translate\":\"item.northstar.raw_tungsten_ore\"}",
+  "placement": { "salt": 583920018, "separation": 16, "spacing": 256 },
+  "priority": 0
+}
