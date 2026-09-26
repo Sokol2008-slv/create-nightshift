@@ -117,69 +117,75 @@ NSG.NIGHTSHIFT_CONFIG = {
 	// Криперов нет: взрыв сносит машины.
 	// ------------------------------------------------------------------
 	hordes: {
+		// на троих всё ×2: P0 ≈ 40 мобов, P1 ≈ 74, P2 ≈ 160, P3 ≈ 230, P4 ≈ 260, P5 ≈ 300, финал ≈ 450 + босс
 		0: {
 			waves: [
-				[nsMob('zombie', 6, 'зомби'), nsMob('zombie', 2, 'зомби-малыш', NS_BABY)],
-				[nsMob('zombie', 5, 'зомби'), nsMob('zombie', 3, 'зомби в коже', NS_ARMOR.leather)],
+				[nsMob('zombie', 8, 'зомби'), nsMob('zombie', 2, 'зомби-малыш', NS_BABY)],
+				[nsMob('zombie', 6, 'зомби'), nsMob('zombie', 4, 'зомби в коже', NS_ARMOR.leather)],
 			],
-			minor: [nsMob('zombie', 4, 'зомби'), nsMob('zombie', 1, 'зомби-малыш', NS_BABY)],
+			minor: [nsMob('zombie', 5, 'зомби'), nsMob('zombie', 1, 'зомби-малыш', NS_BABY)],
 		},
 		1: {
 			waves: [
-				[nsMob('zombie', 8, 'зомби'), nsMob('zombie', 2, 'зомби-малыш', NS_BABY)],
-				[nsMob('skeleton', 5, 'скелет'), nsMob('spider', 3, 'паук')],
-				[nsMob('zombie', 6, 'зомби в коже с мечом', NS_ARMOR.leather + ',' + nsHand('stone_sword')), nsMob('zombie', 4, 'зомби')],
+				[nsMob('zombie', 10, 'зомби'), nsMob('zombie', 3, 'зомби-малыш', NS_BABY)],
+				[nsMob('skeleton', 7, 'скелет'), nsMob('spider', 4, 'паук')],
+				[nsMob('zombie', 8, 'зомби в коже с мечом', NS_ARMOR.leather + ',' + nsHand('stone_sword')), nsMob('zombie', 5, 'зомби')],
 			],
-			minor: [nsMob('zombie', 5, 'зомби'), nsMob('skeleton', 2, 'скелет'), nsMob('spider', 1, 'паук')],
+			minor: [nsMob('zombie', 6, 'зомби'), nsMob('skeleton', 3, 'скелет'), nsMob('spider', 2, 'паук')],
 		},
 		2: {
+			// с этой фазы у вас автопушки — орда ощутимо больше
 			waves: [
-				[nsMob('zombie', 10, 'зомби'), nsMob('husk', 4, 'кадавр')],
-				[nsMob('skeleton', 6, 'скелет'), nsMob('stray', 2, 'зимогор'), nsMob('spider', 4, 'паук')],
-				[nsMob('zombie', 6, 'зомби в кольчуге', NS_ARMOR.chain + ',' + nsHand('iron_sword')), nsMob('witch', 2, 'ведьма')],
-				[nsMob('vindicator', 3, 'поборник'), nsMob('pillager', 4, 'разбойник')],
+				[nsMob('zombie', 14, 'зомби'), nsMob('husk', 6, 'кадавр')],
+				[nsMob('skeleton', 10, 'скелет'), nsMob('stray', 3, 'зимогор'), nsMob('spider', 6, 'паук')],
+				[nsMob('zombie', 10, 'зомби в кольчуге', NS_ARMOR.chain + ',' + nsHand('iron_sword')), nsMob('witch', 3, 'ведьма')],
+				[nsMob('vindicator', 5, 'поборник'), nsMob('pillager', 6, 'разбойник')],
+				[nsMob('zombie', 12, 'зомби'), nsMob('zombie', 4, 'зомби-малыш', NS_BABY)],
 			],
-			minor: [nsMob('zombie', 6, 'зомби'), nsMob('husk', 2, 'кадавр'), nsMob('spider', 2, 'паук'), nsMob('skeleton', 2, 'скелет')],
+			minor: [nsMob('zombie', 8, 'зомби'), nsMob('husk', 3, 'кадавр'), nsMob('spider', 3, 'паук'), nsMob('skeleton', 3, 'скелет')],
 		},
 		3: {
 			waves: [
-				[nsMob('husk', 8, 'кадавр'), nsMob('zombie', 4, 'зомби-малыш', NS_BABY), nsMob('zombie', 6, 'зомби')],
-				[nsMob('skeleton', 8, 'скелет'), nsMob('stray', 4, 'зимогор')],
-				[nsMob('phantom', 6, 'фантом')], // воздушная волна — коридор не спасёт
-				[nsMob('zombie', 6, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 4, 'поборник'), nsMob('witch', 2, 'ведьма')],
-				[nsMob('spider', 6, 'паук'), nsMob('cave_spider', 6, 'пещерный паук')], // лезут по стенам
+				[nsMob('husk', 12, 'кадавр'), nsMob('zombie', 6, 'зомби-малыш', NS_BABY), nsMob('zombie', 10, 'зомби')],
+				[nsMob('skeleton', 12, 'скелет'), nsMob('stray', 6, 'зимогор')],
+				[nsMob('phantom', 10, 'фантом')], // воздушная волна — коридор не спасёт
+				[nsMob('zombie', 10, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 6, 'поборник'), nsMob('witch', 3, 'ведьма')],
+				[nsMob('spider', 10, 'паук'), nsMob('cave_spider', 10, 'пещерный паук')], // лезут по стенам
+				[nsMob('zombie', 14, 'зомби'), nsMob('husk', 6, 'кадавр')],
 			],
-			minor: [nsMob('zombie', 6, 'зомби'), nsMob('skeleton', 3, 'скелет'), nsMob('phantom', 2, 'фантом'), nsMob('cave_spider', 2, 'пещерный паук')],
+			minor: [nsMob('zombie', 8, 'зомби'), nsMob('skeleton', 4, 'скелет'), nsMob('phantom', 3, 'фантом'), nsMob('cave_spider', 3, 'пещерный паук')],
 		},
 		4: {
 			waves: [
-				[nsMob('zombie', 10, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_axe')), nsMob('husk', 6, 'кадавр')],
-				[nsMob('skeleton', 10, 'скелет'), nsMob('stray', 4, 'зимогор')],
-				[nsMob('phantom', 8, 'фантом')],
-				[nsMob('vindicator', 6, 'поборник'), nsMob('evoker', 1, 'заклинатель'), nsMob('pillager', 6, 'разбойник')],
-				[nsMob('ravager', 1, 'опустошитель'), nsMob('pillager', 4, 'разбойник'), nsMob('wither_skeleton', 4, 'визер-скелет')],
+				[nsMob('zombie', 16, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_axe')), nsMob('husk', 10, 'кадавр')],
+				[nsMob('skeleton', 16, 'скелет'), nsMob('stray', 8, 'зимогор')],
+				[nsMob('phantom', 14, 'фантом')],
+				[nsMob('vindicator', 12, 'поборник'), nsMob('evoker', 2, 'заклинатель'), nsMob('pillager', 10, 'разбойник')],
+				[nsMob('ravager', 2, 'опустошитель'), nsMob('pillager', 8, 'разбойник'), nsMob('wither_skeleton', 8, 'визер-скелет')],
+				[nsMob('zombie', 18, 'зомби в железе', NS_ARMOR.iron), nsMob('zombie', 8, 'зомби-малыш', NS_BABY)],
 			],
-			minor: [nsMob('zombie', 6, 'зомби в железе', NS_ARMOR.iron), nsMob('skeleton', 3, 'скелет'), nsMob('vindicator', 2, 'поборник'), nsMob('pillager', 2, 'разбойник')],
+			minor: [nsMob('zombie', 8, 'зомби в железе', NS_ARMOR.iron), nsMob('skeleton', 4, 'скелет'), nsMob('vindicator', 3, 'поборник'), nsMob('pillager', 3, 'разбойник')],
 		},
 		5: {
 			waves: [
-				[nsMob('zombie', 8, 'зомби в алмазе, быстрый', NS_ARMOR.diamond + ',' + nsHand('diamond_sword') + ',' + NS_SPEED), nsMob('zombie', 10, 'зомби')],
-				[nsMob('skeleton', 12, 'скелет'), nsMob('stray', 6, 'зимогор')],
-				[nsMob('phantom', 10, 'фантом')],
-				[nsMob('vindicator', 8, 'поборник'), nsMob('evoker', 2, 'заклинатель')],
-				[nsMob('ravager', 2, 'опустошитель'), nsMob('pillager', 6, 'разбойник')],
-				[nsMob('wither_skeleton', 8, 'визер-скелет')],
+				[nsMob('zombie', 14, 'зомби в алмазе, быстрый', NS_ARMOR.diamond + ',' + nsHand('diamond_sword') + ',' + NS_SPEED), nsMob('zombie', 16, 'зомби')],
+				[nsMob('skeleton', 18, 'скелет'), nsMob('stray', 10, 'зимогор')],
+				[nsMob('phantom', 16, 'фантом')],
+				[nsMob('vindicator', 14, 'поборник'), nsMob('evoker', 3, 'заклинатель')],
+				[nsMob('ravager', 3, 'опустошитель'), nsMob('pillager', 12, 'разбойник')],
+				[nsMob('wither_skeleton', 14, 'визер-скелет')],
+				[nsMob('zombie', 22, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('zombie', 10, 'зомби-малыш', NS_BABY)],
 			],
-			minor: [nsMob('zombie', 4, 'зомби в алмазе', NS_ARMOR.diamond), nsMob('zombie', 8, 'зомби'), nsMob('skeleton', 4, 'скелет'), nsMob('phantom', 3, 'фантом')],
+			minor: [nsMob('zombie', 6, 'зомби в алмазе', NS_ARMOR.diamond), nsMob('zombie', 10, 'зомби'), nsMob('skeleton', 5, 'скелет'), nsMob('phantom', 4, 'фантом')],
 		},
 		6: {
 			// Вторая половина Великой орды. Мобы планет Northstar и рядовые твари ArPhEx
 			// в Верхнем мире исчезают сразу после /summon (проверено 26.09) — здесь ванильные.
 			waves: [
-				[nsMob('wither_skeleton', 10, 'визер-скелет с алмазным мечом', nsHand('diamond_sword'))],
-				[nsMob('evoker', 3, 'заклинатель'), nsMob('vindicator', 8, 'поборник')],
-				[nsMob('stray', 10, 'зимогор'), nsMob('husk', 10, 'кадавр')],
-				[nsMob('ravager', 3, 'опустошитель'), nsMob('pillager', 8, 'разбойник')],
+				[nsMob('wither_skeleton', 14, 'визер-скелет с алмазным мечом', nsHand('diamond_sword'))],
+				[nsMob('evoker', 4, 'заклинатель'), nsMob('vindicator', 12, 'поборник')],
+				[nsMob('stray', 14, 'зимогор'), nsMob('husk', 14, 'кадавр')],
+				[nsMob('ravager', 4, 'опустошитель'), nsMob('pillager', 12, 'разбойник')],
 			],
 			// Scorpioid Bloodluster (ArPhEx): наземный, 450 HP, разрушение блоков у ArPhEx
 			// выключено в конфиге. Tormentor не взят: механика запечатывания — набег мог
@@ -188,6 +194,19 @@ NSG.NIGHTSHIFT_CONFIG = {
 			minor: null, // в P6 малых набегов нет
 		},
 	},
+}
+
+// Проклятие алтаря: проигранный малый набег (моб дошёл до алтаря) = −curseHpPerLevel
+// максимального здоровья у всех, до curseMaxLevel уровней. Снимается по уровню: откуп на
+// алтаре (стак ресурса текущей фазы, ПКМ предметом) или следующий малый набег без прорыва.
+NSG.NIGHTSHIFT_TRIBUTE = {
+	0: { item: '#minecraft:logs', count: 64, label: 'брёвен' },
+	1: { item: 'create:andesite_alloy', count: 64, label: 'андезитового сплава' },
+	2: { item: 'create:brass_ingot', count: 64, label: 'латунных слитков' },
+	3: { item: 'minecraft:redstone', count: 64, label: 'редстоуна' },
+	4: { item: 'tfmg:steel_ingot', count: 64, label: 'стальных слитков' },
+	5: { item: 'create_new_age:thorium', count: 32, label: 'тория' },
+	6: { item: 'create_new_age:thorium', count: 32, label: 'тория' },
 }
 
 // --------------------------------------------------------------------------
@@ -265,4 +284,6 @@ NSG.NIGHTSHIFT_TUNABLES = {
 	chewTicksMin: 20, // не быстрее секунды даже для hardness=0
 	chewTicksMax: 1200, // не дольше минуты даже для обсидиана
 	minorRaidEveryNights: 5,
+	curseHpPerLevel: 4, // −2 сердца за уровень проклятия
+	curseMaxLevel: 3,
 }

@@ -37,6 +37,7 @@ function nsRaidEnded() {
 // Сброс набега (алтарь пропал, нет конфига орды, /nightshift stop): мобы набега уходят вместе с ним
 function nsResetRaidIdle(state) {
 	state.raid = nsDefaultState().raid
+	nsReturnAll(state)
 	nsSaveState(state)
 	nsRaidEnded()
 	NSG.nsServer.runCommandSilent('kill @e[tag=nightshift_raid]')
@@ -368,12 +369,52 @@ function nsStartRaid(kind, altarId) {
 		nsTitleAll('Мир неспокоен…', { color: 'yellow', subtitle: 'К базе идут гости', subColor: 'gray' })
 	}
 
+	nsInviteToAltar(nsFindAltar(state, altarId), kind)
 	nsBossbarCreate('nightshift:raid_countdown', kind === 'sacrifice' ? 'Набег на алтарь' : 'Малый набег', kind === 'sacrifice' ? 'red' : 'yellow')
 	nsBossbarMax('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 	nsBossbarValue('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 }
 
 // {waves, boss} текущего набега: жертвенный — nsSacrificeHorde, малый — minor текущей фазы
+function nsTellAll(component) {
+	var players = NSG.nsServer.getPlayers()
+	for (var i = 0; i < players.length; i++) players[i].tell(component)
+}
+
+// Тем, кто далеко от алтаря (другое измерение или дальше raidPlayerRadius), — кнопка телепорта
+function nsInviteToAltar(altar, kind) {
+	if (!altar) return
+	var r = NSG.NIGHTSHIFT_TUNABLES.raidPlayerRadius
+	var players = NSG.nsServer.getPlayers()
+	for (var i = 0; i < players.length; i++) {
+		var p = players[i]
+		var far = String(p.getLevel().getDimension()) !== altar.dim
+		if (!far) {
+			var dx = p.getX() - altar.x,
+				dz = p.getZ() - altar.z
+			far = dx * dx + dz * dz > r * r
+		}
+		if (!far) continue
+		p.tell(
+			Text.gold(kind === 'sacrifice' ? '[Ночная смена] Набег на алтарь! ' : '[Ночная смена] К базе идут гости! ')
+				.append(Text.green('[Телепорт к алтарю]').clickRunCommand('/nightshift altar').hover(Text.gray('После набега вернёт туда, где вы сейчас')))
+		)
+	}
+}
+
+// Конец набега: телепортировавшихся к алтарю — обратно (кто не в сети — вернём при входе)
+function nsReturnAll(state) {
+	if (!state.returns) return
+	var players = NSG.nsServer.getPlayers()
+	for (var i = 0; i < players.length; i++) {
+		var name = String(players[i].getUsername())
+		if (!state.returns[name]) continue
+		nsReturnPlayer(name, state.returns[name])
+		players[i].tell(Text.gray('[Ночная смена] Набег закончился — возвращаю туда, где вы были.'))
+		delete state.returns[name]
+	}
+}
+
 function nsHordeCfg(state) {
 	if (state.raid.kind === 'sacrifice') return nsSacrificeHorde(state.phase)
 	var h = NSG.NIGHTSHIFT_CONFIG.hordes[state.phase]
@@ -465,14 +506,26 @@ function nsRaidVictory(state) {
 		// сначала сохраняем конец набега, потом выдаём фазу: выдача запускает /reload
 		state.raid = nsDefaultState().raid
 		state.dayCounter = 0
+		nsReturnAll(state)
 		nsSaveState(state)
 		grantPhase(nextPhase) // сама обновит фазу и сбросит прогресс жертвы
 	} else {
 		var reached = state.raid.reached || 0
+		var T = NSG.NIGHTSHIFT_TUNABLES
+		var tribute = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
 		console.info('[nightshift] малый набег закончился, до алтаря дошли: ' + reached)
-		if (reached > 0) nsTitleAll('Набег прошёл', { color: 'yellow', subtitle: 'До алтаря добрались: ' + reached + ' — в этот раз без последствий', subColor: 'gray' })
-		else nsTitleAll('Набег отбит', { color: 'green' })
+		if (reached > 0) {
+			// прорыв к алтарю — проклятие: −2 сердца у всех, до curseMaxLevel уровней
+			state.curse = Math.min(T.curseMaxLevel, (state.curse || 0) + 1)
+			nsTitleAll('Алтарь осквернён', { color: 'dark_red', bold: true, subtitle: 'До алтаря добрались: ' + reached + ' — здоровье урезано', subColor: 'gray' })
+			nsTellAll(Text.red('[Ночная смена] Проклятие алтаря: ' + state.curse + ' ур. (−' + state.curse * T.curseHpPerLevel / 2 + ' сердец). Снять уровень: ' + tribute.count + ' ' + tribute.label + ' на алтарь (ПКМ) или отбить следующий малый набег без прорыва.'))
+		} else if ((state.curse || 0) > 0) {
+			state.curse--
+			nsTitleAll('Набег отбит', { color: 'green', subtitle: 'Проклятие ослабло', subColor: 'gray' })
+		} else nsTitleAll('Набег отбит', { color: 'green' })
+		nsApplyCurse(null, state.curse || 0)
 		state.raid = nsDefaultState().raid
+		nsReturnAll(state)
 		nsSaveState(state)
 	}
 }
@@ -489,6 +542,7 @@ function nsRaidFail(state, mobs) {
 	state.raid = nsDefaultState().raid
 	state.raid.state = 'cooldown'
 	state.raid.countdownRemaining = 20 // секунд паузы перед тем, как алтарь снова примет жертву
+	nsReturnAll(state)
 	nsSaveState(state)
 
 	nsTitleAll('Испытание провалено', { color: 'dark_red', bold: true, subtitle: 'Жертва сгорела — соберите заново', subColor: 'gray' })

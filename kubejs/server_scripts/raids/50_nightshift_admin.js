@@ -5,6 +5,7 @@
 //   /nightshift minor             — малый набег у ближайшего алтаря
 //   /nightshift stop              — остановить набег и убрать мобов набега
 //   /nightshift phase <0..6>      — выставить фазу (стадии AStages + состояние)
+//   /nightshift altar             — любой игрок: телепорт к алтарю во время набега, после — обратно
 // ==========================================================================
 
 function nsNearestAltar(state, source) {
@@ -34,9 +35,30 @@ ServerEvents.commandRegistry(event => {
 
 	event.register(
 		Commands.literal('nightshift')
-			.requires(src => src.hasPermission(2))
+			// игроку — только телепорт к алтарю во время набега; остальное — операторам
 			.then(
-				Commands.literal('status').executes(ctx => {
+				Commands.literal('altar').executes(ctx => {
+					var player = ctx.source.getPlayer()
+					if (!player) return 0
+					var st = nsGetState()
+					var altar = nsRaidActive(st) ? nsFindAltar(st, st.raid.altarId) : null
+					if (!altar) {
+						nsAdminReply(ctx, 'сейчас набега нет — телепорт только на защиту алтаря')
+						return 0
+					}
+					var name = String(player.getUsername())
+					st.returns = st.returns || {}
+					if (!st.returns[name]) {
+						st.returns[name] = { dim: String(player.getLevel().getDimension()), x: player.getX(), y: player.getY(), z: player.getZ() }
+					}
+					nsSaveState(st)
+					NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run tp ' + name + ' ' + (altar.x + 0.5) + ' ' + (altar.y + 1) + ' ' + (altar.z + 0.5))
+					nsAdminReply(ctx, 'вы у алтаря. После набега вернёт туда, где вы были.')
+					return 1
+				})
+			)
+			.then(
+				Commands.literal('status').requires(src => src.hasPermission(2)).executes(ctx => {
 					var st = nsGetState()
 					nsAdminReply(ctx, 'фаза ' + st.phase + ', набег: ' + st.raid.state + (st.raid.kind ? ' (' + st.raid.kind + ', волна ' + (st.raid.waveIndex + 1) + ')' : ''))
 					nsAdminReply(ctx, 'жертва: ' + JSON.stringify(st.sacrificeProgress) + ', алтарей: ' + st.altars.length + ', зон: ' + st.zones.length + ', ночей до малого: ' + (NSG.NIGHTSHIFT_TUNABLES.minorRaidEveryNights - st.dayCounter))
@@ -44,7 +66,7 @@ ServerEvents.commandRegistry(event => {
 				})
 			)
 			.then(
-				Commands.literal('raid').executes(ctx => {
+				Commands.literal('raid').requires(src => src.hasPermission(2)).executes(ctx => {
 					var st = nsGetState()
 					var altar = nsNearestAltar(st, ctx.source)
 					if (!altar) {
@@ -57,7 +79,7 @@ ServerEvents.commandRegistry(event => {
 				})
 			)
 			.then(
-				Commands.literal('minor').executes(ctx => {
+				Commands.literal('minor').requires(src => src.hasPermission(2)).executes(ctx => {
 					var st = nsGetState()
 					var altar = nsNearestAltar(st, ctx.source)
 					if (!altar) {
@@ -70,7 +92,7 @@ ServerEvents.commandRegistry(event => {
 				})
 			)
 			.then(
-				Commands.literal('stop').executes(ctx => {
+				Commands.literal('stop').requires(src => src.hasPermission(2)).executes(ctx => {
 					var st = nsGetState()
 					nsResetRaidIdle(st) // сам убирает мобов набега
 					NSG.nsServer.runCommandSilent('weather clear')
@@ -79,7 +101,7 @@ ServerEvents.commandRegistry(event => {
 				})
 			)
 			.then(
-				Commands.literal('phase').then(
+				Commands.literal('phase').requires(src => src.hasPermission(2)).then(
 					Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
 						var n = Math.max(0, Math.min(6, Number(Arguments.INTEGER.getResult(ctx, 'n'))))
 						// файл фазы пишем заранее — тогда whenGranted не зовёт /reload на каждую стадию

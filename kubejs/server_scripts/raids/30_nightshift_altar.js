@@ -97,6 +97,7 @@ function nsShowForecast(player, state) {
 		player.tell(Text.gray('[Ночная смена] Открыта последняя предусмотренная фаза.'))
 		return
 	}
+	if ((state.curse || 0) > 0) player.tell(nsCurseLine(state))
 	player.tell(Text.gold('[Ночная смена] Прогноз набега при жертве фазы ' + nextPhase + ':'))
 	var lines = nsForecastText(nextPhase).split('\n')
 	for (var i = 0; i < lines.length; i++) player.tell(Text.white(lines[i]))
@@ -135,11 +136,41 @@ BlockEvents.rightClicked('nightshift:altar', event => {
 	event.cancel()
 })
 
+// Откуп проклятия алтаря: стопка ресурса текущей фазы (NIGHTSHIFT_TRIBUTE) снимает один уровень
+function nsTributeMatches(stack, item) {
+	if (!stack || stack.isEmpty()) return false
+	if (item.charAt(0) === '#') return stack.is(NS_TAGKEY.create(NS_REGISTRIES.ITEM, NS_RL.parse(item.substring(1))))
+	return String(stack.getId()) === item
+}
+
+function nsTryTribute(state, player, stack) {
+	var t = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
+	if (!t || !nsTributeMatches(stack, t.item)) return false
+	if (stack.getCount() < t.count) {
+		player.tell(Text.gray('[Ночная смена] Для откупа нужно ' + t.count + ' ' + t.label + ' одной стопкой.'))
+		return true
+	}
+	stack.shrink(t.count)
+	state.curse--
+	nsSaveState(state)
+	nsApplyCurse(null, state.curse)
+	nsTellAll(Text.green('[Ночная смена] ' + player.getUsername() + ' откупился у алтаря: ' + (state.curse > 0 ? 'проклятие ослабло до ' + state.curse + ' ур.' : 'проклятие снято')))
+	return true
+}
+
+function nsCurseLine(state) {
+	var t = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
+	var hearts = (state.curse * NSG.NIGHTSHIFT_TUNABLES.curseHpPerLevel) / 2
+	return Text.red('Проклятие алтаря: ' + state.curse + ' ур. (−' + hearts + ' сердец). Откуп: ' + t.count + ' ' + t.label + ' — ПКМ стопкой по алтарю.')
+}
+
 function nsAltarClick(event) {
 	var state = nsGetState()
 	var player = event.getEntity()
 	var block = event.getBlock()
 	nsUpsertAltar(state, block)
+
+	if ((state.curse || 0) > 0 && !nsRaidActive(state) && nsTryTribute(state, player, event.getItem())) return
 
 	var nextPhase = state.phase + 1
 	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]

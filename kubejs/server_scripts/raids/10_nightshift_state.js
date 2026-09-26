@@ -79,6 +79,8 @@ function nsDefaultState() {
 			trackR: 0, // 0 — радиус поиска по умолчанию (raidTrackRadius)
 			reached: 0,
 		},
+		curse: 0, // уровень проклятия алтаря (проигранные малые набеги), см. nsApplyCurse
+		returns: {}, // {имя: {dim,x,y,z}} — куда вернуть телепортировавшихся к алтарю после набега
 		dayCounter: 0, // ночей с последнего малого набега
 		lastSeenDay: -1, // для детекта смены дня
 		markerCorners: {}, // {playerUuid: {dim,x,y,z}}
@@ -267,6 +269,34 @@ function nsCompletePhaseQuests(player, phase) {
 	for (var p = 1; p <= 6; p++) NSG.nsServer.runCommandSilent('tag ' + who + ' ' + (p <= phase ? 'add' : 'remove') + ' nightshift_p' + p)
 }
 
+// Проклятие алтаря: −curseHpPerLevel максимального здоровья за уровень. Модификатор
+// атрибута сохраняется у игрока; при входе и при каждом изменении выставляем заново.
+function nsApplyCurse(player, level) {
+	var who = player ? String(player.getUsername()) : '@a'
+	NSG.nsServer.runCommandSilent('execute as ' + who + ' run attribute @s minecraft:generic.max_health modifier remove nightshift:altar_curse')
+	if (level > 0) {
+		var hp = -level * NSG.NIGHTSHIFT_TUNABLES.curseHpPerLevel
+		NSG.nsServer.runCommandSilent('execute as ' + who + ' run attribute @s minecraft:generic.max_health modifier add nightshift:altar_curse ' + hp + ' add_value')
+	}
+}
+
 PlayerEvents.loggedIn(event => {
-	nsCompletePhaseQuests(event.getPlayer(), nsGetState().phase)
+	var st = nsGetState()
+	nsCompletePhaseQuests(event.getPlayer(), st.phase)
+	nsApplyCurse(event.getPlayer(), st.curse || 0)
+	nsReturnIfPending(event.getPlayer(), st)
 })
+
+// Телепорт к алтарю на время набега: куда вернуть игрока после (state.returns[имя])
+function nsReturnPlayer(name, spot) {
+	NSG.nsServer.runCommandSilent('execute in ' + spot.dim + ' run tp ' + name + ' ' + spot.x + ' ' + spot.y + ' ' + spot.z)
+}
+
+function nsReturnIfPending(player, st) {
+	var name = String(player.getUsername())
+	if (!st.returns || !st.returns[name] || nsRaidActive(st)) return
+	nsReturnPlayer(name, st.returns[name])
+	delete st.returns[name]
+	nsSaveState(st)
+	player.tell(Text.gray('[Ночная смена] Набег закончился — вы вернулись туда, где были.'))
+}

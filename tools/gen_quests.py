@@ -27,8 +27,8 @@ STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
 # Порядок глав в книге — по фазам Ночной смены
-ORDER = ["welcome", "night_shift", "altar",
-         "create_basics", "ore_processing", "defense", "logistics_food",
+ORDER = ["welcome", "night_shift", "altar", "tower_defense", "weapons", "food",
+         "create_basics", "ore_processing", "logistics_food",
          "brass_logistics_trains", "automation_extras", "big_cannons",
          "first_plane", "airships_cars", "submarines", "economy",
          "steel_oil", "fuel_engines",
@@ -36,7 +36,7 @@ ORDER = ["welcome", "night_shift", "altar",
 
 # Фаза главы: название получает префикс, а стартовые квесты главы заперты
 # до квеста «Фаза N открыта» (altar:phase_N — задача-стадия, тег игрока nightshift_pN)
-PHASE = {"create_basics": 1, "ore_processing": 1, "defense": 1, "logistics_food": 1,
+PHASE = {"create_basics": 1, "ore_processing": 1, "logistics_food": 1,
          "brass_logistics_trains": 2, "automation_extras": 2, "big_cannons": 2,
          "first_plane": 3, "airships_cars": 3, "submarines": 3, "economy": 3,
          "steel_oil": 4, "fuel_engines": 4,
