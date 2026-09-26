@@ -81,6 +81,46 @@ file = "config/modernfix-mixins.properties"
 hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
 
 [[files]]
+file = "kubejs/client_scripts/nightshift_rerender.js"
+hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/00_stages.js"
+hash = "d7b3c0c75fb9649be0ac7f452ab12731bb48ba20abb61d5ca9fdf4eebc12b9fb"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/01_ores.js"
+hash = "88cd13ed25af513421d85a5190e07bf5a3c873bc9384b7ed31c3821443c99d29"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/02_items.js"
+hash = "b531509b3848792147b3df683ba29acd0e90d491a95ea8d1175c92ea46d7c6fc"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/03_leak_recipe_fixes.js"
+hash = "21917a29a6182619070c56a96e4d0ef29532fa39af6897597f0692894f5e26f0"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/04_drilling_gate.js"
+hash = "4535e31c85bf9ed260d31e3dfaba437776f4e02c62bc2b5623186f3c09062d2c"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/05_loot.js"
+hash = "cc2a027fedd48a33ddaf5e65cd3364ae0f61c32dea842d1cb3fcf8d3aa8494f8"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/06_villager_trade.js"
+hash = "f8b0711b0c14f5aabbee9a5b0df74b90bdb894c8c4a8cf5a1d7a70adef3f8174"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/07_dimensions.js"
+hash = "fa8a1bbe6d3b52807b2aff761dd0e104ca044d1ca6e71431fe71f420f66b889c"
+
+[[files]]
+file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
+hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
+
+[[files]]
 file = "mods/3dskinlayers.pw.toml"
 hash = "b3b67f83faf9dcc4985b7a13fa8affb71062461d271f80cc0958652df9f3126b"
 metafile = true
