@@ -373,6 +373,10 @@ file = "kubejs/server_scripts/economy/40_blocks.js"
 hash = "479fee6478caa6b1d27a34c598bf8d2f46adac1158ff048b88377ab585f6e95e"
 
 [[files]]
+file = "kubejs/server_scripts/hud/10_recipe_pins.js"
+hash = "6253678170953a2f22fb234588b761fac3fd7f24a65a44f01569816d4d00417f"
+
+[[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
 hash = "d83e62725f89645fff569caa9a717cf4f3a466775d408eb894d036cbef29ddc6"
 
@@ -422,7 +426,7 @@ hash = "4e2df7e6861ba2a0e94e5857430619023f2e6311bdf53c5802024e4a99582766"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "568b0d0eef4a9c1199f27fd63f2fc74b710aa482be68e48e904bd4614d36f1a0"
+hash = "c960a4f217689c0d2fca5c4b5b16e8f32f4549c4e795aa24eba3364a510c3da7"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"

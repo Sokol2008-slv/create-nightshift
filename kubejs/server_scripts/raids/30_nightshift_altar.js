@@ -172,7 +172,8 @@ BlockEvents.rightClicked('nightshift:altar', event => {
 // Откуп проклятия алтаря: стопка ресурса (nsTributeFor) снимает одно сердце
 function nsTributeMatches(stack, item) {
 	if (!stack || stack.isEmpty()) return false
-	if (item.charAt(0) === '#') return stack.is(NS_TAGKEY.create(NS_REGISTRIES.ITEM, NS_RL.parse(item.substring(1))))
+	// у ItemStack.is несколько перегрузок — Rhino нужен явный вариант с TagKey
+	if (item.charAt(0) === '#') return stack['is(net.minecraft.tags.TagKey)'](NS_TAGKEY.create(NS_REGISTRIES.ITEM, NS_RL.parse(item.substring(1))))
 	return String(stack.getId()) === item
 }
 
