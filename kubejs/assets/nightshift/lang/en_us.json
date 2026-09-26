@@ -1,5 +1,6 @@
 {
 	"item.nightshift.base_marker": "Base Marker",
 	"block.nightshift.base_core": "Base Core",
-	"block.nightshift.altar": "Shift Altar"
+	"block.nightshift.altar": "Shift Altar",
+	"item.nightshift.sedative": "Sedative"
 }

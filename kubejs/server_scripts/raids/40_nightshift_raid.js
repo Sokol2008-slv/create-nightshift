@@ -90,8 +90,8 @@ function nsPlayersNearAltar(level, altar) {
 }
 
 // Живые мобы набега вокруг алтаря. null — если поиск не удался.
-function nsCollectRaidMobs(level, altar) {
-	var R = NSG.NIGHTSHIFT_TUNABLES.raidTrackRadius
+function nsCollectRaidMobs(level, altar, radius) {
+	var R = radius || NSG.NIGHTSHIFT_TUNABLES.raidTrackRadius
 	var list
 	try {
 		list = level.getEntitiesWithin(new NS_AABB(altar.x - R, altar.y - 64, altar.z - R, altar.x + R + 1, altar.y + 64, altar.z + R + 1))
@@ -150,15 +150,18 @@ function nsFindSpawnY(level, x, z, altarY) {
 }
 
 // Спавн count мобов mobId кольцом raidRingMinDist..raidRingMaxDist от алтаря, вне зон базы.
+// Возвращает наибольшее расстояние спавна — по нему растёт радиус поиска мобов набега.
 function nsSpawnMobRing(level, altar, mobId, count, state) {
 	var T = NSG.NIGHTSHIFT_TUNABLES
+	var farthest = 0
 	for (var i = 0; i < count; i++) {
 		var x = 0,
 			z = 0,
 			y = null
-		for (var attempt = 0; attempt < 12; attempt++) {
+		// кольцо расширяется с каждой попыткой: у большой базы орда встаёт сразу за периметром
+		for (var attempt = 0; attempt < 40; attempt++) {
 			var angle = Math.random() * Math.PI * 2
-			var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist)
+			var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + attempt * 8
 			x = Math.round(altar.x + Math.cos(angle) * dist)
 			z = Math.round(altar.z + Math.sin(angle) * dist)
 			if (nsPointInAnyZone(state, altar.dim, x, altar.y, z)) continue
@@ -166,9 +169,19 @@ function nsSpawnMobRing(level, altar, mobId, count, state) {
 			if (y !== null) break
 		}
 		if (y === null) continue
+		farthest = Math.max(farthest, Math.sqrt((x - altar.x) * (x - altar.x) + (z - altar.z) * (z - altar.z)))
 		var nbt = '{Tags:["nightshift_raid"],PersistenceRequired:1b}'
 		NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run summon ' + mobId + ' ' + x + ' ' + y + ' ' + z + ' ' + nbt)
 	}
+	return farthest
+}
+
+function nsTrackRadius(state) {
+	return state.raid.trackR || NSG.NIGHTSHIFT_TUNABLES.raidTrackRadius
+}
+
+function nsGrowTrackRadius(state, farthest) {
+	state.raid.trackR = Math.max(nsTrackRadius(state), Math.ceil(farthest) + 48)
 }
 
 // --------------------------------------------------------------------------
@@ -370,7 +383,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 		if (state.raid.kind === 'sacrifice' && hordeCfg.boss && !state.raid.bossSpawned) {
 			state.raid.bossSpawned = true
 			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true })
-			nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state)
+			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state))
 			state.raid.waveSize = 1
 			nsSaveState(state)
 			return true
@@ -381,7 +394,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 	nsTitleAll('Волна ' + (state.raid.waveIndex + 1), { color: 'red', bold: true })
 	var size = 0
 	for (var i = 0; i < wave.length; i++) {
-		nsSpawnMobRing(level, altar, wave[i].id, wave[i].count, state)
+		nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, wave[i].id, wave[i].count, state))
 		size += wave[i].count
 	}
 	state.raid.waveSize = size
@@ -484,7 +497,7 @@ function nsTickActiveRaid(state) {
 	if (nsRaidPaused(state, level, altar)) return
 	var T = NSG.NIGHTSHIFT_TUNABLES
 
-	var mobs = nsCollectRaidMobs(level, altar)
+	var mobs = nsCollectRaidMobs(level, altar, nsTrackRadius(state))
 	if (mobs === null) return // поиск сломан — не засчитываем волну вслепую
 
 	// провал / добор до алтаря
@@ -530,7 +543,7 @@ function nsTickActiveRaid(state) {
 		nsRaidVictory(state)
 		return
 	}
-	var fresh = nsCollectRaidMobs(level, altar)
+	var fresh = nsCollectRaidMobs(level, altar, nsTrackRadius(state))
 	if (fresh !== null && fresh.length === 0 && !state.raid.bossSpawned) {
 		console.warn('[nightshift] волна ' + (state.raid.waveIndex + 1) + ' не появилась (нет места для спавна?)')
 	}

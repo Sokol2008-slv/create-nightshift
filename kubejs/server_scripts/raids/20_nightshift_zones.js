@@ -32,8 +32,8 @@
 
 // --------------------------------------------------------------------------
 // Разметка зоны: два клика ПКМ разметчиком по противоположным углам.
-// Если игрок кликает, приседая (isShiftKeyDown) — зона растягивается на всю
-// высоту мира (-64..320 для 1.21), а не только между Y кликов.
+// По умолчанию зона — колонна на всю высоту мира. Если первый клик сделан с
+// Shift — зона только между высотами кликов (для подземных аванпостов).
 // --------------------------------------------------------------------------
 BlockEvents.rightClicked(event => {
 	var item = event.getItem()
@@ -47,14 +47,27 @@ BlockEvents.rightClicked(event => {
 	var z = block.getZ()
 
 	var state = nsGetState()
-	var uuid = player.getStringUUID() // публичный метод Entity, прямой вызов через Rhino
+	var uuid = String(player.getUsername()) // ключ разметки — имя игрока (getStringUUID в Rhino 2101 недоступен)
 
 	var pending = state.markerCorners[uuid]
+	// клиент после клика по блоку досылает «использование предмета» — отсекаем его по тику
+	NSG.nsMarkerBlockTick = NSG.nsMarkerBlockTick || {}
+	NSG.nsMarkerBlockTick[uuid] = event.server.getTickCount()
+	nsMarkerClick(event, state, player, uuid, pending, dim, x, y, z)
+	// разметчик не открывает сундуки и не жмёт кнопки; cancel() в 2101 выходит из обработчика — последним
+	event.cancel()
+})
 
+function nsMarkerClick(event, state, player, uuid, pending, dim, x, y, z) {
 	if (!pending) {
-		state.markerCorners[uuid] = { dim: dim, x: x, y: y, z: z, fullHeight: !!player.isShiftKeyDown() }
+		var limited = !!player.isShiftKeyDown()
+		state.markerCorners[uuid] = { dim: dim, x: x, y: y, z: z, limitY: limited }
 		nsSaveState(state)
-		player.tell(Text.yellow('[Ночная смена] Первый угол зоны отмечен: ' + x + ' ' + y + ' ' + z + '. Кликните противоположный угол.'))
+		player.tell(
+			Text.yellow(
+				'[Ночная смена] Первый угол зоны: ' + x + ' ' + y + ' ' + z + (limited ? ' (зона между высотами кликов)' : ' (зона на всю высоту)') + '. Кликните противоположный угол.'
+			)
+		)
 		return
 	}
 
@@ -65,7 +78,9 @@ BlockEvents.rightClicked(event => {
 		return
 	}
 
-	var fullHeight = pending.fullHeight || !!player.isShiftKeyDown()
+	// по умолчанию зона — колонна на всю высоту мира; с Shift на первом клике —
+	// только между высотами кликов (+2 блока над верхним, чтобы пол был внутри)
+	var fullHeight = !pending.limitY
 	var zone = {
 		id: 'zone_' + Date.now() + '_' + Math.floor(Math.random() * 1000),
 		dim: dim,
@@ -75,7 +90,7 @@ BlockEvents.rightClicked(event => {
 		maxZ: Math.max(pending.z, z),
 		hasY: !fullHeight,
 		minY: fullHeight ? -64 : Math.min(pending.y, y),
-		maxY: fullHeight ? 320 : Math.max(pending.y, y),
+		maxY: fullHeight ? 320 : Math.max(pending.y, y) + 2,
 		owner: uuid,
 	}
 	state.zones.push(zone)
@@ -89,6 +104,77 @@ BlockEvents.rightClicked(event => {
 			'[Ночная смена] Зона базы создана: ' + sizeX + 'x' + sizeZ + (fullHeight ? ' (на всю высоту)' : ' (Y ' + zone.minY + '..' + zone.maxY + ')') + '. Монстры внутри больше не спавнятся сами.'
 		)
 	)
+}
+
+// Разметчик в воздух: обычный клик — в какой зоне стоишь; с Shift — удалить её.
+ItemEvents.rightClicked('nightshift:base_marker', event => {
+	var player = event.getEntity()
+	var last = NSG.nsMarkerBlockTick ? NSG.nsMarkerBlockTick[String(player.getUsername())] : null
+	if (last != null && event.server.getTickCount() - last <= 1) return // это был клик по блоку
+	var state = nsGetState()
+	var dim = String(player.getLevel().getDimension())
+	var px = Math.floor(player.getX()),
+		py = Math.floor(player.getY()),
+		pz = Math.floor(player.getZ())
+	var idx = -1
+	for (var i = 0; i < state.zones.length; i++) {
+		if (nsPointInZone(state.zones[i], dim, px, py, pz)) {
+			idx = i
+			break
+		}
+	}
+	var mine = 0
+	for (var j = 0; j < state.zones.length; j++) if (state.zones[j].dim === dim) mine++
+	if (idx === -1) {
+		player.tell(Text.gray('[Ночная смена] Вы не в зоне базы. Зон в этом измерении: ' + mine + '. Отметьте два угла кликом разметчика по блокам.'))
+		return
+	}
+	var zone = state.zones[idx]
+	var size = zone.maxX - zone.minX + 1 + 'x' + (zone.maxZ - zone.minZ + 1)
+	if (player.isShiftKeyDown()) {
+		state.zones.splice(idx, 1)
+		nsSaveState(state)
+		player.tell(Text.red('[Ночная смена] Зона базы ' + size + ' удалена.'))
+		return
+	}
+	player.tell(Text.green('[Ночная смена] Вы в зоне базы ' + size + '. Shift + клик в воздух — удалить эту зону.'))
+})
+
+// --------------------------------------------------------------------------
+// Блок базы: ставится только внутри зоны, сверху появляется алтарь.
+// Сломали блок базы — алтарь исчезает (сам алтарь неломаемый).
+// --------------------------------------------------------------------------
+BlockEvents.placed('nightshift:base_core', event => {
+	var block = event.getBlock()
+	var player = event.getEntity()
+	var state = nsGetState()
+	var dim = String(block.getDimension())
+	var inZone = nsPointInAnyZone(state, dim, block.getX(), block.getY(), block.getZ())
+	var above = block.offset(0, 1, 0)
+	var free = above.getBlockState().isAir()
+	if (inZone && free) {
+		above.set('nightshift:altar')
+		nsUpsertAltar(state, above) // из 30_nightshift_altar.js — алтарь сразу цель малых набегов
+		nsSaveState(state)
+		if (player && player.isPlayer()) player.tell(Text.gold('[Ночная смена] Над блоком базы вырос алтарь. ПКМ по нему — прогноз набега и первая жертва.'))
+		return
+	}
+	if (player && player.isPlayer()) {
+		if (!inZone) player.tell(Text.red('[Ночная смена] Блок базы ставится только в зоне базы — сначала отметьте её разметчиком.'))
+		else player.tell(Text.red('[Ночная смена] Над блоком базы должно быть свободное место для алтаря.'))
+	}
+	event.cancel()
+})
+
+BlockEvents.broken('nightshift:base_core', event => {
+	var above = event.getBlock().offset(0, 1, 0)
+	if (String(above.getId()) !== 'nightshift:altar') return
+	var state = nsGetState()
+	var id = 'altar_' + String(above.getDimension()).replace(/[^a-z0-9]/gi, '_') + '_' + above.getX() + '_' + above.getY() + '_' + above.getZ()
+	for (var i = state.altars.length - 1; i >= 0; i--) if (state.altars[i].id === id) state.altars.splice(i, 1)
+	if (state.raid.altarId === id && nsRaidActive(state)) state.raid = nsDefaultState().raid
+	nsSaveState(state)
+	above.set('minecraft:air')
 })
 
 // --------------------------------------------------------------------------

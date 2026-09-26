@@ -61,11 +61,12 @@ StartupEvents.registry('block', event => {
 
 	// Алтарь смены — принимает жертвы из инвентаря (воронка/лента Create) и,
 	// отдельно, ручное ПКМ-подношение для самой первой жертвы P0→P1.
+	// Алтарь не ломается сам: он стоит на блоке базы и исчезает вместе с ним
+	// (см. raids/20_nightshift_zones.js). Так базу переносят, ломая блок базы.
 	event.create('nightshift:altar')
 		.texture('minecraft:block/crying_obsidian') // заглушка текстуры, тематически подходит
-		.hardness(8)
-		.resistance(1200)
-		.tagBlock('minecraft:mineable/pickaxe')
+		.unbreakable()
+		.noDrops()
 		.item(itemBuilder => {})
 		.blockEntity(be => {
 			// Тикаем на сервере — нужно server-скрипту (30_nightshift_altar.js) для

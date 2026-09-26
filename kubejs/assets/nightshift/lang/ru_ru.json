@@ -1,5 +1,6 @@
 {
 	"item.nightshift.base_marker": "Разметчик базы",
 	"block.nightshift.base_core": "Блок базы",
-	"block.nightshift.altar": "Алтарь смены"
+	"block.nightshift.altar": "Алтарь смены",
+	"item.nightshift.sedative": "Успокоительное"
 }

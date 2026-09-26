@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ArPhEx Configurations.toml"
+hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
+
+[[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
@@ -81,12 +85,20 @@ file = "config/modernfix-mixins.properties"
 hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
 
 [[files]]
+file = "config/sanity_renewed/default.toml"
+hash = "efc3a76fc696c39aa2a98e356252282feef02d8ca9a7aae7e85d503448a9f67b"
+
+[[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "66c868659cd2841fb8356fb5ee10f499b19c2f1ea1bc9bc1d0e1268e79cc566c"
+hash = "5b8dd75c52214e1cce6acf234a1d0c725f4a28e2f397c84bca175da0e4b6a699"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "b470fa64318aff0f737a1c5abbe4b6ac074ed7917ca7aaf4b2b9cc84111b1fb5"
+hash = "a805989a977d96ba3696c43b1464c8fa66e0aa403be28931f9d0c4dd8c753aee"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/sedative.png"
+hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
 
 [[files]]
 file = "kubejs/client_scripts/nightshift_rerender.js"
@@ -138,7 +150,7 @@ hash = "cb57058bb67ca8c7d1f10d9208335bb018f8e18605eb5b8d2f5bc86fc5170a23"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
-hash = "4503aeee1978a668414077d2e6860fa2164f8ba50c267d5c5849b68a019d909b"
+hash = "274cb808a54066ac90c7af14d0837476678283dce5c081f616d6ebc357da5891"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
@@ -146,15 +158,35 @@ hash = "b1a7f1775ded367228a096a295b519aba808fc69da3db1a98923d5565f8fa668"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "914559bf32836f61208eacfb8bd46eb6c144ecd67763a02bdfe01512b5eba6bb"
+hash = "2e7df7940a582c77d74ed9aa442973161813d7389bf3db47130b6e0c31198bee"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
 hash = "941d39de53b97618afd13e85091a5bd4714b07d74e4ccb8fc8cf93849d58d984"
 
 [[files]]
+file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
+hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
+
+[[files]]
+file = "kubejs/server_scripts/sanity/10_sedative.js"
+hash = "4ef0b91b53867a2dd67f74adaffed733957a7bc8be9865eee82f4ca0919acb76"
+
+[[files]]
+file = "kubejs/server_scripts/sanity/20_darkness.js"
+hash = "65178ee0bc9644e6e4649ba569147617c86ba61edf71e6a442c742bcc45fea02"
+
+[[files]]
+file = "kubejs/server_scripts/sanity/30_hordes_safety.js"
+hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
+
+[[files]]
 file = "kubejs/startup_scripts/nightshift_items_blocks.js"
-hash = "8bac47fdef60cac3280ae3ac4f1b727600d21c7d60a0806596dbf353c5d34b57"
+hash = "8e5a4549c93f1eccce445ceb0f0246ff7a7830f1eb77d44935e286ec3b6ad9f9"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_sanity_items.js"
+hash = "4c4d744de9b7bf1c731008dbb0dd26443792f9b3bc106b917a9afefc07c2d666"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
