@@ -115,6 +115,7 @@ function nsCheckSacrificeComplete(state, block) {
 	var nextPhase = state.phase + 1
 	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]
 	if (!target) return
+	if ((state.curse || 0) > 0) return // осквернённый алтарь жертву копит, но набег не запускает
 	for (var id in target.items) {
 		var have = state.sacrificeProgress[id] || 0
 		if (have < target.items[id]) return // ещё не всё собрано
@@ -143,7 +144,7 @@ function nsTributeMatches(stack, item) {
 	return String(stack.getId()) === item
 }
 
-function nsTryTribute(state, player, stack) {
+function nsTryTribute(state, player, stack, block) {
 	var t = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
 	if (!t || !nsTributeMatches(stack, t.item)) return false
 	if (stack.getCount() < t.count) {
@@ -151,17 +152,22 @@ function nsTryTribute(state, player, stack) {
 		return true
 	}
 	stack.shrink(t.count)
-	state.curse--
-	nsSaveState(state)
-	nsApplyCurse(null, state.curse)
-	nsTellAll(Text.green('[Ночная смена] ' + player.getUsername() + ' откупился у алтаря: ' + (state.curse > 0 ? 'проклятие ослабло до ' + state.curse + ' ур.' : 'проклятие снято')))
+	nsLiftCurse(state, String(player.getUsername()))
+	if (state.curse === 0) nsCheckSacrificeComplete(nsGetState(), block) // жертва уже собрана — набег
 	return true
+}
+
+// Одно сердце проклятия снято (стопка искупления руками или конвейером)
+function nsLiftCurse(state, who) {
+	state.curse = Math.max(0, (state.curse || 0) - 1)
+	nsSaveState(state)
+	nsApplyPenalty(null)
+	nsTellAll(Text.green('[Ночная смена] ' + (who ? who + ' искупил' : 'Алтарь принял') + ' стопку: ' + (state.curse > 0 ? 'осталось ' + state.curse + ' сердец проклятия.' : 'проклятие снято, алтарь снова принимает жертву.')))
 }
 
 function nsCurseLine(state) {
 	var t = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
-	var hearts = (state.curse * NSG.NIGHTSHIFT_TUNABLES.curseHpPerLevel) / 2
-	return Text.red('Проклятие алтаря: ' + state.curse + ' ур. (−' + hearts + ' сердец). Откуп: ' + t.count + ' ' + t.label + ' — ПКМ стопкой по алтарю.')
+	return Text.red('[Ночная смена] Проклятие алтаря: −' + state.curse + ' сердец у всех. Искупление: ' + t.count + ' ' + t.label + ' за сердце — ПКМ стопкой по алтарю или конвейером в алтарь. Пока не искуплено — следующую жертву алтарь не примет.')
 }
 
 function nsAltarClick(event) {
@@ -170,7 +176,7 @@ function nsAltarClick(event) {
 	var block = event.getBlock()
 	nsUpsertAltar(state, block)
 
-	if ((state.curse || 0) > 0 && !nsRaidActive(state) && nsTryTribute(state, player, event.getItem())) return
+	if ((state.curse || 0) > 0 && !nsRaidActive(state) && nsTryTribute(state, player, event.getItem(), block)) return
 
 	var nextPhase = state.phase + 1
 	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]
@@ -268,6 +274,27 @@ BlockEvents.blockEntityTick('nightshift:altar', event => {
 			NSG.nsInventoryWarned = true
 		}
 		return
+	}
+
+	// Искупление проклятия конвейером: ресурс фазы засчитывается раньше жертвы
+	var tribute = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
+	if ((state.curse || 0) > 0 && tribute) {
+		for (var k = 0; k < inv.getSlots() && state.curse > 0; k++) {
+			var ts = inv.getStackInSlot(k)
+			if (!nsTributeMatches(ts, tribute.item)) continue
+			var got = inv.extractItem(k, Math.min(ts.getCount(), tribute.count - (state.tributeProgress || 0)), false).getCount()
+			state.tributeProgress = (state.tributeProgress || 0) + got
+			if (state.tributeProgress >= tribute.count) {
+				state.tributeProgress = 0
+				nsLiftCurse(state, null)
+				if (state.curse === 0) {
+					nsSaveState(state)
+					nsCheckSacrificeComplete(nsGetState(), block)
+					return
+				}
+			}
+		}
+		nsSaveState(state)
 	}
 
 	// Всё, что пришло в алтарь, он забирает: нужное идёт в жертву, лишнее сгорает

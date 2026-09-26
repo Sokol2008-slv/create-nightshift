@@ -6,7 +6,7 @@
 	icon: { id: "createbigcannons:cast_iron_cannon_barrel" }
 	id: "47BE67043C78FD72"
 	images: [ ]
-	order_index: 9
+	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{

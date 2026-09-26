@@ -6,7 +6,7 @@
 	icon: { id: "northstar:space_atlas" }
 	id: "0096249BA19EA3EF"
 	images: [ ]
-	order_index: 17
+	order_index: 19
 	quest_links: [ ]
 	quests: [
 		{

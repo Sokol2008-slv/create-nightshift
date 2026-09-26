@@ -59,7 +59,7 @@
 			size: 1.0d
 			tasks: [{ id: "465F8D1D1EADA62A", type: "checkmark" }]
 			x: 8.80d
-			y: -2.27d
+			y: -2.07d
 		}
 		{
 			dependencies: ["02B6C933968E95C2"]
@@ -70,7 +70,7 @@
 			size: 1.0d
 			tasks: [{ id: "003EEE33EB1E91C2", type: "checkmark" }]
 			x: 8.80d
-			y: 1.23d
+			y: -0.47d
 		}
 		{
 			icon: { id: "nightshift:altar" }
@@ -124,7 +124,7 @@
 			size: 1.0d
 			tasks: [{ id: "06E0797D9160A931", stage: "nightshift_p5", team_stage: false, type: "gamestage" }]
 			x: 8.80d
-			y: -0.37d
+			y: 1.13d
 		}
 		{
 			dependencies: ["04E8AC6AA22AE406"]
@@ -135,7 +135,18 @@
 			size: 1.6d
 			tasks: [{ id: "21EC8756CB947DF1", stage: "nightshift_p6", team_stage: false, type: "gamestage" }]
 			x: 11.00d
-			y: -0.37d
+			y: 1.28d
+		}
+		{
+			dependencies: ["2FC167169892DA63"]
+			icon: { id: "minecraft:wither_rose" }
+			id: "724C7100B630DF65"
+			rewards: [{ id: "6929CD0F39C00D2A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "51BE27D074A9C49D", type: "checkmark" }]
+			x: 11.00d
+			y: -0.62d
 		}
 	]
 }

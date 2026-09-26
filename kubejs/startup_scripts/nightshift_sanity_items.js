@@ -8,4 +8,9 @@ StartupEvents.registry('item', event => {
 		.texture('nightshift:item/sedative')
 		.maxStackSize(16)
 		.food(food => food.nutrition(1).saturation(0.1).alwaysEdible().fastToEat())
+	// Настойка жизни: лечит одну рану (−1 сердце за смерть), см. server_scripts/sanity/40_death.js
+	event.create('nightshift:life_tonic')
+		.texture('nightshift:item/life_tonic')
+		.maxStackSize(16)
+		.food(food => food.nutrition(2).saturation(0.2).alwaysEdible())
 })

@@ -63,6 +63,7 @@ ServerEvents.tick(event => {
 		if (!darkCheck || cap.getSanity() < NS_DARK_INSANITY) continue
 		if (p.getBlock().getLight() > NS_DARK_LIGHT || nsLightInHands(p)) continue
 		var name = p.getUsername()
+		p.persistentData.putLong('ns_dark_hit', event.server.getTickCount()) // смерть от тьмы — см. sanity/40_death.js
 		event.server.runCommandSilent('damage ' + name + ' ' + NS_DARK_DAMAGE + ' minecraft:magic')
 		event.server.runCommandSilent('execute at ' + name + ' run playsound sanity_renewed:heartbeat ambient ' + name + ' ~ ~ ~ 1 0.7')
 		p.setStatusMessage(Text.darkRed('Тьма сжимается… Нужен свет или таблетка'))

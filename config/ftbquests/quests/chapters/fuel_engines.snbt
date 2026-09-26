@@ -6,7 +6,7 @@
 	icon: { id: "tfmg:diesel_bucket" }
 	id: "5E4EF322BC43BC6E"
 	images: [ ]
-	order_index: 15
+	order_index: 17
 	quest_links: [ ]
 	quests: [
 		{

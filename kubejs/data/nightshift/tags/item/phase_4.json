@@ -166,14 +166,6 @@
    "required": false
   },
   {
-   "id": "createpropulsion:platinum_fluid_tank",
-   "required": false
-  },
-  {
-   "id": "createpropulsion:platinum_fluid_vessel",
-   "required": false
-  },
-  {
    "id": "createpropulsion:platinum_ingot",
    "required": false
   },
@@ -394,14 +386,6 @@
    "required": false
   },
   {
-   "id": "tfmg:cinder_block",
-   "required": false
-  },
-  {
-   "id": "tfmg:cinderflour_block",
-   "required": false
-  },
-  {
    "id": "tfmg:circuit_board",
    "required": false
   },
@@ -427,10 +411,6 @@
   },
   {
    "id": "tfmg:copycat_cable_block",
-   "required": false
-  },
-  {
-   "id": "tfmg:crankshaft",
    "required": false
   },
   {
@@ -882,34 +862,6 @@
    "required": false
   },
   {
-   "id": "tfmg:rebar",
-   "required": false
-  },
-  {
-   "id": "tfmg:rebar_block",
-   "required": false
-  },
-  {
-   "id": "tfmg:rebar_floor",
-   "required": false
-  },
-  {
-   "id": "tfmg:rebar_pile",
-   "required": false
-  },
-  {
-   "id": "tfmg:rebar_pillar",
-   "required": false
-  },
-  {
-   "id": "tfmg:rebar_stairs",
-   "required": false
-  },
-  {
-   "id": "tfmg:rebar_wall",
-   "required": false
-  },
-  {
    "id": "tfmg:red_multimeter",
    "required": false
   },
@@ -931,10 +883,6 @@
   },
   {
    "id": "tfmg:screw",
-   "required": false
-  },
-  {
-   "id": "tfmg:screwdriver",
    "required": false
   },
   {

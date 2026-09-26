@@ -6,7 +6,7 @@
 	icon: { id: "create:controls" }
 	id: "6A8DA5DFF2143038"
 	images: [ ]
-	order_index: 7
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{

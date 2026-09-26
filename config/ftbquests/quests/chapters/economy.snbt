@@ -6,7 +6,7 @@
 	icon: { id: "projecte:transmutation_table" }
 	id: "776B79B076735E90"
 	images: [ ]
-	order_index: 13
+	order_index: 15
 	quest_links: [ ]
 	quests: [
 		{

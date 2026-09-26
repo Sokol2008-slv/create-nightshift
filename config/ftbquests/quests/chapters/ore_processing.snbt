@@ -6,7 +6,7 @@
 	icon: { id: "createoreexcavation:drilling_machine" }
 	id: "4F949985ED97D8E8"
 	images: [ ]
-	order_index: 4
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{

@@ -30,14 +30,6 @@
    "required": false
   },
   {
-   "id": "aeroworks:copper_lever_module",
-   "required": false
-  },
-  {
-   "id": "aeroworks:copper_pedal_module",
-   "required": false
-  },
-  {
    "id": "aeroworks:copper_throttle_quadrant_module",
    "required": false
   },
@@ -51,14 +43,6 @@
   },
   {
    "id": "aeroworks:joystick_module",
-   "required": false
-  },
-  {
-   "id": "aeroworks:lever_module",
-   "required": false
-  },
-  {
-   "id": "aeroworks:pedal_module",
    "required": false
   },
   {
@@ -414,10 +398,6 @@
    "required": false
   },
   {
-   "id": "create:gearbox",
-   "required": false
-  },
-  {
    "id": "create:hand_crank",
    "required": false
   },
@@ -447,6 +427,10 @@
   },
   {
    "id": "create:item_hatch",
+   "required": false
+  },
+  {
+   "id": "create:linear_chassis",
    "required": false
   },
   {
@@ -506,10 +490,6 @@
    "required": false
   },
   {
-   "id": "create:package_frogport",
-   "required": false
-  },
-  {
    "id": "create:piston_extension_pole",
    "required": false
   },
@@ -534,6 +514,10 @@
    "required": false
   },
   {
+   "id": "create:secondary_linear_chassis",
+   "required": false
+  },
+  {
    "id": "create:spout",
    "required": false
   },
@@ -543,10 +527,6 @@
   },
   {
    "id": "create:track",
-   "required": false
-  },
-  {
-   "id": "create:vertical_gearbox",
    "required": false
   },
   {
@@ -579,10 +559,6 @@
   },
   {
    "id": "create_connected:crank_wheel",
-   "required": false
-  },
-  {
-   "id": "create_connected:cross_connector",
    "required": false
   },
   {
@@ -639,10 +615,6 @@
   },
   {
    "id": "create_mechanical_spawner:vertical_framed_dark_glass",
-   "required": false
-  },
-  {
-   "id": "create_mobile_packages:bee_port",
    "required": false
   },
   {
@@ -998,70 +970,6 @@
    "required": false
   },
   {
-   "id": "create_vibrant_vaults:black_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:blue_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:brown_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:cyan_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:gray_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:green_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:light_blue_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:light_gray_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:lime_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:magenta_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:orange_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:pink_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:purple_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:red_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:white_package_frogport",
-   "required": false
-  },
-  {
-   "id": "create_vibrant_vaults:yellow_package_frogport",
-   "required": false
-  },
-  {
    "id": "create_winery:wine_cellar",
    "required": false
   },
@@ -1090,11 +998,19 @@
    "required": false
   },
   {
+   "id": "createaddition:electrum_spool",
+   "required": false
+  },
+  {
    "id": "createaddition:iron_rod",
    "required": false
   },
   {
    "id": "createaddition:iron_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:large_connector",
    "required": false
   },
   {
@@ -1642,6 +1558,14 @@
    "required": false
   },
   {
+   "id": "createdeco:copper_coin",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_coinstack",
+   "required": false
+  },
+  {
    "id": "createdeco:copper_hull",
    "required": false
   },
@@ -2058,6 +1982,14 @@
    "required": false
   },
   {
+   "id": "createshufflefilter:shuffle_filter",
+   "required": false
+  },
+  {
+   "id": "createshufflefilter:weighted_shuffle_filter",
+   "required": false
+  },
+  {
    "id": "createsifter:andesite_mesh",
    "required": false
   },
@@ -2091,14 +2023,6 @@
   },
   {
    "id": "dndecor:andesite_floor",
-   "required": false
-  },
-  {
-   "id": "dndecor:andesite_frontlight",
-   "required": false
-  },
-  {
-   "id": "dndecor:andesite_lamp",
    "required": false
   },
   {
@@ -2294,15 +2218,19 @@
    "required": false
   },
   {
+   "id": "dndesires:pumpkin_milkshake",
+   "required": false
+  },
+  {
    "id": "dndesires:roll_table",
    "required": false
   },
   {
-   "id": "dndesires:splashing_sail",
+   "id": "dndesires:seething_sail",
    "required": false
   },
   {
-   "id": "dndesires:strawberry_milkshake",
+   "id": "dndesires:splashing_sail",
    "required": false
   },
   {
@@ -2531,6 +2459,14 @@
   },
   {
    "id": "minecraft:heavy_weighted_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "minecraft:hopper",
+   "required": false
+  },
+  {
+   "id": "minecraft:hopper_minecart",
    "required": false
   },
   {
@@ -2806,47 +2742,11 @@
    "required": false
   },
   {
-   "id": "projecte:arcana_ring",
-   "required": false
-  },
-  {
-   "id": "projecte:archangel_smite",
-   "required": false
-  },
-  {
-   "id": "projecte:black_hole_band",
-   "required": false
-  },
-  {
    "id": "projecte:destruction_catalyst",
    "required": false
   },
   {
-   "id": "projecte:evertide_amulet",
-   "required": false
-  },
-  {
-   "id": "projecte:harvest_goddess_band",
-   "required": false
-  },
-  {
-   "id": "projecte:ignition_ring",
-   "required": false
-  },
-  {
    "id": "projecte:iron_band",
-   "required": false
-  },
-  {
-   "id": "projecte:swiftwolf_rending_gale",
-   "required": false
-  },
-  {
-   "id": "projecte:volcanite_amulet",
-   "required": false
-  },
-  {
-   "id": "projecte:zero_ring",
    "required": false
   },
   {
@@ -2859,14 +2759,6 @@
   },
   {
    "id": "railways:conductor_vent",
-   "required": false
-  },
-  {
-   "id": "railways:iron_wrapped_locometal",
-   "required": false
-  },
-  {
-   "id": "railways:iron_wrapped_locometal_smokebox",
    "required": false
   },
   {
@@ -3170,6 +3062,10 @@
    "required": false
   },
   {
+   "id": "sophisticatedbackpacks:blasting_upgrade",
+   "required": false
+  },
+  {
    "id": "sophisticatedbackpacks:copper_backpack",
    "required": false
   },
@@ -3190,7 +3086,7 @@
    "required": false
   },
   {
-   "id": "sophisticatedbackpacks:stack_downgrade_tier_3",
+   "id": "sophisticatedbackpacks:stack_downgrade_tier_2",
    "required": false
   },
   {
@@ -3215,6 +3111,10 @@
   },
   {
    "id": "sophisticatedstorage:basic_to_iron_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:blasting_upgrade",
    "required": false
   },
   {
@@ -3286,7 +3186,7 @@
    "required": false
   },
   {
-   "id": "sophisticatedstorage:stack_downgrade_tier_3",
+   "id": "sophisticatedstorage:stack_downgrade_tier_2",
    "required": false
   },
   {
@@ -3326,18 +3226,6 @@
    "required": false
   },
   {
-   "id": "tfmg:coal_coke",
-   "required": false
-  },
-  {
-   "id": "tfmg:coal_coke_block",
-   "required": false
-  },
-  {
-   "id": "tfmg:coal_coke_dust",
-   "required": false
-  },
-  {
    "id": "tfmg:coke_oven",
    "required": false
   },
@@ -3371,10 +3259,6 @@
   },
   {
    "id": "tfmg:exhaust",
-   "required": false
-  },
-  {
-   "id": "tfmg:graphite_electrode",
    "required": false
   },
   {

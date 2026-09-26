@@ -515,18 +515,18 @@ function nsRaidVictory(state) {
 		var tribute = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
 		console.info('[nightshift] малый набег закончился, до алтаря дошли: ' + reached)
 		if (reached > 0) {
-			// прорыв к алтарю — проклятие: −2 сердца у всех, до curseMaxLevel уровней
-			state.curse = Math.min(T.curseMaxLevel, (state.curse || 0) + 1)
-			nsTitleAll('Алтарь осквернён', { color: 'dark_red', bold: true, subtitle: 'До алтаря добрались: ' + reached + ' — здоровье урезано', subColor: 'gray' })
-			nsTellAll(Text.red('[Ночная смена] Проклятие алтаря: ' + state.curse + ' ур. (−' + state.curse * T.curseHpPerLevel / 2 + ' сердец). Снять уровень: ' + tribute.count + ' ' + tribute.label + ' на алтарь (ПКМ) или отбить следующий малый набег без прорыва.'))
+			// прорыв к алтарю — проклятие у всей команды
+			state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + T.curseHeartsMinor)
+			nsTitleAll('Алтарь осквернён', { color: 'dark_red', bold: true, subtitle: 'До алтаря добрались: ' + reached + ' — −' + T.curseHeartsMinor + ' сердца у всех', subColor: 'gray' })
+			nsTellAll(nsCurseLine(state))
 		} else if ((state.curse || 0) > 0) {
 			state.curse--
-			nsTitleAll('Набег отбит', { color: 'green', subtitle: 'Проклятие ослабло', subColor: 'gray' })
+			nsTitleAll('Набег отбит', { color: 'green', subtitle: 'Проклятие ослабло на сердце', subColor: 'gray' })
 		} else nsTitleAll('Набег отбит', { color: 'green' })
-		nsApplyCurse(null, state.curse || 0)
 		state.raid = nsDefaultState().raid
 		nsReturnAll(state)
 		nsSaveState(state)
+		nsApplyPenalty(null)
 	}
 }
 
@@ -538,14 +538,19 @@ function nsRaidFail(state, mobs) {
 	nsBossbarRemove('nightshift:raid_wave')
 	NSG.nsServer.runCommandSilent('weather clear')
 
+	var T = NSG.NIGHTSHIFT_TUNABLES
 	state.sacrificeProgress = {} // жертва сгорает — требование плана
+	state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + T.curseHeartsSacrifice) // и проклятие: фаза заблокирована до искупления
 	state.raid = nsDefaultState().raid
 	state.raid.state = 'cooldown'
 	state.raid.countdownRemaining = 20 // секунд паузы перед тем, как алтарь снова примет жертву
 	nsReturnAll(state)
 	nsSaveState(state)
+	nsApplyPenalty(null)
 
-	nsTitleAll('Испытание провалено', { color: 'dark_red', bold: true, subtitle: 'Жертва сгорела — соберите заново', subColor: 'gray' })
+	nsTitleAll('Испытание провалено', { color: 'dark_red', bold: true, subtitle: 'Жертва сгорела, −' + T.curseHeartsSacrifice + ' сердец у всех, алтарь осквернён', subColor: 'gray' })
+	nsTellAll(nsCurseLine(state))
+	nsTellAll(Text.gray('[Ночная смена] Пока проклятие не искуплено, алтарь не запустит следующую жертву.'))
 }
 
 // --------------------------------------------------------------------------

@@ -1,0 +1,219 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "weapons"
+	group: ""
+	icon: { id: "cgs:gatling" }
+	id: "337BD701D154F1B7"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "3EC55E8A9E16874C"
+			rewards: [{ id: "4C03A36ECF6FA72E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3560CC81700D49A8", item: { count: 1, id: "minecraft:stone_sword" }, type: "item" }]
+			x: 0.00d
+			y: -2.40d
+		}
+		{
+			id: "3B3BC2D592599387"
+			rewards: [{ id: "5E534BA24AA0E8D5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4CB26BD0AE322B60", item: { count: 1, id: "cgs:hammer_stone" }, type: "item" }]
+			x: 0.00d
+			y: -0.80d
+		}
+		{
+			id: "521CD648E130FD9F"
+			rewards: [{ id: "33270B74E98C3336", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3434B4DD3278ECBD", item: { count: 1, id: "minecraft:trident" }, type: "item" }]
+			x: 0.00d
+			y: 0.80d
+		}
+		{
+			id: "1C041F3B6BC1AA69"
+			rewards: [{ id: "4F975D9AA2BD0A4A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1A0589818939E365", item: { count: 1, id: "minecraft:turtle_helmet" }, type: "item" }]
+			x: 0.00d
+			y: 2.40d
+		}
+		{
+			dependencies: ["3B3BC2D592599387", "6C6F1BB21939360A"]
+			id: "2F42EF4EFE1E9881"
+			rewards: [{ id: "4A0A0AB70C559CBB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4D8B0E2CE1FFA183", item: { count: 1, id: "cgs:hammer_iron" }, type: "item" }]
+			x: 2.20d
+			y: -0.80d
+		}
+		{
+			dependencies: ["3EC55E8A9E16874C", "6C6F1BB21939360A"]
+			id: "219CB0D675EF5EEE"
+			rewards: [{ id: "5D8A06ADA97E425E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "384262A3E5C62C79", item: { count: 1, id: "cgs:spear" }, type: "item" }]
+			x: 2.20d
+			y: -2.40d
+		}
+		{
+			dependencies: ["1C041F3B6BC1AA69", "6C6F1BB21939360A"]
+			id: "1409D189B5A4B25E"
+			rewards: [{ id: "34F93010E6C61467", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1198C8009E01E0A6", item: { count: 1, id: "minecraft:iron_chestplate" }, type: "item" }]
+			x: 2.20d
+			y: 2.40d
+		}
+		{
+			dependencies: ["219CB0D675EF5EEE", "7FFFE63128BF62E6"]
+			id: "603FB87D3ED2B581"
+			rewards: [{ id: "64351961F725A291", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1F569E1085622ADD", item: { count: 1, id: "cgs:bayonet" }, type: "item" }]
+			x: 4.40d
+			y: -3.60d
+		}
+		{
+			dependencies: ["603FB87D3ED2B581", "7FFFE63128BF62E6"]
+			id: "553F4DF7DAB32787"
+			rewards: [{ id: "78666E15139D72AD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "765A8AAE6ECBF938", item: { count: 1, id: "cgs:big_bayonet" }, type: "item" }]
+			x: 6.60d
+			y: -3.60d
+		}
+		{
+			dependencies: ["2F42EF4EFE1E9881", "7FFFE63128BF62E6"]
+			id: "02B25E310B8069D6"
+			rewards: [{ id: "2301F8AB482E5CC6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6F80ED00013D07BA", item: { count: 1, id: "cgs:frag_grenade" }, type: "item" }]
+			x: 4.40d
+			y: -2.00d
+		}
+		{
+			dependencies: ["02B25E310B8069D6", "7FFFE63128BF62E6"]
+			id: "10F9F025767F43F1"
+			rewards: [{ id: "1E6A678E0F347244", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "123B7D6141B5EB40", item: { count: 1, id: "cgs:nailgun" }, type: "item" }]
+			x: 6.60d
+			y: -2.00d
+		}
+		{
+			dependencies: ["10F9F025767F43F1", "7FFFE63128BF62E6"]
+			id: "3947E4DD03FEF6DA"
+			rewards: [{ id: "598BCC9357B1CCE9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2A8FEE85ED7AE3DB", item: { count: 1, id: "cgs:ballistazooka" }, type: "item" }]
+			x: 8.80d
+			y: -2.00d
+		}
+		{
+			dependencies: ["2F42EF4EFE1E9881", "20D753939FFD3F93"]
+			id: "1B6E419378350D2B"
+			rewards: [{ id: "39FA3314C2EA5896", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "090D9CA9C983F6CC", item: { count: 1, id: "cgs:hammer_diamond" }, type: "item" }]
+			x: 4.40d
+			y: 2.80d
+		}
+		{
+			dependencies: ["1409D189B5A4B25E", "20D753939FFD3F93"]
+			id: "4D03C9F63A7D2222"
+			rewards: [{ id: "362A2F1F39D3A29F", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "33D60CA5E93D7DAF", item: { count: 1, id: "minecraft:diamond_chestplate" }, type: "item" }]
+			x: 4.40d
+			y: 1.20d
+		}
+		{
+			dependencies: ["3947E4DD03FEF6DA", "20D753939FFD3F93"]
+			id: "291F7DFD4AC666B2"
+			rewards: [{ id: "3828B1579EC86E97", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "16FCA9C4DDB31A0A", item: { count: 1, id: "cgs:blazegun" }, type: "item" }]
+			x: 11.00d
+			y: -2.53d
+		}
+		{
+			dependencies: ["1B6E419378350D2B", "20D753939FFD3F93"]
+			id: "79049C351BB0ADD1"
+			rewards: [{ id: "32D98047C7AD5D34", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1BE0E21FC7027AC8", item: { count: 1, id: "cgs:hammer_netherite" }, type: "item" }]
+			x: 6.60d
+			y: 2.80d
+		}
+		{
+			dependencies: ["4D03C9F63A7D2222", "20D753939FFD3F93"]
+			id: "13720189D8B60053"
+			rewards: [{ id: "3F1244CE3DF8F32C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0388F8CE636C602A", item: { count: 1, id: "minecraft:netherite_chestplate" }, type: "item" }]
+			x: 6.60d
+			y: 1.20d
+		}
+		{
+			dependencies: ["13720189D8B60053", "3AC5FBC11AD0E3EE"]
+			id: "710081270063F8BA"
+			rewards: [{ id: "393AA4DCA0F4076C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "450FC92C80186FCF", item: { count: 1, id: "cgs:steel_ingot" }, type: "item" }]
+			x: 8.80d
+			y: 1.20d
+		}
+		{
+			dependencies: ["710081270063F8BA", "3AC5FBC11AD0E3EE"]
+			id: "526F0A929AFCF674"
+			rewards: [{ id: "4EBA12A0692B56A9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1C5B2514396C848E", item: { count: 1, id: "cgs:revolver" }, type: "item" }]
+			x: 11.00d
+			y: 0.67d
+		}
+		{
+			dependencies: ["710081270063F8BA", "3AC5FBC11AD0E3EE"]
+			id: "475FB140DE9CB6C6"
+			rewards: [{ id: "1D95991FC674F9F1", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "77BE7186530EBAD7", item: { count: 1, id: "cgs:shotgun" }, type: "item" }]
+			x: 11.00d
+			y: 2.27d
+		}
+		{
+			dependencies: ["526F0A929AFCF674", "475FB140DE9CB6C6", "3AC5FBC11AD0E3EE"]
+			id: "495D204B1F3208FC"
+			rewards: [{ id: "688DEB4BC5A124A4", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "78E4E3FCDB43DD97", item: { count: 1, id: "cgs:gatling" }, type: "item" }]
+			x: 13.20d
+			y: 1.47d
+		}
+	]
+}

@@ -22,7 +22,23 @@
    "required": false
   },
   {
+   "id": "aeroworks:copper_lever_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_pedal_module",
+   "required": false
+  },
+  {
    "id": "aeroworks:joystick",
+   "required": false
+  },
+  {
+   "id": "aeroworks:lever_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:pedal_module",
    "required": false
   },
   {
@@ -198,10 +214,6 @@
    "required": false
   },
   {
-   "id": "copycats:copycat_half_layer",
-   "required": false
-  },
-  {
    "id": "copycats:copycat_half_panel",
    "required": false
   },
@@ -238,15 +250,11 @@
    "required": false
   },
   {
-   "id": "copycats:copycat_slice",
+   "id": "copycats:copycat_slope",
    "required": false
   },
   {
    "id": "copycats:copycat_slope_layer",
-   "required": false
-  },
-  {
-   "id": "copycats:copycat_stacked_half_layer",
    "required": false
   },
   {
@@ -258,7 +266,7 @@
    "required": false
   },
   {
-   "id": "copycats:copycat_vertical_slice",
+   "id": "copycats:copycat_vertical_slope",
    "required": false
   },
   {
@@ -798,34 +806,6 @@
    "required": false
   },
   {
-   "id": "createaddition:electrum_block",
-   "required": false
-  },
-  {
-   "id": "createaddition:electrum_ingot",
-   "required": false
-  },
-  {
-   "id": "createaddition:electrum_nugget",
-   "required": false
-  },
-  {
-   "id": "createaddition:electrum_rod",
-   "required": false
-  },
-  {
-   "id": "createaddition:electrum_sheet",
-   "required": false
-  },
-  {
-   "id": "createaddition:electrum_spool",
-   "required": false
-  },
-  {
-   "id": "createaddition:electrum_wire",
-   "required": false
-  },
-  {
    "id": "createaddition:gold_rod",
    "required": false
   },
@@ -835,10 +815,6 @@
   },
   {
    "id": "createaddition:gold_wire",
-   "required": false
-  },
-  {
-   "id": "createaddition:large_connector",
    "required": false
   },
   {
@@ -1414,14 +1390,6 @@
    "required": false
   },
   {
-   "id": "dndecor:brass_frontlight",
-   "required": false
-  },
-  {
-   "id": "dndecor:brass_lamp",
-   "required": false
-  },
-  {
    "id": "dndecor:brass_sheet_metal",
    "required": false
   },
@@ -1459,14 +1427,6 @@
   },
   {
    "id": "dndecor:gold_floor",
-   "required": false
-  },
-  {
-   "id": "dndecor:gold_frontlight",
-   "required": false
-  },
-  {
-   "id": "dndecor:gold_lamp",
    "required": false
   },
   {
@@ -1566,14 +1526,6 @@
    "required": false
   },
   {
-   "id": "dndecor:zinc_frontlight",
-   "required": false
-  },
-  {
-   "id": "dndecor:zinc_lamp",
-   "required": false
-  },
-  {
    "id": "dndecor:zinc_sheet_metal",
    "required": false
   },
@@ -1651,14 +1603,6 @@
   },
   {
    "id": "garnished:zinc_hatchet",
-   "required": false
-  },
-  {
-   "id": "immersiveengineering:plate_electrum",
-   "required": false
-  },
-  {
-   "id": "immersiveengineering:wire_electrum",
    "required": false
   },
   {
@@ -1754,10 +1698,6 @@
    "required": false
   },
   {
-   "id": "pipeorgans:diapason",
-   "required": false
-  },
-  {
    "id": "pipeorgans:english_horn",
    "required": false
   },
@@ -1770,10 +1710,6 @@
    "required": false
   },
   {
-   "id": "pipeorgans:prestant",
-   "required": false
-  },
-  {
    "id": "pipeorgans:tracker_bar",
    "required": false
   },
@@ -1783,10 +1719,6 @@
   },
   {
    "id": "pipeorgans:vox_humana",
-   "required": false
-  },
-  {
-   "id": "railways:brass_wrapped_locometal",
    "required": false
   },
   {
@@ -1827,10 +1759,6 @@
   },
   {
    "id": "railways:track_warped_wide",
-   "required": false
-  },
-  {
-   "id": "railways:wrapped_locometal_smokebox",
    "required": false
   },
   {

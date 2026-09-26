@@ -1674,14 +1674,6 @@
    "required": false
   },
   {
-   "id": "dndecor:netherite_frontlight",
-   "required": false
-  },
-  {
-   "id": "dndecor:netherite_lamp",
-   "required": false
-  },
-  {
    "id": "dndecor:netherite_sheet_metal",
    "required": false
   },
@@ -1734,19 +1726,11 @@
    "required": false
   },
   {
-   "id": "dndesires:burner",
-   "required": false
-  },
-  {
    "id": "dndesires:fluid_gauge",
    "required": false
   },
   {
    "id": "dndesires:gatling_breaker",
-   "required": false
-  },
-  {
-   "id": "dndesires:seething_sail",
    "required": false
   },
   {
@@ -2634,6 +2618,18 @@
    "required": false
   },
   {
+   "id": "projecte:arcana_ring",
+   "required": false
+  },
+  {
+   "id": "projecte:archangel_smite",
+   "required": false
+  },
+  {
+   "id": "projecte:black_hole_band",
+   "required": false
+  },
+  {
    "id": "projecte:body_stone",
    "required": false
   },
@@ -2662,6 +2658,14 @@
    "required": false
   },
   {
+   "id": "projecte:dark_matter",
+   "required": false
+  },
+  {
+   "id": "projecte:dark_matter_block",
+   "required": false
+  },
+  {
    "id": "projecte:divining_rod_2",
    "required": false
   },
@@ -2674,11 +2678,35 @@
    "required": false
   },
   {
+   "id": "projecte:dm_boots",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_chestplate",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_furnace",
+   "required": false
+  },
+  {
    "id": "projecte:dm_hammer",
    "required": false
   },
   {
+   "id": "projecte:dm_helmet",
+   "required": false
+  },
+  {
    "id": "projecte:dm_hoe",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_leggings",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_pedestal",
    "required": false
   },
   {
@@ -2695,6 +2723,10 @@
   },
   {
    "id": "projecte:dm_sword",
+   "required": false
+  },
+  {
+   "id": "projecte:evertide_amulet",
    "required": false
   },
   {
@@ -2718,11 +2750,19 @@
    "required": false
   },
   {
+   "id": "projecte:harvest_goddess_band",
+   "required": false
+  },
+  {
    "id": "projecte:high_covalence_dust",
    "required": false
   },
   {
    "id": "projecte:hyperkinetic_lens",
+   "required": false
+  },
+  {
+   "id": "projecte:ignition_ring",
    "required": false
   },
   {
@@ -2794,7 +2834,23 @@
    "required": false
   },
   {
+   "id": "projecte:rm_boots",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_chestplate",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_furnace",
+   "required": false
+  },
+  {
    "id": "projecte:rm_hammer",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_helmet",
    "required": false
   },
   {
@@ -2803,6 +2859,10 @@
   },
   {
    "id": "projecte:rm_katar",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_leggings",
    "required": false
   },
   {
@@ -2830,6 +2890,10 @@
    "required": false
   },
   {
+   "id": "projecte:swiftwolf_rending_gale",
+   "required": false
+  },
+  {
    "id": "projecte:tome",
    "required": false
   },
@@ -2846,7 +2910,15 @@
    "required": false
   },
   {
+   "id": "projecte:volcanite_amulet",
+   "required": false
+  },
+  {
    "id": "projecte:watch_of_flowing_time",
+   "required": false
+  },
+  {
+   "id": "projecte:zero_ring",
    "required": false
   },
   {
@@ -2898,6 +2970,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:blue_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:colossal_star_drei",
    "required": false
   },
@@ -2946,6 +3022,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:cyan_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:dark_collector",
    "required": false
   },
@@ -2962,6 +3042,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:dark_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:fading_collector",
    "required": false
   },
@@ -2975,6 +3059,10 @@
   },
   {
    "id": "projectexpansion:fading_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:fading_relay",
    "required": false
   },
   {
@@ -3046,6 +3134,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:green_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:infinite_fuel",
    "required": false
   },
@@ -3070,6 +3162,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:lime_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:magenta_collector",
    "required": false
   },
@@ -3083,6 +3179,10 @@
   },
   {
    "id": "projectexpansion:magenta_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magenta_relay",
    "required": false
   },
   {
@@ -3134,6 +3234,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:orange_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:pink_collector",
    "required": false
   },
@@ -3147,6 +3251,10 @@
   },
   {
    "id": "projectexpansion:pink_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:pink_relay",
    "required": false
   },
   {
@@ -3166,6 +3274,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:purple_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:red_collector",
    "required": false
   },
@@ -3179,6 +3291,10 @@
   },
   {
    "id": "projectexpansion:red_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:red_relay",
    "required": false
   },
   {
@@ -3202,6 +3318,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:violet_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:white_collector",
    "required": false
   },
@@ -3218,6 +3338,10 @@
    "required": false
   },
   {
+   "id": "projectexpansion:white_relay",
+   "required": false
+  },
+  {
    "id": "projectexpansion:yellow_collector",
    "required": false
   },
@@ -3231,6 +3355,10 @@
   },
   {
    "id": "projectexpansion:yellow_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:yellow_relay",
    "required": false
   },
   {
@@ -3354,10 +3482,6 @@
    "required": false
   },
   {
-   "id": "sophisticatedbackpacks:alchemy_upgrade",
-   "required": false
-  },
-  {
    "id": "sophisticatedbackpacks:anvil_upgrade",
    "required": false
   },
@@ -3370,15 +3494,15 @@
    "required": false
   },
   {
-   "id": "sophisticatedbackpacks:chipped/botanist_workbench_upgrade",
-   "required": false
-  },
-  {
    "id": "sophisticatedbackpacks:chipped/carpenters_table_upgrade",
    "required": false
   },
   {
    "id": "sophisticatedbackpacks:chipped/loom_table_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:chipped/mason_table_upgrade",
    "required": false
   },
   {
@@ -3470,10 +3594,6 @@
    "required": false
   },
   {
-   "id": "sophisticatedstorage:alchemy_upgrade",
-   "required": false
-  },
-  {
    "id": "sophisticatedstorage:basic_to_diamond_tier_upgrade",
    "required": false
   },
@@ -3486,15 +3606,15 @@
    "required": false
   },
   {
-   "id": "sophisticatedstorage:chipped/botanist_workbench_upgrade",
-   "required": false
-  },
-  {
    "id": "sophisticatedstorage:chipped/carpenters_table_upgrade",
    "required": false
   },
   {
    "id": "sophisticatedstorage:chipped/loom_table_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:chipped/mason_table_upgrade",
    "required": false
   },
   {
@@ -3655,6 +3775,10 @@
   },
   {
    "id": "tfmg:cast_iron_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "tfmg:cinderflour_block",
    "required": false
   },
   {

@@ -6,7 +6,7 @@
 	icon: { id: "tfmg:steel_ingot" }
 	id: "6B800B0BDBD97B68"
 	images: [ ]
-	order_index: 14
+	order_index: 16
 	quest_links: [ ]
 	quests: [
 		{

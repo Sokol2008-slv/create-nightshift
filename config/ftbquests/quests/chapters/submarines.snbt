@@ -6,7 +6,7 @@
 	icon: { id: "create_submarine:ballast_tank" }
 	id: "658076B113EF7AA0"
 	images: [ ]
-	order_index: 12
+	order_index: 14
 	quest_links: [ ]
 	quests: [
 		{

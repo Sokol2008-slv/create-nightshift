@@ -6,7 +6,7 @@
 	icon: { id: "create_mechanical_spawner:mechanical_spawner" }
 	id: "731F21B1388F0EC9"
 	images: [ ]
-	order_index: 8
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{

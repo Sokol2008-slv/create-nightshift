@@ -48,7 +48,7 @@
 			size: 1.0d
 			tasks: [{ id: "4FD3BB050D100584", count: 4L, item: { count: 1, id: "nightshift:sedative" }, type: "item" }]
 			x: 4.40d
-			y: -1.19d
+			y: -1.36d
 		}
 		{
 			dependencies: ["43011314638F3A38"]
@@ -59,7 +59,7 @@
 			size: 1.0d
 			tasks: [{ id: "5DAC8753EF922E92", type: "checkmark" }]
 			x: 6.60d
-			y: -2.52d
+			y: -1.81d
 		}
 		{
 			dependencies: ["0503A513927D11DF"]
@@ -91,7 +91,7 @@
 			size: 1.0d
 			tasks: [{ id: "0917CDE21094128C", type: "checkmark" }]
 			x: 4.40d
-			y: 4.05d
+			y: 3.39d
 		}
 		{
 			dependencies: ["6C3AD885DB6C2F69"]
@@ -102,7 +102,7 @@
 			size: 1.0d
 			tasks: [{ id: "65158812BF555FD4", type: "checkmark" }]
 			x: 6.60d
-			y: 2.88d
+			y: 28.27d
 		}
 		{
 			dependencies: ["3E5CB0645B9A0F13"]
@@ -113,18 +113,18 @@
 			size: 1.0d
 			tasks: [{ id: "2FA121BC9FD75912", type: "checkmark" }]
 			x: 4.40d
-			y: 5.65d
+			y: 4.99d
 		}
 		{
 			dependencies: ["42B84590A81466C4"]
-			icon: { id: "minecraft:bone" }
+			icon: { id: "minecraft:skeleton_skull" }
 			id: "529610133ACB2780"
 			rewards: [{ id: "7C1A48C03CDFF85C", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2791597DB577460A", type: "checkmark" }]
 			x: 4.40d
-			y: 0.95d
+			y: 1.79d
 		}
 		{
 			dependencies: ["5B2534CC31A2A47B", "42B84590A81466C4", "40A90820DDCB08CC"]
@@ -135,7 +135,17 @@
 			size: 1.6d
 			tasks: [{ id: "3C5851C64B15389C", type: "checkmark" }]
 			x: 8.80d
-			y: -1.31d
+			y: -1.84d
+		}
+		{
+			dependencies: ["529610133ACB2780"]
+			id: "102D14365F5DC1B3"
+			rewards: [{ id: "7DB3BE210AEE0EAF", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6CB7130214D05C43", item: { count: 1, id: "nightshift:life_tonic" }, type: "item" }]
+			x: 6.60d
+			y: 26.67d
 		}
 	]
 }

@@ -6,7 +6,7 @@
 	icon: { id: "sophisticatedbackpacks:backpack" }
 	id: "5222FD874740F392"
 	images: [ ]
-	order_index: 6
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
@@ -17,7 +17,7 @@
 			size: 1.0d
 			tasks: [{ id: "254834813F9FA360", item: { count: 1, id: "sophisticatedbackpacks:backpack" }, type: "item" }]
 			x: 0.00d
-			y: -0.80d
+			y: 0.00d
 		}
 		{
 			dependencies: ["104662E6DA217044"]
@@ -27,7 +27,7 @@
 			size: 1.0d
 			tasks: [{ id: "0F41CB712231CEE3", item: { count: 1, id: "sophisticatedbackpacks:pickup_upgrade" }, type: "item" }]
 			x: 2.20d
-			y: -3.36d
+			y: -1.60d
 		}
 		{
 			dependencies: ["104662E6DA217044"]
@@ -37,7 +37,7 @@
 			size: 1.0d
 			tasks: [{ id: "26A38FC7DD8B3EA5", item: { count: 1, id: "sophisticatedbackpacks:iron_backpack" }, type: "item" }]
 			x: 2.20d
-			y: -1.76d
+			y: -0.00d
 		}
 		{
 			dependencies: ["68FAB1164D7A6D30"]
@@ -47,7 +47,7 @@
 			size: 1.0d
 			tasks: [{ id: "4E1689FA20EADEDE", item: { count: 1, id: "sophisticatedbackpacks:feeding_upgrade" }, type: "item" }]
 			x: 4.40d
-			y: -1.76d
+			y: -0.00d
 		}
 		{
 			dependencies: ["104662E6DA217044"]
@@ -57,7 +57,7 @@
 			size: 1.0d
 			tasks: [{ id: "46991104909C8E5F", item: { count: 1, id: "sophisticatedstorage:barrel" }, type: "item" }]
 			x: 2.20d
-			y: -0.16d
+			y: 1.60d
 		}
 		{
 			dependencies: ["2565FAA078D39608", "20D753939FFD3F93"]
@@ -67,57 +67,7 @@
 			size: 1.0d
 			tasks: [{ id: "4BE64B944ABD8C3C", item: { count: 1, id: "sophisticatedstorage:controller" }, type: "item" }]
 			x: 4.40d
-			y: -0.16d
-		}
-		{
-			dependencies: ["6C6F1BB21939360A"]
-			id: "1749DB45AE3A1173"
-			rewards: [{ id: "61E29508B560C647", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "528EF906566BA83C", item: { count: 1, id: "farmersdelight:cutting_board" }, type: "item" }]
-			x: 0.00d
-			y: 0.80d
-		}
-		{
-			dependencies: ["1749DB45AE3A1173"]
-			id: "6D1D6D805F5F9871"
-			rewards: [{ id: "6BF5E516FE71856B", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "141ACB4E07654E2D", item: { count: 1, id: "farmersdelight:cooking_pot" }, type: "item" }]
-			x: 2.20d
-			y: 1.44d
-		}
-		{
-			dependencies: ["6D1D6D805F5F9871"]
-			id: "760CEEF713D44B84"
-			rewards: [{ id: "626CADF9D9FCF9A5", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "197CE110156D5255", item: { count: 1, id: "farmersdelight:beef_stew" }, type: "item" }]
-			x: 4.40d
-			y: 1.44d
-		}
-		{
-			dependencies: ["1749DB45AE3A1173"]
-			id: "59B27598BD4B9109"
-			rewards: [{ id: "3641F0D2C289D5EC", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4EDF836F5493D496", item: { count: 1, id: "farmersdelight:rich_soil" }, type: "item" }]
-			x: 2.20d
-			y: 3.04d
-		}
-		{
-			dependencies: ["59B27598BD4B9109"]
-			id: "01B5C89BFA1D47E0"
-			rewards: [{ id: "373C681F93DA0E45", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "7AF3F71A5880C1D5", item: { count: 1, id: "create:mechanical_harvester" }, type: "item" }]
-			x: 4.40d
-			y: 3.04d
+			y: 1.60d
 		}
 	]
 }
