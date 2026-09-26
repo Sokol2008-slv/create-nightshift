@@ -160,7 +160,7 @@
 			y: 2.00d
 		}
 		{
-			dependencies: ["4F9052A0336C5021", "78495FFD37CE6E68"]
+			dependencies: ["4F9052A0336C5021", "78495FFD37CE6E68", "20D753939FFD3F93"]
 			id: "3C83F989C78C435A"
 			rewards: [{ id: "3B2A008D22ADE828", type: "xp", xp: 50 }]
 			shape: "hexagon"

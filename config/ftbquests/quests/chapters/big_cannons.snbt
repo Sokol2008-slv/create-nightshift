@@ -90,7 +90,7 @@
 			y: -1.60d
 		}
 		{
-			dependencies: ["686F94EE226A9895"]
+			dependencies: ["686F94EE226A9895", "20D753939FFD3F93"]
 			id: "3245368928B123AE"
 			rewards: [{ id: "16565F7432CEB298", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -120,7 +120,7 @@
 			y: 3.20d
 		}
 		{
-			dependencies: ["43AB898E82F67601", "6A226AA9E85F7950"]
+			dependencies: ["43AB898E82F67601", "6A226AA9E85F7950", "3AC5FBC11AD0E3EE"]
 			id: "3BCE829443992885"
 			rewards: [{ id: "3F82E471482EB9A6", type: "xp", xp: 10 }]
 			shape: "rsquare"

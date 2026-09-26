@@ -201,9 +201,31 @@ def layout(quests):
     return {k: (X[k], y[k]) for k in by_key}
 
 
+def raise_phases(specs):
+    """Фаза квеста не ниже фазы предмета: dist/item_phases.json считает tools/phase_audit.py
+    по графу рецептов. Квест, чей предмет доступен позже главы, запирается до нужной фазы."""
+    f = PACK / "dist" / "item_phases.json"
+    if not f.exists():
+        print("нет dist/item_phases.json — запусти tools/phase_audit.py")
+        return
+    phases = json.loads(f.read_text())
+    raised = 0
+    for ch in specs:
+        cp = PHASE.get(ch["key"], 0)
+        for q in ch["quests"]:
+            if q["type"] != "item":
+                continue
+            need = phases.get(q["item"], 0)
+            if need > q.get("phase", cp):
+                q["phase"] = need
+                raised += 1
+    print(f"фаза поднята у {raised} квестов (по графу рецептов)")
+
+
 def main():
     items = known_items()
     specs = load_specs()
+    raise_phases(specs)
     errors = []
     lang = {"file.0000000000000001.title": "Create: Ночная смена"}
     chapter_dir = OUT / "chapters"

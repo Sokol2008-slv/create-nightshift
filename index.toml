@@ -22,23 +22,23 @@ hash = "30fbaa90d6d6350ac6c5ec06aab4f81b8f796dd62c92bdea5eae4527bd862fe8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "de42f8075226dd925fff8b50710cd86de281bc139ff97e25cd0fa444af1a6067"
+hash = "ace4bf5d1fc6407b8af6634265ef20bb67094bf59b1c0566d1ecaebf6f164bf0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
-hash = "50a75a2dee2ce3122fe142d3dedbe5e1d37c8be9e78662682aeead92cc743e61"
+hash = "11a111e73580b7a2483f163c4ed3f42e92ca7d52c41f90e3e1322d92dd9ddfaf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
-hash = "95f2a4878a5d7846c6b83951e655372ad1d1bf59501323f97e33fd2aa471a99f"
+hash = "9c830bba9292bc8872ec37bc2417c68c5c72e1705d8838cf7a4c6ab55efd4f9e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "a98468bac06fc599828aae872c3bc66e362745373e7a03da48aa6b9a1a08fc8a"
+hash = "572719702e4fb422030e0934bcaa154fe226f749dc5cb1f04a8b4d6b72124c9a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/defense.snbt"
-hash = "c357f5021ad682bbde3c2bba96710a0a8398f62bbb3bab663a27a50acbcbe7aa"
+hash = "63b6c378b0e0a419ab8365634239c1a75c5de6c200f929e49a7b749600edf0bd"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
@@ -58,7 +58,7 @@ hash = "61fc1389ea16b52f7cb9825c8485473af8094be8b8d301d334df214c7c1b7eb3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistics_food.snbt"
-hash = "25a08a94ce71efe21e0254df15b355a6d214365396942521938f4807b705674f"
+hash = "08c54058fd01c67df6f6da99ebf1f67d6d76159e9aa266c9e69facb139621c3f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
@@ -66,7 +66,7 @@ hash = "304d6efd0719909c712e056b2d398549fa18222795409b1b80b1b03707c07254"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "8777bd6ac6d50b96b0e417ad9f82543315213c556f0d4776994b24c81d9fef4a"
+hash = "cea7bc80a3f3a85783b59784fcc9fb9a2bdb6b6bce8cebc92ad3bd4ce2191408"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
@@ -82,7 +82,7 @@ hash = "a1fe2b3085698c89bebe64d7f133eb6a73b5d0d676f726fb04c1d5f48ad3b4ea"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
-hash = "42aa83ea81eeecca5376786d7b67056d506f7ba8de9b0d1ebe7bbc5823f775ad"
+hash = "197a3f375eacb047b97b5284ac0bc7398ffdcebacfb3c72eb61e2869388216f4"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -90,11 +90,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "1607c22abb7e56fc088d927a1aec398fac7250221bc1ced73f0c9f7a8ba58aad"
+hash = "c20bd60850f2da43a3312619ba4a7ece85f23dad36cf75004c2bb9ebe7a7599a"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "1607c22abb7e56fc088d927a1aec398fac7250221bc1ced73f0c9f7a8ba58aad"
+hash = "c20bd60850f2da43a3312619ba4a7ece85f23dad36cf75004c2bb9ebe7a7599a"
 
 [[files]]
 file = "config/iris.properties"
