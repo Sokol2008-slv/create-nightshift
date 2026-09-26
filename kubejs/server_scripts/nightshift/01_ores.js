@@ -123,7 +123,6 @@ hideOre('nightshift:ore/tfmg_sulfur_layer', 'nightshift_p4', 'tfmg:sulfur', 'min
 // под условие mod_loaded:bigreactors, которого нет в паке).
 // ---------------------------------------------------------------------------
 hideOre('nightshift:ore/thorium', 'nightshift_p5', 'create_new_age:thorium_ore', 'minecraft:stone')
-hideOre('nightshift:ore/thorium_e', 'nightshift_p5', 'create_new_age:thorium_ore_e', 'minecraft:stone')
 
 // ---------------------------------------------------------------------------
 // P6 «Космос» — Northstar, 4 планеты. Список подтверждён прямой распаковкой

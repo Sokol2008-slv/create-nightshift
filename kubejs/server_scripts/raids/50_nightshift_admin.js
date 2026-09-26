@@ -72,8 +72,7 @@ ServerEvents.commandRegistry(event => {
 			.then(
 				Commands.literal('stop').executes(ctx => {
 					var st = nsGetState()
-					nsResetRaidIdle(st)
-					NSG.nsServer.runCommandSilent('kill @e[tag=nightshift_raid]')
+					nsResetRaidIdle(st) // сам убирает мобов набега
 					NSG.nsServer.runCommandSilent('weather clear')
 					nsAdminReply(ctx, 'набег остановлен, мобы набега убраны')
 					return 1

@@ -42,11 +42,7 @@ BlockEvents.rightClicked(event => {
 	if (!item || item.isEmpty()) return
 	var id = String(item.getId())
 	if (id !== 'nightshift:vein_cleaner' && id.indexOf(NS_PROBE_PREFIX) !== 0) return
-	if (String(event.getHand()) !== 'MAIN_HAND') {
-		event.cancel()
-		return
-	}
-	nsUseProbe(event, item, id)
+	if (String(event.getHand()) === 'MAIN_HAND') nsUseProbe(event, item, id)
 	event.cancel() // cancel() в 2101 выходит из обработчика — последним
 })
 

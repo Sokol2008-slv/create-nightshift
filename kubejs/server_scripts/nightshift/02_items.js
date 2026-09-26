@@ -86,8 +86,8 @@ lockItems('nightshift:item/nickel', 'nightshift_p4',
 lockItems('nightshift:item/lithium', 'nightshift_p4',
     'tfmg:raw_lithium', 'tfmg:lithium_ingot', 'tfmg:crushed_raw_lithium')
 lockItems('nightshift:item/sulfur', 'nightshift_p4',
-    'tfmg:sulfur', 'tfmg:sulfur_dust', 'tfmg:sulfuric_acid', 'cgs:sulfur')
-lockItems('nightshift:item/oil', 'nightshift_p4', 'tfmg:crude_oil', 'tfmg:heavy_oil')
+    'tfmg:sulfur', 'tfmg:sulfur_dust', 'tfmg:sulfuric_acid_bucket', 'cgs:sulfur')
+lockItems('nightshift:item/oil', 'nightshift_p4', 'tfmg:crude_oil_bucket', 'tfmg:heavy_oil_bucket', 'createdieselgenerators:crude_oil_bucket')
 lockItems('nightshift:item/nitrate', 'nightshift_p4', 'tfmg:nitrate_dust')
 // СТАЛЬ: единая линия TFMG — единственный легальный источник с P4 (см. §12
 // плана: "одна, TFMG, P4"). Дублирующие "дешёвые" стали Big Cannons и
@@ -130,7 +130,7 @@ lockItems('nightshift:item/raw_redstone_oreexcavation', 'nightshift_p3', 'create
 // ---------------------------------------------------------------------------
 lockItems('nightshift:item/titanium', 'nightshift_p6',
     'northstar:titanium_ingot', 'northstar:titanium_nugget', 'northstar:titanium_block',
-    'northstar:raw_titanium_ore', 'northstar:rutile_concentrate', 'northstar:titanium_tetrachloride')
+    'northstar:raw_titanium_ore', 'northstar:rutile_concentrate', 'northstar:titanium_tetrachloride_bucket')
 lockItems('nightshift:item/tungsten', 'nightshift_p6',
     'northstar:tungsten_ingot', 'northstar:tungsten_nugget', 'northstar:tungsten_block',
     'northstar:raw_tungsten_ore')

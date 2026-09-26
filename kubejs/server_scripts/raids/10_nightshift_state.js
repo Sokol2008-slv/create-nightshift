@@ -73,6 +73,11 @@ function nsDefaultState() {
 			waveStartedAtTick: 0,
 			bossSpawned: false,
 			countdownRemaining: 0,
+			waveSize: 0,
+			spawnRetries: 0,
+			paused: false,
+			trackR: 0, // 0 — радиус поиска по умолчанию (raidTrackRadius)
+			reached: 0,
 		},
 		dayCounter: 0, // ночей с последнего малого набега
 		lastSeenDay: -1, // для детекта смены дня
@@ -90,7 +95,9 @@ function nsGetState() {
 	try {
 		var parsed = JSON.parse(tag.getString('nightshift_json'))
 		// подстраховка на случай, если структура полей неполная (после правок конфига)
-		return Object.assign(nsDefaultState(), parsed)
+		var merged = Object.assign(nsDefaultState(), parsed)
+		merged.raid = Object.assign(nsDefaultState().raid, parsed.raid || {}) // новые поля набега — со значениями по умолчанию
+		return merged
 	} catch (e) {
 		console.warn('[nightshift] Битый JSON в persistentData, сбрасываю состояние: ' + e)
 		return nsDefaultState()

@@ -172,9 +172,10 @@ BlockEvents.broken('nightshift:base_core', event => {
 	var state = nsGetState()
 	var id = 'altar_' + String(above.getDimension()).replace(/[^a-z0-9]/gi, '_') + '_' + above.getX() + '_' + above.getY() + '_' + above.getZ()
 	for (var i = state.altars.length - 1; i >= 0; i--) if (state.altars[i].id === id) state.altars.splice(i, 1)
-	if (state.raid.altarId === id && nsRaidActive(state)) state.raid = nsDefaultState().raid
-	nsSaveState(state)
 	above.set('minecraft:air')
+	// набег у этого алтаря заканчивается: полосы, запрет сна и мобы — вместе с ним
+	if (state.raid.altarId === id && nsRaidActive(state)) nsResetRaidIdle(state)
+	else nsSaveState(state)
 })
 
 // --------------------------------------------------------------------------

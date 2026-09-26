@@ -34,10 +34,12 @@ function nsRaidEnded() {
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 100')
 }
 
+// Сброс набега (алтарь пропал, нет конфига орды, /nightshift stop): мобы набега уходят вместе с ним
 function nsResetRaidIdle(state) {
 	state.raid = nsDefaultState().raid
 	nsSaveState(state)
 	nsRaidEnded()
+	NSG.nsServer.runCommandSilent('kill @e[tag=nightshift_raid]')
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
 }
