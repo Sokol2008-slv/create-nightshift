@@ -29,6 +29,23 @@ NSG.NIGHTSHIFT_NS = 'nightshift'
 //                    это только переход 0→1.
 //   manual: false — жертва только через инвентарь алтаря (конвейер Create).
 // --------------------------------------------------------------------------
+// Моб набега: id без неймспейса minecraft, число на одного игрока, подпись для прогноза, NBT
+function nsMob(id, count, label, nbt) {
+	return { id: 'minecraft:' + id, count: count, label: label, nbt: nbt || '' }
+}
+function nsArmor(mat) {
+	var slots = ['boots', 'leggings', 'chestplate', 'helmet']
+	var items = []
+	for (var i = 0; i < slots.length; i++) items.push('{id:"minecraft:' + mat + '_' + slots[i] + '",count:1}')
+	return 'ArmorItems:[' + items.join(',') + '],ArmorDropChances:[0f,0f,0f,0f]'
+}
+function nsHand(item) {
+	return 'HandItems:[{id:"minecraft:' + item + '",count:1},{}],HandDropChances:[0f,0f]'
+}
+var NS_ARMOR = { leather: nsArmor('leather'), chain: nsArmor('chainmail'), iron: nsArmor('iron'), diamond: nsArmor('diamond') }
+var NS_BABY = 'IsBaby:1b'
+var NS_SPEED = 'active_effects:[{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b}]'
+
 NSG.NIGHTSHIFT_CONFIG = {
 	sacrifices: {
 		// P0 -> P1 (Разнорабочий): ровно как в плане, руками.
@@ -93,143 +110,82 @@ NSG.NIGHTSHIFT_CONFIG = {
 	},
 
 	// ------------------------------------------------------------------
-	// Составы орд. waves — массив волн, каждая волна — массив {id, count}.
-	// minor — состав малого набега (каждые 5 ночей, без провала).
-	// boss (только phase 6) — отдельная волна-босс, спавнится ПОСЛЕ того,
-	// как обычные волны зачищены; победа = смерть босса.
+	// Составы орд: hordes[P] — жертвенный набег из фазы P и малый набег в фазе P.
+	// Числа — на ОДНОГО игрока: nsPartyScale() умножает их на размер команды
+	// (×1,5 на двоих, ×2 на троих). Финальная жертва (P5→P6) — волны P5, затем P6 и босс.
+	// Экипировка мобов — NBT для /summon (броня и оружие не выпадают).
+	// Криперов нет: взрыв сносит машины.
 	// ------------------------------------------------------------------
 	hordes: {
 		0: {
-			waves: [[{ id: 'minecraft:zombie', count: 8 }]], // 160 HP, PLAN.md §8
-			minor: [{ id: 'minecraft:zombie', count: 4 }],
+			waves: [
+				[nsMob('zombie', 6, 'зомби'), nsMob('zombie', 2, 'зомби-малыш', NS_BABY)],
+				[nsMob('zombie', 5, 'зомби'), nsMob('zombie', 3, 'зомби в коже', NS_ARMOR.leather)],
+			],
+			minor: [nsMob('zombie', 4, 'зомби'), nsMob('zombie', 1, 'зомби-малыш', NS_BABY)],
 		},
 		1: {
 			waves: [
-				[{ id: 'minecraft:zombie', count: 8 }],
-				[
-					{ id: 'minecraft:skeleton', count: 4 },
-					{ id: 'minecraft:spider', count: 2 },
-				],
-			], // 272 HP суммарно, совпадает с PLAN.md §8
-			minor: [
-				{ id: 'minecraft:zombie', count: 5 },
-				{ id: 'minecraft:skeleton', count: 2 },
+				[nsMob('zombie', 8, 'зомби'), nsMob('zombie', 2, 'зомби-малыш', NS_BABY)],
+				[nsMob('skeleton', 5, 'скелет'), nsMob('spider', 3, 'паук')],
+				[nsMob('zombie', 6, 'зомби в коже с мечом', NS_ARMOR.leather + ',' + nsHand('stone_sword')), nsMob('zombie', 4, 'зомби')],
 			],
+			minor: [nsMob('zombie', 5, 'зомби'), nsMob('skeleton', 2, 'скелет'), nsMob('spider', 1, 'паук')],
 		},
 		2: {
 			waves: [
-				[{ id: 'minecraft:zombie', count: 10 }],
-				[
-					{ id: 'minecraft:skeleton', count: 5 },
-					{ id: 'minecraft:spider', count: 2 },
-				],
-				[
-					{ id: 'minecraft:vindicator', count: 2 },
-					{ id: 'minecraft:witch', count: 1 },
-				],
-			], // ~406 HP, план ждёт ~400
-			minor: [
-				{ id: 'minecraft:zombie', count: 6 },
-				{ id: 'minecraft:spider', count: 2 },
-				{ id: 'minecraft:husk', count: 1 }, // не крипер: взрыв сносит машины
+				[nsMob('zombie', 10, 'зомби'), nsMob('husk', 4, 'кадавр')],
+				[nsMob('skeleton', 6, 'скелет'), nsMob('stray', 2, 'зимогор'), nsMob('spider', 4, 'паук')],
+				[nsMob('zombie', 6, 'зомби в кольчуге', NS_ARMOR.chain + ',' + nsHand('iron_sword')), nsMob('witch', 2, 'ведьма')],
+				[nsMob('vindicator', 3, 'поборник'), nsMob('pillager', 4, 'разбойник')],
 			],
+			minor: [nsMob('zombie', 6, 'зомби'), nsMob('husk', 2, 'кадавр'), nsMob('spider', 2, 'паук'), nsMob('skeleton', 2, 'скелет')],
 		},
 		3: {
 			waves: [
-				[{ id: 'minecraft:zombie', count: 10 }],
-				[
-					{ id: 'minecraft:skeleton', count: 5 },
-					{ id: 'minecraft:spider', count: 3 },
-				],
-				[
-					{ id: 'minecraft:vindicator', count: 3 },
-					{ id: 'minecraft:witch', count: 1 },
-				],
-				[{ id: 'minecraft:phantom', count: 6 }], // воздушная волна, как в плане
-			], // ~566 HP, план ждёт ~590
-			minor: [
-				{ id: 'minecraft:zombie', count: 8 },
-				{ id: 'minecraft:skeleton', count: 2 },
-				{ id: 'minecraft:phantom', count: 2 },
+				[nsMob('husk', 8, 'кадавр'), nsMob('zombie', 4, 'зомби-малыш', NS_BABY), nsMob('zombie', 6, 'зомби')],
+				[nsMob('skeleton', 8, 'скелет'), nsMob('stray', 4, 'зимогор')],
+				[nsMob('phantom', 6, 'фантом')], // воздушная волна — коридор не спасёт
+				[nsMob('zombie', 6, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 4, 'поборник'), nsMob('witch', 2, 'ведьма')],
+				[nsMob('spider', 6, 'паук'), nsMob('cave_spider', 6, 'пещерный паук')], // лезут по стенам
 			],
+			minor: [nsMob('zombie', 6, 'зомби'), nsMob('skeleton', 3, 'скелет'), nsMob('phantom', 2, 'фантом'), nsMob('cave_spider', 2, 'пещерный паук')],
 		},
 		4: {
 			waves: [
-				[{ id: 'minecraft:zombie', count: 12 }],
-				[
-					{ id: 'minecraft:skeleton', count: 6 },
-					{ id: 'minecraft:spider', count: 3 },
-				],
-				[
-					{ id: 'minecraft:vindicator', count: 4 },
-					{ id: 'minecraft:witch', count: 2 },
-				],
-				[
-					// "элита" из плана — Draugr Invasion пока НЕ установлен в паке,
-					// временно замещаем Ravager+Pillager (ravager ~100 HP как заглушка
-					// под "тяжёлую" цель). Заменить на драугра, когда мод добавят.
-					{ id: 'minecraft:ravager', count: 1 },
-					{ id: 'minecraft:pillager', count: 2 },
-				],
-			], // ~704 HP, план ждёт ~680
-			minor: [
-				{ id: 'minecraft:zombie', count: 10 },
-				{ id: 'minecraft:skeleton', count: 1 },
-				{ id: 'minecraft:vindicator', count: 2 },
+				[nsMob('zombie', 10, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_axe')), nsMob('husk', 6, 'кадавр')],
+				[nsMob('skeleton', 10, 'скелет'), nsMob('stray', 4, 'зимогор')],
+				[nsMob('phantom', 8, 'фантом')],
+				[nsMob('vindicator', 6, 'поборник'), nsMob('evoker', 1, 'заклинатель'), nsMob('pillager', 6, 'разбойник')],
+				[nsMob('ravager', 1, 'опустошитель'), nsMob('pillager', 4, 'разбойник'), nsMob('wither_skeleton', 4, 'визер-скелет')],
 			],
+			minor: [nsMob('zombie', 6, 'зомби в железе', NS_ARMOR.iron), nsMob('skeleton', 3, 'скелет'), nsMob('vindicator', 2, 'поборник'), nsMob('pillager', 2, 'разбойник')],
 		},
 		5: {
-			// "как P4 × 1.5" по плану
 			waves: [
-				[{ id: 'minecraft:zombie', count: 14 }],
-				[
-					{ id: 'minecraft:skeleton', count: 7 },
-					{ id: 'minecraft:spider', count: 3 },
-				],
-				[
-					{ id: 'minecraft:vindicator', count: 5 },
-					{ id: 'minecraft:witch', count: 2 },
-				],
-				[
-					{ id: 'minecraft:ravager', count: 1 },
-					{ id: 'minecraft:pillager', count: 4 },
-				],
-			], // ~836 HP, план ждёт ~950 — недобор, поднять числа на тесте при необходимости
-			minor: [
-				{ id: 'minecraft:zombie', count: 15 },
-				{ id: 'minecraft:skeleton', count: 3 },
+				[nsMob('zombie', 8, 'зомби в алмазе, быстрый', NS_ARMOR.diamond + ',' + nsHand('diamond_sword') + ',' + NS_SPEED), nsMob('zombie', 10, 'зомби')],
+				[nsMob('skeleton', 12, 'скелет'), nsMob('stray', 6, 'зимогор')],
+				[nsMob('phantom', 10, 'фантом')],
+				[nsMob('vindicator', 8, 'поборник'), nsMob('evoker', 2, 'заклинатель')],
+				[nsMob('ravager', 2, 'опустошитель'), nsMob('pillager', 6, 'разбойник')],
+				[nsMob('wither_skeleton', 8, 'визер-скелет')],
 			],
+			minor: [nsMob('zombie', 4, 'зомби в алмазе', NS_ARMOR.diamond), nsMob('zombie', 8, 'зомби'), nsMob('skeleton', 4, 'скелет'), nsMob('phantom', 3, 'фантом')],
 		},
 		6: {
-			// Вторая половина Великой орды (финальная жертва P5→P6 идёт волнами P5, затем этими).
-			// Мобы планет Northstar и рядовые твари ArPhEx в Верхнем мире исчезают сразу после
-			// призыва (проверено на сервере 26.09) — поэтому здесь ванильные тяжёлые мобы.
+			// Вторая половина Великой орды. Мобы планет Northstar и рядовые твари ArPhEx
+			// в Верхнем мире исчезают сразу после /summon (проверено 26.09) — здесь ванильные.
 			waves: [
-				[{ id: 'minecraft:wither_skeleton', count: 8 }],
-				[
-					{ id: 'minecraft:evoker', count: 2 },
-					{ id: 'minecraft:vindicator', count: 6 },
-				],
-				[
-					{ id: 'minecraft:stray', count: 8 },
-					{ id: 'minecraft:husk', count: 8 },
-				],
-				[
-					{ id: 'minecraft:ravager', count: 2 },
-					{ id: 'minecraft:pillager', count: 6 },
-				],
+				[nsMob('wither_skeleton', 10, 'визер-скелет с алмазным мечом', nsHand('diamond_sword'))],
+				[nsMob('evoker', 3, 'заклинатель'), nsMob('vindicator', 8, 'поборник')],
+				[nsMob('stray', 10, 'зимогор'), nsMob('husk', 10, 'кадавр')],
+				[nsMob('ravager', 3, 'опустошитель'), nsMob('pillager', 8, 'разбойник')],
 			],
-			// Финальный босс. В паке физически нет ни одной boss-сущности
-			// (проверено: Northstar, ArPhEx и др. хоррор-моды не установлены/без
-			// боссов). Решение по плану (§12, п.2) — выбрать между ArPhEx и
-			// Draugr Invasion ПОСЛЕ теста. Пока — заглушка на ванильном Wither
-			// (300 HP, летает, дальний бой), самый дешёвый путь без новых модов.
-			// ЗАМЕНИТЬ на выбранного босса, когда решение будет принято.
 			// Scorpioid Bloodluster (ArPhEx): наземный, 450 HP, разрушение блоков у ArPhEx
-			// выключено в конфиге. Tormentor не взят: у него механика запечатывания —
-			// набег мог бы не закончиться. Wither ломал бы машины взрывами.
-			boss: { id: 'arphex:scorpioid_bloodluster', hpLabel: 450 },
-			minor: null, // на планетах малых набегов нет (P6 — свой хоррор, не набеги)
+			// выключено в конфиге. Tormentor не взят: механика запечатывания — набег мог
+			// бы не закончиться. Wither ломал бы машины взрывами.
+			boss: { id: 'arphex:scorpioid_bloodluster', hpLabel: 450, label: 'Скорпиоид-кровопийца' },
+			minor: null, // в P6 малых набегов нет
 		},
 	},
 }

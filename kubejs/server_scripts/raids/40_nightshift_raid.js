@@ -159,7 +159,7 @@ function nsFindSpawnY(level, x, z, altarY) {
 
 // Спавн count мобов mobId кольцом raidRingMinDist..raidRingMaxDist от алтаря, вне зон базы.
 // Возвращает наибольшее расстояние спавна — по нему растёт радиус поиска мобов набега.
-function nsSpawnMobRing(level, altar, mobId, count, state) {
+function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt) {
 	var T = NSG.NIGHTSHIFT_TUNABLES
 	var farthest = 0
 	for (var i = 0; i < count; i++) {
@@ -178,7 +178,7 @@ function nsSpawnMobRing(level, altar, mobId, count, state) {
 		}
 		if (y === null) continue
 		farthest = Math.max(farthest, Math.sqrt((x - altar.x) * (x - altar.x) + (z - altar.z) * (z - altar.z)))
-		var nbt = '{Tags:["nightshift_raid"],PersistenceRequired:1b}'
+		var nbt = '{Tags:["nightshift_raid"],PersistenceRequired:1b' + (extraNbt ? ',' + extraNbt : '') + '}'
 		NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run summon ' + mobId + ' ' + x + ' ' + y + ' ' + z + ' ' + nbt)
 	}
 	return farthest
@@ -203,9 +203,20 @@ function nsTickMobNavigation(mob, altar, level) {
 	try {
 		hasTarget = mob.getTarget() != null
 	} catch (e) {}
-	if (!hasTarget) {
+	var pdn
+	try {
+		pdn = mob.persistentData
+	} catch (e) {}
+	var navTick = pdn ? (pdn.contains('ns_nav') ? pdn.getInt('ns_nav') : 0) + 1 : 0
+	if (pdn) pdn.putInt('ns_nav', navTick)
+	var nav = null
+	try {
+		nav = mob.getNavigation()
+	} catch (e) {}
+	// путь пересчитываем, когда прежний кончился, и раз в 5 с — поиск на 64 блока не бесплатный
+	if (!hasTarget && nav && (nav.isDone() || navTick % 5 === 1)) {
 		try {
-			mob.getNavigation().moveTo(altar.x + 0.5, altar.y, altar.z + 0.5, 1.0)
+			nav.moveTo(altar.x + 0.5, altar.y, altar.z + 0.5, 1.0)
 		} catch (e) {
 			if (!NSG.nsNavWarned) {
 				console.warn('[nightshift] mob.getNavigation().moveTo(...) недоступен: ' + e)
@@ -381,6 +392,27 @@ function nsWaveBar(state, alive) {
 	nsBossbarValue('nightshift:raid_wave', alive)
 }
 
+// Размер команды: числа в конфиге — на одного игрока. 1 → ×1, 2 → ×1,5, 3 → ×2.
+function nsPartyScale() {
+	var n = 0
+	var players = NSG.nsServer.getPlayers()
+	for (var i = 0; i < players.length; i++) {
+		try {
+			if (!players[i].isSpectator()) n++
+		} catch (e) {
+			n++
+		}
+	}
+	return 1 + 0.5 * Math.max(0, n - 1)
+}
+
+// Мобы набега ищут путь до алтаря на 64 блока (у зомби по умолчанию ~35): так они
+// находят длинный коридор-ловушку или туннель к подземной базе, а не грызут стену напрямик.
+function nsBoostRaidMobs() {
+	NSG.nsServer.runCommandSilent('execute as @e[tag=nightshift_raid,tag=!ns_boosted] run attribute @s minecraft:generic.follow_range base set 64')
+	NSG.nsServer.runCommandSilent('tag @e[tag=nightshift_raid,tag=!ns_boosted] add ns_boosted')
+}
+
 // Спавнит текущую волну. Возвращает false, если волн больше нет (победа).
 function nsSpawnCurrentWave(state, level, altar) {
 	var hordeCfg = nsHordeCfg(state)
@@ -396,6 +428,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 			state.raid.bossSpawned = true
 			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true })
 			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state))
+			nsBoostRaidMobs()
 			state.raid.waveSize = 1
 			nsSaveState(state)
 			return true
@@ -405,10 +438,13 @@ function nsSpawnCurrentWave(state, level, altar) {
 
 	nsTitleAll('Волна ' + (state.raid.waveIndex + 1), { color: 'red', bold: true })
 	var size = 0
+	var scale = nsPartyScale()
 	for (var i = 0; i < wave.length; i++) {
-		nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, wave[i].id, wave[i].count, state))
-		size += wave[i].count
+		var n = Math.ceil(wave[i].count * scale)
+		nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, wave[i].id, n, state, wave[i].nbt))
+		size += n
 	}
+	nsBoostRaidMobs()
 	state.raid.waveSize = size
 	nsSaveState(state)
 	return true

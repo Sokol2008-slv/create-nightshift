@@ -36,6 +36,8 @@ var NS_VEINS = {
 
 var NS_PROBE_PREFIX = 'nightshift:vein_seed_'
 var NS_PROBE_MULTIPLIER = 1 // множитель объёма жилы для /coe setvein
+// Зонды и сканер открываются в фазе 4 (PLAN.md §1): раньше зонд негде взять — сканера ещё нет
+var NS_PROBE_MIN_PHASE = 4
 
 BlockEvents.rightClicked(event => {
 	var item = event.getItem()
@@ -64,8 +66,9 @@ function nsUseProbe(event, item, id) {
 	var entry = NS_VEINS[key]
 	if (!entry) return
 	var phase = nightshiftReadPhase()
-	if (phase < entry.phase) {
-		player.tell(Text.red('[Жилы] Этот зонд оживёт в фазе ' + entry.phase + ' (сейчас ' + phase + ').'))
+	var need = Math.max(NS_PROBE_MIN_PHASE, entry.phase)
+	if (phase < need) {
+		player.tell(Text.red('[Жилы] Этот зонд оживёт в фазе ' + need + ' (сейчас ' + phase + ').'))
 		return
 	}
 	if (entry.dims && entry.dims.indexOf(dim) === -1) {

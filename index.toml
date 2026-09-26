@@ -94,11 +94,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "d6c151a2c0b7cf2b489e33a4c6504d0e3212ad74d5ffcbc64cfd54141e5edd98"
+hash = "9e42263c1bf38d866e2e8e75b1cf30c0dcfc3f44bfe841b00256dd092348c145"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "d6c151a2c0b7cf2b489e33a4c6504d0e3212ad74d5ffcbc64cfd54141e5edd98"
+hash = "9e42263c1bf38d866e2e8e75b1cf30c0dcfc3f44bfe841b00256dd092348c145"
 
 [[files]]
 file = "config/iris.properties"
@@ -318,7 +318,7 @@ hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
 
 [[files]]
 file = "kubejs/server_scripts/economy/10_probes.js"
-hash = "867eb1b7bfeca67fa9fd5ae7fcbb50a65cc4b894b5f7be1036b036d1e92f94c1"
+hash = "210fb1a92d2929a4a1f9b65229d189663ffaf6ee74e3974bb40dd51565ee4bd3"
 
 [[files]]
 file = "kubejs/server_scripts/economy/20_scanner.js"
@@ -338,7 +338,7 @@ hash = "bd50b85d3d5b95bf034cf1c585afec5317be653f72e18b9ef29b10ffb909217e"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/02_items.js"
-hash = "a0ea59dab1406581bc49eeb95e92addb35d3741a0b8a342dbb6f3a2adecbdc3a"
+hash = "5766637939d272cda9822db925807665cd2363a81ee42a11feb9130b7d2614a5"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/03_leak_recipe_fixes.js"
@@ -366,7 +366,7 @@ hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "bbc2ba001e3c9f794ab8d4715e67e9b0c09b440a93d04e36535bcfb07baeecbe"
+hash = "82243a1a437525e7a755883d103e66a325e08c0fc2d47c60c974bad41076bbf0"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
@@ -374,15 +374,15 @@ hash = "9ee9f103ce62a5fb140e9543b38ba4adcd30031d6816178ef0d2a2abf66171c9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
-hash = "84937c77ebc88789a078485595ea773d526eced3f231b9b85d4fb6fcb60ef211"
+hash = "71fa4b30261f1dfde945cd3583affba65856bafe35317b1f492ab0a4725e73a8"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "e4df18b1772c84d87701de06bf0048b621c9a2e08ac0084aed8867dc05f32628"
+hash = "737d70ea705647370dc16ee6a193571d751f984b6bb1199627dd7271a85a6b48"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "a03b73b9301a7b8539c5f577d4b51d999e3dcc5e787cf232ddcd79e8f96c523e"
+hash = "38a1e23a766d32eff8a6ea8700d0310e68f106fd01d26a9814f8fc730013ea5c"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"

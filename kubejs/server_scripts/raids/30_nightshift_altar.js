@@ -60,6 +60,7 @@ function nsForecastText(nextPhase) {
 	var horde = nsSacrificeHorde(nextPhase - 1)
 	if (!horde) return 'Нет данных по орде для фазы ' + nextPhase
 	var hpTable = NSG.NIGHTSHIFT_MOB_HP
+	var scale = nsPartyScale()
 	var lines = []
 	var total = 0
 	for (var w = 0; w < horde.waves.length; w++) {
@@ -67,18 +68,26 @@ function nsForecastText(nextPhase) {
 		var waveHp = 0
 		var parts = []
 		for (var i = 0; i < wave.length; i++) {
-			var hp = (hpTable[wave[i].id] || 20) * wave[i].count
-			waveHp += hp
-			parts.push(wave[i].count + 'x ' + wave[i].id.split(':')[1])
+			var n = Math.ceil(wave[i].count * scale)
+			waveHp += (hpTable[wave[i].id] || 20) * n
+			parts.push(n + '× ' + (wave[i].label || wave[i].id.split(':')[1]))
 		}
 		total += waveHp
 		lines.push('Волна ' + (w + 1) + ': ' + parts.join(', ') + ' (' + waveHp + ' HP)')
 	}
-	if (horde.boss) {
-		lines.push('БОСС: ' + horde.boss.id.split(':')[1] + ' (~' + horde.boss.hpLabel + ' HP)')
-	}
-	lines.push('ИТОГО волн: ' + total + ' HP' + (horde.boss ? ' + босс' : ''))
+	if (horde.boss) lines.push('БОСС: ' + (horde.boss.label || horde.boss.id.split(':')[1]) + ' (~' + horde.boss.hpLabel + ' HP)')
+	var players = Math.round((scale - 1) / 0.5) + 1
+	lines.push('Итого: ' + horde.waves.length + ' волн, ' + total + ' HP' + (horde.boss ? ' + босс' : '') + ' — расчёт на игроков: ' + players)
 	return lines.join('\n')
+}
+
+// Название предмета для чата: ключ перевода, переводит клиент
+function nsItemText(id) {
+	try {
+		return Text.translate(String(Item.of(id).getDescriptionId()))
+	} catch (e) {
+		return Text.of(id)
+	}
 }
 
 function nsShowForecast(player, state) {
@@ -96,8 +105,7 @@ function nsShowForecast(player, state) {
 	for (var id in target.items) {
 		var have = state.sacrificeProgress[id] || 0
 		var need = target.items[id]
-		var done = have >= need
-		player.tell((done ? Text.green('✓ ') : Text.yellow('• ')).append(Text.white(id + ': ' + have + '/' + need)))
+		player.tell((have >= need ? Text.green('✓ ') : Text.yellow('• ')).append(nsItemText(id)).append(Text.white(': ' + have + '/' + need)))
 	}
 }
 
@@ -171,7 +179,7 @@ function nsAltarClick(event) {
 	}
 	var have = state.sacrificeProgress[id] || 0
 	if (have >= need) {
-		player.tell(Text.gray('[Ночная смена] ' + id + ' уже собрано в достатке (' + have + '/' + need + ').'))
+		player.tell(Text.gray('[Ночная смена] Этого уже хватает: ').append(nsItemText(id)).append(Text.gray(' ' + have + '/' + need)))
 		nsSaveState(state)
 		return
 	}
@@ -179,7 +187,7 @@ function nsAltarClick(event) {
 	var take = Math.min(want, heldStack.getCount())
 	heldStack.shrink(take) // мутирует стек в руке игрока (публичный Mojang-метод)
 	state.sacrificeProgress[id] = have + take
-	player.tell(Text.yellow('[Ночная смена] Принято ' + take + 'x ' + id + ' (' + state.sacrificeProgress[id] + '/' + need + ')'))
+	player.tell(Text.yellow('[Ночная смена] Принято ' + take + '× ').append(nsItemText(id)).append(Text.yellow(' (' + state.sacrificeProgress[id] + '/' + need + ')')))
 
 	nsCheckSacrificeComplete(state, block) // сохраняет state сама, если наберётся
 	if (!nsRaidActive(nsGetState())) {

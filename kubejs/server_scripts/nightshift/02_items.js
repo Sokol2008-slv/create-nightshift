@@ -145,3 +145,30 @@ lockItems('nightshift:item/martian_misc', 'nightshift_p6',
 // заблокировано выше (titanium_tetrachloride/titanium_ingot закрыты до P6).
 // Но блоки самой РАКЕТЫ — отдельная страховка на случай, если материалы всё же
 // раздобыты (например, креативом на тестовом сервере) — см. 08_rocket_lock.js.
+
+// Сканер и зонды жил — фаза 4 (рудная экономика, PLAN.md §6); зонды поздних фаз дополнительно
+// проверяет economy/10_probes.js
+lockItems('nightshift:item/probes', 'nightshift_p4',
+    'nightshift:vein_scanner',
+    'nightshift:vein_seed_coal',
+    'nightshift:vein_seed_copper',
+    'nightshift:vein_seed_iron',
+    'nightshift:vein_seed_gold',
+    'nightshift:vein_seed_zinc',
+    'nightshift:vein_seed_redstone',
+    'nightshift:vein_seed_lapis',
+    'nightshift:vein_seed_diamond',
+    'nightshift:vein_seed_emerald',
+    'nightshift:vein_seed_quartz',
+    'nightshift:vein_seed_glowstone',
+    'nightshift:vein_seed_netherite',
+    'nightshift:vein_seed_hardened_diamond',
+    'nightshift:vein_seed_lead',
+    'nightshift:vein_seed_nickel',
+    'nightshift:vein_seed_lithium',
+    'nightshift:vein_seed_sulfur',
+    'nightshift:vein_seed_platinum',
+    'nightshift:vein_seed_thorium',
+    'nightshift:vein_seed_titanium',
+    'nightshift:vein_seed_tungsten',
+    'nightshift:vein_seed_martian_iron')

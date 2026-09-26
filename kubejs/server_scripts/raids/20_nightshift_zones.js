@@ -190,7 +190,6 @@ ServerEvents.tick(event => {
 	if (nsZoneParticleCounter % 10 !== 0) return
 
 	var state = nsGetStateRO()
-	if (state.zones.length === 0) return
 
 	// getPlayers() у MinecraftServerKJS (kjs$getPlayers) возвращает EntityArrayList — итерируемо как обычный массив.
 	var list = event.server.getPlayers()
@@ -209,64 +208,74 @@ ServerEvents.tick(event => {
 		for (var z = 0; z < state.zones.length; z++) {
 			var zone = state.zones[z]
 			if (zone.dim !== dim) continue
-			nsSpawnZoneOutline(level, zone)
+			nsSpawnZoneOutline(level, zone, player)
+		}
+		// первый угол уже отмечен — светящийся столб на нём, пока не кликнут второй
+		var pending = state.markerCorners[String(player.getUsername())]
+		if (pending && pending.dim === dim) {
+			for (var yy = pending.y + 1; yy <= pending.y + 8; yy++) {
+				try {
+					level.spawnParticles('minecraft:happy_villager', true, pending.x + 0.5, yy + 0.5, pending.z + 0.5, 0, 0, 0, 1, 0)
+				} catch (e) {}
+			}
 		}
 	}
 })
 
-// Рисует контур AABB частицами. Ограничиваем число точек на ребро, чтобы не
-// заваливать сервер частицами на огромных зонах (базы "без ограничения размера").
-function nsSpawnZoneOutline(level, zone) {
-	var T = NSG.NIGHTSHIFT_TUNABLES
-	var particle = T.zoneParticleType
-	var maxPointsPerEdge = 40 // ограничение частиц на ребро — крупные зоны получат более редкий пунктир
-
-	var yTop = zone.hasY ? zone.maxY : zone.minY + 1 // если "вся высота" — не рисуем от -64 до 320, это уродливо и дорого; берём только нижний контур
-	var showBothY = zone.hasY
+// Рисует контур зоны частицами. Зона «на всю высоту» (-64..320) рисуется на уровне
+// игрока: две линии периметра (у ног и над головой) и столбы по углам — иначе контур
+// уходил на дно мира. Точек на ребро не больше 40; дальние рёбра (>96 блоков) не рисуем.
+function nsSpawnZoneOutline(level, zone, player) {
+	var particle = NSG.NIGHTSHIFT_TUNABLES.zoneParticleType
+	var maxPointsPerEdge = 40
+	var py = Math.floor(player.getY())
+	var px = player.getX(),
+		pz = player.getZ()
 
 	function step(a, b) {
-		var len = Math.max(1, Math.abs(b - a))
-		return Math.max(1, Math.ceil(len / maxPointsPerEdge))
+		return Math.max(1, Math.ceil(Math.max(1, Math.abs(b - a)) / maxPointsPerEdge))
 	}
-
-	function corner(x, y, zc) {
+	function dot(x, y, zc) {
+		var dx = x - px,
+			dz = zc - pz
+		if (dx * dx + dz * dz > 96 * 96) return
 		try {
-			level.spawnParticles(particle, false, x, y, zc, 0, 0, 0, 1, 0)
+			level.spawnParticles(particle, true, x, y, zc, 0, 0, 0, 1, 0)
 		} catch (e) {
-			// первый вызов после старта сервера — залогируем один раз через флаг, не спамим
 			if (!NSG.nsParticleWarned) {
-				console.warn('[nightshift] level.spawnParticles не сработал ожидаемым образом: ' + e)
+				console.warn('[nightshift] частицы зоны не рисуются: ' + e)
 				NSG.nsParticleWarned = true
 			}
 		}
 	}
 
+	// высоты линий периметра и диапазон столбов
+	var lo = zone.hasY ? zone.minY + 1 : py
+	var hi = zone.hasY ? zone.maxY + 1 : py + 3
+	var ys = [lo, hi]
 	var sx = step(zone.minX, zone.maxX)
 	var sz = step(zone.minZ, zone.maxZ)
-
-	// нижний периметр (и верхний, если высота задана явно)
-	var ys = showBothY ? [zone.minY, zone.maxY] : [zone.minY]
 	for (var yi = 0; yi < ys.length; yi++) {
-		var y = ys[yi]
-		for (var x = zone.minX; x <= zone.maxX; x += sx) corner(x + 0.5, y, zone.minZ + 0.5)
-		for (var x = zone.minX; x <= zone.maxX; x += sx) corner(x + 0.5, y, zone.maxZ + 0.5)
-		for (var zc = zone.minZ; zc <= zone.maxZ; zc += sz) corner(zone.minX + 0.5, y, zc + 0.5)
-		for (var zc = zone.minZ; zc <= zone.maxZ; zc += sz) corner(zone.maxX + 0.5, y, zc + 0.5)
-	}
-	// 4 вертикальных ребра — только если высота задана явно (иначе некрасиво тянуть от -64 до 320)
-	if (showBothY) {
-		var sy = step(zone.minY, zone.maxY)
-		var corners = [
-			[zone.minX, zone.minZ],
-			[zone.minX, zone.maxZ],
-			[zone.maxX, zone.minZ],
-			[zone.maxX, zone.maxZ],
-		]
-		for (var c = 0; c < corners.length; c++) {
-			for (var y = zone.minY; y <= zone.maxY; y += sy) {
-				corner(corners[c][0] + 0.5, y, corners[c][1] + 0.5)
-			}
+		var y = ys[yi] + 0.1
+		for (var x = zone.minX; x <= zone.maxX + 1; x += sx) {
+			dot(x, y, zone.minZ)
+			dot(x, y, zone.maxZ + 1)
 		}
+		for (var zc = zone.minZ; zc <= zone.maxZ + 1; zc += sz) {
+			dot(zone.minX, y, zc)
+			dot(zone.maxX + 1, y, zc)
+		}
+	}
+	var corners = [
+		[zone.minX, zone.minZ],
+		[zone.minX, zone.maxZ + 1],
+		[zone.maxX + 1, zone.minZ],
+		[zone.maxX + 1, zone.maxZ + 1],
+	]
+	var postLo = zone.hasY ? zone.minY : py - 3
+	var postHi = zone.hasY ? zone.maxY + 1 : py + 12
+	for (var c = 0; c < corners.length; c++) {
+		for (var yy = postLo; yy <= postHi; yy += 1) dot(corners[c][0], yy + 0.5, corners[c][1])
 	}
 }
 
