@@ -98,10 +98,10 @@ NIGHTSHIFT_PHASES.forEach(function (phase) {
             // именно isServerAvailable(), а не isPlayerAvailable().
             if (!event.isServerAvailable()) return
 
+            // Фаза уже учтена (повторная выдача, /nightshift phase) — без лишнего /reload
             var current = nightshiftReadPhase()
-            if (phase.number > current) {
-                nightshiftWritePhase(phase.number)
-            }
+            if (phase.number <= current) return
+            nightshiftWritePhase(phase.number)
 
             // Перезагружаем датапаки, чтобы 04_drilling_gate.js пересчитал
             // список разрешённых рецептов бурения жил под новую фазу.

@@ -81,12 +81,20 @@ file = "config/modernfix-mixins.properties"
 hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
 
 [[files]]
+file = "kubejs/assets/nightshift/lang/en_us.json"
+hash = "66c868659cd2841fb8356fb5ee10f499b19c2f1ea1bc9bc1d0e1268e79cc566c"
+
+[[files]]
+file = "kubejs/assets/nightshift/lang/ru_ru.json"
+hash = "b470fa64318aff0f737a1c5abbe4b6ac074ed7917ca7aaf4b2b9cc84111b1fb5"
+
+[[files]]
 file = "kubejs/client_scripts/nightshift_rerender.js"
 hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
-hash = "d7b3c0c75fb9649be0ac7f452ab12731bb48ba20abb61d5ca9fdf4eebc12b9fb"
+hash = "8df51d4072658e5e849cce2e37cb9ace9b23082e9726f1740a79da3736a3ad2e"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/01_ores.js"
@@ -119,6 +127,34 @@ hash = "fa8a1bbe6d3b52807b2aff761dd0e104ca044d1ca6e71431fe71f420f66b889c"
 [[files]]
 file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
 hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
+
+[[files]]
+file = "kubejs/server_scripts/raids/00_nightshift_config.js"
+hash = "9c14c210dc01dd3213b4e63b0600fc9ede2e2ddb4e127b419d6b84ccc10729c3"
+
+[[files]]
+file = "kubejs/server_scripts/raids/10_nightshift_state.js"
+hash = "cb57058bb67ca8c7d1f10d9208335bb018f8e18605eb5b8d2f5bc86fc5170a23"
+
+[[files]]
+file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
+hash = "4503aeee1978a668414077d2e6860fa2164f8ba50c267d5c5849b68a019d909b"
+
+[[files]]
+file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
+hash = "b1a7f1775ded367228a096a295b519aba808fc69da3db1a98923d5565f8fa668"
+
+[[files]]
+file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
+hash = "914559bf32836f61208eacfb8bd46eb6c144ecd67763a02bdfe01512b5eba6bb"
+
+[[files]]
+file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
+hash = "941d39de53b97618afd13e85091a5bd4714b07d74e4ccb8fc8cf93849d58d984"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_items_blocks.js"
+hash = "8bac47fdef60cac3280ae3ac4f1b727600d21c7d60a0806596dbf353c5d34b57"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
