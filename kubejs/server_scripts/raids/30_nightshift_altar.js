@@ -78,6 +78,8 @@ function nsForecastLines(d) {
 	var names = { resistance: 'сопротивление', strength: 'сила', speed: 'скорость' }
 	for (var b in horde.buff || {}) if (horde.buff[b] > 0) buffs.push(names[b] + ' ' + ['', 'I', 'II', 'III'][horde.buff[b]])
 	if (buffs.length) lines.push('Мобы усилены: ' + buffs.join(', '))
+	if (horde.scale) lines.push('Кошмар: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%, скорость +' + Math.round(horde.scale.speed * 100) + '%')
+	if (horde.scale) total = Math.round(total * (1 + horde.scale.hp))
 	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
 	lines.push('Итого ' + nsPlural(horde.waves.length, 'волна', 'волны', 'волн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
 	return lines
@@ -98,8 +100,7 @@ function nsDifficultyHover(state, d) {
 	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
 	var tier = Math.min(max, d)
 	var k = Math.max(0, d - max)
-	var cfg = nsChallengeHorde(d)
-	var rolls = cfg.waves.length + (cfg.boss ? 2 : 0) + 2 * k
+	var rolls = nsRaidRolls(d)
 	var t = Text.gold(nsDifficultyName(d))
 	var lines = nsForecastLines(d)
 	for (var i = 0; i < lines.length; i++) t = t.append(Text.white('\n' + lines[i]))
@@ -109,14 +110,16 @@ function nsDifficultyHover(state, d) {
 		if (c > 0) t = t.append(Text.gray(', '))
 		t = t.append(Text.white(common[c][1] + '× ')).append(nsItemText(common[c][0]))
 	}
-	var art = Math.round(Math.min(1, (L.artifactChance[tier] || 0) + 0.08 * k) * 100)
+	var art = Math.round(Math.min(1, (L.artifactChance[tier] || 0) + 0.04 * k) * 100)
 	t = t.append(Text.gray('\nРедкое — ' + Math.round(L.rareChance * 100) + '% за бросок, артефакт — ' + art + '%'))
+	if (k > 0) t = t.append(Text.lightPurple('\nТолько в Кошмаре: ' + nsPlural(1 + Math.floor(k / 2), 'особый бросок', 'особых броска', 'особых бросков') + ' — череп визера, незеритовая броня и оружие с чарами, элитры, маяк'))
 	if (d > (state.phase || 0)) {
-		var bonus = k === 0 ? 'зонд жилы' : ''
-		if (d >= 5) bonus += (bonus ? ' + ' : '') + 'сильный артефакт'
-		if (d === max) bonus += ' + Сердце ночи'
-		if (bonus) t = t.append(Text.lightPurple('\nПервое прохождение: ' + bonus + ' каждому'))
+		var bonus = k === 0 ? 'зонд жилы на команду' : ''
+		if (d >= 5) bonus += (bonus ? ', ' : '') + 'сильный артефакт каждому'
+		if (d === max || (k > 0 && k % 5 === 0)) bonus += ', Сердце ночи каждому'
+		t = t.append(Text.lightPurple('\nПервое прохождение: ' + bonus))
 	}
+	t = t.append(Text.gray('\nДобыча — тем, кто у алтаря хотя бы половину волн'))
 	t = t.append(Text.red('\nПровал: −' + nsPlural(nsFailHearts(d), 'сердце', 'сердца', 'сердец') + ' у всех, добычи нет'))
 	return t
 }

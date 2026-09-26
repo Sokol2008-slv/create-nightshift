@@ -86,6 +86,7 @@ function nsDefaultState() {
 			paused: false,
 			trackR: 0, // 0 — радиус поиска по умолчанию (raidTrackRadius)
 			reached: 0,
+			present: {}, // {имя: волн у алтаря} — добыча тем, кто простоял половину волн
 		},
 		curse: 0, // проклятие алтаря в сердцах (у всей команды), см. nsApplyPenalty
 		tributeProgress: 0, // сколько ресурса искупления уже пришло конвейером в счёт следующей стопки

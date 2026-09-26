@@ -96,12 +96,12 @@ NSG.NIGHTSHIFT_CONFIG = {
 		},
 		3: {
 			waves: [
-				[nsMob('husk', 12, 'кадавр'), nsMob('zombie', 6, 'зомби-малыш', NS_BABY), nsMob('zombie', 6, 'бегун', NS_RUNNER)],
-				[nsMob('skeleton', 12, 'скелет'), nsMob('stray', 6, 'зимогор'), nsMob('bogged', 4, 'трясинный скелет')],
-				[nsMob('phantom', 10, 'фантом')], // воздушная волна — коридор не спасёт
-				[nsMob('zombie', 10, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 6, 'поборник'), nsMob('witch', 3, 'ведьма'), nsMob('zombie', 2, 'громила', NS_BRUTE)],
-				[nsMob('spider', 8, 'паук'), nsMob('cave_spider', 8, 'пещерный паук'), nsMob('spider', 3, 'тень', NS_SHADOW)], // лезут по стенам
-				[nsMob('breeze', 4, 'вихрь'), nsMob('zombie', 12, 'зомби')],
+				[nsMob('husk', 14, 'кадавр'), nsMob('zombie', 6, 'зомби-малыш', NS_BABY), nsMob('zombie', 8, 'бегун', NS_RUNNER)],
+				[nsMob('skeleton', 14, 'скелет'), nsMob('stray', 6, 'зимогор'), nsMob('bogged', 4, 'трясинный скелет')],
+				[nsMob('phantom', 12, 'фантом')], // воздушная волна — коридор не спасёт
+				[nsMob('zombie', 12, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 7, 'поборник'), nsMob('witch', 3, 'ведьма'), nsMob('zombie', 2, 'громила', NS_BRUTE)],
+				[nsMob('spider', 10, 'паук'), nsMob('cave_spider', 10, 'пещерный паук'), nsMob('spider', 4, 'тень', NS_SHADOW)], // лезут по стенам
+				[nsMob('breeze', 5, 'вихрь'), nsMob('zombie', 14, 'зомби')],
 			],
 			minor: [nsMob('zombie', 8, 'зомби'), nsMob('skeleton', 4, 'скелет'), nsMob('phantom', 3, 'фантом'), nsMob('cave_spider', 3, 'пещерный паук')],
 		},
@@ -169,12 +169,14 @@ NSG.NIGHTSHIFT_DIFFICULTY = {
 	7: {
 		name: 'Пекло',
 		waves: [
-			[nsMob('wither_skeleton', 10, 'визер-скелет'), nsMob('magma_cube', 5, 'магмовый куб', 'Size:2')],
-			[nsMob('piglin_brute', 6, 'брут пиглинов', NS_NO_ZOMBIFY), nsMob('hoglin', 4, 'хоглин', NS_NO_ZOMBIFY)],
-			[nsMob('zoglin', 6, 'зоглин'), nsMob('zombie', 8, 'бегун', NS_RUNNER)],
-			[nsMob('wither_skeleton', 8, 'визер-скелет с алмазным мечом', nsHand('diamond_sword')), nsMob('skeleton', 10, 'скелет с огненным луком', nsHandEnch('bow', { power: 2, flame: 1 }))],
-			[nsMob('magma_cube', 6, 'большой магмовый куб', NS_MAGMA_BIG), nsMob('piglin_brute', 4, 'брут пиглинов', NS_NO_ZOMBIFY), NS_MIMIC],
-			[nsMob('hoglin', 6, 'хоглин', NS_NO_ZOMBIFY), nsMob('wither_skeleton', 12, 'визер-скелет'), nsMob('zombie', 3, 'громила', NS_BRUTE)],
+			[nsMob('wither_skeleton', 14, 'визер-скелет'), nsMob('magma_cube', 8, 'магмовый куб', 'Size:2')],
+			[nsMob('piglin_brute', 8, 'брут пиглинов', NS_NO_ZOMBIFY), nsMob('hoglin', 6, 'хоглин', NS_NO_ZOMBIFY)],
+			[nsMob('zoglin', 8, 'зоглин'), nsMob('zombie', 10, 'бегун', NS_RUNNER)],
+			[nsMob('wither_skeleton', 12, 'визер-скелет с алмазным мечом', nsHand('diamond_sword')), nsMob('skeleton', 12, 'скелет с огненным луком', nsHandEnch('bow', { power: 2, flame: 1 }))],
+			[nsMob('magma_cube', 8, 'большой магмовый куб', NS_MAGMA_BIG), nsMob('piglin_brute', 6, 'брут пиглинов', NS_NO_ZOMBIFY), NS_MIMIC],
+			[nsMob('hoglin', 8, 'хоглин', NS_NO_ZOMBIFY), nsMob('wither_skeleton', 16, 'визер-скелет'), nsMob('zombie', 4, 'громила', NS_BRUTE)],
+			[nsMob('skeleton', 14, 'скелет с огненным луком', nsHandEnch('bow', { power: 2, flame: 1 })), nsMob('wither_skeleton', 10, 'визер-скелет'), nsMob('zoglin', 6, 'зоглин')],
+			[nsMob('piglin_brute', 10, 'брут пиглинов', NS_NO_ZOMBIFY), nsMob('hoglin', 8, 'хоглин', NS_NO_ZOMBIFY), nsMob('magma_cube', 6, 'большой магмовый куб', NS_MAGMA_BIG)],
 		],
 		boss: { id: 'minecraft:piglin_brute', hpLabel: 220, label: 'Вождь пекла', nbt: NS_NO_ZOMBIFY + ',' + nsName('Вождь пекла') + ',' + nsHandEnch('netherite_axe', { sharpness: 3, fire_aspect: 1 }) + ',Health:220.0f,attributes:[{id:"minecraft:generic.max_health",base:220.0d},{id:"minecraft:generic.scale",base:1.4d}]' },
 	},
@@ -182,27 +184,31 @@ NSG.NIGHTSHIFT_DIFFICULTY = {
 		name: 'Мёртвый легион',
 		buff: { resistance: 1 },
 		waves: [
-			[nsMob('zombie', 18, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('zombie', 6, 'бегун', NS_RUNNER)],
-			[nsMob('skeleton', 14, 'скелет с мощным луком', nsHandEnch('bow', { power: 3 })), nsMob('stray', 8, 'зимогор')],
-			[nsMob('husk', 14, 'кадавр в кольчуге', NS_ARMOR.chain), nsMob('drowned', 8, 'утопленник с трезубцем', nsHand('trident'))],
-			[nsMob('wither_skeleton', 12, 'визер-скелет с алмазным мечом', nsHand('diamond_sword')), nsMob('zombie', 4, 'громила', NS_BRUTE)],
-			[nsMob('phantom', 16, 'фантом')],
-			[nsMob('spider', 8, 'тень', NS_SHADOW), nsMob('cave_spider', 12, 'пещерный паук')],
-			[nsMob('zombie', 16, 'зомби в алмазе', NS_ARMOR.diamond + ',' + nsHand('diamond_sword')), nsMob('skeleton', 10, 'скелет'), NS_MIMIC],
+			[nsMob('zombie', 22, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('zombie', 8, 'бегун', NS_RUNNER)],
+			[nsMob('skeleton', 18, 'скелет с мощным луком', nsHandEnch('bow', { power: 3 })), nsMob('stray', 10, 'зимогор')],
+			[nsMob('husk', 18, 'кадавр в кольчуге', NS_ARMOR.chain), nsMob('drowned', 10, 'утопленник с трезубцем', nsHand('trident'))],
+			[nsMob('wither_skeleton', 14, 'визер-скелет с алмазным мечом', nsHand('diamond_sword')), nsMob('zombie', 5, 'громила', NS_BRUTE)],
+			[nsMob('phantom', 20, 'фантом')],
+			[nsMob('spider', 10, 'тень', NS_SHADOW), nsMob('cave_spider', 14, 'пещерный паук')],
+			[nsMob('zombie', 18, 'зомби в алмазе', NS_ARMOR.diamond + ',' + nsHand('diamond_sword')), nsMob('skeleton', 12, 'скелет'), NS_MIMIC],
+			[nsMob('stray', 14, 'зимогор'), nsMob('bogged', 10, 'трясинный скелет'), nsMob('husk', 14, 'кадавр')],
+			[nsMob('zombie', 6, 'громила', NS_BRUTE), nsMob('wither_skeleton', 12, 'визер-скелет'), nsMob('zombie', 10, 'зомби в алмазе', NS_ARMOR.diamond)],
 		],
 		boss: { id: 'minecraft:wither_skeleton', hpLabel: 260, label: 'Костяной король', nbt: nsName('Костяной король') + ',' + nsHandEnch('netherite_sword', { sharpness: 4, knockback: 2 }) + ',ArmorItems:[{},{},{},{id:"minecraft:netherite_helmet",count:1}],ArmorDropChances:[0f,0f,0f,0f],Health:260.0f,attributes:[{id:"minecraft:generic.max_health",base:260.0d},{id:"minecraft:generic.scale",base:1.6d}]' },
 	},
 	9: {
 		name: 'Буря',
 		waves: [
-			[nsMob('breeze', 8, 'вихрь'), nsMob('phantom', 10, 'фантом')],
-			[nsMob('pillager', 14, 'разбойник'), nsMob('vindicator', 10, 'поборник'), nsMob('evoker', 3, 'заклинатель')],
-			[nsMob('ravager', 4, 'опустошитель'), nsMob('vindicator', 8, 'поборник')],
-			[nsMob('witch', 6, 'ведьма'), nsMob('illusioner', 3, 'иллюзионист'), nsMob('vindicator', 8, 'поборник')],
-			[nsMob('phantom', 20, 'фантом')],
-			[nsMob('breeze', 10, 'вихрь'), nsMob('spider', 8, 'тень', NS_SHADOW)],
-			[nsMob('zoglin', 8, 'зоглин'), nsMob('piglin_brute', 6, 'брут пиглинов', NS_NO_ZOMBIFY)],
-			[nsMob('evoker', 5, 'заклинатель'), nsMob('vindicator', 16, 'поборник'), NS_MIMIC],
+			[nsMob('breeze', 11, 'вихрь'), nsMob('phantom', 16, 'фантом')],
+			[nsMob('pillager', 18, 'разбойник'), nsMob('vindicator', 13, 'поборник'), nsMob('evoker', 3, 'заклинатель')],
+			[nsMob('ravager', 5, 'опустошитель'), nsMob('vindicator', 10, 'поборник')],
+			[nsMob('witch', 8, 'ведьма'), nsMob('illusioner', 4, 'иллюзионист'), nsMob('vindicator', 10, 'поборник')],
+			[nsMob('phantom', 26, 'фантом')],
+			[nsMob('breeze', 12, 'вихрь'), nsMob('spider', 10, 'тень', NS_SHADOW)],
+			[nsMob('zoglin', 10, 'зоглин'), nsMob('piglin_brute', 8, 'брут пиглинов', NS_NO_ZOMBIFY)],
+			[nsMob('evoker', 6, 'заклинатель'), nsMob('vindicator', 18, 'поборник'), NS_MIMIC],
+			[nsMob('ravager', 7, 'опустошитель'), nsMob('pillager', 18, 'разбойник')],
+			[nsMob('breeze', 15, 'вихрь'), nsMob('phantom', 18, 'фантом'), nsMob('evoker', 4, 'заклинатель')],
 		],
 		boss: { id: 'minecraft:ravager', hpLabel: 400, label: 'Громовой таран', nbt: nsName('Громовой таран') + ',Health:400.0f,attributes:[{id:"minecraft:generic.max_health",base:400.0d},{id:"minecraft:generic.scale",base:1.4d}]' },
 	},
@@ -215,15 +221,44 @@ NSG.NIGHTSHIFT_DIFFICULTY = {
 }
 NSG.NIGHTSHIFT_DIFFICULTY_MAX = 10 // выше — «Кошмар N», бесконечно
 
+// Кошмар k (сложность 10 + k): волны Великой орды + финальная «Свита Кошмара» перед боссом.
+// Сила растёт плавно: мобов +10% за уровень, здоровье +12%, урон +8%, скорость +2% (до +20%).
+// Добыча: таблица 10-й + 4 броска за уровень и особая таблица Кошмара (только здесь).
+var NS_NIGHTMARE_RIDER = nsName('Всадник Кошмара') + ',Health:200.0f,attributes:[{id:"minecraft:generic.max_health",base:200.0d},{id:"minecraft:generic.scale",base:1.3d}],Passengers:[{id:"minecraft:wither_skeleton",Tags:["nightshift_raid"],PersistenceRequired:1b,' + nsHandEnch('netherite_sword', { sharpness: 3 }) + '}]'
+NSG.NIGHTSHIFT_NIGHTMARE = {
+	finale: [
+		nsMob('ravager', 1, 'всадник Кошмара', NS_NIGHTMARE_RIDER),
+		nsMob('wither_skeleton', 8, 'рыцарь Кошмара', nsName('Рыцарь Кошмара') + ',' + nsHandEnch('netherite_sword', { sharpness: 2 }) + ',ArmorItems:[{},{},{id:"minecraft:netherite_chestplate",count:1},{id:"minecraft:netherite_helmet",count:1}],ArmorDropChances:[0f,0f,0f,0f]'),
+		nsMob('piglin_brute', 6, 'брут пиглинов', NS_NO_ZOMBIFY),
+		nsMob('phantom', 10, 'фантом'),
+	],
+	countPerLevel: 0.1,
+	hpPerLevel: 0.12,
+	damagePerLevel: 0.08,
+	speedPerLevel: 0.02,
+	speedMax: 0.2,
+	rollsPerLevel: 4,
+}
+
 // --------------------------------------------------------------------------
-// Добыча за победу — КАЖДОМУ защитнику у алтаря. Бросков обычной таблицы — столько, сколько
-// волн в набеге; у каждого броска шанс rareChance на редкую строку. Раз за набег — шанс на
-// артефакт (artifactChance[сложность]) и на легендарную строку (legendaryChance + 0,6% за уровень).
-// Ориентир: в шахте за 5 минут — стак железа; набег должен быть не менее выгодным, но трудным.
-// Строка: [id, количество] или [id с компонентами, количество, id для названия].
+// Добыча за победу — каждому защитнику, который простоял у алтаря хотя бы половину волн.
+// Бросков обычной таблицы — по одному за волну и два за босса; у каждого броска шанс rareChance
+// на редкую строку. Раз за набег — шанс на артефакт (artifactChance) и на легендарное.
+// Баланс — по EMC ProjectE (всё в сборке продаётся за EMC): средний бросок обычной таблицы
+// 1,8к на 1-й → 37к на 10-й, редкая строка ≈ ×3; ценность добычи растёт вслед за угрозой орды
+// (сумма HP × опасность мобов, ×1,3–1,5 за уровень) с небольшим бонусом за риск.
+// Проверка: node tools/raid_balance.js (угроза и EMC по сложностям). Зонды жил стоят 128к–10М EMC,
+// поэтому в редких таблицах только дешёвые, как джекпот; дорогие — за первое прохождение, один на команду.
+// Строка: [id, количество] или [id с компонентами, количество, id для названия, пояснение].
 // --------------------------------------------------------------------------
 function nsBook(ench, lvl) {
 	return ['minecraft:enchanted_book[minecraft:stored_enchantments={levels:{"minecraft:' + ench + '":' + lvl + '}}]', 1, 'minecraft:enchanted_book', ench + ' ' + lvl]
+}
+// Незеритовая вещь с чарами: nsGear('netherite_sword', {sharpness:5, mending:1}, 'Острота V, Починка')
+function nsGear(item, ench, label) {
+	var lv = []
+	for (var k in ench) lv.push('"minecraft:' + k + '":' + ench[k])
+	return ['minecraft:' + item + '[minecraft:enchantments={levels:{' + lv.join(',') + '}}]', 1, 'minecraft:' + item, label]
 }
 NSG.NIGHTSHIFT_LOOT = {
 	rareChance: 0.14,
@@ -232,28 +267,48 @@ NSG.NIGHTSHIFT_LOOT = {
 	common: {
 		1: [['minecraft:oak_log', 16], ['minecraft:iron_ingot', 16], ['minecraft:copper_ingot', 16], ['minecraft:coal', 16], ['minecraft:bread', 8]],
 		2: [['minecraft:iron_ingot', 16], ['minecraft:copper_ingot', 32], ['create:andesite_alloy', 16], ['minecraft:coal', 32], ['create:zinc_ingot', 8], ['minecraft:oak_log', 32]],
-		3: [['minecraft:iron_ingot', 24], ['minecraft:gold_ingot', 8], ['create:zinc_ingot', 16], ['create:brass_ingot', 8], ['minecraft:experience_bottle', 8], ['minecraft:redstone', 16]],
-		4: [['minecraft:iron_ingot', 32], ['minecraft:gold_ingot', 16], ['minecraft:redstone', 32], ['minecraft:lapis_lazuli', 16], ['minecraft:quartz', 16], ['create:brass_ingot', 16]],
-		5: [['tfmg:steel_ingot', 8], ['tfmg:lead_ingot', 16], ['tfmg:nickel_ingot', 16], ['minecraft:redstone', 32], ['minecraft:iron_ingot', 48], ['minecraft:experience_bottle', 16]],
-		6: [['tfmg:steel_ingot', 16], ['minecraft:diamond', 2], ['create_new_age:thorium', 4], ['minecraft:gold_ingot', 32], ['minecraft:emerald', 8], ['create:precision_mechanism', 2]],
-		7: [['tfmg:steel_ingot', 24], ['minecraft:diamond', 4], ['minecraft:blaze_rod', 8], ['minecraft:netherite_scrap', 1], ['minecraft:emerald', 16], ['minecraft:ghast_tear', 2], ['minecraft:magma_cream', 8]],
-		8: [['minecraft:diamond', 6], ['create_new_age:thorium', 8], ['minecraft:netherite_scrap', 2], ['tfmg:steel_ingot', 32], ['minecraft:experience_bottle', 32], ['minecraft:emerald', 24]],
-		9: [['minecraft:diamond', 8], ['minecraft:netherite_scrap', 2], ['minecraft:breeze_rod', 4], ['minecraft:ender_pearl', 8], ['create_new_age:thorium', 12], ['tfmg:steel_ingot', 48]],
-		10: [['minecraft:diamond', 12], ['minecraft:netherite_ingot', 1], ['create_new_age:thorium', 16], ['minecraft:emerald', 32], ['minecraft:experience_bottle', 64]],
+		3: [['minecraft:iron_ingot', 24], ['minecraft:gold_ingot', 4], ['create:zinc_ingot', 16], ['create:brass_ingot', 16], ['minecraft:redstone', 32], ['minecraft:experience_bottle', 16], ['minecraft:lapis_lazuli', 8]],
+		4: [['minecraft:iron_ingot', 32], ['minecraft:gold_ingot', 8], ['minecraft:redstone', 32], ['minecraft:lapis_lazuli', 16], ['minecraft:quartz', 16], ['create:brass_ingot', 16]],
+		5: [['tfmg:steel_ingot', 6], ['tfmg:lead_ingot', 16], ['tfmg:nickel_ingot', 12], ['minecraft:iron_ingot', 40], ['minecraft:lapis_lazuli', 12], ['minecraft:experience_bottle', 16]],
+		6: [['tfmg:steel_ingot', 8], ['minecraft:diamond', 2], ['create_new_age:thorium', 2], ['minecraft:gold_ingot', 8], ['minecraft:emerald', 1], ['minecraft:iron_ingot', 64]],
+		7: [['tfmg:steel_ingot', 10], ['minecraft:diamond', 2], ['minecraft:blaze_rod', 12], ['minecraft:netherite_scrap', 1], ['minecraft:ghast_tear', 4], ['minecraft:magma_cream', 24], ['minecraft:gold_ingot', 10]],
+		8: [['minecraft:diamond', 3], ['create_new_age:thorium', 4], ['minecraft:netherite_scrap', 2], ['tfmg:steel_ingot', 12], ['minecraft:lapis_lazuli', 28], ['minecraft:gold_ingot', 12]],
+		9: [['minecraft:diamond', 4], ['minecraft:netherite_scrap', 2], ['minecraft:breeze_rod', 14], ['minecraft:ender_pearl', 32], ['create_new_age:thorium', 5], ['tfmg:steel_ingot', 16]],
+		10: [['minecraft:diamond', 5], ['minecraft:netherite_scrap', 3], ['create_new_age:thorium', 6], ['minecraft:emerald', 2], ['tfmg:steel_ingot', 18], ['minecraft:gold_ingot', 18]],
 	},
 	rare: {
-		1: [['nightshift:sedative', 4], ['minecraft:golden_carrot', 8], ['sophisticatedbackpacks:backpack', 1], ['minecraft:name_tag', 1]],
-		2: [['minecraft:diamond', 2], ['nightshift:life_tonic', 2], ['nightshift:vein_seed_iron', 1], ['sophisticatedbackpacks:iron_backpack', 1], ['minecraft:saddle', 1]],
-		3: [['minecraft:diamond', 4], ['nightshift:vein_seed_copper', 1], ['nightshift:vein_seed_zinc', 1], ['minecraft:golden_apple', 4], ['create:extendo_grip', 1]],
-		4: [['minecraft:diamond', 8], ['nightshift:vein_seed_gold', 1], ['nightshift:vein_seed_redstone', 1], ['sophisticatedbackpacks:gold_backpack', 1], nsBook('unbreaking', 3), ['create:potato_cannon', 1]],
-		5: [['minecraft:diamond', 12], ['nightshift:vein_seed_diamond', 1], ['nightshift:vein_seed_lead', 1], ['nightshift:vein_seed_nickel', 1], nsBook('mending', 1), ['minecraft:totem_of_undying', 1]],
-		6: [['minecraft:diamond', 16], ['nightshift:vein_seed_thorium', 1], ['nightshift:vein_seed_platinum', 1], ['minecraft:netherite_ingot', 1], ['sophisticatedbackpacks:diamond_backpack', 1], nsBook('sharpness', 5), nsBook('protection', 4)],
-		7: [['minecraft:netherite_ingot', 1], ['nightshift:vein_seed_emerald', 1], ['minecraft:totem_of_undying', 1], nsBook('efficiency', 5), nsBook('fortune', 3), ['minecraft:trident', 1], ['create:wand_of_symmetry', 1]],
-		8: [['minecraft:netherite_ingot', 2], ['minecraft:heavy_core', 1], ['minecraft:enchanted_golden_apple', 1], nsBook('looting', 3), ['nightshift:vein_seed_titanium', 1], ['sophisticatedbackpacks:netherite_backpack', 1]],
-		9: [['minecraft:netherite_ingot', 2], ['minecraft:elytra', 1], ['minecraft:enchanted_golden_apple', 1], ['nightshift:vein_seed_tungsten', 1], nsBook('mending', 1), ['minecraft:totem_of_undying', 2]],
-		10: [['minecraft:netherite_ingot', 4], ['minecraft:elytra', 1], ['minecraft:nether_star', 1], ['nightshift:vein_seed_martian_iron', 1], ['minecraft:enchanted_golden_apple', 2], ['nightshift:night_heart', 1]],
+		1: [['nightshift:sedative', 4], ['minecraft:golden_carrot', 4], ['sophisticatedbackpacks:backpack', 1], ['minecraft:name_tag', 1], ['minecraft:iron_ingot', 16]],
+		2: [['minecraft:diamond', 1], ['nightshift:life_tonic', 2], ['sophisticatedbackpacks:iron_backpack', 1], ['minecraft:saddle', 1], ['minecraft:golden_carrot', 8]],
+		3: [['minecraft:diamond', 2], ['minecraft:golden_apple', 1], ['create:extendo_grip', 1], ['minecraft:gold_ingot', 8], ['nightshift:life_tonic', 4]],
+		4: [['minecraft:diamond', 3], ['sophisticatedbackpacks:gold_backpack', 1], nsBook('unbreaking', 3), ['create:potato_cannon', 1], ['minecraft:golden_apple', 2]],
+		5: [['minecraft:diamond', 4], nsBook('mending', 1), ['minecraft:totem_of_undying', 1], ['minecraft:lapis_lazuli', 48], nsBook('protection', 4)],
+		6: [['minecraft:diamond', 5], ['minecraft:netherite_ingot', 1], ['sophisticatedbackpacks:diamond_backpack', 1], nsBook('sharpness', 5), nsBook('efficiency', 5), ['nightshift:vein_seed_coal', 1], ['nightshift:vein_seed_copper', 1]],
+		7: [['minecraft:netherite_ingot', 1], ['minecraft:totem_of_undying', 1], nsBook('fortune', 3), ['minecraft:trident', 1], ['create:wand_of_symmetry', 1], ['nightshift:vein_seed_zinc', 1], ['nightshift:vein_seed_sulfur', 1]],
+		8: [['minecraft:netherite_ingot', 1], ['minecraft:heavy_core', 1], ['minecraft:enchanted_golden_apple', 1], nsBook('looting', 3), ['sophisticatedbackpacks:netherite_backpack', 1], ['nightshift:vein_seed_iron', 1]],
+		9: [['minecraft:netherite_ingot', 2], ['minecraft:elytra', 1], ['minecraft:enchanted_golden_apple', 1], nsBook('mending', 1), ['minecraft:totem_of_undying', 2], ['nightshift:vein_seed_quartz', 1]],
+		10: [['minecraft:netherite_ingot', 2], ['minecraft:elytra', 1], ['minecraft:nether_star', 1], ['minecraft:enchanted_golden_apple', 2], ['nightshift:night_heart', 1]],
 	},
 	legendary: [['nightshift:night_heart', 1], ['minecraft:enchanted_golden_apple', 1], ['minecraft:netherite_ingot', 2], ['minecraft:totem_of_undying', 1]],
+	// Только в Кошмаре: бросков 1 + уровень/2, строка доступна с уровня minK
+	nightmare: [
+		{ minK: 1, e: ['minecraft:wither_skeleton_skull', 1] },
+		{ minK: 1, e: ['minecraft:ancient_debris', 4] },
+		{ minK: 1, e: ['minecraft:heart_of_the_sea', 1] },
+		{ minK: 1, e: ['minecraft:netherite_upgrade_smithing_template', 1] },
+		{ minK: 1, e: ['minecraft:totem_of_undying', 2] },
+		{ minK: 2, e: ['minecraft:silence_armor_trim_smithing_template', 1] },
+		{ minK: 3, e: nsGear('netherite_sword', { sharpness: 5, looting: 3, unbreaking: 3, mending: 1 }, 'Острота V, Добыча III, Прочность III, Починка') },
+		{ minK: 3, e: nsGear('netherite_chestplate', { protection: 4, unbreaking: 3, mending: 1 }, 'Защита IV, Прочность III, Починка') },
+		{ minK: 3, e: nsGear('netherite_pickaxe', { efficiency: 5, fortune: 3, unbreaking: 3, mending: 1 }, 'Эффективность V, Удача III, Прочность III, Починка') },
+		{ minK: 3, e: ['minecraft:nether_star', 1] },
+		{ minK: 5, e: nsGear('elytra', { unbreaking: 3, mending: 1 }, 'Прочность III, Починка') },
+		{ minK: 5, e: nsGear('netherite_helmet', { protection: 4, unbreaking: 3, mending: 1, respiration: 3 }, 'Защита IV, Подводное дыхание III, Починка') },
+		{ minK: 5, e: nsGear('netherite_leggings', { protection: 4, unbreaking: 3, mending: 1 }, 'Защита IV, Прочность III, Починка') },
+		{ minK: 5, e: nsGear('netherite_boots', { protection: 4, feather_falling: 4, unbreaking: 3, mending: 1 }, 'Защита IV, Невесомость IV, Починка') },
+		{ minK: 5, e: ['minecraft:beacon', 1] },
+		{ minK: 8, e: ['minecraft:enchanted_golden_apple', 3] },
+		{ minK: 8, e: ['nightshift:night_heart', 1] },
+	],
 	// Артефакты мода Artifacts (надеваются в слоты Curios). top — сильные, для наград первого прохождения
 	artifacts: [
 		'anglers_hat', 'antidote_vessel', 'aqua_dashers', 'bunny_hoppers', 'charm_of_shrinking', 'charm_of_sinking', 'chorus_totem', 'cloud_in_a_bottle',
@@ -270,19 +325,20 @@ NSG.NIGHTSHIFT_LOOT = {
 	],
 }
 
-// Первое прохождение сложности: каждому защитнику зонд жилы этого уровня (случайный из списка),
-// с 5-й — ещё сильный артефакт, за Великую орду — «Сердце ночи».
+// Первое прохождение сложности: ОДИН зонд жилы на команду (случайному защитнику), с 5-й — сильный
+// артефакт каждому, за Великую орду — «Сердце ночи» каждому. В Кошмаре: артефакт каждому за каждый
+// новый уровень и «Сердце ночи» каждому за каждый пятый.
 NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES = {
-	1: ['iron', 'copper', 'coal'],
-	2: ['gold', 'zinc'],
-	3: ['redstone', 'lapis', 'quartz'],
-	4: ['diamond'],
-	5: ['lead', 'nickel', 'lithium', 'sulfur'],
-	6: ['platinum'],
-	7: ['thorium', 'emerald'],
-	8: ['titanium'],
-	9: ['tungsten'],
-	10: ['martian_iron'],
+	1: ['coal', 'copper'],
+	2: ['iron', 'zinc'],
+	3: ['quartz', 'redstone', 'sulfur'],
+	4: ['gold', 'lapis'],
+	5: ['lead', 'nickel'],
+	6: ['lithium', 'glowstone'],
+	7: ['platinum'],
+	8: ['thorium'],
+	9: ['diamond'],
+	10: ['titanium', 'tungsten', 'martian_iron'],
 }
 
 // Искупление проклятия алтаря: стопка ресурса по наибольшей пройденной сложности
