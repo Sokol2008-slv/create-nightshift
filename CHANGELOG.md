@@ -33,6 +33,7 @@
 - Скримеры: Face of Horror, Server-Side Horror (+ Deimos), The Boy and the Bath, The Knocker.
 
 ### Changed
+- Chunky только на сервере: на клиенте не нужен, а Distant Horizons при нём писал игрокам предупреждение в чат.
 - ArPhEx без естественного спавна и разрушения блоков (боссы — только призывом в набеге).
 - Enhanced Hordes не ломает машины: все блоки с блок-сущностью в `forge:horde_unbreakable`.
 
