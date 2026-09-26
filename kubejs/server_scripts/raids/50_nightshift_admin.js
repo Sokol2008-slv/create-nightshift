@@ -11,6 +11,7 @@
 //   /nightshift stop              — остановить набег и убрать мобов набега
 //   /nightshift phase <N>         — выставить наибольшую пройденную сложность
 //   /nightshift setaltar          — поставить блок базы с алтарём на месте оператора (тест, восстановление)
+//   /nightshift fresh             — всем онлайн: раны сняты, рассудок/здоровье/еда полные, утро, все на спавне
 // ==========================================================================
 
 function nsNearestAltar(state, source) {
@@ -178,6 +179,25 @@ ServerEvents.commandRegistry(event => {
 					var altar = nsUpsertAltar(st, altarBlock)
 					nsSaveState(st)
 					nsAdminReply(ctx, 'алтарь поставлен: ' + altar.id)
+					return 1
+				})
+			)
+			.then(
+				Commands.literal('fresh').requires(src => src.hasPermission(2)).executes(ctx => {
+					var st = nsGetState()
+					st.wounds = {}
+					st.deathSanity = {}
+					st.returns = {}
+					nsSaveState(st)
+					var S = NSG.nsServer
+					S.runCommandSilent('time set 0')
+					S.runCommandSilent('weather clear')
+					S.runCommandSilent('execute in minecraft:overworld positioned 0 0 0 positioned over motion_blocking_no_leaves run tp @a ~ ~ ~')
+					S.runCommandSilent('sanity add @a 100')
+					S.runCommandSilent('effect give @a minecraft:instant_health 1 10 true')
+					S.runCommandSilent('effect give @a minecraft:saturation 1 20 true')
+					nsApplyPenalty(null)
+					nsTellAll(Text.green('[Ночная смена] Новое утро: все на спавне, раны сняты, рассудок полный.'))
 					return 1
 				})
 			)

@@ -444,4 +444,5 @@ NSG.NIGHTSHIFT_TUNABLES = {
 	penaltyMaxHearts: 7,
 	bonusHeartsMax: 5, // «Сердце ночи»: +1 сердце максимума навсегда, до 5
 	darknessDeathSanityBump: 0.15, // убила тьма — при возрождении +15% рассудка, чтобы не умирать по кругу
+	deathSanityFloor: 0.4, // после смерти рассудок не ниже 40% (иначе ночью — смерть по кругу)
 }

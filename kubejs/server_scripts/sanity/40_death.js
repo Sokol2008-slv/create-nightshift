@@ -1,7 +1,8 @@
 // ==========================================================================
 // Ночная смена — цена смерти. Вещи остаются (keepInventory), но:
 //  - каждая смерть — рана: −1 сердце максимального здоровья (до woundMax), лечит «Настойка жизни»;
-//  - рассудок при возрождении не сбрасывается: какой был в момент смерти, такой и остаётся.
+//  - рассудок при возрождении не сбрасывается: какой был в момент смерти, такой и остаётся,
+//    но не ниже deathSanityFloor (40%) — иначе ночью умирали бы по кругу.
 //    Если убила тьма (рассудок около нуля, урон из 20_darkness.js) — даём немного сверху,
 //    чтобы не умирать по кругу.
 // Раны и проклятие алтаря применяет nsApplyPenalty (raids/10_nightshift_state.js).
@@ -38,7 +39,8 @@ PlayerEvents.respawned(event => {
 		try {
 			var cap = NS_SANITY.get(player)
 			var bump = ds.dark ? NSG.NIGHTSHIFT_TUNABLES.darknessDeathSanityBump : 0
-			if (cap) cap.setSanity(Math.max(0, ds.v - bump))
+			// безумие после смерти не выше 1 − пол рассудка: смерть не оставляет на нуле
+			if (cap) cap.setSanity(Math.max(0, Math.min(1 - NSG.NIGHTSHIFT_TUNABLES.deathSanityFloor, ds.v - bump)))
 		} catch (e) {}
 		delete st.deathSanity[name]
 		nsSaveState(st)

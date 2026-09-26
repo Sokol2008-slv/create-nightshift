@@ -13,7 +13,7 @@ var NS_MONSTER = Java.loadClass('net.minecraft.world.entity.monster.Monster')
 var NS_DARK_LIGHT = 1 // свет в точке игрока не выше этого — «тьма»
 var NS_DARK_INSANITY = 0.97 // безумие от этого (рассудок ≤ 3%)
 var NS_DARK_DAMAGE = 2
-var NS_EXTRA_MOB_INSANITY = 0.0003 // за каждого монстра сверх первого, в секунду (+0,03%/с)
+var NS_EXTRA_MOB_INSANITY = 0.0001 // за каждого монстра сверх первого, в секунду (+0,01%/с)
 var NS_EXTRA_MOB_CAP = 10
 
 var NS_LIGHT_ITEMS = [

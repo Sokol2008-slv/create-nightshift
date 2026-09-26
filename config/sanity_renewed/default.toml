@@ -68,11 +68,11 @@
 		#This value is doubled if the monster is aggressive towards the player
 		# Default: -0.1
 		# Range: -100.0 ~ 100.0
-		monster = -1.0
+		monster = -0.5
 		#Players will gain this amount of sanity per second while being in the dark
 		# Default: -0.15
 		# Range: -100.0 ~ 100.0
-		darkness = -0.8
+		darkness = -0.35
 		#Maximum light level considered to be darkness (inclusive)
 		# Default: 4
 		# Range: 0 ~ 15
@@ -80,7 +80,7 @@
 		#Players will gain this amount of sanity per second while being in the light
 		# Default: 0.0
 		# Range: -100.0 ~ 100.0
-		lightness = 0.1
+		lightness = 0.3
 		#Minimum light level considered to be lightness (inclusive)
 		# Default: 4
 		# Range: 0 ~ 15
@@ -108,14 +108,14 @@
 		#Supports boolean block state properties (can be omitted together with brackets)
 		#Prefix with TAG_ and follow with a tag registry name to define all blocks with the tag
 		#NOTE: not everything may work correctly with any configuration, e.g. multiblocks like tall flowers and beds; needs testing
-		blocks = ["minecraft:campfire[lit=true];0.3;5;false", "minecraft:soul_campfire[lit=true];0.2;5;false"]
+		blocks = ["minecraft:campfire[lit=true];0.6;5;false", "minecraft:soul_campfire[lit=true];0.4;5;false"]
 
 	#Configuration for active sanity sources
 	[sanity.active]
 		#Sleeping through the night restores this amount of sanity
 		# Default: 50.0
 		# Range: -100.0 ~ 100.0
-		sleeping = 15.0
+		sleeping = 25.0
 		#Players will gain sanity based on the damage they take from any sources with the ratio of 1 to this number
 		# Default: -1.0
 		# Range: -100.0 ~ 100.0
