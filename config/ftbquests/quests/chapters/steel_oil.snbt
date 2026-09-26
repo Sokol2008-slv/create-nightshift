@@ -6,10 +6,11 @@
 	icon: { id: "tfmg:steel_ingot" }
 	id: "6B800B0BDBD97B68"
 	images: [ ]
-	order_index: 7
+	order_index: 14
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["3AC5FBC11AD0E3EE"]
 			id: "53DF778E5B05A4F3"
 			rewards: [{ id: "0FF8D6B8C15B291D", type: "xp", xp: 10 }]
 			shape: "rsquare"

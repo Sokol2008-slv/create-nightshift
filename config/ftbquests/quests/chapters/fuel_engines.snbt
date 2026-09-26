@@ -6,10 +6,11 @@
 	icon: { id: "tfmg:diesel_bucket" }
 	id: "5E4EF322BC43BC6E"
 	images: [ ]
-	order_index: 8
+	order_index: 15
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["3AC5FBC11AD0E3EE"]
 			id: "5097DA3954C254B0"
 			rewards: [{ id: "6AF3D8451113EC3A", type: "xp", xp: 10 }]
 			shape: "rsquare"

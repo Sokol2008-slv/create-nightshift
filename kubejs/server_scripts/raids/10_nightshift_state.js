@@ -99,6 +99,20 @@ function nsGetStateRO() {
 	return NSG.nsRoState
 }
 
+// Орда жертвенного набега при выходе из фазы p (таблица PLAN.md §8): hordes[p],
+// из P0 — «крошечный набег». Финальная жертва (P5→P6) — Великая орда:
+// волны P5, затем волны планет и босс.
+function nsSacrificeHorde(p) {
+	var H = NSG.NIGHTSHIFT_CONFIG.hordes
+	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[p + 1]
+	if (target && target.isFinal) {
+		var a = H[p] || { waves: [] }
+		var b = H[p + 1] || { waves: [] }
+		return { waves: a.waves.concat(b.waves), boss: b.boss || null }
+	}
+	return H[p] ? { waves: H[p].waves, boss: null } : null
+}
+
 function nsSaveState(state) {
 	var server = NSG.nsServer
 	if (!server) return
@@ -223,4 +237,20 @@ function grantPhase(n) {
 	state.sacrificeProgress = {}
 	state.manualSacrificeDone = false
 	nsSaveState(state)
+	nsCompletePhaseQuests(null, n)
 }
+
+// Квесты «Фаза N открыта» (глава «Алтарь и фазы») закрываются скриптом.
+// player = null — всем онлайн; при входе — только вошедшему.
+function nsCompletePhaseQuests(player, phase) {
+	if (typeof NS_PHASE_QUESTS === 'undefined') return
+	var who = player ? String(player.getUsername()) : '@a'
+	for (var p = 1; p <= phase; p++) {
+		if (NS_PHASE_QUESTS[p]) NSG.nsServer.runCommandSilent('ftbquests change_progress ' + who + ' complete ' + NS_PHASE_QUESTS[p])
+	}
+}
+
+PlayerEvents.loggedIn(event => {
+	var phase = nsGetState().phase
+	if (phase > 0) nsCompletePhaseQuests(event.getPlayer(), phase)
+})

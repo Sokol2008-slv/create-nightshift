@@ -352,13 +352,15 @@ function nsStartRaid(kind, altarId) {
 	nsBossbarValue('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 }
 
+// {waves, boss} текущего набега: жертвенный — nsSacrificeHorde, малый — minor текущей фазы
 function nsHordeCfg(state) {
-	var phaseForHorde = state.raid.kind === 'sacrifice' ? state.phase + 1 : state.phase
-	return NSG.NIGHTSHIFT_CONFIG.hordes[phaseForHorde] || null
+	if (state.raid.kind === 'sacrifice') return nsSacrificeHorde(state.phase)
+	var h = NSG.NIGHTSHIFT_CONFIG.hordes[state.phase]
+	return h && h.minor ? { waves: [h.minor], boss: null } : null
 }
 
 function nsWaveList(state, hordeCfg) {
-	return state.raid.kind === 'minor' ? [hordeCfg.minor || []] : hordeCfg.waves
+	return hordeCfg.waves
 }
 
 function nsWaveBar(state, alive) {
@@ -380,7 +382,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 	var wave = nsWaveList(state, hordeCfg)[state.raid.waveIndex]
 
 	if (!wave) {
-		if (state.raid.kind === 'sacrifice' && hordeCfg.boss && !state.raid.bossSpawned) {
+		if (hordeCfg.boss && !state.raid.bossSpawned) {
 			state.raid.bossSpawned = true
 			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true })
 			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state))

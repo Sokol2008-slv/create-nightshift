@@ -91,6 +91,7 @@ ServerEvents.commandRegistry(event => {
 						st.phase = n
 						st.sacrificeProgress = {}
 						nsSaveState(st)
+						nsCompletePhaseQuests(null, n)
 						// один /reload на всё (рецепты бурения) и перерисовка руд у клиентов
 						NSG.nsServer.persistentData.putLong('nightshift_rerender_at', NSG.nsServer.getTickCount() + 60)
 						NSG.nsServer.runCommandSilent('reload')

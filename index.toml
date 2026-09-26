@@ -14,55 +14,71 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/airships_cars.snbt"
-hash = "3ddddc7a3cff704b2374669be56c86b64951039c9079005149e74c1a94daacf8"
+hash = "9aa45298c0aa2237045fc5ab2107c88d4c380946afde89894c3151833236e392"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/altar.snbt"
+hash = "f98b81f79fcec47c97cd44df5cd07a4c24ede18974c5d0c7e7f07c52e0d70f3d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "63bffa86f82d9a78f763c007f932c0e21e00f51c0155a0393576b96db7cd7290"
+hash = "de42f8075226dd925fff8b50710cd86de281bc139ff97e25cd0fa444af1a6067"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
-hash = "03795d7d506c3129378768074e5b443bd0aadc2ae552633f33401569f84c3527"
+hash = "50a75a2dee2ce3122fe142d3dedbe5e1d37c8be9e78662682aeead92cc743e61"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
-hash = "7e957afedab3b8cfea27ba424d055397d224047a7c49b3468b5cec4ab2a38cce"
+hash = "95f2a4878a5d7846c6b83951e655372ad1d1bf59501323f97e33fd2aa471a99f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "4c4b152236c9df30b3dd81bde19e7d0a5564d9427284150317ad5a00a754ca28"
+hash = "a98468bac06fc599828aae872c3bc66e362745373e7a03da48aa6b9a1a08fc8a"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/defense.snbt"
+hash = "c357f5021ad682bbde3c2bba96710a0a8398f62bbb3bab663a27a50acbcbe7aa"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/economy.snbt"
+hash = "b9dc01c2dbf056d0e44d8b38cc950ce38c4649d6f0f1473db877fbb20d698f5a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "ca43764194ad8ed370f306363ea3c906fbb804a3ee3bbede11ad318fe909f45e"
+hash = "e76b9a3637766848f375cb7af8b69a70177590590ac009503d7f8159011a010c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "3f7249ef72f09e03d4600b0c79da66f6dd1e4d5d851c7945f97615ab5f9172f8"
+hash = "69bd2e823696c7b50ce1e606416965f944fe7a926734d166e8d0d44e793560d2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/fuel_engines.snbt"
-hash = "5f3ae1d20da8e8b9d7af369d71d18ec4b29480bdbbc633d5db189fc071b8fc30"
+hash = "61fc1389ea16b52f7cb9825c8485473af8094be8b8d301d334df214c7c1b7eb3"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/logistics_food.snbt"
+hash = "25a08a94ce71efe21e0254df15b355a6d214365396942521938f4807b705674f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
-hash = "9becabc559eb7b24f674471ec3c763096b53acbc05d9bf310b2e0f0ba3296c53"
+hash = "304d6efd0719909c712e056b2d398549fa18222795409b1b80b1b03707c07254"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "57fc4423ab344e60e0c443c297255d9e3bb5eae660e1866f925a5b568eeb95b0"
+hash = "8777bd6ac6d50b96b0e417ad9f82543315213c556f0d4776994b24c81d9fef4a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "40c4f26f60594b5ecd6d0442412f4ede5888fdb71dd3c6475fee19f658027406"
+hash = "536dc76018a7a0e0086951873a22918325596db76a7a9c5dc589c2233c6424c8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
-hash = "3613d3c533d978a028d90c79180e06375fe88b0e7e73018e3063577cf88224a2"
+hash = "0c70e5301a5843c6d9b7f9b858d10e596f5faf05594581ae9327a075a749a8e8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/submarines.snbt"
-hash = "d1e2a446971cba4a1d8647b3fc967f2f9274fbea8af9dc58e6cfc93af7081317"
+hash = "a1fe2b3085698c89bebe64d7f133eb6a73b5d0d676f726fb04c1d5f48ad3b4ea"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
@@ -74,11 +90,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "973363323ee2e9fc81d8d122fc4cfe1034577dabd70b8160268849552621a9f1"
+hash = "1607c22abb7e56fc088d927a1aec398fac7250221bc1ced73f0c9f7a8ba58aad"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "973363323ee2e9fc81d8d122fc4cfe1034577dabd70b8160268849552621a9f1"
+hash = "1607c22abb7e56fc088d927a1aec398fac7250221bc1ced73f0c9f7a8ba58aad"
 
 [[files]]
 file = "config/iris.properties"
@@ -342,11 +358,15 @@ hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "9c14c210dc01dd3213b4e63b0600fc9ede2e2ddb4e127b419d6b84ccc10729c3"
+hash = "3da587a83b4c249c63e02857f59fc61670c9fdd40e6268e7143a6e9bb8e6d214"
+
+[[files]]
+file = "kubejs/server_scripts/raids/05_quest_ids.js"
+hash = "7c05a42aab64948dbef0897c821cbae927311ab14d3fa388bf5b22c46c26dee1"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
-hash = "2d62a865edb7149ec88e97c39c19ceada83f280a718561452061dd5cd9c05ec1"
+hash = "73458ed7cda35fe0328b8e4b11d078a6652a2f052a2b782f5a0db605bacef848"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
@@ -354,15 +374,15 @@ hash = "274cb808a54066ac90c7af14d0837476678283dce5c081f616d6ebc357da5891"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "b1a7f1775ded367228a096a295b519aba808fc69da3db1a98923d5565f8fa668"
+hash = "e4df18b1772c84d87701de06bf0048b621c9a2e08ac0084aed8867dc05f32628"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "2e7df7940a582c77d74ed9aa442973161813d7389bf3db47130b6e0c31198bee"
+hash = "ddee20bee20bab8f96f8521c5224c5d938a3cd999e6d2029a1492f6948a11def"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
-hash = "941d39de53b97618afd13e85091a5bd4714b07d74e4ccb8fc8cf93849d58d984"
+hash = "e583c0a66cdbd6f84ea490e74a885d27fa12de9c8649372035614967ad38efeb"
 
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"

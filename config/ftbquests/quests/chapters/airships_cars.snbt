@@ -6,10 +6,11 @@
 	icon: { id: "aeronautics:white_envelope" }
 	id: "6F95CA366055EA68"
 	images: [ ]
-	order_index: 5
+	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["20D753939FFD3F93"]
 			id: "3E4DC2FF5F9E9A11"
 			rewards: [{ id: "647596CCE379CB59", type: "xp", xp: 10 }]
 			shape: "rsquare"

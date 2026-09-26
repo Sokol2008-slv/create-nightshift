@@ -1,0 +1,124 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "economy"
+	group: ""
+	icon: { id: "projecte:transmutation_table" }
+	id: "776B79B076735E90"
+	images: [ ]
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0CA383208BFFC4DA", "20D753939FFD3F93"]
+			id: "1F3E4DFE744C723D"
+			rewards: [{ id: "7987A89E999CF19E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "56436E1A56BDE220", item: { count: 1, id: "createoreexcavation:vein_finder" }, type: "item" }]
+			x: 0.00d
+			y: -1.60d
+		}
+		{
+			dependencies: ["0CA383208BFFC4DA", "20D753939FFD3F93"]
+			id: "1DF089F6B46653BC"
+			rewards: [{ id: "45179E3C8571C7FF", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3C0D32A103BF837D", item: { count: 1, id: "createoreexcavation:drill" }, type: "item" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["1F3E4DFE744C723D", "773E29288CF753D6"]
+			id: "7EC630A4A315D46F"
+			rewards: [{ id: "1EF0D57EED6CEC5A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6AF31CCF7A548D2A", item: { count: 1, id: "createoreexcavation:sample_drill" }, type: "item" }]
+			x: 2.20d
+			y: -2.74d
+		}
+		{
+			dependencies: ["7EC630A4A315D46F"]
+			id: "2B3AF03BB3F2FDE0"
+			rewards: [{ id: "0480A53A5DBA2E18", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "25A6FC8BD8CFC7B7", item: { count: 1, id: "createoreexcavation:vein_atlas" }, type: "item" }]
+			x: 4.40d
+			y: -2.74d
+		}
+		{
+			dependencies: ["1DF089F6B46653BC", "2B3AF03BB3F2FDE0"]
+			id: "6FBB17163563987D"
+			rewards: [{ id: "1AF7C909EB0C2E8E", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "3BCBF7A6E019DDBD", item: { count: 1, id: "createoreexcavation:drilling_machine" }, type: "item" }]
+			x: 6.60d
+			y: -1.94d
+		}
+		{
+			dependencies: ["20D753939FFD3F93"]
+			id: "07B6C7DFD28F46C7"
+			rewards: [{ id: "1B94595715890DAC", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "581DA7DE8BA233AC", item: { count: 1, id: "projecte:philosophers_stone" }, type: "item" }]
+			x: 0.00d
+			y: 1.60d
+		}
+		{
+			dependencies: ["07B6C7DFD28F46C7"]
+			id: "62D949F92F5E380D"
+			rewards: [{ id: "579DD7F62CE011CB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "25FEFAB7B623B62A", item: { count: 1, id: "projecte:transmutation_table" }, type: "item" }]
+			x: 2.20d
+			y: 1.91d
+		}
+		{
+			dependencies: ["62D949F92F5E380D", "1F3E4DFE744C723D", "3AC5FBC11AD0E3EE"]
+			id: "01617CC30A73058B"
+			rewards: [{ id: "017ED8E03FE235CA", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6105BBEFC14FCAE1", item: { count: 1, id: "nightshift:vein_scanner" }, type: "item" }]
+			x: 4.40d
+			y: 1.14d
+		}
+		{
+			dependencies: ["01617CC30A73058B"]
+			icon: { id: "nightshift:vein_seed_iron" }
+			id: "52B663403D95C5AC"
+			rewards: [{ id: "5E38573BD8EC2DFF", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "61A170DB7D7DF9BD", type: "checkmark" }]
+			x: 6.60d
+			y: 1.14d
+		}
+		{
+			dependencies: ["52B663403D95C5AC"]
+			id: "5AF0534F6432C4D1"
+			rewards: [{ id: "504E83AE7385574F", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "37866BD580841908", item: { count: 1, id: "nightshift:vein_cleaner" }, type: "item" }]
+			x: 8.80d
+			y: 0.34d
+		}
+		{
+			dependencies: ["52B663403D95C5AC", "75347CAC2A54CA92"]
+			id: "6ED7257BB0C28FE8"
+			rewards: [{ id: "1F9C555D748E6C77", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6181050E3050C826", item: { count: 1, id: "createendertransmission:item_transmitter" }, type: "item" }]
+			x: 8.80d
+			y: 1.94d
+		}
+	]
+}

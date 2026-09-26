@@ -6,10 +6,11 @@
 	icon: { id: "create_mechanical_spawner:mechanical_spawner" }
 	id: "731F21B1388F0EC9"
 	images: [ ]
-	order_index: 12
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7FFFE63128BF62E6"]
 			id: "2B3F74E1D633B85A"
 			rewards: [{ id: "48C180E773D1D8F5", type: "xp", xp: 10 }]
 			shape: "rsquare"

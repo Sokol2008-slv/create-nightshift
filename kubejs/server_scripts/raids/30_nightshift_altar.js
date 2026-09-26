@@ -57,7 +57,7 @@ function nsUpsertAltar(state, block) {
 // Прогноз следующей жертвенной орды — сообщение в чат в духе примера из
 // docs/phases/defense_and_hordes.md ("Задача 3", формат прогноза).
 function nsForecastText(nextPhase) {
-	var horde = NSG.NIGHTSHIFT_CONFIG.hordes[nextPhase]
+	var horde = nsSacrificeHorde(nextPhase - 1)
 	if (!horde) return 'Нет данных по орде для фазы ' + nextPhase
 	var hpTable = NSG.NIGHTSHIFT_MOB_HP
 	var lines = []

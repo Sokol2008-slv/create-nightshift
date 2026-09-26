@@ -6,10 +6,11 @@
 	icon: { id: "createaddition:alternator" }
 	id: "5BC0F6A9CB062861"
 	images: [ ]
-	order_index: 9
+	order_index: 16
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["04E8AC6AA22AE406"]
 			id: "6A24AF99B3061795"
 			rewards: [{ id: "5BFBACC2334A08BB", type: "xp", xp: 10 }]
 			shape: "rsquare"
