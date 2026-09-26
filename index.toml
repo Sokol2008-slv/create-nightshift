@@ -121,6 +121,16 @@ hash = "187eafde5974beee1263538b462b7b8fe2fc8948c5d413980d9796d55928580b"
 metafile = true
 
 [[files]]
+file = "mods/arphex.pw.toml"
+hash = "c8c4a22ac6593f4a430842069b6d1736beff6a6d279e71b5c7797201808f1020"
+metafile = true
+
+[[files]]
+file = "mods/astages.pw.toml"
+hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
+metafile = true
+
+[[files]]
 file = "mods/azimuth-api.pw.toml"
 hash = "3f829f54e19ebb32f23f554e05bd49c005dfc057933e07d0df4f85e7085d314d"
 metafile = true
@@ -153,11 +163,6 @@ metafile = true
 [[files]]
 file = "mods/blocks-bogies.pw.toml"
 hash = "07f30551060d5eb77a36ad9eb26131751d790d8e43378faf4143c6f53f0da245"
-metafile = true
-
-[[files]]
-file = "mods/boy-and-the-bath.pw.toml"
-hash = "a04d87f3b0009f6d7681d4388201ef96822f72ff14a0336da875e806eca347b5"
 metafile = true
 
 [[files]]
@@ -376,6 +381,11 @@ hash = "5de2bbab0826b5241e16746b0b739ca5169b0a9df38181d58e8519e6ea7f535f"
 metafile = true
 
 [[files]]
+file = "mods/create-guardian-beam-defense.pw.toml"
+hash = "adad52f3c6aaca9125efd69b00c6c4584fa4aa6d11e18a629433cb503b7440af"
+metafile = true
+
+[[files]]
 file = "mods/create-integrated-farming.pw.toml"
 hash = "205ac4987dcaf6aa6a099c9dbcb97f9aea85b2f9b2f5953fc88c83d92afd90b5"
 metafile = true
@@ -591,11 +601,6 @@ hash = "36debf7653e95a855b4fedacc19027cf2e01960fc0b6d55ef2ffbffbcb455690"
 metafile = true
 
 [[files]]
-file = "mods/deimos.pw.toml"
-hash = "8fa452b9f04851f6c190c5e77caa0b81023e9f99b2c969ca28e92bca48748f02"
-metafile = true
-
-[[files]]
 file = "mods/distanthorizons.pw.toml"
 hash = "6d3e312dbf8db12dd1b6fb3bd1d29f210ab48024a0b2ebdf02fd32c265955c5d"
 metafile = true
@@ -608,6 +613,11 @@ metafile = true
 [[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
+metafile = true
+
+[[files]]
+file = "mods/enhanced_hordes.pw.toml"
+hash = "ba9f6c66e31657070aad3ee6aae26709fdfe02572d863414a7750532c3331f4b"
 metafile = true
 
 [[files]]
@@ -638,11 +648,6 @@ metafile = true
 [[files]]
 file = "mods/extended-wrenches.pw.toml"
 hash = "59cfcbd44968549b7dc2f6e13b691d50c9c65af6bad966b47e097c7c937e6cfc"
-metafile = true
-
-[[files]]
-file = "mods/face-of-horror.pw.toml"
-hash = "16ebdf047b2118f27797dd502a546a05e39a0758551708cd41a90172aed48480"
 metafile = true
 
 [[files]]
@@ -906,6 +911,21 @@ hash = "d935e4ce118d15c88b10809df85e801f0e9577855f870f3c28e5a0bd5e7fecf6"
 metafile = true
 
 [[files]]
+file = "mods/project-expansion.pw.toml"
+hash = "ef0c68778d0e0ed3855fe43d6bf33450739a6129655d30db19abb58a18ae2991"
+metafile = true
+
+[[files]]
+file = "mods/projecte-integration.pw.toml"
+hash = "8489d43b285016961d411c225418c543e859e717a93f7e11effae2756cdae0c0"
+metafile = true
+
+[[files]]
+file = "mods/projecte.pw.toml"
+hash = "bdca798ffe4124bf43ea13f1fa5f0593a7539762240edb56c47b1976b413ebc4"
+metafile = true
+
+[[files]]
 file = "mods/puzzles-lib.pw.toml"
 hash = "391e5d415c0754ad210b8efa54fc9ded4f99e6ab8562d6faf960f3b65d84a66a"
 metafile = true
@@ -946,13 +966,13 @@ hash = "a1fa121ed5d0207e4cdd3f545d043f68f9a4bb38dcb21278b968fad5e4cefe4a"
 metafile = true
 
 [[files]]
-file = "mods/searchables.pw.toml"
-hash = "ce9ddada6ffd55a512149cc474c6a453281a997a5fdf1b7b4a2cc73f875e704a"
+file = "mods/sanity-renewed.pw.toml"
+hash = "f3cb71973241c73786873f848e2098a11ff83b7bbb4fddd1479dfa381e5eaaea"
 metafile = true
 
 [[files]]
-file = "mods/server-side-horror.pw.toml"
-hash = "1754065da38f457882eee4fbff94c6ebcb5aeb8e88eae68b723819367db3c10f"
+file = "mods/searchables.pw.toml"
+hash = "ce9ddada6ffd55a512149cc474c6a453281a997a5fdf1b7b4a2cc73f875e704a"
 metafile = true
 
 [[files]]
@@ -1056,6 +1076,11 @@ hash = "68ef590d29c127c6b38d81662edfa45a2e1339d38f60aee345e31164c7c10017"
 metafile = true
 
 [[files]]
+file = "mods/teamprojecte.pw.toml"
+hash = "9453cef6e93c428f8c7b941c1ecbda8e401a3fdb1c5b79a5ac9f68c444fa8ddd"
+metafile = true
+
+[[files]]
 file = "mods/tectonic.pw.toml"
 hash = "dd46fad79cf33a00123be0a74c73581da72cd98503ef23822a624a08f4b10ff2"
 metafile = true
@@ -1073,11 +1098,6 @@ metafile = true
 [[files]]
 file = "mods/the-afterdark.pw.toml"
 hash = "79c500952f474fcba455c37f9ec62f4ed2f8222de607c8269c0fef50f4b54ad6"
-metafile = true
-
-[[files]]
-file = "mods/the-knocker.pw.toml"
-hash = "a96d14bcc58f21a1b1af5e0147543ea224342f7e636106c1a73c0818fd69eeb6"
 metafile = true
 
 [[files]]

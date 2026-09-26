@@ -94,7 +94,6 @@ kubejs-create
 almostunified
 polymorph
 # === Хоррор ===
-the-knocker
 cave-dweller-reevolved
 obsessed
 imposter-(horror)
@@ -172,3 +171,11 @@ comforts
 travelers-titles
 pick-up-notifier
 rightclickharvest
+astages
+sanity-renewed
+create-guardian-beam-defense
+enhanced_hordes
+arphex
+projecte-integration
+teamprojecte
+project-expansion
