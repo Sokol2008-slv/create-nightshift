@@ -29,9 +29,15 @@ function nsFindAltar(state, altarId) {
 	return null
 }
 
+// Конец набега: снова можно спать
+function nsRaidEnded() {
+	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 100')
+}
+
 function nsResetRaidIdle(state) {
 	state.raid = nsDefaultState().raid
 	nsSaveState(state)
+	nsRaidEnded()
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
 }
@@ -334,6 +340,8 @@ function nsStartRaid(kind, altarId) {
 	var tod = Number(level.getDayTime()) % 24000
 	if (tod < 13000) NSG.nsServer.runCommandSilent('time add ' + (13000 - tod))
 	NSG.nsServer.runCommandSilent('weather thunder 6000')
+	// на время набега ночь не проспать: утро и солнце сожгли бы орду
+	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 101')
 
 	if (kind === 'sacrifice') {
 		nsTitleAll('Они почуяли колебания мира…', {
@@ -406,6 +414,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 
 function nsRaidVictory(state) {
 	var kind = state.raid.kind
+	nsRaidEnded()
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
 	NSG.nsServer.runCommandSilent('weather clear')
@@ -421,8 +430,10 @@ function nsRaidVictory(state) {
 		nsSaveState(state)
 		grantPhase(nextPhase) // сама обновит фазу и сбросит прогресс жертвы
 	} else {
-		console.info('[nightshift] малый набег отбит')
-		nsTitleAll('Набег отбит', { color: 'green' })
+		var reached = state.raid.reached || 0
+		console.info('[nightshift] малый набег закончился, до алтаря дошли: ' + reached)
+		if (reached > 0) nsTitleAll('Набег прошёл', { color: 'yellow', subtitle: 'До алтаря добрались: ' + reached + ' — в этот раз без последствий', subColor: 'gray' })
+		else nsTitleAll('Набег отбит', { color: 'green' })
 		state.raid = nsDefaultState().raid
 		nsSaveState(state)
 	}
@@ -431,6 +442,7 @@ function nsRaidVictory(state) {
 function nsRaidFail(state, mobs) {
 	console.info('[nightshift] моб добрался до алтаря — жертвенный набег провален')
 	for (var i = 0; i < mobs.length; i++) nsRemoveMob(mobs[i])
+	nsRaidEnded()
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
 	NSG.nsServer.runCommandSilent('weather clear')
@@ -516,6 +528,8 @@ function nsTickActiveRaid(state) {
 			}
 			nsRemoveMob(mob) // малый набег — без провала, дошедший моб просто исчезает
 			mobs.splice(i, 1)
+			state.raid.reached = (state.raid.reached || 0) + 1
+			nsSaveState(state)
 		}
 	}
 
@@ -565,10 +579,22 @@ function nsTickCooldown(state) {
 function nsCheckMinorRaidSchedule(state) {
 	if (state.altars.length === 0) return // алтаря ещё нет — нечего охранять
 
-	var day
+	var dayTime
 	try {
-		day = Math.floor(Number(NSG.nsServer.getOverworld().getDayTime()) / 24000)
+		dayTime = Number(NSG.nsServer.getOverworld().getDayTime())
 	} catch (e) {
+		return
+	}
+	var day = Math.floor(dayTime / 24000)
+	var tod = dayTime % 24000
+
+	// Набег взведён (5-й день) — приходит, когда ночь наступит сама, без перемотки времени
+	// с 12000 (до того, как можно лечь спать) — иначе ночь проспали бы и набег не пришёл
+	if (state.minorPending && tod >= 12000 && tod < 23000) {
+		var cfg = NSG.NIGHTSHIFT_CONFIG.hordes[state.phase]
+		state.minorPending = false
+		nsSaveState(state)
+		if (cfg && cfg.minor && cfg.minor.length) nsStartRaid('minor', state.altars[0].id)
 		return
 	}
 
@@ -579,18 +605,17 @@ function nsCheckMinorRaidSchedule(state) {
 	}
 	if (day === state.lastSeenDay) return
 
+	// новый день (рассвет)
 	state.lastSeenDay = day
 	state.dayCounter++
 	var T = NSG.NIGHTSHIFT_TUNABLES
-
 	if (state.dayCounter >= T.minorRaidEveryNights) {
-		var cfg = NSG.NIGHTSHIFT_CONFIG.hordes[state.phase]
 		state.dayCounter = 0
+		state.minorPending = true
 		nsSaveState(state)
-		if (cfg && cfg.minor && cfg.minor.length) nsStartRaid('minor', state.altars[0].id)
+		nsTitleAll('Этой ночью придут гости', { color: 'yellow', subtitle: 'Малый набег — к закату будьте у алтаря', subColor: 'gray' })
 		return
 	}
-
 	nsSaveState(state)
 	var left = T.minorRaidEveryNights - state.dayCounter
 	nsTitleAll('До набега осталось ' + left + ' ' + nsNightsWord(left), { color: 'gray' })

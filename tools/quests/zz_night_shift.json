@@ -294,7 +294,7 @@
     },
     {
      "key": "phase_1",
-     "type": "custom",
+     "type": "stage",
      "item": "nightshift:altar",
      "title": "Фаза 1: Разнорабочий",
      "desc": [
@@ -302,14 +302,13 @@
       "Набег: 8 зомби, одна волна (~160 HP). Готовьте 3 каменных меча.",
       "Откроется: железо, медь, уголь и андезит — начинается Create."
      ],
-     "deps": [
-      "forecast"
-     ],
-     "goal": true
+     "deps": [],
+     "goal": true,
+     "stage": "nightshift_p1"
     },
     {
      "key": "phase_2",
-     "type": "custom",
+     "type": "stage",
      "item": "nightshift:altar",
      "title": "Фаза 2: Латунь",
      "desc": [
@@ -321,11 +320,12 @@
      "deps": [
       "phase_1"
      ],
-     "goal": false
+     "goal": false,
+     "stage": "nightshift_p2"
     },
     {
      "key": "phase_3",
-     "type": "custom",
+     "type": "stage",
      "item": "nightshift:altar",
      "title": "Фаза 3: Пар и глубина",
      "desc": [
@@ -337,11 +337,12 @@
      "deps": [
       "phase_2"
      ],
-     "goal": false
+     "goal": false,
+     "stage": "nightshift_p3"
     },
     {
      "key": "phase_4",
-     "type": "custom",
+     "type": "stage",
      "item": "nightshift:altar",
      "title": "Фаза 4: Сталь и нефть",
      "desc": [
@@ -353,11 +354,12 @@
      "deps": [
       "phase_3"
      ],
-     "goal": false
+     "goal": false,
+     "stage": "nightshift_p4"
     },
     {
      "key": "phase_5",
-     "type": "custom",
+     "type": "stage",
      "item": "nightshift:altar",
      "title": "Фаза 5: Энергия",
      "desc": [
@@ -369,11 +371,12 @@
      "deps": [
       "phase_4"
      ],
-     "goal": false
+     "goal": false,
+     "stage": "nightshift_p5"
     },
     {
      "key": "phase_6",
-     "type": "custom",
+     "type": "stage",
      "item": "minecraft:nether_star",
      "title": "Фаза 6: Космос",
      "desc": [
@@ -385,7 +388,8 @@
      "deps": [
       "phase_5"
      ],
-     "goal": true
+     "goal": true,
+     "stage": "nightshift_p6"
     }
    ]
   },

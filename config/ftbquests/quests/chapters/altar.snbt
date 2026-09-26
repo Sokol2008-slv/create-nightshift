@@ -16,7 +16,7 @@
 			size: 1.0d
 			tasks: [{ id: "35A9F221964B5D5F", item: { count: 1, id: "nightshift:base_marker" }, type: "item" }]
 			x: 0.00d
-			y: 0.00d
+			y: -1.10d
 		}
 		{
 			dependencies: ["56635B3491872F7C"]
@@ -27,7 +27,7 @@
 			size: 1.0d
 			tasks: [{ id: "7A9BA6AB2B56C735", type: "checkmark" }]
 			x: 2.20d
-			y: 0.00d
+			y: -1.10d
 		}
 		{
 			dependencies: ["666C9293C161B61D"]
@@ -37,7 +37,7 @@
 			size: 1.0d
 			tasks: [{ id: "4C55491B0B830E42", item: { count: 1, id: "nightshift:base_core" }, type: "item" }]
 			x: 4.40d
-			y: 0.00d
+			y: -1.10d
 		}
 		{
 			dependencies: ["4647E91516588EFE"]
@@ -48,7 +48,7 @@
 			size: 1.0d
 			tasks: [{ id: "2F1C897100B4BF26", type: "checkmark" }]
 			x: 6.60d
-			y: 0.00d
+			y: -1.10d
 		}
 		{
 			dependencies: ["02B6C933968E95C2"]
@@ -59,7 +59,7 @@
 			size: 1.0d
 			tasks: [{ id: "465F8D1D1EADA62A", type: "checkmark" }]
 			x: 8.80d
-			y: -1.90d
+			y: -2.27d
 		}
 		{
 			dependencies: ["02B6C933968E95C2"]
@@ -70,18 +70,17 @@
 			size: 1.0d
 			tasks: [{ id: "003EEE33EB1E91C2", type: "checkmark" }]
 			x: 8.80d
-			y: 1.90d
+			y: 1.23d
 		}
 		{
-			dependencies: ["02B6C933968E95C2"]
 			icon: { id: "nightshift:altar" }
 			id: "6C6F1BB21939360A"
 			rewards: [{ id: "7F089A8F896971A2", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "677B4B7D8BAF96D2", type: "custom" }]
-			x: 8.80d
-			y: -0.00d
+			tasks: [{ id: "677B4B7D8BAF96D2", stage: "nightshift_p1", team_stage: false, type: "gamestage" }]
+			x: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["6C6F1BB21939360A"]
@@ -90,9 +89,9 @@
 			rewards: [{ id: "392C26DE721BE0C0", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "16EE5D52604F4A63", type: "custom" }]
-			x: 11.00d
-			y: -0.00d
+			tasks: [{ id: "16EE5D52604F4A63", stage: "nightshift_p2", team_stage: false, type: "gamestage" }]
+			x: 2.20d
+			y: 0.80d
 		}
 		{
 			dependencies: ["7FFFE63128BF62E6"]
@@ -101,9 +100,9 @@
 			rewards: [{ id: "020558233BC8D736", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "65B588BCD8BC9771", type: "custom" }]
-			x: 13.20d
-			y: -0.00d
+			tasks: [{ id: "65B588BCD8BC9771", stage: "nightshift_p3", team_stage: false, type: "gamestage" }]
+			x: 4.40d
+			y: 0.80d
 		}
 		{
 			dependencies: ["20D753939FFD3F93"]
@@ -112,9 +111,9 @@
 			rewards: [{ id: "115D9C219A6D5D7A", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "49985670266975AD", type: "custom" }]
-			x: 15.40d
-			y: -0.00d
+			tasks: [{ id: "49985670266975AD", stage: "nightshift_p4", team_stage: false, type: "gamestage" }]
+			x: 6.60d
+			y: 0.80d
 		}
 		{
 			dependencies: ["3AC5FBC11AD0E3EE"]
@@ -123,9 +122,9 @@
 			rewards: [{ id: "302B80312A3EF1D1", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "06E0797D9160A931", type: "custom" }]
-			x: 17.60d
-			y: -0.00d
+			tasks: [{ id: "06E0797D9160A931", stage: "nightshift_p5", team_stage: false, type: "gamestage" }]
+			x: 8.80d
+			y: -0.37d
 		}
 		{
 			dependencies: ["04E8AC6AA22AE406"]
@@ -134,9 +133,9 @@
 			rewards: [{ id: "74A999B15F378A73", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "21EC8756CB947DF1", type: "custom" }]
-			x: 19.80d
-			y: -0.00d
+			tasks: [{ id: "21EC8756CB947DF1", stage: "nightshift_p6", team_stage: false, type: "gamestage" }]
+			x: 11.00d
+			y: -0.37d
 		}
 	]
 }

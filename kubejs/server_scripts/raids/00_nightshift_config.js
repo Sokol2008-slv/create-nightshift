@@ -131,7 +131,7 @@ NSG.NIGHTSHIFT_CONFIG = {
 			minor: [
 				{ id: 'minecraft:zombie', count: 6 },
 				{ id: 'minecraft:spider', count: 2 },
-				{ id: 'minecraft:creeper', count: 1 },
+				{ id: 'minecraft:husk', count: 1 }, // не крипер: взрыв сносит машины
 			],
 		},
 		3: {

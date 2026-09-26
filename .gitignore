@@ -1,2 +1,3 @@
 dist/
 *.mrpack
+__pycache__/

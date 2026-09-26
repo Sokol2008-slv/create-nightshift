@@ -18,7 +18,7 @@ hash = "9aa45298c0aa2237045fc5ab2107c88d4c380946afde89894c3151833236e392"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "f98b81f79fcec47c97cd44df5cd07a4c24ede18974c5d0c7e7f07c52e0d70f3d"
+hash = "30fbaa90d6d6350ac6c5ec06aab4f81b8f796dd62c92bdea5eae4527bd862fe8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
@@ -107,6 +107,10 @@ hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
 [[files]]
 file = "config/sanity_renewed/default.toml"
 hash = "efc3a76fc696c39aa2a98e356252282feef02d8ca9a7aae7e85d503448a9f67b"
+
+[[files]]
+file = "config/simplebackups-common.toml"
+hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
@@ -358,15 +362,11 @@ hash = "3cc62b769240de62b800540bccf58ec9b70f5a79334941057f74cdfc383c54f9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "3da587a83b4c249c63e02857f59fc61670c9fdd40e6268e7143a6e9bb8e6d214"
-
-[[files]]
-file = "kubejs/server_scripts/raids/05_quest_ids.js"
-hash = "7c05a42aab64948dbef0897c821cbae927311ab14d3fa388bf5b22c46c26dee1"
+hash = "131ce369eaafb9724e2ae810cc7f381e7591b3b698b5de1bf1a4d77a2f5fd145"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
-hash = "73458ed7cda35fe0328b8e4b11d078a6652a2f052a2b782f5a0db605bacef848"
+hash = "6c04f1291ae780f5169ed11d160eb8ae8bca114c557fd28dd0063a6994a00009"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
@@ -378,7 +378,7 @@ hash = "e4df18b1772c84d87701de06bf0048b621c9a2e08ac0084aed8867dc05f32628"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "ddee20bee20bab8f96f8521c5224c5d938a3cd999e6d2029a1492f6948a11def"
+hash = "636cb1a88dcd33e82a0d74b114f7a1fd718f2e0f804e6ef4c01bd1222707434c"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"

@@ -29,6 +29,9 @@
 
 ServerEvents.loaded(event => {
 	NSG.nsServer = event.server
+	// отложенные действия считаются в тиках сервера, а счётчик после рестарта с нуля — старые ключи убираем
+	event.server.persistentData.remove('nightshift_reload_at')
+	event.server.persistentData.remove('nightshift_rerender_at')
 	nsSyncPhaseFile(event.server)
 })
 
@@ -42,8 +45,17 @@ function nsSyncPhaseFile(server) {
 	console.warn('[nightshift] файл фазы ' + filePhase + ' ≠ фаза мира ' + worldPhase + ' — выравниваю')
 	nightshiftWritePhase(worldPhase) // заранее: тогда whenGranted не зовёт /reload на каждую стадию
 	for (var p = 1; p <= 6; p++) server.runCommandSilent('astages server ' + (p <= worldPhase ? 'add' : 'remove') + ' nightshift_p' + p)
-	server.runCommandSilent('reload')
+	// /reload не внутри загрузки сервера, а через 2 с — из обработчика тиков
+	server.persistentData.putLong('nightshift_reload_at', server.getTickCount() + 40)
 }
+
+ServerEvents.tick(event => {
+	var pd = event.server.persistentData
+	if (!pd.contains('nightshift_reload_at') || event.server.getTickCount() < pd.getLong('nightshift_reload_at')) return
+	pd.remove('nightshift_reload_at')
+	pd.putLong('nightshift_rerender_at', event.server.getTickCount() + 60)
+	event.server.runCommandSilent('reload')
+})
 
 function nsDefaultState() {
 	return {
@@ -240,17 +252,14 @@ function grantPhase(n) {
 	nsCompletePhaseQuests(null, n)
 }
 
-// Квесты «Фаза N открыта» (глава «Алтарь и фазы») закрываются скриптом.
+// Квесты «Фаза N открыта» (глава «Алтарь и фазы») — задачи-стадии FTB Quests,
+// а стадия FTB = тег игрока. Выдаём теги nightshift_p1..phase, лишние снимаем.
 // player = null — всем онлайн; при входе — только вошедшему.
 function nsCompletePhaseQuests(player, phase) {
-	if (typeof NS_PHASE_QUESTS === 'undefined') return
 	var who = player ? String(player.getUsername()) : '@a'
-	for (var p = 1; p <= phase; p++) {
-		if (NS_PHASE_QUESTS[p]) NSG.nsServer.runCommandSilent('ftbquests change_progress ' + who + ' complete ' + NS_PHASE_QUESTS[p])
-	}
+	for (var p = 1; p <= 6; p++) NSG.nsServer.runCommandSilent('tag ' + who + ' ' + (p <= phase ? 'add' : 'remove') + ' nightshift_p' + p)
 }
 
 PlayerEvents.loggedIn(event => {
-	var phase = nsGetState().phase
-	if (phase > 0) nsCompletePhaseQuests(event.getPlayer(), phase)
+	nsCompletePhaseQuests(event.getPlayer(), nsGetState().phase)
 })

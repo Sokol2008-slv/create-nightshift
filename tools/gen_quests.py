@@ -24,7 +24,6 @@ SPEC_DIR = PACK / "tools" / "quests"
 OUT = PACK / "config" / "ftbquests" / "quests"
 MODS = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/NightshiftDev/.minecraft/mods"
 STARTUP = PACK / "kubejs" / "startup_scripts"
-QUEST_IDS_JS = PACK / "kubejs" / "server_scripts" / "raids" / "05_quest_ids.js"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
 # Порядок глав в книге — по фазам Ночной смены
@@ -36,7 +35,7 @@ ORDER = ["welcome", "night_shift", "altar",
          "electricity", "space"]
 
 # Фаза главы: название получает префикс, а стартовые квесты главы заперты
-# до квеста «Фаза N открыта» (altar:phase_N, его закрывает скрипт при выдаче фазы)
+# до квеста «Фаза N открыта» (altar:phase_N — задача-стадия, тег игрока nightshift_pN)
 PHASE = {"create_basics": 1, "ore_processing": 1, "defense": 1, "logistics_food": 1,
          "brass_logistics_trains": 2, "automation_extras": 2, "big_cannons": 2,
          "first_plane": 3, "airships_cars": 3, "submarines": 3, "economy": 3,
@@ -254,7 +253,7 @@ def main():
                    [qid(*dep.split(":", 1)) for dep in ext]
             if deps:
                 lines.append("\t\t\tdependencies: [" + ", ".join(snbt_str(x) for x in deps) + "]")
-            if q["type"] in ("checkmark", "custom"):
+            if q["type"] in ("checkmark", "stage"):
                 lines.append("\t\t\ticon: { id: " + snbt_str(q["item"]) + " }")
             lines.append(f"\t\t\tid: {snbt_str(quest_id)}")
             lines.append("\t\t\trewards: [{ id: " + snbt_str(qid(ck, k, "reward")) +
@@ -263,9 +262,10 @@ def main():
             lines.append(f"\t\t\tsize: {1.6 if goal else 1.0}d")
             if q["type"] == "checkmark":
                 lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ', type: "checkmark" }]')
-            elif q["type"] == "custom":
-                # закрывается скриптом (/ftbquests change_progress … complete)
-                lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ', type: "custom" }]')
+            elif q["type"] == "stage":
+                # стадия FTB = тег игрока (EntityTagStageProvider); тег выдаёт KubeJS при открытии фазы
+                lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ", stage: " + snbt_str(q["stage"]) +
+                             ', team_stage: false, type: "gamestage" }]')
             else:
                 cnt = int(q.get("count", 1))
                 extra = f", count: {cnt}L" if cnt > 1 else ""
@@ -300,11 +300,6 @@ def main():
     for where, dch, dk in ext_checks:
         if dk not in all_keys.get(dch, set()):
             errors.append(f"{where}: внешняя зависимость {dch}:{dk} не найдена")
-    # ID квестов «Фаза N открыта» — для KubeJS (закрываются при выдаче фазы)
-    ids = ",\n".join(f"\t{n}: '{qid('altar', f'phase_{n}')}'" for n in range(1, 7))
-    QUEST_IDS_JS.write_text("// Сгенерировано tools/gen_quests.py — не править руками.\n"
-                            "// Квесты «Фаза N открыта» в главе «Алтарь и фазы»: закрываются при выдаче фазы.\n"
-                            "var NS_PHASE_QUESTS = {\n" + ids + "\n}\n")
     (OUT / "chapter_groups.snbt").write_text("{\n\tchapter_groups: [ ]\n}\n")
     (OUT / "data.snbt").write_text("""{
 \tdefault_autoclaim_rewards: "disabled"
