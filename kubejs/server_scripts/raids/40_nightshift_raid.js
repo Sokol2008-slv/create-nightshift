@@ -1,6 +1,6 @@
 // ==========================================================================
-// Ночная смена — набеги: жертвенный (с провалом) и малые (каждые 5 ночей,
-// без провала). Волны, навигация мобов к алтарю, "грызение" стен, победа/провал.
+// Ночная смена — набеги: выбранной сложности (с провалом и добычей) и малые
+// (каждые 5 ночей). Волны, навигация мобов к алтарю, "грызение" стен, победа/провал.
 // ==========================================================================
 //
 // ВАЖНО ПРО RHINO (KubeJS 2101): только var. const/let внутри циклов молча
@@ -329,13 +329,15 @@ function nsChewTowardAltar(mob, altar, pd, level) {
 // --------------------------------------------------------------------------
 // Запуск набега.
 // --------------------------------------------------------------------------
-function nsStartRaid(kind, altarId) {
+function nsStartRaid(kind, altarId, difficulty) {
 	var state = nsGetState()
 	if (nsRaidActive(state)) return
+	var d = kind === 'minor' ? 0 : difficulty || 1
 
 	state.raid = {
 		state: 'countdown',
-		kind: kind,
+		kind: kind, // challenge — выбранная сложность; minor — малый набег раз в 5 ночей
+		difficulty: d,
 		altarId: altarId,
 		startedAtTick: 0,
 		waveIndex: -1,
@@ -357,25 +359,25 @@ function nsStartRaid(kind, altarId) {
 	// на время набега ночь не проспать: утро и солнце сожгли бы орду
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 101')
 
-	if (kind === 'sacrifice') {
-		nsTitleAll('Они почуяли колебания мира…', {
+	var name = kind === 'minor' ? 'Малый набег' : 'Набег: ' + nsDifficultyName(d)
+	if (kind === 'minor') nsTitleAll('Мир неспокоен…', { color: 'yellow', subtitle: 'К базе идут гости', subColor: 'gray' })
+	else {
+		nsTitleAll(nsDifficultyName(d), {
 			color: 'dark_red',
 			bold: true,
-			subtitle: 'Набег придёт через ' + NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds + ' секунд',
+			subtitle: 'Орда придёт через ' + NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds + ' секунд',
 			subColor: 'gray',
 		})
 		NSG.nsServer.runCommandSilent('playsound minecraft:entity.wither.spawn ambient @a')
-	} else {
-		nsTitleAll('Мир неспокоен…', { color: 'yellow', subtitle: 'К базе идут гости', subColor: 'gray' })
 	}
 
 	nsInviteToAltar(nsFindAltar(state, altarId), kind)
-	nsBossbarCreate('nightshift:raid_countdown', kind === 'sacrifice' ? 'Набег на алтарь' : 'Малый набег', kind === 'sacrifice' ? 'red' : 'yellow')
+	nsBossbarCreate('nightshift:raid_countdown', name, kind === 'minor' ? 'yellow' : 'red')
 	nsBossbarMax('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 	nsBossbarValue('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 }
 
-// {waves, boss} текущего набега: жертвенный — nsSacrificeHorde, малый — minor текущей фазы
+// {waves, boss, buff, mult} текущего набега: выбранная сложность или малый набег по силам команды
 function nsTellAll(component) {
 	var players = NSG.nsServer.getPlayers()
 	for (var i = 0; i < players.length; i++) players[i].tell(component)
@@ -396,7 +398,7 @@ function nsInviteToAltar(altar, kind) {
 		}
 		if (!far) continue
 		p.tell(
-			Text.gold(kind === 'sacrifice' ? '[Ночная смена] Набег на алтарь! ' : '[Ночная смена] К базе идут гости! ')
+			Text.gold(kind !== 'minor' ? '[Ночная смена] Набег на алтарь! ' : '[Ночная смена] К базе идут гости! ')
 				.append(Text.green('[Телепорт к алтарю]').clickRunCommand('/nightshift altar').hover(Text.gray('После набега вернёт туда, где вы сейчас')))
 		)
 	}
@@ -416,9 +418,7 @@ function nsReturnAll(state) {
 }
 
 function nsHordeCfg(state) {
-	if (state.raid.kind === 'sacrifice') return nsSacrificeHorde(state.phase)
-	var h = NSG.NIGHTSHIFT_CONFIG.hordes[state.phase]
-	return h && h.minor ? { waves: [h.minor], boss: null } : null
+	return state.raid.kind === 'minor' ? nsMinorHorde(state.phase) : nsChallengeHorde(state.raid.difficulty || 1)
 }
 
 function nsWaveList(state, hordeCfg) {
@@ -428,7 +428,7 @@ function nsWaveList(state, hordeCfg) {
 function nsWaveBar(state, alive) {
 	var list = nsWaveList(state, nsHordeCfg(state) || { waves: [] })
 	var title = state.raid.bossSpawned ? 'Босс' : 'Волна ' + (state.raid.waveIndex + 1) + ' из ' + list.length
-	nsBossbarCreate('nightshift:raid_wave', title + ' — осталось ' + alive, state.raid.kind === 'sacrifice' ? 'red' : 'yellow')
+	nsBossbarCreate('nightshift:raid_wave', title + ' — осталось ' + alive, state.raid.kind !== 'minor' ? 'red' : 'yellow')
 	nsBossbarMax('nightshift:raid_wave', Math.max(1, state.raid.waveSize || alive))
 	nsBossbarValue('nightshift:raid_wave', alive)
 }
@@ -449,9 +449,17 @@ function nsPartyScale() {
 
 // Мобы набега ищут путь до алтаря на 64 блока (у зомби по умолчанию ~35): так они
 // находят длинный коридор-ловушку или туннель к подземной базе, а не грызут стену напрямик.
-function nsBoostRaidMobs() {
-	NSG.nsServer.runCommandSilent('execute as @e[tag=nightshift_raid,tag=!ns_boosted] run attribute @s minecraft:generic.follow_range base set 64')
-	NSG.nsServer.runCommandSilent('tag @e[tag=nightshift_raid,tag=!ns_boosted] add ns_boosted')
+function nsBoostRaidMobs(buff) {
+	var sel = '@e[tag=nightshift_raid,tag=!ns_boosted]'
+	NSG.nsServer.runCommandSilent('execute as ' + sel + ' run attribute @s minecraft:generic.follow_range base set 64')
+	// усиление сложности: сопротивление/сила/скорость на весь набег
+	if (buff) {
+		for (var eff in buff) {
+			var lvl = Math.round(buff[eff])
+			if (lvl > 0) NSG.nsServer.runCommandSilent('effect give ' + sel + ' minecraft:' + eff + ' infinite ' + (lvl - 1).toFixed(0) + ' true')
+		}
+	}
+	NSG.nsServer.runCommandSilent('tag ' + sel + ' add ns_boosted')
 }
 
 // Спавнит текущую волну. Возвращает false, если волн больше нет (победа).
@@ -467,9 +475,9 @@ function nsSpawnCurrentWave(state, level, altar) {
 	if (!wave) {
 		if (hordeCfg.boss && !state.raid.bossSpawned) {
 			state.raid.bossSpawned = true
-			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true })
-			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state))
-			nsBoostRaidMobs()
+			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true, subtitle: hordeCfg.boss.label, subColor: 'red' })
+			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state, hordeCfg.boss.nbt))
+			nsBoostRaidMobs(hordeCfg.buff)
 			state.raid.waveSize = 1
 			nsSaveState(state)
 			return true
@@ -479,13 +487,13 @@ function nsSpawnCurrentWave(state, level, altar) {
 
 	nsTitleAll('Волна ' + (state.raid.waveIndex + 1), { color: 'red', bold: true })
 	var size = 0
-	var scale = nsPartyScale()
+	var scale = nsPartyScale() * (hordeCfg.mult || 1)
 	for (var i = 0; i < wave.length; i++) {
 		var n = Math.ceil(wave[i].count * scale)
 		nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, wave[i].id, n, state, wave[i].nbt))
 		size += n
 	}
-	nsBoostRaidMobs()
+	nsBoostRaidMobs(hordeCfg.buff)
 	state.raid.waveSize = size
 	nsSaveState(state)
 	return true
@@ -493,36 +501,49 @@ function nsSpawnCurrentWave(state, level, altar) {
 
 function nsRaidVictory(state) {
 	var kind = state.raid.kind
+	var altar = nsFindAltar(state, state.raid.altarId)
 	nsRaidEnded()
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
 	NSG.nsServer.runCommandSilent('weather clear')
 
-	if (kind === 'sacrifice') {
-		var nextPhase = state.phase + 1
-		console.info('[nightshift] жертвенный набег отбит — открываю фазу ' + nextPhase)
-		nsTitleAll('Испытание пройдено!', { color: 'green', bold: true, subtitle: 'Фаза ' + nextPhase + ' открыта', subColor: 'white' })
+	if (kind !== 'minor') {
+		var d = state.raid.difficulty || 1
+		var cfg = nsChallengeHorde(d)
+		// бросков добычи: по одному за волну, два за босса, в Кошмаре ещё по два за уровень
+		var rolls = cfg.waves.length + (cfg.boss ? 2 : 0) + 2 * Math.max(0, d - NSG.NIGHTSHIFT_DIFFICULTY_MAX)
+		var first = d > (state.phase || 0)
+		console.info('[nightshift] сложность ' + d + ' пройдена' + (first ? ' впервые' : ''))
+		nsTitleAll(nsDifficultyName(d) + ' — победа!', {
+			color: 'green',
+			bold: true,
+			subtitle: first ? 'Открыта: ' + nsDifficultyName(d + 1) : 'Добыча — в инвентаре',
+			subColor: 'white',
+		})
 		NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete master @a')
-		// сначала сохраняем конец набега, потом выдаём фазу: выдача запускает /reload
+		nsRaidRewards(altar, d, rolls, first)
+		if (first) {
+			state.phase = d // «фаза» теперь = наибольшая пройденная сложность
+			nsCompletePhaseQuests(null, d)
+		}
 		state.raid = nsDefaultState().raid
 		state.dayCounter = 0
 		nsReturnAll(state)
 		nsSaveState(state)
-		grantPhase(nextPhase) // сама обновит фазу и сбросит прогресс жертвы
 	} else {
 		var reached = state.raid.reached || 0
 		var T = NSG.NIGHTSHIFT_TUNABLES
-		var tribute = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
 		console.info('[nightshift] малый набег закончился, до алтаря дошли: ' + reached)
 		if (reached > 0) {
 			// прорыв к алтарю — проклятие у всей команды
 			state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + T.curseHeartsMinor)
 			nsTitleAll('Алтарь осквернён', { color: 'dark_red', bold: true, subtitle: 'До алтаря добрались: ' + reached + ' — −' + T.curseHeartsMinor + ' сердца у всех', subColor: 'gray' })
 			nsTellAll(nsCurseLine(state))
-		} else if ((state.curse || 0) > 0) {
-			state.curse--
-			nsTitleAll('Набег отбит', { color: 'green', subtitle: 'Проклятие ослабло на сердце', subColor: 'gray' })
-		} else nsTitleAll('Набег отбит', { color: 'green' })
+		} else {
+			if ((state.curse || 0) > 0) state.curse--
+			nsTitleAll('Набег отбит', { color: 'green', subtitle: state.curse > 0 ? 'Проклятие ослабло на сердце' : 'Добыча — в инвентаре', subColor: 'gray' })
+			nsRaidRewards(altar, Math.max(1, Math.min(NSG.NIGHTSHIFT_DIFFICULTY_MAX, state.phase || 0)), 1, false)
+		}
 		state.raid = nsDefaultState().raid
 		nsReturnAll(state)
 		nsSaveState(state)
@@ -531,7 +552,8 @@ function nsRaidVictory(state) {
 }
 
 function nsRaidFail(state, mobs) {
-	console.info('[nightshift] моб добрался до алтаря — жертвенный набег провален')
+	var d = state.raid.difficulty || 1
+	console.info('[nightshift] моб добрался до алтаря — набег сложности ' + d + ' провален')
 	for (var i = 0; i < mobs.length; i++) nsRemoveMob(mobs[i])
 	nsRaidEnded()
 	nsBossbarRemove('nightshift:raid_countdown')
@@ -539,18 +561,143 @@ function nsRaidFail(state, mobs) {
 	NSG.nsServer.runCommandSilent('weather clear')
 
 	var T = NSG.NIGHTSHIFT_TUNABLES
-	state.sacrificeProgress = {} // жертва сгорает — требование плана
-	state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + T.curseHeartsSacrifice) // и проклятие: фаза заблокирована до искупления
+	var hearts = nsFailHearts(d)
+	state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + hearts) // новый набег — только после искупления
 	state.raid = nsDefaultState().raid
 	state.raid.state = 'cooldown'
-	state.raid.countdownRemaining = 20 // секунд паузы перед тем, как алтарь снова примет жертву
+	state.raid.countdownRemaining = 20
 	nsReturnAll(state)
 	nsSaveState(state)
 	nsApplyPenalty(null)
 
-	nsTitleAll('Испытание провалено', { color: 'dark_red', bold: true, subtitle: 'Жертва сгорела, −' + T.curseHeartsSacrifice + ' сердец у всех, алтарь осквернён', subColor: 'gray' })
+	nsTitleAll('Набег провален', { color: 'dark_red', bold: true, subtitle: '−' + nsPlural(hearts, 'сердце', 'сердца', 'сердец') + ' у всех, алтарь осквернён', subColor: 'gray' })
 	nsTellAll(nsCurseLine(state))
-	nsTellAll(Text.gray('[Ночная смена] Пока проклятие не искуплено, алтарь не запустит следующую жертву.'))
+	nsTellAll(Text.gray('[Ночная смена] Пока проклятие не искуплено, алтарь не начнёт новый набег.'))
+}
+
+// Проклятие за провал: чем выше сложность, тем больнее
+function nsFailHearts(d) {
+	return d <= 2 ? 2 : d <= 5 ? 3 : 5
+}
+
+// Орда сложности d (NIGHTSHIFT_DIFFICULTY); выше последней — бесконечный «Кошмар»
+function nsChallengeHorde(d) {
+	var D = NSG.NIGHTSHIFT_DIFFICULTY
+	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
+	if (d <= max) return D[Math.max(1, d)]
+	// Кошмар k: волны последней сложности, мобов больше, эффекты сильнее с каждым уровнем
+	var k = d - max
+	var top = D[max]
+	return {
+		name: 'Кошмар ' + k,
+		waves: top.waves,
+		boss: top.boss,
+		mult: Math.min(2.5, 1 + 0.15 * k),
+		buff: { resistance: Math.min(3, 1 + Math.floor(k / 2)), strength: Math.min(2, 1 + Math.floor(k / 3)), speed: k >= 3 ? 1 : 0 },
+	}
+}
+
+// 1 волна, 3 волны, 5 волн
+function nsPlural(n, one, few, many) {
+	var m10 = n % 10,
+		m100 = n % 100
+	if (m10 === 1 && m100 !== 11) return n + ' ' + one
+	if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return n + ' ' + few
+	return n + ' ' + many
+}
+
+// «Сложность 3 · Нашествие», «Кошмар 2»
+function nsDifficultyName(d) {
+	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
+	if (d > max) return 'Кошмар ' + (d - max)
+	return 'Сложность ' + d + ' · ' + NSG.NIGHTSHIFT_DIFFICULTY[d].name
+}
+
+function nsMinorHorde(best) {
+	// малый набег по силам команды: наибольшая пройденная сложность → уровень угрозы 0–5
+	var h = NSG.NIGHTSHIFT_CONFIG.hordes[Math.min(5, Math.round((best || 0) * 0.55))]
+	return h && h.minor ? { waves: [h.minor], boss: null } : null
+}
+
+// Защитники — игроки у алтаря (в его измерении, ближе raidPlayerRadius)
+function nsParticipants(altar) {
+	var out = []
+	if (!altar) return out
+	var r = NSG.NIGHTSHIFT_TUNABLES.raidPlayerRadius
+	var players = NSG.nsServer.getPlayers()
+	for (var i = 0; i < players.length; i++) {
+		var p = players[i]
+		if (String(p.getLevel().getDimension()) !== altar.dim) continue
+		try {
+			if (p.isSpectator()) continue
+		} catch (e) {}
+		var dx = p.getX() - altar.x,
+			dz = p.getZ() - altar.z
+		if (dx * dx + dz * dz <= r * r) out.push(p)
+	}
+	return out
+}
+
+function nsPick(list) {
+	return list[Math.floor(Math.random() * list.length)]
+}
+
+// Добыча в конце набега: каждому защитнику rolls бросков обычной таблицы уровня level,
+// у каждого броска шанс на редкое; раз за набег — шанс на легендарное. probeLevel > 0 —
+// первое прохождение: зонд жилы этого уровня одному из защитников.
+function nsRaidRewards(altar, d, rolls, first) {
+	var L = NSG.NIGHTSHIFT_LOOT
+	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
+	var tier = Math.max(1, Math.min(max, d))
+	var k = Math.max(0, d - max) // уровень Кошмара
+	var artChance = Math.min(1, (L.artifactChance[tier] || 0) + 0.08 * k)
+	var legChance = L.legendaryChance + 0.006 * tier + 0.01 * k
+	var ps = nsParticipants(altar)
+	for (var i = 0; i < ps.length; i++) {
+		var got = []
+		for (var r = 0; r < rolls; r++) {
+			got.push(nsPick(L.common[tier]))
+			if (Math.random() < L.rareChance) got.push(nsPick(L.rare[tier]))
+		}
+		if (Math.random() < artChance) got.push(['artifacts:' + nsPick(L.artifacts), 1])
+		if (Math.random() < legChance) got.push(nsPick(L.legendary))
+		if (first) {
+			var probes = k === 0 ? NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES[tier] : null
+			if (probes) got.push(['nightshift:vein_seed_' + nsPick(probes), 1])
+			if (d >= 5) got.push(['artifacts:' + nsPick(L.artifactsTop), 1])
+			if (d === max) got.push(['nightshift:night_heart', 1])
+		}
+		nsGiveLoot(ps[i], got)
+	}
+}
+
+// Выдаёт строки добычи (одинаковые складываются) и пишет сводку игроку
+function nsGiveLoot(player, got) {
+	var name = String(player.getUsername())
+	var merged = []
+	var byId = {}
+	for (var g = 0; g < got.length; g++) {
+		var id = got[g][0]
+		if (byId[id] !== undefined) merged[byId[id]][1] += got[g][1]
+		else {
+			byId[id] = merged.length
+			merged.push([id, got[g][1], got[g][2], got[g][3]])
+		}
+	}
+	var line = Text.gold('[Ночная смена] Добыча: ')
+	for (var m = 0; m < merged.length; m++) {
+		var e = merged[m]
+		NSG.nsServer.runCommandSilent('give ' + name + ' ' + e[0] + ' ' + e[1])
+		if (m > 0) line = line.append(Text.gray(', '))
+		var rare = e[0].indexOf('artifacts:') === 0 || e[0] === 'nightshift:night_heart'
+		var itemText = nsItemText(e[2] || e[0])
+		if (e[3]) itemText = itemText.append(Text.of(' (' + e[3] + ')'))
+		line = line.append(Text.white(e[1] + '× ')).append(rare ? Text.lightPurple('').append(itemText) : itemText)
+	}
+	player.tell(line)
+	for (var a = 0; a < merged.length; a++) {
+		if (merged[a][0].indexOf('artifacts:') === 0) nsTellAll(Text.lightPurple('[Ночная смена] ' + name + ' получает артефакт: ').append(nsItemText(merged[a][0])))
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -618,7 +765,7 @@ function nsTickActiveRaid(state) {
 			dy = mob.getY() - altar.y,
 			dz = mob.getZ() - (altar.z + 0.5)
 		if (dx * dx + dy * dy + dz * dz <= T.raidFailRadius * T.raidFailRadius) {
-			if (state.raid.kind === 'sacrifice') {
+			if (state.raid.kind !== 'minor') {
 				console.info('[nightshift] у алтаря ' + String(mob.getType()) + ' на ' + mob.getX().toFixed(1) + ' ' + mob.getY().toFixed(1) + ' ' + mob.getZ().toFixed(1))
 				nsRaidFail(state, mobs)
 				return
@@ -688,10 +835,9 @@ function nsCheckMinorRaidSchedule(state) {
 	// Набег взведён (5-й день) — приходит, когда ночь наступит сама, без перемотки времени
 	// с 12000 (до того, как можно лечь спать) — иначе ночь проспали бы и набег не пришёл
 	if (state.minorPending && tod >= 12000 && tod < 23000) {
-		var cfg = NSG.NIGHTSHIFT_CONFIG.hordes[state.phase]
 		state.minorPending = false
 		nsSaveState(state)
-		if (cfg && cfg.minor && cfg.minor.length) nsStartRaid('minor', state.altars[0].id)
+		if (nsMinorHorde(state.phase)) nsStartRaid('minor', state.altars[0].id)
 		return
 	}
 

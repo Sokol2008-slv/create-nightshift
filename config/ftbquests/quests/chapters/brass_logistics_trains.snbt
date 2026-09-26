@@ -10,7 +10,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["7FFFE63128BF62E6"]
 			id: "652D8C7BE73B6E6F"
 			rewards: [{ id: "585F4F2C66D2221D", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -30,7 +29,7 @@
 			y: -3.20d
 		}
 		{
-			dependencies: ["652D8C7BE73B6E6F", "20D753939FFD3F93"]
+			dependencies: ["652D8C7BE73B6E6F"]
 			id: "7B2C996C9330FAFF"
 			rewards: [{ id: "5BA9A7B4C06D477D", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -90,7 +89,7 @@
 			y: 3.20d
 		}
 		{
-			dependencies: ["24B6DBCED47E2AC6", "20D753939FFD3F93"]
+			dependencies: ["24B6DBCED47E2AC6"]
 			id: "218DDF47E1508988"
 			rewards: [{ id: "77EC72BB9B4F3CFA", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -100,7 +99,7 @@
 			y: -4.55d
 		}
 		{
-			dependencies: ["7B2C996C9330FAFF", "20D753939FFD3F93"]
+			dependencies: ["7B2C996C9330FAFF"]
 			id: "71A5FD97FFC26CB3"
 			rewards: [{ id: "40479FAEEC430256", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -110,7 +109,7 @@
 			y: -1.35d
 		}
 		{
-			dependencies: ["06AA8DFEA3F70CB5", "20D753939FFD3F93"]
+			dependencies: ["06AA8DFEA3F70CB5"]
 			id: "749801A6ECAE79FA"
 			rewards: [{ id: "2FB782E8424073C7", type: "xp", xp: 10 }]
 			shape: "rsquare"

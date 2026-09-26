@@ -49,6 +49,10 @@
 // по-разному), поэтому каждый файл, которому нужен доступ к phase.json,
 // содержит свою копию этого небольшого хелпера.
 
+// Открытый мир (решение 26.09): руды, предметы, измерения и рецепты не заперты по фазам.
+// Прогресс — сложности набегов (raids/*). true → все замки фаз ниже выключены.
+var NS_OPEN_WORLD = true
+
 function nightshiftReadPhase() {
     // файл лежит в корне сервера (не в config/): sync.py перезаписывает config/ при выкатке
     try {
@@ -99,6 +103,7 @@ NIGHTSHIFT_PHASES.forEach(function (phase) {
             if (!event.isServerAvailable()) return
 
             // Фаза уже учтена (повторная выдача, /nightshift phase) — без лишнего /reload
+            if (NS_OPEN_WORLD) return // замков нет — перезагружать рецепты и мир незачем
             var current = nightshiftReadPhase()
             if (phase.number <= current) return
             nightshiftWritePhase(phase.number)

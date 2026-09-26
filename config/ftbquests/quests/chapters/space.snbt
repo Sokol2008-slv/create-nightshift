@@ -10,7 +10,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["75347CAC2A54CA92"]
 			id: "773E1E8AE9F7B7CF"
 			rewards: [{ id: "77A9851A75BC121B", type: "xp", xp: 10 }]
 			shape: "rsquare"

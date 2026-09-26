@@ -43,6 +43,7 @@ function nsLockMessages(r, stage) {
 }
 
 function lockItems(id, stage) {
+    if (NS_OPEN_WORLD) return null
     // берём только реально зарегистрированные предметы: один битый id не должен
     // ронять весь файл (так было с tfmg:sulfuric_acid — это жидкость, не предмет)
     var items = []
@@ -197,7 +198,7 @@ lockItems('nightshift:item/probes', 'nightshift_p4',
 // мгновенно, в отличие от списка на тысячи предметов.
 var NS_TAGKEY = Java.loadClass('net.minecraft.tags.TagKey')
 var NS_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Registries')
-for (var ph = 1; ph <= 6; ph++) {
+for (var ph = 1; ph <= 6 && !NS_OPEN_WORLD; ph++) {
     nsLockMessages(AStages.addRestrictionForTag('nightshift:tag/phase_' + ph, 'nightshift_p' + ph,
         NS_TAGKEY.create(NS_REGISTRIES.ITEM, NS_RL.parse('nightshift:phase_' + ph))).allowMining(), 'nightshift_p' + ph)
 }

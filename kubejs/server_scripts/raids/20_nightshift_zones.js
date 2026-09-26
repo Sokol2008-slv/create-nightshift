@@ -156,7 +156,7 @@ BlockEvents.placed('nightshift:base_core', event => {
 		above.set('nightshift:altar')
 		nsUpsertAltar(state, above) // из 30_nightshift_altar.js — алтарь сразу цель малых набегов
 		nsSaveState(state)
-		if (player && player.isPlayer()) player.tell(Text.gold('[Ночная смена] Над блоком базы вырос алтарь. ПКМ по нему — прогноз набега и первая жертва.'))
+		if (player && player.isPlayer()) player.tell(Text.gold('[Ночная смена] Над блоком базы вырос алтарь. ПКМ по алтарю или блоку базы — меню набегов: выбери сложность и начни.'))
 		return
 	}
 	if (player && player.isPlayer()) {

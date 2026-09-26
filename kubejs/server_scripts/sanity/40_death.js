@@ -69,6 +69,29 @@ ItemEvents.foodEaten('nightshift:life_tonic', event => {
 	player.tell(Text.green('[Ночная смена] Рана затянулась. ' + (st.wounds[name] > 0 ? 'Осталось ран: ' + st.wounds[name] + '.' : 'Здоровье восстановлено.')))
 })
 
+// Сердце ночи (только из набегов): +1 сердце максимума навсегда, до bonusHeartsMax
+ItemEvents.foodEaten('nightshift:night_heart', event => {
+	var player = event.getEntity()
+	if (!player || !player.isPlayer()) return
+	var name = String(player.getUsername())
+	var st = nsGetState()
+	st.bonusHearts = st.bonusHearts || {}
+	var have = st.bonusHearts[name] || 0
+	var max = NSG.NIGHTSHIFT_TUNABLES.bonusHeartsMax
+	if (have >= max) {
+		// уже предел — сердце не пропадает, возвращаем
+		NSG.nsServer.runCommandSilent('give ' + name + ' nightshift:night_heart 1')
+		player.tell(Text.gray('[Ночная смена] Больше ' + max + ' Сердец ночи не прижить — сердце вернулось в инвентарь. Отдайте его другу.'))
+		return
+	}
+	st.bonusHearts[name] = have + 1
+	nsSaveState(st)
+	nsApplyPenalty(player)
+	player.heal(2)
+	NSG.nsServer.runCommandSilent('playsound minecraft:block.beacon.power_select player ' + name)
+	player.tell(Text.lightPurple('[Ночная смена] Сердце ночи прижилось: +1 сердце навсегда (' + (have + 1) + '/' + max + ').'))
+})
+
 ServerEvents.recipes(event => {
 	// Настойка жизни: мёд, светящиеся ягоды (пышные пещеры — туда ещё надо дойти), сладкие ягоды, костная мука
 	var ing = ['minecraft:honey_bottle', 'minecraft:glow_berries', 'minecraft:sweet_berries', 'minecraft:sweet_berries', 'minecraft:bone_meal']

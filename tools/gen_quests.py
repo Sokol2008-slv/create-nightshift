@@ -34,9 +34,13 @@ ORDER = ["welcome", "night_shift", "altar", "tower_defense", "weapons", "food",
          "steel_oil", "fuel_engines",
          "electricity", "space"]
 
+# Открытый мир (с 2.0.7): главы не запираются, набеги — выбор сложности у алтаря.
+# False вернёт старую схему: фаза главы → префикс «Фаза N ·» и запирание до altar:phase_N.
+OPEN_WORLD = True
+
 # Фаза главы: название получает префикс, а стартовые квесты главы заперты
 # до квеста «Фаза N открыта» (altar:phase_N — задача-стадия, тег игрока nightshift_pN)
-PHASE = {"create_basics": 1, "ore_processing": 1, "logistics_food": 1,
+PHASE = {} if OPEN_WORLD else {"create_basics": 1, "ore_processing": 1, "logistics_food": 1,
          "brass_logistics_trains": 2, "automation_extras": 2, "big_cannons": 2,
          "first_plane": 3, "airships_cars": 3, "submarines": 3, "economy": 3,
          "steel_oil": 4, "fuel_engines": 4,
@@ -225,7 +229,8 @@ def raise_phases(specs):
 def main():
     items = known_items()
     specs = load_specs()
-    raise_phases(specs)
+    if not OPEN_WORLD:
+        raise_phases(specs)
     errors = []
     lang = {"file.0000000000000001.title": "Create: Ночная смена"}
     chapter_dir = OUT / "chapters"
@@ -256,7 +261,7 @@ def main():
             if q["item"] not in items:
                 errors.append(f"{ck}/{k}: предмет {q['item']} не найден")
             ext = [d for d in q.get("deps", []) if ":" in d]
-            need_phase = q.get("phase", phase if not [d for d in q.get("deps", []) if ":" not in d] else 0)
+            need_phase = 0 if OPEN_WORLD else q.get("phase", phase if not [d for d in q.get("deps", []) if ":" not in d] else 0)
             if need_phase:
                 ext.append(f"altar:phase_{need_phase}")
             for dep in q.get("deps", []):

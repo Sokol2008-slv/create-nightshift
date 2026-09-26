@@ -24,7 +24,7 @@ function nsScanVein(event) {
 	var player = event.getEntity()
 	var server = event.server
 	var phase = nightshiftReadPhase()
-	if (phase < NS_SCANNER_PHASE) {
+	if (!NS_OPEN_WORLD && phase < NS_SCANNER_PHASE) {
 		player.tell(Text.red('[Сканер] Сканер оживёт в фазе ' + NS_SCANNER_PHASE + ' (сейчас ' + phase + ').'))
 		return
 	}
@@ -47,7 +47,7 @@ function nsScanVein(event) {
 		player.tell(Text.gray('[Сканер] Эту жилу ' + String(recipeId) + ' зондом не повторить.'))
 		return
 	}
-	if (phase < NS_VEINS[key].phase) {
+	if (!NS_OPEN_WORLD && phase < NS_VEINS[key].phase) {
 		player.tell(Text.red('[Сканер] Эта жила откроется для изучения в фазе ' + NS_VEINS[key].phase + '.'))
 		return
 	}

@@ -101,7 +101,7 @@
 			y: 2.78d
 		}
 		{
-			dependencies: ["59635B6F608A15C5", "6C6F1BB21939360A"]
+			dependencies: ["59635B6F608A15C5"]
 			id: "4D8D8F451184D8CF"
 			rewards: [{ id: "59E2CA5E5CD9E480", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -111,7 +111,7 @@
 			y: -1.87d
 		}
 		{
-			dependencies: ["4D8D8F451184D8CF", "6C6F1BB21939360A"]
+			dependencies: ["4D8D8F451184D8CF"]
 			id: "47F332A4CE098BA9"
 			rewards: [{ id: "7372EF1C798EDC98", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -121,7 +121,7 @@
 			y: -4.70d
 		}
 		{
-			dependencies: ["47F332A4CE098BA9", "6C6F1BB21939360A"]
+			dependencies: ["47F332A4CE098BA9"]
 			id: "1F2EF8CC8730E398"
 			rewards: [{ id: "3EE90CAD55674C65", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -181,7 +181,7 @@
 			y: -3.47d
 		}
 		{
-			dependencies: ["0A56940FBB7439AE", "64FF5971F3A67AE5", "2E7320601DF2BF5A", "7FFFE63128BF62E6"]
+			dependencies: ["0A56940FBB7439AE", "64FF5971F3A67AE5", "2E7320601DF2BF5A"]
 			id: "00FFADF948AC3736"
 			rewards: [{ id: "407509BBB5F5DE62", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -191,7 +191,7 @@
 			y: 1.72d
 		}
 		{
-			dependencies: ["11B7267B7F280CBD", "6C6F1BB21939360A"]
+			dependencies: ["11B7267B7F280CBD"]
 			id: "2842951F59F2E86D"
 			rewards: [{ id: "223A2B1433B11FD5", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -201,7 +201,7 @@
 			y: 4.53d
 		}
 		{
-			dependencies: ["0A56940FBB7439AE", "64FF5971F3A67AE5", "7FFFE63128BF62E6"]
+			dependencies: ["0A56940FBB7439AE", "64FF5971F3A67AE5"]
 			id: "2521B5D333C76592"
 			rewards: [{ id: "3312EACB34200E31", type: "xp", xp: 10 }]
 			shape: "rsquare"

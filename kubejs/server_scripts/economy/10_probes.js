@@ -66,7 +66,7 @@ function nsUseProbe(event, item, id) {
 	var entry = NS_VEINS[key]
 	if (!entry) return
 	var phase = nightshiftReadPhase()
-	var need = Math.max(NS_PROBE_MIN_PHASE, entry.phase)
+	var need = NS_OPEN_WORLD ? 0 : Math.max(NS_PROBE_MIN_PHASE, entry.phase)
 	if (phase < need) {
 		player.tell(Text.red('[Жилы] Этот зонд оживёт в фазе ' + need + ' (сейчас ' + phase + ').'))
 		return

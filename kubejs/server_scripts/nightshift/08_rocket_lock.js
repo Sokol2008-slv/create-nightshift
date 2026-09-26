@@ -20,6 +20,7 @@
 // творческом режиме, посмотреть JEI/Jade на все использованные блоки) на
 // тестовом сервере, прежде чем считать эту рестрикцию полной.
 
+if (!NS_OPEN_WORLD) {
 AStages.addRestrictionForItem('nightshift:item/rocket_blocks', 'nightshift_p6',
     'northstar:rocket_station',
     'northstar:rocket_controls',
@@ -27,3 +28,4 @@ AStages.addRestrictionForItem('nightshift:item/rocket_blocks', 'nightshift_p6',
     'northstar:combustion_engine',
     'northstar:rocket_waypoint'
 )
+}

@@ -27,6 +27,14 @@
 // NSG.nsServer уже будет заполнен.
 // ==========================================================================
 
+// После /reload событие loaded не приходит, а NSG создаётся заново — берём сервер сразу,
+// иначе до первого тика команды видели бы пустое состояние.
+try {
+	NSG.nsServer = Java.loadClass('net.neoforged.neoforge.server.ServerLifecycleHooks').getCurrentServer() || undefined
+} catch (e) {
+	console.warn('[nightshift] сервер при загрузке скриптов не получен: ' + e)
+}
+
 ServerEvents.loaded(event => {
 	NSG.nsServer = event.server
 	// отложенные действия считаются в тиках сервера, а счётчик после рестарта с нуля — старые ключи убираем
@@ -39,6 +47,7 @@ ServerEvents.loaded(event => {
 // в корне сервера и переживает смену мира. На старте выравниваем файл и стадии
 // AStages по миру: новый мир → фаза 0, перенесённый мир → его фаза.
 function nsSyncPhaseFile(server) {
+	if (NS_OPEN_WORLD) return // открытый мир: стадии ничего не запирают, «фаза» = лучшая пройденная сложность
 	var worldPhase = nsGetState().phase
 	var filePhase = nightshiftReadPhase()
 	if (worldPhase === filePhase) return
@@ -59,14 +68,13 @@ ServerEvents.tick(event => {
 
 function nsDefaultState() {
 	return {
-		phase: 0, // текущая открытая фаза (общая на сервер)
+		phase: 0, // наибольшая пройденная сложность набега (общая на сервер), открыта phase+1
 		zones: [], // [{id, dim, minX,minY,minZ,maxX,maxY,maxZ, hasY, owner}]
 		altars: [], // [{id, dim, x,y,z, zoneId}]
-		sacrificeProgress: {}, // {itemId: count} — прогресс к СЛЕДУЮЩЕЙ фазе
-		manualSacrificeDone: false, // для P0->P1 (ручная жертва разовая по флагу)
 		raid: {
 			state: 'idle', // idle | countdown | active | cooldown
-			kind: null, // 'sacrifice' | 'minor'
+			kind: null, // 'challenge' — выбранная сложность | 'minor' — малый набег
+			difficulty: 0,
 			altarId: null,
 			startedAtTick: 0,
 			waveIndex: -1,
@@ -82,6 +90,7 @@ function nsDefaultState() {
 		curse: 0, // проклятие алтаря в сердцах (у всей команды), см. nsApplyPenalty
 		tributeProgress: 0, // сколько ресурса искупления уже пришло конвейером в счёт следующей стопки
 		wounds: {}, // {имя: раны} — −1 сердце за смерть, лечит Настойка жизни
+		bonusHearts: {}, // {имя: n} — +1 сердце максимума за каждое съеденное «Сердце ночи»
 		deathSanity: {}, // {имя: {v, dark}} — рассудок в момент смерти (восстанавливается при возрождении)
 		returns: {}, // {имя: {dim,x,y,z}} — куда вернуть телепортировавшихся к алтарю после набега
 		dayCounter: 0, // ночей с последнего малого набега
@@ -121,20 +130,6 @@ function nsGetStateRO() {
 	NSG.nsRoRaw = raw
 	NSG.nsRoState = raw ? nsGetState() : nsDefaultState()
 	return NSG.nsRoState
-}
-
-// Орда жертвенного набега при выходе из фазы p (таблица PLAN.md §8): hordes[p],
-// из P0 — «крошечный набег». Финальная жертва (P5→P6) — Великая орда:
-// волны P5, затем волны планет и босс.
-function nsSacrificeHorde(p) {
-	var H = NSG.NIGHTSHIFT_CONFIG.hordes
-	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[p + 1]
-	if (target && target.isFinal) {
-		var a = H[p] || { waves: [] }
-		var b = H[p + 1] || { waves: [] }
-		return { waves: a.waves.concat(b.waves), boss: b.boss || null }
-	}
-	return H[p] ? { waves: H[p].waves, boss: null } : null
 }
 
 function nsSaveState(state) {
@@ -242,39 +237,17 @@ function nsBossbarRemove(id) {
 	NSG.nsServer.runCommandSilent('bossbar remove ' + id)
 }
 
-// --------------------------------------------------------------------------
-// grantPhase — обёртка выдачи стадии AStages. Точный синтаксис команды
-// уточняет параллельный агент, отвечающий за интеграцию AStages (см. задачу
-// про фазы в PLAN.md §1). Пока — заглушка с логированием и TODO.
-// --------------------------------------------------------------------------
-function grantPhase(n) {
-	// Фаза = server-scope стадия AStages nightshift_pN. Остальное (файл фазы,
-	// /reload рецептов, перерисовка мира у клиентов) делает whenGranted в
-	// kubejs/server_scripts/nightshift/00_stages.js.
-	try {
-		NSG.nsServer.runCommandSilent('astages server add nightshift_p' + n)
-	} catch (e) {
-		console.error('[nightshift] grantPhase(' + n + '): ' + e)
-	}
-	var state = nsGetState()
-	state.phase = n
-	state.sacrificeProgress = {}
-	state.manualSacrificeDone = false
-	nsSaveState(state)
-	nsCompletePhaseQuests(null, n)
-}
-
-// Квесты «Фаза N открыта» (глава «Алтарь и фазы») — задачи-стадии FTB Quests,
+// Квесты «Сложность N пройдена» (глава «Алтарь и набеги») — задачи-стадии FTB Quests,
 // а стадия FTB = тег игрока. Выдаём теги nightshift_p1..phase, лишние снимаем.
 // player = null — всем онлайн; при входе — только вошедшему.
 function nsCompletePhaseQuests(player, phase) {
 	var who = player ? String(player.getUsername()) : '@a'
-	for (var p = 1; p <= 6; p++) NSG.nsServer.runCommandSilent('tag ' + who + ' ' + (p <= phase ? 'add' : 'remove') + ' nightshift_p' + p)
+	for (var p = 1; p <= NSG.NIGHTSHIFT_DIFFICULTY_MAX; p++) NSG.nsServer.runCommandSilent('tag ' + who + ' ' + (p <= phase ? 'add' : 'remove') + ' nightshift_p' + p)
 }
 
-// Штраф к максимальному здоровью: проклятие алтаря (общее) + раны игрока, вместе не больше
-// penaltyMaxHearts. Один модификатор nightshift:penalty; при входе, возрождении и каждом
-// изменении выставляем заново. player = null — всем онлайн.
+// Максимальное здоровье: −(проклятие алтаря (общее) + раны игрока, вместе не больше
+// penaltyMaxHearts) + «Сердца ночи». Один модификатор nightshift:penalty; при входе,
+// возрождении и каждом изменении выставляем заново. player = null — всем онлайн.
 function nsApplyPenalty(player) {
 	var st = nsGetState()
 	var T = NSG.NIGHTSHIFT_TUNABLES
@@ -282,9 +255,10 @@ function nsApplyPenalty(player) {
 	for (var i = 0; i < list.length; i++) {
 		var name = String(list[i].getUsername())
 		var hearts = Math.min(T.penaltyMaxHearts, (st.curse || 0) + ((st.wounds || {})[name] || 0))
+		hearts -= Math.min(T.bonusHeartsMax, (st.bonusHearts || {})[name] || 0)
 		NSG.nsServer.runCommandSilent('execute as ' + name + ' run attribute @s minecraft:generic.max_health modifier remove nightshift:altar_curse')
 		NSG.nsServer.runCommandSilent('execute as ' + name + ' run attribute @s minecraft:generic.max_health modifier remove nightshift:penalty')
-		if (hearts > 0) NSG.nsServer.runCommandSilent('execute as ' + name + ' run attribute @s minecraft:generic.max_health modifier add nightshift:penalty ' + -2 * hearts + ' add_value')
+		if (hearts !== 0) NSG.nsServer.runCommandSilent('execute as ' + name + ' run attribute @s minecraft:generic.max_health modifier add nightshift:penalty ' + -2 * hearts + ' add_value')
 	}
 }
 

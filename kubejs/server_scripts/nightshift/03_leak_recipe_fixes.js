@@ -75,6 +75,7 @@ var NIGHTSHIFT_LEAK_RECIPE_IDS = [
 ]
 
 ServerEvents.recipes(function (event) {
+    if (NS_OPEN_WORLD) return
     NIGHTSHIFT_LEAK_RECIPE_IDS.forEach(function (id) {
         event.remove({ id: id })
     })

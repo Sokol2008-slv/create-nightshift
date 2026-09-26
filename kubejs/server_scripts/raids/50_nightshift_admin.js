@@ -1,11 +1,16 @@
 // ==========================================================================
-// Ночная смена — админ-команды (уровень оператора 2):
-//   /nightshift status            — фаза, набег, прогресс жертвы, алтари
-//   /nightshift raid              — жертвенный набег у ближайшего алтаря (проверка)
+// Ночная смена — команды набегов.
+// Любой игрок:
+//   /nightshift menu              — меню сложностей (как ПКМ по алтарю), рядом с алтарём
+//   /nightshift start <N>         — набег сложности N у ближайшего алтаря (кнопки меню алтаря)
+//   /nightshift altar             — телепорт к алтарю во время набега, после — обратно
+// Оператор (уровень 2):
+//   /nightshift status            — прогресс, набег, проклятие, алтари
+//   /nightshift raid [N]          — набег сложности N (по умолчанию следующей) без проверок
 //   /nightshift minor             — малый набег у ближайшего алтаря
 //   /nightshift stop              — остановить набег и убрать мобов набега
-//   /nightshift phase <0..6>      — выставить фазу (стадии AStages + состояние)
-//   /nightshift altar             — любой игрок: телепорт к алтарю во время набега, после — обратно
+//   /nightshift phase <N>         — выставить наибольшую пройденную сложность
+//   /nightshift setaltar          — поставить блок базы с алтарём на месте оператора (тест, восстановление)
 // ==========================================================================
 
 function nsNearestAltar(state, source) {
@@ -29,13 +34,74 @@ function nsAdminReply(ctx, text) {
 	ctx.source.sendSystemMessage(Text.gold('[Ночная смена] ').append(Text.white(text)))
 }
 
+// Старт набега сложности d у ближайшего алтаря. check — проверки для игрока.
+function nsStartChallenge(ctx, d, check) {
+	var st = nsGetState()
+	var altar = nsNearestAltar(st, ctx.source)
+	if (!altar) {
+		nsAdminReply(ctx, 'алтарь не найден в этом измерении')
+		return 0
+	}
+	if (check) {
+		var pos = ctx.source.getPosition()
+		var dx = altar.x - pos.x(),
+			dz = altar.z - pos.z()
+		if (dx * dx + dz * dz > 64 * 64) {
+			nsAdminReply(ctx, 'набег начинают у алтаря — подойдите ближе 64 блоков')
+			return 0
+		}
+		if (nsRaidActive(st)) {
+			nsAdminReply(ctx, 'набег уже идёт')
+			return 0
+		}
+		if ((st.curse || 0) > 0) {
+			ctx.source.sendSystemMessage(nsCurseLine(st))
+			return 0
+		}
+		if (d < 1 || d > (st.phase || 0) + 1) {
+			nsAdminReply(ctx, 'эта сложность ещё закрыта — сначала пройдите: ' + nsDifficultyName((st.phase || 0) + 1))
+			return 0
+		}
+	} else if (nsRaidActive(st)) nsResetRaidIdle(st)
+	var who = ctx.source.getPlayer()
+	nsStartRaid('challenge', altar.id, d)
+	nsTellAll(Text.gold('[Ночная смена] ' + (who ? who.getUsername() + ' начинает набег: ' : 'Набег: ')).append(Text.white(nsDifficultyName(d))))
+	return 1
+}
+
 ServerEvents.commandRegistry(event => {
 	var Commands = event.commands
 	var Arguments = event.arguments
 
 	event.register(
 		Commands.literal('nightshift')
-			// игроку — только телепорт к алтарю во время набега; остальное — операторам
+			// игроку — старт набега у алтаря и телепорт к алтарю во время набега; остальное — операторам
+			.then(
+				Commands.literal('menu').executes(ctx => {
+					var player = ctx.source.getPlayer()
+					if (!player) return 0
+					var st = nsGetState()
+					var altar = nsNearestAltar(st, ctx.source)
+					var pos = ctx.source.getPosition()
+					if (!altar || (altar.x - pos.x()) * (altar.x - pos.x()) + (altar.z - pos.z()) * (altar.z - pos.z()) > 64 * 64) {
+						nsAdminReply(ctx, 'меню набегов — у алтаря (ближе 64 блоков)')
+						return 0
+					}
+					if (nsRaidActive(st)) {
+						nsAdminReply(ctx, 'идёт набег — алтарь занят до его завершения')
+						return 0
+					}
+					nsShowAltarMenu(player, st)
+					return 1
+				})
+			)
+			.then(
+				Commands.literal('start').then(
+					Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
+						return nsStartChallenge(ctx, Number(Arguments.INTEGER.getResult(ctx, 'n')), true)
+					})
+				)
+			)
 			.then(
 				Commands.literal('altar').executes(ctx => {
 					var player = ctx.source.getPlayer()
@@ -60,23 +126,21 @@ ServerEvents.commandRegistry(event => {
 			.then(
 				Commands.literal('status').requires(src => src.hasPermission(2)).executes(ctx => {
 					var st = nsGetState()
-					nsAdminReply(ctx, 'фаза ' + st.phase + ', набег: ' + st.raid.state + (st.raid.kind ? ' (' + st.raid.kind + ', волна ' + (st.raid.waveIndex + 1) + ')' : ''))
-					nsAdminReply(ctx, 'жертва: ' + JSON.stringify(st.sacrificeProgress) + ', алтарей: ' + st.altars.length + ', зон: ' + st.zones.length + ', ночей до малого: ' + (NSG.NIGHTSHIFT_TUNABLES.minorRaidEveryNights - st.dayCounter))
+					nsAdminReply(ctx, 'пройдено: ' + st.phase + ', набег: ' + st.raid.state + (st.raid.kind ? ' (' + st.raid.kind + ' ' + (st.raid.difficulty || '') + ', волна ' + (st.raid.waveIndex + 1) + ')' : ''))
+					for (var a = 0; a < st.altars.length; a++) nsAdminReply(ctx, 'алтарь ' + st.altars[a].dim + ' ' + st.altars[a].x + ' ' + st.altars[a].y + ' ' + st.altars[a].z)
+					nsAdminReply(ctx, 'проклятие: ' + (st.curse || 0) + ', алтарей: ' + st.altars.length + ', зон: ' + st.zones.length + ', ночей до малого: ' + (NSG.NIGHTSHIFT_TUNABLES.minorRaidEveryNights - st.dayCounter))
 					return 1
 				})
 			)
 			.then(
-				Commands.literal('raid').requires(src => src.hasPermission(2)).executes(ctx => {
-					var st = nsGetState()
-					var altar = nsNearestAltar(st, ctx.source)
-					if (!altar) {
-						nsAdminReply(ctx, 'алтарь не найден в этом измерении')
-						return 0
-					}
-					nsStartRaid('sacrifice', altar.id)
-					nsAdminReply(ctx, 'жертвенный набег запущен у ' + altar.id)
-					return 1
-				})
+				Commands.literal('raid')
+					.requires(src => src.hasPermission(2))
+					.executes(ctx => nsStartChallenge(ctx, (nsGetState().phase || 0) + 1, false))
+					.then(
+						Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
+							return nsStartChallenge(ctx, Math.max(1, Number(Arguments.INTEGER.getResult(ctx, 'n'))), false)
+						})
+					)
 			)
 			.then(
 				Commands.literal('minor').requires(src => src.hasPermission(2)).executes(ctx => {
@@ -101,22 +165,31 @@ ServerEvents.commandRegistry(event => {
 				})
 			)
 			.then(
+				Commands.literal('setaltar').requires(src => src.hasPermission(2)).executes(ctx => {
+					var pos = ctx.source.getPosition()
+					var level = ctx.source.getLevel()
+					var x = Math.floor(pos.x()),
+						y = Math.floor(pos.y()),
+						z = Math.floor(pos.z())
+					level.getBlock(x, y, z).set('nightshift:base_core')
+					var altarBlock = level.getBlock(x, y + 1, z)
+					altarBlock.set('nightshift:altar')
+					var st = nsGetState()
+					var altar = nsUpsertAltar(st, altarBlock)
+					nsSaveState(st)
+					nsAdminReply(ctx, 'алтарь поставлен: ' + altar.id)
+					return 1
+				})
+			)
+			.then(
 				Commands.literal('phase').requires(src => src.hasPermission(2)).then(
 					Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
-						var n = Math.max(0, Math.min(6, Number(Arguments.INTEGER.getResult(ctx, 'n'))))
-						// файл фазы пишем заранее — тогда whenGranted не зовёт /reload на каждую стадию
-						nightshiftWritePhase(n)
-						NSG.nsServer.runCommandSilent('astages server remove_all')
-						for (var p = 1; p <= n; p++) NSG.nsServer.runCommandSilent('astages server add nightshift_p' + p)
+						var n = Math.max(0, Math.min(99, Number(Arguments.INTEGER.getResult(ctx, 'n'))))
 						var st = nsGetState()
 						st.phase = n
-						st.sacrificeProgress = {}
 						nsSaveState(st)
 						nsCompletePhaseQuests(null, n)
-						// один /reload на всё (рецепты бурения) и перерисовка руд у клиентов
-						NSG.nsServer.persistentData.putLong('nightshift_rerender_at', NSG.nsServer.getTickCount() + 60)
-						NSG.nsServer.runCommandSilent('reload')
-						nsAdminReply(ctx, 'фаза выставлена: ' + n)
+						nsAdminReply(ctx, 'пройдено выставлено: ' + n + ', открыта: ' + nsDifficultyName(n + 1))
 						return 1
 					})
 				)

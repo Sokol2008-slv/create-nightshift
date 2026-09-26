@@ -78,6 +78,7 @@ var NIGHTSHIFT_DRILLING_PHASE = {
 }
 
 ServerEvents.recipes(function (event) {
+    if (NS_OPEN_WORLD) return
     var currentPhase = nightshiftReadPhase_04()
     Object.keys(NIGHTSHIFT_DRILLING_PHASE).forEach(function (id) {
         var requiredPhase = NIGHTSHIFT_DRILLING_PHASE[id]

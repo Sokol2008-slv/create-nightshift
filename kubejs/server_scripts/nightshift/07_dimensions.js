@@ -22,6 +22,7 @@
 // достаточна сама по себе, чтобы не долететь ни до одной планеты, но мы всё
 // равно закрываем и сами планеты, и их орбиты по отдельности (defense in depth).
 
+if (!NS_OPEN_WORLD) {
 AStages.addRestrictionForDimension('nightshift:dim/nether', 'nightshift_p3', 'minecraft:the_nether')
     .allowBidirectional() // блокируем и вход, и (на случай телепорта иным способом) обратный выход не имеет смысла,
                            // но bidirectional тут скорее защищает от порталов, поставленных ДО выдачи стадии
@@ -37,3 +38,4 @@ var NIGHTSHIFT_NORTHSTAR_DIMENSIONS = [
 NIGHTSHIFT_NORTHSTAR_DIMENSIONS.forEach(function (dimId) {
     AStages.addRestrictionForDimension('nightshift:dim/' + dimId.replace(':', '_'), 'nightshift_p6', dimId)
 })
+}

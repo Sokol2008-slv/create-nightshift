@@ -32,6 +32,7 @@
 // его тоже закроет эта рестрикция. НЕ проверялось на предмет таких конфликтов —
 // см. README, риск №4.
 
+if (!NS_OPEN_WORLD) {
 AStages.addRestrictionForScreen('nightshift:screen/villager_trade', 'nightshift_p3', 'minecraft:merchant')
     .openMessage(function (menuType) {
         return Component.literal('Торговля закрыта: мир ещё не готов доверять чужакам (нужна фаза 3).').red()
@@ -46,3 +47,4 @@ AStages.addRestrictionForScreen('nightshift:screen/villager_trade', 'nightshift_
 // MerchantMenu, дальше смотреть menu.getTrader() -> is Villager/WanderingTrader
 // vs что-то ещё) — не реализовано в этом черновике, т.к. требует более глубокого
 // знания Java-классов конкретных модов-конкурентов за тот же MenuType.
+}

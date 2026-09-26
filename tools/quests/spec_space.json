@@ -440,8 +440,7 @@
      "deps": [
       "mount_and_fire"
      ],
-     "goal": false,
-     "phase": 4
+     "goal": false
     },
     {
      "key": "shells_fuzes",
@@ -472,8 +471,7 @@
      "deps": [
       "cast_iron"
      ],
-     "goal": false,
-     "phase": 4
+     "goal": false
     },
     {
      "key": "gunsmithing_flintlock",

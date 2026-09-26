@@ -1,6 +1,6 @@
 // ==========================================================================
-// Ночная смена — Алтарь: жертва руками (P0→P1) и через конвейер (остальные),
-// прогноз орды, запуск набега при накоплении жертвы.
+// Ночная смена — Алтарь: ПКМ по алтарю или блоку базы открывает меню выбора сложности набега (кнопки в чате,
+// при наведении — состав орды и добыча), искупление проклятия стопкой руками или конвейером.
 // ==========================================================================
 //
 // ПРОВЕРЕНО ПО JAR:
@@ -26,7 +26,7 @@
 // ==========================================================================
 
 // --------------------------------------------------------------------------
-// Утилиты алтаря/жертвы
+// Утилиты алтаря
 // --------------------------------------------------------------------------
 
 function nsRaidActive(state) {
@@ -54,13 +54,11 @@ function nsUpsertAltar(state, block) {
 	return altar
 }
 
-// Прогноз следующей жертвенной орды — сообщение в чат в духе примера из
-// docs/phases/defense_and_hordes.md ("Задача 3", формат прогноза).
-function nsForecastText(nextPhase) {
-	var horde = nsSacrificeHorde(nextPhase - 1)
-	if (!horde) return 'Нет данных по орде для фазы ' + nextPhase
+// Состав орды сложности d под текущую команду — строки для подсказки меню
+function nsForecastLines(d) {
+	var horde = nsChallengeHorde(d)
 	var hpTable = NSG.NIGHTSHIFT_MOB_HP
-	var scale = nsPartyScale()
+	var scale = nsPartyScale() * (horde.mult || 1)
 	var lines = []
 	var total = 0
 	for (var w = 0; w < horde.waves.length; w++) {
@@ -73,12 +71,16 @@ function nsForecastText(nextPhase) {
 			parts.push(n + '× ' + (wave[i].label || wave[i].id.split(':')[1]))
 		}
 		total += waveHp
-		lines.push('Волна ' + (w + 1) + ': ' + parts.join(', ') + ' (' + waveHp + ' HP)')
+		lines.push('Волна ' + (w + 1) + ': ' + parts.join(', '))
 	}
 	if (horde.boss) lines.push('БОСС: ' + (horde.boss.label || horde.boss.id.split(':')[1]) + ' (~' + horde.boss.hpLabel + ' HP)')
-	var players = Math.round((scale - 1) / 0.5) + 1
-	lines.push('Итого: ' + horde.waves.length + ' волн, ' + total + ' HP' + (horde.boss ? ' + босс' : '') + ' — расчёт на игроков: ' + players)
-	return lines.join('\n')
+	var buffs = []
+	var names = { resistance: 'сопротивление', strength: 'сила', speed: 'скорость' }
+	for (var b in horde.buff || {}) if (horde.buff[b] > 0) buffs.push(names[b] + ' ' + ['', 'I', 'II', 'III'][horde.buff[b]])
+	if (buffs.length) lines.push('Мобы усилены: ' + buffs.join(', '))
+	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
+	lines.push('Итого ' + nsPlural(horde.waves.length, 'волна', 'волны', 'волн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
+	return lines
 }
 
 // Название предмета для чата: ключ перевода, переводит клиент
@@ -90,44 +92,71 @@ function nsItemText(id) {
 	}
 }
 
-function nsShowForecast(player, state) {
-	var nextPhase = state.phase + 1
-	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]
-	if (!target) {
-		player.tell(Text.gray('[Ночная смена] Открыта последняя предусмотренная фаза.'))
-		return
+// Подсказка кнопки сложности: состав орды + что выпадает
+function nsDifficultyHover(state, d) {
+	var L = NSG.NIGHTSHIFT_LOOT
+	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
+	var tier = Math.min(max, d)
+	var k = Math.max(0, d - max)
+	var cfg = nsChallengeHorde(d)
+	var rolls = cfg.waves.length + (cfg.boss ? 2 : 0) + 2 * k
+	var t = Text.gold(nsDifficultyName(d))
+	var lines = nsForecastLines(d)
+	for (var i = 0; i < lines.length; i++) t = t.append(Text.white('\n' + lines[i]))
+	t = t.append(Text.gold('\nДобыча каждому: ' + nsPlural(rolls, 'бросок', 'броска', 'бросков') + ', например '))
+	var common = L.common[tier]
+	for (var c = 0; c < Math.min(3, common.length); c++) {
+		if (c > 0) t = t.append(Text.gray(', '))
+		t = t.append(Text.white(common[c][1] + '× ')).append(nsItemText(common[c][0]))
 	}
-	if ((state.curse || 0) > 0) player.tell(nsCurseLine(state))
-	player.tell(Text.gold('[Ночная смена] Прогноз набега при жертве фазы ' + nextPhase + ':'))
-	var lines = nsForecastText(nextPhase).split('\n')
-	for (var i = 0; i < lines.length; i++) player.tell(Text.white(lines[i]))
-
-	player.tell(Text.gold('Нужно для жертвы (' + (target.manual ? 'руками' : 'конвейером') + '):'))
-	for (var id in target.items) {
-		var have = state.sacrificeProgress[id] || 0
-		var need = target.items[id]
-		player.tell((have >= need ? Text.green('✓ ') : Text.yellow('• ')).append(nsItemText(id)).append(Text.white(': ' + have + '/' + need)))
+	var art = Math.round(Math.min(1, (L.artifactChance[tier] || 0) + 0.08 * k) * 100)
+	t = t.append(Text.gray('\nРедкое — ' + Math.round(L.rareChance * 100) + '% за бросок, артефакт — ' + art + '%'))
+	if (d > (state.phase || 0)) {
+		var bonus = k === 0 ? 'зонд жилы' : ''
+		if (d >= 5) bonus += (bonus ? ' + ' : '') + 'сильный артефакт'
+		if (d === max) bonus += ' + Сердце ночи'
+		if (bonus) t = t.append(Text.lightPurple('\nПервое прохождение: ' + bonus + ' каждому'))
 	}
+	t = t.append(Text.red('\nПровал: −' + nsPlural(nsFailHearts(d), 'сердце', 'сердца', 'сердец') + ' у всех, добычи нет'))
+	return t
 }
 
-// Проверяет, набралась ли жертва полностью; если да — запускает жертвенный набег.
-function nsCheckSacrificeComplete(state, block) {
-	var nextPhase = state.phase + 1
-	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]
-	if (!target) return
-	if ((state.curse || 0) > 0) return // осквернённый алтарь жертву копит, но набег не запускает
-	for (var id in target.items) {
-		var have = state.sacrificeProgress[id] || 0
-		if (have < target.items[id]) return // ещё не всё собрано
+function nsDifficultyButton(state, d, label) {
+	var best = state.phase || 0
+	var text = '[' + label + ']'
+	if (d > best + 1) return Text.darkGray(text).hover(Text.gray('Откроется после победы на предыдущей сложности'))
+	var btn = d <= best ? Text.green(text) : Text.yellow(text).bold(true)
+	return btn.clickRunCommand('/nightshift start ' + d).hover(nsDifficultyHover(state, d))
+}
+
+// Меню алтаря: кнопки сложностей 1–10 и уровни Кошмара после десятой
+function nsShowAltarMenu(player, state) {
+	var best = state.phase || 0
+	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
+	if ((state.curse || 0) > 0) {
+		player.tell(nsCurseLine(state))
+		return
 	}
-	// Всё собрано — запускаем жертвенный набег у ЭТОГО алтаря.
-	var altar = nsUpsertAltar(state, block)
-	nsSaveState(state)
-	nsStartRaid('sacrifice', altar.id) // определена в 40_nightshift_raid.js
+	player.tell(Text.gold('[Ночная смена] Алтарь: выбери сложность набега (наведи — состав и добыча, нажми — старт):'))
+	var row = Text.of('')
+	for (var d = 1; d <= max; d++) {
+		row = row.append(nsDifficultyButton(state, d, String(d))).append(Text.of(' '))
+		if (d === 5 || d === max) {
+			player.tell(row)
+			row = Text.of('')
+		}
+	}
+	if (best >= max) {
+		var bestK = best - max
+		row = Text.darkPurple('Кошмар: ')
+		for (var k = Math.max(1, bestK - 3); k <= bestK + 1; k++) row = row.append(nsDifficultyButton(state, max + k, String(k))).append(Text.of(' '))
+		player.tell(row)
+	}
+	player.tell(Text.gray('Пройдено: ' + (best > max ? max + ' + Кошмар ' + (best - max) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
 }
 
 // --------------------------------------------------------------------------
-// Ручная жертва / просмотр прогноза — ПКМ по алтарю.
+// ПКМ по алтарю: искупление стопкой / меню сложностей.
 // --------------------------------------------------------------------------
 // ВАЖНО: в KubeJS 2101 event.cancel() — это выход из обработчика (бросает EventExit),
 // поэтому вся логика вынесена в функцию, а отмена (чтобы блок из руки не ставился
@@ -137,23 +166,22 @@ BlockEvents.rightClicked('nightshift:altar', event => {
 	event.cancel()
 })
 
-// Откуп проклятия алтаря: стопка ресурса текущей фазы (NIGHTSHIFT_TRIBUTE) снимает один уровень
+// Откуп проклятия алтаря: стопка ресурса (nsTributeFor) снимает одно сердце
 function nsTributeMatches(stack, item) {
 	if (!stack || stack.isEmpty()) return false
 	if (item.charAt(0) === '#') return stack.is(NS_TAGKEY.create(NS_REGISTRIES.ITEM, NS_RL.parse(item.substring(1))))
 	return String(stack.getId()) === item
 }
 
-function nsTryTribute(state, player, stack, block) {
-	var t = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
-	if (!t || !nsTributeMatches(stack, t.item)) return false
+function nsTryTribute(state, player, stack) {
+	var t = nsTributeFor(state.phase || 0)
+	if (!nsTributeMatches(stack, t.item)) return false
 	if (stack.getCount() < t.count) {
-		player.tell(Text.gray('[Ночная смена] Для откупа нужно ' + t.count + ' ' + t.label + ' одной стопкой.'))
+		player.tell(Text.gray('[Ночная смена] Для искупления нужно ' + t.count + ' ' + t.label + ' одной стопкой.'))
 		return true
 	}
 	stack.shrink(t.count)
 	nsLiftCurse(state, String(player.getUsername()))
-	if (state.curse === 0) nsCheckSacrificeComplete(nsGetState(), block) // жертва уже собрана — набег
 	return true
 }
 
@@ -162,101 +190,50 @@ function nsLiftCurse(state, who) {
 	state.curse = Math.max(0, (state.curse || 0) - 1)
 	nsSaveState(state)
 	nsApplyPenalty(null)
-	nsTellAll(Text.green('[Ночная смена] ' + (who ? who + ' искупил' : 'Алтарь принял') + ' стопку: ' + (state.curse > 0 ? 'осталось ' + state.curse + ' сердец проклятия.' : 'проклятие снято, алтарь снова принимает жертву.')))
+	nsTellAll(Text.green('[Ночная смена] ' + (who ? who + ' искупил' : 'Алтарь принял') + ' стопку: ' + (state.curse > 0 ? 'осталось проклятия: ' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + '.' : 'проклятие снято, алтарь снова начинает набеги.')))
 }
 
 function nsCurseLine(state) {
-	var t = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
-	return Text.red('[Ночная смена] Проклятие алтаря: −' + state.curse + ' сердец у всех. Искупление: ' + t.count + ' ' + t.label + ' за сердце — ПКМ стопкой по алтарю или конвейером в алтарь. Пока не искуплено — следующую жертву алтарь не примет.')
+	var t = nsTributeFor(state.phase || 0)
+	return Text.red('[Ночная смена] Проклятие алтаря: −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + ' у всех. Искупление: ' + t.count + ' ' + t.label + ' за сердце — ПКМ стопкой по алтарю или конвейером в алтарь. Пока не искуплено, новый набег не начать.')
 }
 
 function nsAltarClick(event) {
+	nsAltarUse(event.getEntity(), event.getBlock(), event.getItem())
+}
+
+// ПКМ по алтарю или по блоку базы под ним (altarBlock — сам алтарь): любой игрок
+function nsAltarUse(player, altarBlock, stack) {
 	var state = nsGetState()
-	var player = event.getEntity()
-	var block = event.getBlock()
-	nsUpsertAltar(state, block)
-
-	if ((state.curse || 0) > 0 && !nsRaidActive(state) && nsTryTribute(state, player, event.getItem(), block)) return
-
-	var nextPhase = state.phase + 1
-	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]
-
-	if (!target) {
-		player.tell(Text.gray('[Ночная смена] Жертвовать больше нечего — последняя фаза открыта.'))
-		nsSaveState(state)
-		return
-	}
+	nsUpsertAltar(state, altarBlock)
+	nsSaveState(state)
 
 	if (nsRaidActive(state)) {
 		player.tell(Text.red('[Ночная смена] Идёт набег — алтарь занят до его завершения.'))
-		nsSaveState(state)
 		return
 	}
-
-	if (!target.manual) {
-		// Эта жертва — только конвейером. ПКМ (в т.ч. пустой рукой) — только прогноз.
-		nsShowForecast(player, state)
-		nsSaveState(state)
-		return
-	}
-
-	var heldStack = event.getItem()
-	if (!heldStack || heldStack.isEmpty()) {
-		nsShowForecast(player, state)
-		nsSaveState(state)
-		return
-	}
-
-	var id = String(heldStack.getId())
-	var need = target.items[id]
-	if (!need) {
-		player.tell(Text.gray('[Ночная смена] Алтарь не примет этот предмет руками.'))
-		nsSaveState(state)
-		return
-	}
-	var have = state.sacrificeProgress[id] || 0
-	if (have >= need) {
-		player.tell(Text.gray('[Ночная смена] Этого уже хватает: ').append(nsItemText(id)).append(Text.gray(' ' + have + '/' + need)))
-		nsSaveState(state)
-		return
-	}
-	var want = need - have
-	var take = Math.min(want, heldStack.getCount())
-	heldStack.shrink(take) // мутирует стек в руке игрока (публичный Mojang-метод)
-	state.sacrificeProgress[id] = have + take
-	player.tell(Text.yellow('[Ночная смена] Принято ' + take + '× ').append(nsItemText(id)).append(Text.yellow(' (' + state.sacrificeProgress[id] + '/' + need + ')')))
-
-	nsCheckSacrificeComplete(state, block) // сохраняет state сама, если наберётся
-	if (!nsRaidActive(nsGetState())) {
-		nsSaveState(state) // на случай если ещё не набралось — сохраняем прогресс
-	}
+	if ((state.curse || 0) > 0 && nsTryTribute(state, player, stack)) return
+	nsShowAltarMenu(player, state)
 }
 
-// Прогресс жертвы над хотбаром у игроков рядом с алтарём. Названия предметов —
-// ключами перевода, их переводит клиент (сервер языковых файлов модов не знает).
-function nsAltarProgressBar(block, changed, burned) {
-	var parts = [{ text: 'Алтарь: ', color: 'gold' }]
-	for (var i = 0; i < changed.length; i++) {
-		if (i > 0) parts.push({ text: ' · ', color: 'gray' })
-		parts.push({ translate: changed[i].key, color: 'white' })
-		parts.push({ text: ' ' + changed[i].have + '/' + changed[i].need, color: changed[i].have >= changed[i].need ? 'green' : 'yellow' })
-	}
-	if (burned > 0) parts.push({ text: (changed.length ? ' · ' : '') + 'сгорело лишнего: ' + burned, color: 'red' })
-	var sel = '@a[x=' + block.getX() + ',y=' + block.getY() + ',z=' + block.getZ() + ',distance=..16]'
-	NSG.nsServer.runCommandSilent('execute in ' + String(block.getDimension()) + ' run title ' + sel + ' actionbar ' + JSON.stringify(parts))
-}
+// Блок базы — второй пульт набегов: ПКМ открывает то же меню, что и алтарь над ним.
+// Shift + ПКМ с блоком в руке — обычная постройка рядом, меню не открывается.
+BlockEvents.rightClicked('nightshift:base_core', event => {
+	var player = event.getEntity()
+	var above = event.getBlock().offset(0, 1, 0)
+	if (String(above.getId()) !== 'nightshift:altar' || player.isShiftKeyDown()) return
+	if (String(event.getHand()) === 'MAIN_HAND') nsAltarUse(player, above, event.getItem())
+	event.cancel()
+})
 
 // --------------------------------------------------------------------------
-// Автопотребление из инвентаря алтаря (воронки/ленты Create) — раз в 20 тиков
-// (задано через be.tickFrequency(20) в startup-скрипте блока).
+// Искупление конвейером: инвентарь алтаря (воронки/ленты Create) раз в 20 тиков
+// (be.tickFrequency(20) в startup-скрипте блока). Всё, что не идёт в искупление,
+// сгорает — иначе 9 слотов забиваются и конвейер встаёт.
 // --------------------------------------------------------------------------
 BlockEvents.blockEntityTick('nightshift:altar', event => {
 	var state = nsGetState()
 	if (nsRaidActive(state)) return // во время набега конвейер не разгружаем — пусть копится, заберём после
-
-	var nextPhase = state.phase + 1
-	var target = NSG.NIGHTSHIFT_CONFIG.sacrifices[nextPhase]
-	if (!target || target.manual) return // P0->P1 не через конвейер
 
 	var block = event.getBlock()
 	var be
@@ -276,63 +253,34 @@ BlockEvents.blockEntityTick('nightshift:altar', event => {
 		return
 	}
 
-	// Искупление проклятия конвейером: ресурс фазы засчитывается раньше жертвы
-	var tribute = NSG.NIGHTSHIFT_TRIBUTE[state.phase]
-	if ((state.curse || 0) > 0 && tribute) {
-		for (var k = 0; k < inv.getSlots() && state.curse > 0; k++) {
-			var ts = inv.getStackInSlot(k)
-			if (!nsTributeMatches(ts, tribute.item)) continue
+	var tribute = nsTributeFor(state.phase || 0)
+	var burned = 0
+	var dirty = false
+	for (var k = 0; k < inv.getSlots(); k++) {
+		var ts = inv.getStackInSlot(k)
+		if (!ts || ts.isEmpty()) continue
+		if (state.curse > 0 && nsTributeMatches(ts, tribute.item)) {
 			var got = inv.extractItem(k, Math.min(ts.getCount(), tribute.count - (state.tributeProgress || 0)), false).getCount()
 			state.tributeProgress = (state.tributeProgress || 0) + got
+			dirty = true
 			if (state.tributeProgress >= tribute.count) {
 				state.tributeProgress = 0
 				nsLiftCurse(state, null)
-				if (state.curse === 0) {
-					nsSaveState(state)
-					nsCheckSacrificeComplete(nsGetState(), block)
-					return
-				}
 			}
 		}
-		nsSaveState(state)
+		var rest = inv.getStackInSlot(k)
+		if (rest && !rest.isEmpty()) burned += inv.extractItem(k, rest.getCount(), false).getCount()
 	}
-
-	// Всё, что пришло в алтарь, он забирает: нужное идёт в жертву, лишнее сгорает
-	// (иначе 9 слотов забиваются посторонним и конвейер встаёт).
-	var changed = []
-	var burned = 0
-	var slots = inv.getSlots()
-	for (var i = 0; i < slots; i++) {
-		var stack
-		try {
-			stack = inv.getStackInSlot(i)
-		} catch (e) {
-			continue
-		}
-		if (!stack || stack.isEmpty()) continue
-		var id = String(stack.getId())
-		var key = String(stack.getDescriptionId())
-		var need = target.items[id] || 0
-		var have = state.sacrificeProgress[id] || 0
-		var take = Math.min(Math.max(0, need - have), stack.getCount())
-		if (take > 0) {
-			var got = inv.extractItem(i, take, false).getCount()
-			if (got > 0) {
-				state.sacrificeProgress[id] = have + got
-				changed.push({ key: key, have: have + got, need: need })
-			}
-		}
-		var rest = inv.getStackInSlot(i)
-		if (rest && !rest.isEmpty()) burned += inv.extractItem(i, rest.getCount(), false).getCount()
-	}
-
+	if (dirty) nsSaveState(state)
 	if (burned > 0) {
 		NSG.nsServer.runCommandSilent('execute in ' + String(block.getDimension()) + ' run particle minecraft:flame ' + (block.getX() + 0.5) + ' ' + (block.getY() + 1.1) + ' ' + (block.getZ() + 0.5) + ' 0.2 0.1 0.2 0.01 8')
 	}
-	if (changed.length > 0 || burned > 0) nsAltarProgressBar(block, changed, burned)
-
-	if (changed.length > 0) {
-		nsCheckSacrificeComplete(state, block) // сама сохраняет state, если набралось
-		if (!nsRaidActive(nsGetState())) nsSaveState(state)
+	if (dirty || burned > 0) {
+		var parts = [{ text: 'Алтарь: ', color: 'gold' }]
+		if (state.curse > 0) parts.push({ text: 'искупление ' + (state.tributeProgress || 0) + '/' + tribute.count + ', проклятие −' + state.curse + ' ❤', color: 'yellow' })
+		else if (dirty) parts.push({ text: 'проклятие снято', color: 'green' })
+		if (burned > 0) parts.push({ text: (parts.length > 1 ? ' · ' : '') + 'сгорело: ' + burned, color: 'red' })
+		var sel = '@a[x=' + block.getX() + ',y=' + block.getY() + ',z=' + block.getZ() + ',distance=..16]'
+		NSG.nsServer.runCommandSilent('execute in ' + String(block.getDimension()) + ' run title ' + sel + ' actionbar ' + JSON.stringify(parts))
 	}
 })

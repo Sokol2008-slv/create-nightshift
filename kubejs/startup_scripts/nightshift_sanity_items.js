@@ -13,4 +13,11 @@ StartupEvents.registry('item', event => {
 		.texture('nightshift:item/life_tonic')
 		.maxStackSize(16)
 		.food(food => food.nutrition(2).saturation(0.2).alwaysEdible())
+	// Сердце ночи: +1 сердце максимума навсегда (до 5), только из набегов — server_scripts/sanity/40_death.js
+	event.create('nightshift:night_heart')
+		.texture('nightshift:item/night_heart')
+		.maxStackSize(16)
+		.rarity('epic')
+		.glow(true)
+		.food(food => food.nutrition(4).saturation(1.0).alwaysEdible())
 })

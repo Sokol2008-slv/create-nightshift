@@ -1,5 +1,5 @@
 // ==========================================================================
-// Ночная смена — конфиг фаз, жертв и составов орд (server_scripts)
+// Ночная смена — конфиг набегов: сложности, составы орд, добыча (server_scripts)
 // Загружается первым (префикс 00_), кладёт всё в NSG.NIGHTSHIFT_CONFIG,
 // остальные server_scripts/*.js (10_, 20_, 30_, 40_) читают из NSG.
 //
@@ -8,11 +8,7 @@
 // и многократно задокументированное поведение KubeJS, отдельно по jar не
 // проверялось — не специфично для 2101, не менялось версиями).
 //
-// Цифры жертв и составов орд — из docs/PLAN.md §8 (таблица "Оборона и орды")
-// и docs/phases/defense_and_hordes.md (§ Задача 3). Где два документа
-// расходились в числах — взят PLAN.md как основной документ, второй как
-// сверочный. ВСЁ ПОМЕЧЕНО "оценка, проверить на тесте" — это заложено и в
-// самом плане (спорить с реальным HP мобов будем через Jade на сервере).
+// Составы орд и добыча — оценка, подбираются по живым набегам (HP мобов — через Jade).
 // ==========================================================================
 
 // Общее состояние скриптов набегов. В KubeJS 2101 серверным скриптам запрещено
@@ -21,14 +17,6 @@ var NSG = {}
 
 NSG.NIGHTSHIFT_NS = 'nightshift'
 
-// --------------------------------------------------------------------------
-// Жертвы по фазам: ключ — номер ФАЗЫ, В КОТОРУЮ переходим (т.е. запись под
-// ключом 1 — это жертва P0→P1, под ключом 2 — жертва P1→P2, и т.д.)
-// Формат: { items: {itemId: count}, manual: true|false }
-//   manual: true  — жертва руками (ПКМ по алтарю предметом в руке), сейчас
-//                    это только переход 0→1.
-//   manual: false — жертва только через инвентарь алтаря (конвейер Create).
-// --------------------------------------------------------------------------
 // Моб набега: id без неймспейса minecraft, число на одного игрока, подпись для прогноза, NBT
 function nsMob(id, count, label, nbt) {
 	return { id: 'minecraft:' + id, count: count, label: label, nbt: nbt || '' }
@@ -45,136 +33,99 @@ function nsHand(item) {
 var NS_ARMOR = { leather: nsArmor('leather'), chain: nsArmor('chainmail'), iron: nsArmor('iron'), diamond: nsArmor('diamond') }
 var NS_BABY = 'IsBaby:1b'
 var NS_SPEED = 'active_effects:[{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b}]'
+// «Бегун» — скорость II; «Громила» — 60 HP; «Тень» — невидимость; имена видны при наведении
+var NS_RUNNER = 'active_effects:[{id:"minecraft:speed",amplifier:1b,duration:-1,show_particles:0b}],CustomName:\'"Бегун"\''
+var NS_BRUTE = 'attributes:[{id:"minecraft:generic.max_health",base:60.0d}],Health:60.0f,CustomName:\'"Громила"\''
+var NS_SHADOW = 'active_effects:[{id:"minecraft:invisibility",amplifier:0b,duration:-1,show_particles:0b}],CustomName:\'"Тень"\''
+var NS_SLIME = 'Size:2'
+// Моб из мода (id целиком)
+function nsModMob(id, count, label, nbt) {
+	return { id: id, count: count, label: label, nbt: nbt || '' }
+}
+// Предмет в руке с чарами: nsHandEnch('bow', {power:3, flame:1})
+function nsHandEnch(item, ench) {
+	var lv = []
+	for (var k in ench) lv.push('"minecraft:' + k + '":' + ench[k])
+	return 'HandItems:[{id:"minecraft:' + item + '",count:1,components:{"minecraft:enchantments":{levels:{' + lv.join(',') + '}}}},{}],HandDropChances:[0f,0f]'
+}
+function nsName(name) {
+	return "CustomName:'\"" + name + "\"'"
+}
+// Пиглины и хоглины в Верхнем мире через 15 с становятся зомби-пиглинами (мирными) — запрещаем
+var NS_NO_ZOMBIFY = 'IsImmuneToZombification:1b'
+var NS_MAGMA_BIG = 'Size:3'
+// Подражатель (мод Artifacts): после смерти всегда роняет артефакт — «пиньята» в поздних волнах
+var NS_MIMIC = nsModMob('artifacts:mimic', 0.4, 'подражатель (роняет артефакт)')
 
 NSG.NIGHTSHIFT_CONFIG = {
-	sacrifices: {
-		// P0 -> P1 (Разнорабочий): ровно как в плане, руками.
-		1: {
-			manual: true,
-			items: {
-				'minecraft:dirt': 64,
-				'minecraft:stone': 64,
-			},
-		},
-		// P1 -> P2 (Латунь): продукция текущей (P1) фазы — андезитовый сплав,
-		// железо/медь, водяные колёса Create. Только конвейером.
-		2: {
-			manual: false,
-			items: {
-				'create:andesite_alloy': 64,
-				'minecraft:iron_ingot': 32,
-				'minecraft:copper_ingot': 32,
-				'create:water_wheel': 4,
-			},
-		},
-		// P2 -> P3 (Пар и глубина): латунь/механизм точности — продукция P2.
-		3: {
-			manual: false,
-			items: {
-				'create:brass_block': 32,
-				'create:precision_mechanism': 8,
-				'minecraft:gold_ingot': 16,
-				'create:zinc_ingot': 32,
-			},
-		},
-		// P3 -> P4 (Сталь и нефть): редстоун/лазурит/алмазы/Нижний мир — продукция P3.
-		4: {
-			manual: false,
-			items: {
-				'minecraft:redstone': 64,
-				'minecraft:lapis_lazuli': 32,
-				'minecraft:diamond': 16,
-				'minecraft:blaze_rod': 16,
-			},
-		},
-		// P4 -> P5 (Энергия): свинец/никель/литий/сера/нефть TFMG — продукция P4.
-		// ID проверены по jar (models/item) 26.09.
-		// свериться в JEI на тестовом сервере перед использованием!
-		5: {
-			manual: false,
-			items: {
-				'tfmg:steel_ingot': 64,
-				'tfmg:lead_ingot': 32,
-				'tfmg:nickel_ingot': 32,
-			},
-		},
-		// P5 -> P6 (Космос): торий — продукция P5. Финал: "Великая орда с боссом".
-		// ID проверен по jar 26.09.
-		6: {
-			manual: false,
-			items: {
-				'create_new_age:thorium': 32, // торий Create: New Age
-			},
-			isFinal: true, // после этой жертвы — Великая орда с боссом, а не обычный жертвенный набег
-		},
-	},
-
 	// ------------------------------------------------------------------
-	// Составы орд: hordes[P] — жертвенный набег из фазы P и малый набег в фазе P.
+	// Базовые составы орд уровней угрозы 0–6: из них собраны сложности 1–6 и 10
+	// (NIGHTSHIFT_DIFFICULTY ниже), minor — малый набег раз в 5 ночей.
 	// Числа — на ОДНОГО игрока: nsPartyScale() умножает их на размер команды
-	// (×1,5 на двоих, ×2 на троих). Финальная жертва (P5→P6) — волны P5, затем P6 и босс.
+	// (×1,5 на двоих, ×2 на троих).
 	// Экипировка мобов — NBT для /summon (броня и оружие не выпадают).
 	// Криперов нет: взрыв сносит машины.
 	// ------------------------------------------------------------------
 	hordes: {
-		// на троих всё ×2: P0 ≈ 40 мобов, P1 ≈ 74, P2 ≈ 160, P3 ≈ 230, P4 ≈ 260, P5 ≈ 300, финал ≈ 450 + босс
 		0: {
 			waves: [
-				[nsMob('zombie', 8, 'зомби'), nsMob('zombie', 2, 'зомби-малыш', NS_BABY)],
-				[nsMob('zombie', 6, 'зомби'), nsMob('zombie', 4, 'зомби в коже', NS_ARMOR.leather)],
+				[nsMob('zombie', 8, 'зомби'), nsMob('zombie', 3, 'зомби-малыш', NS_BABY)],
+				[nsMob('zombie', 6, 'зомби'), nsMob('zombie', 3, 'бегун', NS_RUNNER), nsMob('zombie', 3, 'зомби в коже', NS_ARMOR.leather)],
+				[nsMob('spider', 4, 'паук'), nsMob('zombie', 6, 'зомби')],
 			],
-			minor: [nsMob('zombie', 5, 'зомби'), nsMob('zombie', 1, 'зомби-малыш', NS_BABY)],
+			minor: [nsMob('zombie', 5, 'зомби'), nsMob('zombie', 2, 'бегун', NS_RUNNER)],
 		},
 		1: {
 			waves: [
-				[nsMob('zombie', 10, 'зомби'), nsMob('zombie', 3, 'зомби-малыш', NS_BABY)],
-				[nsMob('skeleton', 7, 'скелет'), nsMob('spider', 4, 'паук')],
-				[nsMob('zombie', 8, 'зомби в коже с мечом', NS_ARMOR.leather + ',' + nsHand('stone_sword')), nsMob('zombie', 5, 'зомби')],
+				[nsMob('zombie', 10, 'зомби'), nsMob('zombie', 4, 'зомби-малыш', NS_BABY), nsMob('zombie', 3, 'бегун', NS_RUNNER)],
+				[nsMob('skeleton', 6, 'скелет'), nsMob('bogged', 3, 'трясинный скелет'), nsMob('spider', 4, 'паук')],
+				[nsMob('zombie', 8, 'зомби в коже с мечом', NS_ARMOR.leather + ',' + nsHand('stone_sword')), nsMob('zombie', 1, 'громила', NS_BRUTE), nsMob('zombie', 4, 'зомби')],
+				[nsMob('slime', 4, 'слизень', NS_SLIME), nsMob('husk', 6, 'кадавр')],
 			],
-			minor: [nsMob('zombie', 6, 'зомби'), nsMob('skeleton', 3, 'скелет'), nsMob('spider', 2, 'паук')],
+			minor: [nsMob('zombie', 6, 'зомби'), nsMob('skeleton', 3, 'скелет'), nsMob('zombie', 2, 'бегун', NS_RUNNER)],
 		},
 		2: {
-			// с этой фазы у вас автопушки — орда ощутимо больше
 			waves: [
-				[nsMob('zombie', 14, 'зомби'), nsMob('husk', 6, 'кадавр')],
-				[nsMob('skeleton', 10, 'скелет'), nsMob('stray', 3, 'зимогор'), nsMob('spider', 6, 'паук')],
-				[nsMob('zombie', 10, 'зомби в кольчуге', NS_ARMOR.chain + ',' + nsHand('iron_sword')), nsMob('witch', 3, 'ведьма')],
+				[nsMob('zombie', 14, 'зомби'), nsMob('husk', 6, 'кадавр'), nsMob('zombie', 4, 'бегун', NS_RUNNER)],
+				[nsMob('skeleton', 8, 'скелет'), nsMob('stray', 3, 'зимогор'), nsMob('bogged', 3, 'трясинный скелет'), nsMob('spider', 6, 'паук')],
+				[nsMob('zombie', 10, 'зомби в кольчуге', NS_ARMOR.chain + ',' + nsHand('iron_sword')), nsMob('witch', 3, 'ведьма'), nsMob('zombie', 2, 'громила', NS_BRUTE)],
 				[nsMob('vindicator', 5, 'поборник'), nsMob('pillager', 6, 'разбойник')],
-				[nsMob('zombie', 12, 'зомби'), nsMob('zombie', 4, 'зомби-малыш', NS_BABY)],
+				[nsMob('zombie', 12, 'зомби'), nsMob('zombie', 5, 'зомби-малыш', NS_BABY), nsMob('drowned', 4, 'утопленник', nsHand('trident'))],
 			],
-			minor: [nsMob('zombie', 8, 'зомби'), nsMob('husk', 3, 'кадавр'), nsMob('spider', 3, 'паук'), nsMob('skeleton', 3, 'скелет')],
+			minor: [nsMob('zombie', 8, 'зомби'), nsMob('husk', 3, 'кадавр'), nsMob('spider', 3, 'паук'), nsMob('bogged', 2, 'трясинный скелет')],
 		},
 		3: {
 			waves: [
-				[nsMob('husk', 12, 'кадавр'), nsMob('zombie', 6, 'зомби-малыш', NS_BABY), nsMob('zombie', 10, 'зомби')],
-				[nsMob('skeleton', 12, 'скелет'), nsMob('stray', 6, 'зимогор')],
+				[nsMob('husk', 12, 'кадавр'), nsMob('zombie', 6, 'зомби-малыш', NS_BABY), nsMob('zombie', 6, 'бегун', NS_RUNNER)],
+				[nsMob('skeleton', 12, 'скелет'), nsMob('stray', 6, 'зимогор'), nsMob('bogged', 4, 'трясинный скелет')],
 				[nsMob('phantom', 10, 'фантом')], // воздушная волна — коридор не спасёт
-				[nsMob('zombie', 10, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 6, 'поборник'), nsMob('witch', 3, 'ведьма')],
-				[nsMob('spider', 10, 'паук'), nsMob('cave_spider', 10, 'пещерный паук')], // лезут по стенам
-				[nsMob('zombie', 14, 'зомби'), nsMob('husk', 6, 'кадавр')],
+				[nsMob('zombie', 10, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('vindicator', 6, 'поборник'), nsMob('witch', 3, 'ведьма'), nsMob('zombie', 2, 'громила', NS_BRUTE)],
+				[nsMob('spider', 8, 'паук'), nsMob('cave_spider', 8, 'пещерный паук'), nsMob('spider', 3, 'тень', NS_SHADOW)], // лезут по стенам
+				[nsMob('breeze', 4, 'вихрь'), nsMob('zombie', 12, 'зомби')],
 			],
 			minor: [nsMob('zombie', 8, 'зомби'), nsMob('skeleton', 4, 'скелет'), nsMob('phantom', 3, 'фантом'), nsMob('cave_spider', 3, 'пещерный паук')],
 		},
 		4: {
 			waves: [
-				[nsMob('zombie', 16, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_axe')), nsMob('husk', 10, 'кадавр')],
+				[nsMob('zombie', 16, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_axe')), nsMob('husk', 10, 'кадавр'), nsMob('zombie', 6, 'бегун', NS_RUNNER)],
 				[nsMob('skeleton', 16, 'скелет'), nsMob('stray', 8, 'зимогор')],
 				[nsMob('phantom', 14, 'фантом')],
-				[nsMob('vindicator', 12, 'поборник'), nsMob('evoker', 2, 'заклинатель'), nsMob('pillager', 10, 'разбойник')],
+				[nsMob('vindicator', 12, 'поборник'), nsMob('evoker', 2, 'заклинатель'), nsMob('pillager', 10, 'разбойник'), nsMob('illusioner', 1, 'иллюзионист')],
 				[nsMob('ravager', 2, 'опустошитель'), nsMob('pillager', 8, 'разбойник'), nsMob('wither_skeleton', 8, 'визер-скелет')],
-				[nsMob('zombie', 18, 'зомби в железе', NS_ARMOR.iron), nsMob('zombie', 8, 'зомби-малыш', NS_BABY)],
+				[nsMob('zoglin', 4, 'зоглин'), nsMob('zombie', 3, 'громила', NS_BRUTE), nsMob('zombie', 12, 'зомби в железе', NS_ARMOR.iron)],
 			],
-			minor: [nsMob('zombie', 8, 'зомби в железе', NS_ARMOR.iron), nsMob('skeleton', 4, 'скелет'), nsMob('vindicator', 3, 'поборник'), nsMob('pillager', 3, 'разбойник')],
+			minor: [nsMob('zombie', 8, 'зомби в железе', NS_ARMOR.iron), nsMob('skeleton', 4, 'скелет'), nsMob('vindicator', 3, 'поборник'), nsMob('breeze', 2, 'вихрь')],
 		},
 		5: {
 			waves: [
 				[nsMob('zombie', 14, 'зомби в алмазе, быстрый', NS_ARMOR.diamond + ',' + nsHand('diamond_sword') + ',' + NS_SPEED), nsMob('zombie', 16, 'зомби')],
-				[nsMob('skeleton', 18, 'скелет'), nsMob('stray', 10, 'зимогор')],
+				[nsMob('skeleton', 18, 'скелет'), nsMob('stray', 10, 'зимогор'), nsMob('bogged', 6, 'трясинный скелет')],
 				[nsMob('phantom', 16, 'фантом')],
-				[nsMob('vindicator', 14, 'поборник'), nsMob('evoker', 3, 'заклинатель')],
+				[nsMob('vindicator', 14, 'поборник'), nsMob('evoker', 3, 'заклинатель'), nsMob('illusioner', 2, 'иллюзионист')],
 				[nsMob('ravager', 3, 'опустошитель'), nsMob('pillager', 12, 'разбойник')],
-				[nsMob('wither_skeleton', 14, 'визер-скелет')],
-				[nsMob('zombie', 22, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('zombie', 10, 'зомби-малыш', NS_BABY)],
+				[nsMob('wither_skeleton', 14, 'визер-скелет'), nsMob('zoglin', 4, 'зоглин')],
+				[nsMob('zombie', 22, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('zombie', 10, 'зомби-малыш', NS_BABY), nsMob('zombie', 4, 'громила', NS_BRUTE)],
+				[nsMob('breeze', 6, 'вихрь'), nsMob('spider', 6, 'тень', NS_SHADOW)],
 			],
 			minor: [nsMob('zombie', 6, 'зомби в алмазе', NS_ARMOR.diamond), nsMob('zombie', 10, 'зомби'), nsMob('skeleton', 5, 'скелет'), nsMob('phantom', 4, 'фантом')],
 		},
@@ -196,16 +147,153 @@ NSG.NIGHTSHIFT_CONFIG = {
 	},
 }
 
-// Искупление проклятия алтаря: одна стопка ресурса текущей фазы (ПКМ по алтарю или конвейером
-// в алтарь) снимает одно сердце проклятия. Пока проклятие не снято, жертва не запускает набег.
-NSG.NIGHTSHIFT_TRIBUTE = {
-	0: { item: '#minecraft:logs', count: 64, label: 'брёвен' },
-	1: { item: 'create:andesite_alloy', count: 64, label: 'андезитового сплава' },
-	2: { item: 'create:brass_ingot', count: 64, label: 'латунных слитков' },
-	3: { item: 'minecraft:redstone', count: 64, label: 'редстоуна' },
-	4: { item: 'tfmg:steel_ingot', count: 64, label: 'стальных слитков' },
-	5: { item: 'create_new_age:thorium', count: 32, label: 'тория' },
-	6: { item: 'create_new_age:thorium', count: 32, label: 'тория' },
+// --------------------------------------------------------------------------
+// Сложности набега (игрок выбирает у алтаря). Победа на N открывает N+1.
+// waves — список волн, boss — последний противник (опц.), buff — эффекты всем мобам
+// набега (уровень эффекта, 1 = I), loot — уровень таблицы добычи.
+// Сложности 1–6 — прежние уровни угрозы 0–5, 10 — Великая орда. Выше 10 — «Кошмар N»:
+// волны 10-й сложности, мобов больше и они крепче с каждым уровнем (nsChallengeHorde).
+// --------------------------------------------------------------------------
+var NSH = NSG.NIGHTSHIFT_CONFIG.hordes
+NSG.NIGHTSHIFT_DIFFICULTY = {
+	1: { name: 'Ночной дозор', waves: NSH[0].waves },
+	2: { name: 'Бродяги', waves: NSH[1].waves },
+	3: { name: 'Нашествие', waves: NSH[2].waves },
+	4: { name: 'Кровавая луна', waves: NSH[3].waves },
+	5: {
+		name: 'Осада',
+		waves: NSH[4].waves,
+		boss: { id: 'minecraft:vindicator', hpLabel: 150, label: 'Вожак разбойников', nbt: nsName('Вожак разбойников') + ',' + nsHandEnch('netherite_axe', { sharpness: 2 }) + ',Health:150.0f,attributes:[{id:"minecraft:generic.max_health",base:150.0d},{id:"minecraft:generic.scale",base:1.3d}]' },
+	},
+	6: { name: 'Легион', waves: NSH[5].waves },
+	7: {
+		name: 'Пекло',
+		waves: [
+			[nsMob('wither_skeleton', 10, 'визер-скелет'), nsMob('magma_cube', 5, 'магмовый куб', 'Size:2')],
+			[nsMob('piglin_brute', 6, 'брут пиглинов', NS_NO_ZOMBIFY), nsMob('hoglin', 4, 'хоглин', NS_NO_ZOMBIFY)],
+			[nsMob('zoglin', 6, 'зоглин'), nsMob('zombie', 8, 'бегун', NS_RUNNER)],
+			[nsMob('wither_skeleton', 8, 'визер-скелет с алмазным мечом', nsHand('diamond_sword')), nsMob('skeleton', 10, 'скелет с огненным луком', nsHandEnch('bow', { power: 2, flame: 1 }))],
+			[nsMob('magma_cube', 6, 'большой магмовый куб', NS_MAGMA_BIG), nsMob('piglin_brute', 4, 'брут пиглинов', NS_NO_ZOMBIFY), NS_MIMIC],
+			[nsMob('hoglin', 6, 'хоглин', NS_NO_ZOMBIFY), nsMob('wither_skeleton', 12, 'визер-скелет'), nsMob('zombie', 3, 'громила', NS_BRUTE)],
+		],
+		boss: { id: 'minecraft:piglin_brute', hpLabel: 220, label: 'Вождь пекла', nbt: NS_NO_ZOMBIFY + ',' + nsName('Вождь пекла') + ',' + nsHandEnch('netherite_axe', { sharpness: 3, fire_aspect: 1 }) + ',Health:220.0f,attributes:[{id:"minecraft:generic.max_health",base:220.0d},{id:"minecraft:generic.scale",base:1.4d}]' },
+	},
+	8: {
+		name: 'Мёртвый легион',
+		buff: { resistance: 1 },
+		waves: [
+			[nsMob('zombie', 18, 'зомби в железе', NS_ARMOR.iron + ',' + nsHand('iron_sword')), nsMob('zombie', 6, 'бегун', NS_RUNNER)],
+			[nsMob('skeleton', 14, 'скелет с мощным луком', nsHandEnch('bow', { power: 3 })), nsMob('stray', 8, 'зимогор')],
+			[nsMob('husk', 14, 'кадавр в кольчуге', NS_ARMOR.chain), nsMob('drowned', 8, 'утопленник с трезубцем', nsHand('trident'))],
+			[nsMob('wither_skeleton', 12, 'визер-скелет с алмазным мечом', nsHand('diamond_sword')), nsMob('zombie', 4, 'громила', NS_BRUTE)],
+			[nsMob('phantom', 16, 'фантом')],
+			[nsMob('spider', 8, 'тень', NS_SHADOW), nsMob('cave_spider', 12, 'пещерный паук')],
+			[nsMob('zombie', 16, 'зомби в алмазе', NS_ARMOR.diamond + ',' + nsHand('diamond_sword')), nsMob('skeleton', 10, 'скелет'), NS_MIMIC],
+		],
+		boss: { id: 'minecraft:wither_skeleton', hpLabel: 260, label: 'Костяной король', nbt: nsName('Костяной король') + ',' + nsHandEnch('netherite_sword', { sharpness: 4, knockback: 2 }) + ',ArmorItems:[{},{},{},{id:"minecraft:netherite_helmet",count:1}],ArmorDropChances:[0f,0f,0f,0f],Health:260.0f,attributes:[{id:"minecraft:generic.max_health",base:260.0d},{id:"minecraft:generic.scale",base:1.6d}]' },
+	},
+	9: {
+		name: 'Буря',
+		waves: [
+			[nsMob('breeze', 8, 'вихрь'), nsMob('phantom', 10, 'фантом')],
+			[nsMob('pillager', 14, 'разбойник'), nsMob('vindicator', 10, 'поборник'), nsMob('evoker', 3, 'заклинатель')],
+			[nsMob('ravager', 4, 'опустошитель'), nsMob('vindicator', 8, 'поборник')],
+			[nsMob('witch', 6, 'ведьма'), nsMob('illusioner', 3, 'иллюзионист'), nsMob('vindicator', 8, 'поборник')],
+			[nsMob('phantom', 20, 'фантом')],
+			[nsMob('breeze', 10, 'вихрь'), nsMob('spider', 8, 'тень', NS_SHADOW)],
+			[nsMob('zoglin', 8, 'зоглин'), nsMob('piglin_brute', 6, 'брут пиглинов', NS_NO_ZOMBIFY)],
+			[nsMob('evoker', 5, 'заклинатель'), nsMob('vindicator', 16, 'поборник'), NS_MIMIC],
+		],
+		boss: { id: 'minecraft:ravager', hpLabel: 400, label: 'Громовой таран', nbt: nsName('Громовой таран') + ',Health:400.0f,attributes:[{id:"minecraft:generic.max_health",base:400.0d},{id:"minecraft:generic.scale",base:1.4d}]' },
+	},
+	10: {
+		name: 'Великая орда',
+		buff: { resistance: 1, strength: 1 },
+		waves: NSH[5].waves.concat(NSH[6].waves),
+		boss: NSH[6].boss,
+	},
+}
+NSG.NIGHTSHIFT_DIFFICULTY_MAX = 10 // выше — «Кошмар N», бесконечно
+
+// --------------------------------------------------------------------------
+// Добыча за победу — КАЖДОМУ защитнику у алтаря. Бросков обычной таблицы — столько, сколько
+// волн в набеге; у каждого броска шанс rareChance на редкую строку. Раз за набег — шанс на
+// артефакт (artifactChance[сложность]) и на легендарную строку (legendaryChance + 0,6% за уровень).
+// Ориентир: в шахте за 5 минут — стак железа; набег должен быть не менее выгодным, но трудным.
+// Строка: [id, количество] или [id с компонентами, количество, id для названия].
+// --------------------------------------------------------------------------
+function nsBook(ench, lvl) {
+	return ['minecraft:enchanted_book[minecraft:stored_enchantments={levels:{"minecraft:' + ench + '":' + lvl + '}}]', 1, 'minecraft:enchanted_book', ench + ' ' + lvl]
+}
+NSG.NIGHTSHIFT_LOOT = {
+	rareChance: 0.14,
+	legendaryChance: 0.01,
+	artifactChance: { 1: 0.03, 2: 0.05, 3: 0.08, 4: 0.12, 5: 0.16, 6: 0.22, 7: 0.3, 8: 0.38, 9: 0.48, 10: 0.6 },
+	common: {
+		1: [['minecraft:oak_log', 16], ['minecraft:iron_ingot', 16], ['minecraft:copper_ingot', 16], ['minecraft:coal', 16], ['minecraft:bread', 8]],
+		2: [['minecraft:iron_ingot', 16], ['minecraft:copper_ingot', 32], ['create:andesite_alloy', 16], ['minecraft:coal', 32], ['create:zinc_ingot', 8], ['minecraft:oak_log', 32]],
+		3: [['minecraft:iron_ingot', 24], ['minecraft:gold_ingot', 8], ['create:zinc_ingot', 16], ['create:brass_ingot', 8], ['minecraft:experience_bottle', 8], ['minecraft:redstone', 16]],
+		4: [['minecraft:iron_ingot', 32], ['minecraft:gold_ingot', 16], ['minecraft:redstone', 32], ['minecraft:lapis_lazuli', 16], ['minecraft:quartz', 16], ['create:brass_ingot', 16]],
+		5: [['tfmg:steel_ingot', 8], ['tfmg:lead_ingot', 16], ['tfmg:nickel_ingot', 16], ['minecraft:redstone', 32], ['minecraft:iron_ingot', 48], ['minecraft:experience_bottle', 16]],
+		6: [['tfmg:steel_ingot', 16], ['minecraft:diamond', 2], ['create_new_age:thorium', 4], ['minecraft:gold_ingot', 32], ['minecraft:emerald', 8], ['create:precision_mechanism', 2]],
+		7: [['tfmg:steel_ingot', 24], ['minecraft:diamond', 4], ['minecraft:blaze_rod', 8], ['minecraft:netherite_scrap', 1], ['minecraft:emerald', 16], ['minecraft:ghast_tear', 2], ['minecraft:magma_cream', 8]],
+		8: [['minecraft:diamond', 6], ['create_new_age:thorium', 8], ['minecraft:netherite_scrap', 2], ['tfmg:steel_ingot', 32], ['minecraft:experience_bottle', 32], ['minecraft:emerald', 24]],
+		9: [['minecraft:diamond', 8], ['minecraft:netherite_scrap', 2], ['minecraft:breeze_rod', 4], ['minecraft:ender_pearl', 8], ['create_new_age:thorium', 12], ['tfmg:steel_ingot', 48]],
+		10: [['minecraft:diamond', 12], ['minecraft:netherite_ingot', 1], ['create_new_age:thorium', 16], ['minecraft:emerald', 32], ['minecraft:experience_bottle', 64]],
+	},
+	rare: {
+		1: [['nightshift:sedative', 4], ['minecraft:golden_carrot', 8], ['sophisticatedbackpacks:backpack', 1], ['minecraft:name_tag', 1]],
+		2: [['minecraft:diamond', 2], ['nightshift:life_tonic', 2], ['nightshift:vein_seed_iron', 1], ['sophisticatedbackpacks:iron_backpack', 1], ['minecraft:saddle', 1]],
+		3: [['minecraft:diamond', 4], ['nightshift:vein_seed_copper', 1], ['nightshift:vein_seed_zinc', 1], ['minecraft:golden_apple', 4], ['create:extendo_grip', 1]],
+		4: [['minecraft:diamond', 8], ['nightshift:vein_seed_gold', 1], ['nightshift:vein_seed_redstone', 1], ['sophisticatedbackpacks:gold_backpack', 1], nsBook('unbreaking', 3), ['create:potato_cannon', 1]],
+		5: [['minecraft:diamond', 12], ['nightshift:vein_seed_diamond', 1], ['nightshift:vein_seed_lead', 1], ['nightshift:vein_seed_nickel', 1], nsBook('mending', 1), ['minecraft:totem_of_undying', 1]],
+		6: [['minecraft:diamond', 16], ['nightshift:vein_seed_thorium', 1], ['nightshift:vein_seed_platinum', 1], ['minecraft:netherite_ingot', 1], ['sophisticatedbackpacks:diamond_backpack', 1], nsBook('sharpness', 5), nsBook('protection', 4)],
+		7: [['minecraft:netherite_ingot', 1], ['nightshift:vein_seed_emerald', 1], ['minecraft:totem_of_undying', 1], nsBook('efficiency', 5), nsBook('fortune', 3), ['minecraft:trident', 1], ['create:wand_of_symmetry', 1]],
+		8: [['minecraft:netherite_ingot', 2], ['minecraft:heavy_core', 1], ['minecraft:enchanted_golden_apple', 1], nsBook('looting', 3), ['nightshift:vein_seed_titanium', 1], ['sophisticatedbackpacks:netherite_backpack', 1]],
+		9: [['minecraft:netherite_ingot', 2], ['minecraft:elytra', 1], ['minecraft:enchanted_golden_apple', 1], ['nightshift:vein_seed_tungsten', 1], nsBook('mending', 1), ['minecraft:totem_of_undying', 2]],
+		10: [['minecraft:netherite_ingot', 4], ['minecraft:elytra', 1], ['minecraft:nether_star', 1], ['nightshift:vein_seed_martian_iron', 1], ['minecraft:enchanted_golden_apple', 2], ['nightshift:night_heart', 1]],
+	},
+	legendary: [['nightshift:night_heart', 1], ['minecraft:enchanted_golden_apple', 1], ['minecraft:netherite_ingot', 2], ['minecraft:totem_of_undying', 1]],
+	// Артефакты мода Artifacts (надеваются в слоты Curios). top — сильные, для наград первого прохождения
+	artifacts: [
+		'anglers_hat', 'antidote_vessel', 'aqua_dashers', 'bunny_hoppers', 'charm_of_shrinking', 'charm_of_sinking', 'chorus_totem', 'cloud_in_a_bottle',
+		'cowboy_hat', 'cross_necklace', 'crystal_heart', 'digging_claws', 'eternal_steak', 'everlasting_beef', 'feral_claws', 'fire_gauntlet',
+		'flame_pendant', 'flippers', 'golden_hook', 'helium_flamingo', 'kitty_slippers', 'lucky_scarf', 'night_vision_goggles', 'novelty_drinking_hat',
+		'obsidian_skull', 'onion_ring', 'panic_necklace', 'pickaxe_heater', 'plastic_drinking_hat', 'pocket_piston', 'power_glove', 'rooted_boots',
+		'running_shoes', 'scarf_of_invisibility', 'shock_pendant', 'snorkel', 'snowshoes', 'steadfast_spikes', 'strider_shoes', 'superstitious_hat',
+		'thorn_pendant', 'umbrella', 'universal_attractor', 'vampiric_glove', 'villager_hat', 'warp_drive', 'whoopee_cushion', 'withered_bracelet',
+	],
+	artifactsTop: [
+		'crystal_heart', 'power_glove', 'vampiric_glove', 'cloud_in_a_bottle', 'running_shoes', 'feral_claws', 'fire_gauntlet', 'universal_attractor',
+		'cross_necklace', 'chorus_totem', 'flame_pendant', 'thorn_pendant', 'shock_pendant', 'withered_bracelet', 'eternal_steak', 'obsidian_skull',
+		'lucky_scarf', 'steadfast_spikes', 'bunny_hoppers', 'warp_drive',
+	],
+}
+
+// Первое прохождение сложности: каждому защитнику зонд жилы этого уровня (случайный из списка),
+// с 5-й — ещё сильный артефакт, за Великую орду — «Сердце ночи».
+NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES = {
+	1: ['iron', 'copper', 'coal'],
+	2: ['gold', 'zinc'],
+	3: ['redstone', 'lapis', 'quartz'],
+	4: ['diamond'],
+	5: ['lead', 'nickel', 'lithium', 'sulfur'],
+	6: ['platinum'],
+	7: ['thorium', 'emerald'],
+	8: ['titanium'],
+	9: ['tungsten'],
+	10: ['martian_iron'],
+}
+
+// Искупление проклятия алтаря: стопка ресурса по наибольшей пройденной сложности
+// (ПКМ по алтарю или конвейером в алтарь) снимает одно сердце проклятия.
+// Пока проклятие не снято, алтарь не начинает новый набег.
+function nsTributeFor(best) {
+	if (best <= 1) return { item: '#minecraft:logs', count: 64, label: 'брёвен' }
+	if (best <= 3) return { item: 'create:andesite_alloy', count: 64, label: 'андезитового сплава' }
+	if (best <= 5) return { item: 'create:brass_ingot', count: 64, label: 'латунных слитков' }
+	if (best <= 7) return { item: 'tfmg:steel_ingot', count: 64, label: 'стальных слитков' }
+	return { item: 'create_new_age:thorium', count: 32, label: 'тория' }
 }
 
 // --------------------------------------------------------------------------
@@ -225,6 +313,11 @@ NSG.NIGHTSHIFT_MOB_HP = {
 	'minecraft:witch': 26,
 	'minecraft:vindicator': 24,
 	'minecraft:evoker': 24,
+	'minecraft:bogged': 16,
+	'minecraft:breeze': 30,
+	'minecraft:zoglin': 40,
+	'minecraft:illusioner': 32,
+	'minecraft:slime': 16,
 	'minecraft:pillager': 24,
 	'minecraft:ravager': 100,
 	'minecraft:phantom': 20,
@@ -232,6 +325,10 @@ NSG.NIGHTSHIFT_MOB_HP = {
 	'minecraft:wither_skeleton': 20,
 	'minecraft:blaze': 20,
 	'minecraft:wither': 300,
+	'minecraft:piglin_brute': 50,
+	'minecraft:hoglin': 40,
+	'minecraft:magma_cube': 16,
+	'artifacts:mimic': 60,
 	'northstar:frozen_zombie': 20, // оценка, проверить Jade
 	'northstar:mercury_raptor': 20,
 	'northstar:mercury_roach': 12,
@@ -286,9 +383,9 @@ NSG.NIGHTSHIFT_TUNABLES = {
 	// Штрафы (в сердцах максимального здоровья). Проклятие алтаря — у всей команды,
 	// раны от смертей — у каждого свои; вместе не больше penaltyMaxHearts (минимум 3 сердца остаётся).
 	curseHeartsMinor: 2, // прорыв к алтарю в малом набеге
-	curseHeartsSacrifice: 5, // провал жертвенного набега (+ жертва сгорает, фаза заблокирована до искупления)
 	curseMaxHearts: 5,
 	woundMax: 5, // −1 сердце за смерть, до 5
 	penaltyMaxHearts: 7,
+	bonusHeartsMax: 5, // «Сердце ночи»: +1 сердце максимума навсегда, до 5
 	darknessDeathSanityBump: 0.15, // убила тьма — при возрождении +15% рассудка, чтобы не умирать по кругу
 }
