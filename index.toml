@@ -90,11 +90,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "c20bd60850f2da43a3312619ba4a7ece85f23dad36cf75004c2bb9ebe7a7599a"
+hash = "375a0dc719c96f59f53ae9e345e75a595a58eb6e43749fd06ff2c607c8c370fd"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "c20bd60850f2da43a3312619ba4a7ece85f23dad36cf75004c2bb9ebe7a7599a"
+hash = "375a0dc719c96f59f53ae9e345e75a595a58eb6e43749fd06ff2c607c8c370fd"
 
 [[files]]
 file = "config/iris.properties"
@@ -106,7 +106,7 @@ hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
 
 [[files]]
 file = "config/sanity_renewed/default.toml"
-hash = "efc3a76fc696c39aa2a98e356252282feef02d8ca9a7aae7e85d503448a9f67b"
+hash = "23cfc69bfe955d12278fd35841905baf8484690aa399c9bea975d7d80836f583"
 
 [[files]]
 file = "config/simplebackups-common.toml"
