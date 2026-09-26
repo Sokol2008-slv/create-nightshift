@@ -1,0 +1,3441 @@
+{
+ "replace": true,
+ "values": [
+  {
+   "id": "aeroworks:button_keypad_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:button_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:button_panel_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_button_keypad_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_button_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_button_panel_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_joystick_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_lever_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_pedal_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_throttle_quadrant_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_wheel_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copper_yoke_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:joystick_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:lever_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:pedal_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:throttle_quadrant_module",
+   "required": false
+  },
+  {
+   "id": "aeroworks:yoke_module",
+   "required": false
+  },
+  {
+   "id": "arphex:arthropod_antenna",
+   "required": false
+  },
+  {
+   "id": "arphex:silk_slinger",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:andesite_bogie_steps",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:andesite_door_step",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:andesite_grab_rails",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:andesite_pilot",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:copper_bogie_steps",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:copper_door_step",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:copper_grab_rails",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:copper_pilot",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:corrugated_metro_casing",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:headlight",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:metal_pilot",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:metro_casing",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:metro_trapdoor",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:metro_window",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:cable_girder_strut",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:chain_pulley",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:cogwheel_chain_carriage",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:girder_strut",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:industrial_grating",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:industrial_grating_panel",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:industrial_truss",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:large_flanged_cogwheel",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:small_flanged_cogwheel",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:weathered_girder_strut",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:weathered_metal_bracket",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:weathered_metal_girder",
+   "required": false
+  },
+  {
+   "id": "cbc_at:apds_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:apdsfs_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:grapeshot_cartridge",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_ap_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_apds_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_apdsfs_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_smoke_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:he_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:heavy_autocannon_empty_cartridge",
+   "required": false
+  },
+  {
+   "id": "cbc_at:wrought_iron_medium_rocket_rail",
+   "required": false
+  },
+  {
+   "id": "cbc_at:wrought_iron_medium_rocket_rail_breech",
+   "required": false
+  },
+  {
+   "id": "cgs:axe_iron",
+   "required": false
+  },
+  {
+   "id": "cgs:blunderbuss_barrel",
+   "required": false
+  },
+  {
+   "id": "cgs:blunderbuss_barrel_long",
+   "required": false
+  },
+  {
+   "id": "cgs:flintlock",
+   "required": false
+  },
+  {
+   "id": "cgs:flintlock_chambers",
+   "required": false
+  },
+  {
+   "id": "cgs:flintlock_long_barrel",
+   "required": false
+  },
+  {
+   "id": "cgs:hammer_iron",
+   "required": false
+  },
+  {
+   "id": "cgs:nail",
+   "required": false
+  },
+  {
+   "id": "cgs:press_form_gatling",
+   "required": false
+  },
+  {
+   "id": "cgs:press_form_revolver",
+   "required": false
+  },
+  {
+   "id": "cgs:press_form_shotgun",
+   "required": false
+  },
+  {
+   "id": "cgs:spear",
+   "required": false
+  },
+  {
+   "id": "comforts:rope_and_nail",
+   "required": false
+  },
+  {
+   "id": "create:analog_lever",
+   "required": false
+  },
+  {
+   "id": "create:andesite_alloy",
+   "required": false
+  },
+  {
+   "id": "create:andesite_alloy_block",
+   "required": false
+  },
+  {
+   "id": "create:andesite_bars",
+   "required": false
+  },
+  {
+   "id": "create:andesite_casing",
+   "required": false
+  },
+  {
+   "id": "create:andesite_door",
+   "required": false
+  },
+  {
+   "id": "create:andesite_funnel",
+   "required": false
+  },
+  {
+   "id": "create:andesite_ladder",
+   "required": false
+  },
+  {
+   "id": "create:andesite_scaffolding",
+   "required": false
+  },
+  {
+   "id": "create:andesite_table_cloth",
+   "required": false
+  },
+  {
+   "id": "create:andesite_tunnel",
+   "required": false
+  },
+  {
+   "id": "create:basin",
+   "required": false
+  },
+  {
+   "id": "create:chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "create:chute",
+   "required": false
+  },
+  {
+   "id": "create:clipboard",
+   "required": false
+  },
+  {
+   "id": "create:copper_backtank",
+   "required": false
+  },
+  {
+   "id": "create:copper_bars",
+   "required": false
+  },
+  {
+   "id": "create:copper_casing",
+   "required": false
+  },
+  {
+   "id": "create:copper_diving_boots",
+   "required": false
+  },
+  {
+   "id": "create:copper_diving_helmet",
+   "required": false
+  },
+  {
+   "id": "create:copper_door",
+   "required": false
+  },
+  {
+   "id": "create:copper_ladder",
+   "required": false
+  },
+  {
+   "id": "create:copper_nugget",
+   "required": false
+  },
+  {
+   "id": "create:copper_scaffolding",
+   "required": false
+  },
+  {
+   "id": "create:copper_sheet",
+   "required": false
+  },
+  {
+   "id": "create:copper_table_cloth",
+   "required": false
+  },
+  {
+   "id": "create:crushing_wheel",
+   "required": false
+  },
+  {
+   "id": "create:depot",
+   "required": false
+  },
+  {
+   "id": "create:encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "create:encased_fan",
+   "required": false
+  },
+  {
+   "id": "create:filter",
+   "required": false
+  },
+  {
+   "id": "create:fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "create:fluid_valve",
+   "required": false
+  },
+  {
+   "id": "create:gantry_carriage",
+   "required": false
+  },
+  {
+   "id": "create:gearbox",
+   "required": false
+  },
+  {
+   "id": "create:hand_crank",
+   "required": false
+  },
+  {
+   "id": "create:hose_pulley",
+   "required": false
+  },
+  {
+   "id": "create:industrial_iron_block",
+   "required": false
+  },
+  {
+   "id": "create:industrial_iron_window",
+   "required": false
+  },
+  {
+   "id": "create:industrial_iron_window_pane",
+   "required": false
+  },
+  {
+   "id": "create:iron_sheet",
+   "required": false
+  },
+  {
+   "id": "create:item_drain",
+   "required": false
+  },
+  {
+   "id": "create:item_hatch",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_bearing",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_mixer",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_piston",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_press",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_pump",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "create:metal_bracket",
+   "required": false
+  },
+  {
+   "id": "create:metal_girder",
+   "required": false
+  },
+  {
+   "id": "create:millstone",
+   "required": false
+  },
+  {
+   "id": "create:minecart_coupling",
+   "required": false
+  },
+  {
+   "id": "create:nozzle",
+   "required": false
+  },
+  {
+   "id": "create:package_frogport",
+   "required": false
+  },
+  {
+   "id": "create:piston_extension_pole",
+   "required": false
+  },
+  {
+   "id": "create:portable_fluid_interface",
+   "required": false
+  },
+  {
+   "id": "create:portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "create:propeller",
+   "required": false
+  },
+  {
+   "id": "create:radial_chassis",
+   "required": false
+  },
+  {
+   "id": "create:rope_pulley",
+   "required": false
+  },
+  {
+   "id": "create:spout",
+   "required": false
+  },
+  {
+   "id": "create:sticky_mechanical_piston",
+   "required": false
+  },
+  {
+   "id": "create:track",
+   "required": false
+  },
+  {
+   "id": "create:vertical_gearbox",
+   "required": false
+  },
+  {
+   "id": "create:weathered_iron_block",
+   "required": false
+  },
+  {
+   "id": "create:weathered_iron_window",
+   "required": false
+  },
+  {
+   "id": "create:weathered_iron_window_pane",
+   "required": false
+  },
+  {
+   "id": "create:whisk",
+   "required": false
+  },
+  {
+   "id": "create:wooden_bracket",
+   "required": false
+  },
+  {
+   "id": "create_aquatic_ambitions:mechanical_conduit",
+   "required": false
+  },
+  {
+   "id": "create_connected:centrifugal_clutch",
+   "required": false
+  },
+  {
+   "id": "create_connected:crank_wheel",
+   "required": false
+  },
+  {
+   "id": "create_connected:cross_connector",
+   "required": false
+  },
+  {
+   "id": "create_connected:encased_chain_cogwheel",
+   "required": false
+  },
+  {
+   "id": "create_connected:fan_freezing_catalyst",
+   "required": false
+  },
+  {
+   "id": "create_connected:freewheel_clutch",
+   "required": false
+  },
+  {
+   "id": "create_connected:large_crank_wheel",
+   "required": false
+  },
+  {
+   "id": "create_dragons_plus:fluid_hatch",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:brass_affix_template",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:experience_hatch",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:experience_lantern",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:mechanical_grindstone",
+   "required": false
+  },
+  {
+   "id": "create_integrated_farming:fishing_net",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_extruder:mechanical_extruder",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_spawner:framed_dark_glass",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_spawner:horizontal_framed_dark_glass",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_spawner:vertical_framed_dark_glass",
+   "required": false
+  },
+  {
+   "id": "create_mobile_packages:bee_port",
+   "required": false
+  },
+  {
+   "id": "create_mobile_packages:robo_bee",
+   "required": false
+  },
+  {
+   "id": "create_new_age:basic_energiser",
+   "required": false
+  },
+  {
+   "id": "create_new_age:basic_motor",
+   "required": false
+  },
+  {
+   "id": "create_new_age:carbon_brushes",
+   "required": false
+  },
+  {
+   "id": "create_new_age:electrical_connector",
+   "required": false
+  },
+  {
+   "id": "create_new_age:generator_coil",
+   "required": false
+  },
+  {
+   "id": "create_new_age:lamp_post",
+   "required": false
+  },
+  {
+   "id": "create_new_age:overcharged_iron",
+   "required": false
+  },
+  {
+   "id": "create_new_age:overcharged_iron_sheet",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reactor_casing",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reactor_glass",
+   "required": false
+  },
+  {
+   "id": "create_new_age:street_light",
+   "required": false
+  },
+  {
+   "id": "create_pattern_schematics:empty_pattern_schematic",
+   "required": false
+  },
+  {
+   "id": "create_pattern_schematics:pattern_schematic_and_quill",
+   "required": false
+  },
+  {
+   "id": "create_radar:binoculars",
+   "required": false
+  },
+  {
+   "id": "create_radar:radar_dish_block",
+   "required": false
+  },
+  {
+   "id": "create_radar:radar_plate_block",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_axe",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_boots",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_exoskeleton_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_helmet",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_hoe",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_jetpack_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_leggings",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_pickaxe",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_shovel",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_sword",
+   "required": false
+  },
+  {
+   "id": "create_sa:hydraulic_engine",
+   "required": false
+  },
+  {
+   "id": "create_sa:large_filling_tank",
+   "required": false
+  },
+  {
+   "id": "create_sa:medium_filling_tank",
+   "required": false
+  },
+  {
+   "id": "create_sa:slime_boots",
+   "required": false
+  },
+  {
+   "id": "create_sa:slime_helmet",
+   "required": false
+  },
+  {
+   "id": "create_submarine:ballast_tank",
+   "required": false
+  },
+  {
+   "id": "create_submarine:ballast_vent",
+   "required": false
+  },
+  {
+   "id": "create_submarine:barometer",
+   "required": false
+  },
+  {
+   "id": "create_submarine:copper_pressurizer",
+   "required": false
+  },
+  {
+   "id": "create_submarine:iron_pressurizer",
+   "required": false
+  },
+  {
+   "id": "create_submarine:steel_cable",
+   "required": false
+  },
+  {
+   "id": "create_submarine:submarine_propeller",
+   "required": false
+  },
+  {
+   "id": "create_submarine:water_thruster",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:acacia_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:andesite_casing_trapdoor",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:bamboo_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:birch_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:cherry_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:chorus_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:copper_casing_trapdoor",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:copper_knife",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:crimson_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:dark_oak_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:empty_card",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:glue_packaging",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing_1",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing_2",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing_3",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing_4",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing_5",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:green_sing_6",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:jaboticaba_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:jungle_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:magnifying_glass",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:mangrove_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:oak_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:ramboutan_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:redsing",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:redsing_1",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:redsing_2",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:speed_100",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:speed_25",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:speed_50",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:speed_75",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:sprinkler",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:sprinkler_head",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:spruce_sail",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_2",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_3",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_4",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_5",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_yellow_1",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_yellow_2",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_yellow_3",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_yellow_4",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_sing_yellow_5",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:train_stop",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:warped_sail",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:black_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:blue_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:brown_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:cyan_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:gray_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:green_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:light_blue_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:light_gray_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:lime_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:magenta_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:orange_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:pink_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:purple_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:red_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:white_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_vibrant_vaults:yellow_package_frogport",
+   "required": false
+  },
+  {
+   "id": "create_winery:wine_cellar",
+   "required": false
+  },
+  {
+   "id": "createaddition:alternator",
+   "required": false
+  },
+  {
+   "id": "createaddition:barbed_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:connector",
+   "required": false
+  },
+  {
+   "id": "createaddition:copper_rod",
+   "required": false
+  },
+  {
+   "id": "createaddition:copper_spool",
+   "required": false
+  },
+  {
+   "id": "createaddition:copper_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:iron_rod",
+   "required": false
+  },
+  {
+   "id": "createaddition:iron_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:rolling_mill",
+   "required": false
+  },
+  {
+   "id": "createaddition:small_light_connector",
+   "required": false
+  },
+  {
+   "id": "createaddition:spool",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:ap_autocannon_round",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:ap_shot",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:autocannon_cartridge_sheet",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:bag_of_grapeshot",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:basin_foundry_lid",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:big_cartridge",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:big_cartridge_sheet",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_builder",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_carriage",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_drill",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_loader",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_mount",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_mount_extension",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:empty_autocannon_cartridge",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:empty_machine_gun_round",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:filled_autocannon_cartridge",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:fixed_cannon_mount",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:flak_autocannon_round",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:fluid_shell",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:machine_gun_round",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:pair_of_cannon_wheels",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:ram_head",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:ram_rod",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:recoil_spring",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:shot_balls",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:shrapnel_shell",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:smoke_shell",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:solid_shot",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:spring_wire",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:worm",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:worm_head",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:wrought_iron_cannon_chamber",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:wrought_iron_cannon_end",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:wrought_iron_drop_mortar_end",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_fluid_tank",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_hose_pulley",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_item_drain",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_large_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_mechanical_pump",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_portable_fluid_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_sheet",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_spout",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_valve_handle",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_large_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_shaft",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_slicer",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_slicer",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_slicer",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_bars",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_bars_overlay",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_catwalk",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_catwalk_railing",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_hull",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_mesh_fence",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_sheet",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_support",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_support_wedge",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_trapdoor",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_window",
+   "required": false
+  },
+  {
+   "id": "createdeco:andesite_window_pane",
+   "required": false
+  },
+  {
+   "id": "createdeco:blue_andesite_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:blue_copper_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:blue_industrial_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:blue_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_bars",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_bars_overlay",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_catwalk",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_catwalk_railing",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_hull",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_mesh_fence",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_support",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_support_wedge",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_window",
+   "required": false
+  },
+  {
+   "id": "createdeco:copper_window_pane",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_creeper",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_cross",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_down",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_down_left",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_down_right",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_electrical",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_fire",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_fire_diamond",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_flow",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_fluid",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_ice",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_left",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_no_entry",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_radioactive",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_right",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_skull",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_top_left",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_top_right",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_up",
+   "required": false
+  },
+  {
+   "id": "createdeco:decal_warning",
+   "required": false
+  },
+  {
+   "id": "createdeco:green_andesite_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:green_copper_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:green_industrial_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:green_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_bars",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_bars_overlay",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_catwalk",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_catwalk_railing",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_hull",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_ingot",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_ladder",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_mesh_fence",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_nugget",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_sheet",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_support",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_support_wedge",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_trapdoor",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_window",
+   "required": false
+  },
+  {
+   "id": "createdeco:industrial_iron_window_pane",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_bars_overlay",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_catwalk",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_catwalk_railing",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_coin",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_coinstack",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_hull",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_ladder",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_mesh_fence",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_support",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_support_wedge",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_window",
+   "required": false
+  },
+  {
+   "id": "createdeco:iron_window_pane",
+   "required": false
+  },
+  {
+   "id": "createdeco:yellow_andesite_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:yellow_copper_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:yellow_industrial_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:yellow_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:andesite_girder",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:andesite_girder_strut",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:bulk_fermenter",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:canister",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:engine_silencer",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:entity_filter",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:hammer",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:kelp_handle",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:mold",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:oil_barrel",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:pumpjack_hole",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:sheet_metal_panel",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:track_layers_bag",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:wire_cutters",
+   "required": false
+  },
+  {
+   "id": "createfood:gelatin_mix_bucket",
+   "required": false
+  },
+  {
+   "id": "createfood:slime_bucket",
+   "required": false
+  },
+  {
+   "id": "createfood:ube_cake_batter_bucket",
+   "required": false
+  },
+  {
+   "id": "createframed:andesite_alloy_window",
+   "required": false
+  },
+  {
+   "id": "createframed:andesite_alloy_window_pane",
+   "required": false
+  },
+  {
+   "id": "createframed:copper_window",
+   "required": false
+  },
+  {
+   "id": "createframed:copper_window_pane",
+   "required": false
+  },
+  {
+   "id": "creategoggles:chainmail_backtank",
+   "required": false
+  },
+  {
+   "id": "creategoggles:iron_backtank",
+   "required": false
+  },
+  {
+   "id": "creategoggles:leather_backtank",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:drill",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:copycat_wing",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:liquid_burner",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:solid_burner",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:solid_fuel_thruster",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:stirling_engine",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:tempered_wing",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:wing",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display_half_panel",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display_panel",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display_sloped",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display_small",
+   "required": false
+  },
+  {
+   "id": "createsifter:andesite_mesh",
+   "required": false
+  },
+  {
+   "id": "createsifter:sifter",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_lamp",
+   "required": false
+  },
+  {
+   "id": "dndecor:andesite_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:beam",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:copper_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:diagonal_girder",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_cogwheel",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_plating_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:industrial_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:iron_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_andesite_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_copper_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_fan",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_industrial_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_industrial_cogwheel",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_iron_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_metal_girder",
+   "required": false
+  },
+  {
+   "id": "dndecor:ornate_grate",
+   "required": false
+  },
+  {
+   "id": "dndecor:text_plate",
+   "required": false
+  },
+  {
+   "id": "dndesires:blasting_sail",
+   "required": false
+  },
+  {
+   "id": "dndesires:bore_block",
+   "required": false
+  },
+  {
+   "id": "dndesires:coal_piece",
+   "required": false
+  },
+  {
+   "id": "dndesires:cog_crank",
+   "required": false
+  },
+  {
+   "id": "dndesires:fluid_hatch",
+   "required": false
+  },
+  {
+   "id": "dndesires:freezing_sail",
+   "required": false
+  },
+  {
+   "id": "dndesires:handheld_saw",
+   "required": false
+  },
+  {
+   "id": "dndesires:hydraulic_press",
+   "required": false
+  },
+  {
+   "id": "dndesires:inverse_gearshift",
+   "required": false
+  },
+  {
+   "id": "dndesires:large_cog_crank",
+   "required": false
+  },
+  {
+   "id": "dndesires:overburden_casing",
+   "required": false
+  },
+  {
+   "id": "dndesires:roll_table",
+   "required": false
+  },
+  {
+   "id": "dndesires:splashing_sail",
+   "required": false
+  },
+  {
+   "id": "dndesires:strawberry_milkshake",
+   "required": false
+  },
+  {
+   "id": "dndesires:vanilla_milkshake",
+   "required": false
+  },
+  {
+   "id": "escalated:metal_walkway_steps",
+   "required": false
+  },
+  {
+   "id": "escalated:wooden_walkway_steps",
+   "required": false
+  },
+  {
+   "id": "extendedwrenches:wrench_cog_augment",
+   "required": false
+  },
+  {
+   "id": "extendedwrenches:wrench_handle_augment",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:cooking_pot",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:glow_berry_custard",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:hanging_canvas_sign",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:iron_knife",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:milk_bottle",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:onion_soup",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:pumpkin_soup",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:shepherds_pie_block",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:skillet",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:stove",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:stuffed_potato",
+   "required": false
+  },
+  {
+   "id": "garnished:copper_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:iron_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:nut_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "garnished:sepia_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:boiler",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:bomb_bay",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:enhanced_propeller",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:gyrodyne",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:heavy_crossbow",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:hull",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:hull_reinforcement",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:improved_landing_gear",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:industrial_gears",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:propeller",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:steel_boiler",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:sturdy_pipes",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:telescope",
+   "required": false
+  },
+  {
+   "id": "immersiveengineering:wire_copper",
+   "required": false
+  },
+  {
+   "id": "minecraft:acacia_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:andesite",
+   "required": false
+  },
+  {
+   "id": "minecraft:andesite_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:andesite_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:andesite_wall",
+   "required": false
+  },
+  {
+   "id": "minecraft:anvil",
+   "required": false
+  },
+  {
+   "id": "minecraft:axolotl_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:bamboo_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:birch_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:blast_furnace",
+   "required": false
+  },
+  {
+   "id": "minecraft:brush",
+   "required": false
+  },
+  {
+   "id": "minecraft:cauldron",
+   "required": false
+  },
+  {
+   "id": "minecraft:chain",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:coal",
+   "required": false
+  },
+  {
+   "id": "minecraft:coal_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:cod_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:copper_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:copper_ingot",
+   "required": false
+  },
+  {
+   "id": "minecraft:crossbow",
+   "required": false
+  },
+  {
+   "id": "minecraft:dark_oak_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:flint_and_steel",
+   "required": false
+  },
+  {
+   "id": "minecraft:heavy_weighted_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_bars",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_chestplate",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_door",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_helmet",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_hoe",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_ingot",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_leggings",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_nugget",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_pickaxe",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_shovel",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_sword",
+   "required": false
+  },
+  {
+   "id": "minecraft:iron_trapdoor",
+   "required": false
+  },
+  {
+   "id": "minecraft:jungle_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:lantern",
+   "required": false
+  },
+  {
+   "id": "minecraft:lava_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:lightning_rod",
+   "required": false
+  },
+  {
+   "id": "minecraft:mangrove_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:milk_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:oak_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_andesite",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_andesite_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_andesite_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:powder_snow_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:pufferfish_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:rail",
+   "required": false
+  },
+  {
+   "id": "minecraft:raw_copper",
+   "required": false
+  },
+  {
+   "id": "minecraft:raw_copper_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:raw_iron",
+   "required": false
+  },
+  {
+   "id": "minecraft:raw_iron_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:salmon_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:shears",
+   "required": false
+  },
+  {
+   "id": "minecraft:shield",
+   "required": false
+  },
+  {
+   "id": "minecraft:smithing_table",
+   "required": false
+  },
+  {
+   "id": "minecraft:soul_lantern",
+   "required": false
+  },
+  {
+   "id": "minecraft:spruce_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:spyglass",
+   "required": false
+  },
+  {
+   "id": "minecraft:stonecutter",
+   "required": false
+  },
+  {
+   "id": "minecraft:tadpole_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:tropical_fish_bucket",
+   "required": false
+  },
+  {
+   "id": "minecraft:water_bucket",
+   "required": false
+  },
+  {
+   "id": "neapolitan:milk_bottle",
+   "required": false
+  },
+  {
+   "id": "northstar:astronomy_table",
+   "required": false
+  },
+  {
+   "id": "northstar:computer_rack",
+   "required": false
+  },
+  {
+   "id": "northstar:ice_box",
+   "required": false
+  },
+  {
+   "id": "northstar:iron_cogwheel",
+   "required": false
+  },
+  {
+   "id": "northstar:iron_large_cogwheel",
+   "required": false
+  },
+  {
+   "id": "northstar:iron_space_suit_boots",
+   "required": false
+  },
+  {
+   "id": "northstar:iron_space_suit_chestpiece",
+   "required": false
+  },
+  {
+   "id": "northstar:iron_space_suit_helmet",
+   "required": false
+  },
+  {
+   "id": "northstar:iron_space_suit_leggings",
+   "required": false
+  },
+  {
+   "id": "offroad:borehead_bearing",
+   "required": false
+  },
+  {
+   "id": "offroad:rockcutting_wheel",
+   "required": false
+  },
+  {
+   "id": "offroad:wheel_mount",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:base",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:copper_boot",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:gamba",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:gedeckt",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:hohlflute",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:iron_boot",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:nasard",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:piccolo",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:rohrflote",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:roll_puncher",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:subbass",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:tuning_wire",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:viola",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:vox_celeste",
+   "required": false
+  },
+  {
+   "id": "projecte:arcana_ring",
+   "required": false
+  },
+  {
+   "id": "projecte:archangel_smite",
+   "required": false
+  },
+  {
+   "id": "projecte:black_hole_band",
+   "required": false
+  },
+  {
+   "id": "projecte:destruction_catalyst",
+   "required": false
+  },
+  {
+   "id": "projecte:evertide_amulet",
+   "required": false
+  },
+  {
+   "id": "projecte:harvest_goddess_band",
+   "required": false
+  },
+  {
+   "id": "projecte:ignition_ring",
+   "required": false
+  },
+  {
+   "id": "projecte:iron_band",
+   "required": false
+  },
+  {
+   "id": "projecte:swiftwolf_rending_gale",
+   "required": false
+  },
+  {
+   "id": "projecte:volcanite_amulet",
+   "required": false
+  },
+  {
+   "id": "projecte:zero_ring",
+   "required": false
+  },
+  {
+   "id": "railways:big_buffer",
+   "required": false
+  },
+  {
+   "id": "railways:buffer",
+   "required": false
+  },
+  {
+   "id": "railways:conductor_vent",
+   "required": false
+  },
+  {
+   "id": "railways:iron_wrapped_locometal",
+   "required": false
+  },
+  {
+   "id": "railways:iron_wrapped_locometal_smokebox",
+   "required": false
+  },
+  {
+   "id": "railways:link_and_pin",
+   "required": false
+  },
+  {
+   "id": "railways:paint_brush",
+   "required": false
+  },
+  {
+   "id": "railways:small_buffer",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_caboosestyle",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_coalburner",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_diesel",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_long",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_oilburner",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_streamlined",
+   "required": false
+  },
+  {
+   "id": "railways:smokestack_woodburner",
+   "required": false
+  },
+  {
+   "id": "railways:track_acacia",
+   "required": false
+  },
+  {
+   "id": "railways:track_acacia_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_acacia_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_bamboo",
+   "required": false
+  },
+  {
+   "id": "railways:track_bamboo_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_bamboo_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_birch",
+   "required": false
+  },
+  {
+   "id": "railways:track_birch_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_birch_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_cherry",
+   "required": false
+  },
+  {
+   "id": "railways:track_cherry_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_cherry_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_create_andesite_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_create_andesite_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_dark_oak",
+   "required": false
+  },
+  {
+   "id": "railways:track_dark_oak_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_dark_oak_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_ender",
+   "required": false
+  },
+  {
+   "id": "railways:track_ender_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_ender_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_hexcasting_edified",
+   "required": false
+  },
+  {
+   "id": "railways:track_hexcasting_edified_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_hexcasting_edified_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_jungle",
+   "required": false
+  },
+  {
+   "id": "railways:track_jungle_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_jungle_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_mangrove",
+   "required": false
+  },
+  {
+   "id": "railways:track_mangrove_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_mangrove_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_monorail",
+   "required": false
+  },
+  {
+   "id": "railways:track_oak",
+   "required": false
+  },
+  {
+   "id": "railways:track_oak_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_oak_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_phantom",
+   "required": false
+  },
+  {
+   "id": "railways:track_phantom_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_spruce",
+   "required": false
+  },
+  {
+   "id": "railways:track_spruce_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_spruce_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_stripped_bamboo",
+   "required": false
+  },
+  {
+   "id": "railways:track_stripped_bamboo_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_stripped_bamboo_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_switch_andesite",
+   "required": false
+  },
+  {
+   "id": "railways:track_tieless",
+   "required": false
+  },
+  {
+   "id": "railways:track_tieless_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_tieless_wide",
+   "required": false
+  },
+  {
+   "id": "rechiseled:chisel",
+   "required": false
+  },
+  {
+   "id": "rechiseledcreate:mechanical_chisel",
+   "required": false
+  },
+  {
+   "id": "simulated:altitude_sensor",
+   "required": false
+  },
+  {
+   "id": "simulated:contraption_diagram",
+   "required": false
+  },
+  {
+   "id": "simulated:copper_handle",
+   "required": false
+  },
+  {
+   "id": "simulated:engine_assembly",
+   "required": false
+  },
+  {
+   "id": "simulated:honey_glue",
+   "required": false
+  },
+  {
+   "id": "simulated:laser_sensor",
+   "required": false
+  },
+  {
+   "id": "simulated:physics_assembler",
+   "required": false
+  },
+  {
+   "id": "simulated:red_portable_engine",
+   "required": false
+  },
+  {
+   "id": "simulated:rope_connector",
+   "required": false
+  },
+  {
+   "id": "simulated:rope_coupling",
+   "required": false
+  },
+  {
+   "id": "simulated:rope_winch",
+   "required": false
+  },
+  {
+   "id": "simulated:spring",
+   "required": false
+  },
+  {
+   "id": "simulated:steering_wheel",
+   "required": false
+  },
+  {
+   "id": "simulated:swivel_bearing",
+   "required": false
+  },
+  {
+   "id": "simulated:torsion_spring",
+   "required": false
+  },
+  {
+   "id": "simulated:velocity_sensor",
+   "required": false
+  },
+  {
+   "id": "sliceanddice:slicer",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:auto_blasting_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:copper_backpack",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:iron_backpack",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:mob_catcher_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:smithing_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_downgrade_tier_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_downgrade_tier_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_starter_tier_to_tier_1_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:tank_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:upgrade_base",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:auto_blasting_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:basic_to_copper_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:basic_to_iron_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_barrel",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_chest",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_shulker_box",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_to_iron_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:decoration_table",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:iron_barrel",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:iron_chest",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:iron_shulker_box",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_copper_barrel_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_copper_barrel_2",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_copper_barrel_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_copper_barrel_4",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_iron_barrel_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_iron_barrel_2",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_iron_barrel_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_iron_barrel_4",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_downgrade_tier_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_downgrade_tier_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_2_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_to_tier_1_plus_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_to_tier_2_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:upgrade_base",
+   "required": false
+  },
+  {
+   "id": "tfmg:air_intake",
+   "required": false
+  },
+  {
+   "id": "tfmg:aluminum_cable_hub",
+   "required": false
+  },
+  {
+   "id": "tfmg:aluminum_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "tfmg:cast_iron_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "tfmg:coal_coke",
+   "required": false
+  },
+  {
+   "id": "tfmg:coal_coke_block",
+   "required": false
+  },
+  {
+   "id": "tfmg:coal_coke_dust",
+   "required": false
+  },
+  {
+   "id": "tfmg:coke_oven",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_cable_hub",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_electrode",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_frame",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_grenade",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_spool",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_truss",
+   "required": false
+  },
+  {
+   "id": "tfmg:copper_wire",
+   "required": false
+  },
+  {
+   "id": "tfmg:exhaust",
+   "required": false
+  },
+  {
+   "id": "tfmg:graphite_electrode",
+   "required": false
+  },
+  {
+   "id": "tfmg:plastic_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "tfmg:resistor",
+   "required": false
+  },
+  {
+   "id": "tfmg:simple_engine_cylinder",
+   "required": false
+  },
+  {
+   "id": "tfmg:turbine_blade",
+   "required": false
+  },
+  {
+   "id": "tfmg:unfinished_resistor",
+   "required": false
+  },
+  {
+   "id": "the_obsessed:patreon_armour_chestplate",
+   "required": false
+  },
+  {
+   "id": "the_obsessed:patreon_armour_helmet",
+   "required": false
+  },
+  {
+   "id": "the_obsessed:patreon_armour_leggings",
+   "required": false
+  },
+  {
+   "id": "trainutilities:ch_platform_block",
+   "required": false
+  },
+  {
+   "id": "trainutilities:de_platform_block",
+   "required": false
+  },
+  {
+   "id": "trainutilities:iso_wall_block",
+   "required": false
+  },
+  {
+   "id": "trainutilities:iso_wall_block_green",
+   "required": false
+  },
+  {
+   "id": "trainutilities:nl_platform_block",
+   "required": false
+  },
+  {
+   "id": "trainutilities:rubber_seal",
+   "required": false
+  },
+  {
+   "id": "trainutilities:speaker_membrane",
+   "required": false
+  }
+ ]
+}

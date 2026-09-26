@@ -1,0 +1,3857 @@
+{
+ "replace": true,
+ "values": [
+  {
+   "id": "aeronautics:adjustable_burner",
+   "required": false
+  },
+  {
+   "id": "aeronautics:mounted_potato_cannon",
+   "required": false
+  },
+  {
+   "id": "aeroworks:control_desk",
+   "required": false
+  },
+  {
+   "id": "aeroworks:control_stand",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copycat_control_desk",
+   "required": false
+  },
+  {
+   "id": "aeroworks:copycat_control_stand",
+   "required": false
+  },
+  {
+   "id": "aeroworks:gyroscope",
+   "required": false
+  },
+  {
+   "id": "aeroworks:mechanical_servo",
+   "required": false
+  },
+  {
+   "id": "aeroworks:stepper_servo",
+   "required": false
+  },
+  {
+   "id": "arphex:abyss_ascendant",
+   "required": false
+  },
+  {
+   "id": "arphex:abyss_atomiser",
+   "required": false
+  },
+  {
+   "id": "arphex:abyssal_annihilator",
+   "required": false
+  },
+  {
+   "id": "arphex:abyssal_axe",
+   "required": false
+  },
+  {
+   "id": "arphex:abyssal_blade",
+   "required": false
+  },
+  {
+   "id": "arphex:abyssal_dagger",
+   "required": false
+  },
+  {
+   "id": "arphex:abyssal_pickaxe",
+   "required": false
+  },
+  {
+   "id": "arphex:ascendant_staff",
+   "required": false
+  },
+  {
+   "id": "arphex:bane_of_the_darkness",
+   "required": false
+  },
+  {
+   "id": "arphex:bug_repellant",
+   "required": false
+  },
+  {
+   "id": "arphex:bug_spray",
+   "required": false
+  },
+  {
+   "id": "arphex:chaos_gauntlet",
+   "required": false
+  },
+  {
+   "id": "arphex:chitin_armour_tier_3_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:chitin_armour_tier_3_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:chitin_armour_tier_3_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:chitin_armour_tier_3_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:chrono_cannon",
+   "required": false
+  },
+  {
+   "id": "arphex:crawling_compass",
+   "required": false
+  },
+  {
+   "id": "arphex:crawling_container",
+   "required": false
+  },
+  {
+   "id": "arphex:dagger_of_dissolution",
+   "required": false
+  },
+  {
+   "id": "arphex:eternal_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:eternal_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:eternal_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:eternal_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:ethereal_staff",
+   "required": false
+  },
+  {
+   "id": "arphex:force_gauntlet",
+   "required": false
+  },
+  {
+   "id": "arphex:formic_fireblaster",
+   "required": false
+  },
+  {
+   "id": "arphex:genesis_rifle",
+   "required": false
+  },
+  {
+   "id": "arphex:hornet_hailstorm",
+   "required": false
+  },
+  {
+   "id": "arphex:hypnotic_hellblaster",
+   "required": false
+  },
+  {
+   "id": "arphex:immortal_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:immortal_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:immortal_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:immortal_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:infernal_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:infernal_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:infernal_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:infernal_ingot",
+   "required": false
+  },
+  {
+   "id": "arphex:infernal_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:infernal_shard",
+   "required": false
+  },
+  {
+   "id": "arphex:judgement_blaster",
+   "required": false
+  },
+  {
+   "id": "arphex:juggernaut_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:juggernaut_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:juggernaut_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:juggernaut_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:oblivion_ray",
+   "required": false
+  },
+  {
+   "id": "arphex:scorch_charge",
+   "required": false
+  },
+  {
+   "id": "arphex:scorch_torch",
+   "required": false
+  },
+  {
+   "id": "arphex:scorched_glass",
+   "required": false
+  },
+  {
+   "id": "arphex:scorched_sand",
+   "required": false
+  },
+  {
+   "id": "arphex:scorched_soup",
+   "required": false
+  },
+  {
+   "id": "arphex:singularity_scythe",
+   "required": false
+  },
+  {
+   "id": "arphex:spacetime_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:spacetime_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:spacetime_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:spacetime_ingot",
+   "required": false
+  },
+  {
+   "id": "arphex:spacetime_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:spacetime_shard",
+   "required": false
+  },
+  {
+   "id": "arphex:spectral_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:spectral_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:spectral_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:spectral_ingot",
+   "required": false
+  },
+  {
+   "id": "arphex:spectral_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:spectral_shard",
+   "required": false
+  },
+  {
+   "id": "arphex:tarantula_tether",
+   "required": false
+  },
+  {
+   "id": "arphex:temporospatial_transmitter",
+   "required": false
+  },
+  {
+   "id": "arphex:tesseract_transporter",
+   "required": false
+  },
+  {
+   "id": "arphex:tormented_wrath",
+   "required": false
+  },
+  {
+   "id": "arphex:umbral_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:umbral_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:umbral_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:umbral_ingot",
+   "required": false
+  },
+  {
+   "id": "arphex:umbral_leggings",
+   "required": false
+  },
+  {
+   "id": "arphex:umbral_shard",
+   "required": false
+  },
+  {
+   "id": "arphex:vengeful_voidseeker",
+   "required": false
+  },
+  {
+   "id": "arphex:venom_typhoon",
+   "required": false
+  },
+  {
+   "id": "arphex:vitality_viewfinder",
+   "required": false
+  },
+  {
+   "id": "arphex:vortex_devastator",
+   "required": false
+  },
+  {
+   "id": "arphex:vortex_vanguard",
+   "required": false
+  },
+  {
+   "id": "arphex:warp_connector",
+   "required": false
+  },
+  {
+   "id": "arphex:warp_staff",
+   "required": false
+  },
+  {
+   "id": "arphex:warp_wayfinder",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:brass_lamp",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:headlamp",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:large_nixie_tube",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:lightbulb",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:nixie_board",
+   "required": false
+  },
+  {
+   "id": "cbc_at:grapeshot_caseless",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_he_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_heat_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:ha_hef_item",
+   "required": false
+  },
+  {
+   "id": "cbc_at:hei_item",
+   "required": false
+  },
+  {
+   "id": "cgs:axe_diamond",
+   "required": false
+  },
+  {
+   "id": "cgs:axe_netherite",
+   "required": false
+  },
+  {
+   "id": "cgs:blazegun",
+   "required": false
+  },
+  {
+   "id": "cgs:hammer_diamond",
+   "required": false
+  },
+  {
+   "id": "cgs:hammer_netherite",
+   "required": false
+  },
+  {
+   "id": "cgs:round_shotgun_incendiary",
+   "required": false
+  },
+  {
+   "id": "create:adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "create:blaze_burner",
+   "required": false
+  },
+  {
+   "id": "create:brass_funnel",
+   "required": false
+  },
+  {
+   "id": "create:brass_tunnel",
+   "required": false
+  },
+  {
+   "id": "create:cart_assembler",
+   "required": false
+  },
+  {
+   "id": "create:clockwork_bearing",
+   "required": false
+  },
+  {
+   "id": "create:content_observer",
+   "required": false
+  },
+  {
+   "id": "create:contraption_controls",
+   "required": false
+  },
+  {
+   "id": "create:controller_rail",
+   "required": false
+  },
+  {
+   "id": "create:cuckoo_clock",
+   "required": false
+  },
+  {
+   "id": "create:deployer",
+   "required": false
+  },
+  {
+   "id": "create:display_link",
+   "required": false
+  },
+  {
+   "id": "create:electron_tube",
+   "required": false
+  },
+  {
+   "id": "create:empty_blaze_burner",
+   "required": false
+  },
+  {
+   "id": "create:gantry_shaft",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_crafter",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "create:mysterious_cuckoo_clock",
+   "required": false
+  },
+  {
+   "id": "create:netherite_backtank",
+   "required": false
+  },
+  {
+   "id": "create:netherite_diving_boots",
+   "required": false
+  },
+  {
+   "id": "create:netherite_diving_helmet",
+   "required": false
+  },
+  {
+   "id": "create:nixie_tube",
+   "required": false
+  },
+  {
+   "id": "create:polished_rose_quartz",
+   "required": false
+  },
+  {
+   "id": "create:powered_latch",
+   "required": false
+  },
+  {
+   "id": "create:powered_toggle_latch",
+   "required": false
+  },
+  {
+   "id": "create:pulse_extender",
+   "required": false
+  },
+  {
+   "id": "create:pulse_repeater",
+   "required": false
+  },
+  {
+   "id": "create:pulse_timer",
+   "required": false
+  },
+  {
+   "id": "create:redstone_contact",
+   "required": false
+  },
+  {
+   "id": "create:rose_quartz",
+   "required": false
+  },
+  {
+   "id": "create:rose_quartz_block",
+   "required": false
+  },
+  {
+   "id": "create:rose_quartz_lamp",
+   "required": false
+  },
+  {
+   "id": "create:schematicannon",
+   "required": false
+  },
+  {
+   "id": "create:sequenced_gearshift",
+   "required": false
+  },
+  {
+   "id": "create:smart_chute",
+   "required": false
+  },
+  {
+   "id": "create:smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "create:sticker",
+   "required": false
+  },
+  {
+   "id": "create:stockpile_switch",
+   "required": false
+  },
+  {
+   "id": "create:track_signal",
+   "required": false
+  },
+  {
+   "id": "create:track_station",
+   "required": false
+  },
+  {
+   "id": "create:transmitter",
+   "required": false
+  },
+  {
+   "id": "create_connected:brake",
+   "required": false
+  },
+  {
+   "id": "create_connected:control_chip",
+   "required": false
+  },
+  {
+   "id": "create_connected:fan_haunting_catalyst",
+   "required": false
+  },
+  {
+   "id": "create_connected:fan_smoking_catalyst",
+   "required": false
+  },
+  {
+   "id": "create_connected:inventory_access_port",
+   "required": false
+  },
+  {
+   "id": "create_connected:inventory_bridge",
+   "required": false
+  },
+  {
+   "id": "create_connected:overstress_clutch",
+   "required": false
+  },
+  {
+   "id": "create_connected:redstone_link_wildcard",
+   "required": false
+  },
+  {
+   "id": "create_connected:sequenced_pulse_generator",
+   "required": false
+  },
+  {
+   "id": "create_deep_dark:echo_armor_boots",
+   "required": false
+  },
+  {
+   "id": "create_deep_dark:echo_armor_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_deep_dark:echo_armor_helmet",
+   "required": false
+  },
+  {
+   "id": "create_deep_dark:echo_armor_leggings",
+   "required": false
+  },
+  {
+   "id": "create_deep_dark:echo_sword",
+   "required": false
+  },
+  {
+   "id": "create_dragons_plus:blaze_upgrade_smithing_template",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:affix_augmentor",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:blaze_composer",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:blaze_enchanter",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:blaze_forger",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:blazes_enchanting_handbook",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:classic_blaze_enchanter",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:ender_woven_bag",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:experience_cake",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:experience_cake_base",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:experience_cake_slice",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:infuser",
+   "required": false
+  },
+  {
+   "id": "create_factory_logistics:barrel_packager",
+   "required": false
+  },
+  {
+   "id": "create_factory_logistics:jar_packager",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:hypertube_entrance",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:hypertube_junction",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:redstone_detector_tube_attachment",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:tube_scanner_attachment",
+   "required": false
+  },
+  {
+   "id": "create_integrated_farming:lava_fishing_net",
+   "required": false
+  },
+  {
+   "id": "create_jetpack:netherite_jetpack",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_spawner:mechanical_spawner",
+   "required": false
+  },
+  {
+   "id": "create_new_age:advanced_motor_extension",
+   "required": false
+  },
+  {
+   "id": "create_new_age:basic_motor_extension",
+   "required": false
+  },
+  {
+   "id": "create_new_age:blank_circuit",
+   "required": false
+  },
+  {
+   "id": "create_new_age:copper_circuit",
+   "required": false
+  },
+  {
+   "id": "create_new_age:fluxuated_magnetite",
+   "required": false
+  },
+  {
+   "id": "create_new_age:heater",
+   "required": false
+  },
+  {
+   "id": "create_new_age:netherite_magnet",
+   "required": false
+  },
+  {
+   "id": "create_new_age:overcharged_diamond",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reactor_fuel_acceptor",
+   "required": false
+  },
+  {
+   "id": "create_new_age:redstone_magnet",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reinforced_energiser",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reinforced_motor",
+   "required": false
+  },
+  {
+   "id": "create_power_loader:empty_andesite_chunk_loader",
+   "required": false
+  },
+  {
+   "id": "create_power_loader:empty_brass_chunk_loader",
+   "required": false
+  },
+  {
+   "id": "create_radar:data_link",
+   "required": false
+  },
+  {
+   "id": "create_radar:fire_controller",
+   "required": false
+  },
+  {
+   "id": "create_radar:guided_fuze",
+   "required": false
+  },
+  {
+   "id": "create_radar:ident_filter_item",
+   "required": false
+  },
+  {
+   "id": "create_radar:identification_transponder",
+   "required": false
+  },
+  {
+   "id": "create_radar:monitor",
+   "required": false
+  },
+  {
+   "id": "create_radar:network_filterer",
+   "required": false
+  },
+  {
+   "id": "create_radar:plane_radar",
+   "required": false
+  },
+  {
+   "id": "create_radar:radar_bearing",
+   "required": false
+  },
+  {
+   "id": "create_radar:radar_filter_item",
+   "required": false
+  },
+  {
+   "id": "create_radar:radar_receiver_block",
+   "required": false
+  },
+  {
+   "id": "create_radar:radar_safe_zone_designator",
+   "required": false
+  },
+  {
+   "id": "create_radar:target_filter_item",
+   "required": false
+  },
+  {
+   "id": "create_sa:block_picker",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_cube",
+   "required": false
+  },
+  {
+   "id": "create_sa:copper_magnet",
+   "required": false
+  },
+  {
+   "id": "create_sa:flamethrower",
+   "required": false
+  },
+  {
+   "id": "create_sa:netherite_exoskeleton_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:netherite_jetpack_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:rose_quartz_axe",
+   "required": false
+  },
+  {
+   "id": "create_sa:rose_quartz_pickaxe",
+   "required": false
+  },
+  {
+   "id": "create_sa:rose_quartz_shovel",
+   "required": false
+  },
+  {
+   "id": "create_sa:rose_quartz_sword",
+   "required": false
+  },
+  {
+   "id": "create_submarine:electrolyzer",
+   "required": false
+  },
+  {
+   "id": "create_submarine:oxygene_diffuser",
+   "required": false
+  },
+  {
+   "id": "create_submarine:underwater_mine",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:blaze_ballon",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:blaze_ballon_fire",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_speaker",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_sticky_launcher",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:card_reader",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:crushed_magma",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:mending_rune",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:neon_tube",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:netherite_portable_whistle",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:radar",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:rose_quartz_sheet",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:sticky_boots_boots",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:sticky_launcher",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:vibration_mechanism",
+   "required": false
+  },
+  {
+   "id": "create_tweaked_controllers:tweaked_linked_controller",
+   "required": false
+  },
+  {
+   "id": "createaddition:capacitor",
+   "required": false
+  },
+  {
+   "id": "createaddition:digital_adapter",
+   "required": false
+  },
+  {
+   "id": "createaddition:electric_motor",
+   "required": false
+  },
+  {
+   "id": "createaddition:electric_pump",
+   "required": false
+  },
+  {
+   "id": "createaddition:festive_spool",
+   "required": false
+  },
+  {
+   "id": "createaddition:modular_accumulator",
+   "required": false
+  },
+  {
+   "id": "createaddition:redstone_relay",
+   "required": false
+  },
+  {
+   "id": "createaddition:servo_motor",
+   "required": false
+  },
+  {
+   "id": "createaddition:tesla_coil",
+   "required": false
+  },
+  {
+   "id": "createadditionallogistics:network_monitor",
+   "required": false
+  },
+  {
+   "id": "createadditionallogistics:package_editor",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:ap_shell",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:cannon_welder",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:congealed_nitro",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:delayed_impact_fuze",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:delayed_inertia_fuze",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:drop_mortar_shell",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:guncotton",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:hardened_nitro",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:he_shell",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:impact_fuze",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:inertia_fuze",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:nitropowder",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:packed_guncotton",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:proximity_fuze",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:timed_fuze",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:tracer_tip",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:wired_fuze",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "createcasing:chorium_ingot",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:copper_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_casing",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:creative_slicer",
+   "required": false
+  },
+  {
+   "id": "createcasing:crimson_shaft",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:industrial_iron_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:refined_radiance_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:shadow_steel_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:warped_shaft",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_adjustable_chain_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_automatic_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_clutch",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_deployer",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_gearshift",
+   "required": false
+  },
+  {
+   "id": "createcasing:weathered_iron_mechanical_roller",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "createdeco:locked_andesite_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:locked_brass_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:locked_copper_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:locked_industrial_iron_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:locked_zinc_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:netherite_nugget",
+   "required": false
+  },
+  {
+   "id": "createdeco:red_andesite_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:red_brass_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:red_copper_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:red_industrial_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:red_iron_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:red_zinc_lamp",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:basin_lid",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:burner",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:diesel_engine",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:distillation_controller",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:large_diesel_engine",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:oil_scanner",
+   "required": false
+  },
+  {
+   "id": "createfood:beef_bun_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:beef_bun_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:dragon_bun_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:dragon_bun_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:dragon_burger_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:dragon_burger_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:hamburger_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:hamburger_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:kelp_roll_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:kelp_roll_slice_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:kelp_roll_slice_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:kelp_roll_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:sliced_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:sliced_crimson_fungus_salt",
+   "required": false
+  },
+  {
+   "id": "createfood:sliced_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "createfood:sliced_warped_fungus_salt",
+   "required": false
+  },
+  {
+   "id": "createframed:rose_quartz_window",
+   "required": false
+  },
+  {
+   "id": "createframed:rose_quartz_window_pane",
+   "required": false
+  },
+  {
+   "id": "creategbd:beam_reactor_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:diamond_backtank",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_diamond_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_netherite_diving_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_netherite_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:module_goggle_unit",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:diamond_drill",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:drilling_machine",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:extractor",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:netherite_drill",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:raw_diamond",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:raw_emerald",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:raw_redstone",
+   "required": false
+  },
+  {
+   "id": "createoreexcavation:sample_drill",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:advanced_tilt_adapter",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:ion_thruster",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:liquid_vector_thruster",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:redstone_transmission",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:tilt_adapter",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:train_station_clock",
+   "required": false
+  },
+  {
+   "id": "createsifter:brass_sifter",
+   "required": false
+  },
+  {
+   "id": "createsifter:crushed_basalt",
+   "required": false
+  },
+  {
+   "id": "createsifter:crushed_netherrack",
+   "required": false
+  },
+  {
+   "id": "dndecor:basalt_crushing_wheel",
+   "required": false
+  },
+  {
+   "id": "dndecor:basalt_millstone",
+   "required": false
+  },
+  {
+   "id": "dndecor:blackstone_crushing_wheel",
+   "required": false
+  },
+  {
+   "id": "dndecor:blackstone_millstone",
+   "required": false
+  },
+  {
+   "id": "dndecor:blackstone_pillar",
+   "required": false
+  },
+  {
+   "id": "dndecor:breaker_switch",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_brick_slab",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_brick_stairs",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_brick_wall",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_bricks",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_slab",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_stairs",
+   "required": false
+  },
+  {
+   "id": "dndecor:cut_blackstone_wall",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_netherite_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:layered_blackstone",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_lamp",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherite_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherrack_crushing_wheel",
+   "required": false
+  },
+  {
+   "id": "dndecor:netherrack_millstone",
+   "required": false
+  },
+  {
+   "id": "dndecor:polished_cut_blackstone",
+   "required": false
+  },
+  {
+   "id": "dndecor:polished_cut_blackstone_slab",
+   "required": false
+  },
+  {
+   "id": "dndecor:polished_cut_blackstone_stairs",
+   "required": false
+  },
+  {
+   "id": "dndecor:polished_cut_blackstone_wall",
+   "required": false
+  },
+  {
+   "id": "dndecor:small_blackstone_brick_slab",
+   "required": false
+  },
+  {
+   "id": "dndecor:small_blackstone_brick_stairs",
+   "required": false
+  },
+  {
+   "id": "dndecor:small_blackstone_brick_wall",
+   "required": false
+  },
+  {
+   "id": "dndecor:small_blackstone_bricks",
+   "required": false
+  },
+  {
+   "id": "dndecor:stepped_lever",
+   "required": false
+  },
+  {
+   "id": "dndesires:asphalt",
+   "required": false
+  },
+  {
+   "id": "dndesires:burner",
+   "required": false
+  },
+  {
+   "id": "dndesires:fluid_gauge",
+   "required": false
+  },
+  {
+   "id": "dndesires:gatling_breaker",
+   "required": false
+  },
+  {
+   "id": "dndesires:seething_sail",
+   "required": false
+  },
+  {
+   "id": "dndesires:smart_hopper",
+   "required": false
+  },
+  {
+   "id": "explorerscompass:explorerscompass",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:diamond_knife",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:nether_salad",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:netherite_knife",
+   "required": false
+  },
+  {
+   "id": "garnished:blazing_delight",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_almond_haste",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_cashew_speed",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_chestnut_slow_falling",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_hazelnut_speed_potent",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_macadamia_fire_resistance",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_peanut_effect",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_pecan_resistance",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_pistachio_night_vision",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_roll",
+   "required": false
+  },
+  {
+   "id": "garnished:cinder_walnut_strength",
+   "required": false
+  },
+  {
+   "id": "garnished:crimson_tusk",
+   "required": false
+  },
+  {
+   "id": "garnished:crushed_crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "garnished:crushed_shroomlight",
+   "required": false
+  },
+  {
+   "id": "garnished:crushed_warped_fungus",
+   "required": false
+  },
+  {
+   "id": "garnished:diamond_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:frosted_dessert",
+   "required": false
+  },
+  {
+   "id": "garnished:gloomy_gathering",
+   "required": false
+  },
+  {
+   "id": "garnished:grim_stew",
+   "required": false
+  },
+  {
+   "id": "garnished:hardened_wrap",
+   "required": false
+  },
+  {
+   "id": "garnished:illuminating_cocktail",
+   "required": false
+  },
+  {
+   "id": "garnished:iniquitous_brew",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_almond",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_cashew",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_chestnut",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_hazelnut",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_macadamia",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_peanut",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_pecan",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_pistachio",
+   "required": false
+  },
+  {
+   "id": "garnished:melted_cinder_walnut",
+   "required": false
+  },
+  {
+   "id": "garnished:molten_stew",
+   "required": false
+  },
+  {
+   "id": "garnished:netherite_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:phantom_beef_patty",
+   "required": false
+  },
+  {
+   "id": "garnished:phantom_burger",
+   "required": false
+  },
+  {
+   "id": "garnished:phantom_steak",
+   "required": false
+  },
+  {
+   "id": "garnished:rose_quartz_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:rosy_cocktail",
+   "required": false
+  },
+  {
+   "id": "garnished:spirited_concoction",
+   "required": false
+  },
+  {
+   "id": "garnished:tophet_brew",
+   "required": false
+  },
+  {
+   "id": "garnished:warped_brew",
+   "required": false
+  },
+  {
+   "id": "garnished:weeping_tangle",
+   "required": false
+  },
+  {
+   "id": "garnished:wrapped_crimson_tangle",
+   "required": false
+  },
+  {
+   "id": "garnished:wrapped_warped_tangle",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:airship",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:bamboo_hopper",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:biplane",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:cargo_airship",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:eco_engine",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:engine",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:gyroscope",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:gyroscope_dials",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:gyroscope_hud",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:nether_engine",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:quadrocopter",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:rotary_cannon",
+   "required": false
+  },
+  {
+   "id": "immersive_aircraft:warship",
+   "required": false
+  },
+  {
+   "id": "man_of_many_planes:economy_plane",
+   "required": false
+  },
+  {
+   "id": "man_of_many_planes:scarlet_biplane",
+   "required": false
+  },
+  {
+   "id": "minecraft:activator_rail",
+   "required": false
+  },
+  {
+   "id": "minecraft:ancient_debris",
+   "required": false
+  },
+  {
+   "id": "minecraft:basalt",
+   "required": false
+  },
+  {
+   "id": "minecraft:blackstone",
+   "required": false
+  },
+  {
+   "id": "minecraft:blackstone_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:blackstone_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:blackstone_wall",
+   "required": false
+  },
+  {
+   "id": "minecraft:blaze_powder",
+   "required": false
+  },
+  {
+   "id": "minecraft:blaze_rod",
+   "required": false
+  },
+  {
+   "id": "minecraft:bolt_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:brewing_stand",
+   "required": false
+  },
+  {
+   "id": "minecraft:chiseled_polished_blackstone",
+   "required": false
+  },
+  {
+   "id": "minecraft:clock",
+   "required": false
+  },
+  {
+   "id": "minecraft:coast_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:comparator",
+   "required": false
+  },
+  {
+   "id": "minecraft:compass",
+   "required": false
+  },
+  {
+   "id": "minecraft:cracked_polished_blackstone_bricks",
+   "required": false
+  },
+  {
+   "id": "minecraft:crafter",
+   "required": false
+  },
+  {
+   "id": "minecraft:crimson_fungus",
+   "required": false
+  },
+  {
+   "id": "minecraft:crimson_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:crimson_hyphae",
+   "required": false
+  },
+  {
+   "id": "minecraft:crimson_nylium",
+   "required": false
+  },
+  {
+   "id": "minecraft:crimson_roots",
+   "required": false
+  },
+  {
+   "id": "minecraft:crimson_stem",
+   "required": false
+  },
+  {
+   "id": "minecraft:daylight_detector",
+   "required": false
+  },
+  {
+   "id": "minecraft:detector_rail",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_axe",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_boots",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_chestplate",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_helmet",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_hoe",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_leggings",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_pickaxe",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_shovel",
+   "required": false
+  },
+  {
+   "id": "minecraft:diamond_sword",
+   "required": false
+  },
+  {
+   "id": "minecraft:dispenser",
+   "required": false
+  },
+  {
+   "id": "minecraft:dropper",
+   "required": false
+  },
+  {
+   "id": "minecraft:dune_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:emerald",
+   "required": false
+  },
+  {
+   "id": "minecraft:emerald_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:enchanting_table",
+   "required": false
+  },
+  {
+   "id": "minecraft:end_crystal",
+   "required": false
+  },
+  {
+   "id": "minecraft:end_rod",
+   "required": false
+  },
+  {
+   "id": "minecraft:eye_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:flow_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:ghast_tear",
+   "required": false
+  },
+  {
+   "id": "minecraft:gilded_blackstone",
+   "required": false
+  },
+  {
+   "id": "minecraft:glowstone",
+   "required": false
+  },
+  {
+   "id": "minecraft:glowstone_dust",
+   "required": false
+  },
+  {
+   "id": "minecraft:host_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:jukebox",
+   "required": false
+  },
+  {
+   "id": "minecraft:lapis_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:lapis_lazuli",
+   "required": false
+  },
+  {
+   "id": "minecraft:lodestone",
+   "required": false
+  },
+  {
+   "id": "minecraft:magma_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:magma_cream",
+   "required": false
+  },
+  {
+   "id": "minecraft:nether_gold_ore",
+   "required": false
+  },
+  {
+   "id": "minecraft:nether_quartz_ore",
+   "required": false
+  },
+  {
+   "id": "minecraft:nether_sprouts",
+   "required": false
+  },
+  {
+   "id": "minecraft:nether_wart",
+   "required": false
+  },
+  {
+   "id": "minecraft:nether_wart_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_axe",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_boots",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_chestplate",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_helmet",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_hoe",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_ingot",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_leggings",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_pickaxe",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_scrap",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_shovel",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_sword",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherite_upgrade_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:netherrack",
+   "required": false
+  },
+  {
+   "id": "minecraft:note_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:observer",
+   "required": false
+  },
+  {
+   "id": "minecraft:piston",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_basalt",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_brick_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_brick_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_brick_wall",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_bricks",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_button",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:polished_blackstone_wall",
+   "required": false
+  },
+  {
+   "id": "minecraft:powered_rail",
+   "required": false
+  },
+  {
+   "id": "minecraft:quartz",
+   "required": false
+  },
+  {
+   "id": "minecraft:quartz_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:quartz_bricks",
+   "required": false
+  },
+  {
+   "id": "minecraft:quartz_pillar",
+   "required": false
+  },
+  {
+   "id": "minecraft:raiser_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:recovery_compass",
+   "required": false
+  },
+  {
+   "id": "minecraft:red_nether_brick_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:red_nether_brick_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:red_nether_brick_wall",
+   "required": false
+  },
+  {
+   "id": "minecraft:red_nether_bricks",
+   "required": false
+  },
+  {
+   "id": "minecraft:redstone",
+   "required": false
+  },
+  {
+   "id": "minecraft:redstone_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:redstone_lamp",
+   "required": false
+  },
+  {
+   "id": "minecraft:redstone_torch",
+   "required": false
+  },
+  {
+   "id": "minecraft:repeater",
+   "required": false
+  },
+  {
+   "id": "minecraft:respawn_anchor",
+   "required": false
+  },
+  {
+   "id": "minecraft:rib_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:sentry_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:shaper_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:shroomlight",
+   "required": false
+  },
+  {
+   "id": "minecraft:silence_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:skull_banner_pattern",
+   "required": false
+  },
+  {
+   "id": "minecraft:smooth_basalt",
+   "required": false
+  },
+  {
+   "id": "minecraft:smooth_quartz",
+   "required": false
+  },
+  {
+   "id": "minecraft:smooth_quartz_slab",
+   "required": false
+  },
+  {
+   "id": "minecraft:smooth_quartz_stairs",
+   "required": false
+  },
+  {
+   "id": "minecraft:snout_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:soul_sand",
+   "required": false
+  },
+  {
+   "id": "minecraft:soul_soil",
+   "required": false
+  },
+  {
+   "id": "minecraft:spire_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:sticky_piston",
+   "required": false
+  },
+  {
+   "id": "minecraft:stripped_crimson_hyphae",
+   "required": false
+  },
+  {
+   "id": "minecraft:stripped_crimson_stem",
+   "required": false
+  },
+  {
+   "id": "minecraft:stripped_warped_hyphae",
+   "required": false
+  },
+  {
+   "id": "minecraft:stripped_warped_stem",
+   "required": false
+  },
+  {
+   "id": "minecraft:target",
+   "required": false
+  },
+  {
+   "id": "minecraft:twisting_vines",
+   "required": false
+  },
+  {
+   "id": "minecraft:vex_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:ward_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_fungus",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_fungus_on_a_stick",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_hanging_sign",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_hyphae",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_nylium",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_roots",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_stem",
+   "required": false
+  },
+  {
+   "id": "minecraft:warped_wart_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:wayfinder_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:weeping_vines",
+   "required": false
+  },
+  {
+   "id": "minecraft:wild_armor_trim_smithing_template",
+   "required": false
+  },
+  {
+   "id": "minecraft:wither_skeleton_skull",
+   "required": false
+  },
+  {
+   "id": "naturescompass:naturescompass",
+   "required": false
+  },
+  {
+   "id": "northstar:amethyst_crystal",
+   "required": false
+  },
+  {
+   "id": "northstar:glowstone_lantern",
+   "required": false
+  },
+  {
+   "id": "northstar:glowstone_torch",
+   "required": false
+  },
+  {
+   "id": "northstar:mars_stone_lamp",
+   "required": false
+  },
+  {
+   "id": "northstar:mercury_stone_lamp",
+   "required": false
+  },
+  {
+   "id": "northstar:moon_stone_lamp",
+   "required": false
+  },
+  {
+   "id": "northstar:oxygen_separator",
+   "required": false
+  },
+  {
+   "id": "northstar:polished_diamond",
+   "required": false
+  },
+  {
+   "id": "northstar:venus_stone_lamp",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:keyboard_relay",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:windchest",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:windchest_master",
+   "required": false
+  },
+  {
+   "id": "projecte:alchemical_chest",
+   "required": false
+  },
+  {
+   "id": "projecte:body_stone",
+   "required": false
+  },
+  {
+   "id": "projecte:catalytic_lens",
+   "required": false
+  },
+  {
+   "id": "projecte:collector_mk1",
+   "required": false
+  },
+  {
+   "id": "projecte:collector_mk2",
+   "required": false
+  },
+  {
+   "id": "projecte:collector_mk3",
+   "required": false
+  },
+  {
+   "id": "projecte:condenser_mk1",
+   "required": false
+  },
+  {
+   "id": "projecte:condenser_mk2",
+   "required": false
+  },
+  {
+   "id": "projecte:divining_rod_2",
+   "required": false
+  },
+  {
+   "id": "projecte:divining_rod_3",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_axe",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_hammer",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_hoe",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_pick",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_shears",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_shovel",
+   "required": false
+  },
+  {
+   "id": "projecte:dm_sword",
+   "required": false
+  },
+  {
+   "id": "projecte:gem_boots",
+   "required": false
+  },
+  {
+   "id": "projecte:gem_chestplate",
+   "required": false
+  },
+  {
+   "id": "projecte:gem_helmet",
+   "required": false
+  },
+  {
+   "id": "projecte:gem_leggings",
+   "required": false
+  },
+  {
+   "id": "projecte:gem_of_eternal_density",
+   "required": false
+  },
+  {
+   "id": "projecte:high_covalence_dust",
+   "required": false
+  },
+  {
+   "id": "projecte:hyperkinetic_lens",
+   "required": false
+  },
+  {
+   "id": "projecte:interdiction_torch",
+   "required": false
+  },
+  {
+   "id": "projecte:klein_star_drei",
+   "required": false
+  },
+  {
+   "id": "projecte:klein_star_ein",
+   "required": false
+  },
+  {
+   "id": "projecte:klein_star_omega",
+   "required": false
+  },
+  {
+   "id": "projecte:klein_star_sphere",
+   "required": false
+  },
+  {
+   "id": "projecte:klein_star_vier",
+   "required": false
+  },
+  {
+   "id": "projecte:klein_star_zwei",
+   "required": false
+  },
+  {
+   "id": "projecte:life_stone",
+   "required": false
+  },
+  {
+   "id": "projecte:medium_covalence_dust",
+   "required": false
+  },
+  {
+   "id": "projecte:mercurial_eye",
+   "required": false
+  },
+  {
+   "id": "projecte:mind_stone",
+   "required": false
+  },
+  {
+   "id": "projecte:philosophers_stone",
+   "required": false
+  },
+  {
+   "id": "projecte:relay_mk1",
+   "required": false
+  },
+  {
+   "id": "projecte:relay_mk2",
+   "required": false
+  },
+  {
+   "id": "projecte:relay_mk3",
+   "required": false
+  },
+  {
+   "id": "projecte:repair_talisman",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_axe",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_hammer",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_hoe",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_katar",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_morning_star",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_pick",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_shears",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_shovel",
+   "required": false
+  },
+  {
+   "id": "projecte:rm_sword",
+   "required": false
+  },
+  {
+   "id": "projecte:soul_stone",
+   "required": false
+  },
+  {
+   "id": "projecte:tome",
+   "required": false
+  },
+  {
+   "id": "projecte:transmutation_table",
+   "required": false
+  },
+  {
+   "id": "projecte:transmutation_tablet",
+   "required": false
+  },
+  {
+   "id": "projecte:void_ring",
+   "required": false
+  },
+  {
+   "id": "projecte:watch_of_flowing_time",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:advanced_alchemical_book",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:arcane_alchemical_book",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:arcane_transmutation_tablet",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:basic_alchemical_book",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:basic_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:basic_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:basic_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:basic_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:blue_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:blue_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:blue_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:blue_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:colossal_star_drei",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:colossal_star_ein",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:colossal_star_omega",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:colossal_star_sphere",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:colossal_star_vier",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:colossal_star_zwei",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:compact_sun",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:condenser_mk3",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:cyan_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:cyan_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:cyan_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:cyan_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:dark_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:dark_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:dark_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:dark_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:fading_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:fading_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:fading_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:fading_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_relay",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_star",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:final_star_shard",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:gargantuan_star_drei",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:gargantuan_star_ein",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:gargantuan_star_omega",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:gargantuan_star_sphere",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:gargantuan_star_vier",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:gargantuan_star_zwei",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:green_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:green_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:green_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:green_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:infinite_fuel",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:infinite_steak",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:lime_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:lime_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:lime_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:lime_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magenta_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magenta_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magenta_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magenta_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magnum_star_drei",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magnum_star_ein",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magnum_star_omega",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magnum_star_sphere",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magnum_star_vier",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:magnum_star_zwei",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:master_alchemical_book",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:matter_upgrader",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:orange_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:orange_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:orange_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:orange_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:pink_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:pink_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:pink_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:pink_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:purple_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:purple_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:purple_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:purple_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:red_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:red_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:red_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:red_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:transmutation_interface",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:violet_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:violet_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:violet_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:violet_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:white_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:white_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:white_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:white_power_flower",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:yellow_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:yellow_compressed_collector",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:yellow_emc_link",
+   "required": false
+  },
+  {
+   "id": "projectexpansion:yellow_power_flower",
+   "required": false
+  },
+  {
+   "id": "railways:brass_wrapped_locometal_boiler",
+   "required": false
+  },
+  {
+   "id": "railways:copper_wrapped_locometal_boiler",
+   "required": false
+  },
+  {
+   "id": "railways:handcar",
+   "required": false
+  },
+  {
+   "id": "railways:iron_wrapped_locometal_boiler",
+   "required": false
+  },
+  {
+   "id": "railways:jukeboxcart",
+   "required": false
+  },
+  {
+   "id": "railways:locometal_boiler",
+   "required": false
+  },
+  {
+   "id": "railways:semaphore",
+   "required": false
+  },
+  {
+   "id": "railways:track_blackstone",
+   "required": false
+  },
+  {
+   "id": "railways:track_blackstone_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_blackstone_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_coupler",
+   "required": false
+  },
+  {
+   "id": "simulated:analog_transmission",
+   "required": false
+  },
+  {
+   "id": "simulated:directional_gearshift",
+   "required": false
+  },
+  {
+   "id": "simulated:directional_linked_receiver",
+   "required": false
+  },
+  {
+   "id": "simulated:docking_connector",
+   "required": false
+  },
+  {
+   "id": "simulated:gimbal_sensor",
+   "required": false
+  },
+  {
+   "id": "simulated:laser_pointer",
+   "required": false
+  },
+  {
+   "id": "simulated:linked_typewriter",
+   "required": false
+  },
+  {
+   "id": "simulated:modulating_linked_receiver",
+   "required": false
+  },
+  {
+   "id": "simulated:optical_sensor",
+   "required": false
+  },
+  {
+   "id": "simulated:redstone_accumulator",
+   "required": false
+  },
+  {
+   "id": "simulated:redstone_inductor",
+   "required": false
+  },
+  {
+   "id": "simulated:redstone_magnet",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_deposit_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_mob_catcher_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_pump_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_refill_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_restock_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_tool_swapper_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:advanced_void_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:alchemy_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:anvil_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:battery_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:chipped/alchemy_bench_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:chipped/botanist_workbench_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:chipped/carpenters_table_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:chipped/loom_table_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:deposit_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:diamond_backpack",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:everlasting_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:filter_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:inception_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:magnet_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:netherite_backpack",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:pump_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:refill_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:restock_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_starter_tier_to_tier_3_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_starter_tier_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_tier_1_to_tier_3_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_tier_1_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_tier_2_to_tier_3_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_tier_2_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_tier_3_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:tool_swapper_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:xp_pump_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedcore:ender_linker",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:advanced_hopper_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:advanced_void_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:alchemy_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:basic_to_diamond_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:basic_to_netherite_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:chipped/alchemy_bench_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:chipped/botanist_workbench_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:chipped/carpenters_table_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:chipped/loom_table_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:compression_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:controller",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_to_diamond_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_to_netherite_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:diamond_barrel",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:diamond_chest",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:diamond_shulker_box",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:diamond_to_netherite_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:filter_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:gold_to_diamond_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:gold_to_netherite_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:hopper_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:iron_to_diamond_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:iron_to_netherite_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_diamond_barrel_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_diamond_barrel_2",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_diamond_barrel_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_diamond_barrel_4",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_netherite_barrel_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_netherite_barrel_2",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_netherite_barrel_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_netherite_barrel_4",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:magnet_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:netherite_barrel",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:netherite_chest",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:netherite_shulker_box",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_5_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_to_tier_5_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_2_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_2_to_tier_5_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_3_to_tier_4_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_3_to_tier_5_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_4_to_tier_5_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:storage_link",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:storage_tool",
+   "required": false
+  },
+  {
+   "id": "tfmg:aluminum_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "tfmg:cast_iron_smart_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "tfmg:p_semiconductor",
+   "required": false
+  },
+  {
+   "id": "tfmg:silicon_ingot",
+   "required": false
+  },
+  {
+   "id": "trading_floor:trading_depot",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_1996_stock",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_andesite_alloy",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_andesite_alloy_window",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_caf_urbos_3",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_cis_amendorf_1",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_cis_amendorf_2",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_class_350",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_class_390",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_class_450",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_elev_glass",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_elev_metal",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_flirt",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_flirt_vias",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_goahead_desiro",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ic",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ic2",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ice",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ice_modern",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ice_modern_top",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ice_top",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_industrial_iron",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_industrial_iron_window",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_iron_clean",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_iron_rusty",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_london_1973_stock",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_london_el",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_london_overground",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_london_s7_stock",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_pkp_ic_blue",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_pkp_ic_white",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_railjet",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_rrx",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_sbahn_cologne",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_sbahn_vrr",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_stripped_spruce",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_sw_nyc",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_talent1",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_talent2",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_talent3",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_ungarian_flirt",
+   "required": false
+  },
+  {
+   "id": "trainutilities:door_warsaw_tram",
+   "required": false
+  },
+  {
+   "id": "trainutilities:processing_unit",
+   "required": false
+  },
+  {
+   "id": "trainutilities:prototype_door_db",
+   "required": false
+  },
+  {
+   "id": "trainutilities:prototype_door_sf",
+   "required": false
+  },
+  {
+   "id": "trainutilities:sound_unit",
+   "required": false
+  },
+  {
+   "id": "trainutilities:transistor",
+   "required": false
+  }
+ ]
+}

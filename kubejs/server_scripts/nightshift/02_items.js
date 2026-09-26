@@ -27,6 +27,18 @@
 var NS_ITEMS = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').ITEM
 var NS_RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
 
+// Подсказки игроку по-русски: чего нельзя и с какой фазы можно
+function nsLockMessages(r, stage) {
+    var n = String(stage).replace('nightshift_p', '')
+    var msg = function (what) {
+        return function (stack) {
+            return Text.red(what + ' — откроется в фазе ' + n)
+        }
+    }
+    return r.pickupMessage(msg('Не взять')).useMessage(msg('Не использовать')).placeMessage(msg('Не поставить'))
+        .dropMessage(msg('Выпало из рук'))
+}
+
 function lockItems(id, stage) {
     // берём только реально зарегистрированные предметы: один битый id не должен
     // ронять весь файл (так было с tfmg:sulfuric_acid — это жидкость, не предмет)
@@ -36,7 +48,8 @@ function lockItems(id, stage) {
         else console.warn('[nightshift] пропущен несуществующий предмет ' + s + ' (' + id + ')')
     })
     if (items.length === 0) return null
-    return AStages.addRestrictionForItem.apply(AStages, [id, stage].concat(items))
+    // копать можно всё (иначе в P0 не пройти сквозь андезит), нельзя подобрать и использовать
+    return nsLockMessages(AStages.addRestrictionForItem.apply(AStages, [id, stage].concat(items)).allowMining(), stage)
 }
 
 // ---------------------------------------------------------------------------
@@ -172,3 +185,17 @@ lockItems('nightshift:item/probes', 'nightshift_p4',
     'nightshift:vein_seed_titanium',
     'nightshift:vein_seed_tungsten',
     'nightshift:vein_seed_martian_iron')
+
+// ---------------------------------------------------------------------------
+// Всё остальное по фазе предмета: теги nightshift:phase_1..6 собирает tools/phase_audit.py
+// по графу рецептов (kubejs/data/nightshift/tags/item). Так машины и изделия из построек
+// и сундуков (горелки, корпуса, пушки) нельзя подобрать и использовать до их фазы;
+// копать блоки можно — они просто ничего не дают. Ограничение по тегу проверяется
+// мгновенно, в отличие от списка на тысячи предметов.
+var NS_TAGKEY = Java.loadClass('net.minecraft.tags.TagKey')
+var NS_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Registries')
+for (var ph = 1; ph <= 6; ph++) {
+    nsLockMessages(AStages.addRestrictionForTag('nightshift:tag/phase_' + ph, 'nightshift_p' + ph,
+        NS_TAGKEY.create(NS_REGISTRIES.ITEM, NS_RL.parse('nightshift:phase_' + ph))).allowMining(), 'nightshift_p' + ph)
+}
+

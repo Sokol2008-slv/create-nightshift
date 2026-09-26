@@ -1,0 +1,1977 @@
+{
+ "replace": true,
+ "values": [
+  {
+   "id": "aeronautics:aviators_goggles",
+   "required": false
+  },
+  {
+   "id": "aeronautics:gyroscopic_propeller_bearing",
+   "required": false
+  },
+  {
+   "id": "aeronautics:propeller_bearing",
+   "required": false
+  },
+  {
+   "id": "aeronautics:smart_propeller",
+   "required": false
+  },
+  {
+   "id": "aeronautics:steam_vent",
+   "required": false
+  },
+  {
+   "id": "aeroworks:joystick",
+   "required": false
+  },
+  {
+   "id": "arphex:ant_commander",
+   "required": false
+  },
+  {
+   "id": "arphex:elixir_of_splintered_sanity",
+   "required": false
+  },
+  {
+   "id": "arphex:mantle_of_vitality",
+   "required": false
+  },
+  {
+   "id": "arphex:staff_of_vitality",
+   "required": false
+  },
+  {
+   "id": "arphex:vitality_armour_boots",
+   "required": false
+  },
+  {
+   "id": "arphex:vitality_armour_chestplate",
+   "required": false
+  },
+  {
+   "id": "arphex:vitality_armour_helmet",
+   "required": false
+  },
+  {
+   "id": "arphex:vitality_armour_leggings",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:brass_bogie_steps",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:brass_door_step",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:brass_grab_rails",
+   "required": false
+  },
+  {
+   "id": "bellsandwhistles:brass_pilot",
+   "required": false
+  },
+  {
+   "id": "bits_n_bobs:flywheel_bearing",
+   "required": false
+  },
+  {
+   "id": "cbc_at:heavy_autocannon_ammo_box",
+   "required": false
+  },
+  {
+   "id": "cgs:auto_fire",
+   "required": false
+  },
+  {
+   "id": "cgs:ballistazooka",
+   "required": false
+  },
+  {
+   "id": "cgs:bayonet",
+   "required": false
+  },
+  {
+   "id": "cgs:big_bayonet",
+   "required": false
+  },
+  {
+   "id": "cgs:frag_grenade",
+   "required": false
+  },
+  {
+   "id": "cgs:gatling_drum",
+   "required": false
+  },
+  {
+   "id": "cgs:hammer",
+   "required": false
+  },
+  {
+   "id": "cgs:launcher_auto",
+   "required": false
+  },
+  {
+   "id": "cgs:long_barrel",
+   "required": false
+  },
+  {
+   "id": "cgs:nailgun",
+   "required": false
+  },
+  {
+   "id": "cgs:nailgun_splitter",
+   "required": false
+  },
+  {
+   "id": "cgs:rocket",
+   "required": false
+  },
+  {
+   "id": "cgs:rocket_small",
+   "required": false
+  },
+  {
+   "id": "cgs:round_gatling_blank",
+   "required": false
+  },
+  {
+   "id": "cgs:round_revolver_blank",
+   "required": false
+  },
+  {
+   "id": "cgs:round_shotgun_blank",
+   "required": false
+  },
+  {
+   "id": "cgs:round_shotgun_flechette",
+   "required": false
+  },
+  {
+   "id": "cgs:scope",
+   "required": false
+  },
+  {
+   "id": "cgs:shotgun_pump",
+   "required": false
+  },
+  {
+   "id": "cgs:steam_engine",
+   "required": false
+  },
+  {
+   "id": "cgs:stock",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_byte",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_byte_panel",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_cogwheel",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_corner_slice",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_door",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_flat_pane",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_ghost_block",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_half_layer",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_half_panel",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_heavy_weighted_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_iron_door",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_iron_trapdoor",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_ladder",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_large_cogwheel",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_light_weighted_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_pane",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_shaft",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_slice",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_slope_layer",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_stacked_half_layer",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_stone_button",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_stone_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_vertical_slice",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_wooden_button",
+   "required": false
+  },
+  {
+   "id": "copycats:copycat_wooden_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "create:brass_bars",
+   "required": false
+  },
+  {
+   "id": "create:brass_block",
+   "required": false
+  },
+  {
+   "id": "create:brass_casing",
+   "required": false
+  },
+  {
+   "id": "create:brass_door",
+   "required": false
+  },
+  {
+   "id": "create:brass_hand",
+   "required": false
+  },
+  {
+   "id": "create:brass_ingot",
+   "required": false
+  },
+  {
+   "id": "create:brass_ladder",
+   "required": false
+  },
+  {
+   "id": "create:brass_nugget",
+   "required": false
+  },
+  {
+   "id": "create:brass_scaffolding",
+   "required": false
+  },
+  {
+   "id": "create:brass_sheet",
+   "required": false
+  },
+  {
+   "id": "create:brass_table_cloth",
+   "required": false
+  },
+  {
+   "id": "create:brown_toolbox",
+   "required": false
+  },
+  {
+   "id": "create:controls",
+   "required": false
+  },
+  {
+   "id": "create:crafter_slot_cover",
+   "required": false
+  },
+  {
+   "id": "create:desk_bell",
+   "required": false
+  },
+  {
+   "id": "create:elevator_pulley",
+   "required": false
+  },
+  {
+   "id": "create:extendo_grip",
+   "required": false
+  },
+  {
+   "id": "create:goggles",
+   "required": false
+  },
+  {
+   "id": "create:golden_sheet",
+   "required": false
+  },
+  {
+   "id": "create:haunted_bell",
+   "required": false
+  },
+  {
+   "id": "create:mechanical_arm",
+   "required": false
+  },
+  {
+   "id": "create:package_filter",
+   "required": false
+  },
+  {
+   "id": "create:peculiar_bell",
+   "required": false
+  },
+  {
+   "id": "create:potato_cannon",
+   "required": false
+  },
+  {
+   "id": "create:precision_mechanism",
+   "required": false
+  },
+  {
+   "id": "create:railway_casing",
+   "required": false
+  },
+  {
+   "id": "create:raw_zinc",
+   "required": false
+  },
+  {
+   "id": "create:raw_zinc_block",
+   "required": false
+  },
+  {
+   "id": "create:rotation_speed_controller",
+   "required": false
+  },
+  {
+   "id": "create:steam_engine",
+   "required": false
+  },
+  {
+   "id": "create:steam_whistle",
+   "required": false
+  },
+  {
+   "id": "create:stock_ticker",
+   "required": false
+  },
+  {
+   "id": "create:track_observer",
+   "required": false
+  },
+  {
+   "id": "create:train_door",
+   "required": false
+  },
+  {
+   "id": "create:train_trapdoor",
+   "required": false
+  },
+  {
+   "id": "create:wand_of_symmetry",
+   "required": false
+  },
+  {
+   "id": "create:weighted_ejector",
+   "required": false
+  },
+  {
+   "id": "create:wrench",
+   "required": false
+  },
+  {
+   "id": "create:zinc_block",
+   "required": false
+  },
+  {
+   "id": "create:zinc_ingot",
+   "required": false
+  },
+  {
+   "id": "create:zinc_nugget",
+   "required": false
+  },
+  {
+   "id": "create_connected:brass_chute",
+   "required": false
+  },
+  {
+   "id": "create_connected:dashboard",
+   "required": false
+  },
+  {
+   "id": "create_connected:kinetic_bridge",
+   "required": false
+  },
+  {
+   "id": "create_dragons_plus:fragile_fluid_tank",
+   "required": false
+  },
+  {
+   "id": "create_dragons_plus:levitite_fragile_fluid_tank",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:brass_bookshelf",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:crystal_affix_template",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:gem_cutter",
+   "required": false
+  },
+  {
+   "id": "create_enchantment_industry:printer",
+   "required": false
+  },
+  {
+   "id": "create_factory_logistics:factory_fluid_gauge",
+   "required": false
+  },
+  {
+   "id": "create_factory_logistics:fluid_mechanism",
+   "required": false
+  },
+  {
+   "id": "create_factory_logistics:network_link",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:hypertube",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:hypertube_accelerator",
+   "required": false
+  },
+  {
+   "id": "create_hypertube:hypertube_funnel",
+   "required": false
+  },
+  {
+   "id": "create_integrated_farming:vacuum_harvester",
+   "required": false
+  },
+  {
+   "id": "create_jetpack:jetpack",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_extruder:mechanical_brass_extruder",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_spawner:loot_collector",
+   "required": false
+  },
+  {
+   "id": "create_mechanical_spawner:reinforced_brass_casing",
+   "required": false
+  },
+  {
+   "id": "create_mobile_packages:mobile_packager",
+   "required": false
+  },
+  {
+   "id": "create_new_age:advanced_energiser",
+   "required": false
+  },
+  {
+   "id": "create_new_age:advanced_motor",
+   "required": false
+  },
+  {
+   "id": "create_new_age:advanced_solar_heating_plate",
+   "required": false
+  },
+  {
+   "id": "create_new_age:basic_solar_heating_plate",
+   "required": false
+  },
+  {
+   "id": "create_new_age:heat_pipe",
+   "required": false
+  },
+  {
+   "id": "create_new_age:layered_magnet",
+   "required": false
+  },
+  {
+   "id": "create_new_age:overcharged_gold",
+   "required": false
+  },
+  {
+   "id": "create_new_age:overcharged_golden_sheet",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reactor_heat_vent",
+   "required": false
+  },
+  {
+   "id": "create_new_age:stirling_engine",
+   "required": false
+  },
+  {
+   "id": "create_radar:auto_pitch_controller",
+   "required": false
+  },
+  {
+   "id": "create_radar:auto_yaw_controller",
+   "required": false
+  },
+  {
+   "id": "create_sa:andesite_exoskeleton_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:andesite_jetpack_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:blazing_cleaver",
+   "required": false
+  },
+  {
+   "id": "create_sa:blazing_pickaxe",
+   "required": false
+  },
+  {
+   "id": "create_sa:blazing_shovel",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_axe",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_boots",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_drill_head",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_drone_item",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_exoskeleton_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_helmet",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_hoe",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_jetpack_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_leggings",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_pickaxe",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_shovel",
+   "required": false
+  },
+  {
+   "id": "create_sa:brass_sword",
+   "required": false
+  },
+  {
+   "id": "create_sa:drone_controller",
+   "required": false
+  },
+  {
+   "id": "create_sa:experience_axe",
+   "required": false
+  },
+  {
+   "id": "create_sa:experience_pickaxe",
+   "required": false
+  },
+  {
+   "id": "create_sa:experience_shovel",
+   "required": false
+  },
+  {
+   "id": "create_sa:experience_sword",
+   "required": false
+  },
+  {
+   "id": "create_sa:fan_component",
+   "required": false
+  },
+  {
+   "id": "create_sa:grapplin_whisk",
+   "required": false
+  },
+  {
+   "id": "create_sa:heat_engine",
+   "required": false
+  },
+  {
+   "id": "create_sa:portable_drill",
+   "required": false
+  },
+  {
+   "id": "create_sa:steam_engine",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_axe",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_boots",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_chestplate",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_handle",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_helmet",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_hoe",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_leggings",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_pickaxe",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_shovel",
+   "required": false
+  },
+  {
+   "id": "create_sa:zinc_sword",
+   "required": false
+  },
+  {
+   "id": "create_submarine:pulley",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_brick_slab",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_brick_stairs",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_bricks",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_casing_trapdoor",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_knife",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_tiles",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_tiles_slab",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:brass_tiles_stair",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:card_press",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:portable_whistle",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:spout_gun",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:spout_gun_chocolate",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:spout_gun_honey",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:spout_gun_lava",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:spout_gun_slime",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:stoup_gun_water",
+   "required": false
+  },
+  {
+   "id": "create_things_and_misc:zinc_knife",
+   "required": false
+  },
+  {
+   "id": "createaddition:brass_rod",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_amulet",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_block",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_ingot",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_nugget",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_rod",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_sheet",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_spool",
+   "required": false
+  },
+  {
+   "id": "createaddition:electrum_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:gold_rod",
+   "required": false
+  },
+  {
+   "id": "createaddition:gold_spool",
+   "required": false
+  },
+  {
+   "id": "createaddition:gold_wire",
+   "required": false
+  },
+  {
+   "id": "createaddition:large_connector",
+   "required": false
+  },
+  {
+   "id": "createaddition:portable_energy_interface",
+   "required": false
+  },
+  {
+   "id": "createaddition:zinc_sheet",
+   "required": false
+  },
+  {
+   "id": "createadditionallogistics:package_accelerator",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:autocannon_ammo_container",
+   "required": false
+  },
+  {
+   "id": "createbigcannons:block_armor_inspection_tool",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_steam_engine",
+   "required": false
+  },
+  {
+   "id": "createcasing:andesite_steam_whistle",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_fluid_tank",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_hose_pulley",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_item_drain",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_large_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mechanical_pump",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_portable_fluid_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_shaft",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_slicer",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_spout",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_steam_engine",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_steam_whistle",
+   "required": false
+  },
+  {
+   "id": "createcasing:brass_valve_handle",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_chain_conveyor",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_configurable_gearbox",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_depot",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_encased_chain_drive",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_encased_fan",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_mechanical_drill",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_mechanical_harvester",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_mechanical_plough",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_mechanical_saw",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_mixer",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_portable_storage_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_press",
+   "required": false
+  },
+  {
+   "id": "createcasing:railway_slicer",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_casing",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_fluid_pipe",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_fluid_tank",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_hose_pulley",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_item_drain",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_large_cogwheel",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_mechanical_pump",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_portable_fluid_interface",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_shaft",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_sheet",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_spout",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_steam_engine",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_steam_whistle",
+   "required": false
+  },
+  {
+   "id": "createcasing:zinc_valve_handle",
+   "required": false
+  },
+  {
+   "id": "createdeco:blue_brass_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:blue_zinc_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_bars",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_bars_overlay",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_catwalk",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_catwalk_railing",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_hull",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_mesh_fence",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_support",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_support_wedge",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_trapdoor",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_window",
+   "required": false
+  },
+  {
+   "id": "createdeco:brass_window_pane",
+   "required": false
+  },
+  {
+   "id": "createdeco:green_brass_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:green_zinc_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:yellow_brass_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:yellow_zinc_lamp",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_bars",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_bars_overlay",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_catwalk",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_catwalk_railing",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_catwalk_stairs",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_door",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_hull",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_ladder",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_mesh_fence",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_sheet",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_support",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_support_wedge",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_trapdoor",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_window",
+   "required": false
+  },
+  {
+   "id": "createdeco:zinc_window_pane",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:chemical_sprayer",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:chemical_sprayer_lighter",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:chemical_turret",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:engine_piston",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:engine_turbocharger",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:huge_diesel_engine",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:lighter",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:pumpjack_bearing",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:pumpjack_crank",
+   "required": false
+  },
+  {
+   "id": "createdieselgenerators:pumpjack_head",
+   "required": false
+  },
+  {
+   "id": "createendertransmission:energy_transmitter",
+   "required": false
+  },
+  {
+   "id": "createendertransmission:fluid_transmitter",
+   "required": false
+  },
+  {
+   "id": "createendertransmission:item_transmitter",
+   "required": false
+  },
+  {
+   "id": "createframed:brass_window",
+   "required": false
+  },
+  {
+   "id": "createframed:brass_window_pane",
+   "required": false
+  },
+  {
+   "id": "createframed:shiny_karpboard_block",
+   "required": false
+  },
+  {
+   "id": "createframed:zinc_window",
+   "required": false
+  },
+  {
+   "id": "createframed:zinc_window_pane",
+   "required": false
+  },
+  {
+   "id": "creategbd:advanced_laser_turret",
+   "required": false
+  },
+  {
+   "id": "creategbd:basic_laser_turret",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_cardboard_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_chainmail_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_diving_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_golden_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_iron_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_leather_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:goggle_turtle_helmet",
+   "required": false
+  },
+  {
+   "id": "creategoggles:golden_backtank",
+   "required": false
+  },
+  {
+   "id": "creategoggles:modifier_remover",
+   "required": false
+  },
+  {
+   "id": "createpropulsion:thruster",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display_block",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:advanced_display_slab",
+   "required": false
+  },
+  {
+   "id": "createrailwaysnavigator:navigator",
+   "required": false
+  },
+  {
+   "id": "createsifter:advanced_brass_mesh",
+   "required": false
+  },
+  {
+   "id": "createsifter:brass_mesh",
+   "required": false
+  },
+  {
+   "id": "dndecor:black_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:blue_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_lamp",
+   "required": false
+  },
+  {
+   "id": "dndecor:brass_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:brown_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:cyan_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_lamp",
+   "required": false
+  },
+  {
+   "id": "dndecor:gold_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndecor:gray_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:green_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_brass_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_gold_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:large_zinc_chain",
+   "required": false
+  },
+  {
+   "id": "dndecor:light_blue_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:light_gray_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:lime_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:magenta_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:orange_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:pink_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:purple_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:red_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:yellow_velvet_block",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_boiler",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_bricks",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_catwalk",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_checker_tiles",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_cross_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_dash_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_dot_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_flat_bolt",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_floor",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_frontlight",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_lamp",
+   "required": false
+  },
+  {
+   "id": "dndecor:zinc_sheet_metal",
+   "required": false
+  },
+  {
+   "id": "dndesires:gold_mixer",
+   "required": false
+  },
+  {
+   "id": "dndesires:gold_whisk",
+   "required": false
+  },
+  {
+   "id": "dndesires:handheld_drill",
+   "required": false
+  },
+  {
+   "id": "dndesires:industrial_casing",
+   "required": false
+  },
+  {
+   "id": "dndesires:industrial_fan",
+   "required": false
+  },
+  {
+   "id": "dndesires:omni_gearbox",
+   "required": false
+  },
+  {
+   "id": "dndesires:omni_speed_controller",
+   "required": false
+  },
+  {
+   "id": "dndesires:spud_sentry",
+   "required": false
+  },
+  {
+   "id": "dndesires:stirling_engine",
+   "required": false
+  },
+  {
+   "id": "extendedwrenches:wrench_axis_augment",
+   "required": false
+  },
+  {
+   "id": "extendedwrenches:wrench_head_augment",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:gleaming_salad_block",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:golden_knife",
+   "required": false
+  },
+  {
+   "id": "farmersdelight:horse_feed",
+   "required": false
+  },
+  {
+   "id": "garnished:blazing_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:brass_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:experience_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:golden_hatchet",
+   "required": false
+  },
+  {
+   "id": "garnished:zinc_hatchet",
+   "required": false
+  },
+  {
+   "id": "immersiveengineering:plate_electrum",
+   "required": false
+  },
+  {
+   "id": "immersiveengineering:wire_electrum",
+   "required": false
+  },
+  {
+   "id": "minecraft:enchanted_golden_apple",
+   "required": false
+  },
+  {
+   "id": "minecraft:glistering_melon_slice",
+   "required": false
+  },
+  {
+   "id": "minecraft:gold_block",
+   "required": false
+  },
+  {
+   "id": "minecraft:gold_ingot",
+   "required": false
+  },
+  {
+   "id": "minecraft:gold_nugget",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_apple",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_boots",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_carrot",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_chestplate",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_helmet",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_hoe",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_leggings",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_pickaxe",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_shovel",
+   "required": false
+  },
+  {
+   "id": "minecraft:golden_sword",
+   "required": false
+  },
+  {
+   "id": "minecraft:light_weighted_pressure_plate",
+   "required": false
+  },
+  {
+   "id": "minecraft:mojang_banner_pattern",
+   "required": false
+  },
+  {
+   "id": "minecraft:raw_gold",
+   "required": false
+  },
+  {
+   "id": "minecraft:raw_gold_block",
+   "required": false
+  },
+  {
+   "id": "northstar:circuit",
+   "required": false
+  },
+  {
+   "id": "northstar:telescope",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:brass_boot",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:brass_reed",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:diapason",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:english_horn",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:haunted_whistle",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:posaune",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:prestant",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:tracker_bar",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:trompette",
+   "required": false
+  },
+  {
+   "id": "pipeorgans:vox_humana",
+   "required": false
+  },
+  {
+   "id": "railways:brass_wrapped_locometal",
+   "required": false
+  },
+  {
+   "id": "railways:conductor_whistle",
+   "required": false
+  },
+  {
+   "id": "railways:portable_fuel_interface",
+   "required": false
+  },
+  {
+   "id": "railways:remote_lens",
+   "required": false
+  },
+  {
+   "id": "railways:track_crimson",
+   "required": false
+  },
+  {
+   "id": "railways:track_crimson_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_crimson_wide",
+   "required": false
+  },
+  {
+   "id": "railways:track_switch_brass",
+   "required": false
+  },
+  {
+   "id": "railways:track_warped",
+   "required": false
+  },
+  {
+   "id": "railways:track_warped_narrow",
+   "required": false
+  },
+  {
+   "id": "railways:track_warped_wide",
+   "required": false
+  },
+  {
+   "id": "railways:wrapped_locometal_smokebox",
+   "required": false
+  },
+  {
+   "id": "simulated:gyroscopic_mechanism",
+   "required": false
+  },
+  {
+   "id": "simulated:navigation_table",
+   "required": false
+  },
+  {
+   "id": "simulated:plunger_launcher",
+   "required": false
+  },
+  {
+   "id": "simulated:throttle_lever",
+   "required": false
+  },
+  {
+   "id": "someassemblyrequired:chopped_golden_carrot",
+   "required": false
+  },
+  {
+   "id": "someassemblyrequired:enchanted_golden_apple_slices",
+   "required": false
+  },
+  {
+   "id": "someassemblyrequired:golden_apple_slices",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:gold_backpack",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_starter_tier_to_tier_2_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedbackpacks:stack_upgrade_tier_1_to_tier_2_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:basic_to_gold_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:copper_to_gold_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:gold_barrel",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:gold_chest",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:gold_shulker_box",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:iron_to_gold_tier_upgrade",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_gold_barrel_1",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_gold_barrel_2",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_gold_barrel_3",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:limited_gold_barrel_4",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_3_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_1_to_tier_3_conversion",
+   "required": false
+  },
+  {
+   "id": "sophisticatedstorage:stack_upgrade_tier_2_to_tier_3_conversion",
+   "required": false
+  },
+  {
+   "id": "tfmg:autogas_engine_cylinder",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_cable_hub",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_fluid_valve",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_frame",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_mechanical_pump",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_pipe",
+   "required": false
+  },
+  {
+   "id": "tfmg:brass_truss",
+   "required": false
+  },
+  {
+   "id": "tfmg:coated_circuit_board",
+   "required": false
+  },
+  {
+   "id": "tfmg:zinc_electrode",
+   "required": false
+  },
+  {
+   "id": "tfmg:zinc_frame",
+   "required": false
+  },
+  {
+   "id": "tfmg:zinc_grenade",
+   "required": false
+  },
+  {
+   "id": "tfmg:zinc_truss",
+   "required": false
+  }
+ ]
+}

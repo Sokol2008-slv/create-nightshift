@@ -1,0 +1,349 @@
+{
+ "replace": true,
+ "values": [
+  {
+   "id": "northstar:advanced_circuit",
+   "required": false
+  },
+  {
+   "id": "northstar:atmospheric_concentrator",
+   "required": false
+  },
+  {
+   "id": "northstar:auto_lander",
+   "required": false
+  },
+  {
+   "id": "northstar:circuit_engraver",
+   "required": false
+  },
+  {
+   "id": "northstar:combustion_engine",
+   "required": false
+  },
+  {
+   "id": "northstar:electrolysis_machine",
+   "required": false
+  },
+  {
+   "id": "northstar:enriched_glowstone_ore",
+   "required": false
+  },
+  {
+   "id": "northstar:fan_blade",
+   "required": false
+  },
+  {
+   "id": "northstar:glowstone_lamp",
+   "required": false
+  },
+  {
+   "id": "northstar:hardened_precision_mechanism",
+   "required": false
+  },
+  {
+   "id": "northstar:interplanetary_navigator",
+   "required": false
+  },
+  {
+   "id": "northstar:large_fan",
+   "required": false
+  },
+  {
+   "id": "northstar:lunar_sapphire_block",
+   "required": false
+  },
+  {
+   "id": "northstar:lunar_sapphire_crystal",
+   "required": false
+  },
+  {
+   "id": "northstar:lunar_sapphire_shard",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_axe",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_hoe",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_pickaxe",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_shovel",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_block",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_blue_lamp",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_boots",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_chestplate",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_grate",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_helmet",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_ingot",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_lamp",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_leggings",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_pillar",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_sheet",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_sheetmetal",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_sheetmetal_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_sheetmetal_vertical_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_space_suit_boots",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_space_suit_chestpiece",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_space_suit_helmet",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_steel_space_suit_leggings",
+   "required": false
+  },
+  {
+   "id": "northstar:martian_sword",
+   "required": false
+  },
+  {
+   "id": "northstar:oxygen_detector",
+   "required": false
+  },
+  {
+   "id": "northstar:oxygen_filler",
+   "required": false
+  },
+  {
+   "id": "northstar:oxygen_sealer",
+   "required": false
+  },
+  {
+   "id": "northstar:polished_lunar_sapphire",
+   "required": false
+  },
+  {
+   "id": "northstar:raw_glowstone_ore",
+   "required": false
+  },
+  {
+   "id": "northstar:raw_martian_iron_ore",
+   "required": false
+  },
+  {
+   "id": "northstar:raw_titanium_ore",
+   "required": false
+  },
+  {
+   "id": "northstar:raw_tungsten_ore",
+   "required": false
+  },
+  {
+   "id": "northstar:rocket_combustion_chamber",
+   "required": false
+  },
+  {
+   "id": "northstar:rocket_controls",
+   "required": false
+  },
+  {
+   "id": "northstar:rocket_station",
+   "required": false
+  },
+  {
+   "id": "northstar:rocket_thruster",
+   "required": false
+  },
+  {
+   "id": "northstar:rocket_waypoint",
+   "required": false
+  },
+  {
+   "id": "northstar:rutile_concentrate",
+   "required": false
+  },
+  {
+   "id": "northstar:solar_panel",
+   "required": false
+  },
+  {
+   "id": "northstar:space_atlas",
+   "required": false
+  },
+  {
+   "id": "northstar:targeting_computer",
+   "required": false
+  },
+  {
+   "id": "northstar:temperature_regulator",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_block",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_grate",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_ingot",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_nugget",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_pillar",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_plating",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_plating_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_plating_stairs",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_plating_vertical_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_sheet",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_sheetmetal",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_sheetmetal_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_sheetmetal_vertical_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_space_door",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_tetrachloride_bucket",
+   "required": false
+  },
+  {
+   "id": "northstar:titanium_trapdoor",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_block",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_grate",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_ingot",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_nugget",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_pillar",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_plating",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_plating_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_plating_stairs",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_plating_vertical_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_sheet",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_sheetmetal",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_sheetmetal_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:tungsten_sheetmetal_vertical_slab",
+   "required": false
+  },
+  {
+   "id": "northstar:vent",
+   "required": false
+  }
+ ]
+}

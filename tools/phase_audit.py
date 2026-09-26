@@ -195,6 +195,29 @@ for r in removed:
     recipes.pop(r, None)
 # базовые фазы — блокировки AStages
 lock = {"fluid:tfmg:crude_oil": 4, "fluid:tfmg:heavy_oil": 4, "fluid:tfmg:sulfuric_acid": 4}
+# Естественные источники: дроп мобов, рыбалка и прочий «игровой» лут (не сундуки) — фаза 0,
+# если предмет не заперт явно. Вёдра с жидкостями зачерпывают, а не крафтят — фаза ведра (P1).
+natural = set()
+
+
+def scan_loot(zf):
+    for n in zf.namelist():
+        if re.match(r"^data/[^/]+/loot_tables?/(entities|gameplay)/.+\.json$", n):
+            natural.update(re.findall(r'"name"\s*:\s*"([a-z0-9_.-]+:[a-z0-9_/.-]+)"', zf.read(n).decode("utf8", "ignore")))
+        elif n.startswith("META-INF/jarjar/") and n.endswith(".jar"):
+            with zipfile.ZipFile(io.BytesIO(zf.read(n))) as inner:
+                scan_loot(inner)
+
+
+for j in jars:
+    try:
+        with zipfile.ZipFile(j) as zf:
+            scan_loot(zf)
+    except Exception:
+        pass
+SCOOPED = {"minecraft:lava_bucket", "minecraft:water_bucket", "minecraft:milk_bucket", "minecraft:powder_snow_bucket",
+           "minecraft:cod_bucket", "minecraft:salmon_bucket", "minecraft:pufferfish_bucket", "minecraft:tropical_fish_bucket",
+           "minecraft:axolotl_bucket", "minecraft:tadpole_bucket"}
 src = (PACK / "kubejs/server_scripts/nightshift/02_items.js").read_text()
 for m in re.finditer(r"lockItems\('[^']+',\s*'nightshift_p(\d)',([^)]*)\)", src, re.S):
     for it in re.findall(r"'([^']+)'", m.group(2)):
@@ -228,6 +251,22 @@ def ph(x):
     return phase.get(x, lock.get(x, 0 if x not in by_out else INF))
 
 
+# Нижний мир открывается в P3 (nightshift/07_dimensions.js): его материалы и дроп — не раньше P3.
+# Горелка со всполохом делается поимкой всполоха, а не крафтом — рецепта у неё нет.
+FLOOR = {"create:blaze_burner": 3}
+for n in ("netherrack", "soul_sand", "soul_soil", "basalt", "blackstone", "gilded_blackstone", "crimson_stem",
+          "warped_stem", "crimson_hyphae", "warped_hyphae", "crimson_nylium", "warped_nylium", "nether_wart",
+          "nether_wart_block", "warped_wart_block", "shroomlight", "crimson_fungus", "warped_fungus", "crimson_roots",
+          "warped_roots", "weeping_vines", "twisting_vines", "nether_sprouts", "blaze_rod", "ghast_tear", "magma_cream",
+          "wither_skeleton_skull", "nether_quartz_ore", "nether_gold_ore"):
+    FLOOR["minecraft:" + n] = 3
+for it, f in FLOOR.items():
+    lock[it] = max(lock.get(it, 0), f)
+for it in natural:
+    by_out.pop(it, None)  # есть в мире — рецепт не нужен
+for it in SCOOPED:
+    by_out.pop(it, None)
+    lock.setdefault(it, 1)
 items = set(by_out) | set(lock)
 for it in items:
     phase[it] = lock.get(it, 0) if it not in by_out else INF
@@ -248,6 +287,14 @@ for _ in range(300):
     if not changed:
         break
 json.dump({k: v for k, v in phase.items() if v < INF}, open(PACK / "dist" / "item_phases.json", "w"), ensure_ascii=False)
+# Теги nightshift:phase_N — AStages запирает каждый своей стадией (nightshift/02_items.js):
+# машины и изделия из построек и сундуков нельзя подобрать до их фазы.
+tagdir = PACK / "kubejs" / "data" / "nightshift" / "tags" / "item"
+tagdir.mkdir(parents=True, exist_ok=True)
+for n in range(1, 7):
+    vals = sorted(k for k, v in phase.items() if v == n and not k.startswith("fluid:") and ":" in k)
+    (tagdir / f"phase_{n}.json").write_text(json.dumps({"replace": True, "values": [{"id": v, "required": False} for v in vals]}, ensure_ascii=False, indent=1) + "\n")
+    print(f"тег nightshift:phase_{n}: {len(vals)} предметов")
 
 # сверка квестов
 specs = G.load_specs()

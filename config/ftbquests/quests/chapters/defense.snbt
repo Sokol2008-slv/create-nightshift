@@ -60,7 +60,7 @@
 			y: 1.60d
 		}
 		{
-			dependencies: ["0E764527D5F44F31", "20D753939FFD3F93"]
+			dependencies: ["0E764527D5F44F31", "7FFFE63128BF62E6"]
 			id: "2C8EB80AFA1E8A5F"
 			rewards: [{ id: "799E485FFBF80358", type: "xp", xp: 10 }]
 			shape: "rsquare"

@@ -38,11 +38,11 @@ hash = "9c830bba9292bc8872ec37bc2417c68c5c72e1705d8838cf7a4c6ab55efd4f9e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "572719702e4fb422030e0934bcaa154fe226f749dc5cb1f04a8b4d6b72124c9a"
+hash = "5acd8667d28e5612479b22c0a44044996b809885916b3bf949a3bdfc98bd44e6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/defense.snbt"
-hash = "63b6c378b0e0a419ab8365634239c1a75c5de6c200f929e49a7b749600edf0bd"
+hash = "53a3d960219ae27d37be8c45967ba2b02172adadbb255e31ebe775f8713c3de6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
@@ -313,6 +313,30 @@ file = "kubejs/data/nightshift/recipe/ore_vein_type/tungsten.json"
 hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
 
 [[files]]
+file = "kubejs/data/nightshift/tags/item/phase_1.json"
+hash = "c513bd592433249ce6bb73e11c17c775ca7ac02c8ec1d90aa59a643275b37763"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/item/phase_2.json"
+hash = "ca16a2205f15113f7d9dc0a9e5862cc085f653bc6d5477119b3ae5ed0b831e43"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/item/phase_3.json"
+hash = "d59a62b4d670c0c24f1c8419188dda2a90553a79ba926a9b2c89b53c69be4173"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/item/phase_4.json"
+hash = "840c3791e2a294695652ae4b8cb361f44c8a75dab1bc3f2b68a509ad59b56c78"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/item/phase_5.json"
+hash = "59d0ce2d5601321abb9b52ab4a931bace95ce27e268ff9e13b12c797eed7a660"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/item/phase_6.json"
+hash = "29d2e7acc9a252f91c43841d602ee3da6669e35bbb50738006e4f0cc23d68578"
+
+[[files]]
 file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
 hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
 
@@ -338,7 +362,7 @@ hash = "bd50b85d3d5b95bf034cf1c585afec5317be653f72e18b9ef29b10ffb909217e"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/02_items.js"
-hash = "5766637939d272cda9822db925807665cd2363a81ee42a11feb9130b7d2614a5"
+hash = "1df654bb8151844896160bc84d776495497a9364de14e0ed19c6e89143d61c09"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/03_leak_recipe_fixes.js"

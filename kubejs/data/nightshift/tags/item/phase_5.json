@@ -1,0 +1,25 @@
+{
+ "replace": true,
+ "values": [
+  {
+   "id": "create_new_age:heat_pump",
+   "required": false
+  },
+  {
+   "id": "create_new_age:nuclear_fuel",
+   "required": false
+  },
+  {
+   "id": "create_new_age:radioactive_thorium",
+   "required": false
+  },
+  {
+   "id": "create_new_age:reactor_rod",
+   "required": false
+  },
+  {
+   "id": "create_new_age:thorium",
+   "required": false
+  }
+ ]
+}
