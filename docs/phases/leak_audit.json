@@ -1,0 +1,373 @@
+{
+  "P0": {
+    "ores_to_hide": [],
+    "items_to_lock": [
+      "minecraft:coal (только как ЛУТ из сундуков/дропа мобов, не крафт)"
+    ],
+    "recipes_to_remove_or_lock": [],
+    "loot_to_strip": {
+      "minecraft:chests/abandoned_mineshaft": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/simple_dungeon": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/ancient_city": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/igloo_chest": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/shipwreck_supply": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/stronghold_crossing": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/underwater_ruin_big/small": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/woodland_mansion": [
+        "minecraft:coal"
+      ],
+      "minecraft:chests/village/*": [
+        "minecraft:coal (butcher/fisher/snowy_house/toolsmith)"
+      ],
+      "minecraft:archaeology/ocean_ruin_cold/warm, trail_ruins_common": [
+        "minecraft:coal"
+      ],
+      "minecraft:entities/wither_skeleton": [
+        "minecraft:coal"
+      ],
+      "YungsBetter*/chests (lab, keep, armoury, common, prison_lg)": [
+        "minecraft:coal — YungsBetter копирует ту же дыру в увеличенном числе структур"
+      ]
+    },
+    "notes": "P0 — единственная фаза без своей руды, поэтому все находки — это лут. Уголь физически валяется в любой ранней структуре (мешок в шахте/деревне), которые находятся до какого-либо крафта. Прогрессия не пострадает от блокировки: костёр/печь и так не разрешены без угля/дров в P0-дизайне (это ожидаемо, дерево — топливо)."
+  },
+  "P1": {
+    "ores_to_hide": [
+      "minecraft:iron_ore -> minecraft:stone",
+      "minecraft:deepslate_iron_ore -> minecraft:deepslate",
+      "minecraft:copper_ore -> minecraft:stone",
+      "minecraft:deepslate_copper_ore -> minecraft:deepslate",
+      "minecraft:coal_ore -> minecraft:stone",
+      "minecraft:deepslate_coal_ore -> minecraft:deepslate",
+      "andesite (природный блок-примесь, конфигурированная фича minecraft:ore типа блоб) -> minecraft:stone"
+    ],
+    "items_to_lock": [
+      "minecraft:raw_iron",
+      "minecraft:iron_nugget",
+      "minecraft:iron_ingot",
+      "minecraft:iron_block",
+      "minecraft:raw_copper",
+      "create:copper_nugget",
+      "minecraft:copper_ingot",
+      "minecraft:copper_block",
+      "minecraft:coal",
+      "minecraft:charcoal (обсуждаемо, см. notes)",
+      "minecraft:andesite",
+      "create:andesite_alloy",
+      "create:andesite_casing"
+    ],
+    "recipes_to_remove_or_lock": [
+      {
+        "id": "create:crushing/tuff (create-1.21.1-6.0.10.jar, дублируется createaddition-1.7.1.jar)",
+        "problem": "крошка ТУФФА (P0-блок!) через обычные Crushing Wheels даёт minecraft:gold_nugget(0.1), create:copper_nugget(0.1), create:zinc_nugget(0.1), minecraft:iron_nugget(0.1), createaddition:electrum_nugget(0.1) — золото и цинк это P2, а нужен только андезитовый пресс P1.",
+        "severity": "КРИТИЧНО — единственный самый простой обход руд в паке"
+      },
+      {
+        "id": "create:splashing/red_sand",
+        "problem": "фан-бластинг обычного red_sand (P0, бэдленды) даёт minecraft:gold_nugget(0.125) без единого куска руды",
+        "severity": "высокая"
+      },
+      {
+        "id": "create:splashing/soul_sand",
+        "problem": "даёт minecraft:quartz(0.125) и gold_nugget(0.02) — quartz это P3",
+        "severity": "высокая (хотя soul_sand практически только в Нижнем мире)"
+      },
+      {
+        "id": "create:splashing/gravel",
+        "problem": "iron_nugget(0.125) из гравия — минорный, но обходит руду железа",
+        "severity": "средняя, ресурс и так P1"
+      },
+      {
+        "id": "create:crushing/diorite",
+        "problem": "диорит (P0) в дробилке даёт minecraft:quartz(0.25) — P3 ресурс с нулевыми требованиями",
+        "severity": "КРИТИЧНО"
+      },
+      {
+        "id": "createsifter:sifting/gravel_andesite (andesite_mesh, крафтится из create:andesite_alloy)",
+        "problem": "просеивание гравия базовым (андезитовым) ситом даёт copper_nugget(0.3), zinc_nugget(0.4), iron_nugget(0.4), gold_nugget(0.2) — золото и цинк это P2 на самом первом сите",
+        "severity": "КРИТИЧНО"
+      }
+    ],
+    "loot_to_strip": {},
+    "notes": "Порода андезит теперь недоступна раньше P1 (блокировка блока), но КРАШИНГ/МИЛЛИНГ/СИФТИНГ обычного туфа, диорита, красного песка и гравия — родные ванильные рецепты Create — полностью обходят руду железа/меди/золота/цинка/кварца ещё до того как игрок вообще нашёл нужную руду. Это единственная категория, которую нужно чинить в первую очередь, иначе вся система фаз бессмысленна на Create-механике. Также: если заблокировать чугунную руду в P0, andesite alloy (нужен iron nugget) не может существовать раньше P1 — это ОК и совпадает с дизайном (Create механизмы и так P1). Уголь: если также заблокировать charcoal, у игрока не будет топлива для печи/сита в P0 вообще (дерево можно жечь только с углём/дровяным топливом? Дрова горят в печи и без угля — это ок, значит древесину можно оставить топливом P0)."
+  },
+  "P2": {
+    "ores_to_hide": [
+      "create:zinc_ore -> minecraft:stone",
+      "create:deepslate_zinc_ore -> minecraft:deepslate",
+      "minecraft:gold_ore -> minecraft:stone",
+      "minecraft:deepslate_gold_ore -> minecraft:deepslate",
+      "minecraft:nether_gold_ore -> minecraft:netherrack (неактуально раньше P3, т.к. Nether закрыт, но список для полноты)",
+      "createpropulsion:platinum_ore / deepslate_platinum_ore -> stone/deepslate (см. notes — платина не входит в дизайн фаз явно)"
+    ],
+    "items_to_lock": [
+      "create:raw_zinc",
+      "create:zinc_nugget",
+      "create:zinc_ingot",
+      "create:zinc_block",
+      "minecraft:raw_gold",
+      "minecraft:gold_nugget",
+      "minecraft:gold_ingot",
+      "minecraft:gold_block",
+      "create:brass_ingot",
+      "create:brass_nugget",
+      "create:brass_block",
+      "create:brass_sheet",
+      "createpropulsion:raw_platinum(?)/platinum_ingot — уточнить, не описано в фазах"
+    ],
+    "recipes_to_remove_or_lock": [
+      {
+        "id": "createsifter:sifting/gravel_brass (brass_mesh, крафт из create:brass_ingot)",
+        "problem": "даёт minecraft:lapis_lazuli(0.1) и minecraft:amethyst_shard(0.1) прямо из гравия латунным ситом — лазурит это P3",
+        "severity": "высокая"
+      },
+      {
+        "id": "createsifter:sifting/gravel_advanced_brass (advanced_brass_mesh)",
+        "problem": "даёт minecraft:diamond(0.05) и minecraft:emerald(0.02) из гравия — алмазы и изумруды это P3, притом латунный тир мог быть собран сразу после P2",
+        "severity": "КРИТИЧНО"
+      },
+      {
+        "id": "createsifter:sifting/sand_brass",
+        "problem": "даёт minecraft:redstone x2(0.15) из песка латунным ситом — редстоун это P3",
+        "severity": "высокая"
+      },
+      {
+        "id": "createsifter:sifting/dust_brass (createsifter:dust получается дроблением/помолом песка — P0-P1 промежуточный)",
+        "problem": "даёт minecraft:glowstone_dust(0.2) и minecraft:redstone x2(0.35) — оба P3, без единого похода в Нижний мир",
+        "severity": "высокая"
+      },
+      {
+        "id": "createsifter:sifting/crushed_netherrack_brass и _advanced_brass",
+        "problem": "дают minecraft:netherite_scrap (0.01 / 0.02) из дроблёного незеррака латунным/улучшенным латунным ситом — не нужен алмазный сундук в бастионе вообще, netherite это последний пункт P3",
+        "severity": "КРИТИЧНО"
+      },
+      {
+        "id": "createoreexcavation: drilling/gold, /copper, /zinc — 'drill': {'tag':'createoreexcavation:drills'}",
+        "problem": "базовое сверло (крафтится из железа, P1) уже бурит золотую/цинковую жилу в Overworld без апгрейда до diamond_drill",
+        "severity": "средняя (см. также блок P3 — то же сверло бурит алмазы/изумруды/лазурит/редстоун)"
+      }
+    ],
+    "loot_to_strip": {},
+    "notes": "Латунный тир сита (P2, требует только brass_ingot) уже открывает P3-ресурсы (лазурит, редстоун, алмаз, изумруд, незерит-скрап) из гравия/песка/дроблёного незеррака. Это ключевая находка: тир сита совпадает с тиром 'экономической' фазы, но контент сита взят из ВСЕХ фаз разом. Платина (createpropulsion) и hardened_diamond (createoreexcavation) не описаны в исходном дизайне фаз — нужно явно решить, к какой фазе их отнести (предлагается P2/P4 для платины по аналогии с 'редким цветным металлом', и не трогать hardened_diamond — это модовый эндгейм-материал near P6)."
+  },
+  "P3": {
+    "ores_to_hide": [
+      "minecraft:redstone_ore -> minecraft:stone",
+      "minecraft:deepslate_redstone_ore -> minecraft:deepslate",
+      "minecraft:lapis_ore -> minecraft:stone",
+      "minecraft:deepslate_lapis_ore -> minecraft:deepslate",
+      "minecraft:diamond_ore -> minecraft:stone",
+      "minecraft:deepslate_diamond_ore -> minecraft:deepslate",
+      "minecraft:emerald_ore -> minecraft:stone",
+      "minecraft:deepslate_emerald_ore -> minecraft:deepslate",
+      "minecraft:nether_quartz_ore -> minecraft:netherrack",
+      "minecraft:ancient_debris -> minecraft:netherrack/basalt (неактуально, т.к. и так последний пункт фазы, но нужно для тех, кто зайдёт в Nether раньше времени по геймдизайну — см. general notes про дедлайн Nether)",
+      "minecraft:glowstone (кластерный блок, не 'ore' — визуально светится, спрятать сложно, см. notes)",
+      "tfmg:sulfur (см. P4 — физически генерируется В ЭТОЙ фазе доступности Nether, хотя ресурс относится к P4!)"
+    ],
+    "items_to_lock": [
+      "minecraft:redstone",
+      "minecraft:lapis_lazuli",
+      "minecraft:diamond",
+      "minecraft:emerald",
+      "minecraft:quartz",
+      "minecraft:glowstone_dust",
+      "minecraft:glowstone",
+      "minecraft:netherite_scrap",
+      "minecraft:netherite_ingot",
+      "minecraft:netherite_upgrade_smithing_template",
+      "minecraft:ancient_debris"
+    ],
+    "recipes_to_remove_or_lock": [
+      {
+        "id": "createoreexcavation: drilling/diamond, /emerald, /lapis, /redstone, /hardened_diamond",
+        "problem": "все веткописаны с 'drill':{'tag':'createoreexcavation:drills'} — тег включает и базовое ЖЕЛЕЗНОЕ сверло (P1!). Жилы алмаза/изумруда/лазурита/редстоуна расположены в Overworld (biomeWhitelist: is_overworld) — не требуют Nether вообще",
+        "severity": "КРИТИЧНО — обходит одновременно П3 целиком и необходимость Nether"
+      },
+      {
+        "id": "createsifter: gravel_advanced_brass, sand_brass, dust_brass, crushed_netherrack_(advanced_)brass — см. P2",
+        "problem": "перечислены в блоке P2, т.к. открываются латунным ситом раньше самой фазы P3",
+        "severity": "КРИТИЧНО, см. выше"
+      },
+      {
+        "id": "create_ultimate_factory: crushing_soulsand.json",
+        "problem": "даёт minecraft:glowstone_dust(0.125) из дробления soul_sand — soul_sand в основном нижнемировой ресурс, поэтому не критично, но дублирует утечку и подлежит удалению вместе с create:splashing/soul_sand",
+        "severity": "средняя"
+      }
+    ],
+    "loot_to_strip": {
+      "vanilla structures (desert_pyramid, jungle_temple, buried_treasure, shipwreck_treasure, end_city_treasure, stronghold_*, nether_bridge, bastion_*, trial_chambers/*, abandoned_mineshaft, simple_dungeon, woodland_mansion)": [
+        "minecraft:diamond",
+        "minecraft:emerald",
+        "minecraft:lapis_lazuli",
+        "minecraft:redstone",
+        "minecraft:quartz",
+        "minecraft:glowstone_dust",
+        "minecraft:glowstone",
+        "minecraft:ancient_debris",
+        "minecraft:netherite_scrap",
+        "minecraft:netherite_ingot",
+        "minecraft:netherite_upgrade_smithing_template"
+      ],
+      "все ~14 сундуков деревень (armorer/butcher/desert_house/fisher/fletcher/mason/plains_house/savanna_house/shepherd/snowy_house/taiga_house/tannery/temple/toolsmith/weaponsmith)": [
+        "minecraft:emerald (почти в каждом), plus temple: lapis_lazuli+redstone, toolsmith/weaponsmith: diamond"
+      ],
+      "archaeology (desert_pyramid, desert_well, ocean_ruin_cold/warm, trail_ruins_common)": [
+        "minecraft:diamond",
+        "minecraft:emerald"
+      ],
+      "entities: evoker, vindicator, witch": [
+        "minecraft:emerald (evoker/vindicator), glowstone_dust+redstone (witch)"
+      ],
+      "gameplay/hero_of_the_village/cleric_gift": [
+        "minecraft:lapis_lazuli",
+        "minecraft:redstone"
+      ],
+      "gameplay/piglin_bartering": [
+        "minecraft:quartz"
+      ],
+      "YungsBetterDesertTemples/JungleTemples/NetherFortresses/Strongholds/WitchHuts (свои chests, дублируют тот же список в увеличенном масштабе)": [
+        "diamond, emerald, lapis_lazuli, redstone, glowstone_dust, quartz — по каждому мод-аддону структур"
+      ],
+      "Northstar lunar_base_chest/martian_base_chest": [
+        "minecraft:redstone (это P6-локация, редстоун там не проблема если игрок туда попал легитимно после P3/P5)"
+      ]
+    },
+    "notes": "P3 — самая 'дырявая' фаза по лут-таблицам: буквально ЛЮБАЯ ванильная структура и ЛЮБОЙ сундук деревни содержит алмаз/изумруд/лазурит/редстоун. Village-сундуки и фермерский доход изумрудами доступны уже в P0 (крестьянин покупает урожай за изумруды без единого куска металла) — а изумруды дальше тратятся у ЖИТЕЛЕЙ (см. general notes/трейды) на редстоун, лазурит, кварц, зачарованные книги и ГОТОВЫЕ алмазные инструменты/броню в обход добычи руды. Рекомендация: либо полностью выключить торговлю до P3 (AStages событие на профессии), либо вычистить самые дешёвые трейды. Отдельно: glowstone — не ore-блок, а кластерная генерация (потолок Нижнего мира), визуально светится и его нельзя тривиально 'задизгайзить' как обычный камень без резкого визуального разрыва — стоит рассмотреть либо полный запрет добычи (hardness/unbreakable) в фазе, либо замену модели на netherrack с тем же хитбоксом."
+  },
+  "P4": {
+    "ores_to_hide": [
+      "tfmg:lead_ore -> minecraft:stone",
+      "tfmg:deepslate_lead_ore -> minecraft:deepslate",
+      "cgs:lead_ore -> minecraft:stone",
+      "cgs:deepslate_lead_ore -> minecraft:deepslate  (ДУБЛЬ реестра, см. notes)",
+      "tfmg:nickel_ore -> minecraft:stone",
+      "tfmg:deepslate_nickel_ore -> minecraft:deepslate",
+      "tfmg:lithium_ore -> minecraft:stone",
+      "tfmg:deepslate_lithium_ore -> minecraft:deepslate",
+      "tfmg:sulfur -> minecraft:netherrack/blackstone (генерируется как ПОРОДА в слоях Nether вперемешку с blackstone/basalt/scorchia/magma_block — фактически ходит по Nether с P3, задолго до P4!)",
+      "cgs:sulfur_ore -> minecraft:netherrack (ДУБЛЬ реестра)",
+      "tfmg:oil_deposit / oil_well (подземные залежи нефти, Overworld, оба через neoforge:add_features)"
+    ],
+    "items_to_lock": [
+      "tfmg:raw_lead",
+      "tfmg:lead_ingot",
+      "tfmg:lead_nugget",
+      "tfmg:raw_lead_block",
+      "tfmg:raw_nickel",
+      "tfmg:nickel_ingot",
+      "tfmg:nickel_bars",
+      "tfmg:raw_lithium",
+      "tfmg:lithium_ingot",
+      "tfmg:crushed_raw_lithium",
+      "tfmg:sulfur",
+      "tfmg:sulfur_dust",
+      "tfmg:sulfuric_acid",
+      "tfmg:crude_oil",
+      "tfmg:heavy_oil",
+      "tfmg:steel_ingot",
+      "tfmg:steel_block",
+      "tfmg:cast_iron_ingot",
+      "tfmg:nitrate_dust"
+    ],
+    "recipes_to_remove_or_lock": [
+      {
+        "id": "data/create/recipe/crushing/dirt.json (внутри tfmg-1.21.1-1.3.1-community.jar, регистрируется в namespace create!)",
+        "problem": "дробление ОБЫЧНОЙ ЗЕМЛИ (P0!) даёт tfmg:nitrate_dust с шансом 0.05 — селитра для взрывчатки/пороха доступна без всякой химии TFMG",
+        "severity": "средняя"
+      }
+    ],
+    "loot_to_strip": {},
+    "notes": "Главная находка фазы: tfmg:sulfur — это НЕ отдельная жила, а часть смешанного 'layered_ore' слоя Nether (наравне с blackstone/basalt/scorchia/magma_block, вес 4 из ~12). Это значит серу можно копать голыми руками в любой точке Нижнего мира, куда игрок попадает уже в P3 — на минимум одну фазу раньше положенного. Также cgs (create-gunsmithing) регистрирует СВОИ отдельные lead_ore/sulfur_ore блоки, не совпадающие с tfmg — AlmostUnified (конфиг подтверждён: тег 'c:ores/{material}' есть в config/almostunified/unification/materials.json) унифицирует РЕЦЕПТЫ (крафт/переработку) под один канонический ингот, но НЕ мешает cgs-версии руды физически генерироваться в мире — то есть нужно прятать ОБЕ руды (tfmg и cgs) отдельно, иначе останется видимая лазейка через cgs-блок."
+  },
+  "P5": {
+    "ores_to_hide": [
+      "create_new_age:thorium_ore -> minecraft:stone",
+      "create_new_age:thorium_ore_e -> minecraft:stone (вариант с частицами/дополнительной текстурой)"
+    ],
+    "items_to_lock": [
+      "create_new_age:thorium",
+      "create_new_age:radioactive_thorium"
+    ],
+    "recipes_to_remove_or_lock": [],
+    "loot_to_strip": {},
+    "notes": "Уран как отдельный ресурс в паке НЕ обнаружен — мод New Age построен вокруг тория (реактор на thorium_ore, reactor_core). Ссылка на 'уран' в исходном ТЗ не подтверждена сканированием — Mekanism/Big Reactors в списке модов отсутствуют (единственная строчка про yellorium/bigreactors в createsifter — это МЁРТВЫЙ рецепт: он висит за neoforge:conditions на mod_loaded:bigreactors, которого нет в паке, значит рецепт никогда не активируется — не является утечкой, вычеркнуть из рассмотрения)."
+  },
+  "P6": {
+    "ores_to_hide": [
+      "northstar:mars_*_ore / mars_deep_*_ore (10 базовых+10 deep = 20 блоков: copper,diamond,emerald,gold,iron,lapis,quartz,redstone,titanium,zinc)",
+      "northstar:mercury_*_ore / mercury_deep_*_ore (copper,diamond,glowstone,gold,iron,lapis,redstone,titanium,tungsten,zinc + дубль 'mercurys_deep_titanium_ore' — опечатка в моде, тот же блок регистрируется дважды под разными id)",
+      "northstar:moon_*_ore / moon_deep_*_ore (copper,diamond,emerald,glowstone,gold,iron,lapis,quartz,redstone,titanium,zinc)",
+      "northstar:venus_*_ore / venus_deep_*_ore (coal,copper,diamond,emerald,glowstone,gold,iron,lapis,quartz,redstone,titanium,zinc)",
+      "northstar:raw_titanium_ore / raw_martian_iron_ore / raw_tungsten_ore / raw_glowstone_ore (предметы 'сырой кусок руды', отдельные от блоков)",
+      "createpropulsion:platinum_ore (если решено отнести платину к P6, а не к P2/P4 — см. notes P2)"
+    ],
+    "items_to_lock": [
+      "northstar:titanium_ingot",
+      "northstar:titanium_nugget",
+      "northstar:titanium_block",
+      "northstar:tungsten_ingot",
+      "northstar:tungsten_nugget",
+      "northstar:tungsten_block",
+      "northstar:martian_steel_ingot",
+      "northstar:lunar_sapphire_shard",
+      "northstar:lunar_sapphire_crystal",
+      "northstar:enriched_glowstone_ore",
+      "northstar:rutile_concentrate",
+      "northstar:titanium_tetrachloride"
+    ],
+    "recipes_to_remove_or_lock": [],
+    "loot_to_strip": {
+      "northstar:lunar_base_chest/martian_base_chest/martian_base_seed_chest": [
+        "northstar:lunar_sapphire_shard, martian_steel_ingot, dormant_martian_sapling/seed"
+      ]
+    },
+    "notes": "120 руд-дублей по 4 планетам (Mars/Mercury/Moon/Venus) — КАЖДАЯ планета генерирует ПОЛНЫЙ комплект ванильных руд (железо/медь/золото/алмаз/изумруд/лазурит/редстоун/кварц/цинк) плюс свои экзотические (титан, вольфрам на Mercury/Moon/Mars, светокамень на Mercury/Moon/Venus). Все они смелтятся blasting-рецептами НАПРЯМУЮ в ванильные minecraft:iron_ingot/gold_ingot/diamond/copper_ingot и т.д. (проверено на 'mars_*_ore'). Поскольку долёт до планет физически невозможен без ракеты (northstar:rocket_station/rocket_thruster требуют c:plates/titanium и c:ingots/titanium — то есть ТИТАН нужен ДО полёта), а титан также синтезируется полностью на Земле химическим путём (rutile_concentrate + zinc_ingot + хлор/углерод -> titanium_tetrachloride -> sequenced_assembly -> titanium_ingot, минуя руду вообще) — реальный риск не в 'найти железо на Марсе раньше времени' (это не проблема, там и так только доступно после P6), а в SEQUENCE BREAK: химический синтез титана требует только P2 (zinc_ingot) + продвинутую химию TFMG-уровня (хлор/углерод), но НЕ требует явно ни P3 (алмазы/редстоун/незерит), ни P5 (торий/реактор) материалов. Технически игрок может собрать ракету и улететь на Марс, проскочив мимо фаз P3 и P5, если в рецептах ракеты не завязан явный P5-компонент. Рекомендация: либо добавить в рецепт ракетных деталей материал из P3/P5 (например, реакторный сплав или незерит-деталь), либо жёстко заблокировать сами блоки ракеты (northstar:rocket_station/rocket_controls/rocket_thruster/rocket_combustion_chamber) через AStages 'Items: hide/lock' до явного открытия P6, не полагаясь только на цепочку ресурсов."
+  },
+  "general_notes": {
+    "trades": {
+      "источник": "ванильные торговцы жёстко зашиты в коде (VillagerTrades.java), датапак-трейдов от модов НЕ найдено (проверены все data/*/trades* и villager* пути — 138 хитов, все это структуры/тэги, а не новые сделки)",
+      "ключевые дыры": [
+        "Farmer (крестьянин-фермер): покупает урожай (пшеница/морковь/картофель/свёкла) за изумруды — чистый P0-доход без единого металла. Это ГЛАВНЫЙ источник эмеральдов на старте.",
+        "Cleric (священник): ПРОДАЁТ redstone и lapis_lazuli за изумруды (P3 ресурсы за P0-валюту), на верхних уровнях — ender_pearl и bottle o'enchanting",
+        "Mason (каменщик): ПРОДАЁТ quartz (P3) и терракоту за изумруды",
+        "Wandering Trader (странствующий торговец): ПРОДАЁТ lapis_lazuli, quartz, coal за изумруды — доступен с самого начала игры, не завязан ни на одну структуру",
+        "Toolsmith/Weaponsmith/Armorer (кузнецы): на верхнем уровне ПРОДАЮТ ГОТОВЫЕ diamond-инструменты/оружие/броню за изумруды — не даёт сырой алмаз, но полностью обходит необходимость руды алмаза для инструментов",
+        "В инстансе есть experimental datapack 'trade_rebalance' (data/minecraft/datapacks/trade_rebalance) — если он включен в мире (Java 1.21 экспериментальная фича трейдов через trial-vault-ключи), часть трейдов заменена; нужно проверить world settings, не полагаться на аудит jar-ов."
+      ],
+      "рекомендация": "Либо полностью отключить торговлю с профессиональными жителями до открытия соответствующей фазы (AStages 'Villager trades: lock'), либо вычистить самые дешёвые offers (redstone/lapis/quartz/coal) руками через datapack override VillagerTrades."
+    },
+    "misc_sources": [
+      "Ruined Portal chest (ванильный, не сканировался детально скриптом, но известно по vanilla-данным): золотые самородки/слитки, огниво, обсидиан — минорная утечка золота (P2) на структуре, доступной с самого начала (руины портала есть и в Overworld и в Nether)",
+      "Suspicious sand/gravel (археология) — уже учтено в блоке loot_to_strip P1/P3 (archaeology/*): даёт coal, diamond, emerald напрямую кистью без крафта инструментов",
+      "Piglin bartering (обмен золотыми слитками с пиглинами) — учтено в P3 loot_to_strip (квадрат за P2 gold_ingot -> P3 quartz и др. нижнемирные лут-таблицы), фактически позволяет обменивать P2-ресурс на P3-плюс лут напрямую, минуя добычу"
+    ],
+    "false_positives_исключены": [
+      "minecraft:lead — это ПОВОДОК (верёвка для животных), НЕ металл; ложное срабатывание по regex 'lead' в loot_table ancient_city/trail_ruins/woodland_mansion — исключить из аудита P4",
+      "createsifter/recipe/blasting/yellorium_ingot.json — висит за neoforge:conditions mod_loaded:bigreactors, которого нет в паке — рецепт мёртв, не активен",
+      "create/recipe/crushing/compat/exnihilosequentia — условный рецепт под несуществующий мод exnihilosequentia, не активен"
+    ],
+    "design_recommendations": [
+      "1. КРИТИЧНО: без правки native Create-рецептов (crushing/tuff, crushing/diorite, splashing/red_sand, splashing/soul_sand) и addon createsifter (все sifting-рецепты gravel/sand/dust/crushed_netherrack) вся система фаз обходится в первые 10 минут игры одним ситом или дробилкой. Это приоритет №1.",
+      "2. createoreexcavation (Ore Excavation) — веб-жилы алмаза/изумруда/лазурита/редстоуна бурятся ЛЮБЫМ сверлом из тега 'createoreexcavation:drills', включая самое первое железное. Нужно либо тир-гейтить рецепты бурения по фазам (у мода это позволяет json 'drill' ingredient — можно заменить тег на конкретный предмет нужного тира), либо блокировать сами veinId через AStages.",
+      "3. Village-экономика (эмеральды с фермера -> покупка у священника/каменщика/торговца) — независимый от руды канал получения P3-ресурсов, нужно решать отдельно от 'Ores: hide' (это не руда, это трейд-UI).",
+      "4. tfmg:sulfur генерируется как порода Нижнего мира, а не как жила — с точки зрения AStages это, возможно, потребует другого типа блокировки, чем обычные ore-блоки (полный blend-слой, а не отдельные вкрапления).",
+      "5. Northstar (Mars/Mercury/Moon/Venus) дублирует весь список ванильных P1-P3 руд под собственными id — 100+ лишних блоков в hide-листе, но не создают реальной утечки, ПОКА полёт на планеты действительно требует P5/P6 прогресса. Явно проверить/зашить это требование в рецепт ракеты, а не полагаться на цепочку ресурсов (титан синтезируется в обход P3/P5).",
+      "6. glowstone (кластер, не жила) и tfmg-нефть (fluid deposit) — ресурсы, которые физически не 'ore-блоки' в привычном смысле; для них нужна отдельная механика скрытия (запрет добычи/не-руки-friendly текстура) — простое 'Ores: hide' может не сработать один в один."
+    ]
+  }
+}
