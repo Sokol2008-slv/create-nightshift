@@ -10,7 +10,8 @@
 //     режимы: stalk — стоит за спиной в ~20 блоках и смотрит, исчезает, как только увидели
 //             peek  — выглядывает из-за угла в 4–12 блоках (наполовину за стеной)
 //             dash  — пробегает поперёк взгляда в ~10 блоках впереди
-//             chase — появляется за спиной и бежит; добежал — лицом к лицу, крик, темнота
+//             chase — встаёт впереди и смотрит, заметили — крик и ~20 с погони (скорость «на резинке»,
+//                     застрял — оказывается за спиной); в конце лицом к лицу, крик, темнота
 //             turn  — над хотбаром «…обернись…»; обернулся — он прямо перед лицом
 //             hunt  — сценарий: Монохром стоит → пробегает → стоит ближе → погоня;
 //                     Клоун выглядывает → ещё раз ближе → погоня
@@ -298,7 +299,7 @@ function nsScarePlan(kind, mode) {
 	if (mode === 'stalk') return [{ m: 'stalk', d: 20, time: 900 }]
 	if (mode === 'peek') return [{ m: 'peek', time: 900 }]
 	if (mode === 'dash') return [{ m: 'dash', d: 10, time: 140 }]
-	if (mode === 'chase') return [{ m: 'chase', d: 16, time: 400 }]
+	if (mode === 'chase') return [{ m: 'chase', d: 16, time: 600 }]
 	if (mode === 'turn') return [{ m: 'turn', time: 160 }]
 	if (kind === 'clown')
 		return [
@@ -306,7 +307,7 @@ function nsScarePlan(kind, mode) {
 			{ m: 'pause', time: R(100, 100) },
 			{ m: 'peek', time: 900 },
 			{ m: 'pause', time: R(60, 60) },
-			{ m: 'chase', d: 12, time: 400 }
+			{ m: 'chase', d: 12, time: 600 }
 		]
 	return [
 		{ m: 'stalk', d: 22, time: 900 },
@@ -315,7 +316,7 @@ function nsScarePlan(kind, mode) {
 		{ m: 'pause', time: R(100, 100) },
 		{ m: 'stalk', d: 9, time: 600 },
 		{ m: 'pause', time: R(60, 60) },
-		{ m: 'chase', d: 16, time: 400 }
+		{ m: 'chase', d: 16, time: 600 }
 	]
 }
 
@@ -346,12 +347,20 @@ function nsScareBegin(server, rec, player, step, now) {
 	if (step.m === 'stalk') spot = nsScareSpot(player, K, step.d, 180, 70, true)
 	if (step.m === 'peek') spot = nsScarePeekSpot(player, K) || nsScareSpot(player, K, 12, 180, 90, true)
 	if (step.m === 'chase') {
-		// сначала сзади на step.d, потом ближе и шире — в шахте и в постройках далеко сзади часто камень
-		var tries = [[step.d, 180, 60], [11, 180, 120], [7, 180, 200], [6, 0, 360]]
-		for (var q = 0; q < tries.length && !spot; q++) spot = nsScareSpot(player, K, tries[q][0], tries[q][1], tries[q][2], false)
+		// сначала впереди на виду: стоит и смотрит, пока не заметят (фаза wake), потом бежит;
+		// нет места впереди — сзади на step.d, ближе и шире (в шахте и в постройках часто камень)
+		rec.phase = 'wake'
+		spot = nsScareSpot(player, K, 18, 0, 70, true) || nsScareSpot(player, K, 12, 0, 100, true)
+		if (!spot) {
+			rec.phase = 'run'
+			var tries = [[step.d, 180, 60], [11, 180, 120], [7, 180, 200], [6, 0, 360]]
+			for (var q = 0; q < tries.length && !spot; q++) spot = nsScareSpot(player, K, tries[q][0], tries[q][1], tries[q][2], false)
+		}
 		if (spot) spot.small = true // в полный рост не проходит в двери и ходы 1×2 — застревает
+		rec.phaseAt = now
 		rec.best = 999
 		rec.moved = now
+		rec.blinks = 0
 	}
 	if (step.m === 'dash') {
 		var side = Math.random() < 0.5 ? 1 : -1
@@ -365,8 +374,9 @@ function nsScareBegin(server, rec, player, step, now) {
 		if (++rec.spawnTries > 10) nsScareNext(rec)
 		return
 	}
-	nsScareSpawn(rec, player, spot, step.m === 'chase')
+	nsScareSpawn(rec, player, spot, step.m === 'chase' && rec.phase === 'run')
 	if (step.m === 'chase') nsScareSound(server, rec, 'minecraft:entity.warden.heartbeat', player.getX(), player.getY(), player.getZ(), 1, 0.8)
+	if (step.m === 'chase' && rec.phase === 'run') nsScareSound(server, rec, 'minecraft:entity.enderman.scream', spot.x, spot.y + 1, spot.z, 1, 0.5)
 }
 
 // «обернись»: обернулся (или прошло 5 с) — он прямо перед лицом (или за спиной) на 3 с
@@ -474,20 +484,50 @@ function nsScareStep(server, rec, now) {
 			}
 			return true
 		}
+		if (rec.phase === 'wake') {
+			// стоит впереди и смотрит; заметили (или прошло 3 с) — крик и бежит
+			if (now % 10 === 0) nsScareCmd(server, 'execute as ' + rec.uuid + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.name + ' eyes')
+			var wl = player.getLookAngle()
+			var wdot = (wl.x() * ex + wl.y() * ey + wl.z() * ez) / Math.max(0.01, dist)
+			if (wdot > 0.93 && nsScareHeadVisible(player, ent, rec.eye)) rec.seen++
+			if (rec.seen >= 3 || now - rec.phaseAt > 60) {
+				rec.phase = 'run'
+				rec.phaseAt = now
+				rec.moved = now
+				ent.setNoAi(false)
+				nsScareSound(server, rec, 'minecraft:entity.enderman.scream', ent.getX(), ent.getY() + rec.eye, ent.getZ(), 1, 0.5)
+			}
+			return true
+		}
 		ent.setTarget(player)
 		if (now % 10 === 0) ent.getNavigation().moveTo(player, 1.0)
-		// сердцебиение чаще, чем ближе
+		// скорость «на резинке»: далеко — догоняет, близко — чуть медленнее бега игрока (≈5,6 бл/с)
+		if (now % 20 === 0) nsScareCmd(server, 'attribute ' + rec.uuid + ' minecraft:generic.movement_speed base set ' + (flat > 14 ? 0.42 : flat > 7 ? 0.33 : 0.27))
+		// тяжёлые шаги и сердцебиение чаще, чем ближе
+		if (now % 6 === 0) nsScareSound(server, rec, 'minecraft:entity.warden.step', ent.getX(), ent.getY(), ent.getZ(), 0.9, 1.3)
 		var every = flat > 10 ? 16 : 8
 		if (now - rec.beat >= every) {
 			rec.beat = now
 			nsScareSound(server, rec, 'minecraft:entity.warden.heartbeat', player.getX(), player.getY(), player.getZ(), 1, flat > 10 ? 0.8 : 1.2)
 		}
-		// застрял (дверь, забор, яма) дольше 1,5 с — сразу оказывается за спиной
+		// застрял (дверь, забор, яма) дольше 1,5 с — оказывается в ~8 блоках за спиной и бежит дальше
 		if (flat < rec.best - 0.4) {
 			rec.best = flat
 			rec.moved = now
 		}
-		if (flat < 2.6 || now - rec.moved > 30) {
+		var ran = now - rec.phaseAt
+		if (now - rec.moved > 30 && flat > 4 && ran < 400 && rec.blinks < 6) {
+			var bs = nsScareSpot(player, K, 8, 180, 120, false)
+			if (bs) {
+				nsScareCmd(server, 'execute in ' + rec.dim + ' run tp ' + rec.uuid + ' ' + bs.x.toFixed(2) + ' ' + bs.y + ' ' + bs.z.toFixed(2))
+				rec.blinks++
+			}
+			rec.best = 999
+			rec.moved = now
+			return true
+		}
+		// финал: догнал после 10 с погони, или погоня длится 22 с, или застрял насовсем
+		if ((flat < 2.6 && ran > 200) || ran > 440 || (now - rec.moved > 30 && rec.blinks >= 6)) {
 			ent.setNoAi(true)
 			// за спиной (там, откуда игрок пришёл, свободно), глаза на уровне глаз игрока;
 			// камера игрока сама разворачивается к нему
