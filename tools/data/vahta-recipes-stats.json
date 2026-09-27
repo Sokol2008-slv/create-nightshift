@@ -1,0 +1,1542 @@
+{
+ "total_recipes": 23032,
+ "kubejs_removed": [
+  "cgs:mixing/steel_ingot",
+  "create:crushing/diorite",
+  "create:crushing/dirt",
+  "create:crushing/tuff",
+  "create:splashing/gravel",
+  "create:splashing/red_sand",
+  "create:splashing/soul_sand",
+  "create_ultimate_factory:crushing_soulsand",
+  "createbigcannons:mixing/alloy_steel",
+  "createsifter:sifting/crushed_netherrack_advanced_brass",
+  "createsifter:sifting/crushed_netherrack_brass",
+  "createsifter:sifting/dust_andesite",
+  "createsifter:sifting/dust_brass",
+  "createsifter:sifting/gravel_advanced_brass",
+  "createsifter:sifting/gravel_andesite",
+  "createsifter:sifting/gravel_brass",
+  "createsifter:sifting/sand_andesite",
+  "createsifter:sifting/sand_brass",
+  "createsifter:sifting/soul_sand_advanced_brass",
+  "createsifter:sifting/soul_sand_brass",
+  "projecte:collector_mk1",
+  "projecte:condenser_mk1",
+  "projecte:philosophers_stone",
+  "projecte:philosophers_stone_alt",
+  "projecte:relay_mk1",
+  "projecte:transmutation_table",
+  "projectexpansion:arcane_transmutation_tablet"
+ ],
+ "kubejs_added": [
+  "nightshift:projecte/philosophers_stone",
+  "nightshift:projecte/transmutation_table",
+  "nightshift:projecte/collector_mk1",
+  "nightshift:projecte/relay_mk1",
+  "nightshift:projecte/condenser_mk1",
+  "nightshift:projecte/arcane_transmutation_tablet",
+  "nightshift:vein_scanner",
+  "nightshift:vein_cleaner",
+  "nightshift:blocks/podzol",
+  "nightshift:blocks/rooted_dirt",
+  "nightshift:blocks/pointed_dripstone",
+  "nightshift:blocks/amethyst_shard",
+  "nightshift:sedative_mixing",
+  "nightshift:life_tonic_mixing",
+  "nightshift:alt/leather_tanning",
+  "nightshift:alt/honey_from_sugar",
+  "nightshift:base_marker",
+  "nightshift:base_core"
+ ],
+ "kubejs_notes": [
+  "kubejs/server_scripts/nightshift/04_drilling_gate.js: условное удаление по фазе (23 id) — не рецепты верстака, не учитываем"
+ ],
+ "skipped": {
+  "условие загрузки ложно (мода нет и т.п.)": 2243,
+  "удалён в kubejs/server_scripts": 27,
+  "не загрузится: пустой ингредиент (тег пуст или предмет из отсутствующего мода)": 380,
+  "не загрузится: битый формат 1.21.1": 57,
+  "не загрузится: пустой ингредиент": 22,
+  "не разобран: ингредиент своего типа neoforge:block_tag": 1
+ },
+ "unknown_conditions_assumed_true": {
+  "create_dragons_plus:config_feature": 110,
+  "farmersdelight:vanilla_crates_enabled": 3,
+  "projecte:full_klein_stars": 12,
+  "projecte:tome_enabled": 4,
+  "bits_n_bobs:feature_item_enabled": 22,
+  "bits_n_bobs:feature_enabled": 158,
+  "comforts:hammock_enabled": 34,
+  "comforts:sleeping_bag_enabled": 32,
+  "copycats:feature_enabled": 85,
+  "create_connected:feature_enabled": 265,
+  "create_connected:feature_enabled_in_copycats": 26,
+  "createaddition:has_fluid_tag": 6,
+  "createfood:enabled": 4161,
+  "sophisticatedcore:item_enabled": 385,
+  "sophisticatedstorage:drop_packed_disabled": 2
+ },
+ "craft_total": 8841,
+ "shapeless_mixer_auto": 2911,
+ "shapeless_single": 585,
+ "press_auto": 454,
+ "press_auto_shaped": 315,
+ "shaped_total": 4627,
+ "shaped_mix_generated": 2578,
+ "shaped_dup_same_output": 91,
+ "shaped_already_in_mixer": 709,
+ "shaped_collisions_pass1": 860,
+ "forms_to_saw": 698,
+ "cut_generated": 76,
+ "cut_generated_before_dedup": 76,
+ "cut_covered_by_stonecutting": 603,
+ "unique_form_on_saw": 400,
+ "cut_inexact": 12,
+ "cut_inexact_sample": [
+  [
+   "garnished:wood/nut/nut_fence",
+   "garnished:nut_fence",
+   3.6,
+   4,
+   "#garnished:nut_logs"
+  ],
+  [
+   "garnished:wood/sepia/sepia_fence",
+   "garnished:sepia_fence",
+   3.6,
+   4,
+   "#garnished:sepia_stems"
+  ],
+  [
+   "minecraft:cherry_fence",
+   "minecraft:cherry_fence",
+   3.6,
+   4,
+   "#minecraft:cherry_logs"
+  ],
+  [
+   "minecraft:jungle_fence",
+   "minecraft:jungle_fence",
+   3.6,
+   4,
+   "#minecraft:jungle_logs"
+  ],
+  [
+   "minecraft:oak_fence",
+   "minecraft:oak_fence",
+   3.6,
+   4,
+   "#minecraft:oak_logs"
+  ],
+  [
+   "minecraft:acacia_fence",
+   "minecraft:acacia_fence",
+   3.6,
+   4,
+   "#minecraft:acacia_logs"
+  ],
+  [
+   "minecraft:warped_fence",
+   "minecraft:warped_fence",
+   3.6,
+   4,
+   "#minecraft:warped_stems"
+  ],
+  [
+   "minecraft:birch_fence",
+   "minecraft:birch_fence",
+   3.6,
+   4,
+   "#minecraft:birch_logs"
+  ],
+  [
+   "minecraft:crimson_fence",
+   "minecraft:crimson_fence",
+   3.6,
+   4,
+   "#minecraft:crimson_stems"
+  ],
+  [
+   "minecraft:mangrove_fence",
+   "minecraft:mangrove_fence",
+   3.6,
+   4,
+   "#minecraft:mangrove_logs"
+  ],
+  [
+   "minecraft:dark_oak_fence",
+   "minecraft:dark_oak_fence",
+   3.6,
+   4,
+   "#minecraft:dark_oak_logs"
+  ],
+  [
+   "minecraft:spruce_fence",
+   "minecraft:spruce_fence",
+   3.6,
+   4,
+   "#minecraft:spruce_logs"
+  ]
+ ],
+ "crafter_shaped": 170,
+ "special": 264,
+ "special_by_reason": {
+  "ингредиент с компонентами (NBT)": 6,
+  "свой serializer": 168,
+  "результат с компонентами/NBT": 86,
+  "ингредиент своего типа sophisticatedstorage:base_tier_wooden_storage": 4
+ },
+ "special_types": {
+  "свой serializer: aeroworks:transform_module": 34,
+  "свой serializer: evenmoreinstruments:crafting_special_recordcloning": 1,
+  "свой serializer: sophisticatedcore:upgrade_next_tier": 36,
+  "свой serializer: sophisticatedbackpacks:backpack_upgrade": 5,
+  "свой serializer: sophisticatedbackpacks:basic_backpack": 1,
+  "свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless": 17,
+  "свой serializer: sophisticatedstorage:storage_tier_upgrade": 35,
+  "свой serializer: sophisticatedstorage:double_chest_tier_upgrade": 5,
+  "свой serializer: sophisticatedstorage:shulker_box_from_chest": 6,
+  "свой serializer: sophisticatedstorage:generic_wood_storage": 6,
+  "свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless": 7,
+  "свой serializer: sophisticatedstorage:double_chest_tier_upgrade_shapeless": 1,
+  "свой serializer: minecraft:crafting_special_mapcloning": 1,
+  "свой serializer: minecraft:crafting_decorated_pot": 1,
+  "свой serializer: minecraft:crafting_special_firework_rocket": 1,
+  "свой serializer: minecraft:crafting_special_firework_star": 1,
+  "свой serializer: minecraft:crafting_special_bannerduplicate": 1,
+  "свой serializer: minecraft:crafting_special_armordye": 1,
+  "свой serializer: minecraft:crafting_special_bookcloning": 1,
+  "свой serializer: minecraft:crafting_special_suspiciousstew": 1,
+  "свой serializer: minecraft:crafting_special_tippedarrow": 1,
+  "свой serializer: minecraft:crafting_special_repairitem": 1,
+  "свой serializer: minecraft:crafting_special_mapextending": 1,
+  "свой serializer: minecraft:crafting_special_shulkerboxcoloring": 1,
+  "свой serializer: minecraft:crafting_special_shielddecoration": 1,
+  "свой serializer: minecraft:crafting_special_firework_star_fade": 1
+ },
+ "mech_crafting": 226,
+ "mixing_existing": 1575,
+ "groups_pass1": 449,
+ "groups_pass1_top": [
+  {
+   "size": 18,
+   "kinds": {
+    "shaped": 18
+   },
+   "sample": [
+    "`createdieselgenerators:crafting/chip_wood_slab` → 6× createdieselgenerators:chip_wood_slab ← 3×createdieselgenerators:chip_wood_block",
+    "`garnished:wood/nut/nut_slab` → 6× garnished:nut_slab ← 3×garnished:nut_planks",
+    "`garnished:wood/sepia/sepia_slab` → 6× garnished:sepia_slab ← 3×garnished:sepia_planks",
+    "`minecraft:acacia_slab` → 6× minecraft:acacia_slab ← 3×minecraft:acacia_planks",
+    "`minecraft:bamboo_slab` → 6× minecraft:bamboo_slab ← 3×minecraft:bamboo_planks",
+    "`minecraft:birch_slab` → 6× minecraft:birch_slab ← 3×minecraft:birch_planks"
+   ],
+   "outs_sample": [
+    "createdieselgenerators:chip_wood_slab",
+    "garnished:nut_slab",
+    "garnished:sepia_slab",
+    "minecraft:acacia_slab",
+    "minecraft:bamboo_slab",
+    "minecraft:birch_slab",
+    "minecraft:bowl",
+    "minecraft:cherry_slab",
+    "minecraft:crimson_slab",
+    "minecraft:dark_oak_slab"
+   ],
+   "forms": 17
+  },
+  {
+   "size": 14,
+   "kinds": {
+    "shaped": 14
+   },
+   "sample": [
+    "`farmersdelight:cutting_board` → farmersdelight:cutting_board ← 4×#minecraft:planks, 2×minecraft:stick",
+    "`garnished:wood/nut/nut_fence` → 3× garnished:nut_fence ← 4×garnished:nut_planks, 2×minecraft:stick",
+    "`garnished:wood/sepia/sepia_fence` → 3× garnished:sepia_fence ← 4×garnished:sepia_planks, 2×minecraft:stick",
+    "`minecraft:acacia_fence` → 3× minecraft:acacia_fence ← 4×minecraft:acacia_planks, 2×minecraft:stick",
+    "`minecraft:bamboo_fence` → 3× minecraft:bamboo_fence ← 4×minecraft:bamboo_planks, 2×minecraft:stick",
+    "`minecraft:birch_fence` → 3× minecraft:birch_fence ← 4×minecraft:birch_planks, 2×minecraft:stick"
+   ],
+   "outs_sample": [
+    "farmersdelight:cutting_board",
+    "garnished:nut_fence",
+    "garnished:sepia_fence",
+    "minecraft:acacia_fence",
+    "minecraft:bamboo_fence",
+    "minecraft:birch_fence",
+    "minecraft:cherry_fence",
+    "minecraft:crimson_fence",
+    "minecraft:dark_oak_fence",
+    "minecraft:jungle_fence"
+   ],
+   "forms": 13
+  },
+  {
+   "size": 14,
+   "kinds": {
+    "shaped": 14
+   },
+   "sample": [
+    "`garnished:wood/nut/nut_pressure_plate` → garnished:nut_pressure_plate ← 2×garnished:nut_planks",
+    "`garnished:wood/sepia/sepia_pressure_plate` → garnished:sepia_pressure_plate ← 2×garnished:sepia_planks",
+    "`minecraft:acacia_pressure_plate` → minecraft:acacia_pressure_plate ← 2×minecraft:acacia_planks",
+    "`minecraft:bamboo_pressure_plate` → minecraft:bamboo_pressure_plate ← 2×minecraft:bamboo_planks",
+    "`minecraft:birch_pressure_plate` → minecraft:birch_pressure_plate ← 2×minecraft:birch_planks",
+    "`minecraft:cherry_pressure_plate` → minecraft:cherry_pressure_plate ← 2×minecraft:cherry_planks"
+   ],
+   "outs_sample": [
+    "garnished:nut_pressure_plate",
+    "garnished:sepia_pressure_plate",
+    "minecraft:acacia_pressure_plate",
+    "minecraft:bamboo_pressure_plate",
+    "minecraft:birch_pressure_plate",
+    "minecraft:cherry_pressure_plate",
+    "minecraft:crimson_pressure_plate",
+    "minecraft:dark_oak_pressure_plate",
+    "minecraft:jungle_pressure_plate",
+    "minecraft:mangrove_pressure_plate"
+   ],
+   "forms": 13
+  },
+  {
+   "size": 5,
+   "kinds": {
+    "shaped": 5
+   },
+   "sample": [
+    "`create_connected:crafting/kinetics/brass_chute` → 4× create_connected:brass_chute ← create:brass_ingot, 2×create:brass_sheet",
+    "`createcasing:crafting/fluid_pipe/brass` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+    "`createcasing:crafting/fluid_pipe/brass_vertical` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+    "`tfmg:crafting/materials/brass_pipe` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+    "`tfmg:crafting/materials/brass_pipe_vertical` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass"
+   ],
+   "outs_sample": [
+    "create_connected:brass_chute",
+    "createcasing:brass_fluid_pipe",
+    "tfmg:brass_pipe"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_chocolate_pastry_base_from_shaped` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:create/mixing/chocolate_pastry_base_from_mixing_heated` → createfood:chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_chocolate_pastry_base_from_mixing` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:minecraft/crafting/raw_chocolate_pastry_base_from_crafting` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:chocolate_pastry_base",
+    "createfood:raw_chocolate_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_pastry_base_from_shaped` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:create/mixing/pastry_base_from_mixing_heated` → createfood:pastry_base ← #c:butter, #c:sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_pastry_base_from_mixing` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:minecraft/crafting/raw_pastry_base_from_crafting` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:pastry_base",
+    "createfood:raw_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shaped": 4
+   },
+   "sample": [
+    "`railways:crafting/palettes/hazard_stripes_a/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal",
+    "`railways:crafting/palettes/hazard_stripes_a/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal",
+    "`railways:crafting/palettes/hazard_stripes_b/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal",
+    "`railways:crafting/palettes/hazard_stripes_b/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal"
+   ],
+   "outs_sample": [
+    "railways:black_hazard_stripes_diagonal_on_white",
+    "railways:white_hazard_stripes_diagonal_on_black"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`minecraft:stone_shovel` → minecraft:stone_shovel ← #minecraft:stone_tool_materials, 2×minecraft:stick",
+    "`wands:stone_wand` → wands:stone_wand ← minecraft:cobblestone, 2×minecraft:stick",
+    "`wands:stone_wand2` → wands:stone_wand ← minecraft:cobbled_deepslate, 2×minecraft:stick"
+   ],
+   "outs_sample": [
+    "minecraft:stone_shovel",
+    "wands:stone_wand"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`bellsandwhistles:grab_rails/andesite_grab_rails` → 8× bellsandwhistles:andesite_grab_rails ← 6×create:andesite_alloy",
+    "`createdeco:andesite_door` → 3× createdeco:andesite_door ← 6×create:andesite_alloy",
+    "`minecraft:andesite_bars` → 16× createdeco:andesite_bars ← 6×create:andesite_alloy"
+   ],
+   "outs_sample": [
+    "bellsandwhistles:andesite_grab_rails",
+    "createdeco:andesite_bars",
+    "createdeco:andesite_door"
+   ],
+   "forms": 2
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`create:crafting/kinetics/item_vault` → create:item_vault ← #c:barrels/wooden, 2×#c:plates/iron",
+    "`create_connected:crafting/kinetics/item_silo` → create_connected:item_silo ← #c:barrels/wooden, 2×create:iron_sheet",
+    "`createdieselgenerators:crafting/oil_barrel` → createdieselgenerators:oil_barrel ← #c:barrels/wooden, 2×#c:plates/iron"
+   ],
+   "outs_sample": [
+    "create:item_vault",
+    "create_connected:item_silo",
+    "createdieselgenerators:oil_barrel"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`garnished:wood/nut/nut_door` → 3× garnished:nut_door ← 6×garnished:nut_planks",
+    "`garnished:wood/nut/nut_stairs` → 4× garnished:nut_stairs ← 6×garnished:nut_planks",
+    "`garnished:wood/nut/nut_trapdoor` → 2× garnished:nut_trapdoor ← 6×garnished:nut_planks"
+   ],
+   "outs_sample": [
+    "garnished:nut_door",
+    "garnished:nut_stairs",
+    "garnished:nut_trapdoor"
+   ],
+   "forms": 3
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`garnished:wood/sepia/sepia_door` → 3× garnished:sepia_door ← 6×garnished:sepia_planks",
+    "`garnished:wood/sepia/sepia_stairs` → 4× garnished:sepia_stairs ← 6×garnished:sepia_planks",
+    "`garnished:wood/sepia/sepia_trapdoor` → 2× garnished:sepia_trapdoor ← 6×garnished:sepia_planks"
+   ],
+   "outs_sample": [
+    "garnished:sepia_door",
+    "garnished:sepia_stairs",
+    "garnished:sepia_trapdoor"
+   ],
+   "forms": 3
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`immersive_aircraft:propeller` → immersive_aircraft:propeller ← 5×[minecraft:iron_ingot]",
+    "`minecraft:iron_helmet` → minecraft:iron_helmet ← 5×minecraft:iron_ingot",
+    "`minecraft:minecart` → minecraft:minecart ← 5×minecraft:iron_ingot"
+   ],
+   "outs_sample": [
+    "immersive_aircraft:propeller",
+    "minecraft:iron_helmet",
+    "minecraft:minecart"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`tfmg:crafting/materials/rebar_floor` → 3× tfmg:rebar_floor ← 3×tfmg:rebar",
+    "`tfmg:crafting/materials/rebar_pillar` → 3× tfmg:rebar_pillar ← 3×tfmg:rebar",
+    "`tfmg:crafting/materials/rebar_stairs` → 3× tfmg:rebar_stairs ← 3×tfmg:rebar"
+   ],
+   "outs_sample": [
+    "tfmg:rebar_floor",
+    "tfmg:rebar_pillar",
+    "tfmg:rebar_stairs"
+   ],
+   "forms": 2
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`minecraft:oak_door` → 3× minecraft:oak_door ← 6×minecraft:oak_planks",
+    "`minecraft:oak_stairs` → 4× minecraft:oak_stairs ← 6×minecraft:oak_planks",
+    "`minecraft:oak_trapdoor` → 2× minecraft:oak_trapdoor ← 6×minecraft:oak_planks"
+   ],
+   "outs_sample": [
+    "minecraft:oak_door",
+    "minecraft:oak_stairs",
+    "minecraft:oak_trapdoor"
+   ],
+   "forms": 3
+  }
+ ],
+ "groups_pass2": 122,
+ "groups_pass2_top": [
+  {
+   "size": 5,
+   "kinds": {
+    "shaped": 5
+   },
+   "sample": [
+    "`create_connected:crafting/kinetics/brass_chute` → 4× create_connected:brass_chute ← create:brass_ingot, 2×create:brass_sheet",
+    "`createcasing:crafting/fluid_pipe/brass` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+    "`createcasing:crafting/fluid_pipe/brass_vertical` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+    "`tfmg:crafting/materials/brass_pipe` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+    "`tfmg:crafting/materials/brass_pipe_vertical` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass"
+   ],
+   "outs_sample": [
+    "create_connected:brass_chute",
+    "createcasing:brass_fluid_pipe",
+    "tfmg:brass_pipe"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_chocolate_pastry_base_from_shaped` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:create/mixing/chocolate_pastry_base_from_mixing_heated` → createfood:chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_chocolate_pastry_base_from_mixing` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:minecraft/crafting/raw_chocolate_pastry_base_from_crafting` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:chocolate_pastry_base",
+    "createfood:raw_chocolate_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_pastry_base_from_shaped` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:create/mixing/pastry_base_from_mixing_heated` → createfood:pastry_base ← #c:butter, #c:sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_pastry_base_from_mixing` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:minecraft/crafting/raw_pastry_base_from_crafting` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:pastry_base",
+    "createfood:raw_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shaped": 4
+   },
+   "sample": [
+    "`railways:crafting/palettes/hazard_stripes_a/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal",
+    "`railways:crafting/palettes/hazard_stripes_a/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal",
+    "`railways:crafting/palettes/hazard_stripes_b/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal",
+    "`railways:crafting/palettes/hazard_stripes_b/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal"
+   ],
+   "outs_sample": [
+    "railways:black_hazard_stripes_diagonal_on_white",
+    "railways:white_hazard_stripes_diagonal_on_black"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`minecraft:stone_shovel` → minecraft:stone_shovel ← #minecraft:stone_tool_materials, 2×minecraft:stick",
+    "`wands:stone_wand` → wands:stone_wand ← minecraft:cobblestone, 2×minecraft:stick",
+    "`wands:stone_wand2` → wands:stone_wand ← minecraft:cobbled_deepslate, 2×minecraft:stick"
+   ],
+   "outs_sample": [
+    "minecraft:stone_shovel",
+    "wands:stone_wand"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`create:crafting/kinetics/item_vault` → create:item_vault ← #c:barrels/wooden, 2×#c:plates/iron",
+    "`create_connected:crafting/kinetics/item_silo` → create_connected:item_silo ← #c:barrels/wooden, 2×create:iron_sheet",
+    "`createdieselgenerators:crafting/oil_barrel` → createdieselgenerators:oil_barrel ← #c:barrels/wooden, 2×#c:plates/iron"
+   ],
+   "outs_sample": [
+    "create:item_vault",
+    "create_connected:item_silo",
+    "createdieselgenerators:oil_barrel"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 3,
+   "kinds": {
+    "shaped": 3
+   },
+   "sample": [
+    "`immersive_aircraft:propeller` → immersive_aircraft:propeller ← 5×[minecraft:iron_ingot]",
+    "`minecraft:iron_helmet` → minecraft:iron_helmet ← 5×minecraft:iron_ingot",
+    "`minecraft:minecart` → minecraft:minecart ← 5×minecraft:iron_ingot"
+   ],
+   "outs_sample": [
+    "immersive_aircraft:propeller",
+    "minecraft:iron_helmet",
+    "minecraft:minecart"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`createcasing:crafting/portable_storage_interface/railway` → createcasing:railway_portable_storage_interface ← create:chute, create:railway_casing",
+    "`railways:crafting/portable_fuel_interface` → railways:portable_fuel_interface ← create:chute, create:railway_casing"
+   ],
+   "outs_sample": [
+    "createcasing:railway_portable_storage_interface",
+    "railways:portable_fuel_interface"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 1,
+    "shaped": 1
+   },
+   "sample": [
+    "`createcasing:crafting/large_cogwheels/andesite_alloy` → createcasing:andesite_large_cogwheel ← 2×create:andesite_alloy, create:shaft",
+    "`createdieselgenerators:crafting/andesite_girder` → 6× createdieselgenerators:andesite_girder ← 2×create:andesite_alloy, create:shaft"
+   ],
+   "outs_sample": [
+    "createcasing:andesite_large_cogwheel",
+    "createdieselgenerators:andesite_girder"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_connected:crafting/kinetics/crank_wheel` → create_connected:crank_wheel ← create:cogwheel, create:hand_crank",
+    "`dndesires:crafting/cog_crank` → dndesires:cog_crank ← create:cogwheel, create:hand_crank"
+   ],
+   "outs_sample": [
+    "create_connected:crank_wheel",
+    "dndesires:cog_crank"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_connected:crafting/kinetics/large_crank_wheel` → create_connected:large_crank_wheel ← create:hand_crank, create:large_cogwheel",
+    "`dndesires:crafting/large_cog_crank` → dndesires:large_cog_crank ← create:hand_crank, create:large_cogwheel"
+   ],
+   "outs_sample": [
+    "create_connected:large_crank_wheel",
+    "dndesires:large_cog_crank"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/black_item_vault_from_dyeing` → create_vibrant_vaults:black_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:black_dye",
+    "`minecraft:black_shipping_container_from_dyeing_vaults` → createdeco:black_shipping_container ← create:item_vault, minecraft:black_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:black_item_vault",
+    "createdeco:black_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/blue_item_vault_from_dyeing` → create_vibrant_vaults:blue_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:blue_dye",
+    "`minecraft:blue_shipping_container_from_dyeing_vaults` → createdeco:blue_shipping_container ← create:item_vault, minecraft:blue_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:blue_item_vault",
+    "createdeco:blue_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/brown_item_vault_from_dyeing` → create_vibrant_vaults:brown_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:brown_dye",
+    "`minecraft:brown_shipping_container_from_dyeing_vaults` → createdeco:brown_shipping_container ← create:item_vault, minecraft:brown_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:brown_item_vault",
+    "createdeco:brown_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/cyan_item_vault_from_dyeing` → create_vibrant_vaults:cyan_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:cyan_dye",
+    "`minecraft:cyan_shipping_container_from_dyeing_vaults` → createdeco:cyan_shipping_container ← create:item_vault, minecraft:cyan_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:cyan_item_vault",
+    "createdeco:cyan_shipping_container"
+   ],
+   "forms": 0
+  }
+ ],
+ "group_size_hist_pass1": {
+  "2": 424,
+  "3": 18,
+  "4": 3,
+  "5": 1,
+  "14": 2,
+  "18": 1
+ },
+ "mixer_collision_groups": 49,
+ "mixer_collision_recipes": 102,
+ "mixer_collisions_top": [
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_chocolate_pastry_base_from_shaped` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:create/mixing/chocolate_pastry_base_from_mixing_heated` → createfood:chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_chocolate_pastry_base_from_mixing` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:minecraft/crafting/raw_chocolate_pastry_base_from_crafting` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:chocolate_pastry_base",
+    "createfood:raw_chocolate_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_pastry_base_from_shaped` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:create/mixing/pastry_base_from_mixing_heated` → createfood:pastry_base ← #c:butter, #c:sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_pastry_base_from_mixing` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:minecraft/crafting/raw_pastry_base_from_crafting` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:pastry_base",
+    "createfood:raw_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`createcasing:crafting/portable_storage_interface/railway` → createcasing:railway_portable_storage_interface ← create:chute, create:railway_casing",
+    "`railways:crafting/portable_fuel_interface` → railways:portable_fuel_interface ← create:chute, create:railway_casing"
+   ],
+   "outs_sample": [
+    "createcasing:railway_portable_storage_interface",
+    "railways:portable_fuel_interface"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_connected:crafting/kinetics/crank_wheel` → create_connected:crank_wheel ← create:cogwheel, create:hand_crank",
+    "`dndesires:crafting/cog_crank` → dndesires:cog_crank ← create:cogwheel, create:hand_crank"
+   ],
+   "outs_sample": [
+    "create_connected:crank_wheel",
+    "dndesires:cog_crank"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_connected:crafting/kinetics/large_crank_wheel` → create_connected:large_crank_wheel ← create:hand_crank, create:large_cogwheel",
+    "`dndesires:crafting/large_cog_crank` → dndesires:large_cog_crank ← create:hand_crank, create:large_cogwheel"
+   ],
+   "outs_sample": [
+    "create_connected:large_crank_wheel",
+    "dndesires:large_cog_crank"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/black_item_vault_from_dyeing` → create_vibrant_vaults:black_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:black_dye",
+    "`minecraft:black_shipping_container_from_dyeing_vaults` → createdeco:black_shipping_container ← create:item_vault, minecraft:black_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:black_item_vault",
+    "createdeco:black_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/blue_item_vault_from_dyeing` → create_vibrant_vaults:blue_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:blue_dye",
+    "`minecraft:blue_shipping_container_from_dyeing_vaults` → createdeco:blue_shipping_container ← create:item_vault, minecraft:blue_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:blue_item_vault",
+    "createdeco:blue_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/brown_item_vault_from_dyeing` → create_vibrant_vaults:brown_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:brown_dye",
+    "`minecraft:brown_shipping_container_from_dyeing_vaults` → createdeco:brown_shipping_container ← create:item_vault, minecraft:brown_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:brown_item_vault",
+    "createdeco:brown_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/cyan_item_vault_from_dyeing` → create_vibrant_vaults:cyan_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:cyan_dye",
+    "`minecraft:cyan_shipping_container_from_dyeing_vaults` → createdeco:cyan_shipping_container ← create:item_vault, minecraft:cyan_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:cyan_item_vault",
+    "createdeco:cyan_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/gray_item_vault_from_dyeing` → create_vibrant_vaults:gray_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:gray_dye",
+    "`minecraft:gray_shipping_container_from_dyeing_vaults` → createdeco:gray_shipping_container ← create:item_vault, minecraft:gray_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:gray_item_vault",
+    "createdeco:gray_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/green_item_vault_from_dyeing` → create_vibrant_vaults:green_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:green_dye",
+    "`minecraft:green_shipping_container_from_dyeing_vaults` → createdeco:green_shipping_container ← create:item_vault, minecraft:green_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:green_item_vault",
+    "createdeco:green_shipping_container"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 2,
+   "kinds": {
+    "shapeless": 2
+   },
+   "sample": [
+    "`create_vibrant_vaults:crafting/light_blue_item_vault_from_dyeing` → create_vibrant_vaults:light_blue_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:light_blue_dye",
+    "`minecraft:light_blue_shipping_container_from_dyeing_vaults` → createdeco:light_blue_shipping_container ← create:item_vault, minecraft:light_blue_dye"
+   ],
+   "outs_sample": [
+    "create_vibrant_vaults:light_blue_item_vault",
+    "createdeco:light_blue_shipping_container"
+   ],
+   "forms": 0
+  }
+ ],
+ "mixer_dup_with_existing_mixing": 2,
+ "mixer_dup_with_existing_mixing_sample": [
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_chocolate_pastry_base_from_shaped` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:create/mixing/chocolate_pastry_base_from_mixing_heated` → createfood:chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_chocolate_pastry_base_from_mixing` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough",
+    "`createfood:minecraft/crafting/raw_chocolate_pastry_base_from_crafting` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:chocolate_pastry_base",
+    "createfood:raw_chocolate_pastry_base"
+   ],
+   "forms": 0
+  },
+  {
+   "size": 4,
+   "kinds": {
+    "shapeless": 1,
+    "mixing": 2,
+    "shaped": 1
+   },
+   "sample": [
+    "`createfood:crafting/shaped/raw_pastry_base_from_shaped` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:create/mixing/pastry_base_from_mixing_heated` → createfood:pastry_base ← #c:butter, #c:sweet_dough (нагрев)",
+    "`createfood:create/mixing/raw_pastry_base_from_mixing` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough",
+    "`createfood:minecraft/crafting/raw_pastry_base_from_crafting` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough"
+   ],
+   "outs_sample": [
+    "createfood:pastry_base",
+    "createfood:raw_pastry_base"
+   ],
+   "forms": 0
+  }
+ ],
+ "containers_shapeless": 220,
+ "containers_mixgen": 17,
+ "containers_mixgen_sample": [
+  "`arphex:elixir_splintered` → arphex:elixir_of_splintered_sanity ← arphex:core_of_eternal_suffering, 3×arphex:mantle_of_vitality, minecraft:water_bucket",
+  "`dndesires:crafting/fan_catalyst/blasting_sail` → 4× dndesires:blasting_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:lava_bucket",
+  "`dndesires:crafting/fan_catalyst/freezing_sail` → 4× dndesires:freezing_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:powder_snow_bucket",
+  "`dndesires:crafting/fan_catalyst/splashing_sail` → 4× dndesires:splashing_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:water_bucket",
+  "`projecte:iron_band` → projecte:iron_band ← 8×#c:ingots/iron, [minecraft:lava_bucket|projecte:volcanite_amulet]",
+  "`projecte:volcanite_amulet` → projecte:volcanite_amulet ← 6×minecraft:lava_bucket, 3×projecte:dark_matter",
+  "`projecte:evertide_amulet` → projecte:evertide_amulet ← 6×minecraft:water_bucket, 3×projecte:dark_matter",
+  "`create:crafting/curiosities/cake` → minecraft:cake ← #c:eggs, #c:foods/dough, minecraft:milk_bucket, 2×minecraft:sugar",
+  "`create_submarine:barometer` → create_submarine:barometer ← 3×create:industrial_iron_block, 5×create_submarine:iron_pressurizer, minecraft:water_bucket",
+  "`createdieselgenerators:crafting/asphalt_block` → 8× createdieselgenerators:asphalt_block ← createdieselgenerators:crude_oil_bucket, 4×minecraft:gravel, 4×minecraft:sand",
+  "`tfmg:crafting/materials/accumulator` → tfmg:accumulator ← 4×#c:plates/lead, #c:storage_blocks/lead, #c:wires/copper, tfmg:industrial_aluminum_casing, 2×tfmg:sulfuric_acid_bucket",
+  "`tfmg:crafting/materials/cinder_block` → 8× tfmg:cinder_block ← 6×tfmg:cinderblock, tfmg:liquid_concrete_bucket, 2×tfmg:rebar",
+  "`tfmg:crafting/materials/fire_extinguisher` → tfmg:fire_extinguisher ← #c:ingots/steel, #c:nuggets/steel, 5×#c:plates/aluminum, minecraft:red_dye, tfmg:carbon_dioxide_bucket",
+  "`tfmg:crafting/materials/freezer` → tfmg:freezer ← 2×create:fluid_pipe, tfmg:compressor, 4×tfmg:electromagnetic_coil, 2×tfmg:lpg_bucket",
+  "`tfmg:crafting/materials/napalm_bomb` → tfmg:napalm_bomb ← 3×tfmg:napalm_bucket, 6×tfmg:plastic_sheet"
+ ],
+ "containers_shapeless_sample": [
+  "`farmersdelight:honey_glazed_ham_block` → farmersdelight:honey_glazed_ham_block ← 2×farmersdelight:cooked_rice, farmersdelight:smoked_ham, minecraft:bowl, minecraft:honey_bottle, 4×minecraft:sweet_berries",
+  "`farmersdelight:milk_bottle` → 4× farmersdelight:milk_bottle ← 4×minecraft:glass_bottle, minecraft:milk_bucket",
+  "`projecte:conversions/water_to_ice` → minecraft:ice ← [minecraft:water_bucket|projecte:evertide_amulet], [projecte:arcana_ring|projecte:zero_ring]",
+  "`create:crafting/appliances/dough` → create:dough ← #c:flours/wheat, minecraft:water_bucket",
+  "`create_enchantment_industry:crafting/blazes_enchanting_handbook` → create_enchantment_industry:blazes_enchanting_handbook ← 2×create:sturdy_sheet, create_dragons_plus:blaze_upgrade_smithing_template, 2×minecraft:experience_bottle, minecraft:magma_block",
+  "`create_compressed:dough_block_from_flour` → create_compressed:dough_block ← #create_compressed:water, create_compressed:wheat_flour_pile",
+  "`createfood:minecraft/crafting/apple_cream_frosting_bottle_from_crafting` → 4× createfood:apple_cream_frosting_bottle ← #c:apple_cream_frosting_bucket, 4×minecraft:glass_bottle",
+  "`createfood:minecraft/crafting/apple_cream_frosting_bucket_from_crafting` → createfood:apple_cream_frosting_bucket ← #c:apple, 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket",
+  "`createfood:minecraft/crafting/apple_cream_frosting_bucket_from_crafting_alt_2` → createfood:apple_cream_frosting_bucket ← #c:apple, #c:cream_frosting_bucket, minecraft:bucket",
+  "`createfood:minecraft/crafting/apple_cream_frosting_piping_bag_from_crafting` → 2× createfood:apple_cream_frosting_piping_bag ← #c:apple_cream_frosting_bucket, 2×#c:piping_bag",
+  "`createfood:minecraft/crafting/apple_custard_bottle_from_crafting` → 4× createfood:apple_custard_bottle ← #c:apple_custard_bucket, 4×minecraft:glass_bottle",
+  "`createfood:minecraft/crafting/apple_ice_cream_bowl_from_crafting` → 3× createfood:apple_ice_cream_bowl ← #c:apple_ice_cream_bucket, 3×#c:bowl",
+  "`createfood:minecraft/crafting/apple_ice_cream_bucket_from_crafting_alt_2` → createfood:apple_ice_cream_bucket ← #c:apple, #c:ice_cream_bucket, minecraft:bucket",
+  "`createfood:minecraft/crafting/apple_jam_bottle_from_crafting` → 2× createfood:apple_jam_bottle ← #c:apple_jam_bucket, 2×minecraft:glass_bottle",
+  "`createfood:minecraft/crafting/apple_juice_bottle_from_crafting` → 4× createfood:apple_juice_bottle ← #c:apple_juice_bucket, 4×minecraft:glass_bottle"
+ ],
+ "over9": [],
+ "distinct_over9": [],
+ "mix_gen_list_ingredient": 47,
+ "mix_gen_by_mod": {
+  "minecraft": 358,
+  "dndecor": 301,
+  "createframed": 207,
+  "tfmg": 180,
+  "railways": 177,
+  "create": 134,
+  "createcasing": 130,
+  "garnished": 122,
+  "createdeco": 96,
+  "projectexpansion": 91,
+  "arphex": 62,
+  "sophisticatedstorage": 58,
+  "dndesires": 54,
+  "projecte": 54,
+  "northstar": 52,
+  "sophisticatedbackpacks": 40,
+  "farmersdelight": 30,
+  "bellsandwhistles": 28,
+  "createbigcannons": 28,
+  "create_sa": 27,
+  "immersive_aircraft": 26,
+  "evenmoreinstruments": 25,
+  "cgs": 23,
+  "createdieselgenerators": 23,
+  "create_new_age": 18,
+  "creategoggles": 18,
+  "comforts": 17,
+  "create_vibrant_vaults": 16,
+  "pipeorgans": 16,
+  "aeroworks": 12,
+  "createfood": 12,
+  "createpropulsion": 11,
+  "bits_n_bobs": 9,
+  "create_connected": 9,
+  "createaddition": 9,
+  "create_submarine": 8,
+  "createsifter": 8,
+  "copycats": 7,
+  "create_things_and_misc": 7,
+  "create_winery": 7,
+  "createrailwaysnavigator": 7,
+  "genshinstrument": 7,
+  "wands": 5,
+  "create_hypertube": 5,
+  "createadditionallogistics": 4,
+  "extendedwrenches": 3,
+  "create_aquatic_ambitions": 3,
+  "create_mobile_packages": 3,
+  "ftbquests": 3,
+  "cbc_at": 2,
+  "create_confectionery": 2,
+  "create_enchantment_industry": 2,
+  "createshufflefilter": 2,
+  "escalated": 2,
+  "man_of_many_planes": 2,
+  "sliceanddice": 2,
+  "nightshift": 2,
+  "create_dragons_plus": 1,
+  "explorerscompass": 1,
+  "sanity_renewed": 1,
+  "create_integrated_farming": 1,
+  "create_factory_logistics": 1,
+  "create_mechanical_extruder": 1,
+  "create_power_loader": 1,
+  "create_tweaked_controllers": 1,
+  "createendertransmission": 1,
+  "someassemblyrequired": 1,
+  "sophisticatedcore": 1,
+  "trading_floor": 1
+ },
+ "cut_gen_by_mod": {
+  "minecraft": 61,
+  "garnished": 12,
+  "tfmg": 2,
+  "createdieselgenerators": 1
+ },
+ "mix_gen_forms_unique": 311,
+ "mix_gen_sample": [
+  "`arphex:roach_bucket` → arphex:bucket_of_roaches ← 8×arphex:roach_nymph, minecraft:bucket",
+  "`arphex:eternal_leggings_recipe` → arphex:eternal_leggings ← 2×arphex:hedonic_gem, arphex:infernal_leggings, arphex:spectral_leggings, arphex:umbral_leggings",
+  "`arphex:abyss_stew` → arphex:abyssal_stew ← arphex:abyssal_shard, 2×arphex:cooked_hemolymph, minecraft:suspicious_stew",
+  "`arphex:dissolution_2` → arphex:dagger_of_dissolution ← arphex:necrotic_fang, arphex:venomous_appendage, minecraft:netherite_ingot",
+  "`arphex:worm_bucket` → arphex:bucket_of_worm_grub ← 8×arphex:bloodworm_grub, minecraft:bucket",
+  "`arphex:scorch_torch_recipe` → 8× arphex:scorch_torch ← arphex:scorch_charge, 8×minecraft:torch",
+  "`arphex:immortal_boots` → arphex:immortal_boots ← 2×arphex:core_of_eternal_suffering, arphex:eternal_boots, arphex:juggernaut_boots, 4×arphex:scorch_charge, arphex:spacetime_boots",
+  "`arphex:torment_wrath` → arphex:tormented_wrath ← 4×arphex:abyssal_annihilator, 3×arphex:core_of_eternal_suffering, 2×arphex:vengeful_voidseeker",
+  "`arphex:abyss_axe_craft` → arphex:abyssal_axe ← arphex:abyssal_crystal, arphex:bane_of_the_darkness, arphex:mantle_of_vitality, minecraft:netherite_axe",
+  "`arphex:tormentor_portal_recipe` → arphex:tormentor_summoner ← arphex:core_of_eternal_suffering, 8×arphex:hedonic_gem",
+  "`arphex:bug_spray_recipe` → arphex:bug_spray ← 2×arphex:bug_repellant, minecraft:iron_ingot, minecraft:lever",
+  "`arphex:eternal_helmet_recipe` → arphex:eternal_helmet ← 2×arphex:hedonic_gem, arphex:infernal_helmet, arphex:spectral_helmet, arphex:umbral_helmet",
+  "`arphex:void_sherb` → arphex:void_sherbet ← 2×arphex:chitin, arphex:void_geode_shard, minecraft:suspicious_stew",
+  "`arphex:scarab_sealer` → arphex:scarab_seal ← arphex:chitin, 4×arphex:ectoplasm",
+  "`arphex:locust_bucket` → arphex:bucket_of_locusts ← 8×arphex:locust_larvae, minecraft:bucket",
+  "`arphex:nemesis_upgrade` → arphex:venom_typhoon ← arphex:chitin, arphex:hornet_hailstorm, 2×arphex:oversized_stinger, arphex:spectral_ingot",
+  "`arphex:tesseract` → 2× arphex:tesseract_transporter ← 2×arphex:arthropod_antenna, arphex:entropy_matrix, 2×arphex:warp_staff, 3×minecraft:crying_obsidian",
+  "`arphex:immortal_chestplate` → arphex:immortal_chestplate ← 2×arphex:core_of_eternal_suffering, arphex:eternal_chestplate, arphex:juggernaut_chestplate, 4×arphex:scorch_charge, arphex:spacetime_chestplate",
+  "`arphex:commander_staff` → arphex:ant_commander ← arphex:antenna, 2×arphex:burning_glands, minecraft:golden_apple, minecraft:lightning_rod",
+  "`arphex:chitin_leggings` → arphex:chitin_armour_leggings ← 2×arphex:chitin, 5×minecraft:string",
+  "`arphex:entropy_serums` → arphex:entropy_serum ← arphex:entropy_matrix_shard, 2×arphex:heavy_chitin, minecraft:suspicious_stew",
+  "`arphex:warp_connect` → arphex:warp_connector ← arphex:antenna, arphex:scorched_glass, minecraft:end_rod",
+  "`arphex:eternal_boots_recipe` → arphex:eternal_boots ← 2×arphex:hedonic_gem, arphex:infernal_boots, arphex:spectral_boots, arphex:umbral_boots",
+  "`arphex:temporo_spatial` → arphex:temporospatial_transmitter ← arphex:arthropod_antenna, 2×arphex:time_prism, 2×arphex:vortex_devastator",
+  "`arphex:pocke_temp` → arphex:crawling_container ← 2×arphex:arthropod_antenna, arphex:block_of_abyssal_crystal, 2×arphex:ethereal_staff, 4×arphex:scorch_charge"
+ ],
+ "special_sample": [
+  [
+   "projecte:full_star_gem_boots",
+   "ProjectE-1.21.1-PE1.1.0.jar",
+   "ингредиент с компонентами (NBT)"
+  ],
+  [
+   "projecte:full_star_tome",
+   "ProjectE-1.21.1-PE1.1.0.jar",
+   "ингредиент с компонентами (NBT)"
+  ],
+  [
+   "projecte:full_star_tome_alt",
+   "ProjectE-1.21.1-PE1.1.0.jar",
+   "ингредиент с компонентами (NBT)"
+  ],
+  [
+   "projecte:full_star_gem_helmet",
+   "ProjectE-1.21.1-PE1.1.0.jar",
+   "ингредиент с компонентами (NBT)"
+  ],
+  [
+   "projecte:full_star_gem_chestplate",
+   "ProjectE-1.21.1-PE1.1.0.jar",
+   "ингредиент с компонентами (NBT)"
+  ],
+  [
+   "projecte:full_star_gem_leggings",
+   "ProjectE-1.21.1-PE1.1.0.jar",
+   "ингредиент с компонентами (NBT)"
+  ],
+  [
+   "aeroworks:blue_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:lime_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:throttle_quadrant_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_throttle_quadrant_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:orange_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_pedal_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_button_panel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:green_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:yoke_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:light_blue_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:button_keypad_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_button_keypad_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:pedal_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:black_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:brown_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_lever_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:pink_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:yellow_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:gray_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:cyan_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_joystick_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:white_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:joystick_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:lever_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:light_gray_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:button_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_yoke_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:copper_button_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:wheel_module_from_styles",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:purple_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:button_panel_module_from_copper",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:red_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "aeroworks:magenta_wheel_module",
+   "aeroworks-1.5.0.jar",
+   "свой serializer: aeroworks:transform_module"
+  ],
+  [
+   "create_connected:crafting/kinetics/kinetic_battery_from_charged",
+   "create_connected-1.3.3-mc1.21.1.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_black",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_blue",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_brown",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_cyan",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_gray",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_green",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_light_blue",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_light_gray",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_lime",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_magenta",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_orange",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_pink",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_purple",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_red",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_white",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "create_submarine:floater_yellow",
+   "create_submarine-2.2.4.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "createdieselgenerators:crafting/chemical_turret_lighter",
+   "createdieselgenerators-1.21.1-1.3.15.jar",
+   "результат с компонентами/NBT"
+  ],
+  [
+   "evenmoreinstruments:record_cloning",
+   "evenmoreinstruments-neoforge-1.21-1.21.1-6.1.4.jar",
+   "свой serializer: evenmoreinstruments:crafting_special_recordcloning"
+  ],
+  [
+   "sophisticatedbackpacks:auto_blasting_upgrade",
+   "sophisticatedbackpacks-1.21.1-3.26.3.2158.jar",
+   "свой serializer: sophisticatedcore:upgrade_next_tier"
+  ]
+ ],
+ "mech_by_mod": {
+  "railways": 128,
+  "cgs": 16,
+  "northstar": 12,
+  "create_sa": 11,
+  "garnished": 11,
+  "tfmg": 8,
+  "create": 4,
+  "createaddition": 4,
+  "createbigcannons": 4,
+  "creategbd": 3,
+  "create_new_age": 3,
+  "createendertransmission": 3,
+  "createoreexcavation": 3,
+  "create_recipes": 2,
+  "create_jetpack": 2,
+  "create_mechanical_spawner": 2,
+  "create_things_and_misc": 2,
+  "createdieselgenerators": 2,
+  "dndesires": 1,
+  "aeroworks": 1,
+  "create_hypertube": 1,
+  "create_mechanical_extruder": 1,
+  "create_power_loader": 1,
+  "createrailwaysnavigator": 1
+ },
+ "single_sample": [
+  "`arphex:bloodworm_craft` → minecraft:raw_copper ← arphex:bloodworm_grub",
+  "`arphex:op_block_uncraft` → 9× arphex:fire_opal ← arphex:block_of_fire_opal",
+  "`arphex:ab_block_uncraft` → 9× arphex:abyssal_crystal ← arphex:block_of_abyssal_crystal",
+  "`arphex:ge_block_uncraft` → 9× arphex:void_geode ← arphex:block_of_void_geode",
+  "`arphex:core_split` → 8× arphex:hedonic_gem ← arphex:core_of_eternal_suffering",
+  "`createcasing:crafting/gearbox/copper_from_conversion` → createcasing:copper_gearbox ← createcasing:vertical_copper_gearbox",
+  "`createcasing:crafting/gearbox/refined_radiance_from_conversion` → createcasing:refined_radiance_gearbox ← createcasing:vertical_refined_radiance_gearbox",
+  "`createcasing:crafting/gearbox/creative_vertical_from_conversion` → createcasing:vertical_creative_gearbox ← createcasing:creative_gearbox",
+  "`createcasing:crafting/gearbox/weathered_iron_from_conversion` → createcasing:weathered_iron_gearbox ← createcasing:vertical_weathered_iron_gearbox",
+  "`createcasing:crafting/gearbox/industrial_iron_from_conversion` → createcasing:industrial_iron_gearbox ← createcasing:vertical_industrial_iron_gearbox"
+ ],
+ "crafter_sample": [
+  "`wands:diamond_wand` → wands:diamond_wand ← minecraft:diamond, 2×minecraft:stick",
+  "`wands:iron_wand` → wands:iron_wand ← minecraft:iron_ingot, 2×minecraft:stick",
+  "`wands:stone_wand` → wands:stone_wand ← minecraft:cobblestone, 2×minecraft:stick",
+  "`wands:stone_wand2` → wands:stone_wand ← minecraft:cobbled_deepslate, 2×minecraft:stick",
+  "`createcasing:crafting/fluid_pipe/brass_vertical` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+  "`createcasing:crafting/fluid_pipe/brass` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass",
+  "`createcasing:crafting/encased_fan/industrial_iron` → createcasing:industrial_iron_encased_fan ← create:industrial_iron_block, create:propeller, create:shaft",
+  "`createcasing:crafting/gearbox/refined_radiance_vertical` → createcasing:vertical_refined_radiance_gearbox ← 4×create:cogwheel, create:refined_radiance_casing",
+  "`createcasing:crafting/gearbox/industrial_iron` → createcasing:industrial_iron_gearbox ← 4×create:cogwheel, create:industrial_iron_block",
+  "`createcasing:crafting/gearbox/shadow_steel_vertical` → createcasing:vertical_shadow_steel_gearbox ← 4×create:cogwheel, create:shadow_steel_casing",
+  "`createcasing:crafting/gearbox/weathered_iron` → createcasing:weathered_iron_gearbox ← 4×create:cogwheel, create:weathered_iron_block",
+  "`createcasing:crafting/gearbox/refined_radiance` → createcasing:refined_radiance_gearbox ← 4×create:cogwheel, create:refined_radiance_casing",
+  "`createcasing:crafting/gearbox/creative_vertical` → createcasing:vertical_creative_gearbox ← 4×create:cogwheel, createcasing:creative_casing",
+  "`createcasing:crafting/gearbox/creative` → createcasing:creative_gearbox ← 4×create:cogwheel, createcasing:creative_casing",
+  "`createcasing:crafting/gearbox/shadow_steel` → createcasing:shadow_steel_gearbox ← 4×create:cogwheel, create:shadow_steel_casing",
+  "`createcasing:crafting/gearbox/copper` → createcasing:copper_gearbox ← 4×create:cogwheel, create:copper_casing",
+  "`createcasing:crafting/gearbox/copper_vertical` → createcasing:vertical_copper_gearbox ← 4×create:cogwheel, create:copper_casing",
+  "`createcasing:crafting/gearbox/railway` → createcasing:railway_gearbox ← 4×create:cogwheel, create:railway_casing",
+  "`createcasing:crafting/gearbox/industrial_iron_vertical` → createcasing:vertical_industrial_iron_gearbox ← 4×create:cogwheel, create:industrial_iron_block",
+  "`createcasing:crafting/gearbox/weathered_iron_vertical` → createcasing:vertical_weathered_iron_gearbox ← 4×create:cogwheel, create:weathered_iron_block",
+  "`createcasing:crafting/gearbox/railway_vertical` → createcasing:vertical_railway_gearbox ← 4×create:cogwheel, create:railway_casing",
+  "`createcasing:crafting/gearbox/brass_vertical` → createcasing:vertical_brass_gearbox ← create:brass_casing, 4×create:cogwheel",
+  "`createcasing:crafting/gearbox/brass` → createcasing:brass_gearbox ← create:brass_casing, 4×create:cogwheel",
+  "`northstar:crafting/martian_axe` → northstar:martian_axe ← 2×create:zinc_ingot, 3×northstar:martian_steel_ingot",
+  "`northstar:crafting/martian_pickaxe` → northstar:martian_pickaxe ← 2×create:zinc_ingot, 3×northstar:martian_steel_ingot",
+  "`create:crafting/kinetics/item_vault` → create:item_vault ← #c:barrels/wooden, 2×#c:plates/iron",
+  "`create:crafting/kinetics/gearbox` → create:gearbox ← create:andesite_casing, 4×create:cogwheel",
+  "`create:crafting/kinetics/fluid_tank` → create:fluid_tank ← #c:barrels/wooden, 2×#c:plates/copper",
+  "`create:crafting/kinetics/vertical_gearbox` → create:vertical_gearbox ← create:andesite_casing, 4×create:cogwheel",
+  "`create:crafting/kinetics/radial_chassis` → 3× create:radial_chassis ← 3×#minecraft:logs, 2×create:andesite_alloy"
+ ],
+ "crafter_by_mod": {
+  "garnished": 44,
+  "minecraft": 32,
+  "createcasing": 19,
+  "createdeco": 13,
+  "tfmg": 12,
+  "create": 7,
+  "create_confectionery": 7,
+  "create_sa": 5,
+  "pipeorgans": 5,
+  "wands": 4,
+  "railways": 4,
+  "create_connected": 3,
+  "northstar": 2,
+  "create_factory_logistics": 2,
+  "createdieselgenerators": 2,
+  "createfood": 2,
+  "createpropulsion": 2,
+  "create_submarine": 1,
+  "createbigcannons": 1,
+  "immersive_aircraft": 1,
+  "create_new_age": 1,
+  "createframed": 1
+ }
+}

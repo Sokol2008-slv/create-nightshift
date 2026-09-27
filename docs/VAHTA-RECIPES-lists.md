@@ -1,0 +1,3793 @@
+# «Вахта» — полные списки рецептов верстака (автоген)
+
+Сгенерировано `tools/vahta_recipes.py`. Сводка и выводы — `docs/VAHTA-RECIPES.md`.
+
+## Особые / свой serializer / NBT — механическим крафтерам, проверить вживую (264)
+
+- `aeroworks:black_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:blue_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:brown_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:button_keypad_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:button_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:button_panel_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_button_keypad_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_button_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_button_panel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_joystick_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_lever_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_pedal_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_throttle_quadrant_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:copper_yoke_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:cyan_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:gray_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:green_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:joystick_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:lever_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:light_blue_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:light_gray_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:lime_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:magenta_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:orange_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:pedal_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:pink_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:purple_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:red_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:throttle_quadrant_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:wheel_module_from_styles` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:white_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:yellow_wheel_module` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `aeroworks:yoke_module_from_copper` (aeroworks-1.5.0.jar) — свой serializer: aeroworks:transform_module
+- `create_connected:crafting/kinetics/kinetic_battery_from_charged` (create_connected-1.3.3-mc1.21.1.jar) — результат с компонентами/NBT
+- `create_submarine:floater_black` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_blue` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_brown` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_cyan` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_gray` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_green` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_light_blue` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_light_gray` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_lime` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_magenta` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_orange` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_pink` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_purple` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_red` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_white` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `create_submarine:floater_yellow` (create_submarine-2.2.4.jar) — результат с компонентами/NBT
+- `createdieselgenerators:crafting/chemical_turret_lighter` (createdieselgenerators-1.21.1-1.3.15.jar) — результат с компонентами/NBT
+- `evenmoreinstruments:record_cloning` (evenmoreinstruments-neoforge-1.21-1.21.1-6.1.4.jar) — свой serializer: evenmoreinstruments:crafting_special_recordcloning
+- `minecraft:armor_dye` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_armordye
+- `minecraft:banner_duplicate` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_bannerduplicate
+- `minecraft:book_cloning` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_bookcloning
+- `minecraft:decorated_pot` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_decorated_pot
+- `minecraft:firework_rocket` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_firework_rocket
+- `minecraft:firework_star` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_firework_star
+- `minecraft:firework_star_fade` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_firework_star_fade
+- `minecraft:map_cloning` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_mapcloning
+- `minecraft:map_extending` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_mapextending
+- `minecraft:repair_item` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_repairitem
+- `minecraft:shield_decoration` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_shielddecoration
+- `minecraft:shulker_box_coloring` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_shulkerboxcoloring
+- `minecraft:shulker_box_from_vanilla_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `minecraft:suspicious_stew` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_suspiciousstew
+- `minecraft:tipped_arrow` (server-1.21.1-20240808.144430-extra.jar) — свой serializer: minecraft:crafting_special_tippedarrow
+- `projecte:full_star_gem_boots` (ProjectE-1.21.1-PE1.1.0.jar) — ингредиент с компонентами (NBT)
+- `projecte:full_star_gem_chestplate` (ProjectE-1.21.1-PE1.1.0.jar) — ингредиент с компонентами (NBT)
+- `projecte:full_star_gem_helmet` (ProjectE-1.21.1-PE1.1.0.jar) — ингредиент с компонентами (NBT)
+- `projecte:full_star_gem_leggings` (ProjectE-1.21.1-PE1.1.0.jar) — ингредиент с компонентами (NBT)
+- `projecte:full_star_tome` (ProjectE-1.21.1-PE1.1.0.jar) — ингредиент с компонентами (NBT)
+- `projecte:full_star_tome_alt` (ProjectE-1.21.1-PE1.1.0.jar) — ингредиент с компонентами (NBT)
+- `sophisticatedbackpacks:advanced_alchemy_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_compacting_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_deposit_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_feeding_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_filter_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_jukebox_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_magnet_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_magnet_upgrade_from_basic` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_mob_catcher_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_pickup_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_pump_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_refill_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_restock_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_tool_swapper_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:advanced_void_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:auto_blasting_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:auto_smelting_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:auto_smoking_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:backpack` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedbackpacks:basic_backpack
+- `sophisticatedbackpacks:battery_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:copper_backpack` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedbackpacks:backpack_upgrade
+- `sophisticatedbackpacks:diamond_backpack` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedbackpacks:backpack_upgrade
+- `sophisticatedbackpacks:gold_backpack` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedbackpacks:backpack_upgrade
+- `sophisticatedbackpacks:iron_backpack` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedbackpacks:backpack_upgrade
+- `sophisticatedbackpacks:iron_backpack_from_copper` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedbackpacks:backpack_upgrade
+- `sophisticatedbackpacks:magnet_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:pump_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedbackpacks:tank_upgrade` (sophisticatedbackpacks-1.21.1-3.26.3.2158.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:acacia_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:acacia_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:acacia_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:acacia_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:acacia_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:acacia_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:advanced_alchemy_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_compacting_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_feeding_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_filter_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_hopper_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_jukebox_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_magnet_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_magnet_upgrade_from_basic` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_pickup_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:advanced_void_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:auto_blasting_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:auto_smelting_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:auto_smoking_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:bamboo_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:bamboo_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:bamboo_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:bamboo_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:bamboo_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:bamboo_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:birch_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:birch_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:birch_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:birch_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:birch_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:birch_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:black_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:blue_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:brown_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:cherry_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:cherry_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:cherry_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:cherry_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:cherry_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:cherry_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:controller` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — ингредиент своего типа sophisticatedstorage:base_tier_wooden_storage
+- `sophisticatedstorage:copper_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:copper_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:copper_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:copper_shulker_from_copper_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_chest
+- `sophisticatedstorage:crimson_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:crimson_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:crimson_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:crimson_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:crimson_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:crimson_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:cyan_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:dark_oak_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:dark_oak_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:dark_oak_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:dark_oak_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:dark_oak_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:dark_oak_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:diamond_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:diamond_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:diamond_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:diamond_shulker_from_diamond_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_chest
+- `sophisticatedstorage:double_copper_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:double_chest_tier_upgrade
+- `sophisticatedstorage:double_diamond_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:double_chest_tier_upgrade
+- `sophisticatedstorage:double_gold_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:double_chest_tier_upgrade
+- `sophisticatedstorage:double_iron_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:double_chest_tier_upgrade
+- `sophisticatedstorage:double_iron_chest_from_copper_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:double_chest_tier_upgrade
+- `sophisticatedstorage:double_netherite_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:double_chest_tier_upgrade_shapeless
+- `sophisticatedstorage:generic_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:generic_wood_storage
+- `sophisticatedstorage:generic_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:generic_wood_storage
+- `sophisticatedstorage:generic_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:generic_wood_storage
+- `sophisticatedstorage:generic_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:generic_wood_storage
+- `sophisticatedstorage:generic_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:generic_wood_storage
+- `sophisticatedstorage:generic_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:generic_wood_storage
+- `sophisticatedstorage:gold_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:gold_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:gold_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:gold_shulker_from_gold_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_chest
+- `sophisticatedstorage:gray_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:green_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:iron_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:iron_barrel_from_copper_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:iron_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:iron_chest_from_copper_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:iron_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:iron_shulker_box_from_copper_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:iron_shulker_from_iron_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_chest
+- `sophisticatedstorage:jungle_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:jungle_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:jungle_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:jungle_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:jungle_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:jungle_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:light_blue_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:light_gray_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:lime_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:limited_copper_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_copper_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_copper_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_copper_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_diamond_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_diamond_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_diamond_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_diamond_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_gold_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_gold_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_gold_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_gold_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_1_from_limited_copper_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_2_from_limited_copper_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_3_from_limited_copper_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_iron_barrel_4_from_limited_copper_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade
+- `sophisticatedstorage:limited_netherite_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:limited_netherite_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:limited_netherite_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:limited_netherite_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:magenta_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:magnet_upgrade` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedcore:upgrade_next_tier
+- `sophisticatedstorage:mangrove_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:mangrove_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:mangrove_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:mangrove_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:mangrove_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:mangrove_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:netherite_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:netherite_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:netherite_shulker_box` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:storage_tier_upgrade_shapeless
+- `sophisticatedstorage:netherite_shulker_from_netherite_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_chest
+- `sophisticatedstorage:oak_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:oak_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:oak_chest_from_vanilla_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:oak_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:oak_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:oak_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:oak_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:orange_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:pink_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:purple_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:red_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:shulker_from_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_chest
+- `sophisticatedstorage:spruce_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:spruce_barrel_from_vanilla_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:spruce_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:spruce_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:spruce_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:spruce_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:spruce_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:storage_input` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — ингредиент своего типа sophisticatedstorage:base_tier_wooden_storage
+- `sophisticatedstorage:storage_io` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — ингредиент своего типа sophisticatedstorage:base_tier_wooden_storage
+- `sophisticatedstorage:storage_output` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — ингредиент своего типа sophisticatedstorage:base_tier_wooden_storage
+- `sophisticatedstorage:warped_barrel` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:warped_chest` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:warped_limited_barrel_1` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:warped_limited_barrel_2` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:warped_limited_barrel_3` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:warped_limited_barrel_4` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — результат с компонентами/NBT
+- `sophisticatedstorage:white_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+- `sophisticatedstorage:yellow_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
+
+## Фигурные с совпадающим набором — остаются механическим крафтерам (170)
+
+- `create:crafting/kinetics/fluid_tank` → create:fluid_tank ← #c:barrels/wooden, 2×#c:plates/copper
+- `create:crafting/kinetics/gearbox` → create:gearbox ← create:andesite_casing, 4×create:cogwheel
+- `create:crafting/kinetics/item_vault` → create:item_vault ← #c:barrels/wooden, 2×#c:plates/iron
+- `create:crafting/kinetics/linear_chassis` → 3× create:linear_chassis ← 3×#minecraft:logs, 2×create:andesite_alloy
+- `create:crafting/kinetics/radial_chassis` → 3× create:radial_chassis ← 3×#minecraft:logs, 2×create:andesite_alloy
+- `create:crafting/kinetics/vertical_gearbox` → create:vertical_gearbox ← create:andesite_casing, 4×create:cogwheel
+- `create_confectionery:bar_of_black_chocolate_2` → 4× create_confectionery:bar_of_black_chocolate ← create_confectionery:black_chocolate_bricks
+- `create_confectionery:bar_of_chocolate_2` → 4× create:bar_of_chocolate ← create_confectionery:chocolate_bricks
+- `create_confectionery:bar_of_ruby_chocolate_2` → 4× create_confectionery:bar_of_ruby_chocolate ← create_confectionery:ruby_chocolate_bricks
+- `create_confectionery:bar_of_white_chocolate_2` → 4× create_confectionery:bar_of_white_chocolate ← create_confectionery:white_chocolate_bricks
+- `create_confectionery:candy_cane_axe_recipe` → create_confectionery:candy_cane_axe ← 5×create_confectionery:candy_cane
+- `create_confectionery:candy_cane_hoe_recipe` → create_confectionery:candy_cane_hoe ← 4×create_confectionery:candy_cane
+- `create_confectionery:candy_cane_pickaxe_recipe` → create_confectionery:candy_cane_pickaxe ← 5×create_confectionery:candy_cane
+- `create_confectionery:candy_cane_shovel_recipe` → create_confectionery:candy_cane_shovel ← 4×create_confectionery:candy_cane
+- `create_connected:crafting/kinetics/brass_chute` → 4× create_connected:brass_chute ← create:brass_ingot, 2×create:brass_sheet
+- `create_connected:crafting/kinetics/fluid_vessel` → create_connected:fluid_vessel ← #c:barrels/wooden, 2×create:copper_sheet
+- `create_connected:crafting/kinetics/item_silo` → create_connected:item_silo ← #c:barrels/wooden, 2×create:iron_sheet
+- `create_factory_logistics:barrel_packager` → create_factory_logistics:barrel_packager ← create:copper_casing, 3×minecraft:copper_ingot, minecraft:iron_ingot, 2×minecraft:redstone
+- `create_factory_logistics:jar_packager` → create_factory_logistics:jar_packager ← create:copper_casing, 3×minecraft:copper_ingot, minecraft:iron_ingot, 2×minecraft:redstone
+- `create_new_age:shaped/lamp_post` → 8× create_new_age:lamp_post ← #c:plates/iron, 2×create:andesite_alloy
+- `create_sa:brass_boots_recipe` → create_sa:brass_boots ← 4×#c:ingots/brass
+- `create_sa:copper_boots_recipe` → create_sa:copper_boots ← 4×#c:ingots/copper
+- `create_sa:experience_axe_recipe` → create_sa:experience_axe ← 3×create_sa:heap_of_experience, 2×create_sa:zinc_handle
+- `create_sa:experience_pickaxe_recipe` → create_sa:experience_pickaxe ← 3×create_sa:heap_of_experience, 2×create_sa:zinc_handle
+- `create_sa:zinc_boots_recipe` → create_sa:zinc_boots ← 4×#c:ingots/zinc
+- `create_submarine:submarine_propeller` → create_submarine:submarine_propeller ← create:industrial_iron_block, create:propeller, create:shaft
+- `createbigcannons:basin_foundry_lid` → createbigcannons:basin_foundry_lid ← 4×create:andesite_alloy
+- `createcasing:crafting/encased_fan/industrial_iron` → createcasing:industrial_iron_encased_fan ← create:industrial_iron_block, create:propeller, create:shaft
+- `createcasing:crafting/fluid_pipe/brass` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass
+- `createcasing:crafting/fluid_pipe/brass_vertical` → 6× createcasing:brass_fluid_pipe ← #c:ingots/brass, 2×#c:plates/brass
+- `createcasing:crafting/gearbox/brass` → createcasing:brass_gearbox ← create:brass_casing, 4×create:cogwheel
+- `createcasing:crafting/gearbox/brass_vertical` → createcasing:vertical_brass_gearbox ← create:brass_casing, 4×create:cogwheel
+- `createcasing:crafting/gearbox/copper` → createcasing:copper_gearbox ← 4×create:cogwheel, create:copper_casing
+- `createcasing:crafting/gearbox/copper_vertical` → createcasing:vertical_copper_gearbox ← 4×create:cogwheel, create:copper_casing
+- `createcasing:crafting/gearbox/creative` → createcasing:creative_gearbox ← 4×create:cogwheel, createcasing:creative_casing
+- `createcasing:crafting/gearbox/creative_vertical` → createcasing:vertical_creative_gearbox ← 4×create:cogwheel, createcasing:creative_casing
+- `createcasing:crafting/gearbox/industrial_iron` → createcasing:industrial_iron_gearbox ← 4×create:cogwheel, create:industrial_iron_block
+- `createcasing:crafting/gearbox/industrial_iron_vertical` → createcasing:vertical_industrial_iron_gearbox ← 4×create:cogwheel, create:industrial_iron_block
+- `createcasing:crafting/gearbox/railway` → createcasing:railway_gearbox ← 4×create:cogwheel, create:railway_casing
+- `createcasing:crafting/gearbox/railway_vertical` → createcasing:vertical_railway_gearbox ← 4×create:cogwheel, create:railway_casing
+- `createcasing:crafting/gearbox/refined_radiance` → createcasing:refined_radiance_gearbox ← 4×create:cogwheel, create:refined_radiance_casing
+- `createcasing:crafting/gearbox/refined_radiance_vertical` → createcasing:vertical_refined_radiance_gearbox ← 4×create:cogwheel, create:refined_radiance_casing
+- `createcasing:crafting/gearbox/shadow_steel` → createcasing:shadow_steel_gearbox ← 4×create:cogwheel, create:shadow_steel_casing
+- `createcasing:crafting/gearbox/shadow_steel_vertical` → createcasing:vertical_shadow_steel_gearbox ← 4×create:cogwheel, create:shadow_steel_casing
+- `createcasing:crafting/gearbox/weathered_iron` → createcasing:weathered_iron_gearbox ← 4×create:cogwheel, create:weathered_iron_block
+- `createcasing:crafting/gearbox/weathered_iron_vertical` → createcasing:vertical_weathered_iron_gearbox ← 4×create:cogwheel, create:weathered_iron_block
+- `createdeco:andesite_door` → 3× createdeco:andesite_door ← 6×create:andesite_alloy
+- `createdeco:andesite_support` → 4× createdeco:andesite_support ← 4×create:andesite_alloy
+- `createdeco:andesite_window` → 2× createdeco:andesite_window ← #c:glass_blocks/colorless, 3×#c:ingots/andesite_alloy
+- `createdeco:brass_door` → 3× createdeco:brass_door ← 6×create:brass_ingot
+- `createdeco:brass_support` → 4× createdeco:brass_support ← 4×create:brass_ingot
+- `createdeco:brass_support_wedge` → 3× createdeco:brass_support_wedge ← 3×#c:plates/brass
+- `createdeco:copper_support` → 4× createdeco:copper_support ← 4×minecraft:copper_ingot
+- `createdeco:copper_support_wedge` → 3× createdeco:copper_support_wedge ← 3×#c:plates/copper
+- `createdeco:industrial_iron_door` → 3× createdeco:industrial_iron_door ← 6×createdeco:industrial_iron_ingot
+- `createdeco:iron_support` → 4× createdeco:iron_support ← 4×minecraft:iron_ingot
+- `createdeco:iron_support_wedge` → 3× createdeco:iron_support_wedge ← 3×#c:plates/iron
+- `createdeco:zinc_door` → 3× createdeco:zinc_door ← 6×create:zinc_ingot
+- `createdeco:zinc_support` → 4× createdeco:zinc_support ← 4×create:zinc_ingot
+- `createdieselgenerators:crafting/andesite_girder` → 6× createdieselgenerators:andesite_girder ← 2×create:andesite_alloy, create:shaft
+- `createdieselgenerators:crafting/oil_barrel` → createdieselgenerators:oil_barrel ← #c:barrels/wooden, 2×#c:plates/iron
+- `createfood:crafting/shaped/raw_chocolate_pastry_base_from_shaped` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough
+- `createfood:crafting/shaped/raw_pastry_base_from_shaped` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough
+- `createframed:window/andesite_alloy_window` → 2× createframed:andesite_alloy_window ← #c:glass_blocks/colorless, 3×create:andesite_alloy
+- `createpropulsion:crafting/platinum_fluid_tank` → createpropulsion:platinum_fluid_tank ← create:fluid_tank, 2×createpropulsion:platinum_sheet
+- `createpropulsion:crafting/platinum_fluid_vessel` → createpropulsion:platinum_fluid_vessel ← create:fluid_tank, 2×createpropulsion:platinum_sheet
+- `garnished:stone/abyssal_stone/chiseled` → garnished:chiseled_abyssal_stone_bricks ← 2×garnished:polished_abyssal_stone_slab
+- `garnished:stone/abyssal_stone/polished` → garnished:polished_abyssal_stone ← 2×garnished:polished_abyssal_stone_slab
+- `garnished:stone/carnotite/chiseled` → garnished:chiseled_carnotite_bricks ← 2×garnished:polished_carnotite_slab
+- `garnished:stone/carnotite/polished` → garnished:polished_carnotite ← 2×garnished:polished_carnotite_slab
+- `garnished:stone/ritualistic_stone/chiseled` → garnished:chiseled_ritualistic_stone_bricks ← 2×garnished:polished_ritualistic_stone_slab
+- `garnished:stone/ritualistic_stone/polished` → garnished:polished_ritualistic_stone ← 2×garnished:polished_ritualistic_stone_slab
+- `garnished:stone/unstable_stone/chiseled` → garnished:chiseled_unstable_stone_bricks ← 2×garnished:polished_unstable_stone_slab
+- `garnished:stone/unstable_stone/polished` → garnished:polished_unstable_stone ← 2×garnished:polished_unstable_stone_slab
+- `garnished:stone/wyvern_stone/chiseled` → garnished:chiseled_dragon_stone_bricks ← 2×garnished:polished_dragon_stone_slab
+- `garnished:stone/wyvern_stone/polished` → garnished:polished_dragon_stone ← 2×garnished:polished_dragon_stone_slab
+- `garnished:stone/zultanite/basic/chiseled` → garnished:chiseled_zultanite_bricks ← 2×garnished:polished_zultanite_slab
+- `garnished:stone/zultanite/basic/polished` → garnished:polished_zultanite ← 2×garnished:polished_zultanite_slab
+- `garnished:stone/zultanite/black/chiseled` → garnished:chiseled_black_zultanite_bricks ← 2×garnished:polished_black_zultanite_slab
+- `garnished:stone/zultanite/black/polished` → garnished:polished_black_zultanite ← 2×garnished:polished_black_zultanite_slab
+- `garnished:stone/zultanite/blue/chiseled` → garnished:chiseled_blue_zultanite_bricks ← 2×garnished:polished_blue_zultanite_slab
+- `garnished:stone/zultanite/blue/polished` → garnished:polished_blue_zultanite ← 2×garnished:polished_blue_zultanite_slab
+- `garnished:stone/zultanite/brown/chiseled` → garnished:chiseled_brown_zultanite_bricks ← 2×garnished:polished_brown_zultanite_slab
+- `garnished:stone/zultanite/brown/polished` → garnished:polished_brown_zultanite ← 2×garnished:polished_brown_zultanite_slab
+- `garnished:stone/zultanite/cyan/chiseled` → garnished:chiseled_cyan_zultanite_bricks ← 2×garnished:polished_cyan_zultanite_slab
+- `garnished:stone/zultanite/cyan/polished` → garnished:polished_cyan_zultanite ← 2×garnished:polished_cyan_zultanite_slab
+- `garnished:stone/zultanite/gray/chiseled` → garnished:chiseled_gray_zultanite_bricks ← 2×garnished:polished_gray_zultanite_slab
+- `garnished:stone/zultanite/gray/polished` → garnished:polished_gray_zultanite ← 2×garnished:polished_gray_zultanite_slab
+- `garnished:stone/zultanite/green/chiseled` → garnished:chiseled_green_zultanite_bricks ← 2×garnished:polished_green_zultanite_slab
+- `garnished:stone/zultanite/green/polished` → garnished:polished_green_zultanite ← 2×garnished:polished_green_zultanite_slab
+- `garnished:stone/zultanite/light_blue/chiseled` → garnished:chiseled_light_blue_zultanite_bricks ← 2×garnished:polished_light_blue_zultanite_slab
+- `garnished:stone/zultanite/light_blue/polished` → garnished:polished_light_blue_zultanite ← 2×garnished:polished_light_blue_zultanite_slab
+- `garnished:stone/zultanite/light_gray/chiseled` → garnished:chiseled_light_gray_zultanite_bricks ← 2×garnished:polished_light_gray_zultanite_slab
+- `garnished:stone/zultanite/light_gray/polished` → garnished:polished_light_gray_zultanite ← 2×garnished:polished_light_gray_zultanite_slab
+- `garnished:stone/zultanite/lime/chiseled` → garnished:chiseled_lime_zultanite_bricks ← 2×garnished:polished_lime_zultanite_slab
+- `garnished:stone/zultanite/lime/polished` → garnished:polished_lime_zultanite ← 2×garnished:polished_lime_zultanite_slab
+- `garnished:stone/zultanite/magenta/chiseled` → garnished:chiseled_magenta_zultanite_bricks ← 2×garnished:polished_magenta_zultanite_slab
+- `garnished:stone/zultanite/magenta/polished` → garnished:polished_magenta_zultanite ← 2×garnished:polished_magenta_zultanite_slab
+- `garnished:stone/zultanite/orange/chiseled` → garnished:chiseled_orange_zultanite_bricks ← 2×garnished:polished_orange_zultanite_slab
+- `garnished:stone/zultanite/orange/polished` → garnished:polished_orange_zultanite ← 2×garnished:polished_orange_zultanite_slab
+- `garnished:stone/zultanite/pink/chiseled` → garnished:chiseled_pink_zultanite_bricks ← 2×garnished:polished_pink_zultanite_slab
+- `garnished:stone/zultanite/pink/polished` → garnished:polished_pink_zultanite ← 2×garnished:polished_pink_zultanite_slab
+- `garnished:stone/zultanite/purple/chiseled` → garnished:chiseled_purple_zultanite_bricks ← 2×garnished:polished_purple_zultanite_slab
+- `garnished:stone/zultanite/purple/polished` → garnished:polished_purple_zultanite ← 2×garnished:polished_purple_zultanite_slab
+- `garnished:stone/zultanite/red/chiseled` → garnished:chiseled_red_zultanite_bricks ← 2×garnished:polished_red_zultanite_slab
+- `garnished:stone/zultanite/red/polished` → garnished:polished_red_zultanite ← 2×garnished:polished_red_zultanite_slab
+- `garnished:stone/zultanite/white/chiseled` → garnished:chiseled_white_zultanite_bricks ← 2×garnished:polished_white_zultanite_slab
+- `garnished:stone/zultanite/white/polished` → garnished:polished_white_zultanite ← 2×garnished:polished_white_zultanite_slab
+- `garnished:stone/zultanite/yellow/chiseled` → garnished:chiseled_yellow_zultanite_bricks ← 2×garnished:polished_yellow_zultanite_slab
+- `garnished:stone/zultanite/yellow/polished` → garnished:polished_yellow_zultanite ← 2×garnished:polished_yellow_zultanite_slab
+- `immersive_aircraft:propeller` → immersive_aircraft:propeller ← 5×[minecraft:iron_ingot]
+- `minecraft:bamboo_door` → 3× minecraft:bamboo_door ← 6×minecraft:bamboo_planks
+- `minecraft:bamboo_fence` → 3× minecraft:bamboo_fence ← 4×minecraft:bamboo_planks, 2×minecraft:stick
+- `minecraft:bamboo_pressure_plate` → minecraft:bamboo_pressure_plate ← 2×minecraft:bamboo_planks
+- `minecraft:bamboo_stairs` → 4× minecraft:bamboo_stairs ← 6×minecraft:bamboo_planks
+- `minecraft:bamboo_trapdoor` → 2× minecraft:bamboo_trapdoor ← 6×minecraft:bamboo_planks
+- `minecraft:cauldron` → minecraft:cauldron ← 7×minecraft:iron_ingot
+- `minecraft:copper_door` → 3× minecraft:copper_door ← 6×minecraft:copper_ingot
+- `minecraft:copper_trapdoor` → 2× minecraft:copper_trapdoor ← 6×minecraft:copper_ingot
+- `minecraft:diamond_axe` → minecraft:diamond_axe ← 3×minecraft:diamond, 2×minecraft:stick
+- `minecraft:diamond_pickaxe` → minecraft:diamond_pickaxe ← 3×minecraft:diamond, 2×minecraft:stick
+- `minecraft:diamond_shovel` → minecraft:diamond_shovel ← minecraft:diamond, 2×minecraft:stick
+- `minecraft:golden_axe` → minecraft:golden_axe ← 3×minecraft:gold_ingot, 2×minecraft:stick
+- `minecraft:golden_pickaxe` → minecraft:golden_pickaxe ← 3×minecraft:gold_ingot, 2×minecraft:stick
+- `minecraft:heavy_weighted_pressure_plate` → minecraft:heavy_weighted_pressure_plate ← 2×minecraft:iron_ingot
+- `minecraft:iron_axe` → minecraft:iron_axe ← 3×minecraft:iron_ingot, 2×minecraft:stick
+- `minecraft:iron_bars` → 16× minecraft:iron_bars ← 6×minecraft:iron_ingot
+- `minecraft:iron_boots` → minecraft:iron_boots ← 4×minecraft:iron_ingot
+- `minecraft:iron_door` → 3× minecraft:iron_door ← 6×minecraft:iron_ingot
+- `minecraft:iron_helmet` → minecraft:iron_helmet ← 5×minecraft:iron_ingot
+- `minecraft:iron_leggings` → minecraft:iron_leggings ← 7×minecraft:iron_ingot
+- `minecraft:iron_pickaxe` → minecraft:iron_pickaxe ← 3×minecraft:iron_ingot, 2×minecraft:stick
+- `minecraft:iron_shovel` → minecraft:iron_shovel ← minecraft:iron_ingot, 2×minecraft:stick
+- `minecraft:leather_horse_armor` → minecraft:leather_horse_armor ← 7×minecraft:leather
+- `minecraft:leather_leggings` → minecraft:leather_leggings ← 7×minecraft:leather
+- `minecraft:minecart` → minecraft:minecart ← 5×minecraft:iron_ingot
+- `minecraft:red_sandstone_stairs` → 4× minecraft:red_sandstone_stairs ← 6×[minecraft:red_sandstone|minecraft:chiseled_red_sandstone|minecraft:cut_red_sandstone]
+- `minecraft:sandstone_stairs` → 4× minecraft:sandstone_stairs ← 6×[minecraft:sandstone|minecraft:chiseled_sandstone|minecraft:cut_sandstone]
+- `minecraft:stone_axe` → minecraft:stone_axe ← 3×#minecraft:stone_tool_materials, 2×minecraft:stick
+- `minecraft:stone_pickaxe` → minecraft:stone_pickaxe ← 3×#minecraft:stone_tool_materials, 2×minecraft:stick
+- `minecraft:stone_shovel` → minecraft:stone_shovel ← #minecraft:stone_tool_materials, 2×minecraft:stick
+- `minecraft:wooden_axe` → minecraft:wooden_axe ← 3×#minecraft:planks, 2×minecraft:stick
+- `minecraft:wooden_pickaxe` → minecraft:wooden_pickaxe ← 3×#minecraft:planks, 2×minecraft:stick
+- `northstar:crafting/martian_axe` → northstar:martian_axe ← 2×create:zinc_ingot, 3×northstar:martian_steel_ingot
+- `northstar:crafting/martian_pickaxe` → northstar:martian_pickaxe ← 2×create:zinc_ingot, 3×northstar:martian_steel_ingot
+- `pipeorgans:crafting/brass_boot` → 6× pipeorgans:brass_boot ← 3×#c:plates/brass
+- `pipeorgans:crafting/copper_boot` → 6× pipeorgans:copper_boot ← 3×#c:plates/copper
+- `pipeorgans:crafting/gamba` → pipeorgans:gamba ← #c:ingots/iron, #c:plates/iron, pipeorgans:base
+- `pipeorgans:crafting/iron_boot` → 6× pipeorgans:iron_boot ← 3×#c:plates/iron
+- `pipeorgans:crafting/rohrflote` → pipeorgans:rohrflote ← #c:ingots/iron, #c:plates/iron, pipeorgans:base
+- `railways:crafting/palettes/hazard_stripes_a/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
+- `railways:crafting/palettes/hazard_stripes_a/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
+- `railways:crafting/palettes/hazard_stripes_b/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
+- `railways:crafting/palettes/hazard_stripes_b/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
+- `tfmg:crafting/materials/aluminum_axe` → tfmg:aluminum_axe ← 3×#c:ingots/aluminum, 2×minecraft:stick
+- `tfmg:crafting/materials/aluminum_pickaxe` → tfmg:aluminum_pickaxe ← 3×#c:ingots/aluminum, 2×minecraft:stick
+- `tfmg:crafting/materials/brass_pipe` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass
+- `tfmg:crafting/materials/brass_pipe_vertical` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass
+- `tfmg:crafting/materials/cable_tube` → 8× tfmg:cable_tube ← 2×#c:nuggets/steel, 2×#c:wires/copper, tfmg:rubber_sheet
+- `tfmg:crafting/materials/diagonal_cable_block` → 8× tfmg:diagonal_cable_block ← 2×#c:nuggets/steel, 2×#c:wires/copper, tfmg:rubber_sheet
+- `tfmg:crafting/materials/large_pumpjack_hammer_head` → tfmg:large_pumpjack_hammer_head ← #c:plates/steel, #c:storage_blocks/steel
+- `tfmg:crafting/materials/lead_axe` → tfmg:lead_axe ← 3×#c:ingots/lead, 2×minecraft:stick
+- `tfmg:crafting/materials/lead_pickaxe` → tfmg:lead_pickaxe ← 3×#c:ingots/lead, 2×minecraft:stick
+- `tfmg:crafting/materials/pumpjack_hammer_head` → tfmg:pumpjack_hammer_head ← #c:plates/steel, #c:storage_blocks/steel
+- `tfmg:crafting/materials/steel_axe` → tfmg:steel_axe ← 3×#c:ingots/steel, 2×minecraft:stick
+- `tfmg:crafting/materials/steel_pickaxe` → tfmg:steel_pickaxe ← 3×#c:ingots/steel, 2×minecraft:stick
+- `wands:diamond_wand` → wands:diamond_wand ← minecraft:diamond, 2×minecraft:stick
+- `wands:iron_wand` → wands:iron_wand ← minecraft:iron_ingot, 2×minecraft:stick
+- `wands:stone_wand` → wands:stone_wand ← minecraft:cobblestone, 2×minecraft:stick
+- `wands:stone_wand2` → wands:stone_wand ← minecraft:cobbled_deepslate, 2×minecraft:stick
+
+## Коллизии среди того, что миксер делает сам (бесформенные и create:mixing) (49)
+
+- `createcasing:crafting/portable_storage_interface/railway` → createcasing:railway_portable_storage_interface ← create:chute, create:railway_casing [бесформенный]; `railways:crafting/portable_fuel_interface` → railways:portable_fuel_interface ← create:chute, create:railway_casing [бесформенный]
+- `create_connected:crafting/kinetics/crank_wheel` → create_connected:crank_wheel ← create:cogwheel, create:hand_crank [бесформенный]; `dndesires:crafting/cog_crank` → dndesires:cog_crank ← create:cogwheel, create:hand_crank [бесформенный]
+- `create_connected:crafting/kinetics/large_crank_wheel` → create_connected:large_crank_wheel ← create:hand_crank, create:large_cogwheel [бесформенный]; `dndesires:crafting/large_cog_crank` → dndesires:large_cog_crank ← create:hand_crank, create:large_cogwheel [бесформенный]
+- `create_vibrant_vaults:crafting/black_item_vault_from_dyeing` → create_vibrant_vaults:black_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:black_dye [бесформенный]; `minecraft:black_shipping_container_from_dyeing_vaults` → createdeco:black_shipping_container ← create:item_vault, minecraft:black_dye [бесформенный]
+- `create_vibrant_vaults:crafting/blue_item_vault_from_dyeing` → create_vibrant_vaults:blue_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:blue_dye [бесформенный]; `minecraft:blue_shipping_container_from_dyeing_vaults` → createdeco:blue_shipping_container ← create:item_vault, minecraft:blue_dye [бесформенный]
+- `create_vibrant_vaults:crafting/brown_item_vault_from_dyeing` → create_vibrant_vaults:brown_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:brown_dye [бесформенный]; `minecraft:brown_shipping_container_from_dyeing_vaults` → createdeco:brown_shipping_container ← create:item_vault, minecraft:brown_dye [бесформенный]
+- `create_vibrant_vaults:crafting/cyan_item_vault_from_dyeing` → create_vibrant_vaults:cyan_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:cyan_dye [бесформенный]; `minecraft:cyan_shipping_container_from_dyeing_vaults` → createdeco:cyan_shipping_container ← create:item_vault, minecraft:cyan_dye [бесформенный]
+- `create_vibrant_vaults:crafting/gray_item_vault_from_dyeing` → create_vibrant_vaults:gray_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:gray_dye [бесформенный]; `minecraft:gray_shipping_container_from_dyeing_vaults` → createdeco:gray_shipping_container ← create:item_vault, minecraft:gray_dye [бесформенный]
+- `create_vibrant_vaults:crafting/green_item_vault_from_dyeing` → create_vibrant_vaults:green_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:green_dye [бесформенный]; `minecraft:green_shipping_container_from_dyeing_vaults` → createdeco:green_shipping_container ← create:item_vault, minecraft:green_dye [бесформенный]
+- `create_vibrant_vaults:crafting/light_blue_item_vault_from_dyeing` → create_vibrant_vaults:light_blue_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:light_blue_dye [бесформенный]; `minecraft:light_blue_shipping_container_from_dyeing_vaults` → createdeco:light_blue_shipping_container ← create:item_vault, minecraft:light_blue_dye [бесформенный]
+- `create_vibrant_vaults:crafting/light_gray_item_vault_from_dyeing` → create_vibrant_vaults:light_gray_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:light_gray_dye [бесформенный]; `minecraft:light_gray_shipping_container_from_dyeing_vaults` → createdeco:light_gray_shipping_container ← create:item_vault, minecraft:light_gray_dye [бесформенный]
+- `create_vibrant_vaults:crafting/lime_item_vault_from_dyeing` → create_vibrant_vaults:lime_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:lime_dye [бесформенный]; `minecraft:lime_shipping_container_from_dyeing_vaults` → createdeco:lime_shipping_container ← create:item_vault, minecraft:lime_dye [бесформенный]
+- `create_vibrant_vaults:crafting/magenta_item_vault_from_dyeing` → create_vibrant_vaults:magenta_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:magenta_dye [бесформенный]; `minecraft:magenta_shipping_container_from_dyeing_vaults` → createdeco:magenta_shipping_container ← create:item_vault, minecraft:magenta_dye [бесформенный]
+- `create_vibrant_vaults:crafting/orange_item_vault_from_dyeing` → create_vibrant_vaults:orange_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:orange_dye [бесформенный]; `minecraft:orange_shipping_container_from_dyeing_vaults` → createdeco:orange_shipping_container ← create:item_vault, minecraft:orange_dye [бесформенный]
+- `create_vibrant_vaults:crafting/pink_item_vault_from_dyeing` → create_vibrant_vaults:pink_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:pink_dye [бесформенный]; `minecraft:pink_shipping_container_from_dyeing_vaults` → createdeco:pink_shipping_container ← create:item_vault, minecraft:pink_dye [бесформенный]
+- `create_vibrant_vaults:crafting/purple_item_vault_from_dyeing` → create_vibrant_vaults:purple_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:purple_dye [бесформенный]; `minecraft:purple_shipping_container_from_dyeing_vaults` → createdeco:purple_shipping_container ← create:item_vault, minecraft:purple_dye [бесформенный]
+- `create_vibrant_vaults:crafting/red_item_vault_from_dyeing` → create_vibrant_vaults:red_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:red_dye [бесформенный]; `minecraft:red_shipping_container_from_dyeing_vaults` → createdeco:red_shipping_container ← create:item_vault, minecraft:red_dye [бесформенный]
+- `create_vibrant_vaults:crafting/white_item_vault_from_dyeing` → create_vibrant_vaults:white_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:white_dye [бесформенный]; `minecraft:white_shipping_container_from_dyeing_vaults` → createdeco:white_shipping_container ← create:item_vault, minecraft:white_dye [бесформенный]
+- `create_vibrant_vaults:crafting/yellow_item_vault_from_dyeing` → create_vibrant_vaults:yellow_item_vault ← [create:item_vault|create_vibrant_vaults:black_item_vault|create_vibrant_vaults:blue_item_vault|create_vibrant_vaults:brown_item_vault|create_vibrant_vaults:cyan_item_vault|create_vibrant_vaults:gray_item_vault|create_vibrant_vaults:green_item_vault|create_vibrant_vaults:light_blue_item_vault|create_vibrant_vaults:light_gray_item_vault|create_vibrant_vaults:lime_item_vault|create_vibrant_vaults:magenta_item_vault|create_vibrant_vaults:orange_item_vault|create_vibrant_vaults:pink_item_vault|create_vibrant_vaults:purple_item_vault|create_vibrant_vaults:red_item_vault|create_vibrant_vaults:white_item_vault|create_vibrant_vaults:yellow_item_vault], minecraft:yellow_dye [бесформенный]; `minecraft:yellow_shipping_container_from_dyeing_vaults` → createdeco:yellow_shipping_container ← create:item_vault, minecraft:yellow_dye [бесформенный]
+- `createadditionallogistics:crafting/kinetics/green_tall_seat` → createadditionallogistics:green_tall_seat ← #minecraft:planks, minecraft:green_wool [бесформенный]; `interiors:crafting/cushion/green_cushion` → 2× interiors:green_cushion ← #minecraft:planks, minecraft:green_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/light_gray_tall_seat` → createadditionallogistics:light_gray_tall_seat ← #minecraft:planks, minecraft:light_gray_wool [бесформенный]; `interiors:crafting/cushion/light_gray_cushion` → 2× interiors:light_gray_cushion ← #minecraft:planks, minecraft:light_gray_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/cyan_tall_seat` → createadditionallogistics:cyan_tall_seat ← #minecraft:planks, minecraft:cyan_wool [бесформенный]; `interiors:crafting/cushion/cyan_cushion` → 2× interiors:cyan_cushion ← #minecraft:planks, minecraft:cyan_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/orange_tall_seat` → createadditionallogistics:orange_tall_seat ← #minecraft:planks, minecraft:orange_wool [бесформенный]; `interiors:crafting/cushion/orange_cushion` → 2× interiors:orange_cushion ← #minecraft:planks, minecraft:orange_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/pink_tall_seat` → createadditionallogistics:pink_tall_seat ← #minecraft:planks, minecraft:pink_wool [бесформенный]; `interiors:crafting/cushion/pink_cushion` → 2× interiors:pink_cushion ← #minecraft:planks, minecraft:pink_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/red_tall_seat` → createadditionallogistics:red_tall_seat ← #minecraft:planks, minecraft:red_wool [бесформенный]; `interiors:crafting/cushion/red_cushion` → 2× interiors:red_cushion ← #minecraft:planks, minecraft:red_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/lime_tall_seat` → createadditionallogistics:lime_tall_seat ← #minecraft:planks, minecraft:lime_wool [бесформенный]; `interiors:crafting/cushion/lime_cushion` → 2× interiors:lime_cushion ← #minecraft:planks, minecraft:lime_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/magenta_tall_seat` → createadditionallogistics:magenta_tall_seat ← #minecraft:planks, minecraft:magenta_wool [бесформенный]; `interiors:crafting/cushion/magenta_cushion` → 2× interiors:magenta_cushion ← #minecraft:planks, minecraft:magenta_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/purple_tall_seat` → createadditionallogistics:purple_tall_seat ← #minecraft:planks, minecraft:purple_wool [бесформенный]; `interiors:crafting/cushion/purple_cushion` → 2× interiors:purple_cushion ← #minecraft:planks, minecraft:purple_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/brown_tall_seat` → createadditionallogistics:brown_tall_seat ← #minecraft:planks, minecraft:brown_wool [бесформенный]; `interiors:crafting/cushion/brown_cushion` → 2× interiors:brown_cushion ← #minecraft:planks, minecraft:brown_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/black_tall_seat` → createadditionallogistics:black_tall_seat ← #minecraft:planks, minecraft:black_wool [бесформенный]; `interiors:crafting/cushion/black_cushion` → 2× interiors:black_cushion ← #minecraft:planks, minecraft:black_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/light_blue_tall_seat` → createadditionallogistics:light_blue_tall_seat ← #minecraft:planks, minecraft:light_blue_wool [бесформенный]; `interiors:crafting/cushion/light_blue_cushion` → 2× interiors:light_blue_cushion ← #minecraft:planks, minecraft:light_blue_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/white_tall_seat` → createadditionallogistics:white_tall_seat ← #minecraft:planks, minecraft:white_wool [бесформенный]; `interiors:crafting/cushion/white_cushion` → 2× interiors:white_cushion ← #minecraft:planks, minecraft:white_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/yellow_tall_seat` → createadditionallogistics:yellow_tall_seat ← #minecraft:planks, minecraft:yellow_wool [бесформенный]; `interiors:crafting/cushion/yellow_cushion` → 2× interiors:yellow_cushion ← #minecraft:planks, minecraft:yellow_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/gray_tall_seat` → createadditionallogistics:gray_tall_seat ← #minecraft:planks, minecraft:gray_wool [бесформенный]; `interiors:crafting/cushion/gray_cushion` → 2× interiors:gray_cushion ← #minecraft:planks, minecraft:gray_wool [бесформенный]
+- `createadditionallogistics:crafting/kinetics/blue_tall_seat` → createadditionallogistics:blue_tall_seat ← #minecraft:planks, minecraft:blue_wool [бесформенный]; `interiors:crafting/cushion/blue_cushion` → 2× interiors:blue_cushion ← #minecraft:planks, minecraft:blue_wool [бесформенный]
+- `createfood:crafting/shaped/raw_chocolate_pastry_base_from_shaped` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough [фигурный]; `createfood:create/mixing/chocolate_pastry_base_from_mixing_heated` → createfood:chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough (нагрев) [create:mixing]; `createfood:create/mixing/raw_chocolate_pastry_base_from_mixing` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough [create:mixing]; `createfood:minecraft/crafting/raw_chocolate_pastry_base_from_crafting` → createfood:raw_chocolate_pastry_base ← #c:butter, #c:chocolate_sweet_dough [бесформенный]
+- `createfood:crafting/shaped/raw_pastry_base_from_shaped` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough [фигурный]; `createfood:create/mixing/pastry_base_from_mixing_heated` → createfood:pastry_base ← #c:butter, #c:sweet_dough (нагрев) [create:mixing]; `createfood:create/mixing/raw_pastry_base_from_mixing` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough [create:mixing]; `createfood:minecraft/crafting/raw_pastry_base_from_crafting` → createfood:raw_pastry_base ← #c:butter, #c:sweet_dough [бесформенный]
+- `create_confectionery:black_chocolate_recipe_2` → fluid:create_confectionery:black_chocolate ← create_confectionery:bar_of_black_chocolate (нагрев) [create:mixing]; `createfood:create/mixing/dark_chocolate_fluid_from_mixing_melting` → fluid:createfood:dark_chocolate ← #c:bar_of_dark_chocolate (нагрев) [create:mixing]
+- `create_confectionery:white_chocolate_recipe_2` → fluid:create_confectionery:white_chocolate ← create_confectionery:bar_of_white_chocolate (нагрев) [create:mixing]; `createfood:create/mixing/white_chocolate_fluid_from_mixing_melting` → fluid:createfood:white_chocolate ← #c:bar_of_white_chocolate (нагрев) [create:mixing]
+- `create_sa:magma_cream_recipe` → minecraft:magma_cream ← minecraft:slime_ball (нагрев) [create:mixing]; `create_things_and_misc:slimefluidcraft` → fluid:create_things_and_misc:slime ← minecraft:slime_ball [create:mixing]
+- `createfood:create/mixing/apple_custard_fluid_from_mixing_heated` → fluid:createfood:apple_custard ← #c:apple, #c:egg_yolk, #c:sugar +жидк. (нагрев) [create:mixing]; `createfood:create/mixing/pumpkin_custard_fluid_from_mixing_heated` → fluid:createfood:pumpkin_custard ← #c:apple, #c:egg_yolk, #c:sugar +жидк. (нагрев) [create:mixing]
+- `createfood:create/mixing/chocolate_bottle_from_mixing` → createfood:chocolate_bottle ← minecraft:glass_bottle +жидк. [create:mixing]; `createfood:create/mixing/hot_chocolate_bottle_from_mixing_heated` → createfood:hot_chocolate_bottle ← minecraft:glass_bottle +жидк. (нагрев) [create:mixing]
+- `createfood:create/mixing/chocolate_bucket_from_mixing` → create:chocolate_bucket ← minecraft:bucket +жидк. [create:mixing]; `createfood:create/mixing/hot_chocolate_bucket_from_mixing_heated` → createfood:hot_chocolate_bucket ← minecraft:bucket +жидк. (нагрев) [create:mixing]
+- `createfood:create/mixing/dark_chocolate_bottle_from_mixing` → createfood:dark_chocolate_bottle ← #c:cocoa_powder, minecraft:glass_bottle +жидк. [create:mixing]; `createfood:create/mixing/hot_dark_chocolate_bottle_from_mixing_heated` → createfood:hot_dark_chocolate_bottle ← #c:cocoa_powder, minecraft:glass_bottle +жидк. (нагрев) [create:mixing]
+- `createfood:create/mixing/dark_chocolate_bucket_from_mixing` → createfood:dark_chocolate_bucket ← 4×#c:cocoa_powder, minecraft:bucket +жидк. [create:mixing]; `createfood:create/mixing/hot_dark_chocolate_bucket_from_mixing_heated` → createfood:hot_dark_chocolate_bucket ← 4×#c:cocoa_powder, minecraft:bucket +жидк. (нагрев) [create:mixing]
+- `createfood:create/mixing/dark_chocolate_fluid_from_mixing` → fluid:createfood:dark_chocolate ← #c:cocoa_powder +жидк. [create:mixing]; `createfood:create/mixing/hot_dark_chocolate_fluid_from_mixing_heated` → fluid:createfood:hot_dark_chocolate ← #c:cocoa_powder +жидк. (нагрев) [create:mixing]
+- `createfood:create/mixing/hot_white_chocolate_bottle_from_mixing_heated` → createfood:hot_white_chocolate_bottle ← minecraft:glass_bottle +жидк. (нагрев) [create:mixing]; `createfood:create/mixing/white_chocolate_bottle_from_mixing` → createfood:white_chocolate_bottle ← minecraft:glass_bottle +жидк. [create:mixing]
+- `createfood:create/mixing/hot_white_chocolate_bucket_from_mixing_heated` → createfood:hot_white_chocolate_bucket ← minecraft:bucket +жидк. (нагрев) [create:mixing]; `createfood:create/mixing/white_chocolate_bucket_from_mixing` → createfood:white_chocolate_bucket ← minecraft:bucket +жидк. [create:mixing]
+- `createfood:create/mixing/mashed_potatoes_bowl_bacon_from_mixing_heated_milk` → createfood:mashed_potatoes_bowl_bacon ← #c:bowl, #c:butter, #c:cooked_pork, #c:potato +жидк. (нагрев) [create:mixing]; `createfood:create/mixing/mashed_potatoes_bowl_cheese_from_mixing_heated_milk` → createfood:mashed_potatoes_bowl_cheese ← #c:bowl, #c:butter, #c:cooked_pork, #c:potato +жидк. (нагрев) [create:mixing]
+
+## Формы на пилу, уже покрытые stonecutting/create:cutting (не генерируются) (603)
+
+- `bits_n_bobs:andesite_tile_stairs` → 4× bits_n_bobs:andesite_tile_stairs ← 6×bits_n_bobs:andesite_tiles
+- `bits_n_bobs:andesite_tile_wall` → 6× bits_n_bobs:andesite_tile_wall ← 6×bits_n_bobs:andesite_tiles
+- `bits_n_bobs:asurine_tile_stairs` → 4× bits_n_bobs:asurine_tile_stairs ← 6×bits_n_bobs:asurine_tiles
+- `bits_n_bobs:asurine_tile_wall` → 6× bits_n_bobs:asurine_tile_wall ← 6×bits_n_bobs:asurine_tiles
+- `bits_n_bobs:calcite_tile_stairs` → 4× bits_n_bobs:calcite_tile_stairs ← 6×bits_n_bobs:calcite_tiles
+- `bits_n_bobs:calcite_tile_wall` → 6× bits_n_bobs:calcite_tile_wall ← 6×bits_n_bobs:calcite_tiles
+- `bits_n_bobs:crimsite_tile_stairs` → 4× bits_n_bobs:crimsite_tile_stairs ← 6×bits_n_bobs:crimsite_tiles
+- `bits_n_bobs:crimsite_tile_wall` → 6× bits_n_bobs:crimsite_tile_wall ← 6×bits_n_bobs:crimsite_tiles
+- `bits_n_bobs:deepslate_tile_stairs` → 4× bits_n_bobs:deepslate_tile_stairs ← 6×bits_n_bobs:deepslate_tiles
+- `bits_n_bobs:deepslate_tile_wall` → 6× bits_n_bobs:deepslate_tile_wall ← 6×bits_n_bobs:deepslate_tiles
+- `bits_n_bobs:diorite_tile_stairs` → 4× bits_n_bobs:diorite_tile_stairs ← 6×bits_n_bobs:diorite_tiles
+- `bits_n_bobs:diorite_tile_wall` → 6× bits_n_bobs:diorite_tile_wall ← 6×bits_n_bobs:diorite_tiles
+- `bits_n_bobs:dripstone_tile_stairs` → 4× bits_n_bobs:dripstone_tile_stairs ← 6×bits_n_bobs:dripstone_tiles
+- `bits_n_bobs:dripstone_tile_wall` → 6× bits_n_bobs:dripstone_tile_wall ← 6×bits_n_bobs:dripstone_tiles
+- `bits_n_bobs:granite_tile_stairs` → 4× bits_n_bobs:granite_tile_stairs ← 6×bits_n_bobs:granite_tiles
+- `bits_n_bobs:granite_tile_wall` → 6× bits_n_bobs:granite_tile_wall ← 6×bits_n_bobs:granite_tiles
+- `bits_n_bobs:limestone_tile_stairs` → 4× bits_n_bobs:limestone_tile_stairs ← 6×bits_n_bobs:limestone_tiles
+- `bits_n_bobs:limestone_tile_wall` → 6× bits_n_bobs:limestone_tile_wall ← 6×bits_n_bobs:limestone_tiles
+- `bits_n_bobs:ochrum_tile_stairs` → 4× bits_n_bobs:ochrum_tile_stairs ← 6×bits_n_bobs:ochrum_tiles
+- `bits_n_bobs:ochrum_tile_wall` → 6× bits_n_bobs:ochrum_tile_wall ← 6×bits_n_bobs:ochrum_tiles
+- `bits_n_bobs:scorchia_tile_stairs` → 4× bits_n_bobs:scorchia_tile_stairs ← 6×bits_n_bobs:scorchia_tiles
+- `bits_n_bobs:scorchia_tile_wall` → 6× bits_n_bobs:scorchia_tile_wall ← 6×bits_n_bobs:scorchia_tiles
+- `bits_n_bobs:scoria_tile_stairs` → 4× bits_n_bobs:scoria_tile_stairs ← 6×bits_n_bobs:scoria_tiles
+- `bits_n_bobs:scoria_tile_wall` → 6× bits_n_bobs:scoria_tile_wall ← 6×bits_n_bobs:scoria_tiles
+- `bits_n_bobs:tuff_tile_stairs` → 4× bits_n_bobs:tuff_tile_stairs ← 6×bits_n_bobs:tuff_tiles
+- `bits_n_bobs:tuff_tile_wall` → 6× bits_n_bobs:tuff_tile_wall ← 6×bits_n_bobs:tuff_tiles
+- `bits_n_bobs:veridium_tile_stairs` → 4× bits_n_bobs:veridium_tile_stairs ← 6×bits_n_bobs:veridium_tiles
+- `bits_n_bobs:veridium_tile_wall` → 6× bits_n_bobs:veridium_tile_wall ← 6×bits_n_bobs:veridium_tiles
+- `create:cut_andesite_brick_stairs` → 4× create:cut_andesite_brick_stairs ← 6×create:cut_andesite_bricks
+- `create:cut_andesite_brick_wall` → 6× create:cut_andesite_brick_wall ← 6×create:cut_andesite_bricks
+- `create:cut_andesite_stairs` → 4× create:cut_andesite_stairs ← 6×create:cut_andesite
+- `create:cut_andesite_wall` → 6× create:cut_andesite_wall ← 6×create:cut_andesite
+- `create:cut_asurine_brick_stairs` → 4× create:cut_asurine_brick_stairs ← 6×create:cut_asurine_bricks
+- `create:cut_asurine_brick_wall` → 6× create:cut_asurine_brick_wall ← 6×create:cut_asurine_bricks
+- `create:cut_asurine_stairs` → 4× create:cut_asurine_stairs ← 6×create:cut_asurine
+- `create:cut_asurine_wall` → 6× create:cut_asurine_wall ← 6×create:cut_asurine
+- `create:cut_calcite_brick_stairs` → 4× create:cut_calcite_brick_stairs ← 6×create:cut_calcite_bricks
+- `create:cut_calcite_brick_wall` → 6× create:cut_calcite_brick_wall ← 6×create:cut_calcite_bricks
+- `create:cut_calcite_stairs` → 4× create:cut_calcite_stairs ← 6×create:cut_calcite
+- `create:cut_calcite_wall` → 6× create:cut_calcite_wall ← 6×create:cut_calcite
+- `create:cut_crimsite_brick_stairs` → 4× create:cut_crimsite_brick_stairs ← 6×create:cut_crimsite_bricks
+- `create:cut_crimsite_brick_wall` → 6× create:cut_crimsite_brick_wall ← 6×create:cut_crimsite_bricks
+- `create:cut_crimsite_stairs` → 4× create:cut_crimsite_stairs ← 6×create:cut_crimsite
+- `create:cut_crimsite_wall` → 6× create:cut_crimsite_wall ← 6×create:cut_crimsite
+- `create:cut_deepslate_brick_stairs` → 4× create:cut_deepslate_brick_stairs ← 6×create:cut_deepslate_bricks
+- `create:cut_deepslate_brick_wall` → 6× create:cut_deepslate_brick_wall ← 6×create:cut_deepslate_bricks
+- `create:cut_deepslate_stairs` → 4× create:cut_deepslate_stairs ← 6×create:cut_deepslate
+- `create:cut_deepslate_wall` → 6× create:cut_deepslate_wall ← 6×create:cut_deepslate
+- `create:cut_diorite_brick_stairs` → 4× create:cut_diorite_brick_stairs ← 6×create:cut_diorite_bricks
+- `create:cut_diorite_brick_wall` → 6× create:cut_diorite_brick_wall ← 6×create:cut_diorite_bricks
+- `create:cut_diorite_stairs` → 4× create:cut_diorite_stairs ← 6×create:cut_diorite
+- `create:cut_diorite_wall` → 6× create:cut_diorite_wall ← 6×create:cut_diorite
+- `create:cut_dripstone_brick_stairs` → 4× create:cut_dripstone_brick_stairs ← 6×create:cut_dripstone_bricks
+- `create:cut_dripstone_brick_wall` → 6× create:cut_dripstone_brick_wall ← 6×create:cut_dripstone_bricks
+- `create:cut_dripstone_stairs` → 4× create:cut_dripstone_stairs ← 6×create:cut_dripstone
+- `create:cut_dripstone_wall` → 6× create:cut_dripstone_wall ← 6×create:cut_dripstone
+- `create:cut_granite_brick_stairs` → 4× create:cut_granite_brick_stairs ← 6×create:cut_granite_bricks
+- `create:cut_granite_brick_wall` → 6× create:cut_granite_brick_wall ← 6×create:cut_granite_bricks
+- `create:cut_granite_stairs` → 4× create:cut_granite_stairs ← 6×create:cut_granite
+- `create:cut_granite_wall` → 6× create:cut_granite_wall ← 6×create:cut_granite
+- `create:cut_limestone_brick_stairs` → 4× create:cut_limestone_brick_stairs ← 6×create:cut_limestone_bricks
+- `create:cut_limestone_brick_wall` → 6× create:cut_limestone_brick_wall ← 6×create:cut_limestone_bricks
+- `create:cut_limestone_stairs` → 4× create:cut_limestone_stairs ← 6×create:cut_limestone
+- `create:cut_limestone_wall` → 6× create:cut_limestone_wall ← 6×create:cut_limestone
+- `create:cut_ochrum_brick_stairs` → 4× create:cut_ochrum_brick_stairs ← 6×create:cut_ochrum_bricks
+- `create:cut_ochrum_brick_wall` → 6× create:cut_ochrum_brick_wall ← 6×create:cut_ochrum_bricks
+- `create:cut_ochrum_stairs` → 4× create:cut_ochrum_stairs ← 6×create:cut_ochrum
+- `create:cut_ochrum_wall` → 6× create:cut_ochrum_wall ← 6×create:cut_ochrum
+- `create:cut_scorchia_brick_stairs` → 4× create:cut_scorchia_brick_stairs ← 6×create:cut_scorchia_bricks
+- `create:cut_scorchia_brick_wall` → 6× create:cut_scorchia_brick_wall ← 6×create:cut_scorchia_bricks
+- `create:cut_scorchia_stairs` → 4× create:cut_scorchia_stairs ← 6×create:cut_scorchia
+- `create:cut_scorchia_wall` → 6× create:cut_scorchia_wall ← 6×create:cut_scorchia
+- `create:cut_scoria_brick_stairs` → 4× create:cut_scoria_brick_stairs ← 6×create:cut_scoria_bricks
+- `create:cut_scoria_brick_wall` → 6× create:cut_scoria_brick_wall ← 6×create:cut_scoria_bricks
+- `create:cut_scoria_stairs` → 4× create:cut_scoria_stairs ← 6×create:cut_scoria
+- `create:cut_scoria_wall` → 6× create:cut_scoria_wall ← 6×create:cut_scoria
+- `create:cut_tuff_brick_stairs` → 4× create:cut_tuff_brick_stairs ← 6×create:cut_tuff_bricks
+- `create:cut_tuff_brick_wall` → 6× create:cut_tuff_brick_wall ← 6×create:cut_tuff_bricks
+- `create:cut_tuff_stairs` → 4× create:cut_tuff_stairs ← 6×create:cut_tuff
+- `create:cut_tuff_wall` → 6× create:cut_tuff_wall ← 6×create:cut_tuff
+- `create:cut_veridium_brick_stairs` → 4× create:cut_veridium_brick_stairs ← 6×create:cut_veridium_bricks
+- `create:cut_veridium_brick_wall` → 6× create:cut_veridium_brick_wall ← 6×create:cut_veridium_bricks
+- `create:cut_veridium_stairs` → 4× create:cut_veridium_stairs ← 6×create:cut_veridium
+- `create:cut_veridium_wall` → 6× create:cut_veridium_wall ← 6×create:cut_veridium
+- `create:polished_cut_andesite_stairs` → 4× create:polished_cut_andesite_stairs ← 6×create:polished_cut_andesite
+- `create:polished_cut_andesite_wall` → 6× create:polished_cut_andesite_wall ← 6×create:polished_cut_andesite
+- `create:polished_cut_asurine_stairs` → 4× create:polished_cut_asurine_stairs ← 6×create:polished_cut_asurine
+- `create:polished_cut_asurine_wall` → 6× create:polished_cut_asurine_wall ← 6×create:polished_cut_asurine
+- `create:polished_cut_calcite_stairs` → 4× create:polished_cut_calcite_stairs ← 6×create:polished_cut_calcite
+- `create:polished_cut_calcite_wall` → 6× create:polished_cut_calcite_wall ← 6×create:polished_cut_calcite
+- `create:polished_cut_crimsite_stairs` → 4× create:polished_cut_crimsite_stairs ← 6×create:polished_cut_crimsite
+- `create:polished_cut_crimsite_wall` → 6× create:polished_cut_crimsite_wall ← 6×create:polished_cut_crimsite
+- `create:polished_cut_deepslate_stairs` → 4× create:polished_cut_deepslate_stairs ← 6×create:polished_cut_deepslate
+- `create:polished_cut_deepslate_wall` → 6× create:polished_cut_deepslate_wall ← 6×create:polished_cut_deepslate
+- `create:polished_cut_diorite_stairs` → 4× create:polished_cut_diorite_stairs ← 6×create:polished_cut_diorite
+- `create:polished_cut_diorite_wall` → 6× create:polished_cut_diorite_wall ← 6×create:polished_cut_diorite
+- `create:polished_cut_dripstone_stairs` → 4× create:polished_cut_dripstone_stairs ← 6×create:polished_cut_dripstone
+- `create:polished_cut_dripstone_wall` → 6× create:polished_cut_dripstone_wall ← 6×create:polished_cut_dripstone
+- `create:polished_cut_granite_stairs` → 4× create:polished_cut_granite_stairs ← 6×create:polished_cut_granite
+- `create:polished_cut_granite_wall` → 6× create:polished_cut_granite_wall ← 6×create:polished_cut_granite
+- `create:polished_cut_limestone_stairs` → 4× create:polished_cut_limestone_stairs ← 6×create:polished_cut_limestone
+- `create:polished_cut_limestone_wall` → 6× create:polished_cut_limestone_wall ← 6×create:polished_cut_limestone
+- `create:polished_cut_ochrum_stairs` → 4× create:polished_cut_ochrum_stairs ← 6×create:polished_cut_ochrum
+- `create:polished_cut_ochrum_wall` → 6× create:polished_cut_ochrum_wall ← 6×create:polished_cut_ochrum
+- `create:polished_cut_scorchia_stairs` → 4× create:polished_cut_scorchia_stairs ← 6×create:polished_cut_scorchia
+- `create:polished_cut_scorchia_wall` → 6× create:polished_cut_scorchia_wall ← 6×create:polished_cut_scorchia
+- `create:polished_cut_scoria_stairs` → 4× create:polished_cut_scoria_stairs ← 6×create:polished_cut_scoria
+- `create:polished_cut_scoria_wall` → 6× create:polished_cut_scoria_wall ← 6×create:polished_cut_scoria
+- `create:polished_cut_tuff_stairs` → 4× create:polished_cut_tuff_stairs ← 6×create:polished_cut_tuff
+- `create:polished_cut_tuff_wall` → 6× create:polished_cut_tuff_wall ← 6×create:polished_cut_tuff
+- `create:polished_cut_veridium_stairs` → 4× create:polished_cut_veridium_stairs ← 6×create:polished_cut_veridium
+- `create:polished_cut_veridium_wall` → 6× create:polished_cut_veridium_wall ← 6×create:polished_cut_veridium
+- `create:small_andesite_brick_stairs` → 4× create:small_andesite_brick_stairs ← 6×create:small_andesite_bricks
+- `create:small_andesite_brick_wall` → 6× create:small_andesite_brick_wall ← 6×create:small_andesite_bricks
+- `create:small_asurine_brick_stairs` → 4× create:small_asurine_brick_stairs ← 6×create:small_asurine_bricks
+- `create:small_asurine_brick_wall` → 6× create:small_asurine_brick_wall ← 6×create:small_asurine_bricks
+- `create:small_calcite_brick_stairs` → 4× create:small_calcite_brick_stairs ← 6×create:small_calcite_bricks
+- `create:small_calcite_brick_wall` → 6× create:small_calcite_brick_wall ← 6×create:small_calcite_bricks
+- `create:small_crimsite_brick_stairs` → 4× create:small_crimsite_brick_stairs ← 6×create:small_crimsite_bricks
+- `create:small_crimsite_brick_wall` → 6× create:small_crimsite_brick_wall ← 6×create:small_crimsite_bricks
+- `create:small_deepslate_brick_stairs` → 4× create:small_deepslate_brick_stairs ← 6×create:small_deepslate_bricks
+- `create:small_deepslate_brick_wall` → 6× create:small_deepslate_brick_wall ← 6×create:small_deepslate_bricks
+- `create:small_diorite_brick_stairs` → 4× create:small_diorite_brick_stairs ← 6×create:small_diorite_bricks
+- `create:small_diorite_brick_wall` → 6× create:small_diorite_brick_wall ← 6×create:small_diorite_bricks
+- `create:small_dripstone_brick_stairs` → 4× create:small_dripstone_brick_stairs ← 6×create:small_dripstone_bricks
+- `create:small_dripstone_brick_wall` → 6× create:small_dripstone_brick_wall ← 6×create:small_dripstone_bricks
+- `create:small_granite_brick_stairs` → 4× create:small_granite_brick_stairs ← 6×create:small_granite_bricks
+- `create:small_granite_brick_wall` → 6× create:small_granite_brick_wall ← 6×create:small_granite_bricks
+- `create:small_limestone_brick_stairs` → 4× create:small_limestone_brick_stairs ← 6×create:small_limestone_bricks
+- `create:small_limestone_brick_wall` → 6× create:small_limestone_brick_wall ← 6×create:small_limestone_bricks
+- `create:small_ochrum_brick_stairs` → 4× create:small_ochrum_brick_stairs ← 6×create:small_ochrum_bricks
+- `create:small_ochrum_brick_wall` → 6× create:small_ochrum_brick_wall ← 6×create:small_ochrum_bricks
+- `create:small_scorchia_brick_stairs` → 4× create:small_scorchia_brick_stairs ← 6×create:small_scorchia_bricks
+- `create:small_scorchia_brick_wall` → 6× create:small_scorchia_brick_wall ← 6×create:small_scorchia_bricks
+- `create:small_scoria_brick_stairs` → 4× create:small_scoria_brick_stairs ← 6×create:small_scoria_bricks
+- `create:small_scoria_brick_wall` → 6× create:small_scoria_brick_wall ← 6×create:small_scoria_bricks
+- `create:small_tuff_brick_stairs` → 4× create:small_tuff_brick_stairs ← 6×create:small_tuff_bricks
+- `create:small_tuff_brick_wall` → 6× create:small_tuff_brick_wall ← 6×create:small_tuff_bricks
+- `create:small_veridium_brick_stairs` → 4× create:small_veridium_brick_stairs ← 6×create:small_veridium_bricks
+- `create:small_veridium_brick_wall` → 6× create:small_veridium_brick_wall ← 6×create:small_veridium_bricks
+- `createdeco:blue_brick_stairs` → 4× createdeco:blue_brick_stairs ← 6×createdeco:blue_bricks
+- `createdeco:blue_brick_wall` → 6× createdeco:blue_brick_wall ← 6×createdeco:blue_bricks
+- `createdeco:corner_blue_brick_stairs` → 4× createdeco:corner_blue_brick_stairs ← 6×createdeco:corner_blue_bricks
+- `createdeco:corner_blue_brick_wall` → 6× createdeco:corner_blue_brick_wall ← 6×createdeco:corner_blue_bricks
+- `createdeco:corner_dean_brick_stairs` → 4× createdeco:corner_dean_brick_stairs ← 6×createdeco:corner_dean_bricks
+- `createdeco:corner_dean_brick_wall` → 6× createdeco:corner_dean_brick_wall ← 6×createdeco:corner_dean_bricks
+- `createdeco:corner_dusk_brick_stairs` → 4× createdeco:corner_dusk_brick_stairs ← 6×createdeco:corner_dusk_bricks
+- `createdeco:corner_dusk_brick_wall` → 6× createdeco:corner_dusk_brick_wall ← 6×createdeco:corner_dusk_bricks
+- `createdeco:corner_pearl_brick_stairs` → 4× createdeco:corner_pearl_brick_stairs ← 6×createdeco:corner_pearl_bricks
+- `createdeco:corner_pearl_brick_wall` → 6× createdeco:corner_pearl_brick_wall ← 6×createdeco:corner_pearl_bricks
+- `createdeco:corner_red_brick_stairs` → 4× createdeco:corner_red_brick_stairs ← 6×createdeco:corner_red_bricks
+- `createdeco:corner_red_brick_wall` → 6× createdeco:corner_red_brick_wall ← 6×createdeco:corner_red_bricks
+- `createdeco:corner_scarlet_brick_stairs` → 4× createdeco:corner_scarlet_brick_stairs ← 6×createdeco:corner_scarlet_bricks
+- `createdeco:corner_scarlet_brick_wall` → 6× createdeco:corner_scarlet_brick_wall ← 6×createdeco:corner_scarlet_bricks
+- `createdeco:corner_umber_brick_stairs` → 4× createdeco:corner_umber_brick_stairs ← 6×createdeco:corner_umber_bricks
+- `createdeco:corner_umber_brick_wall` → 6× createdeco:corner_umber_brick_wall ← 6×createdeco:corner_umber_bricks
+- `createdeco:corner_verdant_brick_stairs` → 4× createdeco:corner_verdant_brick_stairs ← 6×createdeco:corner_verdant_bricks
+- `createdeco:corner_verdant_brick_wall` → 6× createdeco:corner_verdant_brick_wall ← 6×createdeco:corner_verdant_bricks
+- `createdeco:cracked_blue_brick_stairs` → 4× createdeco:cracked_blue_brick_stairs ← 6×createdeco:cracked_blue_bricks
+- `createdeco:cracked_blue_brick_wall` → 6× createdeco:cracked_blue_brick_wall ← 6×createdeco:cracked_blue_bricks
+- `createdeco:cracked_dean_brick_stairs` → 4× createdeco:cracked_dean_brick_stairs ← 6×createdeco:cracked_dean_bricks
+- `createdeco:cracked_dean_brick_wall` → 6× createdeco:cracked_dean_brick_wall ← 6×createdeco:cracked_dean_bricks
+- `createdeco:cracked_dusk_brick_stairs` → 4× createdeco:cracked_dusk_brick_stairs ← 6×createdeco:cracked_dusk_bricks
+- `createdeco:cracked_dusk_brick_wall` → 6× createdeco:cracked_dusk_brick_wall ← 6×createdeco:cracked_dusk_bricks
+- `createdeco:cracked_pearl_brick_stairs` → 4× createdeco:cracked_pearl_brick_stairs ← 6×createdeco:cracked_pearl_bricks
+- `createdeco:cracked_pearl_brick_wall` → 6× createdeco:cracked_pearl_brick_wall ← 6×createdeco:cracked_pearl_bricks
+- `createdeco:cracked_red_brick_stairs` → 4× createdeco:cracked_red_brick_stairs ← 6×createdeco:cracked_red_bricks
+- `createdeco:cracked_red_brick_wall` → 6× createdeco:cracked_red_brick_wall ← 6×createdeco:cracked_red_bricks
+- `createdeco:cracked_scarlet_brick_stairs` → 4× createdeco:cracked_scarlet_brick_stairs ← 6×createdeco:cracked_scarlet_bricks
+- `createdeco:cracked_scarlet_brick_wall` → 6× createdeco:cracked_scarlet_brick_wall ← 6×createdeco:cracked_scarlet_bricks
+- `createdeco:cracked_umber_brick_stairs` → 4× createdeco:cracked_umber_brick_stairs ← 6×createdeco:cracked_umber_bricks
+- `createdeco:cracked_umber_brick_wall` → 6× createdeco:cracked_umber_brick_wall ← 6×createdeco:cracked_umber_bricks
+- `createdeco:cracked_verdant_brick_stairs` → 4× createdeco:cracked_verdant_brick_stairs ← 6×createdeco:cracked_verdant_bricks
+- `createdeco:cracked_verdant_brick_wall` → 6× createdeco:cracked_verdant_brick_wall ← 6×createdeco:cracked_verdant_bricks
+- `createdeco:dean_brick_stairs` → 4× createdeco:dean_brick_stairs ← 6×createdeco:dean_bricks
+- `createdeco:dean_brick_wall` → 6× createdeco:dean_brick_wall ← 6×createdeco:dean_bricks
+- `createdeco:dusk_brick_stairs` → 4× createdeco:dusk_brick_stairs ← 6×createdeco:dusk_bricks
+- `createdeco:dusk_brick_wall` → 6× createdeco:dusk_brick_wall ← 6×createdeco:dusk_bricks
+- `createdeco:long_blue_brick_stairs` → 4× createdeco:long_blue_brick_stairs ← 6×createdeco:long_blue_bricks
+- `createdeco:long_blue_brick_wall` → 6× createdeco:long_blue_brick_wall ← 6×createdeco:long_blue_bricks
+- `createdeco:long_dean_brick_stairs` → 4× createdeco:long_dean_brick_stairs ← 6×createdeco:long_dean_bricks
+- `createdeco:long_dean_brick_wall` → 6× createdeco:long_dean_brick_wall ← 6×createdeco:long_dean_bricks
+- `createdeco:long_dusk_brick_stairs` → 4× createdeco:long_dusk_brick_stairs ← 6×createdeco:long_dusk_bricks
+- `createdeco:long_dusk_brick_wall` → 6× createdeco:long_dusk_brick_wall ← 6×createdeco:long_dusk_bricks
+- `createdeco:long_pearl_brick_stairs` → 4× createdeco:long_pearl_brick_stairs ← 6×createdeco:long_pearl_bricks
+- `createdeco:long_pearl_brick_wall` → 6× createdeco:long_pearl_brick_wall ← 6×createdeco:long_pearl_bricks
+- `createdeco:long_red_brick_stairs` → 4× createdeco:long_red_brick_stairs ← 6×createdeco:long_red_bricks
+- `createdeco:long_red_brick_wall` → 6× createdeco:long_red_brick_wall ← 6×createdeco:long_red_bricks
+- `createdeco:long_scarlet_brick_stairs` → 4× createdeco:long_scarlet_brick_stairs ← 6×createdeco:long_scarlet_bricks
+- `createdeco:long_scarlet_brick_wall` → 6× createdeco:long_scarlet_brick_wall ← 6×createdeco:long_scarlet_bricks
+- `createdeco:long_umber_brick_stairs` → 4× createdeco:long_umber_brick_stairs ← 6×createdeco:long_umber_bricks
+- `createdeco:long_umber_brick_wall` → 6× createdeco:long_umber_brick_wall ← 6×createdeco:long_umber_bricks
+- `createdeco:long_verdant_brick_stairs` → 4× createdeco:long_verdant_brick_stairs ← 6×createdeco:long_verdant_bricks
+- `createdeco:long_verdant_brick_wall` → 6× createdeco:long_verdant_brick_wall ← 6×createdeco:long_verdant_bricks
+- `createdeco:mossy_blue_brick_stairs` → 4× createdeco:mossy_blue_brick_stairs ← 6×createdeco:mossy_blue_bricks
+- `createdeco:mossy_blue_brick_wall` → 6× createdeco:mossy_blue_brick_wall ← 6×createdeco:mossy_blue_bricks
+- `createdeco:mossy_dean_brick_stairs` → 4× createdeco:mossy_dean_brick_stairs ← 6×createdeco:mossy_dean_bricks
+- `createdeco:mossy_dean_brick_wall` → 6× createdeco:mossy_dean_brick_wall ← 6×createdeco:mossy_dean_bricks
+- `createdeco:mossy_dusk_brick_stairs` → 4× createdeco:mossy_dusk_brick_stairs ← 6×createdeco:mossy_dusk_bricks
+- `createdeco:mossy_dusk_brick_wall` → 6× createdeco:mossy_dusk_brick_wall ← 6×createdeco:mossy_dusk_bricks
+- `createdeco:mossy_pearl_brick_stairs` → 4× createdeco:mossy_pearl_brick_stairs ← 6×createdeco:mossy_pearl_bricks
+- `createdeco:mossy_pearl_brick_wall` → 6× createdeco:mossy_pearl_brick_wall ← 6×createdeco:mossy_pearl_bricks
+- `createdeco:mossy_red_brick_stairs` → 4× createdeco:mossy_red_brick_stairs ← 6×createdeco:mossy_red_bricks
+- `createdeco:mossy_red_brick_wall` → 6× createdeco:mossy_red_brick_wall ← 6×createdeco:mossy_red_bricks
+- `createdeco:mossy_scarlet_brick_stairs` → 4× createdeco:mossy_scarlet_brick_stairs ← 6×createdeco:mossy_scarlet_bricks
+- `createdeco:mossy_scarlet_brick_wall` → 6× createdeco:mossy_scarlet_brick_wall ← 6×createdeco:mossy_scarlet_bricks
+- `createdeco:mossy_umber_brick_stairs` → 4× createdeco:mossy_umber_brick_stairs ← 6×createdeco:mossy_umber_bricks
+- `createdeco:mossy_umber_brick_wall` → 6× createdeco:mossy_umber_brick_wall ← 6×createdeco:mossy_umber_bricks
+- `createdeco:mossy_verdant_brick_stairs` → 4× createdeco:mossy_verdant_brick_stairs ← 6×createdeco:mossy_verdant_bricks
+- `createdeco:mossy_verdant_brick_wall` → 6× createdeco:mossy_verdant_brick_wall ← 6×createdeco:mossy_verdant_bricks
+- `createdeco:pearl_brick_stairs` → 4× createdeco:pearl_brick_stairs ← 6×createdeco:pearl_bricks
+- `createdeco:pearl_brick_wall` → 6× createdeco:pearl_brick_wall ← 6×createdeco:pearl_bricks
+- `createdeco:scarlet_brick_stairs` → 4× createdeco:scarlet_brick_stairs ← 6×createdeco:scarlet_bricks
+- `createdeco:scarlet_brick_wall` → 6× createdeco:scarlet_brick_wall ← 6×createdeco:scarlet_bricks
+- `createdeco:short_blue_brick_stairs` → 4× createdeco:short_blue_brick_stairs ← 6×createdeco:short_blue_bricks
+- `createdeco:short_blue_brick_wall` → 6× createdeco:short_blue_brick_wall ← 6×createdeco:short_blue_bricks
+- `createdeco:short_dean_brick_stairs` → 4× createdeco:short_dean_brick_stairs ← 6×createdeco:short_dean_bricks
+- `createdeco:short_dean_brick_wall` → 6× createdeco:short_dean_brick_wall ← 6×createdeco:short_dean_bricks
+- `createdeco:short_dusk_brick_stairs` → 4× createdeco:short_dusk_brick_stairs ← 6×createdeco:short_dusk_bricks
+- `createdeco:short_dusk_brick_wall` → 6× createdeco:short_dusk_brick_wall ← 6×createdeco:short_dusk_bricks
+- `createdeco:short_pearl_brick_stairs` → 4× createdeco:short_pearl_brick_stairs ← 6×createdeco:short_pearl_bricks
+- `createdeco:short_pearl_brick_wall` → 6× createdeco:short_pearl_brick_wall ← 6×createdeco:short_pearl_bricks
+- `createdeco:short_red_brick_stairs` → 4× createdeco:short_red_brick_stairs ← 6×createdeco:short_red_bricks
+- `createdeco:short_red_brick_wall` → 6× createdeco:short_red_brick_wall ← 6×createdeco:short_red_bricks
+- `createdeco:short_scarlet_brick_stairs` → 4× createdeco:short_scarlet_brick_stairs ← 6×createdeco:short_scarlet_bricks
+- `createdeco:short_scarlet_brick_wall` → 6× createdeco:short_scarlet_brick_wall ← 6×createdeco:short_scarlet_bricks
+- `createdeco:short_umber_brick_stairs` → 4× createdeco:short_umber_brick_stairs ← 6×createdeco:short_umber_bricks
+- `createdeco:short_umber_brick_wall` → 6× createdeco:short_umber_brick_wall ← 6×createdeco:short_umber_bricks
+- `createdeco:short_verdant_brick_stairs` → 4× createdeco:short_verdant_brick_stairs ← 6×createdeco:short_verdant_bricks
+- `createdeco:short_verdant_brick_wall` → 6× createdeco:short_verdant_brick_wall ← 6×createdeco:short_verdant_bricks
+- `createdeco:tiled_blue_brick_stairs` → 4× createdeco:tiled_blue_brick_stairs ← 6×createdeco:tiled_blue_bricks
+- `createdeco:tiled_blue_brick_wall` → 6× createdeco:tiled_blue_brick_wall ← 6×createdeco:tiled_blue_bricks
+- `createdeco:tiled_dean_brick_stairs` → 4× createdeco:tiled_dean_brick_stairs ← 6×createdeco:tiled_dean_bricks
+- `createdeco:tiled_dean_brick_wall` → 6× createdeco:tiled_dean_brick_wall ← 6×createdeco:tiled_dean_bricks
+- `createdeco:tiled_dusk_brick_stairs` → 4× createdeco:tiled_dusk_brick_stairs ← 6×createdeco:tiled_dusk_bricks
+- `createdeco:tiled_dusk_brick_wall` → 6× createdeco:tiled_dusk_brick_wall ← 6×createdeco:tiled_dusk_bricks
+- `createdeco:tiled_pearl_brick_stairs` → 4× createdeco:tiled_pearl_brick_stairs ← 6×createdeco:tiled_pearl_bricks
+- `createdeco:tiled_pearl_brick_wall` → 6× createdeco:tiled_pearl_brick_wall ← 6×createdeco:tiled_pearl_bricks
+- `createdeco:tiled_red_brick_stairs` → 4× createdeco:tiled_red_brick_stairs ← 6×createdeco:tiled_red_bricks
+- `createdeco:tiled_red_brick_wall` → 6× createdeco:tiled_red_brick_wall ← 6×createdeco:tiled_red_bricks
+- `createdeco:tiled_scarlet_brick_stairs` → 4× createdeco:tiled_scarlet_brick_stairs ← 6×createdeco:tiled_scarlet_bricks
+- `createdeco:tiled_scarlet_brick_wall` → 6× createdeco:tiled_scarlet_brick_wall ← 6×createdeco:tiled_scarlet_bricks
+- `createdeco:tiled_umber_brick_stairs` → 4× createdeco:tiled_umber_brick_stairs ← 6×createdeco:tiled_umber_bricks
+- `createdeco:tiled_umber_brick_wall` → 6× createdeco:tiled_umber_brick_wall ← 6×createdeco:tiled_umber_bricks
+- `createdeco:tiled_verdant_brick_stairs` → 4× createdeco:tiled_verdant_brick_stairs ← 6×createdeco:tiled_verdant_bricks
+- `createdeco:tiled_verdant_brick_wall` → 6× createdeco:tiled_verdant_brick_wall ← 6×createdeco:tiled_verdant_bricks
+- `createdeco:umber_brick_stairs` → 4× createdeco:umber_brick_stairs ← 6×createdeco:umber_bricks
+- `createdeco:umber_brick_wall` → 6× createdeco:umber_brick_wall ← 6×createdeco:umber_bricks
+- `createdeco:verdant_brick_stairs` → 4× createdeco:verdant_brick_stairs ← 6×createdeco:verdant_bricks
+- `createdeco:verdant_brick_wall` → 6× createdeco:verdant_brick_wall ← 6×createdeco:verdant_bricks
+- `dndecor:cut_amethyst_brick_stairs` → 4× dndecor:cut_amethyst_brick_stairs ← 6×dndecor:cut_amethyst_bricks
+- `dndecor:cut_amethyst_brick_wall` → 6× dndecor:cut_amethyst_brick_wall ← 6×dndecor:cut_amethyst_bricks
+- `dndecor:cut_amethyst_stairs` → 4× dndecor:cut_amethyst_stairs ← 6×dndecor:cut_amethyst
+- `dndecor:cut_amethyst_wall` → 6× dndecor:cut_amethyst_wall ← 6×dndecor:cut_amethyst
+- `dndecor:cut_basalt_brick_stairs` → 4× dndecor:cut_basalt_brick_stairs ← 6×dndecor:cut_basalt_bricks
+- `dndecor:cut_basalt_brick_wall` → 6× dndecor:cut_basalt_brick_wall ← 6×dndecor:cut_basalt_bricks
+- `dndecor:cut_basalt_stairs` → 4× dndecor:cut_basalt_stairs ← 6×dndecor:cut_basalt
+- `dndecor:cut_basalt_wall` → 6× dndecor:cut_basalt_wall ← 6×dndecor:cut_basalt
+- `dndecor:cut_blackstone_brick_stairs` → 4× dndecor:cut_blackstone_brick_stairs ← 6×dndecor:cut_blackstone_bricks
+- `dndecor:cut_blackstone_brick_wall` → 6× dndecor:cut_blackstone_brick_wall ← 6×dndecor:cut_blackstone_bricks
+- `dndecor:cut_blackstone_stairs` → 4× dndecor:cut_blackstone_stairs ← 6×dndecor:cut_blackstone
+- `dndecor:cut_blackstone_wall` → 6× dndecor:cut_blackstone_wall ← 6×dndecor:cut_blackstone
+- `dndecor:cut_dolomite_brick_stairs` → 4× dndecor:cut_dolomite_brick_stairs ← 6×dndecor:cut_dolomite_bricks
+- `dndecor:cut_dolomite_brick_wall` → 6× dndecor:cut_dolomite_brick_wall ← 6×dndecor:cut_dolomite_bricks
+- `dndecor:cut_dolomite_stairs` → 4× dndecor:cut_dolomite_stairs ← 6×dndecor:cut_dolomite
+- `dndecor:cut_dolomite_wall` → 6× dndecor:cut_dolomite_wall ← 6×dndecor:cut_dolomite
+- `dndecor:cut_gabbro_brick_stairs` → 4× dndecor:cut_gabbro_brick_stairs ← 6×dndecor:cut_gabbro_bricks
+- `dndecor:cut_gabbro_brick_wall` → 6× dndecor:cut_gabbro_brick_wall ← 6×dndecor:cut_gabbro_bricks
+- `dndecor:cut_gabbro_stairs` → 4× dndecor:cut_gabbro_stairs ← 6×dndecor:cut_gabbro
+- `dndecor:cut_gabbro_wall` → 6× dndecor:cut_gabbro_wall ← 6×dndecor:cut_gabbro
+- `dndecor:cut_netherrack_brick_stairs` → 4× dndecor:cut_netherrack_brick_stairs ← 6×dndecor:cut_netherrack_bricks
+- `dndecor:cut_netherrack_brick_wall` → 6× dndecor:cut_netherrack_brick_wall ← 6×dndecor:cut_netherrack_bricks
+- `dndecor:cut_netherrack_stairs` → 4× dndecor:cut_netherrack_stairs ← 6×dndecor:cut_netherrack
+- `dndecor:cut_netherrack_wall` → 6× dndecor:cut_netherrack_wall ← 6×dndecor:cut_netherrack
+- `dndecor:cut_packed_mud_brick_stairs` → 4× dndecor:cut_packed_mud_brick_stairs ← 6×dndecor:cut_packed_mud_bricks
+- `dndecor:cut_packed_mud_brick_wall` → 6× dndecor:cut_packed_mud_brick_wall ← 6×dndecor:cut_packed_mud_bricks
+- `dndecor:cut_packed_mud_stairs` → 4× dndecor:cut_packed_mud_stairs ← 6×dndecor:cut_packed_mud
+- `dndecor:cut_packed_mud_wall` → 6× dndecor:cut_packed_mud_wall ← 6×dndecor:cut_packed_mud
+- `dndecor:cut_stone_brick_stairs` → 4× dndecor:cut_stone_brick_stairs ← 6×dndecor:cut_stone_bricks
+- `dndecor:cut_stone_brick_wall` → 6× dndecor:cut_stone_brick_wall ← 6×dndecor:cut_stone_bricks
+- `dndecor:cut_stone_stairs` → 4× dndecor:cut_stone_stairs ← 6×dndecor:cut_stone
+- `dndecor:cut_stone_wall` → 6× dndecor:cut_stone_wall ← 6×dndecor:cut_stone
+- `dndecor:cut_weathered_limestone_brick_stairs` → 4× dndecor:cut_weathered_limestone_brick_stairs ← 6×dndecor:cut_weathered_limestone_bricks
+- `dndecor:cut_weathered_limestone_brick_wall` → 6× dndecor:cut_weathered_limestone_brick_wall ← 6×dndecor:cut_weathered_limestone_bricks
+- `dndecor:cut_weathered_limestone_stairs` → 4× dndecor:cut_weathered_limestone_stairs ← 6×dndecor:cut_weathered_limestone
+- `dndecor:cut_weathered_limestone_wall` → 6× dndecor:cut_weathered_limestone_wall ← 6×dndecor:cut_weathered_limestone
+- `dndecor:polished_cut_amethyst_stairs` → 4× dndecor:polished_cut_amethyst_stairs ← 6×dndecor:polished_cut_amethyst
+- `dndecor:polished_cut_amethyst_wall` → 6× dndecor:polished_cut_amethyst_wall ← 6×dndecor:polished_cut_amethyst
+- `dndecor:polished_cut_basalt_stairs` → 4× dndecor:polished_cut_basalt_stairs ← 6×dndecor:polished_cut_basalt
+- `dndecor:polished_cut_basalt_wall` → 6× dndecor:polished_cut_basalt_wall ← 6×dndecor:polished_cut_basalt
+- `dndecor:polished_cut_blackstone_stairs` → 4× dndecor:polished_cut_blackstone_stairs ← 6×dndecor:polished_cut_blackstone
+- `dndecor:polished_cut_blackstone_wall` → 6× dndecor:polished_cut_blackstone_wall ← 6×dndecor:polished_cut_blackstone
+- `dndecor:polished_cut_dolomite_stairs` → 4× dndecor:polished_cut_dolomite_stairs ← 6×dndecor:polished_cut_dolomite
+- `dndecor:polished_cut_dolomite_wall` → 6× dndecor:polished_cut_dolomite_wall ← 6×dndecor:polished_cut_dolomite
+- `dndecor:polished_cut_gabbro_stairs` → 4× dndecor:polished_cut_gabbro_stairs ← 6×dndecor:polished_cut_gabbro
+- `dndecor:polished_cut_gabbro_wall` → 6× dndecor:polished_cut_gabbro_wall ← 6×dndecor:polished_cut_gabbro
+- `dndecor:polished_cut_netherrack_stairs` → 4× dndecor:polished_cut_netherrack_stairs ← 6×dndecor:polished_cut_netherrack
+- `dndecor:polished_cut_netherrack_wall` → 6× dndecor:polished_cut_netherrack_wall ← 6×dndecor:polished_cut_netherrack
+- `dndecor:polished_cut_packed_mud_stairs` → 4× dndecor:polished_cut_packed_mud_stairs ← 6×dndecor:polished_cut_packed_mud
+- `dndecor:polished_cut_packed_mud_wall` → 6× dndecor:polished_cut_packed_mud_wall ← 6×dndecor:polished_cut_packed_mud
+- `dndecor:polished_cut_stone_stairs` → 4× dndecor:polished_cut_stone_stairs ← 6×dndecor:polished_cut_stone
+- `dndecor:polished_cut_stone_wall` → 6× dndecor:polished_cut_stone_wall ← 6×dndecor:polished_cut_stone
+- `dndecor:polished_cut_weathered_limestone_stairs` → 4× dndecor:polished_cut_weathered_limestone_stairs ← 6×dndecor:polished_cut_weathered_limestone
+- `dndecor:polished_cut_weathered_limestone_wall` → 6× dndecor:polished_cut_weathered_limestone_wall ← 6×dndecor:polished_cut_weathered_limestone
+- `dndecor:small_amethyst_brick_stairs` → 4× dndecor:small_amethyst_brick_stairs ← 6×dndecor:small_amethyst_bricks
+- `dndecor:small_amethyst_brick_wall` → 6× dndecor:small_amethyst_brick_wall ← 6×dndecor:small_amethyst_bricks
+- `dndecor:small_basalt_brick_stairs` → 4× dndecor:small_basalt_brick_stairs ← 6×dndecor:small_basalt_bricks
+- `dndecor:small_basalt_brick_wall` → 6× dndecor:small_basalt_brick_wall ← 6×dndecor:small_basalt_bricks
+- `dndecor:small_blackstone_brick_stairs` → 4× dndecor:small_blackstone_brick_stairs ← 6×dndecor:small_blackstone_bricks
+- `dndecor:small_blackstone_brick_wall` → 6× dndecor:small_blackstone_brick_wall ← 6×dndecor:small_blackstone_bricks
+- `dndecor:small_dolomite_brick_stairs` → 4× dndecor:small_dolomite_brick_stairs ← 6×dndecor:small_dolomite_bricks
+- `dndecor:small_dolomite_brick_wall` → 6× dndecor:small_dolomite_brick_wall ← 6×dndecor:small_dolomite_bricks
+- `dndecor:small_gabbro_brick_stairs` → 4× dndecor:small_gabbro_brick_stairs ← 6×dndecor:small_gabbro_bricks
+- `dndecor:small_gabbro_brick_wall` → 6× dndecor:small_gabbro_brick_wall ← 6×dndecor:small_gabbro_bricks
+- `dndecor:small_netherrack_brick_stairs` → 4× dndecor:small_netherrack_brick_stairs ← 6×dndecor:small_netherrack_bricks
+- `dndecor:small_netherrack_brick_wall` → 6× dndecor:small_netherrack_brick_wall ← 6×dndecor:small_netherrack_bricks
+- `dndecor:small_packed_mud_brick_stairs` → 4× dndecor:small_packed_mud_brick_stairs ← 6×dndecor:small_packed_mud_bricks
+- `dndecor:small_packed_mud_brick_wall` → 6× dndecor:small_packed_mud_brick_wall ← 6×dndecor:small_packed_mud_bricks
+- `dndecor:small_stone_brick_stairs` → 4× dndecor:small_stone_brick_stairs ← 6×dndecor:small_stone_bricks
+- `dndecor:small_stone_brick_wall` → 6× dndecor:small_stone_brick_wall ← 6×dndecor:small_stone_bricks
+- `dndecor:small_weathered_limestone_brick_stairs` → 4× dndecor:small_weathered_limestone_brick_stairs ← 6×dndecor:small_weathered_limestone_bricks
+- `dndecor:small_weathered_limestone_brick_wall` → 6× dndecor:small_weathered_limestone_brick_wall ← 6×dndecor:small_weathered_limestone_bricks
+- `dndesires:cut_breccia_brick_stairs` → 4× dndesires:cut_breccia_brick_stairs ← 6×dndesires:cut_breccia_bricks
+- `dndesires:cut_breccia_brick_wall` → 6× dndesires:cut_breccia_brick_wall ← 6×dndesires:cut_breccia_bricks
+- `dndesires:cut_breccia_stairs` → 4× dndesires:cut_breccia_stairs ← 6×dndesires:cut_breccia
+- `dndesires:cut_breccia_wall` → 6× dndesires:cut_breccia_wall ← 6×dndesires:cut_breccia
+- `dndesires:polished_cut_breccia_stairs` → 4× dndesires:polished_cut_breccia_stairs ← 6×dndesires:polished_cut_breccia
+- `dndesires:polished_cut_breccia_wall` → 6× dndesires:polished_cut_breccia_wall ← 6×dndesires:polished_cut_breccia
+- `dndesires:small_breccia_brick_stairs` → 4× dndesires:small_breccia_brick_stairs ← 6×dndesires:small_breccia_bricks
+- `dndesires:small_breccia_brick_wall` → 6× dndesires:small_breccia_brick_wall ← 6×dndesires:small_breccia_bricks
+- `garnished:stone/abyssal_stone/brick_stairs` → 4× garnished:abyssal_stone_brick_stairs ← 6×garnished:abyssal_stone_bricks
+- `garnished:stone/abyssal_stone/brick_wall` → 6× garnished:abyssal_stone_brick_wall ← 6×garnished:abyssal_stone_bricks
+- `garnished:stone/abyssal_stone/cut_stairs` → 4× garnished:cut_abyssal_stone_stairs ← 6×garnished:cut_abyssal_stone
+- `garnished:stone/abyssal_stone/cut_wall` → 6× garnished:cut_abyssal_stone_wall ← 6×garnished:cut_abyssal_stone
+- `garnished:stone/abyssal_stone/polished_stairs` → 4× garnished:polished_abyssal_stone_stairs ← 6×garnished:polished_abyssal_stone
+- `garnished:stone/abyssal_stone/polished_wall` → 6× garnished:polished_abyssal_stone_wall ← 6×garnished:polished_abyssal_stone
+- `garnished:stone/abyssal_stone/small_brick_stairs` → 4× garnished:small_abyssal_stone_brick_stairs ← 6×garnished:small_abyssal_stone_bricks
+- `garnished:stone/abyssal_stone/small_brick_wall` → 6× garnished:small_abyssal_stone_brick_wall ← 6×garnished:small_abyssal_stone_bricks
+- `garnished:stone/amber_remnant/amber_remnant_bricks_stairs` → 4× garnished:amber_remnant_brick_stairs ← 6×garnished:amber_remnant_bricks
+- `garnished:stone/amber_remnant/amber_remnant_bricks_wall` → 6× garnished:amber_remnant_brick_wall ← 6×garnished:amber_remnant_bricks
+- `garnished:stone/carnotite/brick_stairs` → 4× garnished:carnotite_brick_stairs ← 6×garnished:carnotite_bricks
+- `garnished:stone/carnotite/brick_wall` → 6× garnished:carnotite_brick_wall ← 6×garnished:carnotite_bricks
+- `garnished:stone/carnotite/cut_stairs` → 4× garnished:cut_carnotite_stairs ← 6×garnished:cut_carnotite
+- `garnished:stone/carnotite/cut_wall` → 6× garnished:cut_carnotite_wall ← 6×garnished:cut_carnotite
+- `garnished:stone/carnotite/polished_stairs` → 4× garnished:polished_carnotite_stairs ← 6×garnished:polished_carnotite
+- `garnished:stone/carnotite/polished_wall` → 6× garnished:polished_carnotite_wall ← 6×garnished:polished_carnotite
+- `garnished:stone/carnotite/small_brick_stairs` → 4× garnished:small_carnotite_brick_stairs ← 6×garnished:small_carnotite_bricks
+- `garnished:stone/carnotite/small_brick_wall` → 6× garnished:small_carnotite_brick_wall ← 6×garnished:small_carnotite_bricks
+- `garnished:stone/ritualistic_stone/brick_stairs` → 4× garnished:ritualistic_stone_brick_stairs ← 6×garnished:ritualistic_stone_bricks
+- `garnished:stone/ritualistic_stone/brick_wall` → 6× garnished:ritualistic_stone_brick_wall ← 6×garnished:ritualistic_stone_bricks
+- `garnished:stone/ritualistic_stone/cut_stairs` → 4× garnished:cut_ritualistic_stone_stairs ← 6×garnished:cut_ritualistic_stone
+- `garnished:stone/ritualistic_stone/cut_wall` → 6× garnished:cut_ritualistic_stone_wall ← 6×garnished:cut_ritualistic_stone
+- `garnished:stone/ritualistic_stone/polished_stairs` → 4× garnished:polished_ritualistic_stone_stairs ← 6×garnished:polished_ritualistic_stone
+- `garnished:stone/ritualistic_stone/polished_wall` → 6× garnished:polished_ritualistic_stone_wall ← 6×garnished:polished_ritualistic_stone
+- `garnished:stone/ritualistic_stone/small_brick_stairs` → 4× garnished:small_ritualistic_stone_brick_stairs ← 6×garnished:small_ritualistic_stone_bricks
+- `garnished:stone/ritualistic_stone/small_brick_wall` → 6× garnished:small_ritualistic_stone_brick_wall ← 6×garnished:small_ritualistic_stone_bricks
+- `garnished:stone/unstable_stone/brick_stairs` → 4× garnished:unstable_stone_brick_stairs ← 6×garnished:unstable_stone_bricks
+- `garnished:stone/unstable_stone/brick_wall` → 6× garnished:unstable_stone_brick_wall ← 6×garnished:unstable_stone_bricks
+- `garnished:stone/unstable_stone/cut_stairs` → 4× garnished:cut_unstable_stone_stairs ← 6×garnished:cut_unstable_stone
+- `garnished:stone/unstable_stone/cut_wall` → 6× garnished:cut_unstable_stone_wall ← 6×garnished:cut_unstable_stone
+- `garnished:stone/unstable_stone/polished_stairs` → 4× garnished:polished_unstable_stone_stairs ← 6×garnished:polished_unstable_stone
+- `garnished:stone/unstable_stone/polished_wall` → 6× garnished:polished_unstable_stone_wall ← 6×garnished:polished_unstable_stone
+- `garnished:stone/unstable_stone/small_brick_stairs` → 4× garnished:small_unstable_stone_brick_stairs ← 6×garnished:small_unstable_stone_bricks
+- `garnished:stone/unstable_stone/small_brick_wall` → 6× garnished:small_unstable_stone_brick_wall ← 6×garnished:small_unstable_stone_bricks
+- `garnished:stone/wyvern_stone/brick_stairs` → 4× garnished:dragon_stone_brick_stairs ← 6×garnished:dragon_stone_bricks
+- `garnished:stone/wyvern_stone/brick_wall` → 6× garnished:dragon_stone_brick_wall ← 6×garnished:dragon_stone_bricks
+- `garnished:stone/wyvern_stone/cut_stairs` → 4× garnished:cut_dragon_stone_stairs ← 6×garnished:cut_dragon_stone
+- `garnished:stone/wyvern_stone/cut_wall` → 6× garnished:cut_dragon_stone_wall ← 6×garnished:cut_dragon_stone
+- `garnished:stone/wyvern_stone/polished_stairs` → 4× garnished:polished_dragon_stone_stairs ← 6×garnished:polished_dragon_stone
+- `garnished:stone/wyvern_stone/polished_wall` → 6× garnished:polished_dragon_stone_wall ← 6×garnished:polished_dragon_stone
+- `garnished:stone/wyvern_stone/small_brick_stairs` → 4× garnished:small_dragon_stone_brick_stairs ← 6×garnished:small_dragon_stone_bricks
+- `garnished:stone/wyvern_stone/small_brick_wall` → 6× garnished:small_dragon_stone_brick_wall ← 6×garnished:small_dragon_stone_bricks
+- `garnished:stone/zultanite/basic/brick_stairs` → 4× garnished:zultanite_brick_stairs ← 6×garnished:zultanite_bricks
+- `garnished:stone/zultanite/basic/brick_wall` → 6× garnished:zultanite_brick_wall ← 6×garnished:zultanite_bricks
+- `garnished:stone/zultanite/basic/cut_stairs` → 4× garnished:cut_zultanite_stairs ← 6×garnished:cut_zultanite
+- `garnished:stone/zultanite/basic/cut_wall` → 6× garnished:cut_zultanite_wall ← 6×garnished:cut_zultanite
+- `garnished:stone/zultanite/basic/polished_stairs` → 4× garnished:polished_zultanite_stairs ← 6×garnished:polished_zultanite
+- `garnished:stone/zultanite/basic/polished_wall` → 6× garnished:polished_zultanite_wall ← 6×garnished:polished_zultanite
+- `garnished:stone/zultanite/basic/small_brick_stairs` → 4× garnished:small_zultanite_brick_stairs ← 6×garnished:small_zultanite_bricks
+- `garnished:stone/zultanite/basic/small_brick_wall` → 6× garnished:small_zultanite_brick_wall ← 6×garnished:small_zultanite_bricks
+- `garnished:stone/zultanite/black/brick_stairs` → 4× garnished:black_zultanite_brick_stairs ← 6×garnished:black_zultanite_bricks
+- `garnished:stone/zultanite/black/brick_wall` → 6× garnished:black_zultanite_brick_wall ← 6×garnished:black_zultanite_bricks
+- `garnished:stone/zultanite/black/cut_stairs` → 4× garnished:cut_black_zultanite_stairs ← 6×garnished:cut_black_zultanite
+- `garnished:stone/zultanite/black/cut_wall` → 6× garnished:cut_black_zultanite_wall ← 6×garnished:cut_black_zultanite
+- `garnished:stone/zultanite/black/polished_stairs` → 4× garnished:polished_black_zultanite_stairs ← 6×garnished:polished_black_zultanite
+- `garnished:stone/zultanite/black/polished_wall` → 6× garnished:polished_black_zultanite_wall ← 6×garnished:polished_black_zultanite
+- `garnished:stone/zultanite/black/small_brick_stairs` → 4× garnished:small_black_zultanite_brick_stairs ← 6×garnished:small_black_zultanite_bricks
+- `garnished:stone/zultanite/black/small_brick_wall` → 6× garnished:small_black_zultanite_brick_wall ← 6×garnished:small_black_zultanite_bricks
+- `garnished:stone/zultanite/blue/brick_stairs` → 4× garnished:blue_zultanite_brick_stairs ← 6×garnished:blue_zultanite_bricks
+- `garnished:stone/zultanite/blue/brick_wall` → 6× garnished:blue_zultanite_brick_wall ← 6×garnished:blue_zultanite_bricks
+- `garnished:stone/zultanite/blue/cut_stairs` → 4× garnished:cut_blue_zultanite_stairs ← 6×garnished:cut_blue_zultanite
+- `garnished:stone/zultanite/blue/cut_wall` → 6× garnished:cut_blue_zultanite_wall ← 6×garnished:cut_blue_zultanite
+- `garnished:stone/zultanite/blue/polished_stairs` → 4× garnished:polished_blue_zultanite_stairs ← 6×garnished:polished_blue_zultanite
+- `garnished:stone/zultanite/blue/polished_wall` → 6× garnished:polished_blue_zultanite_wall ← 6×garnished:polished_blue_zultanite
+- `garnished:stone/zultanite/blue/small_brick_stairs` → 4× garnished:small_blue_zultanite_brick_stairs ← 6×garnished:small_blue_zultanite_bricks
+- `garnished:stone/zultanite/blue/small_brick_wall` → 6× garnished:small_blue_zultanite_brick_wall ← 6×garnished:small_blue_zultanite_bricks
+- `garnished:stone/zultanite/brown/brick_stairs` → 4× garnished:brown_zultanite_brick_stairs ← 6×garnished:brown_zultanite_bricks
+- `garnished:stone/zultanite/brown/brick_wall` → 6× garnished:brown_zultanite_brick_wall ← 6×garnished:brown_zultanite_bricks
+- `garnished:stone/zultanite/brown/cut_stairs` → 4× garnished:cut_brown_zultanite_stairs ← 6×garnished:cut_brown_zultanite
+- `garnished:stone/zultanite/brown/cut_wall` → 6× garnished:cut_brown_zultanite_wall ← 6×garnished:cut_brown_zultanite
+- `garnished:stone/zultanite/brown/polished_stairs` → 4× garnished:polished_brown_zultanite_stairs ← 6×garnished:polished_brown_zultanite
+- `garnished:stone/zultanite/brown/polished_wall` → 6× garnished:polished_brown_zultanite_wall ← 6×garnished:polished_brown_zultanite
+- `garnished:stone/zultanite/brown/small_brick_stairs` → 4× garnished:small_brown_zultanite_brick_stairs ← 6×garnished:small_brown_zultanite_bricks
+- `garnished:stone/zultanite/brown/small_brick_wall` → 6× garnished:small_brown_zultanite_brick_wall ← 6×garnished:small_brown_zultanite_bricks
+- `garnished:stone/zultanite/cyan/brick_stairs` → 4× garnished:cyan_zultanite_brick_stairs ← 6×garnished:cyan_zultanite_bricks
+- `garnished:stone/zultanite/cyan/brick_wall` → 6× garnished:cyan_zultanite_brick_wall ← 6×garnished:cyan_zultanite_bricks
+- `garnished:stone/zultanite/cyan/cut_stairs` → 4× garnished:cut_cyan_zultanite_stairs ← 6×garnished:cut_cyan_zultanite
+- `garnished:stone/zultanite/cyan/cut_wall` → 6× garnished:cut_cyan_zultanite_wall ← 6×garnished:cut_cyan_zultanite
+- `garnished:stone/zultanite/cyan/polished_stairs` → 4× garnished:polished_cyan_zultanite_stairs ← 6×garnished:polished_cyan_zultanite
+- `garnished:stone/zultanite/cyan/polished_wall` → 6× garnished:polished_cyan_zultanite_wall ← 6×garnished:polished_cyan_zultanite
+- `garnished:stone/zultanite/cyan/small_brick_stairs` → 4× garnished:small_cyan_zultanite_brick_stairs ← 6×garnished:small_cyan_zultanite_bricks
+- `garnished:stone/zultanite/cyan/small_brick_wall` → 6× garnished:small_cyan_zultanite_brick_wall ← 6×garnished:small_cyan_zultanite_bricks
+- `garnished:stone/zultanite/gray/brick_stairs` → 4× garnished:gray_zultanite_brick_stairs ← 6×garnished:gray_zultanite_bricks
+- `garnished:stone/zultanite/gray/brick_wall` → 6× garnished:gray_zultanite_brick_wall ← 6×garnished:gray_zultanite_bricks
+- `garnished:stone/zultanite/gray/cut_stairs` → 4× garnished:cut_gray_zultanite_stairs ← 6×garnished:cut_gray_zultanite
+- `garnished:stone/zultanite/gray/cut_wall` → 6× garnished:cut_gray_zultanite_wall ← 6×garnished:cut_gray_zultanite
+- `garnished:stone/zultanite/gray/polished_stairs` → 4× garnished:polished_gray_zultanite_stairs ← 6×garnished:polished_gray_zultanite
+- `garnished:stone/zultanite/gray/polished_wall` → 6× garnished:polished_gray_zultanite_wall ← 6×garnished:polished_gray_zultanite
+- `garnished:stone/zultanite/gray/small_brick_stairs` → 4× garnished:small_gray_zultanite_brick_stairs ← 6×garnished:small_gray_zultanite_bricks
+- `garnished:stone/zultanite/gray/small_brick_wall` → 6× garnished:small_gray_zultanite_brick_wall ← 6×garnished:small_gray_zultanite_bricks
+- `garnished:stone/zultanite/green/brick_stairs` → 4× garnished:green_zultanite_brick_stairs ← 6×garnished:green_zultanite_bricks
+- `garnished:stone/zultanite/green/brick_wall` → 6× garnished:green_zultanite_brick_wall ← 6×garnished:green_zultanite_bricks
+- `garnished:stone/zultanite/green/cut_stairs` → 4× garnished:cut_green_zultanite_stairs ← 6×garnished:cut_green_zultanite
+- `garnished:stone/zultanite/green/cut_wall` → 6× garnished:cut_green_zultanite_wall ← 6×garnished:cut_green_zultanite
+- `garnished:stone/zultanite/green/polished_stairs` → 4× garnished:polished_green_zultanite_stairs ← 6×garnished:polished_green_zultanite
+- `garnished:stone/zultanite/green/polished_wall` → 6× garnished:polished_green_zultanite_wall ← 6×garnished:polished_green_zultanite
+- `garnished:stone/zultanite/green/small_brick_stairs` → 4× garnished:small_green_zultanite_brick_stairs ← 6×garnished:small_green_zultanite_bricks
+- `garnished:stone/zultanite/green/small_brick_wall` → 6× garnished:small_green_zultanite_brick_wall ← 6×garnished:small_green_zultanite_bricks
+- `garnished:stone/zultanite/light_blue/brick_stairs` → 4× garnished:light_blue_zultanite_brick_stairs ← 6×garnished:light_blue_zultanite_bricks
+- `garnished:stone/zultanite/light_blue/brick_wall` → 6× garnished:light_blue_zultanite_brick_wall ← 6×garnished:light_blue_zultanite_bricks
+- `garnished:stone/zultanite/light_blue/cut_stairs` → 4× garnished:cut_light_blue_zultanite_stairs ← 6×garnished:cut_light_blue_zultanite
+- `garnished:stone/zultanite/light_blue/cut_wall` → 6× garnished:cut_light_blue_zultanite_wall ← 6×garnished:cut_light_blue_zultanite
+- `garnished:stone/zultanite/light_blue/polished_stairs` → 4× garnished:polished_light_blue_zultanite_stairs ← 6×garnished:polished_light_blue_zultanite
+- `garnished:stone/zultanite/light_blue/polished_wall` → 6× garnished:polished_light_blue_zultanite_wall ← 6×garnished:polished_light_blue_zultanite
+- `garnished:stone/zultanite/light_blue/small_brick_stairs` → 4× garnished:small_light_blue_zultanite_brick_stairs ← 6×garnished:small_light_blue_zultanite_bricks
+- `garnished:stone/zultanite/light_blue/small_brick_wall` → 6× garnished:small_light_blue_zultanite_brick_wall ← 6×garnished:small_light_blue_zultanite_bricks
+- `garnished:stone/zultanite/light_gray/brick_stairs` → 4× garnished:light_gray_zultanite_brick_stairs ← 6×garnished:light_gray_zultanite_bricks
+- `garnished:stone/zultanite/light_gray/brick_wall` → 6× garnished:light_gray_zultanite_brick_wall ← 6×garnished:light_gray_zultanite_bricks
+- `garnished:stone/zultanite/light_gray/cut_stairs` → 4× garnished:cut_light_gray_zultanite_stairs ← 6×garnished:cut_light_gray_zultanite
+- `garnished:stone/zultanite/light_gray/cut_wall` → 6× garnished:cut_light_gray_zultanite_wall ← 6×garnished:cut_light_gray_zultanite
+- `garnished:stone/zultanite/light_gray/polished_stairs` → 4× garnished:polished_light_gray_zultanite_stairs ← 6×garnished:polished_light_gray_zultanite
+- `garnished:stone/zultanite/light_gray/polished_wall` → 6× garnished:polished_light_gray_zultanite_wall ← 6×garnished:polished_light_gray_zultanite
+- `garnished:stone/zultanite/light_gray/small_brick_stairs` → 4× garnished:small_light_gray_zultanite_brick_stairs ← 6×garnished:small_light_gray_zultanite_bricks
+- `garnished:stone/zultanite/light_gray/small_brick_wall` → 6× garnished:small_light_gray_zultanite_brick_wall ← 6×garnished:small_light_gray_zultanite_bricks
+- `garnished:stone/zultanite/lime/brick_stairs` → 4× garnished:lime_zultanite_brick_stairs ← 6×garnished:lime_zultanite_bricks
+- `garnished:stone/zultanite/lime/brick_wall` → 6× garnished:lime_zultanite_brick_wall ← 6×garnished:lime_zultanite_bricks
+- `garnished:stone/zultanite/lime/cut_stairs` → 4× garnished:cut_lime_zultanite_stairs ← 6×garnished:cut_lime_zultanite
+- `garnished:stone/zultanite/lime/cut_wall` → 6× garnished:cut_lime_zultanite_wall ← 6×garnished:cut_lime_zultanite
+- `garnished:stone/zultanite/lime/polished_stairs` → 4× garnished:polished_lime_zultanite_stairs ← 6×garnished:polished_lime_zultanite
+- `garnished:stone/zultanite/lime/polished_wall` → 6× garnished:polished_lime_zultanite_wall ← 6×garnished:polished_lime_zultanite
+- `garnished:stone/zultanite/lime/small_brick_stairs` → 4× garnished:small_lime_zultanite_brick_stairs ← 6×garnished:small_lime_zultanite_bricks
+- `garnished:stone/zultanite/lime/small_brick_wall` → 6× garnished:small_lime_zultanite_brick_wall ← 6×garnished:small_lime_zultanite_bricks
+- `garnished:stone/zultanite/magenta/brick_stairs` → 4× garnished:magenta_zultanite_brick_stairs ← 6×garnished:magenta_zultanite_bricks
+- `garnished:stone/zultanite/magenta/brick_wall` → 6× garnished:magenta_zultanite_brick_wall ← 6×garnished:magenta_zultanite_bricks
+- `garnished:stone/zultanite/magenta/cut_stairs` → 4× garnished:cut_magenta_zultanite_stairs ← 6×garnished:cut_magenta_zultanite
+- `garnished:stone/zultanite/magenta/cut_wall` → 6× garnished:cut_magenta_zultanite_wall ← 6×garnished:cut_magenta_zultanite
+- `garnished:stone/zultanite/magenta/polished_stairs` → 4× garnished:polished_magenta_zultanite_stairs ← 6×garnished:polished_magenta_zultanite
+- `garnished:stone/zultanite/magenta/polished_wall` → 6× garnished:polished_magenta_zultanite_wall ← 6×garnished:polished_magenta_zultanite
+- `garnished:stone/zultanite/magenta/small_brick_stairs` → 4× garnished:small_magenta_zultanite_brick_stairs ← 6×garnished:small_magenta_zultanite_bricks
+- `garnished:stone/zultanite/magenta/small_brick_wall` → 6× garnished:small_magenta_zultanite_brick_wall ← 6×garnished:small_magenta_zultanite_bricks
+- `garnished:stone/zultanite/orange/brick_stairs` → 4× garnished:orange_zultanite_brick_stairs ← 6×garnished:orange_zultanite_bricks
+- `garnished:stone/zultanite/orange/brick_wall` → 6× garnished:orange_zultanite_brick_wall ← 6×garnished:orange_zultanite_bricks
+- `garnished:stone/zultanite/orange/cut_stairs` → 4× garnished:cut_orange_zultanite_stairs ← 6×garnished:cut_orange_zultanite
+- `garnished:stone/zultanite/orange/cut_wall` → 6× garnished:cut_orange_zultanite_wall ← 6×garnished:cut_orange_zultanite
+- `garnished:stone/zultanite/orange/polished_stairs` → 4× garnished:polished_orange_zultanite_stairs ← 6×garnished:polished_orange_zultanite
+- `garnished:stone/zultanite/orange/polished_wall` → 6× garnished:polished_orange_zultanite_wall ← 6×garnished:polished_orange_zultanite
+- `garnished:stone/zultanite/orange/small_brick_stairs` → 4× garnished:small_orange_zultanite_brick_stairs ← 6×garnished:small_orange_zultanite_bricks
+- `garnished:stone/zultanite/orange/small_brick_wall` → 6× garnished:small_orange_zultanite_brick_wall ← 6×garnished:small_orange_zultanite_bricks
+- `garnished:stone/zultanite/pink/brick_stairs` → 4× garnished:pink_zultanite_brick_stairs ← 6×garnished:pink_zultanite_bricks
+- `garnished:stone/zultanite/pink/brick_wall` → 6× garnished:pink_zultanite_brick_wall ← 6×garnished:pink_zultanite_bricks
+- `garnished:stone/zultanite/pink/cut_stairs` → 4× garnished:cut_pink_zultanite_stairs ← 6×garnished:cut_pink_zultanite
+- `garnished:stone/zultanite/pink/cut_wall` → 6× garnished:cut_pink_zultanite_wall ← 6×garnished:cut_pink_zultanite
+- `garnished:stone/zultanite/pink/polished_stairs` → 4× garnished:polished_pink_zultanite_stairs ← 6×garnished:polished_pink_zultanite
+- `garnished:stone/zultanite/pink/polished_wall` → 6× garnished:polished_pink_zultanite_wall ← 6×garnished:polished_pink_zultanite
+- `garnished:stone/zultanite/pink/small_brick_stairs` → 4× garnished:small_pink_zultanite_brick_stairs ← 6×garnished:small_pink_zultanite_bricks
+- `garnished:stone/zultanite/pink/small_brick_wall` → 6× garnished:small_pink_zultanite_brick_wall ← 6×garnished:small_pink_zultanite_bricks
+- `garnished:stone/zultanite/purple/brick_stairs` → 4× garnished:purple_zultanite_brick_stairs ← 6×garnished:purple_zultanite_bricks
+- `garnished:stone/zultanite/purple/brick_wall` → 6× garnished:purple_zultanite_brick_wall ← 6×garnished:purple_zultanite_bricks
+- `garnished:stone/zultanite/purple/cut_stairs` → 4× garnished:cut_purple_zultanite_stairs ← 6×garnished:cut_purple_zultanite
+- `garnished:stone/zultanite/purple/cut_wall` → 6× garnished:cut_purple_zultanite_wall ← 6×garnished:cut_purple_zultanite
+- `garnished:stone/zultanite/purple/polished_stairs` → 4× garnished:polished_purple_zultanite_stairs ← 6×garnished:polished_purple_zultanite
+- `garnished:stone/zultanite/purple/polished_wall` → 6× garnished:polished_purple_zultanite_wall ← 6×garnished:polished_purple_zultanite
+- `garnished:stone/zultanite/purple/small_brick_stairs` → 4× garnished:small_purple_zultanite_brick_stairs ← 6×garnished:small_purple_zultanite_bricks
+- `garnished:stone/zultanite/purple/small_brick_wall` → 6× garnished:small_purple_zultanite_brick_wall ← 6×garnished:small_purple_zultanite_bricks
+- `garnished:stone/zultanite/red/brick_stairs` → 4× garnished:red_zultanite_brick_stairs ← 6×garnished:red_zultanite_bricks
+- `garnished:stone/zultanite/red/brick_wall` → 6× garnished:red_zultanite_brick_wall ← 6×garnished:red_zultanite_bricks
+- `garnished:stone/zultanite/red/cut_stairs` → 4× garnished:cut_red_zultanite_stairs ← 6×garnished:cut_red_zultanite
+- `garnished:stone/zultanite/red/cut_wall` → 6× garnished:cut_red_zultanite_wall ← 6×garnished:cut_red_zultanite
+- `garnished:stone/zultanite/red/polished_stairs` → 4× garnished:polished_red_zultanite_stairs ← 6×garnished:polished_red_zultanite
+- `garnished:stone/zultanite/red/polished_wall` → 6× garnished:polished_red_zultanite_wall ← 6×garnished:polished_red_zultanite
+- `garnished:stone/zultanite/red/small_brick_stairs` → 4× garnished:small_red_zultanite_brick_stairs ← 6×garnished:small_red_zultanite_bricks
+- `garnished:stone/zultanite/red/small_brick_wall` → 6× garnished:small_red_zultanite_brick_wall ← 6×garnished:small_red_zultanite_bricks
+- `garnished:stone/zultanite/white/brick_stairs` → 4× garnished:white_zultanite_brick_stairs ← 6×garnished:white_zultanite_bricks
+- `garnished:stone/zultanite/white/brick_wall` → 6× garnished:white_zultanite_brick_wall ← 6×garnished:white_zultanite_bricks
+- `garnished:stone/zultanite/white/cut_stairs` → 4× garnished:cut_white_zultanite_stairs ← 6×garnished:cut_white_zultanite
+- `garnished:stone/zultanite/white/cut_wall` → 6× garnished:cut_white_zultanite_wall ← 6×garnished:cut_white_zultanite
+- `garnished:stone/zultanite/white/polished_stairs` → 4× garnished:polished_white_zultanite_stairs ← 6×garnished:polished_white_zultanite
+- `garnished:stone/zultanite/white/polished_wall` → 6× garnished:polished_white_zultanite_wall ← 6×garnished:polished_white_zultanite
+- `garnished:stone/zultanite/white/small_brick_stairs` → 4× garnished:small_white_zultanite_brick_stairs ← 6×garnished:small_white_zultanite_bricks
+- `garnished:stone/zultanite/white/small_brick_wall` → 6× garnished:small_white_zultanite_brick_wall ← 6×garnished:small_white_zultanite_bricks
+- `garnished:stone/zultanite/yellow/brick_stairs` → 4× garnished:yellow_zultanite_brick_stairs ← 6×garnished:yellow_zultanite_bricks
+- `garnished:stone/zultanite/yellow/brick_wall` → 6× garnished:yellow_zultanite_brick_wall ← 6×garnished:yellow_zultanite_bricks
+- `garnished:stone/zultanite/yellow/cut_stairs` → 4× garnished:cut_yellow_zultanite_stairs ← 6×garnished:cut_yellow_zultanite
+- `garnished:stone/zultanite/yellow/cut_wall` → 6× garnished:cut_yellow_zultanite_wall ← 6×garnished:cut_yellow_zultanite
+- `garnished:stone/zultanite/yellow/polished_stairs` → 4× garnished:polished_yellow_zultanite_stairs ← 6×garnished:polished_yellow_zultanite
+- `garnished:stone/zultanite/yellow/polished_wall` → 6× garnished:polished_yellow_zultanite_wall ← 6×garnished:polished_yellow_zultanite
+- `garnished:stone/zultanite/yellow/small_brick_stairs` → 4× garnished:small_yellow_zultanite_brick_stairs ← 6×garnished:small_yellow_zultanite_bricks
+- `garnished:stone/zultanite/yellow/small_brick_wall` → 6× garnished:small_yellow_zultanite_brick_wall ← 6×garnished:small_yellow_zultanite_bricks
+- `minecraft:andesite_bars` → 16× createdeco:andesite_bars ← 6×create:andesite_alloy
+- `minecraft:andesite_stairs` → 4× minecraft:andesite_stairs ← 6×minecraft:andesite
+- `minecraft:andesite_wall` → 6× minecraft:andesite_wall ← 6×minecraft:andesite
+- `minecraft:blackstone_stairs` → 4× minecraft:blackstone_stairs ← 6×minecraft:blackstone
+- `minecraft:blackstone_wall` → 6× minecraft:blackstone_wall ← 6×minecraft:blackstone
+- `minecraft:brass_bars` → 16× createdeco:brass_bars ← 6×create:brass_ingot
+- `minecraft:brick_stairs` → 4× minecraft:brick_stairs ← 6×minecraft:bricks
+- `minecraft:brick_wall` → 6× minecraft:brick_wall ← 6×minecraft:bricks
+- `minecraft:cobbled_deepslate_stairs` → 4× minecraft:cobbled_deepslate_stairs ← 6×minecraft:cobbled_deepslate
+- `minecraft:cobbled_deepslate_wall` → 6× minecraft:cobbled_deepslate_wall ← 6×minecraft:cobbled_deepslate
+- `minecraft:cobblestone_stairs` → 4× minecraft:cobblestone_stairs ← 6×minecraft:cobblestone
+- `minecraft:cobblestone_wall` → 6× minecraft:cobblestone_wall ← 6×minecraft:cobblestone
+- `minecraft:deepslate_brick_stairs` → 4× minecraft:deepslate_brick_stairs ← 6×minecraft:deepslate_bricks
+- `minecraft:deepslate_brick_wall` → 6× minecraft:deepslate_brick_wall ← 6×minecraft:deepslate_bricks
+- `minecraft:deepslate_tile_stairs` → 4× minecraft:deepslate_tile_stairs ← 6×minecraft:deepslate_tiles
+- `minecraft:deepslate_tile_wall` → 6× minecraft:deepslate_tile_wall ← 6×minecraft:deepslate_tiles
+- `minecraft:diorite_stairs` → 4× minecraft:diorite_stairs ← 6×minecraft:diorite
+- `minecraft:diorite_wall` → 6× minecraft:diorite_wall ← 6×minecraft:diorite
+- `minecraft:end_stone_brick_stairs` → 4× minecraft:end_stone_brick_stairs ← 6×minecraft:end_stone_bricks
+- `minecraft:end_stone_brick_wall` → 6× minecraft:end_stone_brick_wall ← 6×minecraft:end_stone_bricks
+- `minecraft:granite_stairs` → 4× minecraft:granite_stairs ← 6×minecraft:granite
+- `minecraft:granite_wall` → 6× minecraft:granite_wall ← 6×minecraft:granite
+- `minecraft:industrial_iron_bars` → 16× createdeco:industrial_iron_bars ← 6×createdeco:industrial_iron_ingot
+- `minecraft:mossy_cobblestone_stairs` → 4× minecraft:mossy_cobblestone_stairs ← 6×minecraft:mossy_cobblestone
+- `minecraft:mossy_cobblestone_wall` → 6× minecraft:mossy_cobblestone_wall ← 6×minecraft:mossy_cobblestone
+- `minecraft:mossy_stone_brick_stairs` → 4× minecraft:mossy_stone_brick_stairs ← 6×minecraft:mossy_stone_bricks
+- `minecraft:mossy_stone_brick_wall` → 6× minecraft:mossy_stone_brick_wall ← 6×minecraft:mossy_stone_bricks
+- `minecraft:mud_brick_stairs` → 4× minecraft:mud_brick_stairs ← 6×minecraft:mud_bricks
+- `minecraft:mud_brick_wall` → 6× minecraft:mud_brick_wall ← 6×minecraft:mud_bricks
+- `minecraft:nether_brick_stairs` → 4× minecraft:nether_brick_stairs ← 6×minecraft:nether_bricks
+- `minecraft:nether_brick_wall` → 6× minecraft:nether_brick_wall ← 6×minecraft:nether_bricks
+- `minecraft:polished_blackstone_brick_stairs` → 4× minecraft:polished_blackstone_brick_stairs ← 6×minecraft:polished_blackstone_bricks
+- `minecraft:polished_blackstone_brick_wall` → 6× minecraft:polished_blackstone_brick_wall ← 6×minecraft:polished_blackstone_bricks
+- `minecraft:polished_blackstone_stairs` → 4× minecraft:polished_blackstone_stairs ← 6×minecraft:polished_blackstone
+- `minecraft:polished_blackstone_wall` → 6× minecraft:polished_blackstone_wall ← 6×minecraft:polished_blackstone
+- `minecraft:polished_deepslate_stairs` → 4× minecraft:polished_deepslate_stairs ← 6×minecraft:polished_deepslate
+- `minecraft:polished_deepslate_wall` → 6× minecraft:polished_deepslate_wall ← 6×minecraft:polished_deepslate
+- `minecraft:polished_tuff_stairs` → 4× minecraft:polished_tuff_stairs ← 6×minecraft:polished_tuff
+- `minecraft:polished_tuff_wall` → 6× minecraft:polished_tuff_wall ← 6×minecraft:polished_tuff
+- `minecraft:prismarine_stairs` → 4× minecraft:prismarine_stairs ← 6×minecraft:prismarine
+- `minecraft:prismarine_wall` → 6× minecraft:prismarine_wall ← 6×minecraft:prismarine
+- `minecraft:red_nether_brick_stairs` → 4× minecraft:red_nether_brick_stairs ← 6×minecraft:red_nether_bricks
+- `minecraft:red_nether_brick_wall` → 6× minecraft:red_nether_brick_wall ← 6×minecraft:red_nether_bricks
+- `minecraft:red_sandstone_wall` → 6× minecraft:red_sandstone_wall ← 6×minecraft:red_sandstone
+- `minecraft:sandstone_wall` → 6× minecraft:sandstone_wall ← 6×minecraft:sandstone
+- `minecraft:stone_brick_stairs` → 4× minecraft:stone_brick_stairs ← 6×minecraft:stone_bricks
+- `minecraft:stone_brick_wall` → 6× minecraft:stone_brick_wall ← 6×minecraft:stone_bricks
+- `minecraft:tuff_brick_stairs` → 4× minecraft:tuff_brick_stairs ← 6×minecraft:tuff_bricks
+- `minecraft:tuff_brick_wall` → 6× minecraft:tuff_brick_wall ← 6×minecraft:tuff_bricks
+- `minecraft:tuff_stairs` → 4× minecraft:tuff_stairs ← 6×minecraft:tuff
+- `minecraft:tuff_wall` → 6× minecraft:tuff_wall ← 6×minecraft:tuff
+- `minecraft:zinc_bars` → 16× createdeco:zinc_bars ← 6×create:zinc_ingot
+- `northstar:argyre_slab` → 6× northstar:argyre_slab ← 3×northstar:argyre_planks
+- `northstar:calorian_slab` → 6× northstar:calorian_slab ← 3×northstar:calorian_planks
+- `northstar:mars_stone_brick_slab` → 6× northstar:mars_stone_brick_slab ← 3×northstar:mars_stone_bricks
+- `northstar:mars_stone_brick_stairs` → 4× northstar:mars_stone_brick_stairs ← 6×northstar:mars_stone_bricks
+- `northstar:mars_stone_brick_wall` → 6× northstar:mars_stone_brick_wall ← 6×northstar:mars_stone_bricks
+- `northstar:martian_steel_plating_slab` → 6× northstar:martian_steel_plating_slab ← 3×northstar:martian_steel_plating
+- `northstar:martian_steel_plating_vertical_slab` → 6× northstar:martian_steel_plating_vertical_slab ← 3×northstar:martian_steel_plating
+- `northstar:martian_steel_sheetmetal_slab` → 6× northstar:martian_steel_sheetmetal_slab ← 3×northstar:martian_steel_sheetmetal
+- `northstar:martian_steel_sheetmetal_vertical_slab` → 6× northstar:martian_steel_sheetmetal_vertical_slab ← 3×northstar:martian_steel_sheetmetal
+- `northstar:mercury_stone_brick_slab` → 6× northstar:mercury_stone_brick_slab ← 3×northstar:mercury_stone_bricks
+- `northstar:mercury_stone_brick_stairs` → 4× northstar:mercury_stone_brick_stairs ← 6×northstar:mercury_stone_bricks
+- `northstar:mercury_stone_brick_wall` → 6× northstar:mercury_stone_brick_wall ← 6×northstar:mercury_stone_bricks
+- `northstar:moon_stone_brick_slab` → 6× northstar:moon_stone_brick_slab ← 3×northstar:moon_stone_bricks
+- `northstar:moon_stone_brick_stairs` → 4× northstar:moon_stone_brick_stairs ← 6×northstar:moon_stone_bricks
+- `northstar:moon_stone_brick_wall` → 6× northstar:moon_stone_brick_wall ← 6×northstar:moon_stone_bricks
+- `northstar:titanium_plating_slab` → 6× northstar:titanium_plating_slab ← 3×northstar:titanium_plating
+- `northstar:titanium_plating_vertical_slab` → 6× northstar:titanium_plating_vertical_slab ← 3×northstar:titanium_plating
+- `northstar:titanium_sheetmetal_slab` → 6× northstar:titanium_sheetmetal_slab ← 3×northstar:titanium_sheetmetal
+- `northstar:titanium_sheetmetal_vertical_slab` → 6× northstar:titanium_sheetmetal_vertical_slab ← 3×northstar:titanium_sheetmetal
+- `northstar:tungsten_plating_slab` → 6× northstar:tungsten_plating_slab ← 3×northstar:tungsten_plating
+- `northstar:tungsten_plating_vertical_slab` → 6× northstar:tungsten_plating_vertical_slab ← 3×northstar:tungsten_plating
+- `northstar:tungsten_sheetmetal_slab` → 6× northstar:tungsten_sheetmetal_slab ← 3×northstar:tungsten_sheetmetal
+- `northstar:tungsten_sheetmetal_vertical_slab` → 6× northstar:tungsten_sheetmetal_vertical_slab ← 3×northstar:tungsten_sheetmetal
+- `northstar:venus_stone_brick_slab` → 6× northstar:venus_stone_brick_slab ← 3×northstar:venus_stone_bricks
+- `northstar:venus_stone_brick_stairs` → 4× northstar:venus_stone_brick_stairs ← 6×northstar:venus_stone_bricks
+- `northstar:venus_stone_brick_wall` → 6× northstar:venus_stone_brick_wall ← 6×northstar:venus_stone_bricks
+- `northstar:wilter_slab` → 6× northstar:wilter_slab ← 3×northstar:wilter_planks
+- `tfmg:cut_bauxite_brick_stairs` → 4× tfmg:cut_bauxite_brick_stairs ← 6×tfmg:cut_bauxite_bricks
+- `tfmg:cut_bauxite_brick_wall` → 6× tfmg:cut_bauxite_brick_wall ← 6×tfmg:cut_bauxite_bricks
+- `tfmg:cut_bauxite_stairs` → 4× tfmg:cut_bauxite_stairs ← 6×tfmg:cut_bauxite
+- `tfmg:cut_bauxite_wall` → 6× tfmg:cut_bauxite_wall ← 6×tfmg:cut_bauxite
+- `tfmg:cut_galena_brick_stairs` → 4× tfmg:cut_galena_brick_stairs ← 6×tfmg:cut_galena_bricks
+- `tfmg:cut_galena_brick_wall` → 6× tfmg:cut_galena_brick_wall ← 6×tfmg:cut_galena_bricks
+- `tfmg:cut_galena_stairs` → 4× tfmg:cut_galena_stairs ← 6×tfmg:cut_galena
+- `tfmg:cut_galena_wall` → 6× tfmg:cut_galena_wall ← 6×tfmg:cut_galena
+- `tfmg:polished_cut_bauxite_stairs` → 4× tfmg:polished_cut_bauxite_stairs ← 6×tfmg:polished_cut_bauxite
+- `tfmg:polished_cut_bauxite_wall` → 6× tfmg:polished_cut_bauxite_wall ← 6×tfmg:polished_cut_bauxite
+- `tfmg:polished_cut_galena_stairs` → 4× tfmg:polished_cut_galena_stairs ← 6×tfmg:polished_cut_galena
+- `tfmg:polished_cut_galena_wall` → 6× tfmg:polished_cut_galena_wall ← 6×tfmg:polished_cut_galena
+- `tfmg:small_bauxite_brick_stairs` → 4× tfmg:small_bauxite_brick_stairs ← 6×tfmg:small_bauxite_bricks
+- `tfmg:small_bauxite_brick_wall` → 6× tfmg:small_bauxite_brick_wall ← 6×tfmg:small_bauxite_bricks
+- `tfmg:small_galena_brick_stairs` → 4× tfmg:small_galena_brick_stairs ← 6×tfmg:small_galena_bricks
+- `tfmg:small_galena_brick_wall` → 6× tfmg:small_galena_brick_wall ← 6×tfmg:small_galena_bricks
+
+## Уникальные формы, которые пила уже режет через stonecutting (mixing не генерируется) (400)
+
+- `bellsandwhistles:door_steps/andesite_grab_rails` → 8× bellsandwhistles:andesite_door_step ← 3×create:andesite_alloy
+- `bits_n_bobs:andesite_tile_slab` → 6× bits_n_bobs:andesite_tile_slab ← 3×bits_n_bobs:andesite_tiles
+- `bits_n_bobs:asurine_tile_slab` → 6× bits_n_bobs:asurine_tile_slab ← 3×bits_n_bobs:asurine_tiles
+- `bits_n_bobs:calcite_tile_slab` → 6× bits_n_bobs:calcite_tile_slab ← 3×bits_n_bobs:calcite_tiles
+- `bits_n_bobs:crimsite_tile_slab` → 6× bits_n_bobs:crimsite_tile_slab ← 3×bits_n_bobs:crimsite_tiles
+- `bits_n_bobs:deepslate_tile_slab` → 6× bits_n_bobs:deepslate_tile_slab ← 3×bits_n_bobs:deepslate_tiles
+- `bits_n_bobs:diorite_tile_slab` → 6× bits_n_bobs:diorite_tile_slab ← 3×bits_n_bobs:diorite_tiles
+- `bits_n_bobs:dripstone_tile_slab` → 6× bits_n_bobs:dripstone_tile_slab ← 3×bits_n_bobs:dripstone_tiles
+- `bits_n_bobs:granite_tile_slab` → 6× bits_n_bobs:granite_tile_slab ← 3×bits_n_bobs:granite_tiles
+- `bits_n_bobs:limestone_tile_slab` → 6× bits_n_bobs:limestone_tile_slab ← 3×bits_n_bobs:limestone_tiles
+- `bits_n_bobs:ochrum_tile_slab` → 6× bits_n_bobs:ochrum_tile_slab ← 3×bits_n_bobs:ochrum_tiles
+- `bits_n_bobs:scorchia_tile_slab` → 6× bits_n_bobs:scorchia_tile_slab ← 3×bits_n_bobs:scorchia_tiles
+- `bits_n_bobs:scoria_tile_slab` → 6× bits_n_bobs:scoria_tile_slab ← 3×bits_n_bobs:scoria_tiles
+- `bits_n_bobs:tuff_tile_slab` → 6× bits_n_bobs:tuff_tile_slab ← 3×bits_n_bobs:tuff_tiles
+- `bits_n_bobs:veridium_tile_slab` → 6× bits_n_bobs:veridium_tile_slab ← 3×bits_n_bobs:veridium_tiles
+- `create:copper_shingle_slab` → 6× create:copper_shingle_slab ← 3×create:copper_shingles
+- `create:copper_shingle_stairs` → 4× create:copper_shingle_stairs ← 6×create:copper_shingles
+- `create:copper_tile_slab` → 6× create:copper_tile_slab ← 3×create:copper_tiles
+- `create:copper_tile_stairs` → 4× create:copper_tile_stairs ← 6×create:copper_tiles
+- `create:cut_andesite_brick_slab` → 6× create:cut_andesite_brick_slab ← 3×create:cut_andesite_bricks
+- `create:cut_andesite_slab` → 6× create:cut_andesite_slab ← 3×create:cut_andesite
+- `create:cut_asurine_brick_slab` → 6× create:cut_asurine_brick_slab ← 3×create:cut_asurine_bricks
+- `create:cut_asurine_slab` → 6× create:cut_asurine_slab ← 3×create:cut_asurine
+- `create:cut_calcite_brick_slab` → 6× create:cut_calcite_brick_slab ← 3×create:cut_calcite_bricks
+- `create:cut_calcite_slab` → 6× create:cut_calcite_slab ← 3×create:cut_calcite
+- `create:cut_crimsite_brick_slab` → 6× create:cut_crimsite_brick_slab ← 3×create:cut_crimsite_bricks
+- `create:cut_crimsite_slab` → 6× create:cut_crimsite_slab ← 3×create:cut_crimsite
+- `create:cut_deepslate_brick_slab` → 6× create:cut_deepslate_brick_slab ← 3×create:cut_deepslate_bricks
+- `create:cut_deepslate_slab` → 6× create:cut_deepslate_slab ← 3×create:cut_deepslate
+- `create:cut_diorite_brick_slab` → 6× create:cut_diorite_brick_slab ← 3×create:cut_diorite_bricks
+- `create:cut_diorite_slab` → 6× create:cut_diorite_slab ← 3×create:cut_diorite
+- `create:cut_dripstone_brick_slab` → 6× create:cut_dripstone_brick_slab ← 3×create:cut_dripstone_bricks
+- `create:cut_dripstone_slab` → 6× create:cut_dripstone_slab ← 3×create:cut_dripstone
+- `create:cut_granite_brick_slab` → 6× create:cut_granite_brick_slab ← 3×create:cut_granite_bricks
+- `create:cut_granite_slab` → 6× create:cut_granite_slab ← 3×create:cut_granite
+- `create:cut_limestone_brick_slab` → 6× create:cut_limestone_brick_slab ← 3×create:cut_limestone_bricks
+- `create:cut_limestone_slab` → 6× create:cut_limestone_slab ← 3×create:cut_limestone
+- `create:cut_ochrum_brick_slab` → 6× create:cut_ochrum_brick_slab ← 3×create:cut_ochrum_bricks
+- `create:cut_ochrum_slab` → 6× create:cut_ochrum_slab ← 3×create:cut_ochrum
+- `create:cut_scorchia_brick_slab` → 6× create:cut_scorchia_brick_slab ← 3×create:cut_scorchia_bricks
+- `create:cut_scorchia_slab` → 6× create:cut_scorchia_slab ← 3×create:cut_scorchia
+- `create:cut_scoria_brick_slab` → 6× create:cut_scoria_brick_slab ← 3×create:cut_scoria_bricks
+- `create:cut_scoria_slab` → 6× create:cut_scoria_slab ← 3×create:cut_scoria
+- `create:cut_tuff_brick_slab` → 6× create:cut_tuff_brick_slab ← 3×create:cut_tuff_bricks
+- `create:cut_tuff_slab` → 6× create:cut_tuff_slab ← 3×create:cut_tuff
+- `create:cut_veridium_brick_slab` → 6× create:cut_veridium_brick_slab ← 3×create:cut_veridium_bricks
+- `create:cut_veridium_slab` → 6× create:cut_veridium_slab ← 3×create:cut_veridium
+- `create:exposed_copper_shingle_slab` → 6× create:exposed_copper_shingle_slab ← 3×create:exposed_copper_shingles
+- `create:exposed_copper_shingle_stairs` → 4× create:exposed_copper_shingle_stairs ← 6×create:exposed_copper_shingles
+- `create:exposed_copper_tile_slab` → 6× create:exposed_copper_tile_slab ← 3×create:exposed_copper_tiles
+- `create:exposed_copper_tile_stairs` → 4× create:exposed_copper_tile_stairs ← 6×create:exposed_copper_tiles
+- `create:oxidized_copper_shingle_slab` → 6× create:oxidized_copper_shingle_slab ← 3×create:oxidized_copper_shingles
+- `create:oxidized_copper_shingle_stairs` → 4× create:oxidized_copper_shingle_stairs ← 6×create:oxidized_copper_shingles
+- `create:oxidized_copper_tile_slab` → 6× create:oxidized_copper_tile_slab ← 3×create:oxidized_copper_tiles
+- `create:oxidized_copper_tile_stairs` → 4× create:oxidized_copper_tile_stairs ← 6×create:oxidized_copper_tiles
+- `create:polished_cut_andesite_slab` → 6× create:polished_cut_andesite_slab ← 3×create:polished_cut_andesite
+- `create:polished_cut_asurine_slab` → 6× create:polished_cut_asurine_slab ← 3×create:polished_cut_asurine
+- `create:polished_cut_calcite_slab` → 6× create:polished_cut_calcite_slab ← 3×create:polished_cut_calcite
+- `create:polished_cut_crimsite_slab` → 6× create:polished_cut_crimsite_slab ← 3×create:polished_cut_crimsite
+- `create:polished_cut_deepslate_slab` → 6× create:polished_cut_deepslate_slab ← 3×create:polished_cut_deepslate
+- `create:polished_cut_diorite_slab` → 6× create:polished_cut_diorite_slab ← 3×create:polished_cut_diorite
+- `create:polished_cut_dripstone_slab` → 6× create:polished_cut_dripstone_slab ← 3×create:polished_cut_dripstone
+- `create:polished_cut_granite_slab` → 6× create:polished_cut_granite_slab ← 3×create:polished_cut_granite
+- `create:polished_cut_limestone_slab` → 6× create:polished_cut_limestone_slab ← 3×create:polished_cut_limestone
+- `create:polished_cut_ochrum_slab` → 6× create:polished_cut_ochrum_slab ← 3×create:polished_cut_ochrum
+- `create:polished_cut_scorchia_slab` → 6× create:polished_cut_scorchia_slab ← 3×create:polished_cut_scorchia
+- `create:polished_cut_scoria_slab` → 6× create:polished_cut_scoria_slab ← 3×create:polished_cut_scoria
+- `create:polished_cut_tuff_slab` → 6× create:polished_cut_tuff_slab ← 3×create:polished_cut_tuff
+- `create:polished_cut_veridium_slab` → 6× create:polished_cut_veridium_slab ← 3×create:polished_cut_veridium
+- `create:small_andesite_brick_slab` → 6× create:small_andesite_brick_slab ← 3×create:small_andesite_bricks
+- `create:small_asurine_brick_slab` → 6× create:small_asurine_brick_slab ← 3×create:small_asurine_bricks
+- `create:small_calcite_brick_slab` → 6× create:small_calcite_brick_slab ← 3×create:small_calcite_bricks
+- `create:small_crimsite_brick_slab` → 6× create:small_crimsite_brick_slab ← 3×create:small_crimsite_bricks
+- `create:small_deepslate_brick_slab` → 6× create:small_deepslate_brick_slab ← 3×create:small_deepslate_bricks
+- `create:small_diorite_brick_slab` → 6× create:small_diorite_brick_slab ← 3×create:small_diorite_bricks
+- `create:small_dripstone_brick_slab` → 6× create:small_dripstone_brick_slab ← 3×create:small_dripstone_bricks
+- `create:small_granite_brick_slab` → 6× create:small_granite_brick_slab ← 3×create:small_granite_bricks
+- `create:small_limestone_brick_slab` → 6× create:small_limestone_brick_slab ← 3×create:small_limestone_bricks
+- `create:small_ochrum_brick_slab` → 6× create:small_ochrum_brick_slab ← 3×create:small_ochrum_bricks
+- `create:small_scorchia_brick_slab` → 6× create:small_scorchia_brick_slab ← 3×create:small_scorchia_bricks
+- `create:small_scoria_brick_slab` → 6× create:small_scoria_brick_slab ← 3×create:small_scoria_bricks
+- `create:small_tuff_brick_slab` → 6× create:small_tuff_brick_slab ← 3×create:small_tuff_bricks
+- `create:small_veridium_brick_slab` → 6× create:small_veridium_brick_slab ← 3×create:small_veridium_bricks
+- `create:waxed_copper_shingle_slab` → 6× create:waxed_copper_shingle_slab ← 3×create:waxed_copper_shingles
+- `create:waxed_copper_shingle_stairs` → 4× create:waxed_copper_shingle_stairs ← 6×create:waxed_copper_shingles
+- `create:waxed_copper_tile_slab` → 6× create:waxed_copper_tile_slab ← 3×create:waxed_copper_tiles
+- `create:waxed_copper_tile_stairs` → 4× create:waxed_copper_tile_stairs ← 6×create:waxed_copper_tiles
+- `create:waxed_exposed_copper_shingle_slab` → 6× create:waxed_exposed_copper_shingle_slab ← 3×create:waxed_exposed_copper_shingles
+- `create:waxed_exposed_copper_shingle_stairs` → 4× create:waxed_exposed_copper_shingle_stairs ← 6×create:waxed_exposed_copper_shingles
+- `create:waxed_exposed_copper_tile_slab` → 6× create:waxed_exposed_copper_tile_slab ← 3×create:waxed_exposed_copper_tiles
+- `create:waxed_exposed_copper_tile_stairs` → 4× create:waxed_exposed_copper_tile_stairs ← 6×create:waxed_exposed_copper_tiles
+- `create:waxed_oxidized_copper_shingle_slab` → 6× create:waxed_oxidized_copper_shingle_slab ← 3×create:waxed_oxidized_copper_shingles
+- `create:waxed_oxidized_copper_shingle_stairs` → 4× create:waxed_oxidized_copper_shingle_stairs ← 6×create:waxed_oxidized_copper_shingles
+- `create:waxed_oxidized_copper_tile_slab` → 6× create:waxed_oxidized_copper_tile_slab ← 3×create:waxed_oxidized_copper_tiles
+- `create:waxed_oxidized_copper_tile_stairs` → 4× create:waxed_oxidized_copper_tile_stairs ← 6×create:waxed_oxidized_copper_tiles
+- `create:waxed_weathered_copper_shingle_slab` → 6× create:waxed_weathered_copper_shingle_slab ← 3×create:waxed_weathered_copper_shingles
+- `create:waxed_weathered_copper_shingle_stairs` → 4× create:waxed_weathered_copper_shingle_stairs ← 6×create:waxed_weathered_copper_shingles
+- `create:waxed_weathered_copper_tile_slab` → 6× create:waxed_weathered_copper_tile_slab ← 3×create:waxed_weathered_copper_tiles
+- `create:waxed_weathered_copper_tile_stairs` → 4× create:waxed_weathered_copper_tile_stairs ← 6×create:waxed_weathered_copper_tiles
+- `create:weathered_copper_shingle_slab` → 6× create:weathered_copper_shingle_slab ← 3×create:weathered_copper_shingles
+- `create:weathered_copper_shingle_stairs` → 4× create:weathered_copper_shingle_stairs ← 6×create:weathered_copper_shingles
+- `create:weathered_copper_tile_slab` → 6× create:weathered_copper_tile_slab ← 3×create:weathered_copper_tiles
+- `create:weathered_copper_tile_stairs` → 4× create:weathered_copper_tile_stairs ← 6×create:weathered_copper_tiles
+- `create_confectionery:black_chocolate_bricks_slab_recipe_1` → 6× create_confectionery:black_chocolate_bricks_slab ← 3×create_confectionery:black_chocolate_bricks
+- `create_confectionery:black_chocolate_bricks_stairs_recipe_1` → 4× create_confectionery:black_chocolate_bricks_stairs ← 6×create_confectionery:black_chocolate_bricks
+- `create_confectionery:caramel_bricks_slab_recipe_1` → 6× create_confectionery:caramel_bricks_slab ← 3×create_confectionery:caramel_bricks
+- `create_confectionery:caramel_bricks_stairs_recipe` → 4× create_confectionery:caramel_bricks_stairs ← 6×create_confectionery:caramel_bricks
+- `create_confectionery:chocolate_bricks_slab_recipe_1` → 6× create_confectionery:chocolate_bricks_slab ← 3×create_confectionery:chocolate_bricks
+- `create_confectionery:chocolate_bricks_stairs_recipe_1` → 4× create_confectionery:chocolate_bricks_stairs ← 6×create_confectionery:chocolate_bricks
+- `create_confectionery:gingerbread_brick_slab_recipe` → 6× create_confectionery:gingerbread_brick_slab ← 3×create_confectionery:gingerbreak_bricks
+- `create_confectionery:gingerbread_brick_stairs_recipe` → 4× create_confectionery:gingerbread_brick_stairs ← 6×create_confectionery:gingerbreak_bricks
+- `create_confectionery:gingerbread_slab_recipe` → 6× create_confectionery:gingerbread_slab ← 3×create_confectionery:gingerbread_block
+- `create_confectionery:gingerbread_stairs_recipe` → 4× create_confectionery:gingerbread_stairs ← 6×create_confectionery:gingerbread_block
+- `create_confectionery:ruby_chocolate_brick_slab_recipe` → 6× create_confectionery:ruby_chocolate_brick_slab ← 3×create_confectionery:ruby_chocolate_bricks
+- `create_confectionery:ruby_chocolate_brick_stairs_recipe` → 4× create_confectionery:ruby_chocolate_brick_stairs ← 6×create_confectionery:ruby_chocolate_bricks
+- `create_confectionery:white_chocolate_bricks_slab_recipe` → 6× create_confectionery:white_chocolate_bricks_slab ← 3×create_confectionery:white_chocolate_bricks
+- `create_confectionery:white_chocolate_bricks_stairs_recipe_1` → 4× create_confectionery:white_chocolate_bricks_stairs ← 6×create_confectionery:white_chocolate_bricks
+- `create_things_and_misc:brass_brick_slab_craft` → 6× create_things_and_misc:brass_brick_slab ← 3×create_things_and_misc:brass_bricks
+- `create_things_and_misc:brass_brick_stairs_craft` → 4× create_things_and_misc:brass_brick_stairs ← 6×create_things_and_misc:brass_bricks
+- `create_things_and_misc:brass_tiles_slab_craft` → 6× create_things_and_misc:brass_tiles_slab ← 3×create_things_and_misc:brass_tiles
+- `create_things_and_misc:sturdy_sheet_slab_craft` → 6× create_things_and_misc:sturdy_sheet_slab ← 3×create_things_and_misc:sturdy_sheet_block
+- `create_things_and_misc:sturdy_sheet_stairs_craft` → 4× create_things_and_misc:sturdy_sheet_slab_stairs ← 6×create_things_and_misc:sturdy_sheet_block
+- `createdeco:blue_brick_slab` → 6× createdeco:blue_brick_slab ← 3×createdeco:blue_bricks
+- `createdeco:corner_blue_brick_slab` → 6× createdeco:corner_blue_brick_slab ← 3×createdeco:corner_blue_bricks
+- `createdeco:corner_dean_brick_slab` → 6× createdeco:corner_dean_brick_slab ← 3×createdeco:corner_dean_bricks
+- `createdeco:corner_dusk_brick_slab` → 6× createdeco:corner_dusk_brick_slab ← 3×createdeco:corner_dusk_bricks
+- `createdeco:corner_pearl_brick_slab` → 6× createdeco:corner_pearl_brick_slab ← 3×createdeco:corner_pearl_bricks
+- `createdeco:corner_red_brick_slab` → 6× createdeco:corner_red_brick_slab ← 3×createdeco:corner_red_bricks
+- `createdeco:corner_scarlet_brick_slab` → 6× createdeco:corner_scarlet_brick_slab ← 3×createdeco:corner_scarlet_bricks
+- `createdeco:corner_umber_brick_slab` → 6× createdeco:corner_umber_brick_slab ← 3×createdeco:corner_umber_bricks
+- `createdeco:corner_verdant_brick_slab` → 6× createdeco:corner_verdant_brick_slab ← 3×createdeco:corner_verdant_bricks
+- `createdeco:cracked_blue_brick_slab` → 6× createdeco:cracked_blue_brick_slab ← 3×createdeco:cracked_blue_bricks
+- `createdeco:cracked_dean_brick_slab` → 6× createdeco:cracked_dean_brick_slab ← 3×createdeco:cracked_dean_bricks
+- `createdeco:cracked_dusk_brick_slab` → 6× createdeco:cracked_dusk_brick_slab ← 3×createdeco:cracked_dusk_bricks
+- `createdeco:cracked_pearl_brick_slab` → 6× createdeco:cracked_pearl_brick_slab ← 3×createdeco:cracked_pearl_bricks
+- `createdeco:cracked_red_brick_slab` → 6× createdeco:cracked_red_brick_slab ← 3×createdeco:cracked_red_bricks
+- `createdeco:cracked_scarlet_brick_slab` → 6× createdeco:cracked_scarlet_brick_slab ← 3×createdeco:cracked_scarlet_bricks
+- `createdeco:cracked_umber_brick_slab` → 6× createdeco:cracked_umber_brick_slab ← 3×createdeco:cracked_umber_bricks
+- `createdeco:cracked_verdant_brick_slab` → 6× createdeco:cracked_verdant_brick_slab ← 3×createdeco:cracked_verdant_bricks
+- `createdeco:dean_brick_slab` → 6× createdeco:dean_brick_slab ← 3×createdeco:dean_bricks
+- `createdeco:dusk_brick_slab` → 6× createdeco:dusk_brick_slab ← 3×createdeco:dusk_bricks
+- `createdeco:long_blue_brick_slab` → 6× createdeco:long_blue_brick_slab ← 3×createdeco:long_blue_bricks
+- `createdeco:long_dean_brick_slab` → 6× createdeco:long_dean_brick_slab ← 3×createdeco:long_dean_bricks
+- `createdeco:long_dusk_brick_slab` → 6× createdeco:long_dusk_brick_slab ← 3×createdeco:long_dusk_bricks
+- `createdeco:long_pearl_brick_slab` → 6× createdeco:long_pearl_brick_slab ← 3×createdeco:long_pearl_bricks
+- `createdeco:long_red_brick_slab` → 6× createdeco:long_red_brick_slab ← 3×createdeco:long_red_bricks
+- `createdeco:long_scarlet_brick_slab` → 6× createdeco:long_scarlet_brick_slab ← 3×createdeco:long_scarlet_bricks
+- `createdeco:long_umber_brick_slab` → 6× createdeco:long_umber_brick_slab ← 3×createdeco:long_umber_bricks
+- `createdeco:long_verdant_brick_slab` → 6× createdeco:long_verdant_brick_slab ← 3×createdeco:long_verdant_bricks
+- `createdeco:mossy_blue_brick_slab` → 6× createdeco:mossy_blue_brick_slab ← 3×createdeco:mossy_blue_bricks
+- `createdeco:mossy_dean_brick_slab` → 6× createdeco:mossy_dean_brick_slab ← 3×createdeco:mossy_dean_bricks
+- `createdeco:mossy_dusk_brick_slab` → 6× createdeco:mossy_dusk_brick_slab ← 3×createdeco:mossy_dusk_bricks
+- `createdeco:mossy_pearl_brick_slab` → 6× createdeco:mossy_pearl_brick_slab ← 3×createdeco:mossy_pearl_bricks
+- `createdeco:mossy_red_brick_slab` → 6× createdeco:mossy_red_brick_slab ← 3×createdeco:mossy_red_bricks
+- `createdeco:mossy_scarlet_brick_slab` → 6× createdeco:mossy_scarlet_brick_slab ← 3×createdeco:mossy_scarlet_bricks
+- `createdeco:mossy_umber_brick_slab` → 6× createdeco:mossy_umber_brick_slab ← 3×createdeco:mossy_umber_bricks
+- `createdeco:mossy_verdant_brick_slab` → 6× createdeco:mossy_verdant_brick_slab ← 3×createdeco:mossy_verdant_bricks
+- `createdeco:pearl_brick_slab` → 6× createdeco:pearl_brick_slab ← 3×createdeco:pearl_bricks
+- `createdeco:scarlet_brick_slab` → 6× createdeco:scarlet_brick_slab ← 3×createdeco:scarlet_bricks
+- `createdeco:short_blue_brick_slab` → 6× createdeco:short_blue_brick_slab ← 3×createdeco:short_blue_bricks
+- `createdeco:short_dean_brick_slab` → 6× createdeco:short_dean_brick_slab ← 3×createdeco:short_dean_bricks
+- `createdeco:short_dusk_brick_slab` → 6× createdeco:short_dusk_brick_slab ← 3×createdeco:short_dusk_bricks
+- `createdeco:short_pearl_brick_slab` → 6× createdeco:short_pearl_brick_slab ← 3×createdeco:short_pearl_bricks
+- `createdeco:short_red_brick_slab` → 6× createdeco:short_red_brick_slab ← 3×createdeco:short_red_bricks
+- `createdeco:short_scarlet_brick_slab` → 6× createdeco:short_scarlet_brick_slab ← 3×createdeco:short_scarlet_bricks
+- `createdeco:short_umber_brick_slab` → 6× createdeco:short_umber_brick_slab ← 3×createdeco:short_umber_bricks
+- `createdeco:short_verdant_brick_slab` → 6× createdeco:short_verdant_brick_slab ← 3×createdeco:short_verdant_bricks
+- `createdeco:tiled_blue_brick_slab` → 6× createdeco:tiled_blue_brick_slab ← 3×createdeco:tiled_blue_bricks
+- `createdeco:tiled_dean_brick_slab` → 6× createdeco:tiled_dean_brick_slab ← 3×createdeco:tiled_dean_bricks
+- `createdeco:tiled_dusk_brick_slab` → 6× createdeco:tiled_dusk_brick_slab ← 3×createdeco:tiled_dusk_bricks
+- `createdeco:tiled_pearl_brick_slab` → 6× createdeco:tiled_pearl_brick_slab ← 3×createdeco:tiled_pearl_bricks
+- `createdeco:tiled_red_brick_slab` → 6× createdeco:tiled_red_brick_slab ← 3×createdeco:tiled_red_bricks
+- `createdeco:tiled_scarlet_brick_slab` → 6× createdeco:tiled_scarlet_brick_slab ← 3×createdeco:tiled_scarlet_bricks
+- `createdeco:tiled_umber_brick_slab` → 6× createdeco:tiled_umber_brick_slab ← 3×createdeco:tiled_umber_bricks
+- `createdeco:tiled_verdant_brick_slab` → 6× createdeco:tiled_verdant_brick_slab ← 3×createdeco:tiled_verdant_bricks
+- `createdeco:umber_brick_slab` → 6× createdeco:umber_brick_slab ← 3×createdeco:umber_bricks
+- `createdeco:verdant_brick_slab` → 6× createdeco:verdant_brick_slab ← 3×createdeco:verdant_bricks
+- `createdieselgenerators:crafting/asphalt_slab` → 6× createdieselgenerators:asphalt_slab ← 3×createdieselgenerators:asphalt_block
+- `createdieselgenerators:crafting/asphalt_stairs` → 4× createdieselgenerators:asphalt_stairs ← 6×createdieselgenerators:asphalt_block
+- `dndecor:crafting/dark_metal_block_slab_from_dark_metal_block_slab` → 6× dndecor:dark_metal_block_slab ← 3×dndecor:dark_metal_block
+- `dndecor:crafting/dark_metal_block_stairs_from_dark_metal_block_stairs` → 4× dndecor:dark_metal_block_stairs ← 6×dndecor:dark_metal_block
+- `dndecor:crafting/dark_metal_brick_slab_from_dark_metal_brick_slab` → 6× dndecor:dark_metal_brick_slab ← 3×dndecor:dark_metal_bricks
+- `dndecor:crafting/dark_metal_brick_stairs_from_dark_metal_brick_stairs` → 4× dndecor:dark_metal_brick_stairs ← 6×dndecor:dark_metal_bricks
+- `dndecor:cut_amethyst_brick_slab` → 6× dndecor:cut_amethyst_brick_slab ← 3×dndecor:cut_amethyst_bricks
+- `dndecor:cut_amethyst_slab` → 6× dndecor:cut_amethyst_slab ← 3×dndecor:cut_amethyst
+- `dndecor:cut_basalt_brick_slab` → 6× dndecor:cut_basalt_brick_slab ← 3×dndecor:cut_basalt_bricks
+- `dndecor:cut_basalt_slab` → 6× dndecor:cut_basalt_slab ← 3×dndecor:cut_basalt
+- `dndecor:cut_blackstone_brick_slab` → 6× dndecor:cut_blackstone_brick_slab ← 3×dndecor:cut_blackstone_bricks
+- `dndecor:cut_blackstone_slab` → 6× dndecor:cut_blackstone_slab ← 3×dndecor:cut_blackstone
+- `dndecor:cut_dolomite_brick_slab` → 6× dndecor:cut_dolomite_brick_slab ← 3×dndecor:cut_dolomite_bricks
+- `dndecor:cut_dolomite_slab` → 6× dndecor:cut_dolomite_slab ← 3×dndecor:cut_dolomite
+- `dndecor:cut_gabbro_brick_slab` → 6× dndecor:cut_gabbro_brick_slab ← 3×dndecor:cut_gabbro_bricks
+- `dndecor:cut_gabbro_slab` → 6× dndecor:cut_gabbro_slab ← 3×dndecor:cut_gabbro
+- `dndecor:cut_netherrack_brick_slab` → 6× dndecor:cut_netherrack_brick_slab ← 3×dndecor:cut_netherrack_bricks
+- `dndecor:cut_netherrack_slab` → 6× dndecor:cut_netherrack_slab ← 3×dndecor:cut_netherrack
+- `dndecor:cut_packed_mud_brick_slab` → 6× dndecor:cut_packed_mud_brick_slab ← 3×dndecor:cut_packed_mud_bricks
+- `dndecor:cut_packed_mud_slab` → 6× dndecor:cut_packed_mud_slab ← 3×dndecor:cut_packed_mud
+- `dndecor:cut_stone_brick_slab` → 6× dndecor:cut_stone_brick_slab ← 3×dndecor:cut_stone_bricks
+- `dndecor:cut_stone_slab` → 6× dndecor:cut_stone_slab ← 3×dndecor:cut_stone
+- `dndecor:cut_weathered_limestone_brick_slab` → 6× dndecor:cut_weathered_limestone_brick_slab ← 3×dndecor:cut_weathered_limestone_bricks
+- `dndecor:cut_weathered_limestone_slab` → 6× dndecor:cut_weathered_limestone_slab ← 3×dndecor:cut_weathered_limestone
+- `dndecor:polished_cut_amethyst_slab` → 6× dndecor:polished_cut_amethyst_slab ← 3×dndecor:polished_cut_amethyst
+- `dndecor:polished_cut_basalt_slab` → 6× dndecor:polished_cut_basalt_slab ← 3×dndecor:polished_cut_basalt
+- `dndecor:polished_cut_blackstone_slab` → 6× dndecor:polished_cut_blackstone_slab ← 3×dndecor:polished_cut_blackstone
+- `dndecor:polished_cut_dolomite_slab` → 6× dndecor:polished_cut_dolomite_slab ← 3×dndecor:polished_cut_dolomite
+- `dndecor:polished_cut_gabbro_slab` → 6× dndecor:polished_cut_gabbro_slab ← 3×dndecor:polished_cut_gabbro
+- `dndecor:polished_cut_netherrack_slab` → 6× dndecor:polished_cut_netherrack_slab ← 3×dndecor:polished_cut_netherrack
+- `dndecor:polished_cut_packed_mud_slab` → 6× dndecor:polished_cut_packed_mud_slab ← 3×dndecor:polished_cut_packed_mud
+- `dndecor:polished_cut_stone_slab` → 6× dndecor:polished_cut_stone_slab ← 3×dndecor:polished_cut_stone
+- `dndecor:polished_cut_weathered_limestone_slab` → 6× dndecor:polished_cut_weathered_limestone_slab ← 3×dndecor:polished_cut_weathered_limestone
+- `dndecor:small_amethyst_brick_slab` → 6× dndecor:small_amethyst_brick_slab ← 3×dndecor:small_amethyst_bricks
+- `dndecor:small_basalt_brick_slab` → 6× dndecor:small_basalt_brick_slab ← 3×dndecor:small_basalt_bricks
+- `dndecor:small_blackstone_brick_slab` → 6× dndecor:small_blackstone_brick_slab ← 3×dndecor:small_blackstone_bricks
+- `dndecor:small_dolomite_brick_slab` → 6× dndecor:small_dolomite_brick_slab ← 3×dndecor:small_dolomite_bricks
+- `dndecor:small_gabbro_brick_slab` → 6× dndecor:small_gabbro_brick_slab ← 3×dndecor:small_gabbro_bricks
+- `dndecor:small_netherrack_brick_slab` → 6× dndecor:small_netherrack_brick_slab ← 3×dndecor:small_netherrack_bricks
+- `dndecor:small_packed_mud_brick_slab` → 6× dndecor:small_packed_mud_brick_slab ← 3×dndecor:small_packed_mud_bricks
+- `dndecor:small_stone_brick_slab` → 6× dndecor:small_stone_brick_slab ← 3×dndecor:small_stone_bricks
+- `dndecor:small_weathered_limestone_brick_slab` → 6× dndecor:small_weathered_limestone_brick_slab ← 3×dndecor:small_weathered_limestone_bricks
+- `dndesires:cut_breccia_brick_slab` → 6× dndesires:cut_breccia_brick_slab ← 3×dndesires:cut_breccia_bricks
+- `dndesires:cut_breccia_slab` → 6× dndesires:cut_breccia_slab ← 3×dndesires:cut_breccia
+- `dndesires:polished_cut_breccia_slab` → 6× dndesires:polished_cut_breccia_slab ← 3×dndesires:polished_cut_breccia
+- `dndesires:small_breccia_brick_slab` → 6× dndesires:small_breccia_brick_slab ← 3×dndesires:small_breccia_bricks
+- `garnished:stone/abyssal_stone/brick_slab` → 6× garnished:abyssal_stone_brick_slab ← 3×garnished:abyssal_stone_bricks
+- `garnished:stone/abyssal_stone/cut_slab` → 6× garnished:cut_abyssal_stone_slab ← 3×garnished:cut_abyssal_stone
+- `garnished:stone/abyssal_stone/polished_slab` → 6× garnished:polished_abyssal_stone_slab ← 3×garnished:polished_abyssal_stone
+- `garnished:stone/abyssal_stone/small_brick_slab` → 6× garnished:small_abyssal_stone_brick_slab ← 3×garnished:small_abyssal_stone_bricks
+- `garnished:stone/amber_remnant/amber_remnant_bricks_slab` → 6× garnished:amber_remnant_brick_slab ← 3×garnished:amber_remnant_bricks
+- `garnished:stone/carnotite/brick_slab` → 6× garnished:carnotite_brick_slab ← 3×garnished:carnotite_bricks
+- `garnished:stone/carnotite/cut_slab` → 6× garnished:cut_carnotite_slab ← 3×garnished:cut_carnotite
+- `garnished:stone/carnotite/polished_slab` → 6× garnished:polished_carnotite_slab ← 3×garnished:polished_carnotite
+- `garnished:stone/carnotite/small_brick_slab` → 6× garnished:small_carnotite_brick_slab ← 3×garnished:small_carnotite_bricks
+- `garnished:stone/ritualistic_stone/brick_slab` → 6× garnished:ritualistic_stone_brick_slab ← 3×garnished:ritualistic_stone_bricks
+- `garnished:stone/ritualistic_stone/cut_slab` → 6× garnished:cut_ritualistic_stone_slab ← 3×garnished:cut_ritualistic_stone
+- `garnished:stone/ritualistic_stone/polished_slab` → 6× garnished:polished_ritualistic_stone_slab ← 3×garnished:polished_ritualistic_stone
+- `garnished:stone/ritualistic_stone/small_brick_slab` → 6× garnished:small_ritualistic_stone_brick_slab ← 3×garnished:small_ritualistic_stone_bricks
+- `garnished:stone/unstable_stone/brick_slab` → 6× garnished:unstable_stone_brick_slab ← 3×garnished:unstable_stone_bricks
+- `garnished:stone/unstable_stone/cut_slab` → 6× garnished:cut_unstable_stone_slab ← 3×garnished:cut_unstable_stone
+- `garnished:stone/unstable_stone/polished_slab` → 6× garnished:polished_unstable_stone_slab ← 3×garnished:polished_unstable_stone
+- `garnished:stone/unstable_stone/small_brick_slab` → 6× garnished:small_unstable_stone_brick_slab ← 3×garnished:small_unstable_stone_bricks
+- `garnished:stone/wyvern_stone/brick_slab` → 6× garnished:dragon_stone_brick_slab ← 3×garnished:dragon_stone_bricks
+- `garnished:stone/wyvern_stone/cut_slab` → 6× garnished:cut_dragon_stone_slab ← 3×garnished:cut_dragon_stone
+- `garnished:stone/wyvern_stone/polished_slab` → 6× garnished:polished_dragon_stone_slab ← 3×garnished:polished_dragon_stone
+- `garnished:stone/wyvern_stone/small_brick_slab` → 6× garnished:small_dragon_stone_brick_slab ← 3×garnished:small_dragon_stone_bricks
+- `garnished:stone/zultanite/basic/brick_slab` → 6× garnished:zultanite_brick_slab ← 3×garnished:zultanite_bricks
+- `garnished:stone/zultanite/basic/cut_slab` → 6× garnished:cut_zultanite_slab ← 3×garnished:cut_zultanite
+- `garnished:stone/zultanite/basic/polished_slab` → 6× garnished:polished_zultanite_slab ← 3×garnished:polished_zultanite
+- `garnished:stone/zultanite/basic/small_brick_slab` → 6× garnished:small_zultanite_brick_slab ← 3×garnished:small_zultanite_bricks
+- `garnished:stone/zultanite/black/brick_slab` → 6× garnished:black_zultanite_brick_slab ← 3×garnished:black_zultanite_bricks
+- `garnished:stone/zultanite/black/cut_slab` → 6× garnished:cut_black_zultanite_slab ← 3×garnished:cut_black_zultanite
+- `garnished:stone/zultanite/black/polished_slab` → 6× garnished:polished_black_zultanite_slab ← 3×garnished:polished_black_zultanite
+- `garnished:stone/zultanite/black/small_brick_slab` → 6× garnished:small_black_zultanite_brick_slab ← 3×garnished:small_black_zultanite_bricks
+- `garnished:stone/zultanite/blue/brick_slab` → 6× garnished:blue_zultanite_brick_slab ← 3×garnished:blue_zultanite_bricks
+- `garnished:stone/zultanite/blue/cut_slab` → 6× garnished:cut_blue_zultanite_slab ← 3×garnished:cut_blue_zultanite
+- `garnished:stone/zultanite/blue/polished_slab` → 6× garnished:polished_blue_zultanite_slab ← 3×garnished:polished_blue_zultanite
+- `garnished:stone/zultanite/blue/small_brick_slab` → 6× garnished:small_blue_zultanite_brick_slab ← 3×garnished:small_blue_zultanite_bricks
+- `garnished:stone/zultanite/brown/brick_slab` → 6× garnished:brown_zultanite_brick_slab ← 3×garnished:brown_zultanite_bricks
+- `garnished:stone/zultanite/brown/cut_slab` → 6× garnished:cut_brown_zultanite_slab ← 3×garnished:cut_brown_zultanite
+- `garnished:stone/zultanite/brown/polished_slab` → 6× garnished:polished_brown_zultanite_slab ← 3×garnished:polished_brown_zultanite
+- `garnished:stone/zultanite/brown/small_brick_slab` → 6× garnished:small_brown_zultanite_brick_slab ← 3×garnished:small_brown_zultanite_bricks
+- `garnished:stone/zultanite/cyan/brick_slab` → 6× garnished:cyan_zultanite_brick_slab ← 3×garnished:cyan_zultanite_bricks
+- `garnished:stone/zultanite/cyan/cut_slab` → 6× garnished:cut_cyan_zultanite_slab ← 3×garnished:cut_cyan_zultanite
+- `garnished:stone/zultanite/cyan/polished_slab` → 6× garnished:polished_cyan_zultanite_slab ← 3×garnished:polished_cyan_zultanite
+- `garnished:stone/zultanite/cyan/small_brick_slab` → 6× garnished:small_cyan_zultanite_brick_slab ← 3×garnished:small_cyan_zultanite_bricks
+- `garnished:stone/zultanite/gray/brick_slab` → 6× garnished:gray_zultanite_brick_slab ← 3×garnished:gray_zultanite_bricks
+- `garnished:stone/zultanite/gray/cut_slab` → 6× garnished:cut_gray_zultanite_slab ← 3×garnished:cut_gray_zultanite
+- `garnished:stone/zultanite/gray/polished_slab` → 6× garnished:polished_gray_zultanite_slab ← 3×garnished:polished_gray_zultanite
+- `garnished:stone/zultanite/gray/small_brick_slab` → 6× garnished:small_gray_zultanite_brick_slab ← 3×garnished:small_gray_zultanite_bricks
+- `garnished:stone/zultanite/green/brick_slab` → 6× garnished:green_zultanite_brick_slab ← 3×garnished:green_zultanite_bricks
+- `garnished:stone/zultanite/green/cut_slab` → 6× garnished:cut_green_zultanite_slab ← 3×garnished:cut_green_zultanite
+- `garnished:stone/zultanite/green/polished_slab` → 6× garnished:polished_green_zultanite_slab ← 3×garnished:polished_green_zultanite
+- `garnished:stone/zultanite/green/small_brick_slab` → 6× garnished:small_green_zultanite_brick_slab ← 3×garnished:small_green_zultanite_bricks
+- `garnished:stone/zultanite/light_blue/brick_slab` → 6× garnished:light_blue_zultanite_brick_slab ← 3×garnished:light_blue_zultanite_bricks
+- `garnished:stone/zultanite/light_blue/cut_slab` → 6× garnished:cut_light_blue_zultanite_slab ← 3×garnished:cut_light_blue_zultanite
+- `garnished:stone/zultanite/light_blue/polished_slab` → 6× garnished:polished_light_blue_zultanite_slab ← 3×garnished:polished_light_blue_zultanite
+- `garnished:stone/zultanite/light_blue/small_brick_slab` → 6× garnished:small_light_blue_zultanite_brick_slab ← 3×garnished:small_light_blue_zultanite_bricks
+- `garnished:stone/zultanite/light_gray/brick_slab` → 6× garnished:light_gray_zultanite_brick_slab ← 3×garnished:light_gray_zultanite_bricks
+- `garnished:stone/zultanite/light_gray/cut_slab` → 6× garnished:cut_light_gray_zultanite_slab ← 3×garnished:cut_light_gray_zultanite
+- `garnished:stone/zultanite/light_gray/polished_slab` → 6× garnished:polished_light_gray_zultanite_slab ← 3×garnished:polished_light_gray_zultanite
+- `garnished:stone/zultanite/light_gray/small_brick_slab` → 6× garnished:small_light_gray_zultanite_brick_slab ← 3×garnished:small_light_gray_zultanite_bricks
+- `garnished:stone/zultanite/lime/brick_slab` → 6× garnished:lime_zultanite_brick_slab ← 3×garnished:lime_zultanite_bricks
+- `garnished:stone/zultanite/lime/cut_slab` → 6× garnished:cut_lime_zultanite_slab ← 3×garnished:cut_lime_zultanite
+- `garnished:stone/zultanite/lime/polished_slab` → 6× garnished:polished_lime_zultanite_slab ← 3×garnished:polished_lime_zultanite
+- `garnished:stone/zultanite/lime/small_brick_slab` → 6× garnished:small_lime_zultanite_brick_slab ← 3×garnished:small_lime_zultanite_bricks
+- `garnished:stone/zultanite/magenta/brick_slab` → 6× garnished:magenta_zultanite_brick_slab ← 3×garnished:magenta_zultanite_bricks
+- `garnished:stone/zultanite/magenta/cut_slab` → 6× garnished:cut_magenta_zultanite_slab ← 3×garnished:cut_magenta_zultanite
+- `garnished:stone/zultanite/magenta/polished_slab` → 6× garnished:polished_magenta_zultanite_slab ← 3×garnished:polished_magenta_zultanite
+- `garnished:stone/zultanite/magenta/small_brick_slab` → 6× garnished:small_magenta_zultanite_brick_slab ← 3×garnished:small_magenta_zultanite_bricks
+- `garnished:stone/zultanite/orange/brick_slab` → 6× garnished:orange_zultanite_brick_slab ← 3×garnished:orange_zultanite_bricks
+- `garnished:stone/zultanite/orange/cut_slab` → 6× garnished:cut_orange_zultanite_slab ← 3×garnished:cut_orange_zultanite
+- `garnished:stone/zultanite/orange/polished_slab` → 6× garnished:polished_orange_zultanite_slab ← 3×garnished:polished_orange_zultanite
+- `garnished:stone/zultanite/orange/small_brick_slab` → 6× garnished:small_orange_zultanite_brick_slab ← 3×garnished:small_orange_zultanite_bricks
+- `garnished:stone/zultanite/pink/brick_slab` → 6× garnished:pink_zultanite_brick_slab ← 3×garnished:pink_zultanite_bricks
+- `garnished:stone/zultanite/pink/cut_slab` → 6× garnished:cut_pink_zultanite_slab ← 3×garnished:cut_pink_zultanite
+- `garnished:stone/zultanite/pink/polished_slab` → 6× garnished:polished_pink_zultanite_slab ← 3×garnished:polished_pink_zultanite
+- `garnished:stone/zultanite/pink/small_brick_slab` → 6× garnished:small_pink_zultanite_brick_slab ← 3×garnished:small_pink_zultanite_bricks
+- `garnished:stone/zultanite/purple/brick_slab` → 6× garnished:purple_zultanite_brick_slab ← 3×garnished:purple_zultanite_bricks
+- `garnished:stone/zultanite/purple/cut_slab` → 6× garnished:cut_purple_zultanite_slab ← 3×garnished:cut_purple_zultanite
+- `garnished:stone/zultanite/purple/polished_slab` → 6× garnished:polished_purple_zultanite_slab ← 3×garnished:polished_purple_zultanite
+- `garnished:stone/zultanite/purple/small_brick_slab` → 6× garnished:small_purple_zultanite_brick_slab ← 3×garnished:small_purple_zultanite_bricks
+- `garnished:stone/zultanite/red/brick_slab` → 6× garnished:red_zultanite_brick_slab ← 3×garnished:red_zultanite_bricks
+- `garnished:stone/zultanite/red/cut_slab` → 6× garnished:cut_red_zultanite_slab ← 3×garnished:cut_red_zultanite
+- `garnished:stone/zultanite/red/polished_slab` → 6× garnished:polished_red_zultanite_slab ← 3×garnished:polished_red_zultanite
+- `garnished:stone/zultanite/red/small_brick_slab` → 6× garnished:small_red_zultanite_brick_slab ← 3×garnished:small_red_zultanite_bricks
+- `garnished:stone/zultanite/white/brick_slab` → 6× garnished:white_zultanite_brick_slab ← 3×garnished:white_zultanite_bricks
+- `garnished:stone/zultanite/white/cut_slab` → 6× garnished:cut_white_zultanite_slab ← 3×garnished:cut_white_zultanite
+- `garnished:stone/zultanite/white/polished_slab` → 6× garnished:polished_white_zultanite_slab ← 3×garnished:polished_white_zultanite
+- `garnished:stone/zultanite/white/small_brick_slab` → 6× garnished:small_white_zultanite_brick_slab ← 3×garnished:small_white_zultanite_bricks
+- `garnished:stone/zultanite/yellow/brick_slab` → 6× garnished:yellow_zultanite_brick_slab ← 3×garnished:yellow_zultanite_bricks
+- `garnished:stone/zultanite/yellow/cut_slab` → 6× garnished:cut_yellow_zultanite_slab ← 3×garnished:cut_yellow_zultanite
+- `garnished:stone/zultanite/yellow/polished_slab` → 6× garnished:polished_yellow_zultanite_slab ← 3×garnished:polished_yellow_zultanite
+- `garnished:stone/zultanite/yellow/small_brick_slab` → 6× garnished:small_yellow_zultanite_brick_slab ← 3×garnished:small_yellow_zultanite_bricks
+- `minecraft:andesite_slab` → 6× minecraft:andesite_slab ← 3×minecraft:andesite
+- `minecraft:blackstone_slab` → 6× minecraft:blackstone_slab ← 3×minecraft:blackstone
+- `minecraft:brick_slab` → 6× minecraft:brick_slab ← 3×minecraft:bricks
+- `minecraft:cobbled_deepslate_slab` → 6× minecraft:cobbled_deepslate_slab ← 3×minecraft:cobbled_deepslate
+- `minecraft:cobblestone_slab` → 6× minecraft:cobblestone_slab ← 3×minecraft:cobblestone
+- `minecraft:cut_copper_slab` → 6× minecraft:cut_copper_slab ← 3×minecraft:cut_copper
+- `minecraft:cut_copper_stairs` → 4× minecraft:cut_copper_stairs ← 6×minecraft:cut_copper
+- `minecraft:cut_red_sandstone_slab` → 6× minecraft:cut_red_sandstone_slab ← 3×minecraft:cut_red_sandstone
+- `minecraft:cut_sandstone_slab` → 6× minecraft:cut_sandstone_slab ← 3×minecraft:cut_sandstone
+- `minecraft:dark_prismarine_slab` → 6× minecraft:dark_prismarine_slab ← 3×minecraft:dark_prismarine
+- `minecraft:dark_prismarine_stairs` → 4× minecraft:dark_prismarine_stairs ← 6×minecraft:dark_prismarine
+- `minecraft:deepslate_brick_slab` → 6× minecraft:deepslate_brick_slab ← 3×minecraft:deepslate_bricks
+- `minecraft:deepslate_tile_slab` → 6× minecraft:deepslate_tile_slab ← 3×minecraft:deepslate_tiles
+- `minecraft:diorite_slab` → 6× minecraft:diorite_slab ← 3×minecraft:diorite
+- `minecraft:end_stone_brick_slab` → 6× minecraft:end_stone_brick_slab ← 3×minecraft:end_stone_bricks
+- `minecraft:exposed_cut_copper_slab` → 6× minecraft:exposed_cut_copper_slab ← 3×minecraft:exposed_cut_copper
+- `minecraft:exposed_cut_copper_stairs` → 4× minecraft:exposed_cut_copper_stairs ← 6×minecraft:exposed_cut_copper
+- `minecraft:granite_slab` → 6× minecraft:granite_slab ← 3×minecraft:granite
+- `minecraft:mossy_cobblestone_slab` → 6× minecraft:mossy_cobblestone_slab ← 3×minecraft:mossy_cobblestone
+- `minecraft:mossy_stone_brick_slab` → 6× minecraft:mossy_stone_brick_slab ← 3×minecraft:mossy_stone_bricks
+- `minecraft:mud_brick_slab` → 6× minecraft:mud_brick_slab ← 3×minecraft:mud_bricks
+- `minecraft:nether_brick_slab` → 6× minecraft:nether_brick_slab ← 3×minecraft:nether_bricks
+- `minecraft:oxidized_cut_copper_slab` → 6× minecraft:oxidized_cut_copper_slab ← 3×minecraft:oxidized_cut_copper
+- `minecraft:oxidized_cut_copper_stairs` → 4× minecraft:oxidized_cut_copper_stairs ← 6×minecraft:oxidized_cut_copper
+- `minecraft:polished_andesite_slab` → 6× minecraft:polished_andesite_slab ← 3×minecraft:polished_andesite
+- `minecraft:polished_andesite_stairs` → 4× minecraft:polished_andesite_stairs ← 6×minecraft:polished_andesite
+- `minecraft:polished_blackstone_brick_slab` → 6× minecraft:polished_blackstone_brick_slab ← 3×minecraft:polished_blackstone_bricks
+- `minecraft:polished_blackstone_slab` → 6× minecraft:polished_blackstone_slab ← 3×minecraft:polished_blackstone
+- `minecraft:polished_deepslate_slab` → 6× minecraft:polished_deepslate_slab ← 3×minecraft:polished_deepslate
+- `minecraft:polished_diorite_slab` → 6× minecraft:polished_diorite_slab ← 3×minecraft:polished_diorite
+- `minecraft:polished_diorite_stairs` → 4× minecraft:polished_diorite_stairs ← 6×minecraft:polished_diorite
+- `minecraft:polished_granite_slab` → 6× minecraft:polished_granite_slab ← 3×minecraft:polished_granite
+- `minecraft:polished_granite_stairs` → 4× minecraft:polished_granite_stairs ← 6×minecraft:polished_granite
+- `minecraft:polished_tuff_slab` → 6× minecraft:polished_tuff_slab ← 3×minecraft:polished_tuff
+- `minecraft:prismarine_brick_slab` → 6× minecraft:prismarine_brick_slab ← 3×minecraft:prismarine_bricks
+- `minecraft:prismarine_brick_stairs` → 4× minecraft:prismarine_brick_stairs ← 6×minecraft:prismarine_bricks
+- `minecraft:prismarine_slab` → 6× minecraft:prismarine_slab ← 3×minecraft:prismarine
+- `minecraft:purpur_slab` → 6× minecraft:purpur_slab ← 3×[minecraft:purpur_block|minecraft:purpur_pillar]
+- `minecraft:purpur_stairs` → 4× minecraft:purpur_stairs ← 6×[minecraft:purpur_block|minecraft:purpur_pillar]
+- `minecraft:quartz_pillar` → 2× minecraft:quartz_pillar ← 2×minecraft:quartz_block
+- `minecraft:quartz_slab` → 6× minecraft:quartz_slab ← 3×[minecraft:chiseled_quartz_block|minecraft:quartz_block|minecraft:quartz_pillar]
+- `minecraft:quartz_stairs` → 4× minecraft:quartz_stairs ← 6×[minecraft:chiseled_quartz_block|minecraft:quartz_block|minecraft:quartz_pillar]
+- `minecraft:red_nether_brick_slab` → 6× minecraft:red_nether_brick_slab ← 3×minecraft:red_nether_bricks
+- `minecraft:red_sandstone_slab` → 6× minecraft:red_sandstone_slab ← 3×[minecraft:red_sandstone|minecraft:chiseled_red_sandstone]
+- `minecraft:sandstone_slab` → 6× minecraft:sandstone_slab ← 3×[minecraft:sandstone|minecraft:chiseled_sandstone]
+- `minecraft:smooth_quartz_slab` → 6× minecraft:smooth_quartz_slab ← 3×minecraft:smooth_quartz
+- `minecraft:smooth_quartz_stairs` → 4× minecraft:smooth_quartz_stairs ← 6×minecraft:smooth_quartz
+- `minecraft:smooth_red_sandstone_slab` → 6× minecraft:smooth_red_sandstone_slab ← 3×minecraft:smooth_red_sandstone
+- `minecraft:smooth_red_sandstone_stairs` → 4× minecraft:smooth_red_sandstone_stairs ← 6×minecraft:smooth_red_sandstone
+- `minecraft:smooth_sandstone_slab` → 6× minecraft:smooth_sandstone_slab ← 3×minecraft:smooth_sandstone
+- `minecraft:smooth_sandstone_stairs` → 4× minecraft:smooth_sandstone_stairs ← 6×minecraft:smooth_sandstone
+- `minecraft:smooth_stone_slab` → 6× minecraft:smooth_stone_slab ← 3×minecraft:smooth_stone
+- `minecraft:stone_brick_slab` → 6× minecraft:stone_brick_slab ← 3×minecraft:stone_bricks
+- `minecraft:stone_slab` → 6× minecraft:stone_slab ← 3×minecraft:stone
+- `minecraft:stone_stairs` → 4× minecraft:stone_stairs ← 6×minecraft:stone
+- `minecraft:tuff_brick_slab` → 6× minecraft:tuff_brick_slab ← 3×minecraft:tuff_bricks
+- `minecraft:tuff_slab` → 6× minecraft:tuff_slab ← 3×minecraft:tuff
+- `minecraft:waxed_cut_copper_slab` → 6× minecraft:waxed_cut_copper_slab ← 3×minecraft:waxed_cut_copper
+- `minecraft:waxed_cut_copper_stairs` → 4× minecraft:waxed_cut_copper_stairs ← 6×minecraft:waxed_cut_copper
+- `minecraft:waxed_exposed_cut_copper_slab` → 6× minecraft:waxed_exposed_cut_copper_slab ← 3×minecraft:waxed_exposed_cut_copper
+- `minecraft:waxed_exposed_cut_copper_stairs` → 4× minecraft:waxed_exposed_cut_copper_stairs ← 6×minecraft:waxed_exposed_cut_copper
+- `minecraft:waxed_oxidized_cut_copper_slab` → 6× minecraft:waxed_oxidized_cut_copper_slab ← 3×minecraft:waxed_oxidized_cut_copper
+- `minecraft:waxed_oxidized_cut_copper_stairs` → 4× minecraft:waxed_oxidized_cut_copper_stairs ← 6×minecraft:waxed_oxidized_cut_copper
+- `minecraft:waxed_weathered_cut_copper_slab` → 6× minecraft:waxed_weathered_cut_copper_slab ← 3×minecraft:waxed_weathered_cut_copper
+- `minecraft:waxed_weathered_cut_copper_stairs` → 4× minecraft:waxed_weathered_cut_copper_stairs ← 6×minecraft:waxed_weathered_cut_copper
+- `minecraft:weathered_cut_copper_slab` → 6× minecraft:weathered_cut_copper_slab ← 3×minecraft:weathered_cut_copper
+- `minecraft:weathered_cut_copper_stairs` → 4× minecraft:weathered_cut_copper_stairs ← 6×minecraft:weathered_cut_copper
+- `northstar:argyre_stairs` → 4× northstar:argyre_stairs ← 6×northstar:argyre_planks
+- `northstar:calorian_stairs` → 4× northstar:calorian_stairs ← 6×northstar:calorian_planks
+- `northstar:mars_stone_pillar` → 2× northstar:mars_stone_pillar ← 2×northstar:mars_stone_bricks
+- `northstar:martian_steel_pillar` → 2× northstar:martian_steel_pillar ← 2×#c:ingots/martian_steel
+- `northstar:martian_steel_plating_stairs` → 4× northstar:martian_steel_plating_stairs ← 6×northstar:martian_steel_plating
+- `northstar:mercury_stone_pillar` → 2× northstar:mercury_stone_pillar ← 2×northstar:mercury_stone_bricks
+- `northstar:moon_stone_pillar` → 2× northstar:moon_stone_pillar ← 2×northstar:moon_stone_bricks
+- `northstar:titanium_pillar` → 2× northstar:titanium_pillar ← 2×#c:ingots/titanium
+- `northstar:titanium_plating_stairs` → 4× northstar:titanium_plating_stairs ← 6×northstar:titanium_plating
+- `northstar:tungsten_pillar` → 2× northstar:tungsten_pillar ← 2×#c:ingots/tungsten
+- `northstar:tungsten_plating_stairs` → 4× northstar:tungsten_plating_stairs ← 6×northstar:tungsten_plating
+- `northstar:venus_stone_pillar` → 2× northstar:venus_stone_pillar ← 2×northstar:venus_stone_bricks
+- `northstar:wilter_stairs` → 4× northstar:wilter_stairs ← 6×northstar:wilter_planks
+- `tfmg:cut_bauxite_brick_slab` → 6× tfmg:cut_bauxite_brick_slab ← 3×tfmg:cut_bauxite_bricks
+- `tfmg:cut_bauxite_slab` → 6× tfmg:cut_bauxite_slab ← 3×tfmg:cut_bauxite
+- `tfmg:cut_galena_brick_slab` → 6× tfmg:cut_galena_brick_slab ← 3×tfmg:cut_galena_bricks
+- `tfmg:cut_galena_slab` → 6× tfmg:cut_galena_slab ← 3×tfmg:cut_galena
+- `tfmg:polished_cut_bauxite_slab` → 6× tfmg:polished_cut_bauxite_slab ← 3×tfmg:polished_cut_bauxite
+- `tfmg:polished_cut_galena_slab` → 6× tfmg:polished_cut_galena_slab ← 3×tfmg:polished_cut_galena
+- `tfmg:small_bauxite_brick_slab` → 6× tfmg:small_bauxite_brick_slab ← 3×tfmg:small_bauxite_bricks
+- `tfmg:small_galena_brick_slab` → 6× tfmg:small_galena_brick_slab ← 3×tfmg:small_galena_bricks
+
+## Фигурные, выход которых миксер уже делает (есть бесформенный/create:mixing на тот же выход) (709)
+
+- `create_winery:apple_juice_recipe` → create_winery:apple_juice ← create_winery:apple_must, minecraft:sugar ≈ `create_winery:create/mixing_apple_must`
+- `create_winery:red_grape_juice_recipe` → create_winery:grape_juice ← create_winery:red_grape_pomace, minecraft:sugar ≈ `create_winery:create/mixing_grape_pomace`
+- `create_winery:white_grape_juice_recipe` → create_winery:grape_juice ← create_winery:white_grape_pomace, minecraft:sugar ≈ `create_winery:create/mixing_grape_pomace`
+- `createfood:crafting/shaped/apple_cream_cake_from_shaped` → createfood:apple_cream_cake ← #c:apple_cream_frosting_piping_bag, #c:cake_base ≈ `createfood:minecraft/crafting/apple_cream_cake_from_crafting`
+- `createfood:crafting/shaped/apple_cream_chocolate_cupcake_from_shaped` → createfood:apple_cream_chocolate_cupcake ← #c:apple_cream_frosting, #c:chocolate_cupcake_base ≈ `createfood:minecraft/crafting/apple_cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/apple_cream_chocolate_donut_from_shaped` → createfood:apple_cream_chocolate_donut ← #c:apple_cream_frosting, #c:chocolate_donut_base ≈ `createfood:minecraft/crafting/apple_cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/apple_cream_chocolate_from_shaped` → createfood:apple_cream_chocolate ← #c:apple_cream_frosting, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/apple_cream_chocolate_from_crafting`
+- `createfood:crafting/shaped/apple_cream_chocolate_pastry_from_shaped` → createfood:apple_cream_chocolate_pastry ← #c:apple_cream_frosting, #c:chocolate_pastry_base ≈ `createfood:minecraft/crafting/apple_cream_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/apple_cream_chocolate_sweet_roll_from_shaped` → createfood:apple_cream_chocolate_sweet_roll ← #c:apple_cream_frosting, #c:chocolate_sweet_roll_base ≈ `createfood:minecraft/crafting/apple_cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/apple_cream_cupcake_from_shaped` → createfood:apple_cream_cupcake ← #c:apple_cream_frosting, #c:cupcake_base ≈ `createfood:minecraft/crafting/apple_cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/apple_cream_dark_chocolate_from_shaped` → createfood:apple_cream_dark_chocolate ← #c:apple_cream_frosting, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/apple_cream_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/apple_cream_donut_from_shaped` → createfood:apple_cream_donut ← #c:apple_cream_frosting, #c:donut_base ≈ `createfood:minecraft/crafting/apple_cream_donut_from_crafting`
+- `createfood:crafting/shaped/apple_cream_mini_waffle_from_shaped` → createfood:apple_cream_mini_waffle ← #c:apple_cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/apple_cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/apple_cream_pastry_from_shaped` → createfood:apple_cream_pastry ← #c:apple_cream_frosting, #c:pastry_base ≈ `createfood:minecraft/crafting/apple_cream_pastry_from_crafting`
+- `createfood:crafting/shaped/apple_cream_sweet_roll_from_shaped` → createfood:apple_cream_sweet_roll ← #c:apple_cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/apple_cream_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/apple_cream_white_chocolate_from_shaped` → createfood:apple_cream_white_chocolate ← #c:apple_cream_frosting, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/apple_cream_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/apple_ice_cream_cone_from_shaped` → createfood:apple_ice_cream_cone ← #c:apple_ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/apple_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/apple_ice_cream_sandwich_from_shaped` → createfood:apple_ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_apple_ice_cream ≈ `createfood:minecraft/crafting/apple_ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/apple_jam_chocolate_donut_from_shaped` → createfood:apple_jam_chocolate_donut ← #c:apple_jam_bottle, #c:chocolate_donut_base ≈ `createfood:minecraft/crafting/apple_jam_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/apple_jam_donut_from_shaped` → createfood:apple_jam_donut ← #c:apple_jam_bottle, #c:donut_base ≈ `createfood:minecraft/crafting/apple_jam_donut_from_crafting`
+- `createfood:crafting/shaped/apple_jam_sandwich_from_shaped` → createfood:apple_jam_sandwich ← #c:bread_slice, #c:bread_slice_apple_jam ≈ `createfood:minecraft/crafting/apple_jam_sandwich_from_crafting`
+- `createfood:crafting/shaped/bacon_sandwich_from_shaped` → createfood:bacon_sandwich ← #c:bread_slice, #c:bread_slice_bacon ≈ `createfood:minecraft/crafting/bacon_sandwich_from_crafting`
+- `createfood:crafting/shaped/bacon_sandwich_lettuce_from_shaped` → createfood:bacon_sandwich_lettuce ← #c:bread_slice, #c:bread_slice_bacon_lettuce ≈ `createfood:minecraft/crafting/bacon_sandwich_lettuce_from_crafting`
+- `createfood:crafting/shaped/bacon_sandwich_lettuce_from_shaped_alt_2` → createfood:bacon_sandwich_lettuce ← #c:bread_slice_bacon, #c:bread_slice_lettuce ≈ `createfood:minecraft/crafting/bacon_sandwich_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/bacon_sandwich_lettuce_tomato_from_shaped` → farmersdelight:bacon_sandwich ← #c:bread_slice, #c:bread_slice_bacon_lettuce_tomato ≈ `createfood:minecraft/crafting/bacon_sandwich_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_bacon_from_shaped` → createfood:baked_potato_butter_bacon ← #c:baked_potato_butter, #c:cooked_pork ≈ `createfood:minecraft/crafting/baked_potato_butter_bacon_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_cheese_from_shaped` → createfood:baked_potato_butter_cheese ← #c:baked_potato_butter, #c:cheeses ≈ `createfood:minecraft/crafting/baked_potato_butter_cheese_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_fish_from_shaped` → createfood:baked_potato_butter_fish ← #c:baked_potato_butter, #c:cooked_fishes ≈ `createfood:minecraft/crafting/baked_potato_butter_fish_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_fried_egg_from_shaped` → createfood:baked_potato_butter_fried_egg ← #c:baked_potato_butter, #c:cooked_eggs ≈ `createfood:minecraft/crafting/baked_potato_butter_fried_egg_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_from_shaped` → createfood:baked_potato_butter ← #c:butter, minecraft:baked_potato ≈ `createfood:minecraft/crafting/baked_potato_butter_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_mushroom_from_shaped` → createfood:baked_potato_butter_mushroom ← #c:baked_potato_butter, #c:mushrooms ≈ `createfood:minecraft/crafting/baked_potato_butter_mushroom_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_sausage_from_shaped` → createfood:baked_potato_butter_sausage ← #c:baked_potato_butter, #c:sausages ≈ `createfood:minecraft/crafting/baked_potato_butter_sausage_from_crafting`
+- `createfood:crafting/shaped/baked_potato_butter_sour_cream_from_shaped` → createfood:baked_potato_butter_sour_cream ← #c:baked_potato_butter, #c:sour_cream_bottle ≈ `createfood:minecraft/crafting/baked_potato_butter_sour_cream_from_crafting`
+- `createfood:crafting/shaped/beef_bun_bacon_from_shaped` → createfood:beef_bun_bacon ← #c:beef_bun, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_bacon_from_crafting`
+- `createfood:crafting/shaped/beef_bun_bacon_lettuce_from_shaped` → createfood:beef_bun_bacon_lettuce ← #c:beef_bun_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_bacon_lettuce_from_shaped_alt_2` → createfood:beef_bun_bacon_lettuce ← #c:beef_bun_lettuce, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_bacon_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_bacon_lettuce_tomato_from_shaped` → createfood:beef_bun_bacon_lettuce_tomato ← #c:beef_bun_bacon_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_bacon_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_bacon_lettuce_tomato_from_shaped_alt_2` → createfood:beef_bun_bacon_lettuce_tomato ← #c:beef_bun_lettuce_tomato, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_bacon_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_bacon_from_shaped` → createfood:beef_bun_cheese_bacon ← #c:beef_bun_cheese, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_cheese_bacon_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_bacon_from_shaped_alt_2` → createfood:beef_bun_cheese_bacon ← #c:beef_bun_bacon, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_bacon_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_bacon_lettuce_from_shaped` → createfood:beef_bun_cheese_bacon_lettuce ← #c:beef_bun_cheese_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_cheese_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_bacon_lettuce_from_shaped_alt_2` → createfood:beef_bun_cheese_bacon_lettuce ← #c:beef_bun_bacon_lettuce, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_bacon_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_bacon_lettuce_tomato_from_shaped` → createfood:beef_bun_cheese_bacon_lettuce_tomato ← #c:beef_bun_cheese_bacon_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_cheese_bacon_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_bacon_lettuce_tomato_from_shaped_alt_2` → createfood:beef_bun_cheese_bacon_lettuce_tomato ← #c:beef_bun_bacon_lettuce_tomato, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_bacon_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_from_shaped` → createfood:beef_bun_cheese ← #c:beef_bun, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_lettuce_from_shaped` → createfood:beef_bun_cheese_lettuce ← #c:beef_bun_cheese, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_cheese_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_lettuce_from_shaped_alt_2` → createfood:beef_bun_cheese_lettuce ← #c:beef_bun_lettuce, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_lettuce_tomato_from_shaped` → createfood:beef_bun_cheese_lettuce_tomato ← #c:beef_bun_cheese_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_cheese_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_lettuce_tomato_from_shaped_alt_2` → createfood:beef_bun_cheese_lettuce_tomato ← #c:beef_bun_lettuce_tomato, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_bacon_from_shaped` → createfood:beef_bun_cheese_onion_bacon ← #c:beef_bun_cheese_onion, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_bacon_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_bacon_from_shaped_alt_2` → createfood:beef_bun_cheese_onion_bacon ← #c:beef_bun_onion_bacon, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_bacon_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_bacon_lettuce_from_shaped` → createfood:beef_bun_cheese_onion_bacon_lettuce ← #c:beef_bun_cheese_onion_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_bacon_lettuce_from_shaped_alt_2` → createfood:beef_bun_cheese_onion_bacon_lettuce ← #c:beef_bun_onion_bacon_lettuce, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_bacon_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_from_shaped` → createfood:beef_bun_cheese_onion ← #c:beef_bun_cheese, #c:onion ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_from_shaped_alt_2` → createfood:beef_bun_cheese_onion ← #c:beef_bun_onion, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_lettuce_from_shaped` → createfood:beef_bun_cheese_onion_lettuce ← #c:beef_bun_cheese_onion, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_lettuce_from_shaped_alt_2` → createfood:beef_bun_cheese_onion_lettuce ← #c:beef_bun_onion_lettuce, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_lettuce_tomato_from_shaped` → createfood:beef_bun_cheese_onion_lettuce_tomato ← #c:beef_bun_cheese_onion_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_onion_lettuce_tomato_from_shaped_alt_2` → createfood:beef_bun_cheese_onion_lettuce_tomato ← #c:beef_bun_onion_lettuce_tomato, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_onion_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_cheese_tomato_from_shaped` → createfood:beef_bun_cheese_tomato ← #c:beef_bun_cheese, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_cheese_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_cheese_tomato_from_shaped_alt_2` → createfood:beef_bun_cheese_tomato ← #c:beef_bun_tomato, #c:cheeses ≈ `createfood:minecraft/crafting/beef_bun_cheese_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_crimson_fungus_from_shaped` → createfood:beef_bun_crimson_fungus ← #c:beef_bun, #c:crimson_fungus ≈ `createfood:minecraft/crafting/beef_bun_crimson_fungus_from_crafting`
+- `createfood:crafting/shaped/beef_bun_from_shaped` → createfood:beef_bun ← #c:bun, #c:cooked_beef ≈ `createfood:minecraft/crafting/beef_bun_from_crafting`
+- `createfood:crafting/shaped/beef_bun_lettuce_from_shaped` → createfood:beef_bun_lettuce ← #c:beef_bun, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_lettuce_tomato_from_shaped` → createfood:beef_bun_lettuce_tomato ← #c:beef_bun_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_lettuce_tomato_from_shaped_alt_2` → createfood:beef_bun_lettuce_tomato ← #c:beef_bun_tomato, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_onion_bacon_from_shaped` → createfood:beef_bun_onion_bacon ← #c:beef_bun_onion, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_onion_bacon_from_crafting`
+- `createfood:crafting/shaped/beef_bun_onion_bacon_from_shaped_alt_2` → createfood:beef_bun_onion_bacon ← #c:beef_bun_bacon, #c:onion ≈ `createfood:minecraft/crafting/beef_bun_onion_bacon_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_onion_bacon_lettuce_from_shaped` → createfood:beef_bun_onion_bacon_lettuce ← #c:beef_bun_onion_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_onion_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_onion_bacon_lettuce_from_shaped_alt_2` → createfood:beef_bun_onion_bacon_lettuce ← #c:beef_bun_onion_lettuce, #c:cooked_pork ≈ `createfood:minecraft/crafting/beef_bun_onion_bacon_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_onion_from_shaped` → createfood:beef_bun_onion ← #c:beef_bun, #c:onion ≈ `createfood:minecraft/crafting/beef_bun_onion_from_crafting`
+- `createfood:crafting/shaped/beef_bun_onion_lettuce_from_shaped` → createfood:beef_bun_onion_lettuce ← #c:beef_bun_onion, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_bun_onion_lettuce_from_crafting`
+- `createfood:crafting/shaped/beef_bun_onion_lettuce_from_shaped_alt_2` → createfood:beef_bun_onion_lettuce ← #c:beef_bun_lettuce, #c:onion ≈ `createfood:minecraft/crafting/beef_bun_onion_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_onion_lettuce_tomato_from_shaped` → createfood:beef_bun_onion_lettuce_tomato ← #c:beef_bun_onion_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_onion_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_onion_lettuce_tomato_from_shaped_alt_2` → createfood:beef_bun_onion_lettuce_tomato ← #c:beef_bun_lettuce_tomato, #c:onion ≈ `createfood:minecraft/crafting/beef_bun_onion_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/beef_bun_tomato_from_shaped` → createfood:beef_bun_tomato ← #c:beef_bun, #c:tomato ≈ `createfood:minecraft/crafting/beef_bun_tomato_from_crafting`
+- `createfood:crafting/shaped/beef_bun_warped_fungus_from_shaped` → createfood:beef_bun_warped_fungus ← #c:beef_bun, #c:warped_fungus ≈ `createfood:minecraft/crafting/beef_bun_warped_fungus_from_crafting`
+- `createfood:crafting/shaped/beef_meatball_sandwich_from_shaped` → createfood:beef_meatball_sandwich ← #c:small_beef_meatballs, minecraft:bread ≈ `createfood:minecraft/crafting/beef_meatball_sandwich_from_crafting`
+- `createfood:crafting/shaped/beef_meatball_stick_1_from_shaped` → createfood:beef_meatball_stick_1 ← #c:beef_meatball, minecraft:stick ≈ `createfood:minecraft/crafting/beef_meatball_stick_1_from_crafting`
+- `createfood:crafting/shaped/beef_meatball_stick_2_from_shaped` → createfood:beef_meatball_stick_2 ← #c:beef_meatball, createfood:beef_meatball_stick_1 ≈ `createfood:minecraft/crafting/beef_meatball_stick_2_from_crafting`
+- `createfood:crafting/shaped/beef_meatball_stick_3_from_shaped` → createfood:beef_meatball_stick_3 ← #c:beef_meatball, createfood:beef_meatball_stick_2 ≈ `createfood:minecraft/crafting/beef_meatball_stick_3_from_crafting`
+- `createfood:crafting/shaped/beef_taco_from_shaped` → createfood:beef_taco ← #c:cooked_beef, #c:taco_shell ≈ `createfood:minecraft/crafting/beef_taco_from_crafting`
+- `createfood:crafting/shaped/beef_taco_lettuce_from_shaped_alt` → createfood:beef_taco_lettuce ← #c:beef_taco, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/beef_taco_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/beef_taco_lettuce_taco_sauce_from_shaped_alt` → createfood:beef_taco_lettuce_taco_sauce ← #c:beef_taco_lettuce, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/beef_taco_lettuce_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/berry_cream_cake_chorus_fruit_from_shaped` → createfood:berry_cream_cake_chorus_fruit ← #c:berry_cream_cake, #c:chorus_fruit ≈ `createfood:minecraft/crafting/berry_cream_cake_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/berry_cream_cake_from_shaped` → createfood:berry_cream_cake ← #c:berry_cream_frosting_piping_bag, #c:cake_base ≈ `createfood:minecraft/crafting/berry_cream_cake_from_crafting`
+- `createfood:crafting/shaped/berry_cream_cake_glow_berry_from_shaped` → createfood:berry_cream_cake_glow_berry ← #c:berry_cream_cake, minecraft:glow_berries ≈ `createfood:minecraft/crafting/berry_cream_cake_glow_berry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_cake_sweet_berry_from_shaped` → createfood:berry_cream_cake_sweet_berry ← #c:berry_cream_cake, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/berry_cream_cake_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_chocolate_cupcake_from_shaped` → createfood:berry_cream_chocolate_cupcake ← #c:berry_cream_frosting, #c:chocolate_cupcake_base ≈ `createfood:minecraft/crafting/berry_cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/berry_cream_chocolate_donut_from_shaped` → createfood:berry_cream_chocolate_donut ← #c:berry_cream_frosting, #c:chocolate_donut_base ≈ `createfood:minecraft/crafting/berry_cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/berry_cream_chocolate_from_shaped` → createfood:berry_cream_chocolate ← #c:berry_cream_frosting, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/berry_cream_chocolate_from_crafting`
+- `createfood:crafting/shaped/berry_cream_chocolate_pastry_from_shaped` → createfood:berry_cream_chocolate_pastry ← #c:berry_cream_frosting, #c:chocolate_pastry_base ≈ `createfood:minecraft/crafting/berry_cream_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_chocolate_sweet_roll_from_shaped` → createfood:berry_cream_chocolate_sweet_roll ← #c:berry_cream_frosting, #c:chocolate_sweet_roll_base ≈ `createfood:minecraft/crafting/berry_cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/berry_cream_chocolate_sweet_roll_sweet_berry_from_shaped` → createfood:berry_cream_chocolate_sweet_roll_sweet_berry ← #c:berry_cream_chocolate_sweet_roll, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/berry_cream_chocolate_sweet_roll_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_cupcake_from_shaped` → createfood:berry_cream_cupcake ← #c:berry_cream_frosting, #c:cupcake_base ≈ `createfood:minecraft/crafting/berry_cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/berry_cream_dark_chocolate_from_shaped` → createfood:berry_cream_dark_chocolate ← #c:berry_cream_frosting, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/berry_cream_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/berry_cream_donut_from_shaped` → createfood:berry_cream_donut ← #c:berry_cream_frosting, #c:donut_base ≈ `createfood:minecraft/crafting/berry_cream_donut_from_crafting`
+- `createfood:crafting/shaped/berry_cream_mini_waffle_from_shaped` → createfood:berry_cream_mini_waffle ← #c:berry_cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/berry_cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/berry_cream_mini_waffle_sweet_berry_from_shaped` → createfood:berry_cream_mini_waffle_sweet_berry ← #c:berry_cream_mini_waffle, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/berry_cream_mini_waffle_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_pastry_from_shaped` → createfood:berry_cream_pastry ← #c:berry_cream_frosting, #c:pastry_base ≈ `createfood:minecraft/crafting/berry_cream_pastry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_sweet_roll_from_shaped` → createfood:berry_cream_sweet_roll ← #c:berry_cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/berry_cream_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/berry_cream_sweet_roll_sweet_berry_from_shaped` → createfood:berry_cream_sweet_roll_sweet_berry ← #c:berry_cream_sweet_roll, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/berry_cream_sweet_roll_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/berry_cream_white_chocolate_from_shaped` → createfood:berry_cream_white_chocolate ← #c:berry_cream_frosting, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/berry_cream_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/berry_ice_cream_cone_from_shaped` → createfood:berry_ice_cream_cone ← #c:berry_ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/berry_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/berry_ice_cream_sandwich_from_shaped` → createfood:berry_ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_berry_ice_cream ≈ `createfood:minecraft/crafting/berry_ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/berry_jam_chocolate_donut_from_shaped` → createfood:berry_jam_chocolate_donut ← #c:berry_jam_bottle, #c:chocolate_donut_base ≈ `createfood:minecraft/crafting/berry_jam_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/berry_jam_donut_from_shaped` → createfood:berry_jam_donut ← #c:berry_jam_bottle, #c:donut_base ≈ `createfood:minecraft/crafting/berry_jam_donut_from_crafting`
+- `createfood:crafting/shaped/berry_jam_sandwich_from_shaped` → createfood:berry_jam_sandwich ← #c:bread_slice, #c:bread_slice_berry_jam ≈ `createfood:minecraft/crafting/berry_jam_sandwich_from_crafting`
+- `createfood:crafting/shaped/black_gelatin_dessert_block_from_shaped_alt` → createfood:black_gelatin_dessert_block ← #c:dyes/black, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/black_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/blue_gelatin_dessert_block_from_shaped_alt` → createfood:blue_gelatin_dessert_block ← #c:dyes/blue, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/blue_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/boiled_egg_peeled_salt_from_shaped` → createfood:boiled_egg_peeled_salt ← #c:boiled_egg_peeled, #c:salt ≈ `createfood:minecraft/crafting/boiled_egg_peeled_salt_from_crafting`
+- `createfood:crafting/shaped/bread_carrot_from_shaped` → createfood:bread_carrot ← #c:carrot, minecraft:bread ≈ `createfood:minecraft/crafting/bread_carrot_from_crafting`
+- `createfood:crafting/shaped/bread_fried_egg_from_shaped` → createfood:bread_fried_egg ← #c:cooked_eggs, minecraft:bread ≈ `createfood:minecraft/crafting/bread_fried_egg_from_crafting`
+- `createfood:crafting/shaped/bread_lettuce_carrot_from_shaped` → createfood:bread_lettuce_carrot ← #c:bread_lettuce, #c:carrot ≈ `createfood:minecraft/crafting/bread_lettuce_carrot_from_crafting`
+- `createfood:crafting/shaped/bread_lettuce_carrot_from_shaped_alt_2` → createfood:bread_lettuce_carrot ← #c:bread_carrot, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/bread_lettuce_carrot_from_crafting_alt_2`
+- `createfood:crafting/shaped/bread_lettuce_from_shaped` → createfood:bread_lettuce ← #c:foods/leafy_green, minecraft:bread ≈ `createfood:minecraft/crafting/bread_lettuce_from_crafting`
+- `createfood:crafting/shaped/bread_slice_apple_jam_from_shaped` → createfood:bread_slice_apple_jam ← #c:apple_jam_bottle, #c:bread_slice ≈ `createfood:minecraft/crafting/bread_slice_apple_jam_from_crafting`
+- `createfood:crafting/shaped/bread_slice_bacon_from_shaped` → createfood:bread_slice_bacon ← #c:bread_slice, #c:cooked_pork ≈ `createfood:minecraft/crafting/bread_slice_bacon_from_crafting`
+- `createfood:crafting/shaped/bread_slice_bacon_lettuce_from_shaped` → createfood:bread_slice_bacon_lettuce ← #c:bread_slice_lettuce, #c:cooked_pork ≈ `createfood:minecraft/crafting/bread_slice_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/bread_slice_bacon_lettuce_from_shaped_alt` → createfood:bread_slice_bacon_lettuce ← #c:bread_slice_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/bread_slice_bacon_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/bread_slice_bacon_lettuce_from_shaped_alt_2` → createfood:bread_slice_bacon_lettuce ← #c:bread_slice_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/bread_slice_bacon_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/bread_slice_bacon_lettuce_tomato_from_shaped` → createfood:bread_slice_bacon_lettuce_tomato ← #c:bread_slice_lettuce_tomato, #c:cooked_pork ≈ `createfood:minecraft/crafting/bread_slice_bacon_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/bread_slice_beetroot_from_shaped` → createfood:bread_slice_beetroot ← #c:beetroot, #c:bread_slice ≈ `createfood:minecraft/crafting/bread_slice_beetroot_from_crafting`
+- `createfood:crafting/shaped/bread_slice_beetroot_lettuce_from_shaped` → createfood:bread_slice_beetroot_lettuce ← #c:bread_slice_beetroot, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/bread_slice_beetroot_lettuce_from_crafting`
+- `createfood:crafting/shaped/bread_slice_beetroot_lettuce_from_shaped_alt_2` → createfood:bread_slice_beetroot_lettuce ← #c:beetroot, #c:bread_slice_lettuce ≈ `createfood:minecraft/crafting/bread_slice_beetroot_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/bread_slice_berry_jam_from_shaped` → createfood:bread_slice_berry_jam ← #c:berry_jam_bottle, #c:bread_slice ≈ `createfood:minecraft/crafting/bread_slice_berry_jam_from_crafting`
+- `createfood:crafting/shaped/bread_slice_cheese_from_shaped` → createfood:bread_slice_cheese ← #c:bread_slice, #c:cheeses ≈ `createfood:minecraft/crafting/bread_slice_cheese_from_crafting`
+- `createfood:crafting/shaped/bread_slice_chorus_fruit_jam_from_shaped` → createfood:bread_slice_chorus_fruit_jam ← #c:bread_slice, #c:chorus_fruit_jam_bottle ≈ `createfood:minecraft/crafting/bread_slice_chorus_fruit_jam_from_crafting`
+- `createfood:crafting/shaped/bread_slice_glow_berry_jam_from_shaped` → createfood:bread_slice_glow_berry_jam ← #c:bread_slice, #c:glow_berry_jam_bottle ≈ `createfood:minecraft/crafting/bread_slice_glow_berry_jam_from_crafting`
+- `createfood:crafting/shaped/bread_slice_honey_from_shaped` → createfood:bread_slice_honey ← #c:bread_slice, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/bread_slice_honey_from_crafting`
+- `createfood:crafting/shaped/bread_slice_lettuce_from_shaped` → createfood:bread_slice_lettuce ← #c:bread_slice, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/bread_slice_lettuce_from_crafting`
+- `createfood:crafting/shaped/bread_slice_lettuce_tomato_from_shaped` → createfood:bread_slice_lettuce_tomato ← #c:bread_slice_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/bread_slice_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/bread_slice_lettuce_tomato_from_shaped_alt_2` → createfood:bread_slice_lettuce_tomato ← #c:bread_slice_tomato, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/bread_slice_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/bread_slice_melon_jam_from_shaped` → createfood:bread_slice_melon_jam ← #c:bread_slice, #c:melon_jam_bottle ≈ `createfood:minecraft/crafting/bread_slice_melon_jam_from_crafting`
+- `createfood:crafting/shaped/bread_slice_mutton_beetroot_from_shaped` → createfood:bread_slice_mutton_beetroot ← #c:beetroot, #c:bread_slice_mutton ≈ `createfood:minecraft/crafting/bread_slice_mutton_beetroot_from_crafting`
+- `createfood:crafting/shaped/bread_slice_mutton_beetroot_from_shaped_alt_2` → createfood:bread_slice_mutton_beetroot ← #c:bread_slice_beetroot, #c:cooked_mutton ≈ `createfood:minecraft/crafting/bread_slice_mutton_beetroot_from_crafting_alt_2`
+- `createfood:crafting/shaped/bread_slice_mutton_from_shaped` → createfood:bread_slice_mutton ← #c:bread_slice, #c:cooked_mutton ≈ `createfood:minecraft/crafting/bread_slice_mutton_from_crafting`
+- `createfood:crafting/shaped/bread_slice_scrambled_egg_from_shaped` → createfood:bread_slice_scrambled_egg ← #c:bread_slice, #c:scrambled_eggs_plate ≈ `createfood:minecraft/crafting/bread_slice_scrambled_egg_from_crafting`
+- `createfood:crafting/shaped/bread_slice_tomato_from_shaped` → createfood:bread_slice_tomato ← #c:bread_slice, #c:tomato ≈ `createfood:minecraft/crafting/bread_slice_tomato_from_crafting`
+- `createfood:crafting/shaped/breakfast_plate_from_shaped` → createfood:breakfast_plate ← #c:hash_browns, #c:toast_fried_egg_plate ≈ `createfood:minecraft/crafting/breakfast_plate_from_crafting`
+- `createfood:crafting/shaped/breakfast_plate_from_shaped_alt_2` → createfood:breakfast_plate ← #c:hash_brown_fried_egg_plate, #c:toast_slice ≈ `createfood:minecraft/crafting/breakfast_plate_from_crafting_alt_2`
+- `createfood:crafting/shaped/breakfast_plate_from_shaped_alt_3` → createfood:breakfast_plate ← #c:cooked_eggs, #c:hash_brown_toast_plate ≈ `createfood:minecraft/crafting/breakfast_plate_from_crafting_alt_3`
+- `createfood:crafting/shaped/brown_gelatin_dessert_block_from_shaped_alt` → createfood:brown_gelatin_dessert_block ← #c:dyes/brown, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/brown_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/butter_from_shaped` → createfood:butter ← #c:heavy_cream_bottle, #c:salt ≈ `createfood:minecraft/crafting/butter_from_crafting`
+- `createfood:crafting/shaped/butterscotch_apple_from_shaped` → createfood:butterscotch_apple ← #c:butterscotch, minecraft:apple ≈ `createfood:minecraft/crafting/butterscotch_apple_from_crafting`
+- `createfood:crafting/shaped/butterscotch_apple_slice_from_shaped` → createfood:butterscotch_apple_slice ← #c:apple_slice, #c:butterscotch ≈ `createfood:minecraft/crafting/butterscotch_apple_slice_from_crafting`
+- `createfood:crafting/shaped/butterscotch_berries_from_shaped` → createfood:butterscotch_berries ← #c:butterscotch, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/butterscotch_berries_from_crafting`
+- `createfood:crafting/shaped/butterscotch_chip_chocolate_milkshake_bottle_from_shaped` → createfood:butterscotch_chip_chocolate_milkshake_bottle ← #c:butterscotch_chips, #c:chocolate_milkshake ≈ `createfood:minecraft/crafting/butterscotch_chip_chocolate_milkshake_bottle_from_crafting`
+- `createfood:crafting/shaped/butterscotch_chip_ice_cream_cone_from_shaped` → createfood:butterscotch_chip_ice_cream_cone ← #c:butterscotch_chips, #c:ice_cream_cone ≈ `createfood:minecraft/crafting/butterscotch_chip_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/butterscotch_chocolate_from_shaped` → createfood:butterscotch_chocolate ← #c:butterscotch, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/butterscotch_chocolate_from_crafting`
+- `createfood:crafting/shaped/butterscotch_chocolate_pastry_from_shaped` → createfood:butterscotch_chocolate_pastry ← #c:butterscotch, #c:chocolate_pastry_base ≈ `createfood:minecraft/crafting/butterscotch_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/butterscotch_chocolate_sweet_roll_from_shaped` → createfood:butterscotch_chocolate_sweet_roll ← #c:butterscotch, #c:chocolate_sweet_roll_base ≈ `createfood:minecraft/crafting/butterscotch_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/butterscotch_dark_chocolate_from_shaped` → createfood:butterscotch_dark_chocolate ← #c:butterscotch, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/butterscotch_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/butterscotch_fudge_ice_cream_bowl_from_shaped` → createfood:butterscotch_fudge_ice_cream_bowl ← #c:butterscotch_fudge, #c:ice_cream_bowl ≈ `createfood:minecraft/crafting/butterscotch_fudge_ice_cream_bowl_from_crafting`
+- `createfood:crafting/shaped/butterscotch_marshmallow_stick_from_shaped` → createfood:butterscotch_marshmallow_stick ← #c:butterscotch, #c:marshmallow_stick ≈ `createfood:minecraft/crafting/butterscotch_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/butterscotch_pastry_from_shaped` → createfood:butterscotch_pastry ← #c:butterscotch, #c:pastry_base ≈ `createfood:minecraft/crafting/butterscotch_pastry_from_crafting`
+- `createfood:crafting/shaped/butterscotch_pretzel_stick_from_shaped` → createfood:butterscotch_pretzel_stick ← #c:butterscotch, #c:pretzel_stick ≈ `createfood:minecraft/crafting/butterscotch_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/butterscotch_sweet_roll_from_shaped` → createfood:butterscotch_sweet_roll ← #c:butterscotch, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/butterscotch_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/butterscotch_toast_from_shaped` → createfood:butterscotch_toast ← #c:butterscotch, #c:toast ≈ `createfood:minecraft/crafting/butterscotch_toast_from_crafting`
+- `createfood:crafting/shaped/butterscotch_white_chocolate_from_shaped` → createfood:butterscotch_white_chocolate ← #c:butterscotch, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/butterscotch_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/cacao_butter_bucket_from_shaped` → createfood:cacao_butter_bucket ← #c:cloth_filter_cacao_mass, minecraft:bucket ≈ `createfood:minecraft/crafting/cacao_butter_bucket_from_crafting`
+- `createfood:crafting/shaped/caramel_apple_from_shaped` → createfood:caramel_apple ← #c:caramel, minecraft:apple ≈ `createfood:minecraft/crafting/caramel_apple_from_crafting`
+- `createfood:crafting/shaped/caramel_apple_slice_from_shaped` → createfood:caramel_apple_slice ← #c:apple_slice, #c:caramel ≈ `createfood:minecraft/crafting/caramel_apple_slice_from_crafting`
+- `createfood:crafting/shaped/caramel_berries_from_shaped` → createfood:caramel_berries ← #c:caramel, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/caramel_berries_from_crafting`
+- `createfood:crafting/shaped/caramel_chip_chocolate_milkshake_bottle_from_shaped` → createfood:caramel_chip_chocolate_milkshake_bottle ← #c:caramel_chips, #c:chocolate_milkshake ≈ `createfood:minecraft/crafting/caramel_chip_chocolate_milkshake_bottle_from_crafting`
+- `createfood:crafting/shaped/caramel_chip_ice_cream_cone_from_shaped` → createfood:caramel_chip_ice_cream_cone ← #c:caramel_chips, #c:ice_cream_cone ≈ `createfood:minecraft/crafting/caramel_chip_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/caramel_chocolate_from_shaped` → createfood:caramel_chocolate ← #c:caramel, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/caramel_chocolate_from_crafting`
+- `createfood:crafting/shaped/caramel_chocolate_pastry_from_shaped` → createfood:caramel_chocolate_pastry ← #c:caramel, #c:chocolate_pastry_base ≈ `createfood:minecraft/crafting/caramel_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/caramel_chocolate_sweet_roll_from_shaped` → createfood:caramel_chocolate_sweet_roll ← #c:caramel, #c:chocolate_sweet_roll_base ≈ `createfood:minecraft/crafting/caramel_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/caramel_dark_chocolate_from_shaped` → createfood:caramel_dark_chocolate ← #c:caramel, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/caramel_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/caramel_fudge_ice_cream_bowl_from_shaped` → createfood:caramel_fudge_ice_cream_bowl ← #c:caramel_fudge, #c:ice_cream_bowl ≈ `createfood:minecraft/crafting/caramel_fudge_ice_cream_bowl_from_crafting`
+- `createfood:crafting/shaped/caramel_marshmallow_stick_from_shaped` → createfood:caramel_marshmallow_stick ← #c:caramel, #c:marshmallow_stick ≈ `createfood:minecraft/crafting/caramel_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/caramel_pastry_from_shaped` → createfood:caramel_pastry ← #c:caramel, #c:pastry_base ≈ `createfood:minecraft/crafting/caramel_pastry_from_crafting`
+- `createfood:crafting/shaped/caramel_pretzel_stick_from_shaped` → createfood:caramel_pretzel_stick ← #c:caramel, #c:pretzel_stick ≈ `createfood:minecraft/crafting/caramel_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/caramel_sweet_roll_from_shaped` → createfood:caramel_sweet_roll ← #c:caramel, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/caramel_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/caramel_toast_from_shaped` → createfood:caramel_toast ← #c:caramel, #c:toast ≈ `createfood:minecraft/crafting/caramel_toast_from_crafting`
+- `createfood:crafting/shaped/caramel_white_chocolate_from_shaped` → createfood:caramel_white_chocolate ← #c:caramel, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/caramel_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/cheese_biscuit_from_shaped` → createfood:cheese_biscuit ← #c:biscuit, #c:cheeses ≈ `createfood:minecraft/crafting/cheese_biscuit_from_crafting`
+- `createfood:crafting/shaped/cheese_biscuit_sandwich_from_shaped` → createfood:cheese_biscuit_sandwich ← #c:biscuit, #c:cheese_biscuit ≈ `createfood:minecraft/crafting/cheese_biscuit_sandwich_from_crafting`
+- `createfood:crafting/shaped/cheese_pretzel_stick_from_shaped` → createfood:cheese_pretzel_stick ← #c:cheeses, #c:pretzel_stick ≈ `createfood:minecraft/crafting/cheese_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/cheese_sandwich_from_shaped` → createfood:cheese_sandwich ← #c:bread_slice, #c:bread_slice_cheese ≈ `createfood:minecraft/crafting/cheese_sandwich_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_bacon_from_shaped` → createfood:cheeseburger_bacon ← #c:beef_bun_cheese_bacon, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_bacon_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_bacon_lettuce_from_shaped` → createfood:cheeseburger_bacon_lettuce ← #c:beef_bun_cheese_bacon_lettuce, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_bacon_lettuce_tomato_from_shaped` → createfood:cheeseburger_bacon_lettuce_tomato ← #c:beef_bun_cheese_bacon_lettuce_tomato, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_bacon_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_from_shaped` → createfood:cheeseburger ← #c:beef_bun_cheese, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_lettuce_from_shaped` → createfood:cheeseburger_lettuce ← #c:beef_bun_cheese_lettuce, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_lettuce_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_lettuce_tomato_from_shaped` → createfood:cheeseburger_lettuce_tomato ← #c:beef_bun_cheese_lettuce_tomato, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_onion_bacon_from_shaped` → createfood:cheeseburger_onion_bacon ← #c:beef_bun_cheese_onion_bacon, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_onion_bacon_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_onion_bacon_lettuce_from_shaped` → createfood:cheeseburger_onion_bacon_lettuce ← #c:beef_bun_cheese_onion_bacon_lettuce, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_onion_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_onion_from_shaped` → createfood:cheeseburger_onion ← #c:beef_bun_cheese_onion, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_onion_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_onion_lettuce_from_shaped` → createfood:cheeseburger_onion_lettuce ← #c:beef_bun_cheese_onion_lettuce, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_onion_lettuce_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_onion_lettuce_tomato_from_shaped` → createfood:cheeseburger_onion_lettuce_tomato ← #c:beef_bun_cheese_onion_lettuce_tomato, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_onion_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/cheeseburger_tomato_from_shaped` → createfood:cheeseburger_tomato ← #c:beef_bun_cheese_tomato, #c:bun ≈ `createfood:minecraft/crafting/cheeseburger_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_bacon_from_shaped` → createfood:chicken_bun_bacon ← #c:chicken_bun, #c:cooked_pork ≈ `createfood:minecraft/crafting/chicken_bun_bacon_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_bacon_lettuce_from_shaped` → createfood:chicken_bun_bacon_lettuce ← #c:chicken_bun_lettuce, #c:cooked_pork ≈ `createfood:minecraft/crafting/chicken_bun_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_bacon_lettuce_from_shaped_alt_2` → createfood:chicken_bun_bacon_lettuce ← #c:chicken_bun_bacon, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/chicken_bun_bacon_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_cheese_bacon_from_shaped` → createfood:chicken_bun_cheese_bacon ← #c:chicken_bun_cheese, #c:cooked_pork ≈ `createfood:minecraft/crafting/chicken_bun_cheese_bacon_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_cheese_bacon_from_shaped_alt_2` → createfood:chicken_bun_cheese_bacon ← #c:cheeses, #c:chicken_bun_bacon ≈ `createfood:minecraft/crafting/chicken_bun_cheese_bacon_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_cheese_bacon_lettuce_from_shaped` → createfood:chicken_bun_cheese_bacon_lettuce ← #c:chicken_bun_cheese_lettuce, #c:cooked_pork ≈ `createfood:minecraft/crafting/chicken_bun_cheese_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_cheese_bacon_lettuce_from_shaped_alt_2` → createfood:chicken_bun_cheese_bacon_lettuce ← #c:cheeses, #c:chicken_bun_bacon_lettuce ≈ `createfood:minecraft/crafting/chicken_bun_cheese_bacon_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_cheese_from_shaped` → createfood:chicken_bun_cheese ← #c:cheeses, #c:chicken_bun ≈ `createfood:minecraft/crafting/chicken_bun_cheese_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_cheese_lettuce_from_shaped` → createfood:chicken_bun_cheese_lettuce ← #c:chicken_bun_cheese, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/chicken_bun_cheese_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_cheese_lettuce_from_shaped_alt_2` → createfood:chicken_bun_cheese_lettuce ← #c:cheeses, #c:chicken_bun_lettuce ≈ `createfood:minecraft/crafting/chicken_bun_cheese_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_cheese_lettuce_tomato_from_shaped` → createfood:chicken_bun_cheese_lettuce_tomato ← #c:chicken_bun_cheese_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/chicken_bun_cheese_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_cheese_lettuce_tomato_from_shaped_alt_2` → createfood:chicken_bun_cheese_lettuce_tomato ← #c:cheeses, #c:chicken_bun_lettuce_tomato ≈ `createfood:minecraft/crafting/chicken_bun_cheese_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_cheese_tomato_from_shaped` → createfood:chicken_bun_cheese_tomato ← #c:chicken_bun_cheese, #c:tomato ≈ `createfood:minecraft/crafting/chicken_bun_cheese_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_cheese_tomato_from_shaped_alt_2` → createfood:chicken_bun_cheese_tomato ← #c:cheeses, #c:chicken_bun_tomato ≈ `createfood:minecraft/crafting/chicken_bun_cheese_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_from_shaped` → createfood:chicken_bun ← #c:bun, #c:chicken_patty ≈ `createfood:minecraft/crafting/chicken_bun_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_lettuce_from_shaped` → createfood:chicken_bun_lettuce ← #c:chicken_bun, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/chicken_bun_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_lettuce_tomato_from_shaped` → createfood:chicken_bun_lettuce_tomato ← #c:chicken_bun_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/chicken_bun_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_bun_lettuce_tomato_from_shaped_alt_2` → createfood:chicken_bun_lettuce_tomato ← #c:chicken_bun_tomato, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/chicken_bun_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/chicken_bun_tomato_from_shaped` → createfood:chicken_bun_tomato ← #c:chicken_bun, #c:tomato ≈ `createfood:minecraft/crafting/chicken_bun_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_burger_bacon_from_shaped` → createfood:chicken_burger_bacon ← #c:bun, #c:chicken_bun_bacon ≈ `createfood:minecraft/crafting/chicken_burger_bacon_from_crafting`
+- `createfood:crafting/shaped/chicken_burger_bacon_lettuce_from_shaped` → createfood:chicken_burger_bacon_lettuce ← #c:bun, #c:chicken_bun_bacon_lettuce ≈ `createfood:minecraft/crafting/chicken_burger_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_burger_from_shaped` → createfood:chicken_burger ← #c:bun, #c:chicken_bun ≈ `createfood:minecraft/crafting/chicken_burger_from_crafting`
+- `createfood:crafting/shaped/chicken_burger_lettuce_from_shaped` → createfood:chicken_burger_lettuce ← #c:bun, #c:chicken_bun_lettuce ≈ `createfood:minecraft/crafting/chicken_burger_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_burger_lettuce_tomato_from_shaped` → createfood:chicken_burger_lettuce_tomato ← #c:bun, #c:chicken_bun_lettuce_tomato ≈ `createfood:minecraft/crafting/chicken_burger_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_burger_tomato_from_shaped` → createfood:chicken_burger_tomato ← #c:bun, #c:chicken_bun_tomato ≈ `createfood:minecraft/crafting/chicken_burger_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_cheeseburger_bacon_from_shaped` → createfood:chicken_cheeseburger_bacon ← #c:bun, #c:chicken_bun_cheese_bacon ≈ `createfood:minecraft/crafting/chicken_cheeseburger_bacon_from_crafting`
+- `createfood:crafting/shaped/chicken_cheeseburger_bacon_lettuce_from_shaped` → createfood:chicken_cheeseburger_bacon_lettuce ← #c:bun, #c:chicken_bun_cheese_bacon_lettuce ≈ `createfood:minecraft/crafting/chicken_cheeseburger_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_cheeseburger_from_shaped` → createfood:chicken_cheeseburger ← #c:bun, #c:chicken_bun_cheese ≈ `createfood:minecraft/crafting/chicken_cheeseburger_from_crafting`
+- `createfood:crafting/shaped/chicken_cheeseburger_lettuce_from_shaped` → createfood:chicken_cheeseburger_lettuce ← #c:bun, #c:chicken_bun_cheese_lettuce ≈ `createfood:minecraft/crafting/chicken_cheeseburger_lettuce_from_crafting`
+- `createfood:crafting/shaped/chicken_cheeseburger_lettuce_tomato_from_shaped` → createfood:chicken_cheeseburger_lettuce_tomato ← #c:bun, #c:chicken_bun_cheese_lettuce_tomato ≈ `createfood:minecraft/crafting/chicken_cheeseburger_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_cheeseburger_tomato_from_shaped` → createfood:chicken_cheeseburger_tomato ← #c:bun, #c:chicken_bun_cheese_tomato ≈ `createfood:minecraft/crafting/chicken_cheeseburger_tomato_from_crafting`
+- `createfood:crafting/shaped/chicken_sandwich_from_shaped` → farmersdelight:chicken_sandwich ← #c:bread_lettuce_carrot, #c:cooked_chicken ≈ `createfood:minecraft/crafting/chicken_sandwich_from_crafting`
+- `createfood:crafting/shaped/chicken_taco_from_shaped` → createfood:chicken_taco ← #c:cooked_chicken, #c:taco_shell ≈ `createfood:minecraft/crafting/chicken_taco_from_crafting`
+- `createfood:crafting/shaped/chicken_taco_lettuce_from_shaped_alt` → createfood:chicken_taco_lettuce ← #c:chicken_taco, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/chicken_taco_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/chicken_taco_lettuce_taco_sauce_from_shaped_alt` → createfood:chicken_taco_lettuce_taco_sauce ← #c:chicken_taco_lettuce, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/chicken_taco_lettuce_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/chocolate_apple_from_shaped` → createfood:chocolate_apple ← #c:bar_of_chocolate, minecraft:apple ≈ `createfood:minecraft/crafting/chocolate_apple_from_crafting`
+- `createfood:crafting/shaped/chocolate_apple_slice_from_shaped` → createfood:chocolate_apple_slice ← #c:apple_slice, #c:chocolate ≈ `createfood:minecraft/crafting/chocolate_apple_slice_from_crafting`
+- `createfood:crafting/shaped/chocolate_berries_from_shaped` → create:chocolate_glazed_berries ← #c:bar_of_chocolate, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/chocolate_berries_from_crafting`
+- `createfood:crafting/shaped/chocolate_chip_chocolate_milkshake_bottle_from_shaped` → createfood:chocolate_chip_chocolate_milkshake_bottle ← #c:chocolate_chips, #c:chocolate_milkshake ≈ `createfood:minecraft/crafting/chocolate_chip_chocolate_milkshake_bottle_from_crafting`
+- `createfood:crafting/shaped/chocolate_chip_ice_cream_cone_from_shaped` → createfood:chocolate_chip_ice_cream_cone ← #c:chocolate_chips, #c:ice_cream_cone ≈ `createfood:minecraft/crafting/chocolate_chip_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/chocolate_chocolate_pastry_from_shaped` → createfood:chocolate_chocolate_pastry ← #c:chocolate_bottle, #c:chocolate_pastry_base ≈ `createfood:minecraft/crafting/chocolate_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_butterscotch_from_shaped` → createfood:chocolate_cream_cake_butterscotch ← #c:butterscotch_chips, #c:chocolate_cream_cake ≈ `createfood:minecraft/crafting/chocolate_cream_cake_butterscotch_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_caramel_from_shaped` → createfood:chocolate_cream_cake_caramel ← #c:caramel_chips, #c:chocolate_cream_cake ≈ `createfood:minecraft/crafting/chocolate_cream_cake_caramel_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_chocolate_from_shaped` → createfood:chocolate_cream_cake_chocolate ← #c:chocolate_chips, #c:chocolate_cream_cake ≈ `createfood:minecraft/crafting/chocolate_cream_cake_chocolate_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_dark_chocolate_from_shaped` → createfood:chocolate_cream_cake_dark_chocolate ← #c:chocolate_cream_cake, #c:dark_chocolate_chips ≈ `createfood:minecraft/crafting/chocolate_cream_cake_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_from_shaped` → createfood:chocolate_cream_cake ← #c:cake_base, #c:chocolate_cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/chocolate_cream_cake_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_toffee_from_shaped` → createfood:chocolate_cream_cake_toffee ← #c:chocolate_cream_cake, #c:toffee_chips ≈ `createfood:minecraft/crafting/chocolate_cream_cake_toffee_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cake_white_chocolate_from_shaped` → createfood:chocolate_cream_cake_white_chocolate ← #c:chocolate_cream_cake, #c:white_chocolate_chips ≈ `createfood:minecraft/crafting/chocolate_cream_cake_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_chocolate_cake_from_shaped` → createfood:chocolate_cream_chocolate_cake ← #c:chocolate_cake_base, #c:chocolate_cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/chocolate_cream_chocolate_cake_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_chocolate_cupcake_from_shaped` → createfood:chocolate_cream_chocolate_cupcake ← #c:chocolate_cream_frosting, #c:chocolate_cupcake_base ≈ `createfood:minecraft/crafting/chocolate_cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_chocolate_donut_from_shaped` → createfood:chocolate_cream_chocolate_donut ← #c:chocolate_cream_frosting, #c:chocolate_donut_base ≈ `createfood:minecraft/crafting/chocolate_cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_chocolate_sweet_roll_from_shaped` → createfood:chocolate_cream_chocolate_sweet_roll ← #c:chocolate_cream_frosting, #c:chocolate_sweet_roll_base ≈ `createfood:minecraft/crafting/chocolate_cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_cupcake_from_shaped` → createfood:chocolate_cream_cupcake ← #c:chocolate_cream_frosting, #c:cupcake_base ≈ `createfood:minecraft/crafting/chocolate_cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_donut_from_shaped` → createfood:chocolate_cream_donut ← #c:chocolate_cream_frosting, #c:donut_base ≈ `createfood:minecraft/crafting/chocolate_cream_donut_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_mini_waffle_from_shaped` → createfood:chocolate_cream_mini_waffle ← #c:chocolate_cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/chocolate_cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/chocolate_cream_sweet_roll_from_shaped` → createfood:chocolate_cream_sweet_roll ← #c:chocolate_cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/chocolate_cream_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/chocolate_donut_base_from_shaped` → createfood:chocolate_donut_base ← #c:chocolate_pastry_base, #c:vegetable_oil_bucket ≈ `createfood:minecraft/crafting/chocolate_donut_base_from_crafting`
+- `createfood:crafting/shaped/chocolate_donut_hole_sugar_from_shaped` → createfood:chocolate_donut_hole_sugar ← #c:chocolate_donut_hole, #c:powdered_sugar ≈ `createfood:minecraft/crafting/chocolate_donut_hole_sugar_from_crafting`
+- `createfood:crafting/shaped/chocolate_donut_sugar_from_shaped` → createfood:chocolate_donut_sugar ← #c:chocolate_donut_base, #c:powdered_sugar ≈ `createfood:minecraft/crafting/chocolate_donut_sugar_from_crafting`
+- `createfood:crafting/shaped/chocolate_dried_coffee_beans_from_shaped` → createfood:chocolate_dried_coffee_beans ← #c:bar_of_chocolate, #c:dried_coffee_beans ≈ `createfood:minecraft/crafting/chocolate_dried_coffee_beans_from_crafting`
+- `createfood:crafting/shaped/chocolate_fudge_ice_cream_bowl_from_shaped` → createfood:chocolate_fudge_ice_cream_bowl ← #c:chocolate_fudge, #c:ice_cream_bowl ≈ `createfood:minecraft/crafting/chocolate_fudge_ice_cream_bowl_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_apple_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_apple_ice_cream ← #c:apple_ice_cream_bowl, #c:chocolate_graham_cracker ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_apple_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_berry_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_berry_ice_cream ← #c:berry_ice_cream_bowl, #c:chocolate_graham_cracker ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_berry_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_chocolate_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_chocolate_ice_cream ← #c:chocolate_graham_cracker, #c:chocolate_ice_cream_bowl ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_chocolate_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_chorus_fruit_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_chorus_fruit_ice_cream ← #c:chocolate_graham_cracker, #c:chorus_fruit_ice_cream_bowl ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_chorus_fruit_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_glow_berry_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_glow_berry_ice_cream ← #c:chocolate_graham_cracker, #c:glow_berry_ice_cream_bowl ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_glow_berry_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_ice_cream ← #c:chocolate_graham_cracker, #c:ice_cream_bowl ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_melon_ice_cream_from_shaped` → createfood:chocolate_graham_cracker_melon_ice_cream ← #c:chocolate_graham_cracker, #c:melon_ice_cream_bowl ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_melon_ice_cream_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_neapolitan_scoop_1_from_shaped` → createfood:chocolate_graham_cracker_neapolitan_scoop_1 ← #c:chocolate_graham_cracker, #c:chocolate_ice_cream_stick ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_neapolitan_scoop_1_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_neapolitan_scoop_2_from_shaped` → createfood:chocolate_graham_cracker_neapolitan_scoop_2 ← #c:chocolate_graham_cracker_neapolitan_scoop_1, #c:ice_cream_stick ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_neapolitan_scoop_2_from_crafting`
+- `createfood:crafting/shaped/chocolate_graham_cracker_neapolitan_scoop_3_from_shaped` → createfood:chocolate_graham_cracker_neapolitan_scoop_3 ← #c:berry_ice_cream_stick, #c:chocolate_graham_cracker_neapolitan_scoop_2 ≈ `createfood:minecraft/crafting/chocolate_graham_cracker_neapolitan_scoop_3_from_crafting`
+- `createfood:crafting/shaped/chocolate_ice_cream_cone_from_shaped` → createfood:chocolate_ice_cream_cone ← #c:chocolate_ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/chocolate_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/chocolate_ice_cream_sandwich_from_shaped` → createfood:chocolate_ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_chocolate_ice_cream ≈ `createfood:minecraft/crafting/chocolate_ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/chocolate_marshmallow_stick_from_shaped` → createfood:chocolate_marshmallow_stick ← #c:chocolate_bottle, #c:marshmallow_stick ≈ `createfood:minecraft/crafting/chocolate_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/chocolate_pastry_from_shaped` → createfood:chocolate_pastry ← #c:chocolate_bottle, #c:pastry_base ≈ `createfood:minecraft/crafting/chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/chocolate_pretzel_stick_from_shaped` → createfood:chocolate_pretzel_stick ← #c:chocolate_bottle, #c:pretzel_stick ≈ `createfood:minecraft/crafting/chocolate_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/chocolate_toast_from_shaped` → createfood:chocolate_toast ← #c:chocolate_bottle, #c:toast ≈ `createfood:minecraft/crafting/chocolate_toast_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_cake_chorus_fruit_from_shaped` → createfood:chorus_fruit_cream_cake_chorus_fruit ← #c:chorus_fruit, #c:chorus_fruit_cream_cake ≈ `createfood:minecraft/crafting/chorus_fruit_cream_cake_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_cake_from_shaped` → createfood:chorus_fruit_cream_cake ← #c:cake_base, #c:chorus_fruit_cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/chorus_fruit_cream_cake_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_cake_glow_berry_from_shaped` → createfood:chorus_fruit_cream_cake_glow_berry ← #c:chorus_fruit_cream_cake, minecraft:glow_berries ≈ `createfood:minecraft/crafting/chorus_fruit_cream_cake_glow_berry_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_cake_sweet_berry_from_shaped` → createfood:chorus_fruit_cream_cake_sweet_berry ← #c:chorus_fruit_cream_cake, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/chorus_fruit_cream_cake_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_chocolate_cupcake_from_shaped` → createfood:chorus_fruit_cream_chocolate_cupcake ← #c:chocolate_cupcake_base, #c:chorus_fruit_cream_frosting ≈ `createfood:minecraft/crafting/chorus_fruit_cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_chocolate_donut_from_shaped` → createfood:chorus_fruit_cream_chocolate_donut ← #c:chocolate_donut_base, #c:chorus_fruit_cream_frosting ≈ `createfood:minecraft/crafting/chorus_fruit_cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_chocolate_from_shaped` → createfood:chorus_fruit_cream_chocolate ← #c:chorus_fruit_cream_frosting, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/chorus_fruit_cream_chocolate_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_chocolate_pastry_from_shaped` → createfood:chorus_fruit_cream_chocolate_pastry ← #c:chocolate_pastry_base, #c:chorus_fruit_cream_frosting ≈ `createfood:minecraft/crafting/chorus_fruit_cream_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit_from_shaped` → createfood:chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit ← #c:chorus_fruit, #c:chorus_fruit_cream_chocolate_sweet_roll ≈ `createfood:minecraft/crafting/chorus_fruit_cream_chocolate_sweet_roll_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_chocolate_sweet_roll_from_shaped` → createfood:chorus_fruit_cream_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, #c:chorus_fruit_cream_frosting ≈ `createfood:minecraft/crafting/chorus_fruit_cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_cupcake_from_shaped` → createfood:chorus_fruit_cream_cupcake ← #c:chorus_fruit_cream_frosting, #c:cupcake_base ≈ `createfood:minecraft/crafting/chorus_fruit_cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_dark_chocolate_from_shaped` → createfood:chorus_fruit_cream_dark_chocolate ← #c:chorus_fruit_cream_frosting, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/chorus_fruit_cream_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_donut_from_shaped` → createfood:chorus_fruit_cream_donut ← #c:chorus_fruit_cream_frosting, #c:donut_base ≈ `createfood:minecraft/crafting/chorus_fruit_cream_donut_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_mini_waffle_chorus_fruit_from_shaped` → createfood:chorus_fruit_cream_mini_waffle_chorus_fruit ← #c:chorus_fruit, #c:chorus_fruit_cream_mini_waffle ≈ `createfood:minecraft/crafting/chorus_fruit_cream_mini_waffle_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_mini_waffle_from_shaped` → createfood:chorus_fruit_cream_mini_waffle ← #c:chorus_fruit_cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/chorus_fruit_cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_pastry_from_shaped` → createfood:chorus_fruit_cream_pastry ← #c:chorus_fruit_cream_frosting, #c:pastry_base ≈ `createfood:minecraft/crafting/chorus_fruit_cream_pastry_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_sweet_roll_chorus_fruit_from_shaped` → createfood:chorus_fruit_cream_sweet_roll_chorus_fruit ← #c:chorus_fruit, #c:chorus_fruit_cream_sweet_roll ≈ `createfood:minecraft/crafting/chorus_fruit_cream_sweet_roll_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_sweet_roll_from_shaped` → createfood:chorus_fruit_cream_sweet_roll ← #c:chorus_fruit_cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/chorus_fruit_cream_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_cream_white_chocolate_from_shaped` → createfood:chorus_fruit_cream_white_chocolate ← #c:chorus_fruit_cream_frosting, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/chorus_fruit_cream_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_ice_cream_cone_from_shaped` → createfood:chorus_fruit_ice_cream_cone ← #c:chorus_fruit_ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/chorus_fruit_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_ice_cream_sandwich_from_shaped` → createfood:chorus_fruit_ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_chorus_fruit_ice_cream ≈ `createfood:minecraft/crafting/chorus_fruit_ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_jam_chocolate_donut_from_shaped` → createfood:chorus_fruit_jam_chocolate_donut ← #c:chocolate_donut_base, #c:chorus_fruit_jam_bottle ≈ `createfood:minecraft/crafting/chorus_fruit_jam_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_jam_donut_from_shaped` → createfood:chorus_fruit_jam_donut ← #c:chorus_fruit_jam_bottle, #c:donut_base ≈ `createfood:minecraft/crafting/chorus_fruit_jam_donut_from_crafting`
+- `createfood:crafting/shaped/chorus_fruit_jam_sandwich_from_shaped` → createfood:chorus_fruit_jam_sandwich ← #c:bread_slice, #c:bread_slice_chorus_fruit_jam ≈ `createfood:minecraft/crafting/chorus_fruit_jam_sandwich_from_crafting`
+- `createfood:crafting/shaped/cloth_filter_cacao_mass_from_shaped` → createfood:cloth_filter_cacao_mass ← #c:cacao_mass_bucket, #c:cloth_filter ≈ `createfood:minecraft/crafting/cloth_filter_cacao_mass_from_crafting`
+- `createfood:crafting/shaped/cookie_cream_pie_from_shaped` → createfood:cookie_cream_pie ← #c:cookie_crumbs, #c:cream_pie_chocolate_graham_cracker ≈ `createfood:minecraft/crafting/cookie_cream_pie_from_crafting`
+- `createfood:crafting/shaped/cream_cake_chorus_fruit_from_shaped` → createfood:cream_cake_chorus_fruit ← #c:chorus_fruit, #c:cream_cake ≈ `createfood:minecraft/crafting/cream_cake_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/cream_cake_from_shaped` → createfood:cream_cake ← #c:cake_base, #c:cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/cream_cake_from_crafting`
+- `createfood:crafting/shaped/cream_cake_glow_berry_from_shaped` → createfood:cream_cake_glow_berry ← #c:cream_cake, minecraft:glow_berries ≈ `createfood:minecraft/crafting/cream_cake_glow_berry_from_crafting`
+- `createfood:crafting/shaped/cream_cake_sweet_berry_from_shaped` → minecraft:cake ← #c:cream_cake, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/cream_cake_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_cake_from_shaped` → createfood:cream_chocolate_cake ← #c:chocolate_cake_base, #c:cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/cream_chocolate_cake_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_cupcake_from_shaped` → createfood:cream_chocolate_cupcake ← #c:chocolate_cupcake_base, #c:cream_frosting ≈ `createfood:minecraft/crafting/cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_donut_from_shaped` → createfood:cream_chocolate_donut ← #c:chocolate_donut_base, #c:cream_frosting ≈ `createfood:minecraft/crafting/cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_from_shaped` → createfood:cream_chocolate ← #c:cream_frosting, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/cream_chocolate_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_pastry_from_shaped` → createfood:cream_chocolate_pastry ← #c:chocolate_pastry_base, #c:cream_frosting ≈ `createfood:minecraft/crafting/cream_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_sweet_roll_chorus_fruit_from_shaped` → createfood:cream_chocolate_sweet_roll_chorus_fruit ← #c:chorus_fruit, #c:cream_chocolate_sweet_roll ≈ `createfood:minecraft/crafting/cream_chocolate_sweet_roll_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_sweet_roll_from_shaped` → createfood:cream_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, #c:cream_frosting ≈ `createfood:minecraft/crafting/cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_sweet_roll_glow_berry_from_shaped` → createfood:cream_chocolate_sweet_roll_glow_berry ← #c:cream_chocolate_sweet_roll, minecraft:glow_berries ≈ `createfood:minecraft/crafting/cream_chocolate_sweet_roll_glow_berry_from_crafting`
+- `createfood:crafting/shaped/cream_chocolate_sweet_roll_sweet_berry_from_shaped` → createfood:cream_chocolate_sweet_roll_sweet_berry ← #c:cream_chocolate_sweet_roll, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/cream_chocolate_sweet_roll_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/cream_cupcake_from_shaped` → createfood:cream_cupcake ← #c:cream_frosting, #c:cupcake_base ≈ `createfood:minecraft/crafting/cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/cream_dark_chocolate_from_shaped` → createfood:cream_dark_chocolate ← #c:cream_frosting, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/cream_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/cream_donut_from_shaped` → createfood:cream_donut ← #c:cream_frosting, #c:donut_base ≈ `createfood:minecraft/crafting/cream_donut_from_crafting`
+- `createfood:crafting/shaped/cream_mini_waffle_chorus_fruit_from_shaped` → createfood:cream_mini_waffle_chorus_fruit ← #c:chorus_fruit, #c:cream_mini_waffle ≈ `createfood:minecraft/crafting/cream_mini_waffle_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/cream_mini_waffle_from_shaped` → createfood:cream_mini_waffle ← #c:cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/cream_mini_waffle_glow_berry_from_shaped` → createfood:cream_mini_waffle_glow_berry ← #c:cream_mini_waffle, minecraft:glow_berries ≈ `createfood:minecraft/crafting/cream_mini_waffle_glow_berry_from_crafting`
+- `createfood:crafting/shaped/cream_mini_waffle_sweet_berry_from_shaped` → createfood:cream_mini_waffle_sweet_berry ← #c:cream_mini_waffle, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/cream_mini_waffle_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/cream_pastry_from_shaped` → createfood:cream_pastry ← #c:cream_frosting, #c:pastry_base ≈ `createfood:minecraft/crafting/cream_pastry_from_crafting`
+- `createfood:crafting/shaped/cream_sweet_roll_chorus_fruit_from_shaped` → createfood:cream_sweet_roll_chorus_fruit ← #c:chorus_fruit, create:sweet_roll ≈ `createfood:minecraft/crafting/cream_sweet_roll_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/cream_sweet_roll_glow_berry_from_shaped` → createfood:cream_sweet_roll_glow_berry ← create:sweet_roll, minecraft:glow_berries ≈ `createfood:minecraft/crafting/cream_sweet_roll_glow_berry_from_crafting`
+- `createfood:crafting/shaped/cream_sweet_roll_sweet_berry_from_shaped` → createfood:cream_sweet_roll_sweet_berry ← create:sweet_roll, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/cream_sweet_roll_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/cream_white_chocolate_from_shaped` → createfood:cream_white_chocolate ← #c:cream_frosting, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/cream_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/custard_sugar_bottle_from_shaped` → createfood:custard_sugar_bottle ← #c:custard_bottle, #c:sugar ≈ `createfood:minecraft/crafting/custard_sugar_bottle_from_crafting`
+- `createfood:crafting/shaped/cyan_gelatin_dessert_block_from_shaped_alt` → createfood:cyan_gelatin_dessert_block ← #c:dyes/cyan, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/cyan_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/dark_chocolate_apple_from_shaped` → createfood:dark_chocolate_apple ← #c:bar_of_dark_chocolate, minecraft:apple ≈ `createfood:minecraft/crafting/dark_chocolate_apple_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_apple_slice_from_shaped` → createfood:dark_chocolate_apple_slice ← #c:apple_slice, #c:dark_chocolate ≈ `createfood:minecraft/crafting/dark_chocolate_apple_slice_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_berries_from_shaped` → createfood:dark_chocolate_berries ← #c:bar_of_dark_chocolate, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/dark_chocolate_berries_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_chip_chocolate_milkshake_bottle_from_shaped` → createfood:dark_chocolate_chip_chocolate_milkshake_bottle ← #c:chocolate_milkshake, #c:dark_chocolate_chips ≈ `createfood:minecraft/crafting/dark_chocolate_chip_chocolate_milkshake_bottle_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_chip_ice_cream_cone_from_shaped` → createfood:dark_chocolate_chip_ice_cream_cone ← #c:dark_chocolate_chips, #c:ice_cream_cone ≈ `createfood:minecraft/crafting/dark_chocolate_chip_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_chocolate_pastry_from_shaped` → createfood:dark_chocolate_chocolate_pastry ← #c:chocolate_pastry_base, #c:dark_chocolate_bottle ≈ `createfood:minecraft/crafting/dark_chocolate_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_dried_coffee_beans_from_shaped` → createfood:dark_chocolate_dried_coffee_beans ← #c:bar_of_dark_chocolate, #c:dried_coffee_beans ≈ `createfood:minecraft/crafting/dark_chocolate_dried_coffee_beans_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_marshmallow_stick_from_shaped` → createfood:dark_chocolate_marshmallow_stick ← #c:dark_chocolate_bottle, #c:marshmallow_stick ≈ `createfood:minecraft/crafting/dark_chocolate_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_pastry_from_shaped` → createfood:dark_chocolate_pastry ← #c:dark_chocolate_bottle, #c:pastry_base ≈ `createfood:minecraft/crafting/dark_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_pretzel_stick_from_shaped` → createfood:dark_chocolate_pretzel_stick ← #c:dark_chocolate_bottle, #c:pretzel_stick ≈ `createfood:minecraft/crafting/dark_chocolate_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/dark_chocolate_toast_from_shaped` → createfood:dark_chocolate_toast ← #c:dark_chocolate_bottle, #c:toast ≈ `createfood:minecraft/crafting/dark_chocolate_toast_from_crafting`
+- `createfood:crafting/shaped/donut_base_from_shaped` → createfood:donut_base ← #c:pastry_base, #c:vegetable_oil_bucket ≈ `createfood:minecraft/crafting/donut_base_from_crafting`
+- `createfood:crafting/shaped/donut_hole_sugar_from_shaped` → createfood:donut_hole_sugar ← #c:donut_hole, #c:powdered_sugar ≈ `createfood:minecraft/crafting/donut_hole_sugar_from_crafting`
+- `createfood:crafting/shaped/donut_sugar_from_shaped` → createfood:donut_sugar ← #c:donut_base, #c:powdered_sugar ≈ `createfood:minecraft/crafting/donut_sugar_from_crafting`
+- `createfood:crafting/shaped/dragon_bun_crimson_fungus_from_shaped` → createfood:dragon_bun_crimson_fungus ← #c:dragon_bun, minecraft:crimson_fungus ≈ `createfood:minecraft/crafting/dragon_bun_crimson_fungus_from_crafting`
+- `createfood:crafting/shaped/dragon_bun_from_shaped` → createfood:dragon_bun ← #c:bun, #c:dragon_patty ≈ `createfood:minecraft/crafting/dragon_bun_from_crafting`
+- `createfood:crafting/shaped/dragon_bun_warped_fungus_from_shaped` → createfood:dragon_bun_warped_fungus ← #c:dragon_bun, minecraft:warped_fungus ≈ `createfood:minecraft/crafting/dragon_bun_warped_fungus_from_crafting`
+- `createfood:crafting/shaped/dragon_burger_crimson_fungus_from_shaped` → createfood:dragon_burger_crimson_fungus ← #c:bun, #c:dragon_bun_crimson_fungus ≈ `createfood:minecraft/crafting/dragon_burger_crimson_fungus_from_crafting`
+- `createfood:crafting/shaped/dragon_burger_from_shaped` → createfood:dragon_burger ← #c:bun, #c:dragon_bun ≈ `createfood:minecraft/crafting/dragon_burger_from_crafting`
+- `createfood:crafting/shaped/dragon_burger_warped_fungus_from_shaped` → createfood:dragon_burger_warped_fungus ← #c:bun, #c:dragon_bun_warped_fungus ≈ `createfood:minecraft/crafting/dragon_burger_warped_fungus_from_crafting`
+- `createfood:crafting/shaped/dumpling_wrappers_from_shaped` → 2× createfood:dumpling_wrappers ← #c:foods/doughs, minecraft:water_bucket ≈ `createfood:minecraft/crafting/dumpling_wrappers_from_crafting`
+- `createfood:crafting/shaped/egg_whites_bottle_from_shaped` → createfood:egg_whites_bottle ← #c:cloth_filter_egg, minecraft:glass_bottle ≈ `createfood:minecraft/crafting/egg_whites_bottle_from_crafting`
+- `createfood:crafting/shaped/eggplant_bun_cheese_from_shaped` → createfood:eggplant_bun_cheese ← #c:cheeses, #c:eggplant_bun ≈ `createfood:minecraft/crafting/eggplant_bun_cheese_from_crafting`
+- `createfood:crafting/shaped/eggplant_bun_cheese_lettuce_from_shaped` → createfood:eggplant_bun_cheese_lettuce ← #c:eggplant_bun_cheese, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/eggplant_bun_cheese_lettuce_from_crafting`
+- `createfood:crafting/shaped/eggplant_bun_cheese_lettuce_from_shaped_alt_2` → createfood:eggplant_bun_cheese_lettuce ← #c:cheeses, #c:eggplant_bun_lettuce ≈ `createfood:minecraft/crafting/eggplant_bun_cheese_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/eggplant_bun_cheese_lettuce_tomato_from_shaped` → createfood:eggplant_bun_cheese_lettuce_tomato ← #c:eggplant_bun_cheese_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/eggplant_bun_cheese_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/eggplant_bun_cheese_lettuce_tomato_from_shaped_alt_2` → createfood:eggplant_bun_cheese_lettuce_tomato ← #c:cheeses, #c:eggplant_bun_lettuce_tomato ≈ `createfood:minecraft/crafting/eggplant_bun_cheese_lettuce_tomato_from_crafting_alt_2`
+- `createfood:crafting/shaped/eggplant_bun_lettuce_from_shaped` → createfood:eggplant_bun_lettuce ← #c:eggplant_bun, #c:foods/leafy_green ≈ `createfood:minecraft/crafting/eggplant_bun_lettuce_from_crafting`
+- `createfood:crafting/shaped/eggplant_bun_lettuce_tomato_from_shaped` → createfood:eggplant_bun_lettuce_tomato ← #c:eggplant_bun_lettuce, #c:tomato ≈ `createfood:minecraft/crafting/eggplant_bun_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/eggplant_burger_from_shaped` → createfood:eggplant_burger ← #c:bun, #c:eggplant_bun ≈ `createfood:minecraft/crafting/eggplant_burger_from_crafting`
+- `createfood:crafting/shaped/eggplant_cheeseburger_from_shaped` → createfood:eggplant_cheeseburger ← #c:bun, #c:eggplant_bun_cheese ≈ `createfood:minecraft/crafting/eggplant_cheeseburger_from_crafting`
+- `createfood:crafting/shaped/endermite_meatball_sandwich_from_shaped` → createfood:endermite_meatball_sandwich ← #c:small_endermite_meatballs, minecraft:bread ≈ `createfood:minecraft/crafting/endermite_meatball_sandwich_from_crafting`
+- `createfood:crafting/shaped/endermite_meatball_stick_1_from_shaped` → createfood:endermite_meatball_stick_1 ← #c:endermite_meatball, minecraft:stick ≈ `createfood:minecraft/crafting/endermite_meatball_stick_1_from_crafting`
+- `createfood:crafting/shaped/endermite_meatball_stick_2_from_shaped` → createfood:endermite_meatball_stick_2 ← #c:endermite_meatball, createfood:endermite_meatball_stick_1 ≈ `createfood:minecraft/crafting/endermite_meatball_stick_2_from_crafting`
+- `createfood:crafting/shaped/endermite_meatball_stick_3_from_shaped` → createfood:endermite_meatball_stick_3 ← #c:endermite_meatball, createfood:endermite_meatball_stick_2 ≈ `createfood:minecraft/crafting/endermite_meatball_stick_3_from_crafting`
+- `createfood:crafting/shaped/fish_taco_from_shaped` → createfood:fish_taco ← #c:cooked_fishes, #c:taco_shell ≈ `createfood:minecraft/crafting/fish_taco_from_crafting`
+- `createfood:crafting/shaped/fish_taco_kelp_from_shaped_alt` → createfood:fish_taco_kelp ← #c:fish_taco, minecraft:dried_kelp ≈ `createfood:minecraft/crafting/fish_taco_kelp_from_crafting_alt`
+- `createfood:crafting/shaped/fish_taco_kelp_taco_sauce_from_shaped_alt` → createfood:fish_taco_kelp_taco_sauce ← #c:fish_taco_kelp, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/fish_taco_kelp_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/french_toast_slice_apple_jam_from_shaped` → createfood:french_toast_slice_apple_jam ← #c:apple_jam_bottle, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_apple_jam_from_crafting`
+- `createfood:crafting/shaped/french_toast_slice_berry_jam_from_shaped` → createfood:french_toast_slice_berry_jam ← #c:berry_jam_bottle, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_berry_jam_from_crafting`
+- `createfood:crafting/shaped/french_toast_slice_butter_from_shaped` → createfood:french_toast_slice_butter ← #c:butter, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_butter_from_crafting`
+- `createfood:crafting/shaped/french_toast_slice_chorus_fruit_jam_from_shaped` → createfood:french_toast_slice_chorus_fruit_jam ← #c:chorus_fruit_jam_bottle, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_chorus_fruit_jam_from_crafting`
+- `createfood:crafting/shaped/french_toast_slice_glow_berry_jam_from_shaped` → createfood:french_toast_slice_glow_berry_jam ← #c:glow_berry_jam_bottle, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_glow_berry_jam_from_crafting`
+- `createfood:crafting/shaped/french_toast_slice_melon_jam_from_shaped` → createfood:french_toast_slice_melon_jam ← #c:melon_jam_bottle, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_melon_jam_from_crafting`
+- `createfood:crafting/shaped/french_toast_slice_sugar_from_shaped` → createfood:french_toast_slice_sugar ← #c:powdered_sugar, createfood:french_toast_slice ≈ `createfood:minecraft/crafting/french_toast_slice_sugar_from_crafting`
+- `createfood:crafting/shaped/fried_egg_hash_brown_sandwich_from_shaped` → createfood:fried_egg_hash_brown_sandwich ← #c:bread_fried_egg, #c:hash_browns ≈ `createfood:minecraft/crafting/fried_egg_hash_brown_sandwich_from_crafting`
+- `createfood:crafting/shaped/fried_egg_plate_from_shaped` → createfood:fried_egg_plate ← #c:cooked_eggs, minecraft:bowl ≈ `createfood:minecraft/crafting/fried_egg_plate_from_crafting`
+- `createfood:crafting/shaped/gelatin_dessert_block_from_shaped_alt` → createfood:gelatin_dessert_block ← #c:dyes/white, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/glow_berry_cream_cake_chorus_fruit_from_shaped` → createfood:glow_berry_cream_cake_chorus_fruit ← #c:chorus_fruit, #c:glow_berry_cream_cake ≈ `createfood:minecraft/crafting/glow_berry_cream_cake_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_cake_from_shaped` → createfood:glow_berry_cream_cake ← #c:cake_base, #c:glow_berry_cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/glow_berry_cream_cake_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_cake_glow_berry_from_shaped` → createfood:glow_berry_cream_cake_glow_berry ← #c:glow_berry_cream_cake, minecraft:glow_berries ≈ `createfood:minecraft/crafting/glow_berry_cream_cake_glow_berry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_cake_sweet_berry_from_shaped` → createfood:glow_berry_cream_cake_sweet_berry ← #c:glow_berry_cream_cake, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/glow_berry_cream_cake_sweet_berry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_chocolate_cupcake_from_shaped` → createfood:glow_berry_cream_chocolate_cupcake ← #c:chocolate_cupcake_base, #c:glow_berry_cream_frosting ≈ `createfood:minecraft/crafting/glow_berry_cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_chocolate_donut_from_shaped` → createfood:glow_berry_cream_chocolate_donut ← #c:chocolate_donut_base, #c:glow_berry_cream_frosting ≈ `createfood:minecraft/crafting/glow_berry_cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_chocolate_from_shaped` → createfood:glow_berry_cream_chocolate ← #c:glow_berry_cream_frosting, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/glow_berry_cream_chocolate_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_chocolate_pastry_from_shaped` → createfood:glow_berry_cream_chocolate_pastry ← #c:chocolate_pastry_base, #c:glow_berry_cream_frosting ≈ `createfood:minecraft/crafting/glow_berry_cream_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_chocolate_sweet_roll_from_shaped` → createfood:glow_berry_cream_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, #c:glow_berry_cream_frosting ≈ `createfood:minecraft/crafting/glow_berry_cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_chocolate_sweet_roll_glow_berry_from_shaped` → createfood:glow_berry_cream_chocolate_sweet_roll_glow_berry ← #c:glow_berry_cream_chocolate_sweet_roll, minecraft:glow_berries ≈ `createfood:minecraft/crafting/glow_berry_cream_chocolate_sweet_roll_glow_berry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_cupcake_from_shaped` → createfood:glow_berry_cream_cupcake ← #c:cupcake_base, #c:glow_berry_cream_frosting ≈ `createfood:minecraft/crafting/glow_berry_cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_dark_chocolate_from_shaped` → createfood:glow_berry_cream_dark_chocolate ← #c:glow_berry_cream_frosting, #c:hollow_dark_chocolate ≈ `createfood:minecraft/crafting/glow_berry_cream_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_donut_from_shaped` → createfood:glow_berry_cream_donut ← #c:donut_base, #c:glow_berry_cream_frosting ≈ `createfood:minecraft/crafting/glow_berry_cream_donut_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_mini_waffle_from_shaped` → createfood:glow_berry_cream_mini_waffle ← #c:glow_berry_cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/glow_berry_cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_mini_waffle_glow_berry_from_shaped` → createfood:glow_berry_cream_mini_waffle_glow_berry ← #c:glow_berry_cream_mini_waffle, minecraft:glow_berries ≈ `createfood:minecraft/crafting/glow_berry_cream_mini_waffle_glow_berry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_pastry_from_shaped` → createfood:glow_berry_cream_pastry ← #c:glow_berry_cream_frosting, #c:pastry_base ≈ `createfood:minecraft/crafting/glow_berry_cream_pastry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_sweet_roll_from_shaped` → createfood:glow_berry_cream_sweet_roll ← #c:glow_berry_cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/glow_berry_cream_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_sweet_roll_glow_berry_from_shaped` → createfood:glow_berry_cream_sweet_roll_glow_berry ← #c:glow_berry_cream_sweet_roll, minecraft:glow_berries ≈ `createfood:minecraft/crafting/glow_berry_cream_sweet_roll_glow_berry_from_crafting`
+- `createfood:crafting/shaped/glow_berry_cream_white_chocolate_from_shaped` → createfood:glow_berry_cream_white_chocolate ← #c:glow_berry_cream_frosting, #c:hollow_white_chocolate ≈ `createfood:minecraft/crafting/glow_berry_cream_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/glow_berry_ice_cream_cone_from_shaped` → createfood:glow_berry_ice_cream_cone ← #c:glow_berry_ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/glow_berry_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/glow_berry_ice_cream_sandwich_from_shaped` → createfood:glow_berry_ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_glow_berry_ice_cream ≈ `createfood:minecraft/crafting/glow_berry_ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/glow_berry_jam_chocolate_donut_from_shaped` → createfood:glow_berry_jam_chocolate_donut ← #c:chocolate_donut_base, #c:glow_berry_jam_bottle ≈ `createfood:minecraft/crafting/glow_berry_jam_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/glow_berry_jam_donut_from_shaped` → createfood:glow_berry_jam_donut ← #c:donut_base, #c:glow_berry_jam_bottle ≈ `createfood:minecraft/crafting/glow_berry_jam_donut_from_crafting`
+- `createfood:crafting/shaped/glow_berry_jam_sandwich_from_shaped` → createfood:glow_berry_jam_sandwich ← #c:bread_slice, #c:bread_slice_glow_berry_jam ≈ `createfood:minecraft/crafting/glow_berry_jam_sandwich_from_crafting`
+- `createfood:crafting/shaped/graham_cracker_chocolate_from_shaped` → createfood:graham_cracker_chocolate ← #c:graham_cracker, #c:hollow_chocolate ≈ `createfood:minecraft/crafting/graham_cracker_chocolate_from_crafting`
+- `createfood:crafting/shaped/graham_cracker_chocolate_marshmallow_from_shaped` → createfood:graham_cracker_chocolate_marshmallow ← #c:graham_cracker_chocolate, #c:marshmallow ≈ `createfood:minecraft/crafting/graham_cracker_chocolate_marshmallow_from_crafting`
+- `createfood:crafting/shaped/graham_cracker_marshmallow_from_shaped` → createfood:graham_cracker_marshmallow ← #c:graham_cracker, #c:marshmallow ≈ `createfood:minecraft/crafting/graham_cracker_marshmallow_from_crafting`
+- `createfood:crafting/shaped/gray_gelatin_dessert_block_from_shaped_alt` → createfood:gray_gelatin_dessert_block ← #c:dyes/gray, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/gray_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/green_gelatin_dessert_block_from_shaped_alt` → createfood:green_gelatin_dessert_block ← #c:dyes/green, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/green_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/hamburger_bacon_from_shaped` → createfood:hamburger_bacon ← #c:beef_bun_bacon, #c:bun ≈ `createfood:minecraft/crafting/hamburger_bacon_from_crafting`
+- `createfood:crafting/shaped/hamburger_bacon_lettuce_from_shaped` → createfood:hamburger_bacon_lettuce ← #c:beef_bun_bacon_lettuce, #c:bun ≈ `createfood:minecraft/crafting/hamburger_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/hamburger_bacon_lettuce_tomato_from_shaped` → createfood:hamburger_bacon_lettuce_tomato ← #c:beef_bun_bacon_lettuce_tomato, #c:bun ≈ `createfood:minecraft/crafting/hamburger_bacon_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/hamburger_crimson_fungus_from_shaped` → createfood:hamburger_crimson_fungus ← #c:beef_bun_crimson_fungus, #c:bun ≈ `createfood:minecraft/crafting/hamburger_crimson_fungus_from_crafting`
+- `createfood:crafting/shaped/hamburger_from_shaped` → createfood:hamburger ← #c:beef_bun, #c:bun ≈ `createfood:minecraft/crafting/hamburger_from_crafting`
+- `createfood:crafting/shaped/hamburger_lettuce_from_shaped` → createfood:hamburger_lettuce ← #c:beef_bun_lettuce, #c:bun ≈ `createfood:minecraft/crafting/hamburger_lettuce_from_crafting`
+- `createfood:crafting/shaped/hamburger_lettuce_tomato_from_shaped` → createfood:hamburger_lettuce_tomato ← #c:beef_bun_lettuce_tomato, #c:bun ≈ `createfood:minecraft/crafting/hamburger_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/hamburger_onion_bacon_from_shaped` → createfood:hamburger_onion_bacon ← #c:beef_bun_onion_bacon, #c:bun ≈ `createfood:minecraft/crafting/hamburger_onion_bacon_from_crafting`
+- `createfood:crafting/shaped/hamburger_onion_bacon_lettuce_from_shaped` → createfood:hamburger_onion_bacon_lettuce ← #c:beef_bun_onion_bacon_lettuce, #c:bun ≈ `createfood:minecraft/crafting/hamburger_onion_bacon_lettuce_from_crafting`
+- `createfood:crafting/shaped/hamburger_onion_from_shaped` → createfood:hamburger_onion ← #c:beef_bun_onion, #c:bun ≈ `createfood:minecraft/crafting/hamburger_onion_from_crafting`
+- `createfood:crafting/shaped/hamburger_onion_lettuce_from_shaped` → createfood:hamburger_onion_lettuce ← #c:beef_bun_onion_lettuce, #c:bun ≈ `createfood:minecraft/crafting/hamburger_onion_lettuce_from_crafting`
+- `createfood:crafting/shaped/hamburger_onion_lettuce_tomato_from_shaped` → farmersdelight:hamburger ← #c:beef_bun_onion_lettuce_tomato, #c:bun ≈ `createfood:minecraft/crafting/hamburger_onion_lettuce_tomato_from_crafting`
+- `createfood:crafting/shaped/hamburger_tomato_from_shaped` → createfood:hamburger_tomato ← #c:beef_bun_tomato, #c:bun ≈ `createfood:minecraft/crafting/hamburger_tomato_from_crafting`
+- `createfood:crafting/shaped/hamburger_warped_fungus_from_shaped` → createfood:hamburger_warped_fungus ← #c:beef_bun_warped_fungus, #c:bun ≈ `createfood:minecraft/crafting/hamburger_warped_fungus_from_crafting`
+- `createfood:crafting/shaped/hash_brown_fried_egg_plate_from_shaped` → createfood:hash_brown_fried_egg_plate ← #c:cooked_eggs, #c:hash_brown_plate ≈ `createfood:minecraft/crafting/hash_brown_fried_egg_plate_from_crafting`
+- `createfood:crafting/shaped/hash_brown_fried_egg_plate_from_shaped_alt_2` → createfood:hash_brown_fried_egg_plate ← #c:fried_egg_plate, #c:hash_browns ≈ `createfood:minecraft/crafting/hash_brown_fried_egg_plate_from_crafting_alt_2`
+- `createfood:crafting/shaped/hash_brown_plate_from_shaped` → createfood:hash_brown_plate ← #c:hash_browns, minecraft:bowl ≈ `createfood:minecraft/crafting/hash_brown_plate_from_crafting`
+- `createfood:crafting/shaped/hash_brown_toast_plate_from_shaped` → createfood:hash_brown_toast_plate ← #c:hash_brown_plate, #c:toast_slice ≈ `createfood:minecraft/crafting/hash_brown_toast_plate_from_crafting`
+- `createfood:crafting/shaped/hash_brown_toast_plate_from_shaped_alt_2` → createfood:hash_brown_toast_plate ← #c:hash_browns, #c:toast_plate ≈ `createfood:minecraft/crafting/hash_brown_toast_plate_from_crafting_alt_2`
+- `createfood:crafting/shaped/honey_sandwich_from_shaped` → createfood:honey_sandwich ← #c:bread_slice, #c:bread_slice_honey ≈ `createfood:minecraft/crafting/honey_sandwich_from_crafting`
+- `createfood:crafting/shaped/honeyed_apple_from_shaped` → create:honeyed_apple ← minecraft:apple, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_apple_from_crafting`
+- `createfood:crafting/shaped/honeyed_apple_slice_from_shaped` → createfood:honeyed_apple_slice ← #c:apple_slice, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_apple_slice_from_crafting`
+- `createfood:crafting/shaped/honeyed_berries_from_shaped` → createfood:honeyed_berries ← minecraft:honey_bottle, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/honeyed_berries_from_crafting`
+- `createfood:crafting/shaped/honeyed_biscuit_from_shaped` → createfood:honeyed_biscuit ← #c:biscuit, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_biscuit_from_crafting`
+- `createfood:crafting/shaped/honeyed_chocolate_cupcake_from_shaped` → createfood:honeyed_chocolate_cupcake ← #c:chocolate_cupcake_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/honeyed_chocolate_donut_from_shaped` → createfood:honeyed_chocolate_donut ← #c:chocolate_donut_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/honeyed_chocolate_pastry_from_shaped` → createfood:honeyed_chocolate_pastry ← #c:chocolate_pastry_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/honeyed_chocolate_sweet_roll_from_shaped` → createfood:honeyed_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/honeyed_cupcake_from_shaped` → createfood:honeyed_cupcake ← #c:cupcake_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_cupcake_from_crafting`
+- `createfood:crafting/shaped/honeyed_donut_from_shaped` → createfood:honeyed_donut ← #c:donut_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_donut_from_crafting`
+- `createfood:crafting/shaped/honeyed_mini_waffle_from_shaped` → createfood:honeyed_mini_waffle ← #c:mini_waffle, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/honeyed_muffin_from_shaped` → createfood:honeyed_muffin ← #c:muffin_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_muffin_from_crafting`
+- `createfood:crafting/shaped/honeyed_pastry_from_shaped` → createfood:honeyed_pastry ← #c:pastry_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_pastry_from_crafting`
+- `createfood:crafting/shaped/honeyed_pretzel_stick_from_shaped` → createfood:honeyed_pretzel_stick ← #c:pretzel_stick, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/honeyed_sweet_roll_from_shaped` → createfood:honeyed_sweet_roll ← #c:sweet_roll_base, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/honeyed_toast_from_shaped` → createfood:honeyed_toast ← #c:toast, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/honeyed_toast_from_crafting`
+- `createfood:crafting/shaped/ice_cream_cone_from_shaped` → createfood:ice_cream_cone ← #c:ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/ice_cream_sandwich_from_shaped` → createfood:ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_ice_cream ≈ `createfood:minecraft/crafting/ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/ice_cream_sandwich_neapolitan_from_shaped` → createfood:ice_cream_sandwich_neapolitan ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_neapolitan_scoop_3 ≈ `createfood:minecraft/crafting/ice_cream_sandwich_neapolitan_from_crafting`
+- `createfood:crafting/shaped/light_blue_gelatin_dessert_block_from_shaped_alt` → createfood:light_blue_gelatin_dessert_block ← #c:dyes/light_blue, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/light_blue_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/light_gray_gelatin_dessert_block_from_shaped_alt` → createfood:light_gray_gelatin_dessert_block ← #c:dyes/light_gray, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/light_gray_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/lime_gelatin_dessert_block_from_shaped_alt` → createfood:lime_gelatin_dessert_block ← #c:dyes/lime, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/lime_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/macaroni_bowl_bacon_from_shaped` → createfood:macaroni_bowl_bacon ← #c:cooked_pork, #c:macaroni_bowl ≈ `createfood:minecraft/crafting/macaroni_bowl_bacon_from_crafting`
+- `createfood:crafting/shaped/macaroni_bowl_cheese_bacon_from_shaped` → createfood:macaroni_bowl_cheese_bacon ← #c:cooked_pork, #c:macaroni_bowl_cheese ≈ `createfood:minecraft/crafting/macaroni_bowl_cheese_bacon_from_crafting`
+- `createfood:crafting/shaped/macaroni_bowl_cheese_bacon_from_shaped_alt` → createfood:macaroni_bowl_cheese_bacon ← #c:cheeses, #c:macaroni_bowl_bacon ≈ `createfood:minecraft/crafting/macaroni_bowl_cheese_bacon_from_crafting_alt`
+- `createfood:crafting/shaped/macaroni_bowl_cheese_from_shaped` → createfood:macaroni_bowl_cheese ← #c:cheeses, #c:macaroni_bowl ≈ `createfood:minecraft/crafting/macaroni_bowl_cheese_from_crafting`
+- `createfood:crafting/shaped/macaroni_bowl_cheese_sausage_from_shaped` → createfood:macaroni_bowl_cheese_sausage ← #c:macaroni_bowl_cheese, #c:sausages ≈ `createfood:minecraft/crafting/macaroni_bowl_cheese_sausage_from_crafting`
+- `createfood:crafting/shaped/macaroni_bowl_cheese_sausage_from_shaped_alt` → createfood:macaroni_bowl_cheese_sausage ← #c:cheeses, #c:macaroni_bowl_sausage ≈ `createfood:minecraft/crafting/macaroni_bowl_cheese_sausage_from_crafting_alt`
+- `createfood:crafting/shaped/macaroni_bowl_from_shaped` → createfood:macaroni_bowl ← #c:macaroni, minecraft:bowl ≈ `createfood:minecraft/crafting/macaroni_bowl_from_crafting`
+- `createfood:crafting/shaped/macaroni_bowl_sausage_from_shaped` → createfood:macaroni_bowl_sausage ← #c:macaroni_bowl, #c:sausages ≈ `createfood:minecraft/crafting/macaroni_bowl_sausage_from_crafting`
+- `createfood:crafting/shaped/magenta_gelatin_dessert_block_from_shaped_alt` → createfood:magenta_gelatin_dessert_block ← #c:dyes/magenta, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/magenta_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/magma_cream_marshmallow_stick_from_shaped` → createfood:magma_cream_marshmallow_stick ← #c:magma_cream_marshmallow, minecraft:stick ≈ `createfood:minecraft/crafting/magma_cream_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/marshmallow_chocolate_from_shaped` → createfood:marshmallow_chocolate ← #c:hollow_chocolate, #c:marshmallow ≈ `createfood:minecraft/crafting/marshmallow_chocolate_from_crafting`
+- `createfood:crafting/shaped/marshmallow_dark_chocolate_from_shaped` → createfood:marshmallow_dark_chocolate ← #c:hollow_dark_chocolate, #c:marshmallow ≈ `createfood:minecraft/crafting/marshmallow_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/marshmallow_hot_chocolate_bottle_from_shaped` → createfood:marshmallow_hot_chocolate_bottle ← #c:marshmallow, createfood:hot_chocolate_bottle ≈ `createfood:minecraft/crafting/marshmallow_hot_chocolate_bottle_from_crafting`
+- `createfood:crafting/shaped/marshmallow_hot_dark_chocolate_bottle_from_shaped` → createfood:marshmallow_hot_dark_chocolate_bottle ← #c:marshmallow, createfood:hot_dark_chocolate_bottle ≈ `createfood:minecraft/crafting/marshmallow_hot_dark_chocolate_bottle_from_crafting`
+- `createfood:crafting/shaped/marshmallow_hot_white_chocolate_bottle_from_shaped` → createfood:marshmallow_hot_white_chocolate_bottle ← #c:marshmallow, createfood:hot_white_chocolate_bottle ≈ `createfood:minecraft/crafting/marshmallow_hot_white_chocolate_bottle_from_crafting`
+- `createfood:crafting/shaped/marshmallow_stick_from_shaped` → createfood:marshmallow_stick ← #c:marshmallow, minecraft:stick ≈ `createfood:minecraft/crafting/marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/marshmallow_white_chocolate_from_shaped` → createfood:marshmallow_white_chocolate ← #c:hollow_white_chocolate, #c:marshmallow ≈ `createfood:minecraft/crafting/marshmallow_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/mashed_potatoes_bowl_bacon_from_shaped` → createfood:mashed_potatoes_bowl_bacon ← #c:cooked_pork, #c:mashed_potatoes_bowl ≈ `createfood:minecraft/crafting/mashed_potatoes_bowl_bacon_from_crafting`
+- `createfood:crafting/shaped/mashed_potatoes_bowl_cheese_from_shaped` → createfood:mashed_potatoes_bowl_cheese ← #c:cheeses, #c:mashed_potatoes_bowl ≈ `createfood:minecraft/crafting/mashed_potatoes_bowl_cheese_from_crafting`
+- `createfood:crafting/shaped/mashed_potatoes_bowl_mushroom_from_shaped` → createfood:mashed_potatoes_bowl_mushroom ← #c:mashed_potatoes_bowl, #c:mushrooms ≈ `createfood:minecraft/crafting/mashed_potatoes_bowl_mushroom_from_crafting`
+- `createfood:crafting/shaped/mashed_potatoes_bowl_sour_cream_from_shaped` → createfood:mashed_potatoes_bowl_sour_cream ← #c:mashed_potatoes_bowl, #c:sour_cream_bottle ≈ `createfood:minecraft/crafting/mashed_potatoes_bowl_sour_cream_from_crafting`
+- `createfood:crafting/shaped/melon_cream_cake_from_shaped` → createfood:melon_cream_cake ← #c:cake_base, #c:melon_cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/melon_cream_cake_from_crafting`
+- `createfood:crafting/shaped/melon_cream_chocolate_cupcake_from_shaped` → createfood:melon_cream_chocolate_cupcake ← #c:chocolate_cupcake_base, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_chocolate_cupcake_from_crafting`
+- `createfood:crafting/shaped/melon_cream_chocolate_donut_from_shaped` → createfood:melon_cream_chocolate_donut ← #c:chocolate_donut_base, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/melon_cream_chocolate_from_shaped` → createfood:melon_cream_chocolate ← #c:hollow_chocolate, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_chocolate_from_crafting`
+- `createfood:crafting/shaped/melon_cream_chocolate_pastry_from_shaped` → createfood:melon_cream_chocolate_pastry ← #c:chocolate_pastry_base, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/melon_cream_chocolate_sweet_roll_from_shaped` → createfood:melon_cream_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/melon_cream_cupcake_from_shaped` → createfood:melon_cream_cupcake ← #c:cupcake_base, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_cupcake_from_crafting`
+- `createfood:crafting/shaped/melon_cream_dark_chocolate_from_shaped` → createfood:melon_cream_dark_chocolate ← #c:hollow_dark_chocolate, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/melon_cream_donut_from_shaped` → createfood:melon_cream_donut ← #c:donut_base, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_donut_from_crafting`
+- `createfood:crafting/shaped/melon_cream_mini_waffle_from_shaped` → createfood:melon_cream_mini_waffle ← #c:melon_cream_frosting, #c:mini_waffle ≈ `createfood:minecraft/crafting/melon_cream_mini_waffle_from_crafting`
+- `createfood:crafting/shaped/melon_cream_pastry_from_shaped` → createfood:melon_cream_pastry ← #c:melon_cream_frosting, #c:pastry_base ≈ `createfood:minecraft/crafting/melon_cream_pastry_from_crafting`
+- `createfood:crafting/shaped/melon_cream_sweet_roll_from_shaped` → createfood:melon_cream_sweet_roll ← #c:melon_cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/melon_cream_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/melon_cream_white_chocolate_from_shaped` → createfood:melon_cream_white_chocolate ← #c:hollow_white_chocolate, #c:melon_cream_frosting ≈ `createfood:minecraft/crafting/melon_cream_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/melon_ice_cream_cone_from_shaped` → createfood:melon_ice_cream_cone ← #c:melon_ice_cream_stick, #c:waffle_cone ≈ `createfood:minecraft/crafting/melon_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/melon_ice_cream_sandwich_from_shaped` → createfood:melon_ice_cream_sandwich ← #c:chocolate_graham_cracker, #c:chocolate_graham_cracker_melon_ice_cream ≈ `createfood:minecraft/crafting/melon_ice_cream_sandwich_from_crafting`
+- `createfood:crafting/shaped/melon_jam_chocolate_donut_from_shaped` → createfood:melon_jam_chocolate_donut ← #c:chocolate_donut_base, #c:melon_jam_bottle ≈ `createfood:minecraft/crafting/melon_jam_chocolate_donut_from_crafting`
+- `createfood:crafting/shaped/melon_jam_donut_from_shaped` → createfood:melon_jam_donut ← #c:donut_base, #c:melon_jam_bottle ≈ `createfood:minecraft/crafting/melon_jam_donut_from_crafting`
+- `createfood:crafting/shaped/melon_jam_sandwich_from_shaped` → createfood:melon_jam_sandwich ← #c:bread_slice, #c:bread_slice_melon_jam ≈ `createfood:minecraft/crafting/melon_jam_sandwich_from_crafting`
+- `createfood:crafting/shaped/mini_cookie_cream_pie_from_shaped` → createfood:mini_cookie_cream_pie ← #c:cookie_crumbs, #c:mini_cream_pie_chocolate_graham_cracker ≈ `createfood:minecraft/crafting/mini_cookie_cream_pie_from_crafting`
+- `createfood:crafting/shaped/mini_smores_pie_from_shaped` → createfood:mini_smores_pie ← #c:marshmallow, #c:mini_chocolate_pie_graham_cracker ≈ `createfood:minecraft/crafting/mini_smores_pie_from_crafting`
+- `createfood:crafting/shaped/mushroom_cream_soup_bowl_cheese_from_shaped` → createfood:mushroom_cream_soup_bowl_cheese ← #c:cheeses, #c:mushroom_cream_soup_bowl ≈ `createfood:minecraft/crafting/mushroom_cream_soup_bowl_cheese_from_crafting`
+- `createfood:crafting/shaped/mushroom_taco_from_shaped` → createfood:mushroom_taco ← #c:mushrooms, #c:taco_shell ≈ `createfood:minecraft/crafting/mushroom_taco_from_crafting`
+- `createfood:crafting/shaped/mushroom_taco_lettuce_from_shaped_alt` → createfood:mushroom_taco_lettuce ← #c:foods/leafy_green, #c:mushroom_taco ≈ `createfood:minecraft/crafting/mushroom_taco_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/mushroom_taco_lettuce_taco_sauce_from_shaped_alt` → createfood:mushroom_taco_lettuce_taco_sauce ← #c:mushroom_taco_lettuce, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/mushroom_taco_lettuce_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/mutton_sandwich_beetroot_from_shaped` → createfood:mutton_sandwich_beetroot ← #c:bread_slice, #c:bread_slice_mutton_beetroot ≈ `createfood:minecraft/crafting/mutton_sandwich_beetroot_from_crafting`
+- `createfood:crafting/shaped/mutton_sandwich_beetroot_from_shaped_alt_2` → createfood:mutton_sandwich_beetroot ← #c:bread_slice_beetroot, #c:bread_slice_mutton ≈ `createfood:minecraft/crafting/mutton_sandwich_beetroot_from_crafting_alt_2`
+- `createfood:crafting/shaped/mutton_sandwich_from_shaped` → createfood:mutton_sandwich ← #c:bread_slice, #c:bread_slice_mutton ≈ `createfood:minecraft/crafting/mutton_sandwich_from_crafting`
+- `createfood:crafting/shaped/mutton_taco_from_shaped` → createfood:mutton_taco ← #c:gyro_mutton_ingredient, #c:taco_shell ≈ `createfood:minecraft/crafting/mutton_taco_from_crafting`
+- `createfood:crafting/shaped/mutton_taco_lettuce_from_shaped_alt` → createfood:mutton_taco_lettuce ← #c:foods/leafy_green, #c:mutton_taco ≈ `createfood:minecraft/crafting/mutton_taco_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/mutton_taco_lettuce_taco_sauce_from_shaped_alt` → createfood:mutton_taco_lettuce_taco_sauce ← #c:mutton_taco_lettuce, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/mutton_taco_lettuce_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/nacho_bowl_beef_from_shaped` → createfood:nacho_bowl_beef ← #c:cooked_beef, #c:nacho_bowl ≈ `createfood:minecraft/crafting/nacho_bowl_beef_from_crafting`
+- `createfood:crafting/shaped/nacho_bowl_beef_taco_sauce_from_shaped` → createfood:nacho_bowl_beef_taco_sauce ← #c:nacho_bowl_beef, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/nacho_bowl_beef_taco_sauce_from_crafting`
+- `createfood:crafting/shaped/nacho_bowl_from_shaped` → createfood:nacho_bowl ← #c:cheeses, #c:tortilla_chip_bowl ≈ `createfood:minecraft/crafting/nacho_bowl_from_crafting`
+- `createfood:crafting/shaped/nacho_bowl_sour_cream_from_shaped` → createfood:nacho_bowl_sour_cream ← #c:nacho_bowl, #c:sour_cream_bottle ≈ `createfood:minecraft/crafting/nacho_bowl_sour_cream_from_crafting`
+- `createfood:crafting/shaped/nacho_bowl_taco_sauce_from_shaped` → createfood:nacho_bowl_taco_sauce ← #c:nacho_bowl, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/nacho_bowl_taco_sauce_from_crafting`
+- `createfood:crafting/shaped/orange_gelatin_dessert_block_from_shaped_alt` → createfood:orange_gelatin_dessert_block ← #c:dyes/orange, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/orange_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/pasta_plate_beef_meatballs_from_shaped` → createfood:pasta_plate_beef_meatballs ← #c:pasta_plate, #c:small_beef_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_beef_meatballs_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_beef_meatballs_tomato_sauce_from_shaped` → farmersdelight:pasta_with_meatballs ← #c:pasta_plate_beef_meatballs, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_beef_meatballs_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_beef_meatballs_tomato_sauce_from_shaped_alt` → farmersdelight:pasta_with_meatballs ← #c:pasta_plate_tomato_sauce, #c:small_beef_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_beef_meatballs_tomato_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/pasta_plate_butter_from_shaped` → createfood:pasta_plate_butter ← #c:butter, #c:pasta_plate ≈ `createfood:minecraft/crafting/pasta_plate_butter_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_cheese_from_shaped` → createfood:pasta_plate_cheese ← #c:cheeses, #c:pasta_plate ≈ `createfood:minecraft/crafting/pasta_plate_cheese_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_cheese_tomato_sauce_from_shaped` → createfood:pasta_plate_cheese_tomato_sauce ← #c:pasta_plate_cheese, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_cheese_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_cheese_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_cheese_tomato_sauce ← #c:cheeses, #c:pasta_plate_tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_cheese_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_chicken_cut_from_shaped` → createfood:pasta_plate_chicken_cut ← #c:cooked_chicken, #c:pasta_plate ≈ `createfood:minecraft/crafting/pasta_plate_chicken_cut_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_chicken_cut_tomato_sauce_from_shaped` → createfood:pasta_plate_chicken_cut_tomato_sauce ← #c:pasta_plate_chicken_cut, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_chicken_cut_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_chicken_cut_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_chicken_cut_tomato_sauce ← #c:cooked_chicken, #c:pasta_plate_tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_chicken_cut_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_endermite_meatballs_from_shaped` → createfood:pasta_plate_endermite_meatballs ← #c:pasta_plate, #c:small_endermite_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_endermite_meatballs_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_endermite_meatballs_tomato_sauce_from_shaped` → createfood:pasta_plate_endermite_meatballs_tomato_sauce ← #c:pasta_plate_endermite_meatballs, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_endermite_meatballs_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_fish_from_shaped` → createfood:pasta_plate_fish ← #c:cooked_fishes, #c:pasta_plate ≈ `createfood:minecraft/crafting/pasta_plate_fish_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_fish_squid_ink_from_shaped` → farmersdelight:squid_ink_pasta ← #c:pasta_plate_fish, #c:squid_ink_bucket ≈ `createfood:minecraft/crafting/pasta_plate_fish_squid_ink_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_fish_squid_ink_from_shaped_alt` → farmersdelight:squid_ink_pasta ← #c:cooked_fishes, #c:pasta_plate_squid_ink ≈ `createfood:minecraft/crafting/pasta_plate_fish_squid_ink_from_crafting_alt`
+- `createfood:crafting/shaped/pasta_plate_fish_tomato_sauce_from_shaped` → createfood:pasta_plate_fish_tomato_sauce ← #c:pasta_plate_fish, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_fish_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_fish_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_fish_tomato_sauce ← #c:cooked_fishes, #c:pasta_plate_tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_fish_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_from_shaped` → createfood:pasta_plate ← #c:cooked_pasta, minecraft:bowl ≈ `createfood:minecraft/crafting/pasta_plate_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_mushroom_from_shaped` → createfood:pasta_plate_mushroom ← #c:mushrooms, #c:pasta_plate ≈ `createfood:minecraft/crafting/pasta_plate_mushroom_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_mushroom_tomato_sauce_from_shaped` → createfood:pasta_plate_mushroom_tomato_sauce ← #c:mushrooms, #c:pasta_plate_tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_mushroom_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_mushroom_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_mushroom_tomato_sauce ← #c:pasta_plate_mushroom, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_mushroom_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_mutton_chop_from_shaped` → createfood:pasta_plate_mutton_chop ← #c:cooked_mutton, #c:pasta_plate ≈ `createfood:minecraft/crafting/pasta_plate_mutton_chop_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_mutton_chop_tomato_sauce_from_shaped` → farmersdelight:pasta_with_mutton_chop ← #c:pasta_plate_mutton_chop, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_mutton_chop_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_mutton_chop_tomato_sauce_from_shaped_alt` → farmersdelight:pasta_with_mutton_chop ← #c:cooked_mutton, #c:pasta_plate_tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_mutton_chop_tomato_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/pasta_plate_pork_meatballs_from_shaped` → createfood:pasta_plate_pork_meatballs ← #c:pasta_plate, #c:small_pork_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_pork_meatballs_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_pork_meatballs_tomato_sauce_from_shaped` → createfood:pasta_plate_pork_meatballs_tomato_sauce ← #c:pasta_plate_pork_meatballs, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_pork_meatballs_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_pork_meatballs_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_pork_meatballs_tomato_sauce ← #c:pasta_plate_tomato_sauce, #c:small_pork_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_pork_meatballs_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_rabbit_meatballs_from_shaped` → createfood:pasta_plate_rabbit_meatballs ← #c:pasta_plate, #c:small_rabbit_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_rabbit_meatballs_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_rabbit_meatballs_tomato_sauce_from_shaped` → createfood:pasta_plate_rabbit_meatballs_tomato_sauce ← #c:pasta_plate_rabbit_meatballs, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_rabbit_meatballs_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_rabbit_meatballs_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_rabbit_meatballs_tomato_sauce ← #c:pasta_plate_tomato_sauce, #c:small_rabbit_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_rabbit_meatballs_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_slime_from_shaped` → createfood:pasta_plate_slime ← #c:pasta_plate, #c:slime_bucket ≈ `createfood:minecraft/crafting/pasta_plate_slime_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_slimeballs_from_shaped` → createfood:pasta_plate_slimeballs ← #c:pasta_plate, #c:small_slimeballs ≈ `createfood:minecraft/crafting/pasta_plate_slimeballs_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_squid_ink_from_shaped` → createfood:pasta_plate_squid_ink ← #c:pasta_plate, #c:squid_ink_bucket ≈ `createfood:minecraft/crafting/pasta_plate_squid_ink_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_strider_meatballs_from_shaped` → createfood:pasta_plate_strider_meatballs ← #c:pasta_plate, #c:small_strider_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_strider_meatballs_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_strider_meatballs_tomato_sauce_from_shaped` → createfood:pasta_plate_strider_meatballs_tomato_sauce ← #c:pasta_plate_strider_meatballs, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_strider_meatballs_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_strider_meatballs_tomato_sauce_from_shaped_alt_2` → createfood:pasta_plate_strider_meatballs_tomato_sauce ← #c:pasta_plate_tomato_sauce, #c:small_strider_meatballs ≈ `createfood:minecraft/crafting/pasta_plate_strider_meatballs_tomato_sauce_from_crafting_alt_2`
+- `createfood:crafting/shaped/pasta_plate_tomato_sauce_from_shaped` → createfood:pasta_plate_tomato_sauce ← #c:cooked_pasta, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pasta_plate_tomato_sauce_from_shaped_alt` → createfood:pasta_plate_tomato_sauce ← #c:pasta_plate, farmersdelight:tomato_sauce ≈ `createfood:minecraft/crafting/pasta_plate_tomato_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/pink_gelatin_dessert_block_from_shaped_alt` → createfood:pink_gelatin_dessert_block ← #c:dyes/pink, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/pink_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/pita_dough_from_shaped` → createfood:pita_dough ← #c:pita_dough_ingredients, #c:vegetable_oil ≈ `createfood:minecraft/crafting/pita_dough_from_crafting`
+- `createfood:crafting/shaped/pizza_dough_tomato_sauce_from_shaped` → createfood:pizza_dough_tomato_sauce ← #c:pizza_dough, #c:tomato_sauce ≈ `createfood:minecraft/crafting/pizza_dough_tomato_sauce_from_crafting`
+- `createfood:crafting/shaped/pork_meatball_sandwich_from_shaped` → createfood:pork_meatball_sandwich ← #c:small_pork_meatballs, minecraft:bread ≈ `createfood:minecraft/crafting/pork_meatball_sandwich_from_crafting`
+- `createfood:crafting/shaped/pork_meatball_stick_1_from_shaped` → createfood:pork_meatball_stick_1 ← #c:pork_meatball, minecraft:stick ≈ `createfood:minecraft/crafting/pork_meatball_stick_1_from_crafting`
+- `createfood:crafting/shaped/pork_meatball_stick_2_from_shaped` → createfood:pork_meatball_stick_2 ← #c:pork_meatball, createfood:pork_meatball_stick_1 ≈ `createfood:minecraft/crafting/pork_meatball_stick_2_from_crafting`
+- `createfood:crafting/shaped/pork_meatball_stick_3_from_shaped` → createfood:pork_meatball_stick_3 ← #c:pork_meatball, createfood:pork_meatball_stick_2 ≈ `createfood:minecraft/crafting/pork_meatball_stick_3_from_crafting`
+- `createfood:crafting/shaped/pork_taco_from_shaped` → createfood:pork_taco ← #c:cooked_pork, #c:taco_shell ≈ `createfood:minecraft/crafting/pork_taco_from_crafting`
+- `createfood:crafting/shaped/pork_taco_lettuce_from_shaped_alt` → createfood:pork_taco_lettuce ← #c:foods/leafy_green, #c:pork_taco ≈ `createfood:minecraft/crafting/pork_taco_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/pork_taco_lettuce_taco_sauce_from_shaped_alt` → createfood:pork_taco_lettuce_taco_sauce ← #c:pork_taco_lettuce, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/pork_taco_lettuce_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/potato_cream_soup_bowl_cheese_from_shaped` → createfood:potato_cream_soup_bowl_cheese ← #c:cheeses, #c:potato_cream_soup_bowl ≈ `createfood:minecraft/crafting/potato_cream_soup_bowl_cheese_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_beetroot_from_shaped` → createfood:pumpernickel_toast_cream_cheese_beetroot ← #c:beetroot, #c:pumpernickel_toast_cream_cheese ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_beetroot_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_beetroot_honey_from_shaped` → createfood:pumpernickel_toast_cream_cheese_beetroot_honey ← #c:pumpernickel_toast_cream_cheese_beetroot, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_beetroot_honey_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_from_shaped` → createfood:pumpernickel_toast_cream_cheese ← #c:cream_cheese, #c:pumpernickel_toast_slice ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_mushroom_bacon_from_shaped` → createfood:pumpernickel_toast_cream_cheese_mushroom_bacon ← #c:cooked_pork, #c:pumpernickel_toast_cream_cheese_mushroom ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_mushroom_bacon_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_mushroom_from_shaped` → createfood:pumpernickel_toast_cream_cheese_mushroom ← #c:mushrooms, #c:pumpernickel_toast_cream_cheese ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_mushroom_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_salmon_from_shaped` → createfood:pumpernickel_toast_cream_cheese_salmon ← #c:foods/cooked_salmon, #c:pumpernickel_toast_cream_cheese ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_salmon_from_crafting`
+- `createfood:crafting/shaped/pumpernickel_toast_cream_cheese_salmon_onion_from_shaped` → createfood:pumpernickel_toast_cream_cheese_salmon_onion ← #c:onion, #c:pumpernickel_toast_cream_cheese_salmon ≈ `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_salmon_onion_from_crafting`
+- `createfood:crafting/shaped/purple_gelatin_dessert_block_from_shaped_alt` → createfood:purple_gelatin_dessert_block ← #c:dyes/purple, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/purple_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/rabbit_meatball_sandwich_from_shaped` → createfood:rabbit_meatball_sandwich ← #c:small_rabbit_meatballs, minecraft:bread ≈ `createfood:minecraft/crafting/rabbit_meatball_sandwich_from_crafting`
+- `createfood:crafting/shaped/rabbit_meatball_stick_1_from_shaped` → createfood:rabbit_meatball_stick_1 ← #c:rabbit_meatball, minecraft:stick ≈ `createfood:minecraft/crafting/rabbit_meatball_stick_1_from_crafting`
+- `createfood:crafting/shaped/rabbit_meatball_stick_2_from_shaped` → createfood:rabbit_meatball_stick_2 ← #c:rabbit_meatball, createfood:rabbit_meatball_stick_1 ≈ `createfood:minecraft/crafting/rabbit_meatball_stick_2_from_crafting`
+- `createfood:crafting/shaped/rabbit_meatball_stick_3_from_shaped` → createfood:rabbit_meatball_stick_3 ← #c:rabbit_meatball, createfood:rabbit_meatball_stick_2 ≈ `createfood:minecraft/crafting/rabbit_meatball_stick_3_from_crafting`
+- `createfood:crafting/shaped/rabbit_taco_from_shaped` → createfood:rabbit_taco ← #c:cooked_rabbit, #c:taco_shell ≈ `createfood:minecraft/crafting/rabbit_taco_from_crafting`
+- `createfood:crafting/shaped/rabbit_taco_lettuce_from_shaped_alt` → createfood:rabbit_taco_lettuce ← #c:foods/leafy_green, #c:rabbit_taco ≈ `createfood:minecraft/crafting/rabbit_taco_lettuce_from_crafting_alt`
+- `createfood:crafting/shaped/rabbit_taco_lettuce_taco_sauce_from_shaped_alt` → createfood:rabbit_taco_lettuce_taco_sauce ← #c:rabbit_taco_lettuce, #c:taco_sauce_bottle ≈ `createfood:minecraft/crafting/rabbit_taco_lettuce_taco_sauce_from_crafting_alt`
+- `createfood:crafting/shaped/raw_apple_cheesecake_from_shaped` → createfood:raw_apple_cheesecake ← #c:apple, #c:raw_cheesecake ≈ `createfood:minecraft/crafting/raw_apple_cheesecake_from_crafting`
+- `createfood:crafting/shaped/raw_apple_pie_from_shaped` → createfood:raw_apple_pie ← #c:apple_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_apple_pie_from_crafting`
+- `createfood:crafting/shaped/raw_bacon_calzone_from_shaped` → createfood:raw_bacon_calzone ← #c:cooked_pork, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_bacon_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_bacon_pizza_from_shaped` → createfood:raw_bacon_pizza ← #c:cooked_pork, #c:raw_cheese_pizza ≈ `createfood:minecraft/crafting/raw_bacon_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_beef_calzone_from_shaped` → createfood:raw_beef_calzone ← #c:cooked_beef, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_beef_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_berry_cheesecake_from_shaped` → createfood:raw_berry_cheesecake ← #c:raw_cheesecake, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/raw_berry_cheesecake_from_crafting`
+- `createfood:crafting/shaped/raw_berry_pie_from_shaped` → createfood:raw_berry_pie ← #c:berry_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_berry_pie_from_crafting`
+- `createfood:crafting/shaped/raw_cheese_calzone_from_shaped` → createfood:raw_cheese_calzone ← #c:cheeses, #c:raw_calzone ≈ `createfood:minecraft/crafting/raw_cheese_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_cheese_pizza_from_shaped` → createfood:raw_cheese_pizza ← #c:cheeses, #c:pizza_dough_tomato_sauce ≈ `createfood:minecraft/crafting/raw_cheese_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_cheesecake_from_shaped` → createfood:raw_cheesecake ← #c:cheesecake_filling_bucket, #c:raw_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_cheesecake_from_crafting`
+- `createfood:crafting/shaped/raw_chicken_calzone_from_shaped` → createfood:raw_chicken_calzone ← #c:cooked_chicken, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_chicken_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_chocolate_pie_from_shaped` → createfood:raw_chocolate_pie ← #c:chocolate_bottle, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_from_crafting`
+- `createfood:crafting/shaped/raw_chocolate_pie_graham_cracker_from_shaped` → createfood:raw_chocolate_pie_graham_cracker ← #c:chocolate_bottle, #c:raw_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_graham_cracker_from_crafting`
+- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:minecraft/crafting/raw_chocolate_sweet_roll_base_from_crafting`
+- `createfood:crafting/shaped/raw_chorus_fruit_cheesecake_from_shaped` → createfood:raw_chorus_fruit_cheesecake ← #c:chorus_fruit, #c:raw_cheesecake ≈ `createfood:minecraft/crafting/raw_chorus_fruit_cheesecake_from_crafting`
+- `createfood:crafting/shaped/raw_chorus_fruit_pie_from_shaped` → createfood:raw_chorus_fruit_pie ← #c:chorus_fruit_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chorus_fruit_pie_from_crafting`
+- `createfood:crafting/shaped/raw_cream_pie_chocolate_graham_cracker_from_shaped` → createfood:raw_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_chocolate_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_cream_pie_chocolate_graham_cracker_from_crafting`
+- `createfood:crafting/shaped/raw_cream_pie_graham_cracker_from_shaped` → createfood:raw_cream_pie_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_cream_pie_graham_cracker_from_crafting`
+- `createfood:crafting/shaped/raw_fish_bacon_pizza_from_shaped` → createfood:raw_fish_bacon_pizza ← #c:cooked_pork, #c:raw_fish_pizza ≈ `createfood:minecraft/crafting/raw_fish_bacon_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_fish_bacon_pizza_from_shaped_alt_2` → createfood:raw_fish_bacon_pizza ← #c:cooked_fishes, #c:raw_bacon_pizza ≈ `createfood:minecraft/crafting/raw_fish_bacon_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_fish_calzone_from_shaped` → createfood:raw_fish_calzone ← #c:cooked_fishes, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_fish_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_fish_onion_pizza_from_shaped` → createfood:raw_fish_onion_pizza ← #c:onion, #c:raw_fish_pizza ≈ `createfood:minecraft/crafting/raw_fish_onion_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_fish_onion_pizza_from_shaped_alt_2` → createfood:raw_fish_onion_pizza ← #c:cooked_fishes, #c:raw_onion_pizza ≈ `createfood:minecraft/crafting/raw_fish_onion_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_fish_pizza_from_shaped` → createfood:raw_fish_pizza ← #c:cooked_fishes, #c:raw_cheese_pizza ≈ `createfood:minecraft/crafting/raw_fish_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_glow_berry_cheesecake_from_shaped` → createfood:raw_glow_berry_cheesecake ← #c:raw_cheesecake, minecraft:glow_berries ≈ `createfood:minecraft/crafting/raw_glow_berry_cheesecake_from_crafting`
+- `createfood:crafting/shaped/raw_glow_berry_pie_from_shaped` → createfood:raw_glow_berry_pie ← #c:glow_berry_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_glow_berry_pie_from_crafting`
+- `createfood:crafting/shaped/raw_meat_pie_from_shaped` → createfood:raw_meat_pie ← #c:meat_pie_filling, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_meat_pie_from_crafting`
+- `createfood:crafting/shaped/raw_mushroom_bacon_pizza_from_shaped` → createfood:raw_mushroom_bacon_pizza ← #c:cooked_pork, #c:raw_mushroom_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_bacon_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_mushroom_bacon_pizza_from_shaped_alt_2` → createfood:raw_mushroom_bacon_pizza ← #c:mushrooms, #c:raw_bacon_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_bacon_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_mushroom_calzone_from_shaped` → createfood:raw_mushroom_calzone ← #c:mushrooms, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_mushroom_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_mushroom_fish_pizza_from_shaped` → createfood:raw_mushroom_fish_pizza ← #c:cooked_fishes, #c:raw_mushroom_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_fish_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_mushroom_fish_pizza_from_shaped_alt_2` → createfood:raw_mushroom_fish_pizza ← #c:mushrooms, #c:raw_fish_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_fish_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_mushroom_onion_pizza_from_shaped` → createfood:raw_mushroom_onion_pizza ← #c:onion, #c:raw_mushroom_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_onion_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_mushroom_onion_pizza_from_shaped_alt_2` → createfood:raw_mushroom_onion_pizza ← #c:mushrooms, #c:raw_onion_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_onion_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_mushroom_pizza_from_shaped` → createfood:raw_mushroom_pizza ← #c:mushrooms, #c:raw_cheese_pizza ≈ `createfood:minecraft/crafting/raw_mushroom_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_mutton_calzone_from_shaped` → createfood:raw_mutton_calzone ← #c:gyro_mutton_ingredient, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_mutton_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_onion_bacon_pizza_from_shaped` → createfood:raw_onion_bacon_pizza ← #c:cooked_pork, #c:raw_onion_pizza ≈ `createfood:minecraft/crafting/raw_onion_bacon_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_onion_bacon_pizza_from_shaped_alt_2` → createfood:raw_onion_bacon_pizza ← #c:onion, #c:raw_bacon_pizza ≈ `createfood:minecraft/crafting/raw_onion_bacon_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_onion_calzone_from_shaped` → createfood:raw_onion_calzone ← #c:onion, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_onion_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_onion_pizza_from_shaped` → createfood:raw_onion_pizza ← #c:onion, #c:raw_cheese_pizza ≈ `createfood:minecraft/crafting/raw_onion_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_pumpkin_pie_from_shaped` → createfood:raw_pumpkin_pie ← #c:pumpkin_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_pumpkin_pie_from_crafting`
+- `createfood:crafting/shaped/raw_rabbit_calzone_from_shaped` → createfood:raw_rabbit_calzone ← #c:cooked_rabbit, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_rabbit_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_bacon_pizza_from_shaped` → createfood:raw_sausage_bacon_pizza ← #c:cooked_pork, #c:raw_sausage_pizza ≈ `createfood:minecraft/crafting/raw_sausage_bacon_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_bacon_pizza_from_shaped_alt_2` → createfood:raw_sausage_bacon_pizza ← #c:raw_bacon_pizza, #c:sausages ≈ `createfood:minecraft/crafting/raw_sausage_bacon_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_sausage_calzone_from_shaped` → createfood:raw_sausage_calzone ← #c:raw_cheese_calzone, #c:sausages ≈ `createfood:minecraft/crafting/raw_sausage_calzone_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_fish_pizza_from_shaped` → createfood:raw_sausage_fish_pizza ← #c:cooked_fishes, #c:raw_sausage_pizza ≈ `createfood:minecraft/crafting/raw_sausage_fish_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_fish_pizza_from_shaped_alt_2` → createfood:raw_sausage_fish_pizza ← #c:raw_fish_pizza, #c:sausages ≈ `createfood:minecraft/crafting/raw_sausage_fish_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_sausage_mushroom_pizza_from_shaped` → createfood:raw_sausage_mushroom_pizza ← #c:mushrooms, #c:raw_sausage_pizza ≈ `createfood:minecraft/crafting/raw_sausage_mushroom_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_mushroom_pizza_from_shaped_alt_2` → createfood:raw_sausage_mushroom_pizza ← #c:raw_mushroom_pizza, #c:sausages ≈ `createfood:minecraft/crafting/raw_sausage_mushroom_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_sausage_onion_pizza_from_shaped` → createfood:raw_sausage_onion_pizza ← #c:onion, #c:raw_sausage_pizza ≈ `createfood:minecraft/crafting/raw_sausage_onion_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_onion_pizza_from_shaped_alt_2` → createfood:raw_sausage_onion_pizza ← #c:raw_onion_pizza, #c:sausages ≈ `createfood:minecraft/crafting/raw_sausage_onion_pizza_from_crafting_alt_2`
+- `createfood:crafting/shaped/raw_sausage_pizza_from_shaped` → createfood:raw_sausage_pizza ← #c:raw_cheese_pizza, #c:sausages ≈ `createfood:minecraft/crafting/raw_sausage_pizza_from_crafting`
+- `createfood:crafting/shaped/raw_sausage_roll_from_shaped` → 3× createfood:raw_sausage_roll ← #c:butter_dough, #c:raw_sausages ≈ `createfood:minecraft/crafting/raw_sausage_roll_from_crafting`
+- `createfood:crafting/shaped/raw_scone_from_shaped` → 2× createfood:raw_scone ← #c:butter_dough_small, #c:sugar_dough_small ≈ `createfood:minecraft/crafting/raw_scone_from_crafting`
+- `createfood:crafting/shaped/raw_spicy_sausage_roll_from_shaped` → 3× createfood:raw_spicy_sausage_roll ← #c:butter_dough, #c:raw_spicy_sausages ≈ `createfood:minecraft/crafting/raw_spicy_sausage_roll_from_crafting`
+- `createfood:crafting/shaped/raw_spicy_sausages_from_shaped` → createfood:raw_spicy_sausages ← #c:paprika, #c:raw_sausages ≈ `createfood:minecraft/crafting/raw_spicy_sausages_from_crafting`
+- `createfood:crafting/shaped/raw_sweet_roll_base_from_shaped` → createfood:raw_sweet_roll_base ← #c:sugar, #c:sweet_dough ≈ `createfood:minecraft/crafting/raw_sweet_roll_base_from_crafting`
+- `createfood:crafting/shaped/red_gelatin_dessert_block_from_shaped_alt` → createfood:red_gelatin_dessert_block ← #c:dyes/red, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/red_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/sausage_biscuit_bacon_from_shaped` → createfood:sausage_biscuit_bacon ← #c:cooked_pork, #c:sausage_biscuit ≈ `createfood:minecraft/crafting/sausage_biscuit_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_bacon_from_shaped` → createfood:sausage_biscuit_cheese_bacon ← #c:cooked_pork, #c:sausage_biscuit_cheese ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_bacon_from_shaped_alt` → createfood:sausage_biscuit_cheese_bacon ← #c:cheeses, #c:sausage_biscuit_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_bacon_from_crafting_alt`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_fried_egg_bacon_from_shaped` → createfood:sausage_biscuit_cheese_fried_egg_bacon ← #c:cooked_pork, #c:sausage_biscuit_cheese_fried_egg ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_fried_egg_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_fried_egg_bacon_from_shaped_alt` → createfood:sausage_biscuit_cheese_fried_egg_bacon ← #c:cooked_eggs, #c:sausage_biscuit_cheese_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_fried_egg_bacon_from_crafting_alt`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_fried_egg_bacon_from_shaped_alt_2` → createfood:sausage_biscuit_cheese_fried_egg_bacon ← #c:cheeses, #c:sausage_biscuit_fried_egg_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_fried_egg_bacon_from_crafting_alt_2`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_fried_egg_from_shaped` → createfood:sausage_biscuit_cheese_fried_egg ← #c:cooked_eggs, #c:sausage_biscuit_cheese ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_fried_egg_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_fried_egg_from_shaped_alt` → createfood:sausage_biscuit_cheese_fried_egg ← #c:cheeses, #c:sausage_biscuit_fried_egg ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_fried_egg_from_crafting_alt`
+- `createfood:crafting/shaped/sausage_biscuit_cheese_from_shaped` → createfood:sausage_biscuit_cheese ← #c:cheeses, #c:sausage_biscuit ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_fried_egg_bacon_from_shaped` → createfood:sausage_biscuit_fried_egg_bacon ← #c:cooked_pork, #c:sausage_biscuit_fried_egg ≈ `createfood:minecraft/crafting/sausage_biscuit_fried_egg_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_fried_egg_bacon_from_shaped_alt` → createfood:sausage_biscuit_fried_egg_bacon ← #c:cooked_eggs, #c:sausage_biscuit_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_fried_egg_bacon_from_crafting_alt`
+- `createfood:crafting/shaped/sausage_biscuit_fried_egg_from_shaped` → createfood:sausage_biscuit_fried_egg ← #c:cooked_eggs, #c:sausage_biscuit ≈ `createfood:minecraft/crafting/sausage_biscuit_fried_egg_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_from_shaped` → createfood:sausage_biscuit ← #c:biscuit, #c:sausage_patty ≈ `createfood:minecraft/crafting/sausage_biscuit_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_bacon_from_shaped` → createfood:sausage_biscuit_sandwich_bacon ← #c:biscuit, #c:sausage_biscuit_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_cheese_bacon_from_shaped` → createfood:sausage_biscuit_sandwich_cheese_bacon ← #c:biscuit, #c:sausage_biscuit_cheese_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_cheese_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_cheese_fried_egg_bacon_from_shaped` → createfood:sausage_biscuit_sandwich_cheese_fried_egg_bacon ← #c:biscuit, #c:sausage_biscuit_cheese_fried_egg_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_cheese_fried_egg_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_cheese_fried_egg_from_shaped` → createfood:sausage_biscuit_sandwich_cheese_fried_egg ← #c:biscuit, #c:sausage_biscuit_cheese_fried_egg ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_cheese_fried_egg_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_cheese_from_shaped` → createfood:sausage_biscuit_sandwich_cheese ← #c:biscuit, #c:sausage_biscuit_cheese ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_cheese_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_fried_egg_bacon_from_shaped` → createfood:sausage_biscuit_sandwich_fried_egg_bacon ← #c:biscuit, #c:sausage_biscuit_fried_egg_bacon ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_fried_egg_bacon_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_fried_egg_from_shaped` → createfood:sausage_biscuit_sandwich_fried_egg ← #c:biscuit, #c:sausage_biscuit_fried_egg ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_fried_egg_from_crafting`
+- `createfood:crafting/shaped/sausage_biscuit_sandwich_from_shaped` → createfood:sausage_biscuit_sandwich ← #c:biscuit, #c:sausage_biscuit ≈ `createfood:minecraft/crafting/sausage_biscuit_sandwich_from_crafting`
+- `createfood:crafting/shaped/scone_apple_jam_from_shaped` → createfood:scone_apple_jam ← #c:apple_jam_bottle, #c:scone ≈ `createfood:minecraft/crafting/scone_apple_jam_from_crafting`
+- `createfood:crafting/shaped/scone_berry_jam_from_shaped` → createfood:scone_berry_jam ← #c:berry_jam_bottle, #c:scone ≈ `createfood:minecraft/crafting/scone_berry_jam_from_crafting`
+- `createfood:crafting/shaped/scone_butter_from_shaped` → createfood:scone_butter ← #c:butter, #c:scone ≈ `createfood:minecraft/crafting/scone_butter_from_crafting`
+- `createfood:crafting/shaped/scone_chorus_fruit_jam_from_shaped` → createfood:scone_chorus_fruit_jam ← #c:chorus_fruit_jam_bottle, #c:scone ≈ `createfood:minecraft/crafting/scone_chorus_fruit_jam_from_crafting`
+- `createfood:crafting/shaped/scone_glow_berry_jam_from_shaped` → createfood:scone_glow_berry_jam ← #c:glow_berry_jam_bottle, #c:scone ≈ `createfood:minecraft/crafting/scone_glow_berry_jam_from_crafting`
+- `createfood:crafting/shaped/scone_melon_jam_from_shaped` → createfood:scone_melon_jam ← #c:melon_jam_bottle, #c:scone ≈ `createfood:minecraft/crafting/scone_melon_jam_from_crafting`
+- `createfood:crafting/shaped/scrambled_egg_sandwich_from_shaped` → createfood:scrambled_egg_sandwich ← #c:bread_slice, #c:bread_slice_scrambled_egg ≈ `createfood:minecraft/crafting/scrambled_egg_sandwich_from_crafting`
+- `createfood:crafting/shaped/sliced_brown_mushroom_salt_from_shaped` → createfood:sliced_brown_mushroom_salt ← #c:salt, #c:sliced_brown_mushroom ≈ `createfood:minecraft/crafting/sliced_brown_mushroom_salt_from_crafting`
+- `createfood:crafting/shaped/sliced_crimson_fungus_salt_from_shaped` → createfood:sliced_crimson_fungus_salt ← #c:salt, #c:sliced_crimson_fungus ≈ `createfood:minecraft/crafting/sliced_crimson_fungus_salt_from_crafting`
+- `createfood:crafting/shaped/sliced_red_mushroom_salt_from_shaped` → createfood:sliced_red_mushroom_salt ← #c:salt, #c:sliced_red_mushroom ≈ `createfood:minecraft/crafting/sliced_red_mushroom_salt_from_crafting`
+- `createfood:crafting/shaped/sliced_warped_fungus_salt_from_shaped` → createfood:sliced_warped_fungus_salt ← #c:salt, #c:sliced_warped_fungus ≈ `createfood:minecraft/crafting/sliced_warped_fungus_salt_from_crafting`
+- `createfood:crafting/shaped/smore_from_shaped_alt_2` → createfood:smore ← #c:graham_cracker, #c:graham_cracker_chocolate_marshmallow ≈ `createfood:minecraft/crafting/smore_from_crafting_alt_2`
+- `createfood:crafting/shaped/smore_from_shaped_alt_3` → createfood:smore ← #c:graham_cracker_chocolate, #c:graham_cracker_marshmallow ≈ `createfood:minecraft/crafting/smore_from_crafting_alt_3`
+- `createfood:crafting/shaped/smores_pie_from_shaped` → createfood:smores_pie ← #c:chocolate_pie_graham_cracker, #c:marshmallow ≈ `createfood:minecraft/crafting/smores_pie_from_crafting`
+- `createfood:crafting/shaped/spicy_chicken_nuggets_from_shaped` → createfood:spicy_chicken_nuggets ← #c:chicken_nuggets, #c:paprika ≈ `createfood:minecraft/crafting/spicy_chicken_nuggets_from_crafting`
+- `createfood:crafting/shaped/spicy_sausages_from_shaped` → createfood:spicy_sausages ← #c:paprika, #c:sausages ≈ `createfood:minecraft/crafting/spicy_sausages_from_crafting`
+- `createfood:crafting/shaped/strider_meatball_sandwich_from_shaped` → createfood:strider_meatball_sandwich ← #c:small_strider_meatballs, minecraft:bread ≈ `createfood:minecraft/crafting/strider_meatball_sandwich_from_crafting`
+- `createfood:crafting/shaped/strider_meatball_stick_1_from_shaped` → createfood:strider_meatball_stick_1 ← #c:strider_meatball, minecraft:stick ≈ `createfood:minecraft/crafting/strider_meatball_stick_1_from_crafting`
+- `createfood:crafting/shaped/strider_meatball_stick_2_from_shaped` → createfood:strider_meatball_stick_2 ← #c:strider_meatball, createfood:strider_meatball_stick_1 ≈ `createfood:minecraft/crafting/strider_meatball_stick_2_from_crafting`
+- `createfood:crafting/shaped/strider_meatball_stick_3_from_shaped` → createfood:strider_meatball_stick_3 ← #c:strider_meatball, createfood:strider_meatball_stick_2 ≈ `createfood:minecraft/crafting/strider_meatball_stick_3_from_crafting`
+- `createfood:crafting/shaped/sugar_cane_juice_bottle_from_shaped_alt` → createfood:sugar_cane_juice_bottle ← #c:sugar_cane, minecraft:glass_bottle ≈ `createfood:minecraft/crafting/sugar_cane_juice_bottle_from_crafting_alt`
+- `createfood:crafting/shaped/sweet_roll_from_shaped` → create:sweet_roll ← #c:cream_frosting, #c:sweet_roll_base ≈ `createfood:minecraft/crafting/sweet_roll_from_crafting`
+- `createfood:crafting/shaped/toast_butter_from_shaped` → createfood:toast_butter ← #c:butter, #c:toast ≈ `createfood:minecraft/crafting/toast_butter_from_crafting`
+- `createfood:crafting/shaped/toast_fried_egg_plate_from_shaped` → createfood:toast_fried_egg_plate ← #c:cooked_eggs, #c:toast_plate ≈ `createfood:minecraft/crafting/toast_fried_egg_plate_from_crafting`
+- `createfood:crafting/shaped/toast_plate_from_shaped` → createfood:toast_plate ← #c:toast_slice, minecraft:bowl ≈ `createfood:minecraft/crafting/toast_plate_from_crafting`
+- `createfood:crafting/shaped/toffee_apple_from_shaped` → createfood:toffee_apple ← #c:toffee, minecraft:apple ≈ `createfood:minecraft/crafting/toffee_apple_from_crafting`
+- `createfood:crafting/shaped/toffee_apple_slice_from_shaped` → createfood:toffee_apple_slice ← #c:apple_slice, #c:toffee ≈ `createfood:minecraft/crafting/toffee_apple_slice_from_crafting`
+- `createfood:crafting/shaped/toffee_berries_from_shaped` → createfood:toffee_berries ← #c:toffee, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/toffee_berries_from_crafting`
+- `createfood:crafting/shaped/toffee_chip_chocolate_milkshake_bottle_from_shaped` → createfood:toffee_chip_chocolate_milkshake_bottle ← #c:chocolate_milkshake, #c:toffee_chips ≈ `createfood:minecraft/crafting/toffee_chip_chocolate_milkshake_bottle_from_crafting`
+- `createfood:crafting/shaped/toffee_chip_ice_cream_cone_from_shaped` → createfood:toffee_chip_ice_cream_cone ← #c:ice_cream_cone, #c:toffee_chips ≈ `createfood:minecraft/crafting/toffee_chip_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/toffee_chocolate_from_shaped` → createfood:toffee_chocolate ← #c:hollow_chocolate, #c:toffee ≈ `createfood:minecraft/crafting/toffee_chocolate_from_crafting`
+- `createfood:crafting/shaped/toffee_chocolate_pastry_from_shaped` → createfood:toffee_chocolate_pastry ← #c:chocolate_pastry_base, #c:toffee ≈ `createfood:minecraft/crafting/toffee_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/toffee_chocolate_sweet_roll_from_shaped` → createfood:toffee_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, #c:toffee ≈ `createfood:minecraft/crafting/toffee_chocolate_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/toffee_dark_chocolate_from_shaped` → createfood:toffee_dark_chocolate ← #c:hollow_dark_chocolate, #c:toffee ≈ `createfood:minecraft/crafting/toffee_dark_chocolate_from_crafting`
+- `createfood:crafting/shaped/toffee_fudge_ice_cream_bowl_from_shaped` → createfood:toffee_fudge_ice_cream_bowl ← #c:ice_cream_bowl, #c:toffee_fudge ≈ `createfood:minecraft/crafting/toffee_fudge_ice_cream_bowl_from_crafting`
+- `createfood:crafting/shaped/toffee_marshmallow_stick_from_shaped` → createfood:toffee_marshmallow_stick ← #c:marshmallow_stick, #c:toffee ≈ `createfood:minecraft/crafting/toffee_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/toffee_pastry_from_shaped` → createfood:toffee_pastry ← #c:pastry_base, #c:toffee ≈ `createfood:minecraft/crafting/toffee_pastry_from_crafting`
+- `createfood:crafting/shaped/toffee_pretzel_stick_from_shaped` → createfood:toffee_pretzel_stick ← #c:pretzel_stick, #c:toffee ≈ `createfood:minecraft/crafting/toffee_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/toffee_sweet_roll_from_shaped` → createfood:toffee_sweet_roll ← #c:sweet_roll_base, #c:toffee ≈ `createfood:minecraft/crafting/toffee_sweet_roll_from_crafting`
+- `createfood:crafting/shaped/toffee_toast_from_shaped` → createfood:toffee_toast ← #c:toast, #c:toffee ≈ `createfood:minecraft/crafting/toffee_toast_from_crafting`
+- `createfood:crafting/shaped/toffee_white_chocolate_from_shaped` → createfood:toffee_white_chocolate ← #c:hollow_white_chocolate, #c:toffee ≈ `createfood:minecraft/crafting/toffee_white_chocolate_from_crafting`
+- `createfood:crafting/shaped/tomato_cream_soup_bowl_cheese_from_shaped` → createfood:tomato_cream_soup_bowl_cheese ← #c:cheeses, #c:tomato_cream_soup_bowl ≈ `createfood:minecraft/crafting/tomato_cream_soup_bowl_cheese_from_crafting`
+- `createfood:crafting/shaped/ube_cream_ube_cake_from_shaped` → createfood:ube_cream_ube_cake ← #c:ube_cake_base, #c:ube_cream_frosting_piping_bag ≈ `createfood:minecraft/crafting/ube_cream_ube_cake_from_crafting`
+- `createfood:crafting/shaped/ube_cream_ube_cupcake_from_shaped` → createfood:ube_cream_ube_cupcake ← #c:ube_cream_frosting, #c:ube_cupcake_base ≈ `createfood:minecraft/crafting/ube_cream_ube_cupcake_from_crafting`
+- `createfood:crafting/shaped/vegetable_sandwich_beetroot_lettuce_from_shaped` → createfood:vegetable_sandwich_beetroot_lettuce ← #c:bread_slice_beetroot, #c:bread_slice_lettuce ≈ `createfood:minecraft/crafting/vegetable_sandwich_beetroot_lettuce_from_crafting`
+- `createfood:crafting/shaped/vegetable_sandwich_beetroot_lettuce_from_shaped_alt_2` → createfood:vegetable_sandwich_beetroot_lettuce ← #c:bread_slice, #c:bread_slice_beetroot_lettuce ≈ `createfood:minecraft/crafting/vegetable_sandwich_beetroot_lettuce_from_crafting_alt_2`
+- `createfood:crafting/shaped/vegetable_sandwich_lettuce_tomato_from_shaped_alt` → createfood:vegetable_sandwich_lettuce_tomato ← #c:bread_slice, #c:bread_slice_lettuce_tomato ≈ `createfood:minecraft/crafting/vegetable_sandwich_lettuce_tomato_from_crafting_alt`
+- `createfood:crafting/shaped/white_chocolate_apple_from_shaped` → createfood:white_chocolate_apple ← #c:bar_of_white_chocolate, minecraft:apple ≈ `createfood:minecraft/crafting/white_chocolate_apple_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_apple_slice_from_shaped` → createfood:white_chocolate_apple_slice ← #c:apple_slice, #c:white_chocolate ≈ `createfood:minecraft/crafting/white_chocolate_apple_slice_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_berries_from_shaped` → createfood:white_chocolate_berries ← #c:bar_of_white_chocolate, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/white_chocolate_berries_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_chip_chocolate_milkshake_bottle_from_shaped` → createfood:white_chocolate_chip_chocolate_milkshake_bottle ← #c:chocolate_milkshake, #c:white_chocolate_chips ≈ `createfood:minecraft/crafting/white_chocolate_chip_chocolate_milkshake_bottle_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_chip_ice_cream_cone_from_shaped` → createfood:white_chocolate_chip_ice_cream_cone ← #c:ice_cream_cone, #c:white_chocolate_chips ≈ `createfood:minecraft/crafting/white_chocolate_chip_ice_cream_cone_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_chocolate_pastry_from_shaped` → createfood:white_chocolate_chocolate_pastry ← #c:chocolate_pastry_base, #c:white_chocolate_bottle ≈ `createfood:minecraft/crafting/white_chocolate_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_dried_coffee_beans_from_shaped` → createfood:white_chocolate_dried_coffee_beans ← #c:bar_of_white_chocolate, #c:dried_coffee_beans ≈ `createfood:minecraft/crafting/white_chocolate_dried_coffee_beans_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_marshmallow_stick_from_shaped` → createfood:white_chocolate_marshmallow_stick ← #c:marshmallow_stick, #c:white_chocolate_bottle ≈ `createfood:minecraft/crafting/white_chocolate_marshmallow_stick_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_pastry_from_shaped` → createfood:white_chocolate_pastry ← #c:pastry_base, #c:white_chocolate_bottle ≈ `createfood:minecraft/crafting/white_chocolate_pastry_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_pretzel_stick_from_shaped` → createfood:white_chocolate_pretzel_stick ← #c:pretzel_stick, #c:white_chocolate_bottle ≈ `createfood:minecraft/crafting/white_chocolate_pretzel_stick_from_crafting`
+- `createfood:crafting/shaped/white_chocolate_toast_from_shaped` → createfood:white_chocolate_toast ← #c:toast, #c:white_chocolate_bottle ≈ `createfood:minecraft/crafting/white_chocolate_toast_from_crafting`
+- `createfood:crafting/shaped/yellow_gelatin_dessert_block_from_shaped_alt` → createfood:yellow_gelatin_dessert_block ← #c:dyes/yellow, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/yellow_gelatin_dessert_block_from_crafting_alt`
+- `createfood:crafting/shaped/yogurt_bowl_berry_from_shaped` → createfood:yogurt_bowl_berry ← #c:yogurt_bowl, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/yogurt_bowl_berry_from_crafting`
+- `createfood:crafting/shaped/yogurt_bowl_chorus_fruit_from_shaped` → createfood:yogurt_bowl_chorus_fruit ← #c:chorus_fruit, #c:yogurt_bowl ≈ `createfood:minecraft/crafting/yogurt_bowl_chorus_fruit_from_crafting`
+- `createfood:crafting/shaped/yogurt_bowl_glow_berry_from_shaped` → createfood:yogurt_bowl_glow_berry ← #c:yogurt_bowl, minecraft:glow_berries ≈ `createfood:minecraft/crafting/yogurt_bowl_glow_berry_from_crafting`
+- `createfood:crafting/shaped/yogurt_bowl_honey_from_shaped` → createfood:yogurt_bowl_honey ← #c:yogurt_bowl, minecraft:honey_bottle ≈ `createfood:minecraft/crafting/yogurt_bowl_honey_from_crafting`
+- `createfood:minecraft/crafting/shaped/apple_popsicle_from_shaped` → createfood:apple_popsicle ← #c:apple, 2×minecraft:ice, minecraft:stick ≈ `createfood:minecraft/crafting/apple_popsicle_from_crafting`
+- `createfood:minecraft/crafting/shaped/berry_popsicle_from_shaped` → createfood:berry_popsicle ← 2×minecraft:ice, minecraft:stick, minecraft:sweet_berries ≈ `createfood:minecraft/crafting/berry_popsicle_from_crafting`
+- `createfood:minecraft/crafting/shaped/chorus_fruit_popsicle_from_shaped` → createfood:chorus_fruit_popsicle ← #c:chorus_fruit, 2×minecraft:ice, minecraft:stick ≈ `createfood:minecraft/crafting/chorus_fruit_popsicle_from_crafting`
+- `createfood:minecraft/crafting/shaped/glow_berry_popsicle_from_shaped` → createfood:glow_berry_popsicle ← minecraft:glow_berries, 2×minecraft:ice, minecraft:stick ≈ `createfood:minecraft/crafting/glow_berry_popsicle_from_crafting`
+
+## Бесформенные из 1 ингредиента — миксер не берёт, одиночный механический крафтер (585)
+
+- `arphex:ab_block_uncraft` → 9× arphex:abyssal_crystal ← arphex:block_of_abyssal_crystal
+- `arphex:bloodworm_craft` → minecraft:raw_copper ← arphex:bloodworm_grub
+- `arphex:core_split` → 8× arphex:hedonic_gem ← arphex:core_of_eternal_suffering
+- `arphex:ge_block_uncraft` → 9× arphex:void_geode ← arphex:block_of_void_geode
+- `arphex:op_block_uncraft` → 9× arphex:fire_opal ← arphex:block_of_fire_opal
+- `bellsandwhistles:metro/corrugated_metro_panel_from_panel` → bellsandwhistles:corrugated_metro_panel ← bellsandwhistles:metro_panel
+- `bellsandwhistles:metro/corrugated_metro_sheet` → bellsandwhistles:corrugated_metro_casing ← bellsandwhistles:metro_casing
+- `bellsandwhistles:metro/metro_panel_from_corrugated` → bellsandwhistles:metro_panel ← bellsandwhistles:corrugated_metro_panel
+- `bits_n_bobs:crafting/headlamp` → 2× bits_n_bobs:headlamp ← bits_n_bobs:lightbulb
+- `cgs:lead_ingot` → 9× cgs:lead_ingot ← cgs:lead_block
+- `cgs:lead_nugget` → 9× cgs:lead_nugget ← cgs:lead_ingot
+- `cgs:raw_lead` → 9× cgs:raw_lead ← cgs:raw_lead_block
+- `cgs:steel_ingot` → 9× cgs:steel_ingot ← cgs:steel_block
+- `cgs:steel_nugget` → 9× cgs:steel_nugget ← cgs:steel_ingot
+- `copycats:crafting/copycat_flat_pane_from_conversion` → copycats:copycat_flat_pane ← copycats:copycat_pane
+- `copycats:crafting/copycat_folding_door_from_conversion` → copycats:copycat_folding_door ← copycats:copycat_sliding_door
+- `copycats:crafting/copycat_half_layer_from_conversion` → copycats:copycat_half_layer ← copycats:copycat_stacked_half_layer
+- `copycats:crafting/copycat_pane_from_conversion` → copycats:copycat_pane ← copycats:copycat_flat_pane
+- `copycats:crafting/copycat_panel_from_conversion` → create:copycat_panel ← copycats:copycat_trapdoor
+- `copycats:crafting/copycat_slice_from_conversion` → copycats:copycat_slice ← copycats:copycat_vertical_slice
+- `copycats:crafting/copycat_sliding_door_from_conversion` → copycats:copycat_sliding_door ← copycats:copycat_folding_door
+- `copycats:crafting/copycat_slope_from_conversion` → copycats:copycat_slope ← copycats:copycat_vertical_slope
+- `copycats:crafting/copycat_stacked_half_layer_from_conversion` → copycats:copycat_stacked_half_layer ← copycats:copycat_vertical_half_layer
+- `copycats:crafting/copycat_stairs_from_conversion` → copycats:copycat_stairs ← copycats:copycat_vertical_stairs
+- `copycats:crafting/copycat_step_from_conversion` → create:copycat_step ← #copycats:copycat_vertical_step
+- `copycats:crafting/copycat_trapdoor_from_conversion` → copycats:copycat_trapdoor ← create:copycat_panel
+- `copycats:crafting/copycat_vertical_half_layer_from_conversion` → copycats:copycat_vertical_half_layer ← copycats:copycat_half_layer
+- `copycats:crafting/copycat_vertical_slice_from_conversion` → copycats:copycat_vertical_slice ← copycats:copycat_slice
+- `copycats:crafting/copycat_vertical_slope_from_conversion` → copycats:copycat_vertical_slope ← copycats:copycat_slope
+- `copycats:crafting/copycat_vertical_stairs_from_conversion` → copycats:copycat_vertical_stairs ← copycats:copycat_stairs
+- `copycats:crafting/copycat_vertical_step_from_conversion` → copycats:copycat_vertical_step ← create:copycat_step
+- `create:crafting/appliances/attribute_filter_clear` → create:attribute_filter ← create:attribute_filter
+- `create:crafting/appliances/clipboard_clear` → create:clipboard ← create:clipboard
+- `create:crafting/appliances/filter_clear` → create:filter ← create:filter
+- `create:crafting/appliances/package_filter_clear` → create:package_filter ← create:package_filter
+- `create:crafting/appliances/schedule_clear` → create:schedule ← create:schedule
+- `create:crafting/kinetics/copper_valve_handle_from_others` → create:copper_valve_handle ← #create:valve_handles
+- `create:crafting/kinetics/furnace_minecart_from_contraption_cart` → minecraft:furnace_minecart ← create:furnace_minecart_contraption
+- `create:crafting/kinetics/gearbox_from_conversion` → create:gearbox ← create:vertical_gearbox
+- `create:crafting/kinetics/linear_chassis_from_conversion` → create:linear_chassis ← create:secondary_linear_chassis
+- `create:crafting/kinetics/minecart_from_contraption_cart` → minecraft:minecart ← create:minecart_contraption
+- `create:crafting/kinetics/sail_frame_from_conversion` → create:sail_frame ← create:white_sail
+- `create:crafting/kinetics/secondary_linear_chassis_from_conversion` → create:secondary_linear_chassis ← create:linear_chassis
+- `create:crafting/kinetics/speedometer_from_conversion` → create:speedometer ← create:stressometer
+- `create:crafting/kinetics/stressometer_from_conversion` → create:stressometer ← create:speedometer
+- `create:crafting/kinetics/vertical_gearbox_from_conversion` → create:vertical_gearbox ← create:gearbox
+- `create:crafting/kinetics/white_sail_from_conversion` → create:white_sail ← create:sail_frame
+- `create:crafting/logistics/andesite_table_cloth_clear` → create:andesite_table_cloth ← create:andesite_table_cloth
+- `create:crafting/logistics/black_table_cloth_clear` → create:black_table_cloth ← create:black_table_cloth
+- `create:crafting/logistics/blue_table_cloth_clear` → create:blue_table_cloth ← create:blue_table_cloth
+- `create:crafting/logistics/brass_table_cloth_clear` → create:brass_table_cloth ← create:brass_table_cloth
+- `create:crafting/logistics/brown_table_cloth_clear` → create:brown_table_cloth ← create:brown_table_cloth
+- `create:crafting/logistics/copper_table_cloth_clear` → create:copper_table_cloth ← create:copper_table_cloth
+- `create:crafting/logistics/cyan_table_cloth_clear` → create:cyan_table_cloth ← create:cyan_table_cloth
+- `create:crafting/logistics/factory_gauge_clear` → create:factory_gauge ← create:factory_gauge
+- `create:crafting/logistics/gray_table_cloth_clear` → create:gray_table_cloth ← create:gray_table_cloth
+- `create:crafting/logistics/green_table_cloth_clear` → create:green_table_cloth ← create:green_table_cloth
+- `create:crafting/logistics/light_blue_table_cloth_clear` → create:light_blue_table_cloth ← create:light_blue_table_cloth
+- `create:crafting/logistics/light_gray_table_cloth_clear` → create:light_gray_table_cloth ← create:light_gray_table_cloth
+- `create:crafting/logistics/lime_table_cloth_clear` → create:lime_table_cloth ← create:lime_table_cloth
+- `create:crafting/logistics/magenta_table_cloth_clear` → create:magenta_table_cloth ← create:magenta_table_cloth
+- `create:crafting/logistics/orange_table_cloth_clear` → create:orange_table_cloth ← create:orange_table_cloth
+- `create:crafting/logistics/packager_from_conversion` → create:packager ← create:repackager
+- `create:crafting/logistics/pink_table_cloth_clear` → create:pink_table_cloth ← create:pink_table_cloth
+- `create:crafting/logistics/purple_table_cloth_clear` → create:purple_table_cloth ← create:purple_table_cloth
+- `create:crafting/logistics/red_table_cloth_clear` → create:red_table_cloth ← create:red_table_cloth
+- `create:crafting/logistics/redstone_requester_clear` → create:redstone_requester ← create:redstone_requester
+- `create:crafting/logistics/repackager_from_conversion` → create:repackager ← create:packager
+- `create:crafting/logistics/stock_link_clear` → create:stock_link ← create:stock_link
+- `create:crafting/logistics/stock_ticker_clear` → create:stock_ticker ← create:stock_ticker
+- `create:crafting/logistics/white_table_cloth_clear` → create:white_table_cloth ← create:white_table_cloth
+- `create:crafting/logistics/yellow_table_cloth_clear` → create:yellow_table_cloth ← create:yellow_table_cloth
+- `create:crafting/materials/andesite_alloy_from_block` → 9× create:andesite_alloy ← create:andesite_alloy_block
+- `create:crafting/materials/brass_ingot_from_decompacting` → 9× create:brass_ingot ← #c:storage_blocks/brass
+- `create:crafting/materials/brass_nugget_from_decompacting` → 9× create:brass_nugget ← #c:ingots/brass
+- `create:crafting/materials/cardboard_from_block` → 4× create:cardboard ← create:cardboard_block
+- `create:crafting/materials/cardboard_from_bound_block` → 4× create:cardboard ← create:bound_cardboard_block
+- `create:crafting/materials/copper_nugget` → 9× create:copper_nugget ← #c:ingots/copper
+- `create:crafting/materials/experience_nugget_from_block` → 9× create:experience_nugget ← create:experience_block
+- `create:crafting/materials/raw_zinc` → 9× create:raw_zinc ← create:raw_zinc_block
+- `create:crafting/materials/rose_quartz_tiles_from_conversion` → create:rose_quartz_tiles ← create:small_rose_quartz_tiles
+- `create:crafting/materials/small_rose_quartz_tiles_from_conversion` → create:small_rose_quartz_tiles ← create:rose_quartz_tiles
+- `create:crafting/materials/zinc_ingot_from_decompacting` → 9× create:zinc_ingot ← #c:storage_blocks/zinc
+- `create:crafting/materials/zinc_nugget_from_decompacting` → 9× create:zinc_nugget ← #c:ingots/zinc
+- `create_aquatic_ambitions:crafting/materials/prismarine_alloy_from_block` → 9× create_aquatic_ambitions:prismarine_alloy ← create_aquatic_ambitions:prismarine_alloy_block
+- `create_compressed:belt` → 9× create:belt_connector ← create_compressed:belt_block
+- `create_compressed:brass_sheet` → 9× create:brass_sheet ← create_compressed:brass_sheet_block
+- `create_compressed:cinder_flour` → 9× create:cinder_flour ← create_compressed:cinder_flour_pile
+- `create_compressed:cogwheel` → 9× create:cogwheel ← create_compressed:cogwheel_block
+- `create_compressed:copper_sheet` → 9× create:copper_sheet ← create_compressed:copper_sheet_block
+- `create_compressed:crushed_raw_aluminum` → 9× create:crushed_raw_aluminum ← create_compressed:crushed_aluminum_pile
+- `create_compressed:crushed_raw_copper` → 9× create:crushed_raw_copper ← create_compressed:crushed_copper_pile
+- `create_compressed:crushed_raw_gold` → 9× create:crushed_raw_gold ← create_compressed:crushed_gold_pile
+- `create_compressed:crushed_raw_iron` → 9× create:crushed_raw_iron ← create_compressed:crushed_iron_pile
+- `create_compressed:crushed_raw_lead` → 9× create:crushed_raw_lead ← create_compressed:crushed_lead_pile
+- `create_compressed:crushed_raw_nickel` → 9× create:crushed_raw_nickel ← create_compressed:crushed_nickel_pile
+- `create_compressed:crushed_raw_osmium` → 9× create:crushed_raw_osmium ← create_compressed:crushed_osmium_pile
+- `create_compressed:crushed_raw_platinum` → 9× create:crushed_raw_platinum ← create_compressed:crushed_platinum_pile
+- `create_compressed:crushed_raw_quicksilver` → 9× create:crushed_raw_quicksilver ← create_compressed:crushed_quicksilver_pile
+- `create_compressed:crushed_raw_silver` → 9× create:crushed_raw_silver ← create_compressed:crushed_silver_pile
+- `create_compressed:crushed_raw_tin` → 9× create:crushed_raw_tin ← create_compressed:crushed_tin_pile
+- `create_compressed:crushed_raw_uranium` → 9× create:crushed_raw_uranium ← create_compressed:crushed_uranium_pile
+- `create_compressed:crushed_raw_zinc` → 9× create:crushed_raw_zinc ← create_compressed:crushed_zinc_pile
+- `create_compressed:dough` → 9× create:dough ← create_compressed:dough_block
+- `create_compressed:gold_sheet` → 9× create:golden_sheet ← create_compressed:gold_sheet_block
+- `create_compressed:iron_sheet` → 9× create:iron_sheet ← create_compressed:iron_sheet_block
+- `create_compressed:large_cogwheel` → 9× create:large_cogwheel ← create_compressed:large_cogwheel_block
+- `create_compressed:mechanism` → 9× create:precision_mechanism ← create_compressed:mechanism_block
+- `create_compressed:polished_rose_quartz` → 9× create:polished_rose_quartz ← create_compressed:rose_quartz_polished_block
+- `create_compressed:powdered_obsidian` → 9× create:powdered_obsidian ← create_compressed:powdered_obsidian_pile
+- `create_compressed:pulp` → 9× create:pulp ← create_compressed:pulp_block
+- `create_compressed:rose_quartz` → 9× create:rose_quartz ← create_compressed:rose_quartz_crystal_block
+- `create_compressed:shaft` → 9× create:shaft ← create_compressed:shaft_bundle
+- `create_compressed:sturdy_sheet` → 9× create:sturdy_sheet ← create_compressed:sturdy_sheet_block
+- `create_compressed:wheat_flour` → 9× create:wheat_flour ← create_compressed:wheat_flour_pile
+- `create_confectionery:candy_cane_recipe_2` → 4× create_confectionery:candy_cane ← create_confectionery:candy_cane_block
+- `create_connected:crafting/kinetics/brass_gearbox_from_conversion` → create_connected:brass_gearbox ← create_connected:vertical_brass_gearbox
+- `create_connected:crafting/kinetics/clutch_from_conversion` → create:clutch ← create_connected:inverted_clutch
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_black_dye` → create_connected:empty_fan_catalyst ← create_connected:black_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_blasting` → create_connected:empty_fan_catalyst ← create_connected:fan_blasting_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_blue_dye` → create_connected:empty_fan_catalyst ← create_connected:blue_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_brown_dye` → create_connected:empty_fan_catalyst ← create_connected:brown_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_cyan_dye` → create_connected:empty_fan_catalyst ← create_connected:cyan_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_ending_dragon_head` → create_connected:empty_fan_catalyst ← create_connected:fan_ending_catalyst_dragon_head
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_ending_dragons_breath` → create_connected:empty_fan_catalyst ← create_connected:fan_ending_catalyst_dragons_breath
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_freezing` → create_connected:empty_fan_catalyst ← create_connected:fan_freezing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_gray_dye` → create_connected:empty_fan_catalyst ← create_connected:gray_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_green_dye` → create_connected:empty_fan_catalyst ← create_connected:green_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_haunting` → create_connected:empty_fan_catalyst ← create_connected:fan_haunting_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_light_blue_dye` → create_connected:empty_fan_catalyst ← create_connected:light_blue_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_light_gray_dye` → create_connected:empty_fan_catalyst ← create_connected:light_gray_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_lime_dye` → create_connected:empty_fan_catalyst ← create_connected:lime_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_magenta_dye` → create_connected:empty_fan_catalyst ← create_connected:magenta_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_orange_dye` → create_connected:empty_fan_catalyst ← create_connected:orange_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_pink_dye` → create_connected:empty_fan_catalyst ← create_connected:pink_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_purple_dye` → create_connected:empty_fan_catalyst ← create_connected:purple_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_red_dye` → create_connected:empty_fan_catalyst ← create_connected:red_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_sanding` → create_connected:empty_fan_catalyst ← create_connected:fan_sanding_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_seething` → create_connected:empty_fan_catalyst ← create_connected:fan_seething_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_smoking` → create_connected:empty_fan_catalyst ← create_connected:fan_smoking_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_splashing` → create_connected:empty_fan_catalyst ← create_connected:fan_splashing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_white_dye` → create_connected:empty_fan_catalyst ← create_connected:white_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/empty_fan_catalyst_from_yellow_dye` → create_connected:empty_fan_catalyst ← create_connected:yellow_fan_dyeing_catalyst
+- `create_connected:crafting/kinetics/fluid_tank_from_conversion` → create:fluid_tank ← create_connected:fluid_vessel
+- `create_connected:crafting/kinetics/fluid_vessel_from_conversion` → create_connected:fluid_vessel ← create:fluid_tank
+- `create_connected:crafting/kinetics/gearshift_from_conversion` → create:gearshift ← create_connected:inverted_gearshift
+- `create_connected:crafting/kinetics/inverted_clutch_from_conversion` → create_connected:inverted_clutch ← create:clutch
+- `create_connected:crafting/kinetics/inverted_gearshift_from_conversion` → create_connected:inverted_gearshift ← create:gearshift
+- `create_connected:crafting/kinetics/item_silo_from_conversion` → create_connected:item_silo ← create:item_vault
+- `create_connected:crafting/kinetics/item_vault_from_conversion` → create:item_vault ← create_connected:item_silo
+- `create_connected:crafting/kinetics/kinetic_battery_discharge` → create_connected:kinetic_battery ← create_connected:kinetic_battery
+- `create_connected:crafting/kinetics/linked_transmitter_from_conversion` → create_connected:linked_transmitter ← create:redstone_link
+- `create_connected:crafting/kinetics/parallel_gearbox_from_conversion` → create_connected:parallel_gearbox ← create_connected:vertical_parallel_gearbox
+- `create_connected:crafting/kinetics/redstone_link_from_conversion` → create:redstone_link ← create_connected:linked_transmitter
+- `create_connected:crafting/kinetics/six_way_gearbox_from_conversion` → create_connected:six_way_gearbox ← create_connected:vertical_six_way_gearbox
+- `create_connected:crafting/kinetics/vertical_brass_gearbox_from_conversion` → create_connected:vertical_brass_gearbox ← create_connected:brass_gearbox
+- `create_connected:crafting/kinetics/vertical_parallel_gearbox_from_conversion` → create_connected:vertical_parallel_gearbox ← create_connected:parallel_gearbox
+- `create_connected:crafting/kinetics/vertical_six_way_gearbox_from_conversion` → create_connected:vertical_six_way_gearbox ← create_connected:six_way_gearbox
+- `create_connected:crafting/palettes/copycat_beam_compat` → copycats:copycat_beam ← create_connected:copycat_beam
+- `create_connected:crafting/palettes/copycat_block_compat` → copycats:copycat_block ← create_connected:copycat_block
+- `create_connected:crafting/palettes/copycat_board_compat` → copycats:copycat_board ← create_connected:copycat_board
+- `create_connected:crafting/palettes/copycat_fence_compat` → copycats:copycat_fence ← create_connected:copycat_fence
+- `create_connected:crafting/palettes/copycat_fence_gate_compat` → copycats:copycat_fence_gate ← create_connected:copycat_fence_gate
+- `create_connected:crafting/palettes/copycat_slab_compat` → copycats:copycat_slab ← create_connected:copycat_slab
+- `create_connected:crafting/palettes/copycat_stairs_compat` → copycats:copycat_stairs ← create_connected:copycat_stairs
+- `create_connected:crafting/palettes/copycat_vertical_step_compat` → copycats:copycat_vertical_step ← create_connected:copycat_vertical_step
+- `create_connected:crafting/palettes/copycat_wall_compat` → copycats:copycat_wall ← create_connected:copycat_wall
+- `create_enchantment_industry:crafting/super_experience_nugget` → 9× create_enchantment_industry:super_experience_nugget ← create_enchantment_industry:super_experience_block
+- `create_mobile_packages:bee_port_clear` → create_mobile_packages:bee_port ← create_mobile_packages:bee_port
+- `create_mobile_packages:portable_stock_ticker_clear` → create_mobile_packages:portable_stock_ticker ← create_mobile_packages:portable_stock_ticker
+- `create_new_age:shapeless/copper_wire` → 4× create_new_age:copper_wire ← create_new_age:copper_wire_block
+- `create_new_age:shapeless/overcharged_diamond_wire` → 4× create_new_age:overcharged_diamond_wire ← create_new_age:overcharged_diamond_wire_block
+- `create_new_age:shapeless/overcharged_golden_wire` → 4× create_new_age:overcharged_golden_wire ← create_new_age:overcharged_golden_wire_block
+- `create_new_age:shapeless/overcharged_iron_wire` → 4× create_new_age:overcharged_iron_wire ← create_new_age:overcharged_iron_wire_block
+- `create_sa:small_filling_tank_recipe` → create_sa:small_filling_tank ← create:fluid_tank
+- `create_sa:vault_component_recipe` → create_sa:vault_component ← create:item_vault
+- `create_sa:vault_recipe` → create:item_vault ← create_sa:vault_component
+- `create_vibrant_vaults:crafting/basic_shipping_container_from_rotating` → create_vibrant_vaults:basic_shipping_container ← create_vibrant_vaults:vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/black_basic_shipping_container_from_rotating` → create_vibrant_vaults:black_basic_shipping_container ← create_vibrant_vaults:black_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/black_item_vault_from_rotating` → create_vibrant_vaults:black_item_vault ← create_vibrant_vaults:black_vertical_item_vault
+- `create_vibrant_vaults:crafting/black_redstone_requester_clear` → create_vibrant_vaults:black_redstone_requester ← create_vibrant_vaults:black_redstone_requester
+- `create_vibrant_vaults:crafting/black_shipping_container_from_rotating` → create_vibrant_vaults:black_shipping_container ← create_vibrant_vaults:black_vertical_shipping_container
+- `create_vibrant_vaults:crafting/black_stock_link_clear` → create_vibrant_vaults:black_stock_link ← create_vibrant_vaults:black_stock_link
+- `create_vibrant_vaults:crafting/black_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:black_vertical_basic_shipping_container ← create_vibrant_vaults:black_basic_shipping_container
+- `create_vibrant_vaults:crafting/black_vertical_item_vault_from_rotating` → create_vibrant_vaults:black_vertical_item_vault ← create_vibrant_vaults:black_item_vault
+- `create_vibrant_vaults:crafting/black_vertical_shipping_container_from_rotating` → create_vibrant_vaults:black_vertical_shipping_container ← create_vibrant_vaults:black_shipping_container
+- `create_vibrant_vaults:crafting/blue_basic_shipping_container_from_rotating` → create_vibrant_vaults:blue_basic_shipping_container ← create_vibrant_vaults:blue_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/blue_item_vault_from_rotating` → create_vibrant_vaults:blue_item_vault ← create_vibrant_vaults:blue_vertical_item_vault
+- `create_vibrant_vaults:crafting/blue_redstone_requester_clear` → create_vibrant_vaults:blue_redstone_requester ← create_vibrant_vaults:blue_redstone_requester
+- `create_vibrant_vaults:crafting/blue_shipping_container_from_rotating` → create_vibrant_vaults:blue_shipping_container ← create_vibrant_vaults:blue_vertical_shipping_container
+- `create_vibrant_vaults:crafting/blue_stock_link_clear` → create_vibrant_vaults:blue_stock_link ← create_vibrant_vaults:blue_stock_link
+- `create_vibrant_vaults:crafting/blue_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:blue_vertical_basic_shipping_container ← create_vibrant_vaults:blue_basic_shipping_container
+- `create_vibrant_vaults:crafting/blue_vertical_item_vault_from_rotating` → create_vibrant_vaults:blue_vertical_item_vault ← create_vibrant_vaults:blue_item_vault
+- `create_vibrant_vaults:crafting/blue_vertical_shipping_container_from_rotating` → create_vibrant_vaults:blue_vertical_shipping_container ← create_vibrant_vaults:blue_shipping_container
+- `create_vibrant_vaults:crafting/brown_basic_shipping_container_from_rotating` → create_vibrant_vaults:brown_basic_shipping_container ← create_vibrant_vaults:brown_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/brown_item_vault_from_rotating` → create_vibrant_vaults:brown_item_vault ← create_vibrant_vaults:brown_vertical_item_vault
+- `create_vibrant_vaults:crafting/brown_redstone_requester_clear` → create_vibrant_vaults:brown_redstone_requester ← create_vibrant_vaults:brown_redstone_requester
+- `create_vibrant_vaults:crafting/brown_shipping_container_from_rotating` → create_vibrant_vaults:brown_shipping_container ← create_vibrant_vaults:brown_vertical_shipping_container
+- `create_vibrant_vaults:crafting/brown_stock_link_clear` → create_vibrant_vaults:brown_stock_link ← create_vibrant_vaults:brown_stock_link
+- `create_vibrant_vaults:crafting/brown_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:brown_vertical_basic_shipping_container ← create_vibrant_vaults:brown_basic_shipping_container
+- `create_vibrant_vaults:crafting/brown_vertical_item_vault_from_rotating` → create_vibrant_vaults:brown_vertical_item_vault ← create_vibrant_vaults:brown_item_vault
+- `create_vibrant_vaults:crafting/brown_vertical_shipping_container_from_rotating` → create_vibrant_vaults:brown_vertical_shipping_container ← create_vibrant_vaults:brown_shipping_container
+- `create_vibrant_vaults:crafting/cyan_basic_shipping_container_from_rotating` → create_vibrant_vaults:cyan_basic_shipping_container ← create_vibrant_vaults:cyan_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/cyan_item_vault_from_rotating` → create_vibrant_vaults:cyan_item_vault ← create_vibrant_vaults:cyan_vertical_item_vault
+- `create_vibrant_vaults:crafting/cyan_redstone_requester_clear` → create_vibrant_vaults:cyan_redstone_requester ← create_vibrant_vaults:cyan_redstone_requester
+- `create_vibrant_vaults:crafting/cyan_shipping_container_from_rotating` → create_vibrant_vaults:cyan_shipping_container ← create_vibrant_vaults:cyan_vertical_shipping_container
+- `create_vibrant_vaults:crafting/cyan_stock_link_clear` → create_vibrant_vaults:cyan_stock_link ← create_vibrant_vaults:cyan_stock_link
+- `create_vibrant_vaults:crafting/cyan_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:cyan_vertical_basic_shipping_container ← create_vibrant_vaults:cyan_basic_shipping_container
+- `create_vibrant_vaults:crafting/cyan_vertical_item_vault_from_rotating` → create_vibrant_vaults:cyan_vertical_item_vault ← create_vibrant_vaults:cyan_item_vault
+- `create_vibrant_vaults:crafting/cyan_vertical_shipping_container_from_rotating` → create_vibrant_vaults:cyan_vertical_shipping_container ← create_vibrant_vaults:cyan_shipping_container
+- `create_vibrant_vaults:crafting/gray_basic_shipping_container_from_rotating` → create_vibrant_vaults:gray_basic_shipping_container ← create_vibrant_vaults:gray_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/gray_item_vault_from_rotating` → create_vibrant_vaults:gray_item_vault ← create_vibrant_vaults:gray_vertical_item_vault
+- `create_vibrant_vaults:crafting/gray_redstone_requester_clear` → create_vibrant_vaults:gray_redstone_requester ← create_vibrant_vaults:gray_redstone_requester
+- `create_vibrant_vaults:crafting/gray_shipping_container_from_rotating` → create_vibrant_vaults:gray_shipping_container ← create_vibrant_vaults:gray_vertical_shipping_container
+- `create_vibrant_vaults:crafting/gray_stock_link_clear` → create_vibrant_vaults:gray_stock_link ← create_vibrant_vaults:gray_stock_link
+- `create_vibrant_vaults:crafting/gray_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:gray_vertical_basic_shipping_container ← create_vibrant_vaults:gray_basic_shipping_container
+- `create_vibrant_vaults:crafting/gray_vertical_item_vault_from_rotating` → create_vibrant_vaults:gray_vertical_item_vault ← create_vibrant_vaults:gray_item_vault
+- `create_vibrant_vaults:crafting/gray_vertical_shipping_container_from_rotating` → create_vibrant_vaults:gray_vertical_shipping_container ← create_vibrant_vaults:gray_shipping_container
+- `create_vibrant_vaults:crafting/green_basic_shipping_container_from_rotating` → create_vibrant_vaults:green_basic_shipping_container ← create_vibrant_vaults:green_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/green_item_vault_from_rotating` → create_vibrant_vaults:green_item_vault ← create_vibrant_vaults:green_vertical_item_vault
+- `create_vibrant_vaults:crafting/green_redstone_requester_clear` → create_vibrant_vaults:green_redstone_requester ← create_vibrant_vaults:green_redstone_requester
+- `create_vibrant_vaults:crafting/green_shipping_container_from_rotating` → create_vibrant_vaults:green_shipping_container ← create_vibrant_vaults:green_vertical_shipping_container
+- `create_vibrant_vaults:crafting/green_stock_link_clear` → create_vibrant_vaults:green_stock_link ← create_vibrant_vaults:green_stock_link
+- `create_vibrant_vaults:crafting/green_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:green_vertical_basic_shipping_container ← create_vibrant_vaults:green_basic_shipping_container
+- `create_vibrant_vaults:crafting/green_vertical_item_vault_from_rotating` → create_vibrant_vaults:green_vertical_item_vault ← create_vibrant_vaults:green_item_vault
+- `create_vibrant_vaults:crafting/green_vertical_shipping_container_from_rotating` → create_vibrant_vaults:green_vertical_shipping_container ← create_vibrant_vaults:green_shipping_container
+- `create_vibrant_vaults:crafting/item_vault_from_vertical_item_vault` → create:item_vault ← create_vibrant_vaults:vertical_item_vault
+- `create_vibrant_vaults:crafting/light_blue_basic_shipping_container_from_rotating` → create_vibrant_vaults:light_blue_basic_shipping_container ← create_vibrant_vaults:light_blue_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/light_blue_item_vault_from_rotating` → create_vibrant_vaults:light_blue_item_vault ← create_vibrant_vaults:light_blue_vertical_item_vault
+- `create_vibrant_vaults:crafting/light_blue_redstone_requester_clear` → create_vibrant_vaults:light_blue_redstone_requester ← create_vibrant_vaults:light_blue_redstone_requester
+- `create_vibrant_vaults:crafting/light_blue_shipping_container_from_rotating` → create_vibrant_vaults:light_blue_shipping_container ← create_vibrant_vaults:light_blue_vertical_shipping_container
+- `create_vibrant_vaults:crafting/light_blue_stock_link_clear` → create_vibrant_vaults:light_blue_stock_link ← create_vibrant_vaults:light_blue_stock_link
+- `create_vibrant_vaults:crafting/light_blue_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:light_blue_vertical_basic_shipping_container ← create_vibrant_vaults:light_blue_basic_shipping_container
+- `create_vibrant_vaults:crafting/light_blue_vertical_item_vault_from_rotating` → create_vibrant_vaults:light_blue_vertical_item_vault ← create_vibrant_vaults:light_blue_item_vault
+- `create_vibrant_vaults:crafting/light_blue_vertical_shipping_container_from_rotating` → create_vibrant_vaults:light_blue_vertical_shipping_container ← create_vibrant_vaults:light_blue_shipping_container
+- `create_vibrant_vaults:crafting/light_gray_basic_shipping_container_from_rotating` → create_vibrant_vaults:light_gray_basic_shipping_container ← create_vibrant_vaults:light_gray_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/light_gray_item_vault_from_rotating` → create_vibrant_vaults:light_gray_item_vault ← create_vibrant_vaults:light_gray_vertical_item_vault
+- `create_vibrant_vaults:crafting/light_gray_redstone_requester_clear` → create_vibrant_vaults:light_gray_redstone_requester ← create_vibrant_vaults:light_gray_redstone_requester
+- `create_vibrant_vaults:crafting/light_gray_shipping_container_from_rotating` → create_vibrant_vaults:light_gray_shipping_container ← create_vibrant_vaults:light_gray_vertical_shipping_container
+- `create_vibrant_vaults:crafting/light_gray_stock_link_clear` → create_vibrant_vaults:light_gray_stock_link ← create_vibrant_vaults:light_gray_stock_link
+- `create_vibrant_vaults:crafting/light_gray_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:light_gray_vertical_basic_shipping_container ← create_vibrant_vaults:light_gray_basic_shipping_container
+- `create_vibrant_vaults:crafting/light_gray_vertical_item_vault_from_rotating` → create_vibrant_vaults:light_gray_vertical_item_vault ← create_vibrant_vaults:light_gray_item_vault
+- `create_vibrant_vaults:crafting/light_gray_vertical_shipping_container_from_rotating` → create_vibrant_vaults:light_gray_vertical_shipping_container ← create_vibrant_vaults:light_gray_shipping_container
+- `create_vibrant_vaults:crafting/lime_basic_shipping_container_from_rotating` → create_vibrant_vaults:lime_basic_shipping_container ← create_vibrant_vaults:lime_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/lime_item_vault_from_rotating` → create_vibrant_vaults:lime_item_vault ← create_vibrant_vaults:lime_vertical_item_vault
+- `create_vibrant_vaults:crafting/lime_redstone_requester_clear` → create_vibrant_vaults:lime_redstone_requester ← create_vibrant_vaults:lime_redstone_requester
+- `create_vibrant_vaults:crafting/lime_shipping_container_from_rotating` → create_vibrant_vaults:lime_shipping_container ← create_vibrant_vaults:lime_vertical_shipping_container
+- `create_vibrant_vaults:crafting/lime_stock_link_clear` → create_vibrant_vaults:lime_stock_link ← create_vibrant_vaults:lime_stock_link
+- `create_vibrant_vaults:crafting/lime_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:lime_vertical_basic_shipping_container ← create_vibrant_vaults:lime_basic_shipping_container
+- `create_vibrant_vaults:crafting/lime_vertical_item_vault_from_rotating` → create_vibrant_vaults:lime_vertical_item_vault ← create_vibrant_vaults:lime_item_vault
+- `create_vibrant_vaults:crafting/lime_vertical_shipping_container_from_rotating` → create_vibrant_vaults:lime_vertical_shipping_container ← create_vibrant_vaults:lime_shipping_container
+- `create_vibrant_vaults:crafting/magenta_basic_shipping_container_from_rotating` → create_vibrant_vaults:magenta_basic_shipping_container ← create_vibrant_vaults:magenta_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/magenta_item_vault_from_rotating` → create_vibrant_vaults:magenta_item_vault ← create_vibrant_vaults:magenta_vertical_item_vault
+- `create_vibrant_vaults:crafting/magenta_redstone_requester_clear` → create_vibrant_vaults:magenta_redstone_requester ← create_vibrant_vaults:magenta_redstone_requester
+- `create_vibrant_vaults:crafting/magenta_shipping_container_from_rotating` → create_vibrant_vaults:magenta_shipping_container ← create_vibrant_vaults:magenta_vertical_shipping_container
+- `create_vibrant_vaults:crafting/magenta_stock_link_clear` → create_vibrant_vaults:magenta_stock_link ← create_vibrant_vaults:magenta_stock_link
+- `create_vibrant_vaults:crafting/magenta_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:magenta_vertical_basic_shipping_container ← create_vibrant_vaults:magenta_basic_shipping_container
+- `create_vibrant_vaults:crafting/magenta_vertical_item_vault_from_rotating` → create_vibrant_vaults:magenta_vertical_item_vault ← create_vibrant_vaults:magenta_item_vault
+- `create_vibrant_vaults:crafting/magenta_vertical_shipping_container_from_rotating` → create_vibrant_vaults:magenta_vertical_shipping_container ← create_vibrant_vaults:magenta_shipping_container
+- `create_vibrant_vaults:crafting/orange_basic_shipping_container_from_rotating` → create_vibrant_vaults:orange_basic_shipping_container ← create_vibrant_vaults:orange_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/orange_item_vault_from_rotating` → create_vibrant_vaults:orange_item_vault ← create_vibrant_vaults:orange_vertical_item_vault
+- `create_vibrant_vaults:crafting/orange_redstone_requester_clear` → create_vibrant_vaults:orange_redstone_requester ← create_vibrant_vaults:orange_redstone_requester
+- `create_vibrant_vaults:crafting/orange_shipping_container_from_rotating` → create_vibrant_vaults:orange_shipping_container ← create_vibrant_vaults:orange_vertical_shipping_container
+- `create_vibrant_vaults:crafting/orange_stock_link_clear` → create_vibrant_vaults:orange_stock_link ← create_vibrant_vaults:orange_stock_link
+- `create_vibrant_vaults:crafting/orange_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:orange_vertical_basic_shipping_container ← create_vibrant_vaults:orange_basic_shipping_container
+- `create_vibrant_vaults:crafting/orange_vertical_item_vault_from_rotating` → create_vibrant_vaults:orange_vertical_item_vault ← create_vibrant_vaults:orange_item_vault
+- `create_vibrant_vaults:crafting/orange_vertical_shipping_container_from_rotating` → create_vibrant_vaults:orange_vertical_shipping_container ← create_vibrant_vaults:orange_shipping_container
+- `create_vibrant_vaults:crafting/pink_basic_shipping_container_from_rotating` → create_vibrant_vaults:pink_basic_shipping_container ← create_vibrant_vaults:pink_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/pink_item_vault_from_rotating` → create_vibrant_vaults:pink_item_vault ← create_vibrant_vaults:pink_vertical_item_vault
+- `create_vibrant_vaults:crafting/pink_redstone_requester_clear` → create_vibrant_vaults:pink_redstone_requester ← create_vibrant_vaults:pink_redstone_requester
+- `create_vibrant_vaults:crafting/pink_shipping_container_from_rotating` → create_vibrant_vaults:pink_shipping_container ← create_vibrant_vaults:pink_vertical_shipping_container
+- `create_vibrant_vaults:crafting/pink_stock_link_clear` → create_vibrant_vaults:pink_stock_link ← create_vibrant_vaults:pink_stock_link
+- `create_vibrant_vaults:crafting/pink_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:pink_vertical_basic_shipping_container ← create_vibrant_vaults:pink_basic_shipping_container
+- `create_vibrant_vaults:crafting/pink_vertical_item_vault_from_rotating` → create_vibrant_vaults:pink_vertical_item_vault ← create_vibrant_vaults:pink_item_vault
+- `create_vibrant_vaults:crafting/pink_vertical_shipping_container_from_rotating` → create_vibrant_vaults:pink_vertical_shipping_container ← create_vibrant_vaults:pink_shipping_container
+- `create_vibrant_vaults:crafting/purple_basic_shipping_container_from_rotating` → create_vibrant_vaults:purple_basic_shipping_container ← create_vibrant_vaults:purple_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/purple_item_vault_from_rotating` → create_vibrant_vaults:purple_item_vault ← create_vibrant_vaults:purple_vertical_item_vault
+- `create_vibrant_vaults:crafting/purple_redstone_requester_clear` → create_vibrant_vaults:purple_redstone_requester ← create_vibrant_vaults:purple_redstone_requester
+- `create_vibrant_vaults:crafting/purple_shipping_container_from_rotating` → create_vibrant_vaults:purple_shipping_container ← create_vibrant_vaults:purple_vertical_shipping_container
+- `create_vibrant_vaults:crafting/purple_stock_link_clear` → create_vibrant_vaults:purple_stock_link ← create_vibrant_vaults:purple_stock_link
+- `create_vibrant_vaults:crafting/purple_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:purple_vertical_basic_shipping_container ← create_vibrant_vaults:purple_basic_shipping_container
+- `create_vibrant_vaults:crafting/purple_vertical_item_vault_from_rotating` → create_vibrant_vaults:purple_vertical_item_vault ← create_vibrant_vaults:purple_item_vault
+- `create_vibrant_vaults:crafting/purple_vertical_shipping_container_from_rotating` → create_vibrant_vaults:purple_vertical_shipping_container ← create_vibrant_vaults:purple_shipping_container
+- `create_vibrant_vaults:crafting/red_basic_shipping_container_from_rotating` → create_vibrant_vaults:red_basic_shipping_container ← create_vibrant_vaults:red_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/red_item_vault_from_rotating` → create_vibrant_vaults:red_item_vault ← create_vibrant_vaults:red_vertical_item_vault
+- `create_vibrant_vaults:crafting/red_redstone_requester_clear` → create_vibrant_vaults:red_redstone_requester ← create_vibrant_vaults:red_redstone_requester
+- `create_vibrant_vaults:crafting/red_shipping_container_from_rotating` → create_vibrant_vaults:red_shipping_container ← create_vibrant_vaults:red_vertical_shipping_container
+- `create_vibrant_vaults:crafting/red_stock_link_clear` → create_vibrant_vaults:red_stock_link ← create_vibrant_vaults:red_stock_link
+- `create_vibrant_vaults:crafting/red_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:red_vertical_basic_shipping_container ← create_vibrant_vaults:red_basic_shipping_container
+- `create_vibrant_vaults:crafting/red_vertical_item_vault_from_rotating` → create_vibrant_vaults:red_vertical_item_vault ← create_vibrant_vaults:red_item_vault
+- `create_vibrant_vaults:crafting/red_vertical_shipping_container_from_rotating` → create_vibrant_vaults:red_vertical_shipping_container ← create_vibrant_vaults:red_shipping_container
+- `create_vibrant_vaults:crafting/repackager_from_vibrant_packagers` → create:repackager ← #create_vibrant_vaults:vibrant_packagers
+- `create_vibrant_vaults:crafting/shipping_container_from_rotating` → create_vibrant_vaults:shipping_container ← create_vibrant_vaults:vertical_shipping_container
+- `create_vibrant_vaults:crafting/vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:vertical_basic_shipping_container ← create_vibrant_vaults:basic_shipping_container
+- `create_vibrant_vaults:crafting/vertical_item_vault_from_rotating` → create_vibrant_vaults:vertical_item_vault ← create:item_vault
+- `create_vibrant_vaults:crafting/vertical_shipping_container_from_rotating` → create_vibrant_vaults:vertical_shipping_container ← create_vibrant_vaults:shipping_container
+- `create_vibrant_vaults:crafting/white_basic_shipping_container_from_rotating` → create_vibrant_vaults:white_basic_shipping_container ← create_vibrant_vaults:white_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/white_item_vault_from_rotating` → create_vibrant_vaults:white_item_vault ← create_vibrant_vaults:white_vertical_item_vault
+- `create_vibrant_vaults:crafting/white_redstone_requester_clear` → create_vibrant_vaults:white_redstone_requester ← create_vibrant_vaults:white_redstone_requester
+- `create_vibrant_vaults:crafting/white_shipping_container_from_rotating` → create_vibrant_vaults:white_shipping_container ← create_vibrant_vaults:white_vertical_shipping_container
+- `create_vibrant_vaults:crafting/white_stock_link_clear` → create_vibrant_vaults:white_stock_link ← create_vibrant_vaults:white_stock_link
+- `create_vibrant_vaults:crafting/white_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:white_vertical_basic_shipping_container ← create_vibrant_vaults:white_basic_shipping_container
+- `create_vibrant_vaults:crafting/white_vertical_item_vault_from_rotating` → create_vibrant_vaults:white_vertical_item_vault ← create_vibrant_vaults:white_item_vault
+- `create_vibrant_vaults:crafting/white_vertical_shipping_container_from_rotating` → create_vibrant_vaults:white_vertical_shipping_container ← create_vibrant_vaults:white_shipping_container
+- `create_vibrant_vaults:crafting/yellow_basic_shipping_container_from_rotating` → create_vibrant_vaults:yellow_basic_shipping_container ← create_vibrant_vaults:yellow_vertical_basic_shipping_container
+- `create_vibrant_vaults:crafting/yellow_item_vault_from_rotating` → create_vibrant_vaults:yellow_item_vault ← create_vibrant_vaults:yellow_vertical_item_vault
+- `create_vibrant_vaults:crafting/yellow_redstone_requester_clear` → create_vibrant_vaults:yellow_redstone_requester ← create_vibrant_vaults:yellow_redstone_requester
+- `create_vibrant_vaults:crafting/yellow_shipping_container_from_rotating` → create_vibrant_vaults:yellow_shipping_container ← create_vibrant_vaults:yellow_vertical_shipping_container
+- `create_vibrant_vaults:crafting/yellow_stock_link_clear` → create_vibrant_vaults:yellow_stock_link ← create_vibrant_vaults:yellow_stock_link
+- `create_vibrant_vaults:crafting/yellow_vertical_basic_shipping_container_from_rotating` → create_vibrant_vaults:yellow_vertical_basic_shipping_container ← create_vibrant_vaults:yellow_basic_shipping_container
+- `create_vibrant_vaults:crafting/yellow_vertical_item_vault_from_rotating` → create_vibrant_vaults:yellow_vertical_item_vault ← create_vibrant_vaults:yellow_item_vault
+- `create_vibrant_vaults:crafting/yellow_vertical_shipping_container_from_rotating` → create_vibrant_vaults:yellow_vertical_shipping_container ← create_vibrant_vaults:yellow_shipping_container
+- `createaddition:crafting/biomass_pellet_from_biomass_pallet_block` → 9× createaddition:biomass_pellet ← createaddition:biomass_pellet_block
+- `createaddition:crafting/electrum_ingot_from_electrum_block` → 9× createaddition:electrum_ingot ← createaddition:electrum_block
+- `createaddition:crafting/electrum_nugget` → 9× createaddition:electrum_nugget ← createaddition:electrum_ingot
+- `createadditionallogistics:crafting/kinetics/flexible_shaft_remove_dye` → createadditionallogistics:flexible_shaft ← #createadditionallogistics:flexible_shafts
+- `createadditionallogistics:crafting/logistics/cash_register_clear_data` → createadditionallogistics:cash_register ← createadditionallogistics:cash_register
+- `createbigcannons:bronze_ingot_from_block` → 9× createbigcannons:bronze_ingot ← createbigcannons:bronze_block
+- `createbigcannons:bronze_scrap` → 9× createbigcannons:bronze_scrap ← createbigcannons:bronze_ingot
+- `createbigcannons:cast_iron_ingot_from_block` → 9× createbigcannons:cast_iron_ingot ← createbigcannons:cast_iron_block
+- `createbigcannons:cast_iron_nugget` → 9× createbigcannons:cast_iron_nugget ← createbigcannons:cast_iron_ingot
+- `createbigcannons:gunpowder_pinch` → 9× createbigcannons:gunpowder_pinch ← minecraft:gunpowder
+- `createbigcannons:nethersteel_ingot_from_block` → 9× createbigcannons:nethersteel_ingot ← createbigcannons:nethersteel_block
+- `createbigcannons:nethersteel_nugget` → 9× createbigcannons:nethersteel_nugget ← createbigcannons:nethersteel_ingot
+- `createbigcannons:steel_ingot_from_block` → 9× createbigcannons:steel_ingot ← createbigcannons:steel_block
+- `createbigcannons:steel_scrap` → 9× createbigcannons:steel_scrap ← createbigcannons:steel_ingot
+- `createcasing:crafting/gearbox/brass_from_conversion` → createcasing:brass_gearbox ← createcasing:vertical_brass_gearbox
+- `createcasing:crafting/gearbox/brass_vertical_from_conversion` → createcasing:vertical_brass_gearbox ← createcasing:brass_gearbox
+- `createcasing:crafting/gearbox/copper_from_conversion` → createcasing:copper_gearbox ← createcasing:vertical_copper_gearbox
+- `createcasing:crafting/gearbox/copper_vertical_from_conversion` → createcasing:vertical_copper_gearbox ← createcasing:copper_gearbox
+- `createcasing:crafting/gearbox/creative_from_conversion` → createcasing:creative_gearbox ← createcasing:vertical_creative_gearbox
+- `createcasing:crafting/gearbox/creative_vertical_from_conversion` → createcasing:vertical_creative_gearbox ← createcasing:creative_gearbox
+- `createcasing:crafting/gearbox/industrial_iron_from_conversion` → createcasing:industrial_iron_gearbox ← createcasing:vertical_industrial_iron_gearbox
+- `createcasing:crafting/gearbox/industrial_iron_vertical_from_conversion` → createcasing:vertical_industrial_iron_gearbox ← createcasing:industrial_iron_gearbox
+- `createcasing:crafting/gearbox/railway_from_conversion` → createcasing:railway_gearbox ← createcasing:vertical_railway_gearbox
+- `createcasing:crafting/gearbox/railway_vertical_from_conversion` → createcasing:vertical_railway_gearbox ← createcasing:railway_gearbox
+- `createcasing:crafting/gearbox/refined_radiance_from_conversion` → createcasing:refined_radiance_gearbox ← createcasing:vertical_refined_radiance_gearbox
+- `createcasing:crafting/gearbox/refined_radiance_vertical_from_conversion` → createcasing:vertical_refined_radiance_gearbox ← createcasing:refined_radiance_gearbox
+- `createcasing:crafting/gearbox/shadow_steel_from_conversion` → createcasing:shadow_steel_gearbox ← createcasing:vertical_shadow_steel_gearbox
+- `createcasing:crafting/gearbox/shadow_steel_vertical_from_conversion` → createcasing:vertical_shadow_steel_gearbox ← createcasing:shadow_steel_gearbox
+- `createcasing:crafting/gearbox/weathered_iron_from_conversion` → createcasing:weathered_iron_gearbox ← createcasing:vertical_weathered_iron_gearbox
+- `createcasing:crafting/gearbox/weathered_iron_vertical_from_conversion` → createcasing:vertical_weathered_iron_gearbox ← createcasing:weathered_iron_gearbox
+- `createdeco:brass_coin` → 4× createdeco:brass_coin ← createdeco:brass_coinstack
+- `createdeco:copper_coin` → 4× createdeco:copper_coin ← createdeco:copper_coinstack
+- `createdeco:gold_coin` → 4× createdeco:gold_coin ← createdeco:gold_coinstack
+- `createdeco:industrial_iron_coin` → 4× createdeco:industrial_iron_coin ← createdeco:industrial_iron_coinstack
+- `createdeco:industrial_iron_ingot_from_industrial_iron_block` → 9× createdeco:industrial_iron_ingot ← create:industrial_iron_block
+- `createdeco:industrial_iron_nugget_from_industrial_iron_ingot` → 9× createdeco:industrial_iron_nugget ← createdeco:industrial_iron_ingot
+- `createdeco:iron_coin` → 4× createdeco:iron_coin ← createdeco:iron_coinstack
+- `createdeco:netherite_coin` → 4× createdeco:netherite_coin ← createdeco:netherite_coinstack
+- `createdeco:netherite_nugget_from_netherite_ingot` → 9× createdeco:netherite_nugget ← minecraft:netherite_ingot
+- `createdeco:zinc_coin` → 4× createdeco:zinc_coin ← createdeco:zinc_coinstack
+- `createfood:minecraft/crafting/boiled_egg_peeled_from_crafting` → createfood:boiled_egg_peeled ← #c:boiled_egg
+- `createfood:minecraft/crafting/butterscotch_from_crafting` → 2× createfood:butterscotch ← #c:butterscotch_bucket
+- `createfood:minecraft/crafting/cacao_butter_from_crafting` → 3× createfood:cacao_butter ← #c:cacao_butter_bucket
+- `createfood:minecraft/crafting/caramel_from_crafting` → 2× createfood:caramel ← #c:caramel_bucket
+- `createfood:minecraft/crafting/coffee_toffee_from_crafting` → 2× createfood:coffee_toffee ← #c:coffee_toffee_bucket
+- `createfood:minecraft/crafting/cream_cheese_from_crafting` → 3× createfood:cream_cheese ← #c:cream_cheese_bucket
+- `createfood:minecraft/crafting/diced_onion_from_crafting` → createfood:diced_onion ← #c:crops/onion
+- `createfood:minecraft/crafting/egg_yolk_from_crafting` → createfood:egg_yolk ← #c:cloth_filter_egg_yolk
+- `createfood:minecraft/crafting/egg_yolk_from_crafting_alt` → createfood:egg_yolk ← minecraft:egg
+- `createfood:minecraft/crafting/ground_beef_from_crafting` → createfood:ground_beef ← minecraft:beef
+- `createfood:minecraft/crafting/ground_chicken_from_crafting` → createfood:ground_chicken ← minecraft:chicken
+- `createfood:minecraft/crafting/ground_mutton_from_crafting` → createfood:ground_mutton ← minecraft:mutton
+- `createfood:minecraft/crafting/ground_pork_from_crafting` → createfood:ground_pork ← minecraft:porkchop
+- `createfood:minecraft/crafting/ground_rabbit_from_crafting` → createfood:ground_rabbit ← minecraft:rabbit
+- `createfood:minecraft/crafting/pizza_dough_from_crafting` → createfood:pizza_dough ← #c:salt_dough
+- `createfood:minecraft/crafting/powdered_sugar_from_crafting` → createfood:powdered_sugar ← minecraft:sugar
+- `createfood:minecraft/crafting/pressed_cocoa_from_crafting` → createfood:pressed_cocoa ← #c:cloth_filter_pressed_cocoa
+- `createfood:minecraft/crafting/raw_pretzel_stick_from_crafting` → createfood:raw_pretzel_stick ← #c:salt_dough_small
+- `createfood:minecraft/crafting/shredded_beetroot_from_crafting` → createfood:shredded_beetroot ← minecraft:beetroot
+- `createfood:minecraft/crafting/shredded_carrot_from_crafting` → createfood:shredded_carrot ← minecraft:carrot
+- `createfood:minecraft/crafting/shredded_potato_from_crafting` → createfood:shredded_potato ← minecraft:potato
+- `createfood:minecraft/crafting/slime_block_from_crafting` → minecraft:slime_block ← #c:slime_bucket
+- `createfood:minecraft/crafting/toffee_from_crafting` → 2× createfood:toffee ← #c:toffee_bucket
+- `createfood:minecraft/crafting/waffle_cone_from_crafting` → createfood:waffle_cone ← #c:mini_waffle
+- `createframed:cardboard_from_dyed_bound_cardboard` → 4× create:cardboard ← #createframed:dyed_bound_cardboard_blocks
+- `createframed:cardboard_from_dyed_cardboard` → 4× create:cardboard ← #createframed:dyed_cardboard_blocks
+- `createpropulsion:crafting/platinum_fluid_tank_from_vessel` → createpropulsion:platinum_fluid_tank ← createpropulsion:platinum_fluid_vessel
+- `createpropulsion:crafting/platinum_fluid_vessel_from_tank` → createpropulsion:platinum_fluid_vessel ← createpropulsion:platinum_fluid_tank
+- `createpropulsion:crafting/platinum_ingot_from_block` → 9× createpropulsion:platinum_ingot ← createpropulsion:platinum_block
+- `createpropulsion:crafting/platinum_nugget_from_ingot` → 9× createpropulsion:platinum_nugget ← createpropulsion:platinum_ingot
+- `createpropulsion:crafting/raw_platinum_from_raw_platinum_block` → 9× createpropulsion:raw_platinum ← createpropulsion:raw_platinum_block
+- `createshufflefilter:shuffle_filter_clear` → createshufflefilter:shuffle_filter ← createshufflefilter:shuffle_filter
+- `createshufflefilter:weighted_shuffle_filter_clear` → createshufflefilter:weighted_shuffle_filter ← createshufflefilter:weighted_shuffle_filter
+- `dndecor:crafting/frontlights_from_andesite_lamp` → 4× dndecor:andesite_frontlight ← dndecor:andesite_lamp
+- `dndecor:crafting/frontlights_from_brass_lamp` → 4× dndecor:brass_frontlight ← dndecor:brass_lamp
+- `dndecor:crafting/frontlights_from_copper_lamp` → 4× dndecor:copper_frontlight ← dndecor:copper_lamp
+- `dndecor:crafting/frontlights_from_gold_lamp` → 4× dndecor:gold_frontlight ← dndecor:gold_lamp
+- `dndecor:crafting/frontlights_from_industrial_lamp` → 4× dndecor:industrial_frontlight ← dndecor:industrial_lamp
+- `dndecor:crafting/frontlights_from_iron_lamp` → 4× dndecor:iron_frontlight ← dndecor:iron_lamp
+- `dndecor:crafting/frontlights_from_netherite_lamp` → 4× dndecor:netherite_frontlight ← dndecor:netherite_lamp
+- `dndecor:crafting/frontlights_from_zinc_lamp` → 4× dndecor:zinc_frontlight ← dndecor:zinc_lamp
+- `dndesires:crafting/coal_piece_from_coal` → 8× dndesires:coal_piece ← minecraft:coal
+- `dndesires:crafting/diamond_shard_from_diamond` → 4× dndesires:diamond_shard ← minecraft:diamond
+- `farmersdelight:beetroot_from_crate` → 9× minecraft:beetroot ← farmersdelight:beetroot_crate
+- `farmersdelight:cabbage` → 9× farmersdelight:cabbage ← farmersdelight:cabbage_crate
+- `farmersdelight:canvas_rug` → 2× farmersdelight:canvas_rug ← farmersdelight:canvas
+- `farmersdelight:carrot_from_crate` → 9× minecraft:carrot ← farmersdelight:carrot_crate
+- `farmersdelight:full_tatami_mat` → 2× farmersdelight:full_tatami_mat ← farmersdelight:tatami
+- `farmersdelight:half_tatami_mat` → 2× farmersdelight:half_tatami_mat ← farmersdelight:full_tatami_mat
+- `farmersdelight:onion` → 9× farmersdelight:onion ← farmersdelight:onion_crate
+- `farmersdelight:potato_from_crate` → 9× minecraft:potato ← farmersdelight:potato_crate
+- `farmersdelight:pumpkin_seeds_from_slice` → minecraft:pumpkin_seeds ← farmersdelight:pumpkin_slice
+- `farmersdelight:rice` → farmersdelight:rice ← farmersdelight:rice_panicle
+- `farmersdelight:rice_from_bag` → 9× farmersdelight:rice ← farmersdelight:rice_bag
+- `farmersdelight:rice_panicle` → 9× farmersdelight:rice_panicle ← farmersdelight:rice_bale
+- `farmersdelight:rope_from_safety_net` → 4× farmersdelight:rope ← farmersdelight:safety_net
+- `farmersdelight:straw` → 9× farmersdelight:straw ← farmersdelight:straw_bale
+- `farmersdelight:tomato` → 9× farmersdelight:tomato ← farmersdelight:tomato_crate
+- `farmersdelight:tomato_seeds` → farmersdelight:tomato_seeds ← [farmersdelight:tomato|farmersdelight:rotten_tomato]
+- `garnished:amber_remnant_from_block` → 4× garnished:amber_remnant ← garnished:amber_remnant_block
+- `garnished:dried_dulse_kelp_from_block` → 9× garnished:dried_dulse_kelp ← garnished:dried_dulse_kelp_block
+- `garnished:dried_vermilion_kelp_from_block` → 9× garnished:dried_vermilion_kelp ← garnished:dried_vermilion_kelp_block
+- `garnished:ender_jelly_from_block` → 4× garnished:ender_jelly ← garnished:ender_jelly_block
+- `garnished:ethereal_compound_from_block` → 4× garnished:ethereal_compound ← garnished:ethereal_compound_block
+- `garnished:garnish_compound_from_block` → 4× garnished:garnish_compound ← garnished:garnish_compound_block
+- `garnished:mulch_from_block` → 4× garnished:mulch ← garnished:mulch_block
+- `garnished:numbing_parchment_from_block` → 4× garnished:numbing_parchment ← garnished:numbing_parchment_block
+- `garnished:polar_bear_hide_block_from_packed` → garnished:polar_bear_hide_block ← garnished:packed_polar_bear_hide_block
+- `garnished:polar_bear_hide_from_block` → 4× garnished:polar_bear_hide ← garnished:polar_bear_hide_block
+- `garnished:sack/from_sack/almond` → 4× garnished:almond ← garnished:almond_sack
+- `garnished:sack/from_sack/cashew` → 4× garnished:cashew ← garnished:cashew_sack
+- `garnished:sack/from_sack/chestnut` → 4× garnished:chestnut ← garnished:chestnut_sack
+- `garnished:sack/from_sack/hazelnut` → 4× garnished:hazelnut ← garnished:hazelnut_sack
+- `garnished:sack/from_sack/macadamia` → 4× garnished:macadamia ← garnished:macadamia_sack
+- `garnished:sack/from_sack/peanut` → 4× garnished:peanut ← garnished:peanut_sack
+- `garnished:sack/from_sack/pecan` → 4× garnished:pecan ← garnished:pecan_sack
+- `garnished:sack/from_sack/pistachio` → 4× garnished:pistachio ← garnished:pistachio_sack
+- `garnished:sack/from_sack/walnut` → 4× garnished:walnut ← garnished:walnut_sack
+- `garnished:salt_compound_from_block` → 4× garnished:salt_compound ← garnished:salt_compound_block
+- `garnished:senile_spread` → 3× garnished:senile_spread ← garnished:senile_bone
+- `garnished:senile_spread_from_senile_bone_block` → 9× garnished:senile_spread ← garnished:senile_bone_block
+- `garnished:sugar_from_sugar_cube` → 4× minecraft:sugar ← garnished:sugar_cube
+- `garnished:wood/nut/nut_button` → garnished:nut_button ← garnished:nut_planks
+- `garnished:wood/nut/nut_planks` → 4× garnished:nut_planks ← #garnished:nut_logs
+- `garnished:wood/sepia/sepia_button` → garnished:sepia_button ← garnished:sepia_planks
+- `garnished:wood/sepia/sepia_planks` → 4× garnished:sepia_planks ← #garnished:sepia_stems
+- `minecraft:acacia_button` → minecraft:acacia_button ← minecraft:acacia_planks
+- `minecraft:acacia_planks` → 4× minecraft:acacia_planks ← #minecraft:acacia_logs
+- `minecraft:bamboo_button` → minecraft:bamboo_button ← minecraft:bamboo_planks
+- `minecraft:bamboo_planks` → 2× minecraft:bamboo_planks ← #minecraft:bamboo_blocks
+- `minecraft:birch_button` → minecraft:birch_button ← minecraft:birch_planks
+- `minecraft:birch_planks` → 4× minecraft:birch_planks ← #minecraft:birch_logs
+- `minecraft:black_dye` → minecraft:black_dye ← minecraft:ink_sac
+- `minecraft:black_dye_from_wither_rose` → minecraft:black_dye ← minecraft:wither_rose
+- `minecraft:blaze_powder` → 2× minecraft:blaze_powder ← minecraft:blaze_rod
+- `minecraft:blue_dye` → minecraft:blue_dye ← minecraft:lapis_lazuli
+- `minecraft:blue_dye_from_cornflower` → minecraft:blue_dye ← minecraft:cornflower
+- `minecraft:bone_meal` → 3× minecraft:bone_meal ← minecraft:bone
+- `minecraft:bone_meal_from_bone_block` → 9× minecraft:bone_meal ← minecraft:bone_block
+- `minecraft:brown_dye` → minecraft:brown_dye ← minecraft:cocoa_beans
+- `minecraft:cherry_button` → minecraft:cherry_button ← minecraft:cherry_planks
+- `minecraft:cherry_planks` → 4× minecraft:cherry_planks ← #minecraft:cherry_logs
+- `minecraft:coal` → 9× minecraft:coal ← minecraft:coal_block
+- `minecraft:copper_ingot` → 9× minecraft:copper_ingot ← minecraft:copper_block
+- `minecraft:copper_ingot_from_waxed_copper_block` → 9× minecraft:copper_ingot ← minecraft:waxed_copper_block
+- `minecraft:crimson_button` → minecraft:crimson_button ← minecraft:crimson_planks
+- `minecraft:crimson_planks` → 4× minecraft:crimson_planks ← #minecraft:crimson_stems
+- `minecraft:cyan_dye_from_pitcher_plant` → 2× minecraft:cyan_dye ← minecraft:pitcher_plant
+- `minecraft:dark_oak_button` → minecraft:dark_oak_button ← minecraft:dark_oak_planks
+- `minecraft:dark_oak_planks` → 4× minecraft:dark_oak_planks ← #minecraft:dark_oak_logs
+- `minecraft:diamond` → 9× minecraft:diamond ← minecraft:diamond_block
+- `minecraft:dried_kelp` → 9× minecraft:dried_kelp ← minecraft:dried_kelp_block
+- `minecraft:emerald` → 9× minecraft:emerald ← minecraft:emerald_block
+- `minecraft:gold_ingot_from_gold_block` → 9× minecraft:gold_ingot ← minecraft:gold_block
+- `minecraft:gold_nugget` → 9× minecraft:gold_nugget ← minecraft:gold_ingot
+- `minecraft:iron_ingot_from_iron_block` → 9× minecraft:iron_ingot ← minecraft:iron_block
+- `minecraft:iron_nugget` → 9× minecraft:iron_nugget ← minecraft:iron_ingot
+- `minecraft:jungle_button` → minecraft:jungle_button ← minecraft:jungle_planks
+- `minecraft:jungle_planks` → 4× minecraft:jungle_planks ← #minecraft:jungle_logs
+- `minecraft:lapis_lazuli` → 9× minecraft:lapis_lazuli ← minecraft:lapis_block
+- `minecraft:light_blue_dye_from_blue_orchid` → minecraft:light_blue_dye ← minecraft:blue_orchid
+- `minecraft:light_gray_dye_from_azure_bluet` → minecraft:light_gray_dye ← minecraft:azure_bluet
+- `minecraft:light_gray_dye_from_oxeye_daisy` → minecraft:light_gray_dye ← minecraft:oxeye_daisy
+- `minecraft:light_gray_dye_from_white_tulip` → minecraft:light_gray_dye ← minecraft:white_tulip
+- `minecraft:magenta_dye_from_allium` → minecraft:magenta_dye ← minecraft:allium
+- `minecraft:magenta_dye_from_lilac` → 2× minecraft:magenta_dye ← minecraft:lilac
+- `minecraft:mangrove_button` → minecraft:mangrove_button ← minecraft:mangrove_planks
+- `minecraft:mangrove_planks` → 4× minecraft:mangrove_planks ← #minecraft:mangrove_logs
+- `minecraft:melon_seeds` → minecraft:melon_seeds ← minecraft:melon_slice
+- `minecraft:netherite_ingot_from_netherite_block` → 9× minecraft:netherite_ingot ← minecraft:netherite_block
+- `minecraft:oak_button` → minecraft:oak_button ← minecraft:oak_planks
+- `minecraft:oak_planks` → 4× minecraft:oak_planks ← #minecraft:oak_logs
+- `minecraft:orange_dye_from_orange_tulip` → minecraft:orange_dye ← minecraft:orange_tulip
+- `minecraft:orange_dye_from_torchflower` → minecraft:orange_dye ← minecraft:torchflower
+- `minecraft:pink_dye_from_peony` → 2× minecraft:pink_dye ← minecraft:peony
+- `minecraft:pink_dye_from_pink_petals` → minecraft:pink_dye ← minecraft:pink_petals
+- `minecraft:pink_dye_from_pink_tulip` → minecraft:pink_dye ← minecraft:pink_tulip
+- `minecraft:polished_blackstone_button` → minecraft:polished_blackstone_button ← minecraft:polished_blackstone
+- `minecraft:pumpkin_seeds` → 4× minecraft:pumpkin_seeds ← minecraft:pumpkin
+- `minecraft:raw_copper` → 9× minecraft:raw_copper ← minecraft:raw_copper_block
+- `minecraft:raw_gold` → 9× minecraft:raw_gold ← minecraft:raw_gold_block
+- `minecraft:raw_iron` → 9× minecraft:raw_iron ← minecraft:raw_iron_block
+- `minecraft:red_dye_from_beetroot` → minecraft:red_dye ← minecraft:beetroot
+- `minecraft:red_dye_from_poppy` → minecraft:red_dye ← minecraft:poppy
+- `minecraft:red_dye_from_rose_bush` → 2× minecraft:red_dye ← minecraft:rose_bush
+- `minecraft:red_dye_from_tulip` → minecraft:red_dye ← minecraft:red_tulip
+- `minecraft:redstone` → 9× minecraft:redstone ← minecraft:redstone_block
+- `minecraft:slime_ball` → 9× minecraft:slime_ball ← minecraft:slime_block
+- `minecraft:sprinkler_conversion_0` → sliceanddice:sprinkler ← sliceanddice:floor_sprinkler
+- `minecraft:sprinkler_conversion_1` → sliceanddice:floor_sprinkler ← sliceanddice:sprinkler
+- `minecraft:spruce_button` → minecraft:spruce_button ← minecraft:spruce_planks
+- `minecraft:spruce_planks` → 4× minecraft:spruce_planks ← #minecraft:spruce_logs
+- `minecraft:stone_button` → minecraft:stone_button ← minecraft:stone
+- `minecraft:storage_input_from_io` → sophisticatedstorage:storage_input ← sophisticatedstorage:storage_io
+- `minecraft:storage_io_from_output` → sophisticatedstorage:storage_io ← sophisticatedstorage:storage_output
+- `minecraft:storage_output_from_input` → sophisticatedstorage:storage_output ← sophisticatedstorage:storage_input
+- `minecraft:sugar_from_honey_bottle` → 3× minecraft:sugar ← minecraft:honey_bottle
+- `minecraft:sugar_from_sugar_cane` → minecraft:sugar ← minecraft:sugar_cane
+- `minecraft:warped_button` → minecraft:warped_button ← minecraft:warped_planks
+- `minecraft:warped_planks` → 4× minecraft:warped_planks ← #minecraft:warped_stems
+- `minecraft:wheat` → 9× minecraft:wheat ← minecraft:hay_block
+- `minecraft:white_dye` → minecraft:white_dye ← minecraft:bone_meal
+- `minecraft:white_dye_from_lily_of_the_valley` → minecraft:white_dye ← minecraft:lily_of_the_valley
+- `minecraft:wind_charge` → 4× minecraft:wind_charge ← minecraft:breeze_rod
+- `minecraft:yellow_dye_from_dandelion` → minecraft:yellow_dye ← minecraft:dandelion
+- `minecraft:yellow_dye_from_sunflower` → 2× minecraft:yellow_dye ← minecraft:sunflower
+- `northstar:argyre_planks` → 4× northstar:argyre_planks ← #northstar:argyre_logs
+- `northstar:calorian_planks` → 4× northstar:calorian_planks ← #northstar:calorian_logs
+- `northstar:coiler_planks` → 4× northstar:coiler_planks ← #northstar:coiler_logs
+- `northstar:crafting/frost` → northstar:frost ← minecraft:ice
+- `northstar:crafting/martian_steel_ingot_from_block` → 9× northstar:martian_steel_ingot ← northstar:martian_steel_block
+- `northstar:crafting/martian_steel_large_plating_from_martian_steel_plating` → northstar:martian_steel_large_plating ← northstar:martian_steel_plating
+- `northstar:crafting/martian_steel_plating_from_martian_steel_large_plating` → northstar:martian_steel_plating ← northstar:martian_steel_large_plating
+- `northstar:crafting/raw_ice_cream_cone` → northstar:raw_ice_cream_cone ← northstar:flattened_dough
+- `northstar:crafting/titanium_ingot_from_block` → 9× northstar:titanium_ingot ← northstar:titanium_block
+- `northstar:crafting/titanium_nugget_from_ingot` → 9× northstar:titanium_nugget ← northstar:titanium_ingot
+- `northstar:crafting/tungsten_ingot_from_block` → 9× northstar:tungsten_ingot ← northstar:tungsten_block
+- `northstar:crafting/tungsten_nugget_from_ingot` → 9× northstar:tungsten_nugget ← northstar:tungsten_ingot
+- `northstar:wilter_planks` → 4× northstar:wilter_planks ← #northstar:wilter_logs
+- `projecte:conversions/aeternalis_fuel_block_deconstruct` → 9× projecte:aeternalis_fuel ← projecte:aeternalis_fuel_block
+- `projecte:conversions/alchemical_coal_block_deconstruct` → 9× projecte:alchemical_coal ← projecte:alchemical_coal_block
+- `projecte:conversions/dark_matter_block_deconstruct` → 4× projecte:dark_matter ← projecte:dark_matter_block
+- `projecte:conversions/mobius_fuel_block_deconstruct` → 9× projecte:mobius_fuel ← projecte:mobius_fuel_block
+- `projecte:conversions/red_matter_block_deconstruct` → 4× projecte:red_matter ← projecte:red_matter_block
+- `projectexpansion:collector/mk1_conversion` → projectexpansion:basic_collector ← projecte:collector_mk1
+- `projectexpansion:collector/mk2_conversion` → projectexpansion:dark_collector ← projecte:collector_mk2
+- `projectexpansion:collector/mk3_conversion` → projectexpansion:red_collector ← projecte:collector_mk3
+- `projectexpansion:fuel/block/blue_reverse` → 9× projectexpansion:blue_fuel ← projectexpansion:blue_fuel_block
+- `projectexpansion:fuel/block/cyan_reverse` → 9× projectexpansion:cyan_fuel ← projectexpansion:cyan_fuel_block
+- `projectexpansion:fuel/block/green_reverse` → 9× projectexpansion:green_fuel ← projectexpansion:green_fuel_block
+- `projectexpansion:fuel/block/lime_reverse` → 9× projectexpansion:lime_fuel ← projectexpansion:lime_fuel_block
+- `projectexpansion:fuel/block/magenta_reverse` → 9× projectexpansion:magenta_fuel ← projectexpansion:magenta_fuel_block
+- `projectexpansion:fuel/block/orange_reverse` → 9× projectexpansion:orange_fuel ← projectexpansion:orange_fuel_block
+- `projectexpansion:fuel/block/pink_reverse` → 9× projectexpansion:pink_fuel ← projectexpansion:pink_fuel_block
+- `projectexpansion:fuel/block/purple_reverse` → 9× projectexpansion:purple_fuel ← projectexpansion:purple_fuel_block
+- `projectexpansion:fuel/block/violet_reverse` → 9× projectexpansion:violet_fuel ← projectexpansion:violet_fuel_block
+- `projectexpansion:fuel/block/white_reverse` → 9× projectexpansion:white_fuel ← projectexpansion:white_fuel_block
+- `projectexpansion:fuel/block/yellow_reverse` → 9× projectexpansion:yellow_fuel ← projectexpansion:yellow_fuel_block
+- `projectexpansion:matter/block/blue_reverse` → 4× projectexpansion:blue_matter ← projectexpansion:blue_matter_block
+- `projectexpansion:matter/block/cyan_reverse` → 4× projectexpansion:cyan_matter ← projectexpansion:cyan_matter_block
+- `projectexpansion:matter/block/fading_reverse` → 4× projectexpansion:fading_matter ← projectexpansion:fading_matter_block
+- `projectexpansion:matter/block/green_reverse` → 4× projectexpansion:green_matter ← projectexpansion:green_matter_block
+- `projectexpansion:matter/block/lime_reverse` → 4× projectexpansion:lime_matter ← projectexpansion:lime_matter_block
+- `projectexpansion:matter/block/magenta_reverse` → 4× projectexpansion:magenta_matter ← projectexpansion:magenta_matter_block
+- `projectexpansion:matter/block/orange_reverse` → 4× projectexpansion:orange_matter ← projectexpansion:orange_matter_block
+- `projectexpansion:matter/block/pink_reverse` → 4× projectexpansion:pink_matter ← projectexpansion:pink_matter_block
+- `projectexpansion:matter/block/purple_reverse` → 4× projectexpansion:purple_matter ← projectexpansion:purple_matter_block
+- `projectexpansion:matter/block/violet_reverse` → 4× projectexpansion:violet_matter ← projectexpansion:violet_matter_block
+- `projectexpansion:matter/block/white_reverse` → 4× projectexpansion:white_matter ← projectexpansion:white_matter_block
+- `projectexpansion:matter/block/yellow_reverse` → 4× projectexpansion:yellow_matter ← projectexpansion:yellow_matter_block
+- `projectexpansion:relay/mk1_conversion` → projectexpansion:basic_relay ← projecte:relay_mk1
+- `projectexpansion:relay/mk2_conversion` → projectexpansion:dark_relay ← projecte:relay_mk2
+- `projectexpansion:relay/mk3_conversion` → projectexpansion:red_relay ← projecte:relay_mk3
+- `tfmg:crafting/materials/aluminum_ingot_from_decompacting` → 9× tfmg:aluminum_ingot ← #c:storage_blocks/aluminum
+- `tfmg:crafting/materials/aluminum_nugget_from_decompacting` → 9× tfmg:aluminum_nugget ← #c:ingots/aluminum
+- `tfmg:crafting/materials/cast_iron_ingot_from_decompacting` → 9× tfmg:cast_iron_ingot ← #c:storage_blocks/cast_iron
+- `tfmg:crafting/materials/cast_iron_nugget_from_decompacting` → 9× tfmg:cast_iron_nugget ← #c:ingots/cast_iron
+- `tfmg:crafting/materials/coal_coke` → 9× tfmg:coal_coke ← tfmg:coal_coke_block
+- `tfmg:crafting/materials/constantan_ingot_from_decompacting` → 9× tfmg:constantan_ingot ← #c:storage_blocks/constantan
+- `tfmg:crafting/materials/constantan_nugget_from_decompacting` → 9× tfmg:constantan_nugget ← #c:ingots/constantan
+- `tfmg:crafting/materials/lead_ingot_from_decompacting` → 9× tfmg:lead_ingot ← #c:storage_blocks/lead
+- `tfmg:crafting/materials/lead_nugget_from_decompacting` → 9× tfmg:lead_nugget ← #c:ingots/lead
+- `tfmg:crafting/materials/lithium_ingot_from_decompacting` → 9× tfmg:lithium_ingot ← #c:storage_blocks/lithium
+- `tfmg:crafting/materials/lithium_nugget_from_decompacting` → 9× tfmg:lithium_nugget ← #c:ingots/lithium
+- `tfmg:crafting/materials/nickel_ingot_from_decompacting` → 9× tfmg:nickel_ingot ← #c:storage_blocks/nickel
+- `tfmg:crafting/materials/nickel_nugget_from_decompacting` → 9× tfmg:nickel_nugget ← #c:ingots/nickel
+- `tfmg:crafting/materials/plastic_sheet` → 9× tfmg:plastic_sheet ← tfmg:plastic_block
+- `tfmg:crafting/materials/raw_lead` → 9× tfmg:raw_lead ← tfmg:raw_lead_block
+- `tfmg:crafting/materials/raw_lithium` → 9× tfmg:raw_lithium ← tfmg:raw_lithium_block
+- `tfmg:crafting/materials/raw_nickel` → 9× tfmg:raw_nickel ← tfmg:raw_nickel_block
+- `tfmg:crafting/materials/rebar` → 9× tfmg:rebar ← tfmg:rebar_pile
+- `tfmg:crafting/materials/steel_ingot_from_decompacting` → 9× tfmg:steel_ingot ← #c:storage_blocks/steel
+- `tfmg:crafting/materials/steel_nugget_from_decompacting` → 9× tfmg:steel_nugget ← #c:ingots/steel
+
+## Квадратное сжатие 2×2/3×3 — пресс делает сам (454)
+
+- `aeroworks:throttle_quadrant_module` → aeroworks:throttle_quadrant_module ← 4×aeroworks:lever_module
+- `arphex:abyss_block_recipe` → arphex:block_of_abyssal_crystal ← 9×arphex:abyssal_crystal
+- `arphex:abyssal_crystal_recipe` → arphex:abyssal_crystal ← 4×arphex:abyssal_shard
+- `arphex:alt_chitin` → arphex:chitin ← 4×arphex:necrotic_fang
+- `arphex:ascend_cube` → arphex:ascended_cube ← 4×arphex:core_of_eternal_suffering
+- `arphex:chit_block` → arphex:chitin_block ← 4×arphex:chitin
+- `arphex:compost_block` → minecraft:bone_meal ← 9×arphex:crawling_compost_chunk
+- `arphex:compost_meal` → arphex:crawling_compost ← 4×arphex:crawling_compost_chunk
+- `arphex:entropy_matrix_block_recipe` → arphex:block_of_entropy_matrix ← 9×arphex:entropy_matrix
+- `arphex:entropy_matrix_craft` → arphex:entropy_matrix ← 4×arphex:entropy_matrix_shard
+- `arphex:fly_block` → arphex:mangled_fly_flesh ← 9×arphex:fly_appendage
+- `arphex:heavy_chit_block` → arphex:heavy_chitin_block ← 4×arphex:heavy_chitin
+- `arphex:mangled_spider_craft` → arphex:mangled_spider_flesh ← 9×minecraft:fermented_spider_eye
+- `arphex:opal_block_recipe` → arphex:block_of_fire_opal ← 9×arphex:fire_opal
+- `arphex:opal_gem_recipe` → arphex:fire_opal ← 4×arphex:fire_opal_shard
+- `arphex:scorpion_flesh_recipe` → arphex:mangled_scorpion_flesh ← 4×arphex:venomous_appendage
+- `arphex:time_prism_block_recipe` → arphex:block_of_time_prism ← 9×arphex:time_prism
+- `arphex:timeprismcraft` → arphex:time_prism ← 4×arphex:time_prism_shard
+- `arphex:void_geode_block_recipe` → arphex:block_of_void_geode ← 9×arphex:void_geode
+- `arphex:void_geode_craft` → arphex:void_geode ← 4×arphex:void_geode_shard
+- `cgs:lead_block_from_lead_ingot` → cgs:lead_block ← 9×cgs:lead_ingot
+- `cgs:lead_ingot_from_lead_nugget` → cgs:lead_ingot ← 9×cgs:lead_nugget
+- `cgs:raw_lead_block_from_raw_lead` → cgs:raw_lead_block ← 9×cgs:raw_lead
+- `cgs:steel_block_from_steel_ingot` → cgs:steel_block ← 9×cgs:steel_ingot
+- `cgs:steel_ingot_from_steel_nugget` → cgs:steel_ingot ← 9×cgs:steel_nugget
+- `create:crafting/materials/andesite_alloy_block` → create:andesite_alloy_block ← 9×create:andesite_alloy
+- `create:crafting/materials/brass_block_from_compacting` → create:brass_block ← 9×#c:ingots/brass
+- `create:crafting/materials/brass_ingot_from_compacting` → create:brass_ingot ← 9×#c:nuggets/brass
+- `create:crafting/materials/cardboard_block` → create:cardboard_block ← 4×create:cardboard
+- `create:crafting/materials/copper_ingot` → minecraft:copper_ingot ← 9×#c:nuggets/copper
+- `create:crafting/materials/experience_block` → create:experience_block ← 9×create:experience_nugget
+- `create:crafting/materials/raw_zinc_block` → create:raw_zinc_block ← 9×create:raw_zinc
+- `create:crafting/materials/zinc_block_from_compacting` → create:zinc_block ← 9×#c:ingots/zinc
+- `create:crafting/materials/zinc_ingot_from_compacting` → create:zinc_ingot ← 9×#c:nuggets/zinc
+- `create_aquatic_ambitions:crafting/materials/brain_coral_block` → minecraft:brain_coral_block ← 4×minecraft:brain_coral
+- `create_aquatic_ambitions:crafting/materials/bubble_coral_block` → minecraft:bubble_coral_block ← 4×minecraft:bubble_coral
+- `create_aquatic_ambitions:crafting/materials/fire_coral_block` → minecraft:fire_coral_block ← 4×minecraft:fire_coral
+- `create_aquatic_ambitions:crafting/materials/horn_coral_block` → minecraft:horn_coral_block ← 4×minecraft:horn_coral
+- `create_aquatic_ambitions:crafting/materials/prismarine_alloy_block` → create_aquatic_ambitions:prismarine_alloy_block ← 9×create_aquatic_ambitions:prismarine_alloy
+- `create_aquatic_ambitions:crafting/materials/tube_coral_block` → minecraft:tube_coral_block ← 4×minecraft:tube_coral
+- `create_compressed:belt_block` → create_compressed:belt_block ← 9×create:belt_connector
+- `create_compressed:brass_sheet_block` → create_compressed:brass_sheet_block ← 9×create:brass_sheet
+- `create_compressed:cinder_flour_pile` → create_compressed:cinder_flour_pile ← 9×create:cinder_flour
+- `create_compressed:cogwheel_block` → create_compressed:cogwheel_block ← 9×create:cogwheel
+- `create_compressed:copper_sheet_block` → create_compressed:copper_sheet_block ← 9×create:copper_sheet
+- `create_compressed:crushed_raw_aluminum_pile` → create_compressed:crushed_aluminum_pile ← 9×create:crushed_raw_aluminum
+- `create_compressed:crushed_raw_copper_pile` → create_compressed:crushed_copper_pile ← 9×create:crushed_raw_copper
+- `create_compressed:crushed_raw_gold_pile` → create_compressed:crushed_gold_pile ← 9×create:crushed_raw_gold
+- `create_compressed:crushed_raw_iron_pile` → create_compressed:crushed_iron_pile ← 9×create:crushed_raw_iron
+- `create_compressed:crushed_raw_lead_pile` → create_compressed:crushed_lead_pile ← 9×create:crushed_raw_lead
+- `create_compressed:crushed_raw_nickel_pile` → create_compressed:crushed_nickel_pile ← 9×create:crushed_raw_nickel
+- `create_compressed:crushed_raw_osmium_pile` → create_compressed:crushed_osmium_pile ← 9×create:crushed_raw_osmium
+- `create_compressed:crushed_raw_platinum_pile` → create_compressed:crushed_platinum_pile ← 9×create:crushed_raw_platinum
+- `create_compressed:crushed_raw_quicksilver_pile` → create_compressed:crushed_quicksilver_pile ← 9×create:crushed_raw_quicksilver
+- `create_compressed:crushed_raw_silver_pile` → create_compressed:crushed_silver_pile ← 9×create:crushed_raw_silver
+- `create_compressed:crushed_raw_tin_pile` → create_compressed:crushed_tin_pile ← 9×create:crushed_raw_tin
+- `create_compressed:crushed_raw_uranium_pile` → create_compressed:crushed_uranium_pile ← 9×create:crushed_raw_uranium
+- `create_compressed:crushed_raw_zinc_pile` → create_compressed:crushed_zinc_pile ← 9×create:crushed_raw_zinc
+- `create_compressed:dough_block` → create_compressed:dough_block ← 9×create:dough
+- `create_compressed:gold_sheet_block` → create_compressed:gold_sheet_block ← 9×create:golden_sheet
+- `create_compressed:iron_sheet_block` → create_compressed:iron_sheet_block ← 9×create:iron_sheet
+- `create_compressed:large_cogwheel_block` → create_compressed:large_cogwheel_block ← 9×create:large_cogwheel
+- `create_compressed:mechanism_block` → create_compressed:mechanism_block ← 9×create:precision_mechanism
+- `create_compressed:polished_rose_quartz_block` → create_compressed:rose_quartz_polished_block ← 9×create:polished_rose_quartz
+- `create_compressed:powdered_obsidian_pile` → create_compressed:powdered_obsidian_pile ← 9×create:powdered_obsidian
+- `create_compressed:pulp_block` → create_compressed:pulp_block ← 9×create:pulp
+- `create_compressed:rose_quartz_crystal_block` → create_compressed:rose_quartz_crystal_block ← 9×create:rose_quartz
+- `create_compressed:shaft_bundle` → create_compressed:shaft_bundle ← 9×create:shaft
+- `create_compressed:sturdy_sheet_block` → create_compressed:sturdy_sheet_block ← 9×create:sturdy_sheet
+- `create_compressed:wheat_flour_pile` → create_compressed:wheat_flour_pile ← 9×create:wheat_flour
+- `create_confectionery:black_chocolate_bricks_recipe` → create_confectionery:black_chocolate_bricks ← 4×create_confectionery:bar_of_black_chocolate
+- `create_confectionery:candy_cane_block_recipe` → create_confectionery:candy_cane_block ← 4×create_confectionery:candy_cane
+- `create_confectionery:caramel_bricks_recipe` → create_confectionery:caramel_bricks ← 4×create_confectionery:bar_of_caramel
+- `create_confectionery:chocolate_bricks_recipe` → create_confectionery:chocolate_bricks ← 4×create:bar_of_chocolate
+- `create_confectionery:gingerbread_block_recipe` → create_confectionery:gingerbread_block ← 4×create_confectionery:gingerdough
+- `create_confectionery:gingerbread_bricks_recipe` → 4× create_confectionery:gingerbreak_bricks ← 4×create_confectionery:gingerbread_block
+- `create_confectionery:ruby_chocolate_bricks_recipe` → create_confectionery:ruby_chocolate_bricks ← 4×create_confectionery:bar_of_ruby_chocolate
+- `create_confectionery:white_chocolate_bricks_recipe` → create_confectionery:white_chocolate_bricks ← 4×create_confectionery:bar_of_white_chocolate
+- `create_deep_dark:echo_block_crafting` → create_deep_dark:echo_block ← 9×create_deep_dark:echo_ingot
+- `create_enchantment_industry:crafting/super_experience_block` → create_enchantment_industry:super_experience_block ← 9×create_enchantment_industry:super_experience_nugget
+- `create_new_age:shaped/copper_wire_block` → create_new_age:copper_wire_block ← 4×create_new_age:copper_wire
+- `create_new_age:shaped/overcharged_diamond_wire_block` → create_new_age:overcharged_diamond_wire_block ← 4×create_new_age:overcharged_diamond_wire
+- `create_new_age:shaped/overcharged_golden_wire_block` → create_new_age:overcharged_golden_wire_block ← 4×create_new_age:overcharged_golden_wire
+- `create_new_age:shaped/overcharged_iron_wire_block` → create_new_age:overcharged_iron_wire_block ← 4×create_new_age:overcharged_iron_wire
+- `create_sa:heap_of_experience_recipe` → create_sa:heap_of_experience ← 4×create:experience_nugget
+- `create_winery:red_grape_crate_recipe` → create_winery:red_grape_crate ← 9×create_winery:red_grapes
+- `create_winery:white_grape_crate_recipe` → create_winery:white_grape_crate ← 9×create_winery:white_grapes
+- `createaddition:crafting/biomass_pallet_block` → createaddition:biomass_pellet_block ← 9×createaddition:biomass_pellet
+- `createaddition:crafting/electrum_block` → createaddition:electrum_block ← 9×createaddition:electrum_ingot
+- `createaddition:crafting/electrum_ingot_from_nugget` → createaddition:electrum_ingot ← 9×createaddition:electrum_nugget
+- `createadditionallogistics:crafting/kinetics/cogwheel_from_lazy` → 4× create:cogwheel ← 4×createadditionallogistics:lazy_cogwheel
+- `createadditionallogistics:crafting/kinetics/large_cogwheel_from_lazy` → 4× create:large_cogwheel ← 4×createadditionallogistics:lazy_large_cogwheel
+- `createadditionallogistics:crafting/kinetics/lazy_cogwheel_from_cogwheel` → 4× createadditionallogistics:lazy_cogwheel ← 4×create:cogwheel
+- `createadditionallogistics:crafting/kinetics/lazy_large_cogwheel_from_large_cogwheel` → 4× createadditionallogistics:lazy_large_cogwheel ← 4×create:large_cogwheel
+- `createadditionallogistics:crafting/kinetics/lazy_shaft_from_shaft` → 4× createadditionallogistics:lazy_shaft ← 4×create:shaft
+- `createadditionallogistics:crafting/kinetics/shaft_from_lazy` → 4× create:shaft ← 4×createadditionallogistics:lazy_shaft
+- `createbigcannons:big_cartridge_sheet` → 4× createbigcannons:big_cartridge_sheet ← 4×#c:plates/brass
+- `createbigcannons:bronze_block` → createbigcannons:bronze_block ← 9×createbigcannons:bronze_ingot
+- `createbigcannons:bronze_ingot_from_nuggets` → createbigcannons:bronze_ingot ← 9×createbigcannons:bronze_scrap
+- `createbigcannons:cast_iron_block` → createbigcannons:cast_iron_block ← 9×createbigcannons:cast_iron_ingot
+- `createbigcannons:cast_iron_ingot_from_nuggets` → createbigcannons:cast_iron_ingot ← 9×createbigcannons:cast_iron_nugget
+- `createbigcannons:gunpowder_from_pinches` → minecraft:gunpowder ← 9×createbigcannons:gunpowder_pinch
+- `createbigcannons:nethersteel_block` → createbigcannons:nethersteel_block ← 9×createbigcannons:nethersteel_ingot
+- `createbigcannons:nethersteel_ingot_from_nuggets` → createbigcannons:nethersteel_ingot ← 9×createbigcannons:nethersteel_nugget
+- `createbigcannons:steel_block` → createbigcannons:steel_block ← 9×createbigcannons:steel_ingot
+- `createbigcannons:steel_ingot_from_nuggets` → createbigcannons:steel_ingot ← 9×createbigcannons:steel_scrap
+- `createdeco:andesite_sheet_metal` → 4× createdeco:andesite_sheet_metal ← 4×#c:plates/andesite_alloy
+- `createdeco:andesite_trapdoor` → createdeco:andesite_trapdoor ← 4×create:andesite_alloy
+- `createdeco:brass_coinstack` → createdeco:brass_coinstack ← 4×createdeco:brass_coin
+- `createdeco:brass_sheet_metal` → 4× createdeco:brass_sheet_metal ← 4×#c:plates/brass
+- `createdeco:brass_trapdoor` → createdeco:brass_trapdoor ← 4×create:brass_ingot
+- `createdeco:copper_coinstack` → createdeco:copper_coinstack ← 4×createdeco:copper_coin
+- `createdeco:copper_sheet_metal` → 4× createdeco:copper_sheet_metal ← 4×#c:plates/copper
+- `createdeco:gold_coinstack` → createdeco:gold_coinstack ← 4×createdeco:gold_coin
+- `createdeco:industrial_iron_block` → create:industrial_iron_block ← 9×createdeco:industrial_iron_ingot
+- `createdeco:industrial_iron_coinstack` → createdeco:industrial_iron_coinstack ← 4×createdeco:industrial_iron_coin
+- `createdeco:industrial_iron_ingot` → createdeco:industrial_iron_ingot ← 9×createdeco:industrial_iron_nugget
+- `createdeco:industrial_iron_sheet_metal` → 4× createdeco:industrial_iron_sheet_metal ← 4×#c:plates/industrial_iron
+- `createdeco:industrial_iron_trapdoor` → createdeco:industrial_iron_trapdoor ← 4×createdeco:industrial_iron_ingot
+- `createdeco:iron_coinstack` → createdeco:iron_coinstack ← 4×createdeco:iron_coin
+- `createdeco:iron_sheet_metal` → 4× createdeco:iron_sheet_metal ← 4×#c:plates/iron
+- `createdeco:netherite_coinstack` → createdeco:netherite_coinstack ← 4×createdeco:netherite_coin
+- `createdeco:netherite_ingot` → minecraft:netherite_ingot ← 9×createdeco:netherite_nugget
+- `createdeco:zinc_coinstack` → createdeco:zinc_coinstack ← 4×createdeco:zinc_coin
+- `createdeco:zinc_sheet_metal` → 4× createdeco:zinc_sheet_metal ← 4×#c:plates/zinc
+- `createdeco:zinc_trapdoor` → createdeco:zinc_trapdoor ← 4×create:zinc_ingot
+- `createdieselgenerators:crafting/chip_wood_block` → createdieselgenerators:chip_wood_block ← 4×createdieselgenerators:wood_chip
+- `createfood:minecraft/crafting/apple_cheesecake_from_crafting` → createfood:apple_cheesecake ← 4×#c:apple_cheesecake_slice
+- `createfood:minecraft/crafting/bacon_pizza_from_crafting` → createfood:bacon_pizza ← 4×#c:bacon_pizza_slice
+- `createfood:minecraft/crafting/berry_pie_from_crafting` → createfood:berry_pie ← 4×#c:berry_pie_slice
+- `createfood:minecraft/crafting/cheese_pizza_from_crafting` → createfood:cheese_pizza ← 4×#c:cheese_pizza_slice
+- `createfood:minecraft/crafting/cheesecake_from_crafting` → createfood:cheesecake ← 4×#c:cheesecake_slice
+- `createfood:minecraft/crafting/chocolate_pie_graham_cracker_from_crafting` → createfood:chocolate_pie_graham_cracker ← 4×#c:chocolate_pie_graham_cracker_slice
+- `createfood:minecraft/crafting/chorus_fruit_cheesecake_from_crafting` → createfood:chorus_fruit_cheesecake ← 4×#c:chorus_fruit_cheesecake_slice
+- `createfood:minecraft/crafting/chorus_fruit_pie_from_crafting` → createfood:chorus_fruit_pie ← 4×#c:chorus_fruit_pie_slice
+- `createfood:minecraft/crafting/cookie_cream_pie_from_crafting_alt` → createfood:cookie_cream_pie ← 4×#c:cookie_cream_pie_slice
+- `createfood:minecraft/crafting/fish_bacon_pizza_from_crafting` → createfood:fish_bacon_pizza ← 4×#c:fish_bacon_pizza_slice
+- `createfood:minecraft/crafting/fish_onion_pizza_from_crafting` → createfood:fish_onion_pizza ← 4×#c:fish_onion_pizza_slice
+- `createfood:minecraft/crafting/fish_pizza_from_crafting` → createfood:fish_pizza ← 4×#c:fish_pizza_slice
+- `createfood:minecraft/crafting/glow_berry_cheesecake_from_crafting` → createfood:glow_berry_cheesecake ← 4×#c:glow_berry_cheesecake_slice
+- `createfood:minecraft/crafting/glow_berry_pie_from_crafting` → createfood:glow_berry_pie ← 4×#c:glow_berry_pie_slice
+- `createfood:minecraft/crafting/hollow_chocolate_from_crafting` → createfood:hollow_chocolate ← 4×#c:chocolate_chips
+- `createfood:minecraft/crafting/hollow_dark_chocolate_from_crafting` → createfood:hollow_dark_chocolate ← 4×#c:dark_chocolate_chips
+- `createfood:minecraft/crafting/hollow_white_chocolate_from_crafting` → createfood:hollow_white_chocolate ← 4×#c:white_chocolate_chips
+- `createfood:minecraft/crafting/meat_pie_from_crafting` → createfood:meat_pie ← 4×#c:meat_pie_slice
+- `createfood:minecraft/crafting/mushroom_bacon_pizza_from_crafting` → createfood:mushroom_bacon_pizza ← 4×#c:mushroom_bacon_pizza_slice
+- `createfood:minecraft/crafting/mushroom_fish_pizza_from_crafting` → createfood:mushroom_fish_pizza ← 4×#c:mushroom_fish_pizza_slice
+- `createfood:minecraft/crafting/mushroom_onion_pizza_from_crafting` → createfood:mushroom_onion_pizza ← 4×#c:mushroom_onion_pizza_slice
+- `createfood:minecraft/crafting/mushroom_pizza_from_crafting` → createfood:mushroom_pizza ← 4×#c:mushroom_pizza_slice
+- `createfood:minecraft/crafting/onion_bacon_pizza_from_crafting` → createfood:onion_bacon_pizza ← 4×#c:onion_bacon_pizza_slice
+- `createfood:minecraft/crafting/onion_pizza_from_crafting` → createfood:onion_pizza ← 4×#c:onion_pizza_slice
+- `createfood:minecraft/crafting/sausage_bacon_pizza_from_crafting` → createfood:sausage_bacon_pizza ← 4×#c:sausage_bacon_pizza_slice
+- `createfood:minecraft/crafting/sausage_fish_pizza_from_crafting` → createfood:sausage_fish_pizza ← 4×#c:sausage_fish_pizza_slice
+- `createfood:minecraft/crafting/sausage_mushroom_pizza_from_crafting` → createfood:sausage_mushroom_pizza ← 4×#c:sausage_mushroom_pizza_slice
+- `createfood:minecraft/crafting/sausage_onion_pizza_from_crafting` → createfood:sausage_onion_pizza ← 4×#c:sausage_onion_pizza_slice
+- `createfood:minecraft/crafting/sausage_pizza_from_crafting` → createfood:sausage_pizza ← 4×#c:sausage_pizza_slice
+- `createfood:minecraft/crafting/smores_pie_from_crafting_alt` → createfood:smores_pie ← 4×#c:smores_pie_slice
+- `createframed:pulp_block` → createframed:pulp_block ← 4×create:pulp
+- `createpropulsion:crafting/platinum_block` → createpropulsion:platinum_block ← 9×createpropulsion:platinum_ingot
+- `createpropulsion:crafting/platinum_ingot_from_nugget` → createpropulsion:platinum_ingot ← 9×createpropulsion:platinum_nugget
+- `createpropulsion:crafting/raw_platinum_block` → createpropulsion:raw_platinum_block ← 9×createpropulsion:raw_platinum
+- `createrailwaysnavigator:advanced_display_panel` → 8× createrailwaysnavigator:advanced_display_panel ← 4×[createrailwaysnavigator:advanced_display]
+- `createsifter:shapeless/andesite_pebble` → minecraft:andesite ← 4×createsifter:andesite_pebble
+- `createsifter:shapeless/basalt_pebble` → minecraft:basalt ← 4×createsifter:basalt_pebble
+- `createsifter:shapeless/blackstone_pebble` → minecraft:blackstone ← 4×createsifter:blackstone_pebble
+- `createsifter:shapeless/calcite_pebble` → minecraft:calcite ← 4×createsifter:calcite_pebble
+- `createsifter:shapeless/deepslate_pebble` → minecraft:cobbled_deepslate ← 4×createsifter:deepslate_pebble
+- `createsifter:shapeless/diorite_pebble` → minecraft:diorite ← 4×createsifter:diorite_pebble
+- `createsifter:shapeless/granite_pebble` → minecraft:granite ← 4×createsifter:granite_pebble
+- `createsifter:shapeless/raw_aluminum_piece` → create:crushed_raw_aluminum ← 4×createsifter:raw_aluminum_piece
+- `createsifter:shapeless/raw_copper_piece` → create:crushed_raw_copper ← 4×createsifter:raw_copper_piece
+- `createsifter:shapeless/raw_gold_piece` → create:crushed_raw_gold ← 4×createsifter:raw_gold_piece
+- `createsifter:shapeless/raw_iron_piece` → create:crushed_raw_iron ← 4×createsifter:raw_iron_piece
+- `createsifter:shapeless/raw_lead_piece` → create:crushed_raw_lead ← 4×createsifter:raw_lead_piece
+- `createsifter:shapeless/raw_nickel_piece` → create:crushed_raw_nickel ← 4×createsifter:raw_nickel_piece
+- `createsifter:shapeless/raw_osmium_piece` → create:crushed_raw_osmium ← 4×createsifter:raw_osmium_piece
+- `createsifter:shapeless/raw_platinum_piece` → create:crushed_raw_platinum ← 4×createsifter:raw_platinum_piece
+- `createsifter:shapeless/raw_quicksilver_piece` → create:crushed_raw_quicksilver ← 4×createsifter:raw_quicksilver_piece
+- `createsifter:shapeless/raw_silver_piece` → create:crushed_raw_silver ← 4×createsifter:raw_silver_piece
+- `createsifter:shapeless/raw_tin_piece` → create:crushed_raw_tin ← 4×createsifter:raw_tin_piece
+- `createsifter:shapeless/raw_uranium_piece` → create:crushed_raw_uranium ← 4×createsifter:raw_uranium_piece
+- `createsifter:shapeless/raw_zinc_piece` → create:crushed_raw_zinc ← 4×createsifter:raw_zinc_piece
+- `createsifter:shapeless/stone_pebble` → minecraft:cobblestone ← 4×createsifter:stone_pebble
+- `createsifter:shapeless/tuff_pebble` → minecraft:tuff ← 4×createsifter:tuff_pebble
+- `dndecor:crafting/belt_connector` → 4× dndecor:belt_connector ← 4×create:belt_connector
+- `dndecor:crafting/dark_metal_block_from_dark_metal_block` → 4× dndecor:dark_metal_block ← 4×create:industrial_iron_block
+- `dndecor:crafting/dark_metal_bricks_from_dark_metal_bricks` → 4× dndecor:dark_metal_bricks ← 4×dndecor:dark_metal_block
+- `dndecor:crafting/dark_metal_plating_from_dark_metal_plating` → 9× dndecor:dark_metal_plating ← 9×dndecor:dark_metal_block
+- `dndecor:crafting/frontlights_to_andesite_lamp` → dndecor:andesite_lamp ← 4×dndecor:andesite_frontlight
+- `dndecor:crafting/frontlights_to_brass_lamp` → dndecor:brass_lamp ← 4×dndecor:brass_frontlight
+- `dndecor:crafting/frontlights_to_copper_lamp` → dndecor:copper_lamp ← 4×dndecor:copper_frontlight
+- `dndecor:crafting/frontlights_to_gold_lamp` → dndecor:gold_lamp ← 4×dndecor:gold_frontlight
+- `dndecor:crafting/frontlights_to_industrial_lamp` → dndecor:industrial_lamp ← 4×dndecor:industrial_frontlight
+- `dndecor:crafting/frontlights_to_iron_lamp` → dndecor:iron_lamp ← 4×dndecor:iron_frontlight
+- `dndecor:crafting/frontlights_to_netherite_lamp` → dndecor:netherite_lamp ← 4×dndecor:netherite_frontlight
+- `dndecor:crafting/frontlights_to_zinc_lamp` → dndecor:zinc_lamp ← 4×dndecor:zinc_frontlight
+- `dndecor:crafting/large_metal_girder` → dndecor:large_metal_girder ← 4×create:metal_girder
+- `dndecor:crafting/zinc_bricks` → 8× dndecor:zinc_bricks ← 4×create:zinc_block
+- `dndesires:crafting/diamond_from_diamond_shard` → minecraft:diamond ← 4×dndesires:diamond_shard
+- `dndesires:crafting/lapis_lazuli_from_lapis_lazuli_shard` → minecraft:lapis_lazuli ← 4×dndesires:lapis_lazuli_shard
+- `farmersdelight:apple_pie_from_slices` → farmersdelight:apple_pie ← 4×farmersdelight:apple_pie_slice
+- `farmersdelight:beetroot_crate` → farmersdelight:beetroot_crate ← 9×minecraft:beetroot
+- `farmersdelight:cabbage_crate` → farmersdelight:cabbage_crate ← 9×farmersdelight:cabbage
+- `farmersdelight:canvas` → farmersdelight:canvas ← 4×farmersdelight:straw
+- `farmersdelight:carrot_crate` → farmersdelight:carrot_crate ← 9×minecraft:carrot
+- `farmersdelight:chocolate_pie_from_slices` → farmersdelight:chocolate_pie ← 4×farmersdelight:chocolate_pie_slice
+- `farmersdelight:onion_crate` → farmersdelight:onion_crate ← 9×farmersdelight:onion
+- `farmersdelight:potato_crate` → farmersdelight:potato_crate ← 9×minecraft:potato
+- `farmersdelight:pumpkin_from_slices` → minecraft:pumpkin ← 4×farmersdelight:pumpkin_slice
+- `farmersdelight:pumpkin_pie_from_slices` → minecraft:pumpkin_pie ← 4×farmersdelight:pumpkin_pie_slice
+- `farmersdelight:rice_bag` → farmersdelight:rice_bag ← 9×farmersdelight:rice
+- `farmersdelight:rice_bale` → farmersdelight:rice_bale ← 9×farmersdelight:rice_panicle
+- `farmersdelight:safety_net` → farmersdelight:safety_net ← 4×farmersdelight:rope
+- `farmersdelight:straw_bale` → farmersdelight:straw_bale ← 9×farmersdelight:straw
+- `farmersdelight:sweet_berry_cheesecake_from_slices` → farmersdelight:sweet_berry_cheesecake ← 4×farmersdelight:sweet_berry_cheesecake_slice
+- `farmersdelight:tomato_crate` → farmersdelight:tomato_crate ← 9×farmersdelight:tomato
+- `ftbquests:screen_3` → ftbquests:screen_3 ← 9×ftbquests:screen_1
+- `garnished:amber_remnant_block` → garnished:amber_remnant_block ← 4×garnished:amber_remnant
+- `garnished:dried_dulse_kelp_block` → garnished:dried_dulse_kelp_block ← 9×garnished:dried_dulse_kelp
+- `garnished:dried_vermilion_kelp_block` → garnished:dried_vermilion_kelp_block ← 9×garnished:dried_vermilion_kelp
+- `garnished:ender_jelly_block` → garnished:ender_jelly_block ← 4×garnished:ender_jelly
+- `garnished:ethereal_compound_block` → garnished:ethereal_compound_block ← 4×garnished:ethereal_compound
+- `garnished:garnish_compound_block` → garnished:garnish_compound_block ← 4×garnished:garnish_compound
+- `garnished:garnished_nut_block` → garnished:garnished_nut_block ← 9×#garnished:garnished_nuts
+- `garnished:integration/pecan_pie` → garnished:pecan_pie ← 4×garnished:pecan_pie_slice
+- `garnished:mulch_block` → garnished:mulch_block ← 4×garnished:mulch
+- `garnished:numbing_parchment_block` → garnished:numbing_parchment_block ← 4×garnished:numbing_parchment
+- `garnished:packed_polar_bear_hide_block` → 4× garnished:packed_polar_bear_hide_block ← 4×garnished:polar_bear_hide_block
+- `garnished:polar_bear_hide_block` → garnished:polar_bear_hide_block ← 4×garnished:polar_bear_hide
+- `garnished:sack/almond_sack` → garnished:almond_sack ← 4×garnished:almond
+- `garnished:sack/cashew_sack` → garnished:cashew_sack ← 4×garnished:cashew
+- `garnished:sack/chestnut_sack` → garnished:chestnut_sack ← 4×garnished:chestnut
+- `garnished:sack/hazelnut_sack` → garnished:hazelnut_sack ← 4×garnished:hazelnut
+- `garnished:sack/macadamia_sack` → garnished:macadamia_sack ← 4×garnished:macadamia
+- `garnished:sack/peanut_sack` → garnished:peanut_sack ← 4×garnished:peanut
+- `garnished:sack/pecan_sack` → garnished:pecan_sack ← 4×garnished:pecan
+- `garnished:sack/pistachio_sack` → garnished:pistachio_sack ← 4×garnished:pistachio
+- `garnished:sack/walnut_sack` → garnished:walnut_sack ← 4×garnished:walnut
+- `garnished:salt_compound_block` → garnished:salt_compound_block ← 4×garnished:salt_compound
+- `garnished:senile_bone_block` → garnished:senile_bone_block ← 9×garnished:senile_spread
+- `garnished:solidified_garnish_bricks` → garnished:solidified_garnish_bricks ← 4×garnished:solidified_garnish
+- `garnished:stone/amber_remnant/amber_remnant_bricks` → 4× garnished:amber_remnant_bricks ← 4×garnished:amber_remnant_block
+- `garnished:ungarnished_nut_block` → garnished:ungarnished_nut_block ← 9×#garnished:ungarnished_nuts
+- `garnished:wood/nut/nut_wood` → 3× garnished:nut_wood ← 4×garnished:nut_log
+- `garnished:wood/nut/stripped_nut_wood` → 3× garnished:stripped_nut_wood ← 4×garnished:stripped_nut_log
+- `garnished:wood/sepia/sepia_hyphae` → 3× garnished:sepia_hyphae ← 4×garnished:sepia_stem
+- `garnished:wood/sepia/stripped_sepia_hyphae` → 3× garnished:stripped_sepia_hyphae ← 4×garnished:stripped_sepia_stem
+- `minecraft:acacia_wood` → 3× minecraft:acacia_wood ← 4×minecraft:acacia_log
+- `minecraft:amethyst_block` → minecraft:amethyst_block ← 4×minecraft:amethyst_shard
+- `minecraft:bamboo_block` → minecraft:bamboo_block ← 9×minecraft:bamboo
+- `minecraft:big_cannon_sheet_inexpensive` → createbigcannons:big_cartridge_sheet ← 4×#createbigcannons:inexpensive_big_cartridge_sheet
+- `minecraft:birch_wood` → 3× minecraft:birch_wood ← 4×minecraft:birch_log
+- `minecraft:blue_ice` → minecraft:blue_ice ← 9×minecraft:packed_ice
+- `minecraft:bone_block` → minecraft:bone_block ← 9×minecraft:bone_meal
+- `minecraft:bricks` → minecraft:bricks ← 4×minecraft:brick
+- `minecraft:cherry_wood` → 3× minecraft:cherry_wood ← 4×minecraft:cherry_log
+- `minecraft:clay` → minecraft:clay ← 4×minecraft:clay_ball
+- `minecraft:coal_block` → minecraft:coal_block ← 9×minecraft:coal
+- `minecraft:copper_block` → minecraft:copper_block ← 9×minecraft:copper_ingot
+- `minecraft:crafting_table` → minecraft:crafting_table ← 4×#minecraft:planks
+- `minecraft:crimson_hyphae` → 3× minecraft:crimson_hyphae ← 4×minecraft:crimson_stem
+- `minecraft:cut_copper` → 4× minecraft:cut_copper ← 4×minecraft:copper_block
+- `minecraft:cut_red_sandstone` → 4× minecraft:cut_red_sandstone ← 4×minecraft:red_sandstone
+- `minecraft:cut_sandstone` → 4× minecraft:cut_sandstone ← 4×minecraft:sandstone
+- `minecraft:dark_oak_wood` → 3× minecraft:dark_oak_wood ← 4×minecraft:dark_oak_log
+- `minecraft:deepslate_bricks` → 4× minecraft:deepslate_bricks ← 4×minecraft:polished_deepslate
+- `minecraft:deepslate_tiles` → 4× minecraft:deepslate_tiles ← 4×minecraft:deepslate_bricks
+- `minecraft:diamond_block` → minecraft:diamond_block ← 9×minecraft:diamond
+- `minecraft:dried_kelp_block` → minecraft:dried_kelp_block ← 9×minecraft:dried_kelp
+- `minecraft:dripstone_block` → minecraft:dripstone_block ← 4×minecraft:pointed_dripstone
+- `minecraft:emerald_block` → minecraft:emerald_block ← 9×minecraft:emerald
+- `minecraft:end_stone_bricks` → 4× minecraft:end_stone_bricks ← 4×minecraft:end_stone
+- `minecraft:exposed_cut_copper` → 4× minecraft:exposed_cut_copper ← 4×minecraft:exposed_copper
+- `minecraft:glowstone` → minecraft:glowstone ← 4×minecraft:glowstone_dust
+- `minecraft:gold_block` → minecraft:gold_block ← 9×minecraft:gold_ingot
+- `minecraft:gold_ingot_from_nuggets` → minecraft:gold_ingot ← 9×minecraft:gold_nugget
+- `minecraft:hay_block` → minecraft:hay_block ← 9×minecraft:wheat
+- `minecraft:honey_block` → minecraft:honey_block ← 4×minecraft:honey_bottle
+- `minecraft:honeycomb_block` → minecraft:honeycomb_block ← 4×minecraft:honeycomb
+- `minecraft:iron_block` → minecraft:iron_block ← 9×minecraft:iron_ingot
+- `minecraft:iron_ingot_from_nuggets` → minecraft:iron_ingot ← 9×minecraft:iron_nugget
+- `minecraft:iron_trapdoor` → minecraft:iron_trapdoor ← 4×minecraft:iron_ingot
+- `minecraft:jungle_wood` → 3× minecraft:jungle_wood ← 4×minecraft:jungle_log
+- `minecraft:lapis_block` → minecraft:lapis_block ← 9×minecraft:lapis_lazuli
+- `minecraft:leather` → minecraft:leather ← 4×minecraft:rabbit_hide
+- `minecraft:magma_block` → minecraft:magma_block ← 4×minecraft:magma_cream
+- `minecraft:mangrove_wood` → 3× minecraft:mangrove_wood ← 4×minecraft:mangrove_log
+- `minecraft:melon` → minecraft:melon ← 9×minecraft:melon_slice
+- `minecraft:mud_bricks` → 4× minecraft:mud_bricks ← 4×minecraft:packed_mud
+- `minecraft:music_disc_5` → minecraft:music_disc_5 ← 9×minecraft:disc_fragment_5
+- `minecraft:nether_bricks` → minecraft:nether_bricks ← 4×minecraft:nether_brick
+- `minecraft:nether_wart_block` → minecraft:nether_wart_block ← 9×minecraft:nether_wart
+- `minecraft:netherite_block` → minecraft:netherite_block ← 9×minecraft:netherite_ingot
+- `minecraft:oak_wood` → 3× minecraft:oak_wood ← 4×minecraft:oak_log
+- `minecraft:oxidized_cut_copper` → 4× minecraft:oxidized_cut_copper ← 4×minecraft:oxidized_copper
+- `minecraft:packed_ice` → minecraft:packed_ice ← 9×minecraft:ice
+- `minecraft:polished_andesite` → 4× minecraft:polished_andesite ← 4×minecraft:andesite
+- `minecraft:polished_basalt` → 4× minecraft:polished_basalt ← 4×minecraft:basalt
+- `minecraft:polished_blackstone` → 4× minecraft:polished_blackstone ← 4×minecraft:blackstone
+- `minecraft:polished_blackstone_bricks` → 4× minecraft:polished_blackstone_bricks ← 4×minecraft:polished_blackstone
+- `minecraft:polished_deepslate` → 4× minecraft:polished_deepslate ← 4×minecraft:cobbled_deepslate
+- `minecraft:polished_diorite` → 4× minecraft:polished_diorite ← 4×minecraft:diorite
+- `minecraft:polished_granite` → 4× minecraft:polished_granite ← 4×minecraft:granite
+- `minecraft:polished_tuff` → 4× minecraft:polished_tuff ← 4×minecraft:tuff
+- `minecraft:prismarine` → minecraft:prismarine ← 4×minecraft:prismarine_shard
+- `minecraft:prismarine_bricks` → minecraft:prismarine_bricks ← 9×minecraft:prismarine_shard
+- `minecraft:purpur_block` → 4× minecraft:purpur_block ← 4×minecraft:popped_chorus_fruit
+- `minecraft:quartz_block` → minecraft:quartz_block ← 4×minecraft:quartz
+- `minecraft:quartz_bricks` → 4× minecraft:quartz_bricks ← 4×minecraft:quartz_block
+- `minecraft:raw_copper_block` → minecraft:raw_copper_block ← 9×minecraft:raw_copper
+- `minecraft:raw_gold_block` → minecraft:raw_gold_block ← 9×minecraft:raw_gold
+- `minecraft:raw_iron_block` → minecraft:raw_iron_block ← 9×minecraft:raw_iron
+- `minecraft:red_sandstone` → minecraft:red_sandstone ← 4×minecraft:red_sand
+- `minecraft:redstone_block` → minecraft:redstone_block ← 9×minecraft:redstone
+- `minecraft:sandstone` → minecraft:sandstone ← 4×minecraft:sand
+- `minecraft:slime_block` → minecraft:slime_block ← 9×minecraft:slime_ball
+- `minecraft:snow_block` → minecraft:snow_block ← 4×minecraft:snowball
+- `minecraft:spruce_wood` → 3× minecraft:spruce_wood ← 4×minecraft:spruce_log
+- `minecraft:stone_bricks` → 4× minecraft:stone_bricks ← 4×minecraft:stone
+- `minecraft:stripped_acacia_wood` → 3× minecraft:stripped_acacia_wood ← 4×minecraft:stripped_acacia_log
+- `minecraft:stripped_birch_wood` → 3× minecraft:stripped_birch_wood ← 4×minecraft:stripped_birch_log
+- `minecraft:stripped_cherry_wood` → 3× minecraft:stripped_cherry_wood ← 4×minecraft:stripped_cherry_log
+- `minecraft:stripped_crimson_hyphae` → 3× minecraft:stripped_crimson_hyphae ← 4×minecraft:stripped_crimson_stem
+- `minecraft:stripped_dark_oak_wood` → 3× minecraft:stripped_dark_oak_wood ← 4×minecraft:stripped_dark_oak_log
+- `minecraft:stripped_jungle_wood` → 3× minecraft:stripped_jungle_wood ← 4×minecraft:stripped_jungle_log
+- `minecraft:stripped_mangrove_wood` → 3× minecraft:stripped_mangrove_wood ← 4×minecraft:stripped_mangrove_log
+- `minecraft:stripped_oak_wood` → 3× minecraft:stripped_oak_wood ← 4×minecraft:stripped_oak_log
+- `minecraft:stripped_spruce_wood` → 3× minecraft:stripped_spruce_wood ← 4×minecraft:stripped_spruce_log
+- `minecraft:stripped_warped_hyphae` → 3× minecraft:stripped_warped_hyphae ← 4×minecraft:stripped_warped_stem
+- `minecraft:tuff_bricks` → 4× minecraft:tuff_bricks ← 4×minecraft:polished_tuff
+- `minecraft:warped_hyphae` → 3× minecraft:warped_hyphae ← 4×minecraft:warped_stem
+- `minecraft:waxed_cut_copper` → 4× minecraft:waxed_cut_copper ← 4×minecraft:waxed_copper_block
+- `minecraft:waxed_exposed_cut_copper` → 4× minecraft:waxed_exposed_cut_copper ← 4×minecraft:waxed_exposed_copper
+- `minecraft:waxed_oxidized_cut_copper` → 4× minecraft:waxed_oxidized_cut_copper ← 4×minecraft:waxed_oxidized_copper
+- `minecraft:waxed_weathered_cut_copper` → 4× minecraft:waxed_weathered_cut_copper ← 4×minecraft:waxed_weathered_copper
+- `minecraft:weathered_cut_copper` → 4× minecraft:weathered_cut_copper ← 4×minecraft:weathered_copper
+- `minecraft:white_wool_from_string` → minecraft:white_wool ← 4×minecraft:string
+- `northstar:crafting/lunar_sapphire_block` → northstar:lunar_sapphire_block ← 4×northstar:lunar_sapphire_shard
+- `northstar:crafting/mars_stone_bricks` → 4× northstar:mars_stone_bricks ← 4×northstar:mars_stone
+- `northstar:crafting/mars_stone_bricks_deep` → 4× northstar:mars_stone_bricks ← 4×northstar:mars_deep_stone
+- `northstar:crafting/martian_steel_block_from_ingot` → northstar:martian_steel_block ← 9×northstar:martian_steel_ingot
+- `northstar:crafting/mercury_stone_bricks` → 4× northstar:mercury_stone_bricks ← 4×northstar:mercury_stone
+- `northstar:crafting/mercury_stone_bricks_deep` → 4× northstar:mercury_stone_bricks ← 4×northstar:mercury_deep_stone
+- `northstar:crafting/moon_stone_bricks` → 4× northstar:moon_stone_bricks ← 4×northstar:moon_stone
+- `northstar:crafting/moon_stone_bricks_deep` → 4× northstar:moon_stone_bricks ← 4×northstar:moon_deep_stone
+- `northstar:crafting/titanium_block_from_ingot` → northstar:titanium_block ← 9×northstar:titanium_ingot
+- `northstar:crafting/titanium_ingot_from_nuggets` → northstar:titanium_ingot ← 9×northstar:titanium_nugget
+- `northstar:crafting/tungsten_block_from_ingot` → northstar:tungsten_block ← 9×northstar:tungsten_ingot
+- `northstar:crafting/tungsten_ingot_from_nuggets` → northstar:tungsten_ingot ← 9×northstar:tungsten_nugget
+- `northstar:crafting/venus_stone_bricks` → 4× northstar:venus_stone_bricks ← 4×northstar:venus_stone
+- `northstar:crafting/venus_stone_bricks_deep` → 4× northstar:venus_stone_bricks ← 4×northstar:venus_deep_stone
+- `northstar:martian_steel_plating` → 4× northstar:martian_steel_plating ← 4×#c:ingots/martian_steel
+- `northstar:martian_steel_sheetmetal` → 4× northstar:martian_steel_sheetmetal ← 4×#c:plates/martian_steel
+- `northstar:titanium_plating` → 4× northstar:titanium_plating ← 4×#c:ingots/titanium
+- `northstar:titanium_sheetmetal` → 4× northstar:titanium_sheetmetal ← 4×#c:plates/titanium
+- `northstar:tungsten_plating` → 4× northstar:tungsten_plating ← 4×#c:ingots/tungsten
+- `northstar:tungsten_sheetmetal` → 4× northstar:tungsten_sheetmetal ← 4×#c:plates/tungsten
+- `projecte:aeternalis_fuel_block` → projecte:aeternalis_fuel_block ← 9×projecte:aeternalis_fuel
+- `projecte:alchemical_coal_block` → projecte:alchemical_coal_block ← 9×projecte:alchemical_coal
+- `projecte:dark_matter_block` → projecte:dark_matter_block ← 4×projecte:dark_matter
+- `projecte:klein_star_drei` → projecte:klein_star_drei ← 4×projecte:klein_star_zwei
+- `projecte:klein_star_omega` → projecte:klein_star_omega ← 4×projecte:klein_star_sphere
+- `projecte:klein_star_sphere` → projecte:klein_star_sphere ← 4×projecte:klein_star_vier
+- `projecte:klein_star_vier` → projecte:klein_star_vier ← 4×projecte:klein_star_drei
+- `projecte:klein_star_zwei` → projecte:klein_star_zwei ← 4×projecte:klein_star_ein
+- `projecte:mobius_fuel_block` → projecte:mobius_fuel_block ← 9×projecte:mobius_fuel
+- `projecte:red_matter_block` → projecte:red_matter_block ← 4×projecte:red_matter
+- `projectexpansion:collector/compressed/basic` → projectexpansion:basic_compressed_collector ← 9×projectexpansion:basic_collector
+- `projectexpansion:collector/compressed/blue` → projectexpansion:blue_compressed_collector ← 9×projectexpansion:blue_collector
+- `projectexpansion:collector/compressed/cyan` → projectexpansion:cyan_compressed_collector ← 9×projectexpansion:cyan_collector
+- `projectexpansion:collector/compressed/dark` → projectexpansion:dark_compressed_collector ← 9×projectexpansion:dark_collector
+- `projectexpansion:collector/compressed/fading` → projectexpansion:fading_compressed_collector ← 9×projectexpansion:fading_collector
+- `projectexpansion:collector/compressed/final` → projectexpansion:final_compressed_collector ← 9×projectexpansion:final_collector
+- `projectexpansion:collector/compressed/green` → projectexpansion:green_compressed_collector ← 9×projectexpansion:green_collector
+- `projectexpansion:collector/compressed/lime` → projectexpansion:lime_compressed_collector ← 9×projectexpansion:lime_collector
+- `projectexpansion:collector/compressed/magenta` → projectexpansion:magenta_compressed_collector ← 9×projectexpansion:magenta_collector
+- `projectexpansion:collector/compressed/orange` → projectexpansion:orange_compressed_collector ← 9×projectexpansion:orange_collector
+- `projectexpansion:collector/compressed/pink` → projectexpansion:pink_compressed_collector ← 9×projectexpansion:pink_collector
+- `projectexpansion:collector/compressed/purple` → projectexpansion:purple_compressed_collector ← 9×projectexpansion:purple_collector
+- `projectexpansion:collector/compressed/red` → projectexpansion:red_compressed_collector ← 9×projectexpansion:red_collector
+- `projectexpansion:collector/compressed/violet` → projectexpansion:violet_compressed_collector ← 9×projectexpansion:violet_collector
+- `projectexpansion:collector/compressed/white` → projectexpansion:white_compressed_collector ← 9×projectexpansion:white_collector
+- `projectexpansion:collector/compressed/yellow` → projectexpansion:yellow_compressed_collector ← 9×projectexpansion:yellow_collector
+- `projectexpansion:fuel/block/blue` → projectexpansion:blue_fuel_block ← 9×projectexpansion:blue_fuel
+- `projectexpansion:fuel/block/cyan` → projectexpansion:cyan_fuel_block ← 9×projectexpansion:cyan_fuel
+- `projectexpansion:fuel/block/green` → projectexpansion:green_fuel_block ← 9×projectexpansion:green_fuel
+- `projectexpansion:fuel/block/lime` → projectexpansion:lime_fuel_block ← 9×projectexpansion:lime_fuel
+- `projectexpansion:fuel/block/magenta` → projectexpansion:magenta_fuel_block ← 9×projectexpansion:magenta_fuel
+- `projectexpansion:fuel/block/orange` → projectexpansion:orange_fuel_block ← 9×projectexpansion:orange_fuel
+- `projectexpansion:fuel/block/pink` → projectexpansion:pink_fuel_block ← 9×projectexpansion:pink_fuel
+- `projectexpansion:fuel/block/purple` → projectexpansion:purple_fuel_block ← 9×projectexpansion:purple_fuel
+- `projectexpansion:fuel/block/violet` → projectexpansion:violet_fuel_block ← 9×projectexpansion:violet_fuel
+- `projectexpansion:fuel/block/white` → projectexpansion:white_fuel_block ← 9×projectexpansion:white_fuel
+- `projectexpansion:fuel/block/yellow` → projectexpansion:yellow_fuel_block ← 9×projectexpansion:yellow_fuel
+- `projectexpansion:matter/block/blue` → projectexpansion:blue_matter_block ← 4×projectexpansion:blue_matter
+- `projectexpansion:matter/block/cyan` → projectexpansion:cyan_matter_block ← 4×projectexpansion:cyan_matter
+- `projectexpansion:matter/block/fading` → projectexpansion:fading_matter_block ← 4×projectexpansion:fading_matter
+- `projectexpansion:matter/block/green` → projectexpansion:green_matter_block ← 4×projectexpansion:green_matter
+- `projectexpansion:matter/block/lime` → projectexpansion:lime_matter_block ← 4×projectexpansion:lime_matter
+- `projectexpansion:matter/block/magenta` → projectexpansion:magenta_matter_block ← 4×projectexpansion:magenta_matter
+- `projectexpansion:matter/block/orange` → projectexpansion:orange_matter_block ← 4×projectexpansion:orange_matter
+- `projectexpansion:matter/block/pink` → projectexpansion:pink_matter_block ← 4×projectexpansion:pink_matter
+- `projectexpansion:matter/block/purple` → projectexpansion:purple_matter_block ← 4×projectexpansion:purple_matter
+- `projectexpansion:matter/block/violet` → projectexpansion:violet_matter_block ← 4×projectexpansion:violet_matter
+- `projectexpansion:matter/block/white` → projectexpansion:white_matter_block ← 4×projectexpansion:white_matter
+- `projectexpansion:matter/block/yellow` → projectexpansion:yellow_matter_block ← 4×projectexpansion:yellow_matter
+- `projectexpansion:star/colossal/drei` → projectexpansion:colossal_star_drei ← 4×projectexpansion:colossal_star_zwei
+- `projectexpansion:star/colossal/ein` → projectexpansion:colossal_star_ein ← 4×projectexpansion:magnum_star_omega
+- `projectexpansion:star/colossal/omega` → projectexpansion:colossal_star_omega ← 4×projectexpansion:colossal_star_sphere
+- `projectexpansion:star/colossal/sphere` → projectexpansion:colossal_star_sphere ← 4×projectexpansion:colossal_star_vier
+- `projectexpansion:star/colossal/vier` → projectexpansion:colossal_star_vier ← 4×projectexpansion:colossal_star_drei
+- `projectexpansion:star/colossal/zwei` → projectexpansion:colossal_star_zwei ← 4×projectexpansion:colossal_star_ein
+- `projectexpansion:star/gargantuan/drei` → projectexpansion:gargantuan_star_drei ← 4×projectexpansion:gargantuan_star_zwei
+- `projectexpansion:star/gargantuan/ein` → projectexpansion:gargantuan_star_ein ← 4×projectexpansion:colossal_star_omega
+- `projectexpansion:star/gargantuan/omega` → projectexpansion:gargantuan_star_omega ← 4×projectexpansion:gargantuan_star_sphere
+- `projectexpansion:star/gargantuan/sphere` → projectexpansion:gargantuan_star_sphere ← 4×projectexpansion:gargantuan_star_vier
+- `projectexpansion:star/gargantuan/vier` → projectexpansion:gargantuan_star_vier ← 4×projectexpansion:gargantuan_star_drei
+- `projectexpansion:star/gargantuan/zwei` → projectexpansion:gargantuan_star_zwei ← 4×projectexpansion:gargantuan_star_ein
+- `projectexpansion:star/magnum/drei` → projectexpansion:magnum_star_drei ← 4×projectexpansion:magnum_star_zwei
+- `projectexpansion:star/magnum/ein` → projectexpansion:magnum_star_ein ← 4×projecte:klein_star_omega
+- `projectexpansion:star/magnum/omega` → projectexpansion:magnum_star_omega ← 4×projectexpansion:magnum_star_sphere
+- `projectexpansion:star/magnum/sphere` → projectexpansion:magnum_star_sphere ← 4×projectexpansion:magnum_star_vier
+- `projectexpansion:star/magnum/vier` → projectexpansion:magnum_star_vier ← 4×projectexpansion:magnum_star_drei
+- `projectexpansion:star/magnum/zwei` → projectexpansion:magnum_star_zwei ← 4×projectexpansion:magnum_star_ein
+- `railways:crafting/palettes/hazard_stripes_a/black_hazard_stripes_diagonal_on_black` → 4× railways:black_hazard_stripes_diagonal_on_black ← 4×railways:black_slashed_locometal
+- `railways:crafting/palettes/hazard_stripes_a/white_hazard_stripes_diagonal_on_white` → 4× railways:white_hazard_stripes_diagonal_on_white ← 4×railways:white_slashed_locometal
+- `railways:crafting/palettes/hazard_stripes_b/black_hazard_stripes_diagonal_on_black` → 4× railways:black_hazard_stripes_diagonal_on_black ← 4×railways:black_slashed_locometal
+- `railways:crafting/palettes/hazard_stripes_b/white_hazard_stripes_diagonal_on_white` → 4× railways:white_hazard_stripes_diagonal_on_white ← 4×railways:white_slashed_locometal
+- `sophisticatedbackpacks:stack_upgrade_omega_tier` → sophisticatedbackpacks:stack_upgrade_omega_tier ← 9×sophisticatedbackpacks:stack_upgrade_tier_4
+- `sophisticatedstorage:stack_upgrade_omega_tier` → sophisticatedstorage:stack_upgrade_omega_tier ← 9×sophisticatedstorage:stack_upgrade_tier_5
+- `sophisticatedstorage:super_packing_tape` → sophisticatedstorage:super_packing_tape ← 4×sophisticatedstorage:packing_tape
+- `tfmg:crafting/materials/aluminum_block_from_compacting` → tfmg:aluminum_block ← 9×#c:ingots/aluminum
+- `tfmg:crafting/materials/aluminum_ingot_from_compacting` → tfmg:aluminum_ingot ← 9×#c:nuggets/aluminum
+- `tfmg:crafting/materials/cast_iron_block_from_compacting` → tfmg:cast_iron_block ← 9×#c:ingots/cast_iron
+- `tfmg:crafting/materials/cast_iron_ingot_from_compacting` → tfmg:cast_iron_ingot ← 9×#c:nuggets/cast_iron
+- `tfmg:crafting/materials/coal_coke_block` → tfmg:coal_coke_block ← 9×tfmg:coal_coke
+- `tfmg:crafting/materials/constantan_block_from_compacting` → tfmg:constantan_block ← 9×#c:ingots/constantan
+- `tfmg:crafting/materials/constantan_ingot_from_compacting` → tfmg:constantan_ingot ← 9×#c:nuggets/constantan
+- `tfmg:crafting/materials/fireclay` → tfmg:fireclay ← 4×tfmg:fireclay_ball
+- `tfmg:crafting/materials/fireproof_bricks` → tfmg:fireproof_bricks ← 4×tfmg:fireproof_brick
+- `tfmg:crafting/materials/laminated_magnetic_alloy_block` → tfmg:laminated_magnetic_alloy_block ← 9×tfmg:magnetic_alloy_sheet
+- `tfmg:crafting/materials/lead_block_from_compacting` → tfmg:lead_block ← 9×#c:ingots/lead
+- `tfmg:crafting/materials/lead_ingot_from_compacting` → tfmg:lead_ingot ← 9×#c:nuggets/lead
+- `tfmg:crafting/materials/lithium_block_from_compacting` → tfmg:lithium_block ← 9×#c:ingots/lithium
+- `tfmg:crafting/materials/lithium_ingot_from_compacting` → tfmg:lithium_ingot ← 9×#c:nuggets/lithium
+- `tfmg:crafting/materials/nickel_block_from_compacting` → tfmg:nickel_block ← 9×#c:ingots/nickel
+- `tfmg:crafting/materials/nickel_ingot_from_compacting` → tfmg:nickel_ingot ← 9×#c:nuggets/nickel
+- `tfmg:crafting/materials/plastic_block` → tfmg:plastic_block ← 9×tfmg:plastic_sheet
+- `tfmg:crafting/materials/raw_lead_block` → tfmg:raw_lead_block ← 9×tfmg:raw_lead
+- `tfmg:crafting/materials/raw_lithium_block` → tfmg:raw_lithium_block ← 9×tfmg:raw_lithium
+- `tfmg:crafting/materials/raw_nickel_block` → tfmg:raw_nickel_block ← 9×tfmg:raw_nickel
+- `tfmg:crafting/materials/rebar_pile` → tfmg:rebar_pile ← 9×tfmg:rebar
+- `tfmg:crafting/materials/steel_block_from_compacting` → tfmg:steel_block ← 9×#c:ingots/steel
+- `tfmg:crafting/materials/steel_ingot_from_compacting` → tfmg:steel_ingot ← 9×#c:nuggets/steel
+
+## Рецепты с тарой (вёдра, бутылки) — бесформенные (220)
+
+- `create:crafting/appliances/dough` → create:dough ← #c:flours/wheat, minecraft:water_bucket
+- `create_compressed:dough_block_from_flour` → create_compressed:dough_block ← #create_compressed:water, create_compressed:wheat_flour_pile
+- `create_enchantment_industry:crafting/blazes_enchanting_handbook` → create_enchantment_industry:blazes_enchanting_handbook ← 2×create:sturdy_sheet, create_dragons_plus:blaze_upgrade_smithing_template, 2×minecraft:experience_bottle, minecraft:magma_block
+- `createfood:minecraft/crafting/apple_cream_frosting_bottle_from_crafting` → 4× createfood:apple_cream_frosting_bottle ← #c:apple_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/apple_cream_frosting_bucket_from_crafting` → createfood:apple_cream_frosting_bucket ← #c:apple, 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket
+- `createfood:minecraft/crafting/apple_cream_frosting_bucket_from_crafting_alt_2` → createfood:apple_cream_frosting_bucket ← #c:apple, #c:cream_frosting_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/apple_cream_frosting_piping_bag_from_crafting` → 2× createfood:apple_cream_frosting_piping_bag ← #c:apple_cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/apple_custard_bottle_from_crafting` → 4× createfood:apple_custard_bottle ← #c:apple_custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/apple_ice_cream_bowl_from_crafting` → 3× createfood:apple_ice_cream_bowl ← #c:apple_ice_cream_bucket, 3×#c:bowl
+- `createfood:minecraft/crafting/apple_ice_cream_bucket_from_crafting_alt_2` → createfood:apple_ice_cream_bucket ← #c:apple, #c:ice_cream_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/apple_jam_bottle_from_crafting` → 2× createfood:apple_jam_bottle ← #c:apple_jam_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/apple_juice_bottle_from_crafting` → 4× createfood:apple_juice_bottle ← #c:apple_juice_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/apple_juice_bottle_from_crafting_alt` → createfood:apple_juice_bottle ← 4×#c:apple, #c:sugar, minecraft:potion
+- `createfood:minecraft/crafting/apple_milkshake_bottle_from_crafting` → 2× createfood:apple_milkshake_bottle ← #c:apple_milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/apple_milkshake_bucket_from_crafting_alt` → createfood:apple_milkshake_bucket ← #c:apple, #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/berry_cream_frosting_bottle_from_crafting` → 4× createfood:berry_cream_frosting_bottle ← #c:berry_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/berry_cream_frosting_bucket_from_crafting` → createfood:berry_cream_frosting_bucket ← 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket, minecraft:sweet_berries
+- `createfood:minecraft/crafting/berry_cream_frosting_bucket_from_crafting_alt_2` → createfood:berry_cream_frosting_bucket ← #c:cream_frosting_bucket, minecraft:bucket, minecraft:sweet_berries
+- `createfood:minecraft/crafting/berry_cream_frosting_piping_bag_from_crafting` → 2× createfood:berry_cream_frosting_piping_bag ← #c:berry_cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/berry_custard_bottle_from_crafting` → 4× createfood:berry_custard_bottle ← #c:berry_custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/berry_ice_cream_bowl_from_crafting` → 3× createfood:berry_ice_cream_bowl ← #c:berry_ice_cream_bucket, 3×#c:bowl
+- `createfood:minecraft/crafting/berry_ice_cream_bucket_from_crafting_alt_2` → createfood:berry_ice_cream_bucket ← #c:ice_cream_bucket, minecraft:bucket, minecraft:sweet_berries
+- `createfood:minecraft/crafting/berry_jam_bottle_from_crafting` → 2× createfood:berry_jam_bottle ← #c:berry_jam_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/berry_juice_bottle_from_crafting` → 4× createfood:berry_juice_bottle ← #c:berry_juice_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/berry_juice_bottle_from_crafting_alt` → createfood:berry_juice_bottle ← #c:sugar, minecraft:potion, 4×minecraft:sweet_berries
+- `createfood:minecraft/crafting/berry_milkshake_bottle_from_crafting` → 2× createfood:berry_milkshake_bottle ← #c:berry_milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/berry_milkshake_bucket_from_crafting_alt` → createfood:berry_milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket, minecraft:sweet_berries
+- `createfood:minecraft/crafting/black_gelatin_dessert_block_from_crafting` → createfood:black_gelatin_dessert_block ← #c:black_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/black_gelatin_mix_bucket_from_crafting` → createfood:black_gelatin_mix_bucket ← #c:dyes/black, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/blackstrap_molasses_bottle_from_crafting` → 2× createfood:blackstrap_molasses_bottle ← #c:blackstrap_molasses_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/blue_gelatin_dessert_block_from_crafting` → createfood:blue_gelatin_dessert_block ← #c:blue_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/blue_gelatin_mix_bucket_from_crafting` → createfood:blue_gelatin_mix_bucket ← #c:dyes/blue, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/bread_pudding_bowl_from_crafting` → 3× createfood:bread_pudding_bowl ← #c:bread_pudding_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/bread_slice_honey_from_crafting` → createfood:bread_slice_honey ← #c:bread_slice, minecraft:honey_bottle
+- `createfood:minecraft/crafting/breakfast_bar_from_crafting` → 2× createfood:breakfast_bar ← #c:cocoa_powder, #c:egg_powder, #c:milk_powder, minecraft:dried_kelp, minecraft:water_bucket
+- `createfood:minecraft/crafting/brown_gelatin_dessert_block_from_crafting` → createfood:brown_gelatin_dessert_block ← #c:brown_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/brown_gelatin_mix_bucket_from_crafting` → createfood:brown_gelatin_mix_bucket ← #c:dyes/brown, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/butter_dough_from_wheat_crafting` → 3× createfood:butter_dough ← #c:butter, minecraft:water_bucket, 3×minecraft:wheat
+- `createfood:minecraft/crafting/cake_batter_bucket_from_crafting` → createfood:cake_batter_bucket ← #c:butter, #c:eggs, #c:flours/wheat, #c:sugar, minecraft:bucket, minecraft:milk_bucket
+- `createfood:minecraft/crafting/cane_syrup_bottle_from_crafting` → 4× createfood:cane_syrup_bottle ← #c:cane_syrup_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/cheesecake_filling_bucket_from_crafting` → createfood:cheesecake_filling_bucket ← #c:cream_cheese_bucket, 2×#c:eggs, #c:salt, #c:sour_cream_bottle, #c:sugar, minecraft:bucket
+- `createfood:minecraft/crafting/chocolate_bottle_from_crafting` → 4× createfood:chocolate_bottle ← #c:buckets/chocolate, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chocolate_cake_batter_bucket_from_crafting` → createfood:chocolate_cake_batter_bucket ← #c:butter, #c:cocoa_powder, #c:eggs, #c:flours/wheat, #c:sugar, minecraft:bucket, minecraft:milk_bucket
+- `createfood:minecraft/crafting/chocolate_cream_frosting_bottle_from_crafting` → 4× createfood:chocolate_cream_frosting_bottle ← #c:chocolate_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chocolate_cream_frosting_bucket_from_crafting` → createfood:chocolate_cream_frosting_bucket ← #c:cocoa_powder, 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket
+- `createfood:minecraft/crafting/chocolate_cream_frosting_bucket_from_crafting_alt_2` → createfood:chocolate_cream_frosting_bucket ← #c:cocoa_powder, #c:cream_frosting_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/chocolate_cream_frosting_piping_bag_from_crafting` → 2× createfood:chocolate_cream_frosting_piping_bag ← #c:chocolate_cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/chocolate_custard_bottle_from_crafting` → 4× createfood:chocolate_custard_bottle ← #c:chocolate_custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chocolate_donut_base_from_crafting` → createfood:chocolate_donut_base ← #c:chocolate_pastry_base, #c:vegetable_oil_bucket
+- `createfood:minecraft/crafting/chocolate_ice_cream_bowl_from_crafting` → 3× createfood:chocolate_ice_cream_bowl ← 3×#c:bowl, #c:chocolate_ice_cream_bucket
+- `createfood:minecraft/crafting/chocolate_ice_cream_bucket_from_crafting_alt_2` → createfood:chocolate_ice_cream_bucket ← #c:cocoa_powder, #c:ice_cream_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/chocolate_milkshake_bottle_from_crafting` → 2× createfood:chocolate_milkshake_bottle ← #c:chocolate_milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chocolate_milkshake_bucket_from_crafting_alt` → createfood:chocolate_milkshake_bucket ← #c:cocoa_powder, #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/chocolate_sugar_dough_from_wheat_crafting` → 3× createfood:chocolate_sugar_dough ← #c:cocoa_powder, #c:sugar, minecraft:water_bucket, 3×minecraft:wheat
+- `createfood:minecraft/crafting/chorus_fruit_cream_frosting_bottle_from_crafting` → 4× createfood:chorus_fruit_cream_frosting_bottle ← #c:chorus_fruit_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chorus_fruit_cream_frosting_bucket_from_crafting` → createfood:chorus_fruit_cream_frosting_bucket ← #c:chorus_fruit, 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket
+- `createfood:minecraft/crafting/chorus_fruit_cream_frosting_bucket_from_crafting_alt_2` → createfood:chorus_fruit_cream_frosting_bucket ← #c:chorus_fruit, #c:cream_frosting_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/chorus_fruit_cream_frosting_piping_bag_from_crafting` → 2× createfood:chorus_fruit_cream_frosting_piping_bag ← #c:chorus_fruit_cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/chorus_fruit_custard_bottle_from_crafting` → 4× createfood:chorus_fruit_custard_bottle ← #c:chorus_fruit_custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chorus_fruit_ice_cream_bowl_from_crafting` → 3× createfood:chorus_fruit_ice_cream_bowl ← 3×#c:bowl, #c:chorus_fruit_ice_cream_bucket
+- `createfood:minecraft/crafting/chorus_fruit_ice_cream_bucket_from_crafting_alt_2` → createfood:chorus_fruit_ice_cream_bucket ← #c:chorus_fruit, #c:ice_cream_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/chorus_fruit_jam_bottle_from_crafting` → 2× createfood:chorus_fruit_jam_bottle ← #c:chorus_fruit_jam_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chorus_fruit_juice_bottle_from_crafting` → 4× createfood:chorus_fruit_juice_bottle ← #c:chorus_fruit_juice_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chorus_fruit_juice_bottle_from_crafting_alt` → createfood:chorus_fruit_juice_bottle ← 4×#c:chorus_fruit, #c:sugar, minecraft:potion
+- `createfood:minecraft/crafting/chorus_fruit_milkshake_bottle_from_crafting` → 2× createfood:chorus_fruit_milkshake_bottle ← #c:chorus_fruit_milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/chorus_fruit_milkshake_bucket_from_crafting_alt` → createfood:chorus_fruit_milkshake_bucket ← #c:chorus_fruit, #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/cloth_filter_cacao_mass_from_crafting` → createfood:cloth_filter_cacao_mass ← #c:cacao_mass_bucket, #c:cloth_filter
+- `createfood:minecraft/crafting/cloth_filter_egg_from_crafting` → 4× createfood:cloth_filter_egg ← 4×#c:cloth_filter, #c:egg_bucket
+- `createfood:minecraft/crafting/condensed_milk_bottle_from_crafting` → 4× createfood:condensed_milk_bottle ← #c:condensed_milk_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/cream_frosting_bottle_from_crafting` → 4× createfood:cream_frosting_bottle ← #c:cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/cream_frosting_bucket_from_crafting` → createfood:cream_frosting_bucket ← 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket
+- `createfood:minecraft/crafting/cream_frosting_piping_bag_from_crafting` → 2× createfood:cream_frosting_piping_bag ← #c:cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/custard_bottle_from_crafting` → 4× createfood:custard_bottle ← #c:custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/cyan_gelatin_dessert_block_from_crafting` → createfood:cyan_gelatin_dessert_block ← #c:cyan_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/cyan_gelatin_mix_bucket_from_crafting` → createfood:cyan_gelatin_mix_bucket ← #c:dyes/cyan, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/dark_chocolate_bottle_from_crafting` → 4× createfood:dark_chocolate_bottle ← #c:dark_chocolate_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/donut_base_from_crafting` → createfood:donut_base ← #c:pastry_base, #c:vegetable_oil_bucket
+- `createfood:minecraft/crafting/dumpling_wrappers_from_crafting` → 2× createfood:dumpling_wrappers ← #c:foods/doughs, minecraft:water_bucket
+- `createfood:minecraft/crafting/egg_whites_bottle_from_crafting_alt` → 4× createfood:egg_whites_bottle ← #c:egg_whites_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/fish_chowder_bowl_from_crafting` → 3× createfood:fish_chowder_bowl ← #c:fish_chowder_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/fruit_smoothie_bottle_from_crafting` → 4× createfood:fruit_smoothie_bottle ← #c:fruit_smoothie_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/fruit_smoothie_bucket_from_crafting_alt` → createfood:fruit_smoothie_bucket ← 4×#c:fruits, 2×#c:ice_blocks, #c:yogurt_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/gelatin_dessert_block_from_crafting` → createfood:gelatin_dessert_block ← createfood:gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/glow_berry_cream_frosting_bottle_from_crafting` → 4× createfood:glow_berry_cream_frosting_bottle ← #c:glow_berry_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/glow_berry_cream_frosting_bucket_from_crafting` → createfood:glow_berry_cream_frosting_bucket ← 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket, minecraft:glow_berries
+- `createfood:minecraft/crafting/glow_berry_cream_frosting_bucket_from_crafting_alt_2` → createfood:glow_berry_cream_frosting_bucket ← #c:cream_frosting_bucket, minecraft:bucket, minecraft:glow_berries
+- `createfood:minecraft/crafting/glow_berry_cream_frosting_piping_bag_from_crafting` → 2× createfood:glow_berry_cream_frosting_piping_bag ← #c:glow_berry_cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/glow_berry_ice_cream_bowl_from_crafting` → 3× createfood:glow_berry_ice_cream_bowl ← 3×#c:bowl, #c:glow_berry_ice_cream_bucket
+- `createfood:minecraft/crafting/glow_berry_ice_cream_bucket_from_crafting_alt_2` → createfood:glow_berry_ice_cream_bucket ← #c:ice_cream_bucket, minecraft:bucket, minecraft:glow_berries
+- `createfood:minecraft/crafting/glow_berry_jam_bottle_from_crafting` → 2× createfood:glow_berry_jam_bottle ← #c:glow_berry_jam_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/glow_berry_juice_bottle_from_crafting` → 4× createfood:glow_berry_juice_bottle ← #c:glow_berry_juice_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/glow_berry_juice_bottle_from_crafting_alt` → createfood:glow_berry_juice_bottle ← #c:sugar, 4×minecraft:glow_berries, minecraft:potion
+- `createfood:minecraft/crafting/glow_berry_milkshake_bottle_from_crafting` → 2× createfood:glow_berry_milkshake_bottle ← #c:glow_berry_milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/glow_berry_milkshake_bucket_from_crafting_alt` → createfood:glow_berry_milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket, minecraft:glow_berries
+- `createfood:minecraft/crafting/gray_gelatin_dessert_block_from_crafting` → createfood:gray_gelatin_dessert_block ← #c:gray_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/gray_gelatin_mix_bucket_from_crafting` → createfood:gray_gelatin_mix_bucket ← #c:dyes/gray, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/green_gelatin_dessert_block_from_crafting` → createfood:green_gelatin_dessert_block ← #c:green_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/green_gelatin_mix_bucket_from_crafting` → createfood:green_gelatin_mix_bucket ← #c:dyes/green, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/heavy_cream_bottle_from_crafting` → 4× createfood:heavy_cream_bottle ← #c:heavy_cream_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/honey_sandwich_from_crafting_alt` → createfood:honey_sandwich ← 2×#c:bread_slice, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_apple_from_crafting` → create:honeyed_apple ← minecraft:apple, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_apple_slice_from_crafting` → createfood:honeyed_apple_slice ← #c:apple_slice, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_berries_from_crafting` → createfood:honeyed_berries ← minecraft:honey_bottle, minecraft:sweet_berries
+- `createfood:minecraft/crafting/honeyed_biscuit_from_crafting` → createfood:honeyed_biscuit ← #c:biscuit, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_chocolate_cupcake_from_crafting` → createfood:honeyed_chocolate_cupcake ← #c:chocolate_cupcake_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_chocolate_donut_from_crafting` → createfood:honeyed_chocolate_donut ← #c:chocolate_donut_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_chocolate_pastry_from_crafting` → createfood:honeyed_chocolate_pastry ← #c:chocolate_pastry_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_chocolate_sweet_roll_from_crafting` → createfood:honeyed_chocolate_sweet_roll ← #c:chocolate_sweet_roll_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_cupcake_from_crafting` → createfood:honeyed_cupcake ← #c:cupcake_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_donut_from_crafting` → createfood:honeyed_donut ← #c:donut_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_mini_waffle_from_crafting` → createfood:honeyed_mini_waffle ← #c:mini_waffle, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_muffin_from_crafting` → createfood:honeyed_muffin ← #c:muffin_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_pastry_from_crafting` → createfood:honeyed_pastry ← #c:pastry_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_pretzel_stick_from_crafting` → createfood:honeyed_pretzel_stick ← #c:pretzel_stick, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_sweet_roll_from_crafting` → createfood:honeyed_sweet_roll ← #c:sweet_roll_base, minecraft:honey_bottle
+- `createfood:minecraft/crafting/honeyed_toast_from_crafting` → createfood:honeyed_toast ← #c:toast, minecraft:honey_bottle
+- `createfood:minecraft/crafting/hot_chocolate_bottle_from_crafting` → 4× createfood:hot_chocolate_bottle ← #c:hot_chocolate_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/hot_dark_chocolate_bottle_from_crafting` → 4× createfood:hot_dark_chocolate_bottle ← #c:hot_dark_chocolate_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/hot_white_chocolate_bottle_from_crafting` → 4× createfood:hot_white_chocolate_bottle ← #c:hot_white_chocolate_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/ice_cream_bowl_from_crafting` → 3× createfood:ice_cream_bowl ← 3×#c:bowl, #c:ice_cream_bucket
+- `createfood:minecraft/crafting/kelp_soup_bowl_from_crafting` → 3× createfood:kelp_soup_bowl ← #c:kelp_soup_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/leather_soup_bowl_from_crafting` → 3× createfood:leather_soup_bowl ← 3×#c:bowl, #c:leather_soup_bucket
+- `createfood:minecraft/crafting/light_blue_gelatin_dessert_block_from_crafting` → createfood:light_blue_gelatin_dessert_block ← #c:light_blue_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/light_blue_gelatin_mix_bucket_from_crafting` → createfood:light_blue_gelatin_mix_bucket ← #c:dyes/light_blue, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/light_gray_gelatin_dessert_block_from_crafting` → createfood:light_gray_gelatin_dessert_block ← #c:light_gray_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/light_gray_gelatin_mix_bucket_from_crafting` → createfood:light_gray_gelatin_mix_bucket ← #c:dyes/light_gray, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/lime_gelatin_dessert_block_from_crafting` → createfood:lime_gelatin_dessert_block ← #c:lime_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/lime_gelatin_mix_bucket_from_crafting` → createfood:lime_gelatin_mix_bucket ← #c:dyes/lime, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/magenta_gelatin_dessert_block_from_crafting` → createfood:magenta_gelatin_dessert_block ← #c:magenta_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/magenta_gelatin_mix_bucket_from_crafting` → createfood:magenta_gelatin_mix_bucket ← #c:dyes/magenta, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/melon_cream_frosting_bottle_from_crafting` → 4× createfood:melon_cream_frosting_bottle ← #c:melon_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/melon_cream_frosting_bucket_from_crafting` → createfood:melon_cream_frosting_bucket ← 2×#c:frosting_ingredients, #c:heavy_cream_bucket, #c:melon, 2×#c:sugar, minecraft:bucket
+- `createfood:minecraft/crafting/melon_cream_frosting_bucket_from_crafting_alt_2` → createfood:melon_cream_frosting_bucket ← #c:cream_frosting_bucket, #c:melon, minecraft:bucket
+- `createfood:minecraft/crafting/melon_cream_frosting_piping_bag_from_crafting` → 2× createfood:melon_cream_frosting_piping_bag ← #c:melon_cream_frosting_bucket, 2×#c:piping_bag
+- `createfood:minecraft/crafting/melon_custard_bottle_from_crafting` → 4× createfood:melon_custard_bottle ← #c:melon_custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/melon_ice_cream_bowl_from_crafting` → 3× createfood:melon_ice_cream_bowl ← 3×#c:bowl, #c:melon_ice_cream_bucket
+- `createfood:minecraft/crafting/melon_ice_cream_bucket_from_crafting_alt_2` → createfood:melon_ice_cream_bucket ← #c:ice_cream_bucket, #c:melon, minecraft:bucket
+- `createfood:minecraft/crafting/melon_jam_bottle_from_crafting` → 2× createfood:melon_jam_bottle ← #c:melon_jam_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/melon_milkshake_bottle_from_crafting` → 2× createfood:melon_milkshake_bottle ← #c:melon_milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/melon_milkshake_bucket_from_crafting_alt` → createfood:melon_milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:melon, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/milkshake_bottle_from_crafting` → 2× createfood:milkshake_bottle ← #c:milkshake_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/milkshake_bucket_from_crafting_alt` → createfood:milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/molasses_bottle_from_crafting` → 2× createfood:molasses_bottle ← #c:molasses_bucket, 2×minecraft:glass_bottle
+- `createfood:minecraft/crafting/mushroom_cream_soup_bowl_from_crafting` → 3× createfood:mushroom_cream_soup_bowl ← #c:mushroom_cream_soup_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/mutton_stew_bowl_from_crafting` → 3× createfood:mutton_stew_bowl ← 3×#c:bowl, #c:mutton_stew_bucket
+- `createfood:minecraft/crafting/orange_gelatin_dessert_block_from_crafting` → createfood:orange_gelatin_dessert_block ← #c:orange_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/orange_gelatin_mix_bucket_from_crafting` → createfood:orange_gelatin_mix_bucket ← #c:dyes/orange, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/pasta_plate_fish_squid_ink_from_crafting` → farmersdelight:squid_ink_pasta ← #c:pasta_plate_fish, #c:squid_ink_bucket
+- `createfood:minecraft/crafting/pasta_plate_slime_from_crafting` → createfood:pasta_plate_slime ← #c:pasta_plate, #c:slime_bucket
+- `createfood:minecraft/crafting/pasta_plate_squid_ink_from_crafting` → createfood:pasta_plate_squid_ink ← #c:pasta_plate, #c:squid_ink_bucket
+- `createfood:minecraft/crafting/pink_gelatin_dessert_block_from_crafting` → createfood:pink_gelatin_mix_bucket ← #c:pink_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/pink_gelatin_mix_bucket_from_crafting` → createfood:pink_gelatin_mix_bucket ← #c:dyes/pink, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/pita_dough_from_crafting` → createfood:pita_dough ← #c:pita_dough_ingredients, #c:vegetable_oil
+- `createfood:minecraft/crafting/pork_stew_bowl_from_crafting` → 3× createfood:pork_stew_bowl ← 3×#c:bowl, #c:pork_stew_bucket
+- `createfood:minecraft/crafting/potato_cream_soup_bowl_from_crafting` → 3× createfood:potato_cream_soup_bowl ← #c:potato_cream_soup_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/pumpernickel_dough_from_crafting` → 3× createfood:pumpernickel_dough ← #c:cocoa_powder, #c:molasses_bottle, minecraft:water_bucket, 3×minecraft:wheat
+- `createfood:minecraft/crafting/pumpernickel_toast_cream_cheese_beetroot_honey_from_crafting` → createfood:pumpernickel_toast_cream_cheese_beetroot_honey ← #c:pumpernickel_toast_cream_cheese_beetroot, minecraft:honey_bottle
+- `createfood:minecraft/crafting/pumpkin_custard_bottle_from_crafting` → 4× createfood:pumpkin_custard_bottle ← #c:pumpkin_custard_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/pumpkin_puree_bottle_from_crafting` → 4× createfood:pumpkin_puree_bottle ← #c:pumpkin_puree_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/purple_gelatin_dessert_block_from_crafting` → createfood:purple_gelatin_dessert_block ← #c:purple_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/purple_gelatin_mix_bucket_from_crafting` → createfood:purple_gelatin_mix_bucket ← #c:dyes/purple, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/raw_apple_pie_from_crafting` → createfood:raw_apple_pie ← #c:apple_pie_filling_bucket, #c:raw_pie_crust
+- `createfood:minecraft/crafting/raw_berry_cookie_from_wheat_crafting` → 8× createfood:raw_berry_cookie ← #c:sugar, minecraft:sweet_berries, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_berry_pie_from_crafting` → createfood:raw_berry_pie ← #c:berry_pie_filling_bucket, #c:raw_pie_crust
+- `createfood:minecraft/crafting/raw_butterscotch_chip_chocolate_cookie_from_wheat_crafting` → 8× createfood:raw_butterscotch_chip_chocolate_cookie ← #c:butterscotch_chips, #c:cocoa_powder, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_butterscotch_chip_cookie_from_wheat_crafting` → 8× createfood:raw_butterscotch_chip_cookie ← #c:butterscotch_chips, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_caramel_chip_chocolate_cookie_from_wheat_crafting` → 8× createfood:raw_caramel_chip_chocolate_cookie ← #c:caramel_chips, #c:cocoa_powder, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_caramel_chip_cookie_from_wheat_crafting` → 8× createfood:raw_caramel_chip_cookie ← #c:caramel_chips, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_cheesecake_from_crafting` → createfood:raw_cheesecake ← #c:cheesecake_filling_bucket, #c:raw_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_chocolate_chip_chocolate_cookie_from_wheat_crafting` → 8× createfood:raw_chocolate_chip_chocolate_cookie ← #c:chocolate_chips, #c:cocoa_powder, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_chocolate_chip_cookie_from_wheat_crafting` → 8× createfood:raw_chocolate_chip_cookie ← #c:chocolate_chips, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_chorus_fruit_cookie_from_wheat_crafting` → 8× createfood:raw_chorus_fruit_cookie ← #c:chorus_fruit, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_chorus_fruit_pie_from_crafting` → createfood:raw_chorus_fruit_pie ← #c:chorus_fruit_pie_filling_bucket, #c:raw_pie_crust
+- `createfood:minecraft/crafting/raw_cream_pie_chocolate_graham_cracker_from_crafting` → createfood:raw_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_chocolate_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_cream_pie_graham_cracker_from_crafting` → createfood:raw_cream_pie_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_dark_chocolate_chip_chocolate_cookie_from_wheat_crafting` → 8× createfood:raw_dark_chocolate_chip_chocolate_cookie ← #c:cocoa_powder, #c:dark_chocolate_chips, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_dark_chocolate_chip_cookie_from_wheat_crafting` → 8× createfood:raw_dark_chocolate_chip_cookie ← #c:dark_chocolate_chips, #c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_flesh_cookie_from_wheat_crafting` → 8× createfood:raw_flesh_cookie ← minecraft:rotten_flesh, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_glow_berry_cookie_from_wheat_crafting` → 8× createfood:raw_glow_berry_cookie ← #c:sugar, minecraft:glow_berries, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_glow_berry_pie_from_crafting` → createfood:raw_glow_berry_pie ← #c:glow_berry_pie_filling_bucket, #c:raw_pie_crust
+- `createfood:minecraft/crafting/raw_honey_cookie_from_dough_crafting` → 8× createfood:raw_honey_cookie ← #c:sweet_dough, minecraft:honey_bottle
+- `createfood:minecraft/crafting/raw_honey_cookie_from_egg_crafting` → 8× createfood:raw_honey_cookie ← #c:eggs, #c:sugar, minecraft:honey_bottle, minecraft:wheat
+- `createfood:minecraft/crafting/raw_honey_cookie_from_wheat_crafting` → 8× createfood:raw_honey_cookie ← #c:sugar, minecraft:honey_bottle, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_mini_cream_pie_chocolate_graham_cracker` → createfood:raw_mini_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_mini_chocolate_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_mini_cream_pie_chocolate_graham_cracker_alt` → 2× createfood:raw_mini_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, 2×#c:raw_mini_chocolate_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_mini_cream_pie_graham_cracker` → createfood:raw_mini_cream_pie_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_mini_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_mini_cream_pie_graham_cracker_alt` → 2× createfood:raw_mini_cream_pie_graham_cracker ← #c:cream_pie_filling_bucket, 2×#c:raw_mini_graham_cracker_pie_crust
+- `createfood:minecraft/crafting/raw_pumpkin_pie_from_crafting` → createfood:raw_pumpkin_pie ← #c:pumpkin_pie_filling_bucket, #c:raw_pie_crust
+- `createfood:minecraft/crafting/raw_spider_eye_cookie_from_wheat_crafting` → 8× createfood:raw_spider_eye_cookie ← minecraft:spider_eye, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_sugar_cookie_from_wheat_crafting` → 8× createfood:raw_sugar_cookie ← 2×#c:sugar, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_toffee_chip_chocolate_cookie_from_wheat_crafting` → 8× createfood:raw_toffee_chip_chocolate_cookie ← #c:cocoa_powder, #c:sugar, #c:toffee_chips, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_toffee_chip_cookie_from_wheat_crafting` → 8× createfood:raw_toffee_chip_cookie ← #c:sugar, #c:toffee_chips, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_white_chocolate_chip_chocolate_cookie_from_wheat_crafting` → 8× createfood:raw_white_chocolate_chip_chocolate_cookie ← #c:cocoa_powder, #c:sugar, #c:white_chocolate_chips, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/raw_white_chocolate_chip_cookie_from_wheat_crafting` → 8× createfood:raw_white_chocolate_chip_cookie ← #c:sugar, #c:white_chocolate_chips, minecraft:water_bucket, minecraft:wheat
+- `createfood:minecraft/crafting/red_gelatin_dessert_block_from_crafting` → createfood:red_gelatin_dessert_block ← #c:red_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/red_gelatin_mix_bucket_from_crafting` → createfood:red_gelatin_mix_bucket ← #c:dyes/red, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/rice_pudding_bowl_from_crafting` → 3× createfood:rice_pudding_bowl ← #c:rice_pudding_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/salt_dough_from_wheat_crafting` → 6× createfood:salt_dough ← #c:salt, minecraft:water_bucket, 3×minecraft:wheat
+- `createfood:minecraft/crafting/shakshuka_bowl_from_crafting` → 3× createfood:shakshuka_bowl ← #c:shakshuka_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/sour_cream_bottle_from_crafting` → 4× createfood:sour_cream_bottle ← #c:sour_cream_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/sugar_cane_juice_bottle_from_crafting` → 4× createfood:sugar_cane_juice_bottle ← #c:sugar_cane_juice_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/sugar_dough_from_wheat_crafting` → 3× createfood:sugar_dough ← #c:sugar, minecraft:water_bucket, 3×minecraft:wheat
+- `createfood:minecraft/crafting/taco_sauce_bottle_from_crafting` → 4× createfood:taco_sauce_bottle ← #c:taco_sauce_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/tomato_cream_soup_bowl_from_crafting` → 3× createfood:tomato_cream_soup_bowl ← #c:tomato_cream_soup_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/ube_cream_frosting_bottle_from_crafting` → 4× createfood:ube_cream_frosting_bottle ← #c:ube_cream_frosting_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/ube_cream_frosting_piping_bag_from_crafting` → 2× createfood:ube_cream_frosting_piping_bag ← 2×#c:piping_bag, #c:ube_cream_frosting_bucket
+- `createfood:minecraft/crafting/vinegar_bottle_from_crafting` → 4× createfood:vinegar_bottle ← #c:vinegar_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/waffle_batter_bucket_from_crafting` → createfood:waffle_batter_bucket ← #c:butter, #c:egg_whites, #c:flours/wheat, #c:sugar, minecraft:bucket, minecraft:milk_bucket
+- `createfood:minecraft/crafting/white_chocolate_bottle_from_crafting` → 4× createfood:white_chocolate_bottle ← #c:white_chocolate_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/yellow_gelatin_dessert_block_from_crafting` → createfood:yellow_gelatin_dessert_block ← #c:yellow_gelatin_mix_bucket, 2×minecraft:ice
+- `createfood:minecraft/crafting/yellow_gelatin_mix_bucket_from_crafting` → createfood:yellow_gelatin_mix_bucket ← #c:dyes/yellow, #c:gelatin_mix_bucket, minecraft:bucket
+- `createfood:minecraft/crafting/yogurt_bottle_from_crafting` → 4× createfood:yogurt_bottle ← #c:yogurt_bucket, 4×minecraft:glass_bottle
+- `createfood:minecraft/crafting/yogurt_bowl_from_crafting` → 3× createfood:yogurt_bowl ← #c:yogurt_bucket, 3×minecraft:bowl
+- `createfood:minecraft/crafting/yogurt_bowl_honey_from_crafting` → createfood:yogurt_bowl_honey ← #c:yogurt_bowl, minecraft:honey_bottle
+- `farmersdelight:honey_glazed_ham_block` → farmersdelight:honey_glazed_ham_block ← 2×farmersdelight:cooked_rice, farmersdelight:smoked_ham, minecraft:bowl, minecraft:honey_bottle, 4×minecraft:sweet_berries
+- `farmersdelight:milk_bottle` → 4× farmersdelight:milk_bottle ← 4×minecraft:glass_bottle, minecraft:milk_bucket
+- `garnished:farseer_brew` → garnished:farseer_brew ← garnished:aureate_shrub, garnished:preliminary_nucleus, garnished:vex_wing, minecraft:bowl, minecraft:dragon_breath
+- `garnished:rosy_cocktail` → garnished:rosy_cocktail ← create:polished_rose_quartz, 2×garnished:shattered_amber_remnant, minecraft:honey_bottle
+- `projecte:conversions/water_to_ice` → minecraft:ice ← [minecraft:water_bucket|projecte:evertide_amulet], [projecte:arcana_ring|projecte:zero_ring]
+- `tfmg:crafting/materials/rusted_blast_furnace_reinforcement` → 8× tfmg:rusted_blast_furnace_reinforcement ← minecraft:water_bucket, 8×tfmg:blast_furnace_reinforcement
+
+## Рецепты с тарой (вёдра, бутылки) — сгенерированный mixing (17)
+
+- `arphex:elixir_splintered` → arphex:elixir_of_splintered_sanity ← arphex:core_of_eternal_suffering, 3×arphex:mantle_of_vitality, minecraft:water_bucket
+- `create:crafting/curiosities/cake` → minecraft:cake ← #c:eggs, #c:foods/dough, minecraft:milk_bucket, 2×minecraft:sugar
+- `create_submarine:barometer` → create_submarine:barometer ← 3×create:industrial_iron_block, 5×create_submarine:iron_pressurizer, minecraft:water_bucket
+- `createdieselgenerators:crafting/asphalt_block` → 8× createdieselgenerators:asphalt_block ← createdieselgenerators:crude_oil_bucket, 4×minecraft:gravel, 4×minecraft:sand
+- `dndesires:crafting/fan_catalyst/blasting_sail` → 4× dndesires:blasting_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:lava_bucket
+- `dndesires:crafting/fan_catalyst/freezing_sail` → 4× dndesires:freezing_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:powder_snow_bucket
+- `dndesires:crafting/fan_catalyst/splashing_sail` → 4× dndesires:splashing_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:water_bucket
+- `minecraft:cake` → minecraft:cake ← minecraft:egg, 3×minecraft:milk_bucket, 2×minecraft:sugar, 3×minecraft:wheat
+- `projecte:evertide_amulet` → projecte:evertide_amulet ← 6×minecraft:water_bucket, 3×projecte:dark_matter
+- `projecte:iron_band` → projecte:iron_band ← 8×#c:ingots/iron, [minecraft:lava_bucket|projecte:volcanite_amulet]
+- `projecte:volcanite_amulet` → projecte:volcanite_amulet ← 6×minecraft:lava_bucket, 3×projecte:dark_matter
+- `tfmg:crafting/materials/accumulator` → tfmg:accumulator ← 4×#c:plates/lead, #c:storage_blocks/lead, #c:wires/copper, tfmg:industrial_aluminum_casing, 2×tfmg:sulfuric_acid_bucket
+- `tfmg:crafting/materials/cinder_block` → 8× tfmg:cinder_block ← 6×tfmg:cinderblock, tfmg:liquid_concrete_bucket, 2×tfmg:rebar
+- `tfmg:crafting/materials/fire_extinguisher` → tfmg:fire_extinguisher ← #c:ingots/steel, #c:nuggets/steel, 5×#c:plates/aluminum, minecraft:red_dye, tfmg:carbon_dioxide_bucket
+- `tfmg:crafting/materials/freezer` → tfmg:freezer ← 2×create:fluid_pipe, tfmg:compressor, 4×tfmg:electromagnetic_coil, 2×tfmg:lpg_bucket
+- `tfmg:crafting/materials/napalm_bomb` → tfmg:napalm_bomb ← 3×tfmg:napalm_bucket, 6×tfmg:plastic_sheet
+- `tfmg:crafting/materials/neon_tube` → 4× tfmg:neon_tube ← 2×#c:nuggets/copper, 4×#c:nuggets/steel, create:framed_glass, 2×tfmg:neon_bucket
+
+## Рецепты верстака, которые в 1.21.1 не грузятся (формат 1.20) — игнорируются (57)
+
+- `cbc_at:munition/autocannon/apds_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/autocannon/apdsfs_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/autocannon/he_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/autocannon/hei_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/grapeshot_caseless` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_ap_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_apds_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_apdsfs_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_he_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_heat_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_hef_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/ha_smoke_item` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/heavy_autocannon_ammo_box` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `cbc_at:munition/heavy_autocannon_munition/heavy_autocannon_empty_cartridge` (cbc_at_Neoforge_1.21.1_0.1.4c.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:bamboo_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:birch_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:blaze_burner_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:brass_knife_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:brass_speaker_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:card_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:card_reader_craft_2` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:cardpress_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:cherry_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:chorus_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:crimson_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:dark_oak_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:gluepackagingcraft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:jaboticaba_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:jungle_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:mangrove_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:mangrove_sail_craft_backport` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:neon_tube_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:new_trap_door_brass` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:new_trapdoor_andesite` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:new_trapdoor_copper` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:oak_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:portable_whistle_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:powder_obsi_c_raft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:raboutan_sail_c_raft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:radar_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:slime_boost_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:sprinkler_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:spruce_sail_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:train_stop_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:warped_sail_c_raft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `create_things_and_misc:zinc_knif_craft` (create_things_and_misc-4.1.1-neoforge-1.21.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `createdeco:placard` (createdeco-2.1.3.jar) — битый формат 1.21.1: ингредиент без item/tag: {"id": "minecraft:white_dye"}
+- `evenmoreinstruments:create/saxophone` (evenmoreinstruments-neoforge-1.21-1.21.1-6.1.4.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `evenmoreinstruments:create/trombone` (evenmoreinstruments-neoforge-1.21-1.21.1-6.1.4.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:kelp_chair` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:kelp_chair_from_seat` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:kelp_floor_chair` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:kelp_floor_chair_from_seat` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:kelp_seat` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:seatwood_planks_arr_one` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:seatwood_planks_arr_two` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+- `interiors:wall_table` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
+
+## create:mechanical_crafting и родственные — механические крафтеры (226)
+
+- `aeroworks:joystick` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/auto_fire` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/ballistazooka` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/blazegun` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/gatling` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/gatling_drum` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/hammer` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/launcher` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/launcher_auto` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/nailgun` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/nailgun_splitter` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/revolver` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/round_belt` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/shotgun` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/shotgun_drum` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/shotgun_pump` (create:mechanical_crafting)
+- `cgs:mechanical_crafting/steam_engine` (create:mechanical_crafting)
+- `create:mechanical_crafting/crushing_wheel` (create:mechanical_crafting)
+- `create:mechanical_crafting/extendo_grip` (create:mechanical_crafting)
+- `create:mechanical_crafting/potato_cannon` (create:mechanical_crafting)
+- `create:mechanical_crafting/wand_of_symmetry` (create:mechanical_crafting)
+- `create_hypertube:hypertube_junction` (create:mechanical_crafting)
+- `create_jetpack:jetpack` (create_jetpack:copy_components_mechanical_crafting)
+- `create_jetpack:netherite_jetpack` (create_jetpack:copy_components_mechanical_crafting)
+- `create_mechanical_extruder:mechanical_brass_extruder` (create:mechanical_crafting)
+- `create_mechanical_spawner:loot_collector` (create:mechanical_crafting)
+- `create_mechanical_spawner:mechanical_spawner` (create:mechanical_crafting)
+- `create_new_age:mechanical_crafting/advanced_motor_extension` (create:mechanical_crafting)
+- `create_new_age:mechanical_crafting/reactor_rod` (create:mechanical_crafting)
+- `create_new_age:mechanical_crafting/reinforced_motor` (create:mechanical_crafting)
+- `create_power_loader:empty_brass_chunk_loader` (create:mechanical_crafting)
+- `create_recipes:mechanical_crafting/economy_plane` (create:mechanical_crafting)
+- `create_recipes:mechanical_crafting/scarlet_biplane` (create:mechanical_crafting)
+- `create_sa:andesite_exoskeleton_recipe` (create:mechanical_crafting)
+- `create_sa:andesite_jetpack_recipe` (create:mechanical_crafting)
+- `create_sa:brass_drone_recipe` (create:mechanical_crafting)
+- `create_sa:brass_exoskeleton_recipe` (create:mechanical_crafting)
+- `create_sa:brass_jetpack_recipe` (create:mechanical_crafting)
+- `create_sa:flamethrower_recipe` (create:mechanical_crafting)
+- `create_sa:grapplin_whisk_recipe` (create:mechanical_crafting)
+- `create_sa:rose_quartz_axe_recipe` (create:mechanical_crafting)
+- `create_sa:rose_quartz_pickaxe_recipe` (create:mechanical_crafting)
+- `create_sa:rose_quartz_shovel_recipe` (create:mechanical_crafting)
+- `create_sa:rose_quartz_sword_recipe` (create:mechanical_crafting)
+- `create_things_and_misc:canon_craft` (create:mechanical_crafting)
+- `create_things_and_misc:spout_craft` (create:mechanical_crafting)
+- `createaddition:mechanical_crafting/alternator` (create:mechanical_crafting)
+- `createaddition:mechanical_crafting/electric_motor` (create:mechanical_crafting)
+- `createaddition:mechanical_crafting/electric_pump` (create:mechanical_crafting)
+- `createaddition:mechanical_crafting/tesla_coil` (create:mechanical_crafting)
+- `createbigcannons:ap_shell` (create:mechanical_crafting)
+- `createbigcannons:fluid_shell` (create:mechanical_crafting)
+- `createbigcannons:he_shell` (create:mechanical_crafting)
+- `createbigcannons:shrapnel_shell` (create:mechanical_crafting)
+- `createdieselgenerators:mechanical_crafting/chemcial_sprayer` (create:mechanical_crafting)
+- `createdieselgenerators:mechanical_crafting/pumpjack_crank` (create:mechanical_crafting)
+- `createendertransmission:mechanical_crafting/energy_transmitter` (create:mechanical_crafting)
+- `createendertransmission:mechanical_crafting/fluid_transmitter` (create:mechanical_crafting)
+- `createendertransmission:mechanical_crafting/item_transmitter` (create:mechanical_crafting)
+- `creategbd:advanced_laser_turret` (create:mechanical_crafting)
+- `creategbd:basic_laser_turret` (create:mechanical_crafting)
+- `creategbd:beam_reactor_helmet` (create:mechanical_crafting)
+- `createoreexcavation:drilling_machine` (create:mechanical_crafting)
+- `createoreexcavation:extractor` (create:mechanical_crafting)
+- `createoreexcavation:sample_drill` (create:mechanical_crafting)
+- `createrailwaysnavigator:navigator` (create:mechanical_crafting)
+- `dndesires:mechanical_crafting/gatling_breaker` (create:mechanical_crafting)
+- `garnished:integration/hatchet/gilded_quartz_hatchet` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/anniversary_cake` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/blazing_delight` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/dusty_regale` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/galactic_cane_diagonal` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/galactic_cane_horizontal` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/galactic_cane_vertical` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/galvanic_haunting` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/ghandercken` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/grim_stew` (create:mechanical_crafting)
+- `garnished:mechanical_crafting/thorn_on_a_stick` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/atmospheric_concentrator` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/auto_lander` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/circuit_engraver` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/computer_rack` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/electrolysis_machine` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/interplanetary_navigator` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/oxygen_sealer` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/rocket_controls` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/rocket_station` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/rocket_waypoint` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/solar_panel` (create:mechanical_crafting)
+- `northstar:mechanical_crafting/temperature_regulator` (create:mechanical_crafting)
+- `railways:mechanical_crafting/black_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/black_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/black_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/black_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/blue_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/blue_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/blue_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/blue_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/brown_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/brown_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/brown_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/brown_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/chartreuse_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/chartreuse_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/chartreuse_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/chartreuse_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/cyan_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/cyan_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/cyan_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/cyan_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/diorite_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/diorite_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/diorite_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/diorite_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/dripstone_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/dripstone_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/dripstone_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/dripstone_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/granite_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/granite_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/granite_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/granite_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/gray_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/gray_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/gray_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/gray_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/green_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/green_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/green_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/green_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_blue_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_blue_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_blue_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_blue_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_gray_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_gray_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_gray_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/light_gray_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/lime_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/lime_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/lime_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/lime_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/limestone_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/limestone_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/limestone_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/limestone_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/magenta_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/magenta_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/magenta_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/magenta_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/maroon_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/maroon_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/maroon_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/maroon_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/ochrum_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/ochrum_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/ochrum_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/ochrum_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/olive_green_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/olive_green_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/olive_green_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/olive_green_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/orange_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/orange_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/orange_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/orange_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pine_green_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pine_green_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pine_green_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pine_green_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pink_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pink_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pink_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/pink_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/purple_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/purple_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/purple_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/purple_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/red_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/red_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/red_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/red_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/royal_blue_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/royal_blue_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/royal_blue_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/royal_blue_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/scorchia_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/scorchia_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/scorchia_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/scorchia_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/sea_green_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/sea_green_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/sea_green_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/sea_green_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/tuff_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/tuff_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/tuff_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/tuff_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/turquoise_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/turquoise_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/turquoise_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/turquoise_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/vermilion_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/vermilion_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/vermilion_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/vermilion_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/white_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/white_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/white_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/white_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/yellow_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/yellow_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/yellow_iron_wrapped_locometal_boiler` (create:mechanical_crafting)
+- `railways:mechanical_crafting/yellow_locometal_boiler` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/advanced_potato_cannon` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/flamethrower` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/large_engine` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/quad_potato_cannon` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/rotor` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/simple_large_engine` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/spark_plug` (create:mechanical_crafting)
+- `tfmg:mechanical_crafting/stator` (create:mechanical_crafting)

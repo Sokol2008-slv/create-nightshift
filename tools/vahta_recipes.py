@@ -980,6 +980,8 @@ def write_lists():
             [fmt_rec(r) for r in sorted(PRESS, key=lambda r: r.id)])
     section('Рецепты с тарой (вёдра, бутылки) — бесформенные', [fmt_rec(r) for r in sorted(CONT_SHAPELESS, key=lambda r: r.id)])
     section('Рецепты с тарой (вёдра, бутылки) — сгенерированный mixing', [fmt_rec(r) for r in sorted(CONT_MIXGEN, key=lambda r: r.id)])
+    section('Рецепты верстака, которые в 1.21.1 не грузятся (формат 1.20) — игнорируются',
+            ['`%s` (%s) — %s' % x for x in sorted(BROKEN)])
     section('create:mechanical_crafting и родственные — механические крафтеры',
             ['`%s` (%s)' % (rid, t) for rid, src, t in sorted(MECH)])
     with open(OUT_LISTS, 'w', encoding='utf-8') as f:
