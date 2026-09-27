@@ -17,6 +17,7 @@
 //        Никто из них не бьёт (урон 0, бессмертны) — пугают и исчезают.
 //   /scare faces <ник> [радиус 3–10] [сек 1–10] — открытые блоки камня, земли, досок и
 //        брёвен вокруг становятся моргающими глазами, потом возвращаются как были
+//   /scare box <ник> [сек 2–15] — коробка из глаз вокруг игрока (внутри 3×3×3), потом исчезает
 //   /scare whisper <ник> <текст> — строка над хотбаром тёмно-красным курсивом
 //   /scare stop — убрать всех и вернуть блоки
 // Внешность — ресурсы ETF (мод уже в сборке): хаск в команде ns_mono / ns_clown рисуется
@@ -571,8 +572,49 @@ function nsFaceRestore(job) {
 	var eye = nsScareEye()
 	for (var i = 0; i < job.list.length; i++) {
 		var pos = job.list[i][0]
-		if (job.level.getBlockState(pos)['is(net.minecraft.world.level.block.Block)'](eye)) job.level.setBlock(pos, job.list[i][1], 2)
+		var placed = job.list[i][2] || eye
+		if (job.level.getBlockState(pos)['is(net.minecraft.world.level.block.Block)'](placed)) job.level.setBlock(pos, job.list[i][1], 2)
 	}
+}
+
+// Коробка из глаз вокруг игрока: оболочка 5×5×5 (внутри 3×3×3), без блоков с блок-сущностью.
+// Внутри невидимый свет, иначе в полной темноте сработает «Тьма сжимается» (sanity/20_darkness.js).
+function nsScareBox(server, player, secs) {
+	var level = player.getLevel()
+	var name = String(player.getGameProfile().getName())
+	var eye = nsScareEye().defaultBlockState()
+	var lightBlock = NS_SCARE_BLOCKS.get(NS_SCARE_RL.parse('minecraft:light'))
+	var cx = Math.floor(player.getX()),
+		fy = Math.floor(player.getY()),
+		cz = Math.floor(player.getZ())
+	var job = { level: level, dim: nsScareDim(level), until: nsScareTick + secs * 20, list: [] }
+	for (var x = -2; x <= 2; x++)
+		for (var y = -1; y <= 3; y++)
+			for (var z = -2; z <= 2; z++) {
+				if (Math.abs(x) < 2 && Math.abs(z) < 2 && y > -1 && y < 3) continue // внутренность
+				var pos = new NS_SCARE_POS(cx + x, fy + y, cz + z)
+				var st = level.getBlockState(pos)
+				if (st.hasBlockEntity()) continue
+				job.list.push([pos, st])
+			}
+	// сначала задание на возврат (и запись в persistentData), потом подмена — неразрушаемые
+	// глаза не должны остаться навсегда, даже если дальше что-то упадёт
+	nsFaceJobs.push(job)
+	nsFaceSave(server)
+	for (var i = 0; i < job.list.length; i++) level.setBlock(job.list[i][0], eye, 2)
+	try {
+		var lp = new NS_SCARE_POS(cx, fy + 2, cz)
+		var lst = level.getBlockState(lp)
+		if (lst.getCollisionShape(level, lp).isEmpty() && lst.getFluidState().isEmpty() && !lst.hasBlockEntity()) {
+			job.list.push([lp, lst, lightBlock])
+			nsScareCmd(server, 'execute in ' + job.dim + ' run setblock ' + cx + ' ' + (fy + 2) + ' ' + cz + ' minecraft:light[level=6]')
+		}
+	} catch (e) {
+		console.warn('[nightshift] /scare box: свет не поставлен: ' + e)
+	}
+	nsScareCmd(server, 'execute at ' + name + ' run playsound minecraft:entity.warden.heartbeat hostile ' + name + ' ~ ~ ~ 1 0.9')
+	nsScareCmd(server, 'execute at ' + name + ' run playsound minecraft:block.sculk_shrieker.shriek hostile ' + name + ' ~ ~ ~ 0.6 0.6')
+	return job.list.length
 }
 
 function nsFaceStart(server, player, r, secs) {
@@ -669,6 +711,15 @@ function nsScareFaces(ctx, name, r, secs) {
 	return 1
 }
 
+function nsScareBoxCmd(ctx, name, secs) {
+	var p = nsScareTarget(ctx, name)
+	if (!p) return 0
+	secs = Math.max(2, Math.min(15, secs))
+	var n = nsScareBox(ctx.source.getServer(), p, secs)
+	nsScareReply(ctx, 'коробка из глаз: ' + n + ' блоков на ' + secs + ' с')
+	return 1
+}
+
 ServerEvents.commandRegistry(event => {
 	var Commands = event.commands
 	var Arguments = event.arguments
@@ -697,6 +748,13 @@ ServerEvents.commandRegistry(event => {
 							.executes(ctx => nsScareFaces(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'r'), 4))
 							.then(Commands.argument('secs', Arguments.INTEGER.create(event)).executes(ctx => nsScareFaces(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'r'), nsScareArgInt(ctx, 'secs'))))
 					)
+			)
+		)
+		.then(
+			Commands.literal('box').then(
+				Commands.argument('name', Arguments.STRING.create(event))
+					.executes(ctx => nsScareBoxCmd(ctx, nsScareArgName(ctx), 6))
+					.then(Commands.argument('secs', Arguments.INTEGER.create(event)).executes(ctx => nsScareBoxCmd(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'secs'))))
 			)
 		)
 		.then(
