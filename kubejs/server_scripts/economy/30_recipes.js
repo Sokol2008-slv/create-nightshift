@@ -1,8 +1,8 @@
 // ==========================================================================
 // Ночная смена — рецепты экономики и гейтинг ProjectE по фазам.
-// Философский камень — латунь + механизм точности + алмаз (P3), стол трансмутации —
-// латунный блок, коллекторы/реле/конденсатор — сталь и электромотор TFMG (P4–P5),
-// арканный планшет — титан и марсианская сталь (P6).
+// «Вахта»: философского камня нет (рецепты, где он ключ, — vahta/30_projecte.js), стол
+// трансмутации — сразу после андезитового сплава, в миксере. Коллекторы/реле/конденсатор —
+// сталь и электромотор TFMG (P4–P5), арканный планшет — титан и марсианская сталь (P6).
 // ==========================================================================
 
 ServerEvents.recipes(event => {
@@ -17,17 +17,13 @@ ServerEvents.recipes(event => {
 	]
 	for (var i = 0; i < removed.length; i++) event.remove({ id: removed[i] })
 
-	event.shaped('projecte:philosophers_stone', ['BAB', 'APD', 'BAB'], {
-		B: 'create:brass_ingot',
-		A: 'create:andesite_alloy',
-		P: 'create:precision_mechanism',
-		D: '#c:gems/diamond',
-	}).id('nightshift:projecte/philosophers_stone')
-	event.shaped('projecte:transmutation_table', ['OBO', 'BPB', 'OBO'], {
-		O: '#c:obsidians/normal',
-		B: 'create:brass_block',
-		P: 'projecte:philosophers_stone',
-	}).id('nightshift:projecte/transmutation_table')
+	// стол трансмутации: первые машины (сплав + корпус) + немного редстоуна, без нагрева
+	event.recipes.create.mixing('projecte:transmutation_table', [
+		'4x create:andesite_alloy',
+		'create:andesite_casing',
+		'2x minecraft:redstone',
+		'2x minecraft:stone',
+	]).id('nightshift:projecte/transmutation_table')
 	event.shaped('projecte:collector_mk1', ['GEG', 'GSG', 'GMG'], {
 		G: 'minecraft:glowstone',
 		E: 'tfmg:electric_motor',
