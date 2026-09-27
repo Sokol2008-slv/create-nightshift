@@ -55,6 +55,7 @@ var NS_SCARE_KINDS = {
 	clown: { team: 'ns_clown', scale: 1.0, eye: 1.7, h: 2, speed: 0.36, def: 'peek', title: 'Клоун', sting: 'minecraft:entity.witch.celebrate', stingPitch: 0.7, gone: 'minecraft:entity.witch.celebrate', gonePitch: 1.5 }
 }
 var NS_SCARE_MODES = ['hunt', 'stalk', 'peek', 'dash', 'chase', 'turn']
+var NS_SCARE_SMALL_EYE = 1.7 // рост 1.0 для низких ходов
 
 var nsScares = [] // активные: {kind, K, name, level, dim, plan, step, uuid, t, seen, beat, jump, dst, yaw0, shown}
 var nsFaceJobs = [] // подмены блоков: {level, dim, until, list: [[pos, state]]}
@@ -140,9 +141,13 @@ function nsScareSpot(player, K, dist, off, spread, needSight) {
 		var z = Math.floor(pz + Math.cos(a) * d) + 0.5
 		for (var dy = 6; dy >= -8; dy--) {
 			var y = py + dy
-			if (!nsScareFree(level, x, y, z, K.h)) continue
-			if (needSight && !nsScareClear(level, px, player.getEyeY(), pz, x, y + K.eye, z)) break
-			return { x: x, y: y, z: z }
+			var small = false
+			if (!nsScareFree(level, x, y, z, K.h)) {
+				if (K.h <= 2 || !nsScareFree(level, x, y, z, 2)) continue
+				small = true // низкий ход (шахта): встанет обычного роста
+			}
+			if (needSight && !nsScareClear(level, px, player.getEyeY(), pz, x, y + (small ? NS_SCARE_SMALL_EYE : K.eye), z)) break
+			return { x: x, y: y, z: z, small: small }
 		}
 	}
 	return null
@@ -202,13 +207,13 @@ function nsScarePeekSpot(player, K) {
 
 // видна ли голова хоть краем (центр и ±0,3 блока поперёк взгляда): выглядывающего из-за
 // угла ванильный hasLineOfSight не видит — луч в центр глаз упирается в стену
-function nsScareHeadVisible(player, ent, K) {
+function nsScareHeadVisible(player, ent, eye) {
 	var level = player.getLevel()
 	var ex = player.getX(),
 		ey = player.getEyeY(),
 		ez = player.getZ()
 	var x = ent.getX(),
-		y = ent.getY() + K.eye,
+		y = ent.getY() + eye,
 		z = ent.getZ()
 	var vx = x - ex,
 		vz = z - ez
@@ -246,7 +251,7 @@ function nsScareSpawn(rec, player, spot, ai) {
 		',Tags:["ns_scare","' + K.team + '"],Silent:1b,Invulnerable:1b,PersistenceRequired:1b,CanPickUpLoot:0b,CanBreakDoors:0b' +
 		',NoAI:' + (ai ? '0b' : '1b') +
 		',Rotation:[' + yaw.toFixed(1) + 'f,0f],DeathLootTable:"minecraft:empty"' +
-		',attributes:[{id:"minecraft:generic.scale",base:' + K.scale + 'd}' +
+		',attributes:[{id:"minecraft:generic.scale",base:' + (spot.small ? 1.0 : K.scale) + 'd}' +
 		',{id:"minecraft:generic.attack_damage",base:0d}' +
 		',{id:"minecraft:generic.movement_speed",base:' + K.speed + 'd}' +
 		',{id:"minecraft:generic.follow_range",base:64d}' +
@@ -258,6 +263,8 @@ function nsScareSpawn(rec, player, spot, ai) {
 	rec.ent = null
 	rec.spot = spot
 	rec.born = nsScareTick
+	rec.eye = spot.small ? NS_SCARE_SMALL_EYE : K.eye
+	rec.h = spot.small ? 2 : K.h
 	rec.seen = 0
 	return nsScareEntity(rec)
 }
@@ -373,8 +380,9 @@ function nsScareTurnTick(server, rec, player, now) {
 		var sx = player.getX() + ((sign * lk.x()) / ln) * dists[i],
 			sz = player.getZ() + ((sign * lk.z()) / ln) * dists[i]
 		if (nsScareFree(rec.level, sx, Math.floor(player.getY()), sz, rec.K.h)) spot = { x: sx, y: Math.floor(player.getY()), z: sz }
+		else if (nsScareFree(rec.level, sx, Math.floor(player.getY()), sz, 2)) spot = { x: sx, y: Math.floor(player.getY()), z: sz, small: true }
 	}
-	if (!spot) spot = { x: player.getX() + ((sign * lk.x()) / ln) * 1.4, y: player.getY(), z: player.getZ() + ((sign * lk.z()) / ln) * 1.4 }
+	if (!spot) spot = { x: player.getX() + ((sign * lk.x()) / ln) * 1.4, y: player.getY(), z: player.getZ() + ((sign * lk.z()) / ln) * 1.4, small: true }
 	nsScareSpawn(rec, player, spot, false)
 	if (turned) nsScareSound(server, rec, rec.K.sting, spot.x, spot.y + 1, spot.z, 1, rec.K.stingPitch)
 	rec.shown = now + 60
@@ -407,7 +415,7 @@ function nsScareStep(server, rec, now) {
 		return true
 	}
 	var ex = ent.getX() - player.getX(),
-		ey = ent.getY() + K.eye - player.getEyeY(),
+		ey = ent.getY() + rec.eye - player.getEyeY(),
 		ez = ent.getZ() - player.getZ()
 	var dist = Math.sqrt(ex * ex + ey * ey + ez * ez)
 	var flat = Math.sqrt(ex * ex + ez * ez)
@@ -417,9 +425,9 @@ function nsScareStep(server, rec, now) {
 		if (now % 10 === 0) nsScareCmd(server, 'execute as ' + rec.uuid + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.name + ' eyes')
 		var look = player.getLookAngle()
 		var dot = (look.x() * ex + look.y() * ey + look.z() * ez) / Math.max(0.01, dist)
-		if (dot > 0.93 && nsScareHeadVisible(player, ent, K)) rec.seen++
+		if (dot > 0.93 && nsScareHeadVisible(player, ent, rec.eye)) rec.seen++
 		if (rec.seen >= (step.m === 'peek' ? 6 : 4) || flat < (step.m === 'peek' ? 3 : 6)) {
-			nsScareSound(server, rec, K.gone, ent.getX(), ent.getY() + K.eye, ent.getZ(), 0.6, K.gonePitch)
+			nsScareSound(server, rec, K.gone, ent.getX(), ent.getY() + rec.eye, ent.getZ(), 0.6, K.gonePitch)
 			nsScareNext(rec)
 		}
 		return true
@@ -437,7 +445,7 @@ function nsScareStep(server, rec, now) {
 			nz = ent.getZ() + (dz / left) * 1.1
 		var ny = null
 		var tries = [0, 1, -1, 2, -2]
-		for (var k = 0; k < tries.length && ny === null; k++) if (nsScareFree(rec.level, nx, Math.floor(ent.getY()) + tries[k], nz, K.h)) ny = Math.floor(ent.getY()) + tries[k]
+		for (var k = 0; k < tries.length && ny === null; k++) if (nsScareFree(rec.level, nx, Math.floor(ent.getY()) + tries[k], nz, rec.h)) ny = Math.floor(ent.getY()) + tries[k]
 		if (ny === null) {
 			nsScareNext(rec)
 			return true
@@ -472,7 +480,7 @@ function nsScareStep(server, rec, now) {
 			var ln = Math.max(0.01, Math.sqrt(lk.x() * lk.x() + lk.z() * lk.z()))
 			var fx = player.getX() + (lk.x() / ln) * 1.1,
 				fz = player.getZ() + (lk.z() / ln) * 1.1,
-				fy = player.getEyeY() - K.eye
+				fy = player.getEyeY() - rec.eye
 			nsScareCmd(server, 'execute in ' + rec.dim + ' run tp ' + rec.uuid + ' ' + fx.toFixed(2) + ' ' + fy.toFixed(2) + ' ' + fz.toFixed(2) + ' facing entity ' + rec.name + ' eyes')
 			nsScareSound(server, rec, K.sting, fx, player.getEyeY(), fz, 1, K.stingPitch)
 			rec.jump = now + 10
