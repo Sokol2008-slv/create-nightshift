@@ -15,6 +15,7 @@
 //   /nightshift fresh             — всем онлайн: раны сняты, рассудок/здоровье/еда полные, утро, все на спавне
 //   /nightshift curse <N>         — выставить проклятие алтаря (сердец у всех), 0 — снять
 //   /nightshift heal <ник> <N>    — снять игроку N ран (сердец за смерти)
+//   /nightshift hearts <ник> <N>  — выставить максимум N сердец без «Сердец ночи» (бонус 0, раны под N)
 // ==========================================================================
 
 function nsNearestAltar(state, source) {
@@ -289,6 +290,29 @@ ServerEvents.commandRegistry(event => {
 							nsSaveState(st)
 							nsApplyPenalty(null)
 							nsAdminReply(ctx, name + ': ран было ' + before + ', стало ' + st.wounds[name])
+							return 1
+						})
+					)
+				)
+			)
+			.then(
+				// максимум сердец игрока без «Сердец ночи»: бонус обнуляется, раны = 10 − N − проклятие
+				Commands.literal('hearts').requires(src => src.hasPermission(2)).then(
+					Commands.argument('name', Arguments.STRING.create(event)).then(
+						Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
+							var name = String(Arguments.STRING.getResult(ctx, 'name'))
+							var n = Math.max(3, Math.min(10, Number(Arguments.INTEGER.getResult(ctx, 'n'))))
+							var st = nsGetState()
+							st.wounds = st.wounds || {}
+							st.bonusHearts = st.bonusHearts || {}
+							var T = NSG.NIGHTSHIFT_TUNABLES
+							var was = 10 - Math.min(T.penaltyMaxHearts, (st.curse || 0) + (st.wounds[name] || 0)) + Math.min(T.bonusHeartsMax, st.bonusHearts[name] || 0)
+							st.bonusHearts[name] = 0
+							st.wounds[name] = Math.max(0, Math.min(T.woundMax, 10 - n - (st.curse || 0)))
+							nsSaveState(st)
+							nsApplyPenalty(null)
+							var now = 10 - Math.min(T.penaltyMaxHearts, (st.curse || 0) + st.wounds[name])
+							nsAdminReply(ctx, name + ': было ' + was + ' сердец, стало ' + now + ' (ран ' + st.wounds[name] + ', бонус 0, проклятие ' + (st.curse || 0) + ')')
 							return 1
 						})
 					)
