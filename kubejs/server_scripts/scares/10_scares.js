@@ -19,6 +19,9 @@
 //   /scare faces <ник> [радиус 3–10] [сек 1–10] — открытые блоки камня, земли, досок и
 //        брёвен вокруг становятся моргающими глазами, потом возвращаются как были
 //   /scare box <ник> [сек 2–15] — коробка из глаз вокруг игрока (внутри 3×3×3), потом исчезает
+//   /scare watcher <ник> — Наблюдатель (End Watchers) вдали, исчезает, когда на него смотрят
+//   /scare face <ник>    — фото-лицо (Horror Faces) вплотную на 1,5 с + хруст костей
+//   /scare voice <ник> [hey|see|behind] — искажённый голос из-за спины
 //   /scare whisper <ник> <текст> — строка над хотбаром тёмно-красным курсивом
 //   /scare stop — убрать всех и вернуть блоки
 // Внешность — ресурсы ETF (мод уже в сборке): хаск в команде ns_mono / ns_clown рисуется
@@ -57,6 +60,17 @@ var NS_SCARE_KINDS = {
 	clown: { team: 'ns_clown', scale: 1.0, eye: 1.7, h: 2, speed: 0.36, def: 'peek', title: 'Клоун', sting: 'minecraft:entity.witch.celebrate', stingPitch: 0.7, gone: 'minecraft:entity.witch.celebrate', gonePitch: 1.5 }
 }
 var NS_SCARE_MODES = ['hunt', 'stalk', 'peek', 'dash', 'chase', 'turn']
+
+// Существа из хоррор-модов: своя модель, звуки и поведение — мы только ставим (без ИИ) и убираем.
+// Сами по себе в мире не появляются (biome_modifier перекрыт в kubejs/data/*/neoforge/biome_modifier).
+//   watcher — End Watchers: высокий чёрный силуэт с белыми глазами, сам исчезает, когда на него смотрят
+//             или подходят ближе ~15 блоков (его логика работает и без ИИ)
+//   face    — Horror Faces: огромное фото-лицо (face_1…face_10), ставим прямо перед лицом на 1,5 с
+var NS_SCARE_EXTRA = {
+	watcher: { title: 'Наблюдатель', type: 'end_watchers:end_watcher_standing', scale: 0.4, h: 3, eye: 3.0, time: 900 },
+	face: { title: 'Лицо', type: 'goofy_horror_mod:face_', scale: 0.45, h: 2, eye: 1.3, time: 30 }
+}
+var NS_SCARE_ENTITY = Java.loadClass('net.minecraft.world.entity.Entity')
 var NS_SCARE_SMALL_EYE = 1.7 // рост 1.0 для низких ходов
 
 var nsScares = [] // активные: {kind, K, name, level, dim, plan, step, uuid, t, seen, beat, jump, dst, yaw0, shown}
@@ -232,7 +246,7 @@ function nsScareEntity(rec) {
 	rec.ent = null
 	if (!rec.uuid || !rec.spot) return null
 	var s = rec.spot
-	var list = rec.level.getEntitiesOfClass(NS_SCARE_HUSK, new NS_SCARE_AABB(s.x - 4, s.y - 4, s.z - 4, s.x + 4, s.y + 6, s.z + 4))
+	var list = rec.level.getEntitiesOfClass(NS_SCARE_ENTITY, new NS_SCARE_AABB(s.x - 4, s.y - 4, s.z - 4, s.x + 4, s.y + 6, s.z + 4))
 	for (var i = 0; i < list.size(); i++) if (String(list.get(i).getStringUuid()) === rec.uuid) rec.ent = list.get(i)
 	return rec.ent
 }
@@ -295,6 +309,7 @@ function nsScareSound(server, rec, sound, x, y, z, vol, pitch) {
 }
 
 function nsScarePlan(kind, mode) {
+	if (NS_SCARE_EXTRA[kind]) return [{ m: kind, time: NS_SCARE_EXTRA[kind].time }]
 	var R = (a, b) => a + Math.floor(Math.random() * b)
 	if (mode === 'stalk') return [{ m: 'stalk', d: 20, time: 900 }]
 	if (mode === 'peek') return [{ m: 'peek', time: 900 }]
@@ -330,7 +345,56 @@ function nsScareStart(server, player, kind, mode, fake) {
 		}
 	nsScareTeams(server)
 	var level = player.getLevel()
-	nsScares.push({ kind: kind, K: NS_SCARE_KINDS[kind], name: name, fake: fake ? player : null, level: level, dim: nsScareDim(level), plan: nsScarePlan(kind, mode), step: 0, uuid: null, t: -1, seen: 0, beat: 0, spawnTries: 0, jump: 0, shown: 0 })
+	nsScares.push({ kind: kind, K: NS_SCARE_KINDS[kind] || NS_SCARE_EXTRA[kind], name: name, fake: fake ? player : null, level: level, dim: nsScareDim(level), plan: nsScarePlan(kind, mode), step: 0, uuid: null, t: -1, seen: 0, beat: 0, spawnTries: 0, jump: 0, shown: 0 })
+}
+
+// существо хоррор-мода: без ИИ, бессмертное, рост через generic.scale
+function nsScareSpawnExtra(rec, player, spot, type, scale) {
+	var server = player.getServer()
+	var id = nsScareUuid()
+	var yaw = (Math.atan2(-(player.getX() - spot.x), player.getZ() - spot.z) * 180) / Math.PI
+	nsScareCmd(server, 'execute in ' + rec.dim + ' run summon ' + type + ' ' + spot.x.toFixed(2) + ' ' + spot.y.toFixed(2) + ' ' + spot.z.toFixed(2) +
+		' {UUID:' + id.nbt + ',Tags:["ns_scare"],NoAI:1b,Invulnerable:1b,PersistenceRequired:1b,Rotation:[' + yaw.toFixed(1) + 'f,0f]' +
+		',attributes:[{id:"minecraft:generic.scale",base:' + scale + 'd}]}')
+	rec.uuid = id.str
+	rec.ent = null
+	rec.spot = spot
+	rec.born = nsScareTick
+	rec.eye = rec.K.eye
+	rec.h = rec.K.h
+	rec.seen = 0
+}
+
+function nsScareBeginExtra(server, rec, player, step) {
+	var K = rec.K
+	if (step.m === 'watcher') {
+		// вдали за спиной на виду (исчезнет сам, когда увидят); нет места — где угодно
+		var spot = nsScareSpot(player, K, 22, 180, 80, true) || nsScareSpot(player, K, 20, 0, 360, true) || nsScareSpot(player, K, 16, 0, 360, false)
+		if (!spot) {
+			rec.t = -1
+			if (++rec.spawnTries > 10) nsScareNext(rec)
+			return
+		}
+		nsScareSpawnExtra(rec, player, spot, K.type, K.scale)
+		var voices = ['end_watchers:end_watcher_i_see_you', 'end_watchers:end_watcher_hey', 'end_watchers:end_watcher_behind_you']
+		nsScareSound(server, rec, voices[Math.floor(Math.random() * voices.length)], spot.x, spot.y + 2, spot.z, 1, 1)
+		return
+	}
+	// face: прямо перед лицом; впереди камень — за спиной, и камера разворачивается к нему
+	var lk = player.getLookAngle()
+	var ln = Math.max(0.01, Math.sqrt(lk.x() * lk.x() + lk.z() * lk.z()))
+	var fy = Math.floor(player.getY())
+	var fx = player.getX() + (lk.x() / ln) * 2.0,
+		fz = player.getZ() + (lk.z() / ln) * 2.0
+	var behind = !nsScareFree(rec.level, fx, fy, fz, K.h)
+	if (behind) {
+		fx = player.getX() - (lk.x() / ln) * 1.8
+		fz = player.getZ() - (lk.z() / ln) * 1.8
+	}
+	nsScareSpawnExtra(rec, player, { x: fx, y: fy, z: fz }, K.type + (1 + Math.floor(Math.random() * 10)), K.scale)
+	if (behind) nsScareCmd(server, 'execute as ' + rec.name + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.uuid + ' eyes')
+	nsScareSound(server, rec, 'goofy_horror_mod:new' + (1 + Math.floor(Math.random() * 5)), fx, player.getEyeY(), fz, 1, 1)
+	nsScareSound(server, rec, 'goofy_horror_mod:bone_crack_' + (1 + Math.floor(Math.random() * 4)), fx, player.getEyeY(), fz, 1, 1)
 }
 
 // начало шага: пауза, шёпот или появление
@@ -340,6 +404,10 @@ function nsScareBegin(server, rec, player, step, now) {
 	if (step.m === 'turn') {
 		rec.yaw0 = player.getYaw()
 		player.setStatusMessage(Text.darkRed('…обернись…').italic())
+		return
+	}
+	if (NS_SCARE_EXTRA[step.m]) {
+		nsScareBeginExtra(server, rec, player, step)
 		return
 	}
 	var K = rec.K
@@ -742,6 +810,25 @@ function nsScareRun(ctx, kind, name, mode) {
 	return 1
 }
 
+function nsScareRunExtra(ctx, kind, name) {
+	var p = nsScareTarget(ctx, name)
+	if (!p) return 0
+	nsScareStart(ctx.source.getServer(), p, kind, kind)
+	nsScareReply(ctx, NS_SCARE_EXTRA[kind].title + ' идёт к ' + name)
+	return 1
+}
+
+// голос End Watchers из-за спины: hey | see | behind
+function nsScareVoice(ctx, name, which) {
+	var p = nsScareTarget(ctx, name)
+	if (!p) return 0
+	var map = { hey: 'end_watcher_hey', see: 'end_watcher_i_see_you', behind: 'end_watcher_behind_you' }
+	var snd = map[which] || map.behind
+	nsScareCmd(ctx.source.getServer(), 'execute as ' + name + ' at @s rotated ~ 0 positioned ^ ^1.5 ^-2 run playsound end_watchers:' + snd + ' hostile ' + name + ' ~ ~ ~ 1 1')
+	nsScareReply(ctx, 'голос за спиной: ' + snd)
+	return 1
+}
+
 function nsScareFaces(ctx, name, r, secs) {
 	var p = nsScareTarget(ctx, name)
 	if (!p) return 0
@@ -788,6 +875,15 @@ ServerEvents.commandRegistry(event => {
 							.executes(ctx => nsScareFaces(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'r'), 4))
 							.then(Commands.argument('secs', Arguments.INTEGER.create(event)).executes(ctx => nsScareFaces(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'r'), nsScareArgInt(ctx, 'secs'))))
 					)
+			)
+		)
+		.then(Commands.literal('watcher').then(Commands.argument('name', Arguments.STRING.create(event)).executes(ctx => nsScareRunExtra(ctx, 'watcher', nsScareArgName(ctx)))))
+		.then(Commands.literal('face').then(Commands.argument('name', Arguments.STRING.create(event)).executes(ctx => nsScareRunExtra(ctx, 'face', nsScareArgName(ctx)))))
+		.then(
+			Commands.literal('voice').then(
+				Commands.argument('name', Arguments.STRING.create(event))
+					.executes(ctx => nsScareVoice(ctx, nsScareArgName(ctx), 'behind'))
+					.then(Commands.argument('which', Arguments.STRING.create(event)).executes(ctx => nsScareVoice(ctx, nsScareArgName(ctx), String(Arguments.STRING.getResult(ctx, 'which')))))
 			)
 		)
 		.then(

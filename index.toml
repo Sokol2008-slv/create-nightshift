@@ -293,6 +293,54 @@ file = "kubejs/config/common.json"
 hash = "21b1aa77bebcc5a4557c4f90ee7a6bf80a049fd20fd7508c427a9f3f549ed6e4"
 
 [[files]]
+file = "kubejs/data/end_watchers/neoforge/biome_modifier/end_watcher_standing_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_10_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_1_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_2_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_3_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_4_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_5_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_6_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_7_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_8_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/face_9_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
+file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/godly_face_biome_modifier.json"
+hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
+
+[[files]]
 file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_probes.json"
 hash = "1d8c04da3329702197d4d38dda107344aa1dccfd4d2e00e65119c108a4bed46a"
 
@@ -1071,6 +1119,11 @@ hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
 metafile = true
 
 [[files]]
+file = "mods/end-watchers.pw.toml"
+hash = "067a7210792a97f8c5a93482c7848a70f4a979f18a0db61a2765436b71c09ae8"
+metafile = true
+
+[[files]]
 file = "mods/enhanced_hordes.pw.toml"
 hash = "ba9f6c66e31657070aad3ee6aae26709fdfe02572d863414a7750532c3331f4b"
 metafile = true
@@ -1188,6 +1241,11 @@ metafile = true
 [[files]]
 file = "mods/genshin-instruments.pw.toml"
 hash = "28c19a93e0902ef190500d3c17f3893c6bfb9fa594f3e0dfcea2df03dc595d92"
+metafile = true
+
+[[files]]
+file = "mods/horror-faces.pw.toml"
+hash = "7ab43011b7922c811469e1e31a963e65cc08a82c1fcaa20a072818bf193356a3"
 metafile = true
 
 [[files]]
