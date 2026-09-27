@@ -374,7 +374,7 @@ hash = "479fee6478caa6b1d27a34c598bf8d2f46adac1158ff048b88377ab585f6e95e"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
-hash = "6253678170953a2f22fb234588b761fac3fd7f24a65a44f01569816d4d00417f"
+hash = "598e22169b615b3bfd7833fe660a3375ee0722a69ccc9cd18e0b270691e94d02"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"

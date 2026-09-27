@@ -4,6 +4,7 @@
 //   /pin <N>        — ×N
 //   /pin add [N]    — добавить к уже закреплённому (списки складываются)
 //   /unpin          — убрать
+//   Shift + F (смена рук) — то же без команды: с предметом — закрепить или +1, пустой рукой — убрать
 // Показ — боковая панель скорборда (ванильная, справа): «детали» — что класть
 // в верстак, «сырьё» — во что это раскладывается до слитков, руды, брёвен и камня.
 // Разбор идёт по рецептам верстака, механического крафтера и пресса Create;
@@ -218,12 +219,51 @@ function pinSet(ctx, count, add) {
 	return 1
 }
 
+// Shift + F: быстрый пин без команды. Смену рук при этом отменяем.
+var PIN_SWAP = Java.loadClass('net.neoforged.neoforge.event.entity.living.LivingSwapItemsEvent$Hands')
+
+function pinQuick(player) {
+	var server = player.getServer()
+	var held = player.getMainHandItem()
+	if (!held || held.isEmpty()) {
+		server.persistentData.putString('nightshift_pins', '[]')
+		pinRender(server)
+		player.setStatusMessage(Text.gray('Список убран'))
+		return
+	}
+	var id = String(held.getId())
+	var pins = pinState(server)
+	var cur = null
+	for (var i = 0; i < pins.length; i++) if (pins[i].id === id) cur = pins[i]
+	if (cur) cur.n = Math.min(999, cur.n + 1)
+	else {
+		cur = { id: id, n: 1 }
+		pins.push(cur)
+		if (pins.length > 4) pins.shift()
+		server.tell(Text.gold('[Рецепт] ' + player.getUsername() + ' закрепил: ').append(Text.translate(String(held.getDescriptionId()))))
+	}
+	server.persistentData.putString('nightshift_pins', JSON.stringify(pins))
+	pinRender(server)
+	player.setStatusMessage(Text.gold('Закреплено: ').append(Text.translate(String(held.getDescriptionId()))).append(Text.white(' ×' + cur.n)).append(Text.gray('  (Shift+F ещё — +1, пустой рукой — убрать)')))
+}
+
+NativeEvents.onEvent(PIN_SWAP, event => {
+	var ent = event.getEntity()
+	if (!ent || !ent.isPlayer() || !ent.isShiftKeyDown()) return
+	event.setCanceled(true)
+	try {
+		pinQuick(ent)
+	} catch (e) {
+		console.error('[pin] Shift+F: ' + e)
+	}
+})
+
 // один раз каждому: подсказка про /pin
 PlayerEvents.loggedIn(event => {
 	var p = event.getPlayer()
-	if (p.persistentData.getBoolean('ns_pin_hint')) return
-	p.persistentData.putBoolean('ns_pin_hint', true)
-	p.tell(Text.gold('[Новое] Возьми в руку предмет, который хочешь собрать, и введи ').append(Text.yellow('/pin')).append(Text.gold(' (или /pin 4) — справа у всех появится список: детали и сырьё. ')).append(Text.yellow('/pin add')).append(Text.gold(' — добавить ещё, ')).append(Text.yellow('/unpin')).append(Text.gold(' — убрать.')))
+	if (p.persistentData.getBoolean('ns_pin_hint2')) return
+	p.persistentData.putBoolean('ns_pin_hint2', true)
+	p.tell(Text.gold('[Новое] Возьми в руку предмет, который хочешь собрать, и нажми ').append(Text.yellow('Shift + F')).append(Text.gold(' — справа у всех появится список: детали и сырьё. Ещё раз — +1 штука, Shift + F пустой рукой — убрать. То же командами: ')).append(Text.yellow('/pin 4, /pin add, /unpin')))
 })
 
 ServerEvents.loaded(event => {
