@@ -344,7 +344,14 @@ function nsScareBegin(server, rec, player, step, now) {
 	var spot = null
 	if (step.m === 'stalk') spot = nsScareSpot(player, K, step.d, 180, 70, true)
 	if (step.m === 'peek') spot = nsScarePeekSpot(player, K) || nsScareSpot(player, K, 12, 180, 90, true)
-	if (step.m === 'chase') spot = nsScareSpot(player, K, step.d, 180, 60, false)
+	if (step.m === 'chase') {
+		// сначала сзади на step.d, потом ближе и шире — в шахте и в постройках далеко сзади часто камень
+		var tries = [[step.d, 180, 60], [11, 180, 120], [7, 180, 200], [6, 0, 360]]
+		for (var q = 0; q < tries.length && !spot; q++) spot = nsScareSpot(player, K, tries[q][0], tries[q][1], tries[q][2], false)
+		if (spot) spot.small = true // в полный рост не проходит в двери и ходы 1×2 — застревает
+		rec.best = 999
+		rec.moved = now
+	}
 	if (step.m === 'dash') {
 		var side = Math.random() < 0.5 ? 1 : -1
 		spot = nsScareSpot(player, K, step.d, 45 * side, 20, true)
@@ -458,10 +465,10 @@ function nsScareStep(server, rec, now) {
 	}
 	if (step.m === 'chase') {
 		if (rec.jump) {
-			// лицом к лицу 0,5 с, затем темнота
+			// лицом к лицу 1 с, затем темнота
 			if (now >= rec.jump) {
-				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:blindness 2 0 true')
-				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:darkness 4 0 true')
+				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:blindness 1 0 true')
+				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:darkness 3 0 true')
 				nsScareNext(rec)
 			}
 			return true
@@ -474,16 +481,25 @@ function nsScareStep(server, rec, now) {
 			rec.beat = now
 			nsScareSound(server, rec, 'minecraft:entity.warden.heartbeat', player.getX(), player.getY(), player.getZ(), 1, flat > 10 ? 0.8 : 1.2)
 		}
-		if (flat < 2.6) {
+		// застрял (дверь, забор, яма) дольше 1,5 с — сразу оказывается за спиной
+		if (flat < rec.best - 0.4) {
+			rec.best = flat
+			rec.moved = now
+		}
+		if (flat < 2.6 || now - rec.moved > 30) {
 			ent.setNoAi(true)
+			// за спиной (там, откуда игрок пришёл, свободно), глаза на уровне глаз игрока;
+			// камера игрока сама разворачивается к нему
 			var lk = player.getLookAngle()
 			var ln = Math.max(0.01, Math.sqrt(lk.x() * lk.x() + lk.z() * lk.z()))
-			var fx = player.getX() + (lk.x() / ln) * 1.1,
-				fz = player.getZ() + (lk.z() / ln) * 1.1,
+			var fx = player.getX() - (lk.x() / ln) * 1.6,
+				fz = player.getZ() - (lk.z() / ln) * 1.6,
 				fy = player.getEyeY() - rec.eye
 			nsScareCmd(server, 'execute in ' + rec.dim + ' run tp ' + rec.uuid + ' ' + fx.toFixed(2) + ' ' + fy.toFixed(2) + ' ' + fz.toFixed(2) + ' facing entity ' + rec.name + ' eyes')
+			nsScareCmd(server, 'execute as ' + rec.name + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.uuid + ' eyes')
 			nsScareSound(server, rec, K.sting, fx, player.getEyeY(), fz, 1, K.stingPitch)
-			rec.jump = now + 10
+			nsScareSound(server, rec, 'minecraft:entity.enderman.scream', fx, player.getEyeY(), fz, 1, 0.5)
+			rec.jump = now + 20 // лицом к лицу 1 с
 		}
 		return true
 	}
