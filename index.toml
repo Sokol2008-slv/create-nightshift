@@ -125,12 +125,48 @@ file = "config/simplebackups-common.toml"
 hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
 
 [[files]]
+file = "kubejs/assets/minecraft/optifine/emissive.properties"
+hash = "b446f7f0a335d4962a9ebc6baf964a29c4c4e285a7f0bddf33b0ef0238aaed71"
+
+[[files]]
+file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk.properties"
+hash = "3dead827b02052a4ad69a8f31087d8813975af7b4347cf01a0bfdb2aee661e6d"
+
+[[files]]
+file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk2.png"
+hash = "6b1153d15edefad2963b41dceb8eff1d461666f86bc473a8193c6a4a344a7478"
+
+[[files]]
+file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk2_e.png"
+hash = "266dd88d54eeffc40efa2ae6c892e54e17ba3e9a4b69915c16887a33d5bda47a"
+
+[[files]]
+file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk3.png"
+hash = "a734768385a19f3aa545bf2c8b60563de82d35817f1920806445d4798a2a3a37"
+
+[[files]]
+file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk3_e.png"
+hash = "328c3f23957957a4bb8ab8ace5f95a194898b38fbf615a38f7050363d33e0a5c"
+
+[[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "93c798404d993a6858298eff03a061504d7da2bcc1e0e5b4f2bbac533d255429"
+hash = "ad74c0b69e6c810b2e8809ba006c95147655fd9c98b3dc1553e4af433b685d9c"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "3a72c2d1f49cb44ab7b415d1d1d96d2dbf71c2be274fd6dc9a455a85428d5730"
+hash = "3c315ce8f782f4f5fcc1bbc58166d4967b492df172a189b640daf799b255da36"
+
+[[files]]
+file = "kubejs/assets/nightshift/models/block/eye_glow.json"
+hash = "f7f02e4f527adf429cb725202b76f48f9e3d54769346e1397f4f6e8757f56a5c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/watching_eye.png"
+hash = "6a3ca9a97e9650dd033edeb784b7c4c6357295ad756c07525b893a7340906e62"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/watching_eye.png.mcmeta"
+hash = "40013d8c8438f70a25b956ea7aa8de3e7914548ddc5c8913ead626a314414e38"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/life_tonic.png"
@@ -471,6 +507,10 @@ hash = "3f54eab9eae7752565e0d0b63766e404ee9ddf3e2a6cc9839a8d4aa8a3129727"
 [[files]]
 file = "kubejs/startup_scripts/nightshift_sanity_items.js"
 hash = "b506d905f2574a29cf4cc529e81e70d3a66e553b47101d30e8aebc001be418dd"
+
+[[files]]
+file = "kubejs/startup_scripts/nightshift_scare_blocks.js"
+hash = "0e82038b246cd2cdd686a7d788c37c0d3b48ec406394ba4c1ee768d2b18bc731"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
