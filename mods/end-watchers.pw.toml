@@ -1,0 +1,13 @@
+name = "End Watchers (Horror)"
+filename = "end_watchers-1.3-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WBYUEFfE/versions/SVdGJtp8/end_watchers-1.3-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "73afac2b8fc0b533bf89c4736a0e50390ce93b250fa9e67bd6b91a8a704f3de072e093a37acccf3a7ac02d6b9b0ab731f4cbc8e748303c9cd18cf57b7148ae04"
+
+[update]
+[update.modrinth]
+mod-id = "WBYUEFfE"
+version = "SVdGJtp8"

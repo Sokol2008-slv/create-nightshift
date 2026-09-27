@@ -1,0 +1,17 @@
+[spawning]
+	#If the jumpscare variant of the End Watcher should spawn
+	spawn_jumpscarevariant = false
+	#If end watchers should prevent endermen from spawning
+	despawnnearbyendermen = true
+	#The despawn timer for End Watchers in ticks (default = 600)
+	end_watcherdespawntimer = 600.0
+	#If the jumpscare variant of the End Watcher should despawn after some time
+	despawnjumpscarevariant = false
+
+[sounds]
+	#If sounds should play when an End Watcher spawns
+	playspawnsounds = true
+	#If the ambient sound should be played
+	playambientsound = true
+	#If darkness should be given to the player when the ambient sound starts
+	ambientsoundgivesdarkness = true
