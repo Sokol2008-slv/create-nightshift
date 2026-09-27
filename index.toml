@@ -241,6 +241,10 @@ file = "kubejs/assets/nightshift/textures/item/vein_seed_zinc.png"
 hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
 
 [[files]]
+file = "kubejs/client_scripts/nightshift_pin_key.js"
+hash = "46fd3d0e26b09598d76dbc879ba6349d01289275499f5e563ccbdd0cad49010f"
+
+[[files]]
 file = "kubejs/client_scripts/nightshift_rerender.js"
 hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
 
@@ -374,7 +378,7 @@ hash = "479fee6478caa6b1d27a34c598bf8d2f46adac1158ff048b88377ab585f6e95e"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
-hash = "598e22169b615b3bfd7833fe660a3375ee0722a69ccc9cd18e0b270691e94d02"
+hash = "d257243fd240a863051f715aba2674a9768d45e4b0e7236e1c231e16efcd3891"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"

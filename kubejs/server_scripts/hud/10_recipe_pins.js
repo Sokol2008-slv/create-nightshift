@@ -222,6 +222,27 @@ function pinSet(ctx, count, add) {
 // Shift + F: быстрый пин без команды. Смену рук при этом отменяем.
 var PIN_SWAP = Java.loadClass('net.neoforged.neoforge.event.entity.living.LivingSwapItemsEvent$Hands')
 
+// Закрепить предмет по id (из JEI/книги через клавишу P): +n, если уже в списке
+function pinById(player, id, n) {
+	var server = player.getServer()
+	var item = Item.of(id)
+	if (!item || item.isEmpty()) return 0
+	var pins = pinState(server)
+	var cur = null
+	for (var i = 0; i < pins.length; i++) if (pins[i].id === id) cur = pins[i]
+	if (cur) cur.n = Math.min(999, cur.n + n)
+	else {
+		cur = { id: id, n: n }
+		pins.push(cur)
+		if (pins.length > 4) pins.shift()
+		server.tell(Text.gold('[Рецепт] ' + player.getUsername() + ' закрепил: ').append(Text.translate(String(item.getDescriptionId()))))
+	}
+	server.persistentData.putString('nightshift_pins', JSON.stringify(pins))
+	pinRender(server)
+	player.setStatusMessage(Text.gold('Закреплено: ').append(Text.translate(String(item.getDescriptionId()))).append(Text.white(' ×' + cur.n)).append(Text.gray('  (P ещё — +1, /unpin — убрать)')))
+	return 1
+}
+
 function pinQuick(player) {
 	var server = player.getServer()
 	var held = player.getMainHandItem()
@@ -278,6 +299,13 @@ ServerEvents.commandRegistry(event => {
 		C.literal('pin')
 			.executes(ctx => pinSet(ctx, 1, false))
 			.then(C.argument('n', A.INTEGER.create(event)).executes(ctx => pinSet(ctx, Number(A.INTEGER.getResult(ctx, 'n')), false)))
+			.then(
+				C.literal('item').then(
+					C.argument('id', A.STRING.create(event))
+						.executes(ctx => (ctx.source.getPlayer() ? pinById(ctx.source.getPlayer(), String(A.STRING.getResult(ctx, 'id')), 1) : 0))
+						.then(C.argument('n', A.INTEGER.create(event)).executes(ctx => (ctx.source.getPlayer() ? pinById(ctx.source.getPlayer(), String(A.STRING.getResult(ctx, 'id')), Math.max(1, Number(A.INTEGER.getResult(ctx, 'n')))) : 0)))
+				)
+			)
 			.then(
 				C.literal('add')
 					.executes(ctx => pinSet(ctx, 1, true))
