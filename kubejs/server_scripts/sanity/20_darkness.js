@@ -4,6 +4,9 @@
 //    урон магией раз в 2 с (броня не спасает), пока не выйдешь к свету.
 // 2) Чем больше монстров рядом, тем быстрее уходит рассудок (сам мод
 //    учитывает только «есть ли монстр рядом»).
+// 3) Во время набега рассудок у игроков рядом с алтарём не падает: держится на уровне
+//    начала набега (восстанавливаться может), без доп. безумия от толпы и без урона тьмы —
+//    иначе посреди волн приходят «внутренние» мобы мода и убивают.
 // Внутреннее значение мода — доля БЕЗУМИЯ: 0 = вменяем, 1 = безумен.
 // ==========================================================================
 
@@ -40,15 +43,54 @@ function nsLightInHands(player) {
 }
 
 var nsSanityTick = 0
+var NS_RAID_SANITY_RANGE = 160 // блоков от алтаря — «участвует в набеге»
+var nsRaidSanity = {} // имя → безумие на старте набега (выше не поднимается до конца набега)
+
+// алтарь идущего набега или null
+function nsRaidSanityAltar() {
+	var st = nsGetStateRO()
+	if (!nsRaidActive(st)) return null
+	return nsFindAltar(st, st.raid.altarId)
+}
+
+function nsInRaidRange(p, altar) {
+	if (!altar || String(p.getLevel().getDimension()) !== altar.dim) return false
+	var dx = p.getX() - altar.x,
+		dz = p.getZ() - altar.z
+	return dx * dx + dz * dz <= NS_RAID_SANITY_RANGE * NS_RAID_SANITY_RANGE
+}
+
+// заморозка рассудка на время волн: раз в 5 тиков, только пока идёт набег
+ServerEvents.tick(event => {
+	if (nsSanityTick % 5 !== 0) return
+	var altar = nsRaidSanityAltar()
+	if (!altar) {
+		nsRaidSanity = {}
+		return
+	}
+	var players = event.server.getPlayers()
+	for (var i = 0; i < players.length; i++) {
+		var p = players[i]
+		if (!nsInRaidRange(p, altar)) continue
+		var cap = NS_SANITY.get(p)
+		if (!cap) continue
+		var name = String(p.getUsername())
+		var cur = cap.getSanity()
+		if (nsRaidSanity[name] === undefined || cur < nsRaidSanity[name]) nsRaidSanity[name] = cur
+		else if (cur > nsRaidSanity[name]) cap.setSanity(nsRaidSanity[name])
+	}
+})
 
 ServerEvents.tick(event => {
 	nsSanityTick++
 	if (nsSanityTick % 20 !== 0) return
 	var darkCheck = nsSanityTick % 40 === 0
+	var raidAltar = nsRaidSanityAltar()
 	var players = event.server.getPlayers()
 	for (var i = 0; i < players.length; i++) {
 		var p = players[i]
 		if (p.isSpectator() || p.isCreative()) continue
+		if (nsInRaidRange(p, raidAltar)) continue // во время волн — см. заморозку выше
 		var cap = NS_SANITY.get(p)
 		if (!cap) continue
 

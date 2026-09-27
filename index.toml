@@ -474,7 +474,7 @@ hash = "732d35a45f9c058897208c1097f4c3a52e4bd023e8f567b459be90718e6e5721"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
-hash = "f1db075a21229d4bc6ea32f537b95bb8c0b10084cb4ad1ba47271e3e5c3bbc36"
+hash = "e61b9153ed399c469db6971d829d80c0add0dcbba3de2e8167c013d5fc505712"
 
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
@@ -486,7 +486,7 @@ hash = "4ef0b91b53867a2dd67f74adaffed733957a7bc8be9865eee82f4ca0919acb76"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/20_darkness.js"
-hash = "fb7585f9fab6bc46973492041eb19fae980bbdf3d3a2eb7b8158e0ddf1e48b99"
+hash = "2e120f72ee65a4b0068579011e5eafce316c7ca62a6e09e7e2180fece7823a89"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/30_hordes_safety.js"
