@@ -102,11 +102,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "1a7095f5c3ac89a93d2eeacaec8cf5dbd91fc08d3afb4aa0f154a65bac599750"
+hash = "aedc770f231d1f265cc8778d72e7f20a57dbd53525395e0a1608dcd0d20988f0"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "1a7095f5c3ac89a93d2eeacaec8cf5dbd91fc08d3afb4aa0f154a65bac599750"
+hash = "aedc770f231d1f265cc8778d72e7f20a57dbd53525395e0a1608dcd0d20988f0"
 
 [[files]]
 file = "config/iris.properties"
@@ -115,6 +115,10 @@ hash = "15f93180796d7b14223617424f981d8676e15f47b7716af5150a22af5891f671"
 [[files]]
 file = "config/modernfix-mixins.properties"
 hash = "8fa6c2c5bcb872361ca9961eefdfb1dd146ab058eede4f395bc1ec4607a316ba"
+
+[[files]]
+file = "config/realisticbees.json5"
+hash = "5c057418878ccb2c6ec66b9140955b5570b0d727d2d029615dff0ce06632f1bb"
 
 [[files]]
 file = "config/sanity_renewed/default.toml"
@@ -453,6 +457,10 @@ file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
 hash = "c91d4367816eb618cf5b6246810a10753450d50441b02b45ce08b759afc11d1f"
 
 [[files]]
+file = "kubejs/server_scripts/nightshift/09_alt_recipes.js"
+hash = "18d5215d48cd920799e321ef6cab1e879cf1f99ca4ca9956335b467df1df13d8"
+
+[[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
 hash = "7fbc28b02d2d5d13b2343beb0b6b5ac6d8cb18927da5b76113868f71a057a489"
 
@@ -482,7 +490,7 @@ hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"
-hash = "4ef0b91b53867a2dd67f74adaffed733957a7bc8be9865eee82f4ca0919acb76"
+hash = "38734c05fe8a7b952356d4c721fa5d721ea298e74731fa3d3e026a42faac5fc0"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/20_darkness.js"
@@ -494,7 +502,7 @@ hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/40_death.js"
-hash = "c802dbf842c193eab5cd8214dc0d3c809c7eb24ecdd2c584a89f0a7d3a2bfa2b"
+hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
@@ -603,6 +611,11 @@ hash = "07f30551060d5eb77a36ad9eb26131751d790d8e43378faf4143c6f53f0da245"
 metafile = true
 
 [[files]]
+file = "mods/building-wands.pw.toml"
+hash = "98de570e4873e332455e5526ed5b62779cdb23c217efac51ad864ae510861456"
+metafile = true
+
+[[files]]
 file = "mods/carry-on.pw.toml"
 hash = "838dbcb90c93bab58691e82c95045bd97c3e096e3a2680a00cf063e56ce35ce3"
 metafile = true
@@ -630,6 +643,11 @@ metafile = true
 [[files]]
 file = "mods/clumps.pw.toml"
 hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
+metafile = true
+
+[[files]]
+file = "mods/collective.pw.toml"
+hash = "5ca02772cc6951185af8eb07ded5c7310c80f71498c5c513b1a8d5bd126822a9"
 metafile = true
 
 [[files]]
@@ -1078,6 +1096,11 @@ hash = "528ae7ee97068e0250282f449ee8224ff6f3dfd3b66c50d7651590b43080c7a8"
 metafile = true
 
 [[files]]
+file = "mods/evenmoreinstruments.pw.toml"
+hash = "ab03ac2d209db1492dbfbfa7d349008f1484f72398a3d1004703712f6f25bbc5"
+metafile = true
+
+[[files]]
 file = "mods/explorers-compass.pw.toml"
 hash = "0670ca65c7208aa8211883fae30c935f53cad38196aac46723b10e7bbc695113"
 metafile = true
@@ -1163,6 +1186,11 @@ hash = "35779b39ddc06059ec483b33de2ecfdc3adb95c0a49e69b6701fb0024827e2f5"
 metafile = true
 
 [[files]]
+file = "mods/genshin-instruments.pw.toml"
+hash = "28c19a93e0902ef190500d3c17f3893c6bfb9fa594f3e0dfcea2df03dc595d92"
+metafile = true
+
+[[files]]
 file = "mods/hypertube.pw.toml"
 hash = "672fe2518a1795814efc943c3e3cf8dc1b993bc7d838cc62950acfaba348c2c7"
 metafile = true
@@ -1220,6 +1248,16 @@ metafile = true
 [[files]]
 file = "mods/just-enough-resources-jer.pw.toml"
 hash = "7905c08f37d8ebde50a5330a7dd10029de6259b0cb8adbde1170d93ea20218a7"
+metafile = true
+
+[[files]]
+file = "mods/just-zoom.pw.toml"
+hash = "f565820169e3cd71f18fd0b18eab2405bc400668813d04f3f3eb75b6c8924bcc"
+metafile = true
+
+[[files]]
+file = "mods/konkrete.pw.toml"
+hash = "5707b722541648df013644f3b4d50083c77965d536f219df9fac5026f6103777"
 metafile = true
 
 [[files]]
@@ -1360,6 +1398,11 @@ metafile = true
 [[files]]
 file = "mods/puzzles-lib.pw.toml"
 hash = "391e5d415c0754ad210b8efa54fc9ded4f99e6ab8562d6faf960f3b65d84a66a"
+metafile = true
+
+[[files]]
+file = "mods/realistic-bees.pw.toml"
+hash = "c2e9b7324f1bdc58a32843a32d6ccc8b000119335a6aabf4c59dab0d3ee1c397"
 metafile = true
 
 [[files]]

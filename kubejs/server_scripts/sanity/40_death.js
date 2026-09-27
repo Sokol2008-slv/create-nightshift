@@ -97,6 +97,6 @@ ItemEvents.foodEaten('nightshift:night_heart', event => {
 ServerEvents.recipes(event => {
 	// Настойка жизни: мёд, светящиеся ягоды (пышные пещеры — туда ещё надо дойти), сладкие ягоды, костная мука
 	var ing = ['minecraft:honey_bottle', 'minecraft:glow_berries', 'minecraft:sweet_berries', 'minecraft:sweet_berries', 'minecraft:bone_meal']
-	event.shapeless('nightshift:life_tonic', ing).id('nightshift:life_tonic_by_hand')
+	// только миксер (вручную нельзя — так интереснее; и миксер больше не подхватывает ручной рецепт на 1 шт.)
 	event.recipes.create.mixing('2x nightshift:life_tonic', ing).id('nightshift:life_tonic_mixing')
 })
