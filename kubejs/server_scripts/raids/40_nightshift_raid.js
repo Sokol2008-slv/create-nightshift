@@ -152,8 +152,9 @@ function nsFindSpawnY(level, x, z, altarY) {
 			if (nsIsAir(level, x, y, z) && nsIsAir(level, x, y + 1, z) && nsIsSolid(level, x, y - 1, z)) return y
 		}
 	}
+	// запасной путь — верх колонки, но не вода и не лава (иначе орда тонет)
 	for (var y2 = 319; y2 > -64; y2--) {
-		if (!nsIsAir(level, x, y2, z)) return y2 + 1
+		if (!nsIsAir(level, x, y2, z)) return nsIsSolid(level, x, y2, z) ? y2 + 1 : null
 	}
 	return null
 }
@@ -163,19 +164,35 @@ function nsFindSpawnY(level, x, z, altarY) {
 function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt) {
 	var T = NSG.NIGHTSHIFT_TUNABLES
 	var farthest = 0
+	var pts = altar.spawns || []
 	for (var i = 0; i < count; i++) {
 		var x = 0,
 			z = 0,
 			y = null
-		// кольцо расширяется с каждой попыткой: у большой базы орда встаёт сразу за периметром
-		for (var attempt = 0; attempt < 40; attempt++) {
-			var angle = Math.random() * Math.PI * 2
-			var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + attempt * 8
-			x = Math.round(altar.x + Math.cos(angle) * dist)
-			z = Math.round(altar.z + Math.sin(angle) * dist)
-			if (nsPointInAnyZone(state, altar.dim, x, altar.y, z)) continue
-			y = nsFindSpawnY(level, x, z, altar.y)
-			if (y !== null) break
+		if (pts.length > 0) {
+			// точки спавна, которые поставили игроки: случайная точка, разброс ±2 блока
+			var p = pts[Math.floor(Math.random() * pts.length)]
+			for (var t = 0; t < 8 && y === null; t++) {
+				x = p.x + Math.floor(Math.random() * 5) - 2
+				z = p.z + Math.floor(Math.random() * 5) - 2
+				y = nsFindSpawnY(level, x, z, p.y)
+			}
+			if (y === null) {
+				x = p.x
+				z = p.z
+				y = p.y
+			}
+		} else {
+			// кольцо расширяется с каждой попыткой: у большой базы орда встаёт сразу за периметром
+			for (var attempt = 0; attempt < 40; attempt++) {
+				var angle = Math.random() * Math.PI * 2
+				var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + attempt * 8
+				x = Math.round(altar.x + Math.cos(angle) * dist)
+				z = Math.round(altar.z + Math.sin(angle) * dist)
+				if (nsPointInAnyZone(state, altar.dim, x, altar.y, z)) continue
+				y = nsFindSpawnY(level, x, z, altar.y)
+				if (y !== null) break
+			}
 		}
 		if (y === null) continue
 		farthest = Math.max(farthest, Math.sqrt((x - altar.x) * (x - altar.x) + (z - altar.z) * (z - altar.z)))
@@ -329,6 +346,26 @@ function nsChewTowardAltar(mob, altar, pd, level) {
 // --------------------------------------------------------------------------
 // Запуск набега.
 // --------------------------------------------------------------------------
+// Обычные (не набеговые) монстры у алтаря мешают набегу — на старте убираем
+var NS_RAID_MONSTER_CLASS = Java.loadClass('net.minecraft.world.entity.monster.Monster')
+function nsClearNaturalMonsters(altar, r) {
+	if (!altar) return
+	try {
+		var level = nsAltarLevel(altar)
+		var list = level.getEntitiesOfClass(NS_RAID_MONSTER_CLASS, new NS_AABB(altar.x - r, altar.y - 32, altar.z - r, altar.x + r, altar.y + 32, altar.z + r))
+		var n = 0
+		for (var i = 0; i < list.size(); i++) {
+			var m = list.get(i)
+			if (nsHasRaidTag(m) || m.hasCustomName()) continue
+			m.discard()
+			n++
+		}
+		if (n > 0) console.info('[nightshift] у алтаря убрано обычных монстров: ' + n)
+	} catch (e) {
+		console.warn('[nightshift] чистка монстров у алтаря: ' + e)
+	}
+}
+
 function nsStartRaid(kind, altarId, difficulty) {
 	var state = nsGetState()
 	if (nsRaidActive(state)) return
@@ -372,6 +409,7 @@ function nsStartRaid(kind, altarId, difficulty) {
 	}
 
 	nsInviteToAltar(nsFindAltar(state, altarId), kind)
+	nsClearNaturalMonsters(nsFindAltar(state, altarId), 48)
 	nsBossbarCreate('nightshift:raid_countdown', name, kind === 'minor' ? 'yellow' : 'red')
 	nsBossbarMax('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 	nsBossbarValue('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)

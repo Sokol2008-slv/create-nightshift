@@ -334,7 +334,7 @@ hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_1.json"
-hash = "b3beb8fdc26225e6c1748a0f430a829d95923bd6d0a51e0306a7e4a21e4b2b02"
+hash = "a7501f88d8e3356dffc458238dfdf681f9b004d7775c147cdcb67dac1a6e340f"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_2.json"
@@ -426,19 +426,19 @@ hash = "30af87363b6b87700898abbd38a52d5bebce52fdfa1b14681e4d6350d9156bf9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
-hash = "4e2df7e6861ba2a0e94e5857430619023f2e6311bdf53c5802024e4a99582766"
+hash = "248d3c32eb8356bd181bafe9db9534a2e332cf1d4f08e25b1d2a16ef7ffa071a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "c960a4f217689c0d2fca5c4b5b16e8f32f4549c4e795aa24eba3364a510c3da7"
+hash = "5c08ab043cc8b249197f5cfc276f333ec1c90034b252b4b9e8424f385bba4e66"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "096cc180e9b27525e08a19e6c4041a115f94727bc608665ffa5802abe7fe3e7e"
+hash = "732d35a45f9c058897208c1097f4c3a52e4bd023e8f567b459be90718e6e5721"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
-hash = "3bbb416028c10b378907aec8e0e12fb7da6ee116cca685f05f01167029f2a315"
+hash = "f1db075a21229d4bc6ea32f537b95bb8c0b10084cb4ad1ba47271e3e5c3bbc36"
 
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
@@ -1275,11 +1275,6 @@ metafile = true
 [[files]]
 file = "mods/ntgl.pw.toml"
 hash = "7932fbacc370edc6fd2577784800fd3d8baf7ceffa7d8ef0ac927ec13a62f16a"
-metafile = true
-
-[[files]]
-file = "mods/obsessed.pw.toml"
-hash = "726b7a7106719ffef0a749df4762a459a5b84d164881bcece532e14900a1225c"
 metafile = true
 
 [[files]]

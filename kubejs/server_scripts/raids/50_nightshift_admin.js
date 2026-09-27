@@ -4,6 +4,7 @@
 //   /nightshift menu              — меню сложностей (как ПКМ по алтарю), рядом с алтарём
 //   /nightshift start <N>         — набег сложности N у ближайшего алтаря (кнопки меню алтаря)
 //   /nightshift altar             — телепорт к алтарю во время набега, после — обратно
+//   /nightshift spawn add|remove|list|clear — точки спавна орды у ближайшего алтаря (там, где стоишь)
 // Оператор (уровень 2):
 //   /nightshift status            — прогресс, набег, проклятие, алтари
 //   /nightshift raid [N]          — набег сложности N (по умолчанию следующей) без проверок
@@ -12,6 +13,8 @@
 //   /nightshift phase <N>         — выставить наибольшую пройденную сложность
 //   /nightshift setaltar          — поставить блок базы с алтарём на месте оператора (тест, восстановление)
 //   /nightshift fresh             — всем онлайн: раны сняты, рассудок/здоровье/еда полные, утро, все на спавне
+//   /nightshift curse <N>         — выставить проклятие алтаря (сердец у всех), 0 — снять
+//   /nightshift heal <ник> <N>    — снять игроку N ран (сердец за смерти)
 // ==========================================================================
 
 function nsNearestAltar(state, source) {
@@ -29,6 +32,59 @@ function nsNearestAltar(state, source) {
 		}
 	}
 	return best
+}
+
+// Точки спавна орды: волны появляются у них, а не случайным кольцом
+function nsSpawnCmd(ctx, op) {
+	var player = ctx.source.getPlayer()
+	var st = nsGetState()
+	var altar = nsNearestAltar(st, ctx.source)
+	if (!altar) return nsAdminReply(ctx, 'алтарь не найден в этом измерении') || 0
+	var pos = ctx.source.getPosition()
+	var x = Math.floor(pos.x()),
+		y = Math.floor(pos.y()),
+		z = Math.floor(pos.z())
+	var d = Math.round(Math.sqrt((x - altar.x) * (x - altar.x) + (z - altar.z) * (z - altar.z)))
+	altar.spawns = altar.spawns || []
+	if (op === 'add') {
+		if (d > 128) return nsAdminReply(ctx, 'слишком далеко от алтаря (' + d + ' блоков, можно до 128)') || 0
+		if (d < 20) return nsAdminReply(ctx, 'слишком близко к алтарю (' + d + ' блоков, нужно не ближе 20)') || 0
+		if (nsPointInAnyZone(st, altar.dim, x, y, z)) return nsAdminReply(ctx, 'внутри зоны базы нельзя — орда приходит снаружи') || 0
+		if (altar.spawns.length >= 8) return nsAdminReply(ctx, 'уже 8 точек — убери лишнюю: встань рядом и /nightshift spawn remove') || 0
+		altar.spawns.push({ x: x, y: y, z: z })
+		nsSaveState(st)
+		nsTellAll(Text.gold('[Ночная смена] ' + (player ? player.getUsername() : 'Консоль') + ' поставил точку спавна орды №' + altar.spawns.length + ' (' + d + ' блоков от алтаря). Точки видно с разметчиком в руке.'))
+		return 1
+	}
+	if (op === 'remove') {
+		var best = -1,
+			bd = 1e9
+		for (var i = 0; i < altar.spawns.length; i++) {
+			var s = altar.spawns[i]
+			var dd = (s.x - x) * (s.x - x) + (s.y - y) * (s.y - y) + (s.z - z) * (s.z - z)
+			if (dd < bd) {
+				bd = dd
+				best = i
+			}
+		}
+		if (best < 0 || bd > 36) return nsAdminReply(ctx, 'рядом (6 блоков) нет точки спавна') || 0
+		altar.spawns.splice(best, 1)
+		nsSaveState(st)
+		nsAdminReply(ctx, 'точка убрана, осталось ' + altar.spawns.length)
+		return 1
+	}
+	if (op === 'clear') {
+		altar.spawns = []
+		nsSaveState(st)
+		nsTellAll(Text.gold('[Ночная смена] Точки спавна убраны — орда снова приходит кольцом со всех сторон.'))
+		return 1
+	}
+	if (altar.spawns.length === 0) nsAdminReply(ctx, 'точек нет — орда приходит кольцом. Встань, где должна появляться орда, и /nightshift spawn add')
+	for (var k = 0; k < altar.spawns.length; k++) {
+		var q = altar.spawns[k]
+		nsAdminReply(ctx, '№' + (k + 1) + ': ' + q.x + ' ' + q.y + ' ' + q.z + ' (' + Math.round(Math.sqrt((q.x - altar.x) * (q.x - altar.x) + (q.z - altar.z) * (q.z - altar.z))) + ' от алтаря)')
+	}
+	return 1
 }
 
 function nsAdminReply(ctx, text) {
@@ -95,6 +151,13 @@ ServerEvents.commandRegistry(event => {
 					nsShowAltarMenu(player, st)
 					return 1
 				})
+			)
+			.then(
+				Commands.literal('spawn')
+					.then(Commands.literal('add').executes(ctx => nsSpawnCmd(ctx, 'add')))
+					.then(Commands.literal('remove').executes(ctx => nsSpawnCmd(ctx, 'remove')))
+					.then(Commands.literal('list').executes(ctx => nsSpawnCmd(ctx, 'list')))
+					.then(Commands.literal('clear').executes(ctx => nsSpawnCmd(ctx, 'clear')))
 			)
 			.then(
 				Commands.literal('start').then(
@@ -200,6 +263,36 @@ ServerEvents.commandRegistry(event => {
 					nsTellAll(Text.green('[Ночная смена] Новое утро: все на спавне, раны сняты, рассудок полный.'))
 					return 1
 				})
+			)
+			.then(
+				Commands.literal('curse').requires(src => src.hasPermission(2)).then(
+					Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
+						var st = nsGetState()
+						st.curse = Math.max(0, Math.min(NSG.NIGHTSHIFT_TUNABLES.curseMaxHearts, Number(Arguments.INTEGER.getResult(ctx, 'n'))))
+						if (st.curse === 0 && st.raid.state === 'cooldown') st.raid = nsDefaultState().raid
+						nsSaveState(st)
+						nsApplyPenalty(null)
+						nsTellAll(Text.green('[Ночная смена] Проклятие алтаря: ' + (st.curse > 0 ? '−' + st.curse + ' сердец у всех.' : 'снято.')))
+						return 1
+					})
+				)
+			)
+			.then(
+				Commands.literal('heal').requires(src => src.hasPermission(2)).then(
+					Commands.argument('name', Arguments.STRING.create(event)).then(
+						Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
+							var name = String(Arguments.STRING.getResult(ctx, 'name'))
+							var st = nsGetState()
+							st.wounds = st.wounds || {}
+							var before = st.wounds[name] || 0
+							st.wounds[name] = Math.max(0, before - Number(Arguments.INTEGER.getResult(ctx, 'n')))
+							nsSaveState(st)
+							nsApplyPenalty(null)
+							nsAdminReply(ctx, name + ': ран было ' + before + ', стало ' + st.wounds[name])
+							return 1
+						})
+					)
+				)
 			)
 			.then(
 				Commands.literal('phase').requires(src => src.hasPermission(2)).then(

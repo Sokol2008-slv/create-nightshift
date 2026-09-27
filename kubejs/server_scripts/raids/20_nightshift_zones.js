@@ -210,6 +210,19 @@ ServerEvents.tick(event => {
 			if (zone.dim !== dim) continue
 			nsSpawnZoneOutline(level, zone, player)
 		}
+		// точки спавна орды — столбы огня
+		for (var ai = 0; ai < state.altars.length; ai++) {
+			var alt = state.altars[ai]
+			if (alt.dim !== dim || !alt.spawns) continue
+			for (var si = 0; si < alt.spawns.length; si++) {
+				var sp = alt.spawns[si]
+				for (var sy = 0; sy < 4; sy++) {
+					try {
+						level.spawnParticles('minecraft:flame', true, sp.x + 0.5, sp.y + sy + 0.3, sp.z + 0.5, 0.15, 0.1, 0.15, 3, 0.01)
+					} catch (e) {}
+				}
+			}
+		}
 		// первый угол уже отмечен — светящийся столб на нём, пока не кликнут второй
 		var pending = state.markerCorners[String(player.getUsername())]
 		if (pending && pending.dim === dim) {
@@ -299,8 +312,18 @@ EntityEvents.checkSpawn(event => {
 	if (category !== 'monster') return // животных/существ не трогаем, только враждебных
 
 	var state = nsGetStateRO()
-	if (state.zones.length === 0) return
 	var dim = String(event.getLevel().getDimension())
+	// во время набега у алтаря дерутся только мобы набега — обычных монстров в 96 блоках не спавним
+	var rs = state.raid ? state.raid.state : 'idle'
+	if (rs === 'active' || rs === 'countdown') {
+		var ra = nsFindAltar(state, state.raid.altarId)
+		if (ra && ra.dim === dim) {
+			var rdx = event.x - ra.x,
+				rdz = event.z - ra.z
+			if (rdx * rdx + rdz * rdz < 96 * 96) event.cancel()
+		}
+	}
+	if (state.zones.length === 0) return
 	// в KubeJS 2101 отмена = запрет спавна (event.cancel() завершает обработчик)
 	if (nsPointInAnyZone(state, dim, event.x, event.y, event.z)) event.cancel()
 })

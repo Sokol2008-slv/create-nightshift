@@ -156,6 +156,9 @@ function nsShowAltarMenu(player, state) {
 		player.tell(row)
 	}
 	player.tell(Text.gray('Пройдено: ' + (best > max ? max + ' + Кошмар ' + (best - max) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
+	var altar = nsNearestAltar(state, player.createCommandSourceStack())
+	var ns = altar && altar.spawns ? altar.spawns.length : 0
+	player.tell(Text.gray(ns > 0 ? 'Точек спавна орды: ' + ns + ' (видно с разметчиком; /nightshift spawn list)' : 'Орда приходит кольцом. Свои точки спавна: встань там и ').append(ns > 0 ? Text.of('') : Text.yellow('/nightshift spawn add')))
 }
 
 // --------------------------------------------------------------------------

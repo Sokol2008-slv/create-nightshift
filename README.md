@@ -65,7 +65,8 @@
 
 Игрокам: `/nightshift menu`, `/nightshift start <N>`, `/nightshift altar` (телепорт к алтарю во время набега).
 **P** над предметом в JEI, книге квестов или инвентаре, **Shift + F** с предметом в руке (или `/pin`) — закрепить рецепт: справа у всех список деталей и сырья; ещё раз — +1, пустой рукой — убрать (`/pin add`, `/unpin`).
-Админам: `/nightshift status | raid [N] | minor | stop | phase <N> | setaltar | fresh`.
+Точки спавна орды: `/nightshift spawn add | remove | list | clear` (видно с разметчиком в руке).
+Админам: `/nightshift status | raid [N] | minor | stop | phase <N> | setaltar | fresh | curse <N> | heal <ник> <N>`.
 
 ## Как поставить (каждому из троих)
 
