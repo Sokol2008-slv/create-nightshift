@@ -13,6 +13,10 @@ file = "config/createdieselgenerators-server.toml"
 hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
 
 [[files]]
+file = "config/end_watchers.toml"
+hash = "3d8ba9fcffbf458f56a3dbd9e972c6e6b7b3a5b39392ca3191227f788713e3bb"
+
+[[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
