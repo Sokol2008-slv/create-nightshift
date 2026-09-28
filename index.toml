@@ -34,7 +34,7 @@ hash = "da6f74aa9fb7643fa936cad3cbd3e92f953b8c7a21a6ec8c3c11e14197891b55"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "81d5641124379d5b38fed56cb799d5f53889dafc248d53dc5d769e21e3f5e423"
+hash = "df84bdde8292383665078c50d1bc147bc09b0e13379616ac88e11759d9995c65"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
@@ -58,7 +58,7 @@ hash = "f9fddbfa8092865f2bf98ed40b6741c89c953743ca7b23dec174327817355aca"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "4fde9d01317ae820dc3f099524cf5dba0e8e127485da091f111db950314264d9"
+hash = "70a258021405789b4f6eabbe6efeaba997eeabbe0905ebb7be7298011594cd83"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food.snbt"
@@ -74,7 +74,7 @@ hash = "7456df61f402c692fb4df8f29a0bd61b1ff3f71eb6ceadbdfc31f70f05640af8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
-hash = "879c79337b5aba6c943a5e66631f29c3fa4a6e8e5aac092bac11259e628be500"
+hash = "ea6e6b66900d668737380b917c6b98c44d9e1f984b0a6fe90fcaf6d7fbc45740"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
@@ -82,7 +82,7 @@ hash = "08d04e0326e1d62debcc771685ef4dc8596976446564530e6563888aaae47bf3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "31777e4eb40f1098350216ff1ea2a84eb2e5172fd368a993f30b45a281eb674b"
+hash = "97975792495d826534fd67dfafb0b6eb62a9c284b1013d24c4b7136c4f21839b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"

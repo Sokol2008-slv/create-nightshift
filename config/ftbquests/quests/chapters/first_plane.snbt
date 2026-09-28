@@ -67,7 +67,7 @@
 			size: 1.0d
 			tasks: [{ id: "2DBF15377230FF46", item: { count: 1, id: "simulated:swivel_bearing" }, type: "item" }]
 			x: 8.80d
-			y: -4.85d
+			y: -4.00d
 		}
 		{
 			dependencies: ["5E4F935500884B5E"]

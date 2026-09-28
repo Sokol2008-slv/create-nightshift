@@ -205,7 +205,7 @@
 			size: 1.0d
 			tasks: [{ id: "17ED1B36328438CD", item: { count: 1, id: "minecraft:podzol" }, type: "item" }]
 			x: 8.80d
-			y: 8.05d
+			y: 7.58d
 		}
 		{
 			dependencies: ["3CC38EECAC712063"]
@@ -245,7 +245,7 @@
 			size: 1.0d
 			tasks: [{ id: "2633A15861FD0399", count: 16L, item: { count: 1, id: "minecraft:tuff" }, type: "item" }]
 			x: 4.40d
-			y: 5.62d
+			y: 5.47d
 		}
 		{
 			dependencies: ["56EDC75D5444BC7E"]
@@ -265,7 +265,7 @@
 			size: 1.0d
 			tasks: [{ id: "6EB851F7521800DF", count: 32L, item: { count: 1, id: "minecraft:basalt" }, type: "item" }]
 			x: 8.80d
-			y: 4.95d
+			y: 4.48d
 		}
 		{
 			dependencies: ["742E217E8017112E"]
@@ -275,7 +275,7 @@
 			size: 1.0d
 			tasks: [{ id: "1BBE823D3D1E2550", count: 64L, item: { count: 1, id: "minecraft:netherrack" }, type: "item" }]
 			x: 4.40d
-			y: 7.22d
+			y: 7.07d
 		}
 		{
 			dependencies: ["5D619F38B169BB70"]

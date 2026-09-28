@@ -215,17 +215,29 @@ def layout(quests):
     # отодвигаем карточку (и соседей по колонке за ней) от линии
     X = {k: level[k] * 2.2 for k in by_key}
     edges = [(p, q["key"]) for q in quests for p in q.get("deps", []) if p in by_key]
+    parents = {q["key"]: set(q.get("deps", [])) for q in quests}
+    pushed = {}  # карточка → направление толчка; толкнули в обе стороны — зажата, больше не трогаем
     for _ in range(40):
         moved = False
         for a, b in edges:
             for k in by_key:
                 if k in (a, b) or not (X[a] < X[k] < X[b]):
                     continue
+                # k сам ведёт в b: линии соседних родителей неизбежно сходятся к b рядом с ним.
+                # Раньше такую карточку качало вверх-вниз 40 раз, и всё под ней в колонке
+                # уезжало вниз на десятки клеток (глава «Ночная смена», 28.09).
+                if k in parents.get(b, ()) or pushed.get(k) == "both":
+                    continue
                 t = (X[k] - X[a]) / (X[b] - X[a])
                 line_y = y[a] + t * (y[b] - y[a])
                 need = size[k] / 2 + 0.35
                 if abs(y[k] - line_y) < need:
                     delta = (line_y + need - y[k]) if y[k] >= line_y else (line_y - need - y[k])
+                    way = "down" if delta > 0 else "up"
+                    if pushed.get(k) not in (None, way):
+                        pushed[k] = "both"
+                        continue
+                    pushed[k] = way
                     col = [n for n in by_key if level[n] == level[k]]
                     for n in col:
                         if (delta > 0 and y[n] >= y[k]) or (delta < 0 and y[n] <= y[k]):

@@ -76,7 +76,7 @@
 			size: 1.0d
 			tasks: [{ id: "146DAE8D76BA1B69", item: { count: 1, id: "northstar:space_atlas" }, type: "item" }]
 			x: 6.60d
-			y: 6.25d
+			y: 2.18d
 		}
 		{
 			dependencies: ["5374E61F4F20603E"]
@@ -96,7 +96,7 @@
 			size: 1.0d
 			tasks: [{ id: "678EE2CB4163A4B9", item: { count: 1, id: "northstar:rocket_station" }, type: "item" }]
 			x: 6.60d
-			y: -0.75d
+			y: -0.92d
 		}
 		{
 			dependencies: ["33444D6CF34F28A8"]

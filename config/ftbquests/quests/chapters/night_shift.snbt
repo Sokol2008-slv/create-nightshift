@@ -59,7 +59,7 @@
 			size: 1.0d
 			tasks: [{ id: "5DAC8753EF922E92", type: "checkmark" }]
 			x: 6.60d
-			y: -1.81d
+			y: -1.84d
 		}
 		{
 			dependencies: ["0503A513927D11DF"]
@@ -102,7 +102,7 @@
 			size: 1.0d
 			tasks: [{ id: "65158812BF555FD4", type: "checkmark" }]
 			x: 6.60d
-			y: 28.27d
+			y: 2.91d
 		}
 		{
 			dependencies: ["3E5CB0645B9A0F13"]
@@ -145,7 +145,7 @@
 			size: 1.0d
 			tasks: [{ id: "6CB7130214D05C43", item: { count: 1, id: "nightshift:life_tonic" }, type: "item" }]
 			x: 6.60d
-			y: 26.67d
+			y: 1.31d
 		}
 	]
 }
