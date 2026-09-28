@@ -1446,7 +1446,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/ftbquests/screen_5', 'ftbquests:screen_5', ['7x ftbquests:screen_1', '2x ftbquests:screen_3']],
 	['nightshift:vahta/mix/ftbquests/screen_7', 'ftbquests:screen_7', ['6x ftbquests:screen_1', '2x ftbquests:screen_3', 'ftbquests:screen_5']],
 	['nightshift:vahta/mix/ftbquests/task_screen_configurator', 'ftbquests:task_screen_configurator', ['ftbquests:screen_1', 'minecraft:stick']],
-	// --- garnished (122) ---
+	// --- garnished (124) ---
 	['nightshift:vahta/mix/garnished/hatchet/diamond_hatchet', 'garnished:diamond_hatchet', ['2x minecraft:diamond', '2x minecraft:stick', 'minecraft:string']],
 	['nightshift:vahta/mix/garnished/hatchet/golden_hatchet', 'garnished:golden_hatchet', ['2x minecraft:gold_ingot', '2x minecraft:stick', 'minecraft:string']],
 	['nightshift:vahta/mix/garnished/hatchet/iron_hatchet', 'garnished:iron_hatchet', ['2x minecraft:iron_ingot', '2x minecraft:stick', 'minecraft:string']],
@@ -1561,11 +1561,13 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/garnished/wood/nut/nut_boat', 'garnished:nut_boat', ['5x garnished:nut_planks']],
 	['nightshift:vahta/mix/garnished/wood/nut/nut_fence_gate', 'garnished:nut_fence_gate', ['2x garnished:nut_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/garnished/wood/nut/nut_hanging_sign', '6x garnished:nut_hanging_sign', ['6x garnished:stripped_nut_log', '2x minecraft:chain']],
+	['nightshift:vahta/mix/garnished/wood/nut/nut_pressure_plate', 'garnished:nut_pressure_plate', ['2x garnished:nut_planks']],
 	['nightshift:vahta/mix/garnished/wood/nut/nut_sign', '3x garnished:nut_sign', ['6x garnished:nut_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/garnished/wood/nut/nut_window', '2x garnished:nut_window', ['#c:glass_blocks/colorless', '3x garnished:nut_planks']],
 	['nightshift:vahta/mix/garnished/wood/nut/nut_window_pane', '16x garnished:nut_window_pane', ['6x garnished:nut_window']],
 	['nightshift:vahta/mix/garnished/wood/sepia/sepia_fence_gate', 'garnished:sepia_fence_gate', ['2x garnished:sepia_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/garnished/wood/sepia/sepia_hanging_sign', '6x garnished:sepia_hanging_sign', ['6x garnished:stripped_sepia_stem', '2x minecraft:chain']],
+	['nightshift:vahta/mix/garnished/wood/sepia/sepia_pressure_plate', 'garnished:sepia_pressure_plate', ['2x garnished:sepia_planks']],
 	['nightshift:vahta/mix/garnished/wood/sepia/sepia_sign', '3x garnished:sepia_sign', ['6x garnished:sepia_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/garnished/wood/sepia/sepia_window', '2x garnished:sepia_window', ['#c:glass_blocks/colorless', '3x garnished:sepia_planks']],
 	['nightshift:vahta/mix/garnished/wood/sepia/sepia_window_pane', '16x garnished:sepia_window_pane', ['6x garnished:sepia_window']],
@@ -1607,7 +1609,7 @@ var vahtaMixRecipes = [
 	// --- man_of_many_planes (2) ---
 	['nightshift:vahta/mix/man_of_many_planes/economy_plane', 'man_of_many_planes:economy_plane', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:industrial_gears']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail'])]],
 	['nightshift:vahta/mix/man_of_many_planes/scarlet_biplane', 'man_of_many_planes:scarlet_biplane', [Ingredient.of(['immersive_aircraft:biplane']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
-	// --- minecraft (358) ---
+	// --- minecraft (367) ---
 	['nightshift:vahta/mix/create/crafting/appliances/chain_from_zinc', 'minecraft:chain', ['#c:ingots/zinc', '2x #c:nuggets/zinc']],
 	['nightshift:vahta/mix/create/crafting/curiosities/cake', 'minecraft:cake', ['#c:eggs', '#c:foods/dough', 'minecraft:milk_bucket', '2x minecraft:sugar']], // остаток-контейнер: проверить вживую
 	['nightshift:vahta/mix/create_aquatic_ambitions/crafting/materials/trident', 'minecraft:trident', ['2x create_aquatic_ambitions:prismarine_alloy_rod', '3x create_aquatic_ambitions:spiky_shell']],
@@ -1618,6 +1620,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/acacia_boat', 'minecraft:acacia_boat', ['5x minecraft:acacia_planks']],
 	['nightshift:vahta/mix/minecraft/acacia_fence_gate', 'minecraft:acacia_fence_gate', ['2x minecraft:acacia_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/acacia_hanging_sign', '6x minecraft:acacia_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_acacia_log']],
+	['nightshift:vahta/mix/minecraft/acacia_pressure_plate', 'minecraft:acacia_pressure_plate', ['2x minecraft:acacia_planks']],
 	['nightshift:vahta/mix/minecraft/acacia_sign', '3x minecraft:acacia_sign', ['6x minecraft:acacia_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/activator_rail', '6x minecraft:activator_rail', ['6x minecraft:iron_ingot', 'minecraft:redstone_torch', '2x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/anvil', 'minecraft:anvil', ['3x minecraft:iron_block', '4x minecraft:iron_ingot']],
@@ -1628,6 +1631,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/bamboo_mosaic', 'minecraft:bamboo_mosaic', ['2x minecraft:bamboo_slab']],
 	['nightshift:vahta/mix/minecraft/bamboo_mosaic_slab', '6x minecraft:bamboo_mosaic_slab', ['3x minecraft:bamboo_mosaic']],
 	['nightshift:vahta/mix/minecraft/bamboo_mosaic_stairs', '4x minecraft:bamboo_mosaic_stairs', ['6x minecraft:bamboo_mosaic']],
+	['nightshift:vahta/mix/minecraft/bamboo_pressure_plate', 'minecraft:bamboo_pressure_plate', ['2x minecraft:bamboo_planks']],
 	['nightshift:vahta/mix/minecraft/bamboo_raft', 'minecraft:bamboo_raft', ['5x minecraft:bamboo_planks']],
 	['nightshift:vahta/mix/minecraft/bamboo_sign', '3x minecraft:bamboo_sign', ['6x minecraft:bamboo_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/barrel', 'minecraft:barrel', ['6x #minecraft:planks', '2x #minecraft:wooden_slabs']],
@@ -1636,6 +1640,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/birch_boat', 'minecraft:birch_boat', ['5x minecraft:birch_planks']],
 	['nightshift:vahta/mix/minecraft/birch_fence_gate', 'minecraft:birch_fence_gate', ['2x minecraft:birch_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/birch_hanging_sign', '6x minecraft:birch_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_birch_log']],
+	['nightshift:vahta/mix/minecraft/birch_pressure_plate', 'minecraft:birch_pressure_plate', ['2x minecraft:birch_planks']],
 	['nightshift:vahta/mix/minecraft/birch_sign', '3x minecraft:birch_sign', ['6x minecraft:birch_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/black_banner', 'minecraft:black_banner', ['6x minecraft:black_wool', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/black_bed', 'minecraft:black_bed', ['3x #minecraft:planks', '3x minecraft:black_wool']],
@@ -1677,6 +1682,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/cherry_boat', 'minecraft:cherry_boat', ['5x minecraft:cherry_planks']],
 	['nightshift:vahta/mix/minecraft/cherry_fence_gate', 'minecraft:cherry_fence_gate', ['2x minecraft:cherry_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/cherry_hanging_sign', '6x minecraft:cherry_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_cherry_log']],
+	['nightshift:vahta/mix/minecraft/cherry_pressure_plate', 'minecraft:cherry_pressure_plate', ['2x minecraft:cherry_planks']],
 	['nightshift:vahta/mix/minecraft/cherry_sign', '3x minecraft:cherry_sign', ['6x minecraft:cherry_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/chest', 'minecraft:chest', ['8x #minecraft:planks']],
 	['nightshift:vahta/mix/minecraft/chiseled_bookshelf', 'minecraft:chiseled_bookshelf', ['6x #minecraft:planks', '3x #minecraft:wooden_slabs']],
@@ -1700,9 +1706,9 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/cookie', '8x minecraft:cookie', ['minecraft:cocoa_beans', '2x minecraft:wheat']],
 	['nightshift:vahta/mix/minecraft/copper_bulb', '4x minecraft:copper_bulb', ['minecraft:blaze_rod', '3x minecraft:copper_block', 'minecraft:redstone']],
 	['nightshift:vahta/mix/minecraft/copper_grate', '4x minecraft:copper_grate', ['4x minecraft:copper_block']],
-	['nightshift:vahta/mix/minecraft/crafter', 'minecraft:crafter', ['minecraft:crafting_table', 'minecraft:dropper', '5x minecraft:iron_ingot', '2x minecraft:redstone']],
 	['nightshift:vahta/mix/minecraft/crimson_fence_gate', 'minecraft:crimson_fence_gate', ['2x minecraft:crimson_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/crimson_hanging_sign', '6x minecraft:crimson_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_crimson_stem']],
+	['nightshift:vahta/mix/minecraft/crimson_pressure_plate', 'minecraft:crimson_pressure_plate', ['2x minecraft:crimson_planks']],
 	['nightshift:vahta/mix/minecraft/crimson_sign', '3x minecraft:crimson_sign', ['6x minecraft:crimson_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/crossbow', 'minecraft:crossbow', ['minecraft:iron_ingot', '3x minecraft:stick', '2x minecraft:string', 'minecraft:tripwire_hook']],
 	['nightshift:vahta/mix/minecraft/cyan_banner', 'minecraft:cyan_banner', ['6x minecraft:cyan_wool', 'minecraft:stick']],
@@ -1715,6 +1721,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/dark_oak_boat', 'minecraft:dark_oak_boat', ['5x minecraft:dark_oak_planks']],
 	['nightshift:vahta/mix/minecraft/dark_oak_fence_gate', 'minecraft:dark_oak_fence_gate', ['2x minecraft:dark_oak_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/dark_oak_hanging_sign', '6x minecraft:dark_oak_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_dark_oak_log']],
+	['nightshift:vahta/mix/minecraft/dark_oak_pressure_plate', 'minecraft:dark_oak_pressure_plate', ['2x minecraft:dark_oak_planks']],
 	['nightshift:vahta/mix/minecraft/dark_oak_sign', '3x minecraft:dark_oak_sign', ['6x minecraft:dark_oak_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/dark_prismarine', 'minecraft:dark_prismarine', ['minecraft:black_dye', '8x minecraft:prismarine_shard']],
 	['nightshift:vahta/mix/minecraft/daylight_detector', 'minecraft:daylight_detector', ['3x #minecraft:wooden_slabs', '3x minecraft:glass', '3x minecraft:quartz']],
@@ -1781,6 +1788,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/jungle_boat', 'minecraft:jungle_boat', ['5x minecraft:jungle_planks']],
 	['nightshift:vahta/mix/minecraft/jungle_fence_gate', 'minecraft:jungle_fence_gate', ['2x minecraft:jungle_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/jungle_hanging_sign', '6x minecraft:jungle_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_jungle_log']],
+	['nightshift:vahta/mix/minecraft/jungle_pressure_plate', 'minecraft:jungle_pressure_plate', ['2x minecraft:jungle_planks']],
 	['nightshift:vahta/mix/minecraft/jungle_sign', '3x minecraft:jungle_sign', ['6x minecraft:jungle_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/ladder', '3x minecraft:ladder', ['7x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/lantern', 'minecraft:lantern', ['8x minecraft:iron_nugget', 'minecraft:torch']],
@@ -1826,6 +1834,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/mangrove_boat', 'minecraft:mangrove_boat', ['5x minecraft:mangrove_planks']],
 	['nightshift:vahta/mix/minecraft/mangrove_fence_gate', 'minecraft:mangrove_fence_gate', ['2x minecraft:mangrove_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/mangrove_hanging_sign', '6x minecraft:mangrove_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_mangrove_log']],
+	['nightshift:vahta/mix/minecraft/mangrove_pressure_plate', 'minecraft:mangrove_pressure_plate', ['2x minecraft:mangrove_planks']],
 	['nightshift:vahta/mix/minecraft/mangrove_sign', '3x minecraft:mangrove_sign', ['6x minecraft:mangrove_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/map', 'minecraft:map', ['minecraft:compass', '8x minecraft:paper']],
 	['nightshift:vahta/mix/minecraft/moss_carpet', '3x minecraft:moss_carpet', ['2x minecraft:moss_block']],
@@ -1835,6 +1844,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/oak_boat', 'minecraft:oak_boat', ['5x minecraft:oak_planks']],
 	['nightshift:vahta/mix/minecraft/oak_fence_gate', 'minecraft:oak_fence_gate', ['2x minecraft:oak_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/oak_hanging_sign', '6x minecraft:oak_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_oak_log']],
+	['nightshift:vahta/mix/minecraft/oak_pressure_plate', 'minecraft:oak_pressure_plate', ['2x minecraft:oak_planks']],
 	['nightshift:vahta/mix/minecraft/oak_sign', '3x minecraft:oak_sign', ['6x minecraft:oak_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/observer', 'minecraft:observer', ['6x minecraft:cobblestone', 'minecraft:quartz', '2x minecraft:redstone']],
 	['nightshift:vahta/mix/minecraft/orange_banner', 'minecraft:orange_banner', ['6x minecraft:orange_wool', 'minecraft:stick']],
@@ -1903,9 +1913,9 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/spruce_boat', 'minecraft:spruce_boat', ['5x minecraft:spruce_planks']],
 	['nightshift:vahta/mix/minecraft/spruce_fence_gate', 'minecraft:spruce_fence_gate', ['2x minecraft:spruce_planks', '4x minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/spruce_hanging_sign', '6x minecraft:spruce_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_spruce_log']],
+	['nightshift:vahta/mix/minecraft/spruce_pressure_plate', 'minecraft:spruce_pressure_plate', ['2x minecraft:spruce_planks']],
 	['nightshift:vahta/mix/minecraft/spruce_sign', '3x minecraft:spruce_sign', ['6x minecraft:spruce_planks', 'minecraft:stick']],
 	['nightshift:vahta/mix/minecraft/spyglass', 'minecraft:spyglass', ['minecraft:amethyst_shard', '2x minecraft:copper_ingot']],
-	['nightshift:vahta/mix/minecraft/stick', '4x minecraft:stick', ['2x #minecraft:planks']],
 	['nightshift:vahta/mix/minecraft/stick_from_bamboo_item', 'minecraft:stick', ['2x minecraft:bamboo']],
 	['nightshift:vahta/mix/minecraft/sticky_piston', 'minecraft:sticky_piston', ['minecraft:piston', 'minecraft:slime_ball']],
 	['nightshift:vahta/mix/minecraft/stone_hoe', 'minecraft:stone_hoe', ['2x #minecraft:stone_tool_materials', '2x minecraft:stick']],
@@ -1924,6 +1934,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/warped_fence_gate', 'minecraft:warped_fence_gate', ['4x minecraft:stick', '2x minecraft:warped_planks']],
 	['nightshift:vahta/mix/minecraft/warped_fungus_on_a_stick', 'minecraft:warped_fungus_on_a_stick', ['minecraft:fishing_rod', 'minecraft:warped_fungus']],
 	['nightshift:vahta/mix/minecraft/warped_hanging_sign', '6x minecraft:warped_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_warped_stem']],
+	['nightshift:vahta/mix/minecraft/warped_pressure_plate', 'minecraft:warped_pressure_plate', ['2x minecraft:warped_planks']],
 	['nightshift:vahta/mix/minecraft/warped_sign', '3x minecraft:warped_sign', ['minecraft:stick', '6x minecraft:warped_planks']],
 	['nightshift:vahta/mix/minecraft/waxed_chiseled_copper', 'minecraft:waxed_chiseled_copper', ['2x minecraft:waxed_cut_copper_slab']],
 	['nightshift:vahta/mix/minecraft/waxed_copper_bulb', '4x minecraft:waxed_copper_bulb', ['minecraft:blaze_rod', 'minecraft:redstone', '3x minecraft:waxed_copper_block']],
@@ -2371,12 +2382,11 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/sliceanddice/sprinkler', '3x sliceanddice:sprinkler', ['4x #c:plates/copper', 'create:fluid_pipe', 'minecraft:iron_bars']],
 	// --- someassemblyrequired (1) ---
 	['nightshift:vahta/mix/someassemblyrequired/crafting_shaped/sandwiching_station', 'someassemblyrequired:sandwiching_station', ['2x #minecraft:planks', '2x minecraft:smooth_stone']],
-	// --- sophisticatedbackpacks (40) ---
+	// --- sophisticatedbackpacks (37) ---
 	['nightshift:vahta/mix/sophisticatedbackpacks/alchemy_upgrade', 'sophisticatedbackpacks:alchemy_upgrade', ['2x #c:ingots/iron', '2x minecraft:blaze_rod', 'minecraft:ender_pearl', 'minecraft:fermented_spider_eye', 'minecraft:ghast_tear', 'minecraft:glass_bottle', 'sophisticatedbackpacks:upgrade_base']],
 	['nightshift:vahta/mix/sophisticatedbackpacks/auto_blasting_upgrade_from_auto_smelting_upgrade', 'sophisticatedbackpacks:auto_blasting_upgrade', ['5x #c:ingots/iron', '3x minecraft:smooth_stone', 'sophisticatedbackpacks:auto_smelting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedbackpacks/auto_smoking_upgrade_from_auto_smelting_upgrade', 'sophisticatedbackpacks:auto_smoking_upgrade', ['4x #minecraft:logs', 'sophisticatedbackpacks:auto_smelting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedbackpacks/blasting_upgrade_from_smelting_upgrade', 'sophisticatedbackpacks:blasting_upgrade', ['5x #c:ingots/iron', '3x minecraft:smooth_stone', 'sophisticatedbackpacks:smelting_upgrade']],
-	['nightshift:vahta/mix/sophisticatedbackpacks/crafting_upgrade', 'sophisticatedbackpacks:crafting_upgrade', ['#c:chests', '2x #c:ingots/iron', 'minecraft:crafting_table', 'sophisticatedbackpacks:upgrade_base']],
 	['nightshift:vahta/mix/sophisticatedbackpacks/smoking_upgrade_from_smelting_upgrade', 'sophisticatedbackpacks:smoking_upgrade', ['4x #minecraft:logs', 'sophisticatedbackpacks:smelting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedbackpacks/upgrade_base', 'sophisticatedbackpacks:upgrade_base', ['4x #c:ingots/iron', '#c:leathers', '4x #c:strings']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_advanced_alchemy_upgrade_from_storage_advanced_alchemy_upgrade', 'sophisticatedbackpacks:advanced_alchemy_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:advanced_alchemy_upgrade']],
@@ -2393,7 +2403,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_auto_smoking_upgrade_from_storage_auto_smoking_upgrade', 'sophisticatedbackpacks:auto_smoking_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:auto_smoking_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_blasting_upgrade_from_storage_blasting_upgrade', 'sophisticatedbackpacks:blasting_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:blasting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_compacting_upgrade_from_storage_compacting_upgrade', 'sophisticatedbackpacks:compacting_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:compacting_upgrade']],
-	['nightshift:vahta/mix/sophisticatedstorage/backpack_crafting_upgrade_from_storage_crafting_upgrade', 'sophisticatedbackpacks:crafting_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:crafting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_feeding_upgrade_from_storage_feeding_upgrade', 'sophisticatedbackpacks:feeding_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:feeding_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_filter_upgrade_from_storage_filter_upgrade', 'sophisticatedbackpacks:filter_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:filter_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_jukebox_upgrade_from_storage_jukebox_upgrade', 'sophisticatedbackpacks:jukebox_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:jukebox_upgrade']],
@@ -2410,11 +2419,10 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_stack_upgrade_tier_2_from_storage_stack_upgrade_tier_3', 'sophisticatedbackpacks:stack_upgrade_tier_2', ['#c:leathers', '4x #c:strings', '3x sophisticatedstorage:stack_upgrade_tier_3']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_stack_upgrade_tier_3_from_storage_stack_upgrade_tier_4', 'sophisticatedbackpacks:stack_upgrade_tier_3', ['#c:leathers', '4x #c:strings', '3x sophisticatedstorage:stack_upgrade_tier_4']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_stack_upgrade_tier_4_from_storage_stack_upgrade_tier_5', 'sophisticatedbackpacks:stack_upgrade_tier_4', ['#c:leathers', '4x #c:strings', '3x sophisticatedstorage:stack_upgrade_tier_5']],
-	['nightshift:vahta/mix/sophisticatedstorage/backpack_stonecutter_upgrade_from_storage_stonecutter_upgrade', 'sophisticatedbackpacks:stonecutter_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:stonecutter_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/backpack_void_upgrade_from_storage_void_upgrade', 'sophisticatedbackpacks:void_upgrade', ['#c:leathers', '4x #c:strings', 'sophisticatedstorage:void_upgrade']],
 	// --- sophisticatedcore (1) ---
 	['nightshift:vahta/mix/sophisticatedcore/ender_linker', 'sophisticatedcore:ender_linker', ['2x minecraft:blaze_rod', '2x minecraft:ender_pearl', '5x minecraft:obsidian']],
-	// --- sophisticatedstorage (58) ---
+	// --- sophisticatedstorage (55) ---
 	['nightshift:vahta/mix/sophisticatedstorage/acacia_storage_connector', '4x sophisticatedstorage:acacia_storage_connector', ['4x minecraft:acacia_planks', '5x minecraft:stick']],
 	['nightshift:vahta/mix/sophisticatedstorage/alchemy_upgrade', 'sophisticatedstorage:alchemy_upgrade', ['2x #c:ingots/iron', '2x minecraft:blaze_rod', 'minecraft:ender_pearl', 'minecraft:fermented_spider_eye', 'minecraft:ghast_tear', 'minecraft:glass_bottle', 'sophisticatedstorage:upgrade_base']],
 	['nightshift:vahta/mix/sophisticatedstorage/auto_blasting_upgrade_from_auto_smelting_upgrade', 'sophisticatedstorage:auto_blasting_upgrade', ['5x #c:ingots/iron', '3x minecraft:smooth_stone', 'sophisticatedstorage:auto_smelting_upgrade']],
@@ -2427,7 +2435,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/sophisticatedstorage/blasting_upgrade_from_smelting_upgrade', 'sophisticatedstorage:blasting_upgrade', ['5x #c:ingots/iron', '3x minecraft:smooth_stone', 'sophisticatedstorage:smelting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/cherry_storage_connector', '4x sophisticatedstorage:cherry_storage_connector', ['4x minecraft:cherry_planks', '5x minecraft:stick']],
 	['nightshift:vahta/mix/sophisticatedstorage/copper_to_iron_tier_upgrade', 'sophisticatedstorage:copper_to_iron_tier_upgrade', ['4x #c:ingots/iron', 'minecraft:lever']],
-	['nightshift:vahta/mix/sophisticatedstorage/crafting_upgrade', 'sophisticatedstorage:crafting_upgrade', ['#c:chests', '2x #c:ingots/iron', 'minecraft:crafting_table', 'sophisticatedstorage:upgrade_base']],
 	['nightshift:vahta/mix/sophisticatedstorage/crimson_storage_connector', '4x sophisticatedstorage:crimson_storage_connector', ['4x minecraft:crimson_planks', '5x minecraft:stick']],
 	['nightshift:vahta/mix/sophisticatedstorage/dark_oak_storage_connector', '4x sophisticatedstorage:dark_oak_storage_connector', ['4x minecraft:dark_oak_planks', '5x minecraft:stick']],
 	['nightshift:vahta/mix/sophisticatedstorage/decoration_table', 'sophisticatedstorage:decoration_table', ['3x #minecraft:logs', '4x #minecraft:planks', 'sophisticatedstorage:upgrade_base']],
@@ -2452,7 +2459,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/sophisticatedstorage/storage_auto_smoking_upgrade_from_backpack_auto_smoking_upgrade', 'sophisticatedstorage:auto_smoking_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:auto_smoking_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_blasting_upgrade_from_backpack_blasting_upgrade', 'sophisticatedstorage:blasting_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:blasting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_compacting_upgrade_from_backpack_compacting_upgrade', 'sophisticatedstorage:compacting_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:compacting_upgrade']],
-	['nightshift:vahta/mix/sophisticatedstorage/storage_crafting_upgrade_from_backpack_crafting_upgrade', 'sophisticatedstorage:crafting_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:crafting_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_feeding_upgrade_from_backpack_feeding_upgrade', 'sophisticatedstorage:feeding_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:feeding_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_filter_upgrade_from_backpack_filter_upgrade', 'sophisticatedstorage:filter_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:filter_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_jukebox_upgrade_from_backpack_jukebox_upgrade', 'sophisticatedstorage:jukebox_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:jukebox_upgrade']],
@@ -2469,7 +2475,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/sophisticatedstorage/storage_stack_upgrade_tier_3_from_backpack_stack_upgrade_tier_2', '3x sophisticatedstorage:stack_upgrade_tier_3', ['5x #minecraft:planks', 'sophisticatedbackpacks:stack_upgrade_tier_2']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_stack_upgrade_tier_4_from_backpack_stack_upgrade_tier_3', '3x sophisticatedstorage:stack_upgrade_tier_4', ['5x #minecraft:planks', 'sophisticatedbackpacks:stack_upgrade_tier_3']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_stack_upgrade_tier_5_from_backpack_stack_upgrade_tier_4', '3x sophisticatedstorage:stack_upgrade_tier_5', ['5x #minecraft:planks', 'sophisticatedbackpacks:stack_upgrade_tier_4']],
-	['nightshift:vahta/mix/sophisticatedstorage/storage_stonecutter_upgrade_from_backpack_stonecutter_upgrade', 'sophisticatedstorage:stonecutter_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:stonecutter_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/storage_void_upgrade_from_backpack_void_upgrade', 'sophisticatedstorage:void_upgrade', ['5x #minecraft:planks', 'sophisticatedbackpacks:void_upgrade']],
 	['nightshift:vahta/mix/sophisticatedstorage/upgrade_base', 'sophisticatedstorage:upgrade_base', ['4x #c:ingots/iron', '5x #minecraft:planks']],
 	['nightshift:vahta/mix/sophisticatedstorage/warped_storage_connector', '4x sophisticatedstorage:warped_storage_connector', ['5x minecraft:stick', '4x minecraft:warped_planks']],
@@ -2667,78 +2672,66 @@ var vahtaMixRecipes = [
 var vahtaCutRecipes = [
 	// --- createdieselgenerators (1) ---
 	['nightshift:vahta/cut/createdieselgenerators/crafting/chip_wood_slab', '2x createdieselgenerators:chip_wood_slab', 'createdieselgenerators:chip_wood_block'],
-	// --- garnished (12) ---
+	// --- garnished (10) ---
 	['nightshift:vahta/cut/garnished/wood/nut/nut_door', '3x garnished:nut_door', 'garnished:nut_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/nut/nut_fence', '4x garnished:nut_fence', 'garnished:nut_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/garnished/wood/nut/nut_pressure_plate', '3x garnished:nut_pressure_plate', 'garnished:nut_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/nut/nut_slab', '2x garnished:nut_slab', 'garnished:nut_planks'],
 	['nightshift:vahta/cut/garnished/wood/nut/nut_stairs', '4x garnished:nut_stairs', 'garnished:nut_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/nut/nut_trapdoor', '2x garnished:nut_trapdoor', 'garnished:nut_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/sepia/sepia_door', '3x garnished:sepia_door', 'garnished:sepia_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/sepia/sepia_fence', '4x garnished:sepia_fence', 'garnished:sepia_stem'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/garnished/wood/sepia/sepia_pressure_plate', '3x garnished:sepia_pressure_plate', 'garnished:sepia_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/sepia/sepia_slab', '2x garnished:sepia_slab', 'garnished:sepia_planks'],
 	['nightshift:vahta/cut/garnished/wood/sepia/sepia_stairs', '4x garnished:sepia_stairs', 'garnished:sepia_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/sepia/sepia_trapdoor', '2x garnished:sepia_trapdoor', 'garnished:sepia_stem'], // бревно = 6 досок
-	// --- minecraft (61) ---
+	// --- minecraft (51) ---
 	['nightshift:vahta/cut/minecraft/acacia_door', '3x minecraft:acacia_door', 'minecraft:acacia_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/acacia_fence', '4x minecraft:acacia_fence', 'minecraft:acacia_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/acacia_pressure_plate', '3x minecraft:acacia_pressure_plate', 'minecraft:acacia_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/acacia_slab', '2x minecraft:acacia_slab', 'minecraft:acacia_planks'],
 	['nightshift:vahta/cut/minecraft/acacia_stairs', '4x minecraft:acacia_stairs', 'minecraft:acacia_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/acacia_trapdoor', '2x minecraft:acacia_trapdoor', 'minecraft:acacia_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/bamboo_slab', '2x minecraft:bamboo_slab', 'minecraft:bamboo_planks'],
 	['nightshift:vahta/cut/minecraft/birch_door', '3x minecraft:birch_door', 'minecraft:birch_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/birch_fence', '4x minecraft:birch_fence', 'minecraft:birch_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/birch_pressure_plate', '3x minecraft:birch_pressure_plate', 'minecraft:birch_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/birch_slab', '2x minecraft:birch_slab', 'minecraft:birch_planks'],
 	['nightshift:vahta/cut/minecraft/birch_stairs', '4x minecraft:birch_stairs', 'minecraft:birch_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/birch_trapdoor', '2x minecraft:birch_trapdoor', 'minecraft:birch_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/cherry_door', '3x minecraft:cherry_door', 'minecraft:cherry_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/cherry_fence', '4x minecraft:cherry_fence', 'minecraft:cherry_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/cherry_pressure_plate', '3x minecraft:cherry_pressure_plate', 'minecraft:cherry_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/cherry_slab', '2x minecraft:cherry_slab', 'minecraft:cherry_planks'],
 	['nightshift:vahta/cut/minecraft/cherry_stairs', '4x minecraft:cherry_stairs', 'minecraft:cherry_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/cherry_trapdoor', '2x minecraft:cherry_trapdoor', 'minecraft:cherry_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/crimson_door', '3x minecraft:crimson_door', 'minecraft:crimson_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/crimson_fence', '4x minecraft:crimson_fence', 'minecraft:crimson_stem'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/crimson_pressure_plate', '3x minecraft:crimson_pressure_plate', 'minecraft:crimson_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/crimson_slab', '2x minecraft:crimson_slab', 'minecraft:crimson_planks'],
 	['nightshift:vahta/cut/minecraft/crimson_stairs', '4x minecraft:crimson_stairs', 'minecraft:crimson_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/crimson_trapdoor', '2x minecraft:crimson_trapdoor', 'minecraft:crimson_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/dark_oak_door', '3x minecraft:dark_oak_door', 'minecraft:dark_oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/dark_oak_fence', '4x minecraft:dark_oak_fence', 'minecraft:dark_oak_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/dark_oak_pressure_plate', '3x minecraft:dark_oak_pressure_plate', 'minecraft:dark_oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/dark_oak_slab', '2x minecraft:dark_oak_slab', 'minecraft:dark_oak_planks'],
 	['nightshift:vahta/cut/minecraft/dark_oak_stairs', '4x minecraft:dark_oak_stairs', 'minecraft:dark_oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/dark_oak_trapdoor', '2x minecraft:dark_oak_trapdoor', 'minecraft:dark_oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/jungle_door', '3x minecraft:jungle_door', 'minecraft:jungle_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/jungle_fence', '4x minecraft:jungle_fence', 'minecraft:jungle_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/jungle_pressure_plate', '3x minecraft:jungle_pressure_plate', 'minecraft:jungle_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/jungle_slab', '2x minecraft:jungle_slab', 'minecraft:jungle_planks'],
 	['nightshift:vahta/cut/minecraft/jungle_stairs', '4x minecraft:jungle_stairs', 'minecraft:jungle_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/jungle_trapdoor', '2x minecraft:jungle_trapdoor', 'minecraft:jungle_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/mangrove_door', '3x minecraft:mangrove_door', 'minecraft:mangrove_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/mangrove_fence', '4x minecraft:mangrove_fence', 'minecraft:mangrove_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/mangrove_pressure_plate', '3x minecraft:mangrove_pressure_plate', 'minecraft:mangrove_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/mangrove_slab', '2x minecraft:mangrove_slab', 'minecraft:mangrove_planks'],
 	['nightshift:vahta/cut/minecraft/mangrove_stairs', '4x minecraft:mangrove_stairs', 'minecraft:mangrove_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/mangrove_trapdoor', '2x minecraft:mangrove_trapdoor', 'minecraft:mangrove_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/oak_door', '3x minecraft:oak_door', 'minecraft:oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/oak_fence', '4x minecraft:oak_fence', 'minecraft:oak_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/oak_pressure_plate', '3x minecraft:oak_pressure_plate', 'minecraft:oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/oak_slab', '2x minecraft:oak_slab', 'minecraft:oak_planks'],
 	['nightshift:vahta/cut/minecraft/oak_stairs', '4x minecraft:oak_stairs', 'minecraft:oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/oak_trapdoor', '2x minecraft:oak_trapdoor', 'minecraft:oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/spruce_door', '3x minecraft:spruce_door', 'minecraft:spruce_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/spruce_fence', '4x minecraft:spruce_fence', 'minecraft:spruce_log'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/spruce_pressure_plate', '3x minecraft:spruce_pressure_plate', 'minecraft:spruce_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/spruce_slab', '2x minecraft:spruce_slab', 'minecraft:spruce_planks'],
 	['nightshift:vahta/cut/minecraft/spruce_stairs', '4x minecraft:spruce_stairs', 'minecraft:spruce_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/spruce_trapdoor', '2x minecraft:spruce_trapdoor', 'minecraft:spruce_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/warped_door', '3x minecraft:warped_door', 'minecraft:warped_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/warped_fence', '4x minecraft:warped_fence', 'minecraft:warped_stem'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/warped_pressure_plate', '3x minecraft:warped_pressure_plate', 'minecraft:warped_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/warped_slab', '2x minecraft:warped_slab', 'minecraft:warped_planks'],
 	['nightshift:vahta/cut/minecraft/warped_stairs', '4x minecraft:warped_stairs', 'minecraft:warped_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/warped_trapdoor', '2x minecraft:warped_trapdoor', 'minecraft:warped_stem'], // бревно = 6 досок

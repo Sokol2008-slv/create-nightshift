@@ -233,7 +233,13 @@ def parse_kubejs():
                                 notes.append('%s: условное удаление по фазе (%d id) — не рецепты верстака, не учитываем' % (rel, len(arr)))
                                 continue
                     if isinstance(arr, list):
-                        removed.update(x for x in arr if isinstance(x, str))
+                        # список списков (var lists = [NS_VAHTA_POCKET_IDS, …]; remove({id: lists[l][i]})) —
+                        # раньше вложенные массивы молча пропускались, и миксер снова делал карманные верстаки
+                        for x in arr:
+                            if isinstance(x, str):
+                                removed.add(x)
+                            elif isinstance(x, list):
+                                removed.update(y for y in x if isinstance(y, str))
                     else:
                         notes.append('%s: не распознано удаление %r' % (rel, arg))
             # добавления
@@ -714,11 +720,16 @@ for r in SHAPED:
 # ---------------------------------------------------------------------------
 PLANKS = tag_items('minecraft:planks')
 LOG_TAG_FOR_PLANK = {}
-for r in SINGLE:
-    # бесформенный «#xxx_logs -> 4 доски»
-    rep = r.reps[0]
-    if r.out in PLANKS and isinstance(rep, str) and rep.startswith('#') and r.count == 4:
-        LOG_TAG_FOR_PLANK[r.out] = rep
+# бесформенный «#xxx_logs -> 4 доски» — по ВСЕМ рецептам, включая удалённые на вахте
+# (сами рецепты «бревно → доски» руками убраны, но соответствие бревно↔доска нужно пиле)
+for _rid, _v in ALL.items():
+    _j = _v['json']
+    if str(_j.get('type', '')) not in VANILLA_SHAPELESS or len(_j.get('ingredients', [])) != 1:
+        continue
+    _ing, _res = _j['ingredients'][0], _j.get('result') or {}
+    _out = _res.get('id') or _res.get('item') if isinstance(_res, dict) else None
+    if isinstance(_ing, dict) and 'tag' in _ing and _out in PLANKS and _res.get('count') == 4:
+        LOG_TAG_FOR_PLANK[_out] = '#' + _ing['tag']
 PLANKS_PER_LOG = 6   # «Вахта», п.5: 6 досок с бревна пилой
 
 

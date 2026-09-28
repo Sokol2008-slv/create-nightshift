@@ -269,7 +269,7 @@
 - `sophisticatedstorage:white_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
 - `sophisticatedstorage:yellow_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
 
-## Фигурные с совпадающим набором — остаются механическим крафтерам (170)
+## Фигурные с совпадающим набором — остаются механическим крафтерам (169)
 
 - `create:crafting/kinetics/fluid_tank` → create:fluid_tank ← #c:barrels/wooden, 2×#c:plates/copper
 - `create:crafting/kinetics/gearbox` → create:gearbox ← create:andesite_casing, 4×create:cogwheel
@@ -384,7 +384,6 @@
 - `immersive_aircraft:propeller` → immersive_aircraft:propeller ← 5×[minecraft:iron_ingot]
 - `minecraft:bamboo_door` → 3× minecraft:bamboo_door ← 6×minecraft:bamboo_planks
 - `minecraft:bamboo_fence` → 3× minecraft:bamboo_fence ← 4×minecraft:bamboo_planks, 2×minecraft:stick
-- `minecraft:bamboo_pressure_plate` → minecraft:bamboo_pressure_plate ← 2×minecraft:bamboo_planks
 - `minecraft:bamboo_stairs` → 4× minecraft:bamboo_stairs ← 6×minecraft:bamboo_planks
 - `minecraft:bamboo_trapdoor` → 2× minecraft:bamboo_trapdoor ← 6×minecraft:bamboo_planks
 - `minecraft:cauldron` → minecraft:cauldron ← 7×minecraft:iron_ingot
@@ -2081,7 +2080,7 @@
 - `createfood:crafting/shaped/raw_chicken_calzone_from_shaped` → createfood:raw_chicken_calzone ← #c:cooked_chicken, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_chicken_calzone_from_crafting`
 - `createfood:crafting/shaped/raw_chocolate_pie_from_shaped` → createfood:raw_chocolate_pie ← #c:chocolate_bottle, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_from_crafting`
 - `createfood:crafting/shaped/raw_chocolate_pie_graham_cracker_from_shaped` → createfood:raw_chocolate_pie_graham_cracker ← #c:chocolate_bottle, #c:raw_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_graham_cracker_from_crafting`
-- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:create/mixing/raw_chocolate_sweet_roll_base_from_mixing`
+- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:minecraft/crafting/raw_chocolate_sweet_roll_base_from_crafting`
 - `createfood:crafting/shaped/raw_chorus_fruit_cheesecake_from_shaped` → createfood:raw_chorus_fruit_cheesecake ← #c:chorus_fruit, #c:raw_cheesecake ≈ `createfood:minecraft/crafting/raw_chorus_fruit_cheesecake_from_crafting`
 - `createfood:crafting/shaped/raw_chorus_fruit_pie_from_shaped` → createfood:raw_chorus_fruit_pie ← #c:chorus_fruit_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chorus_fruit_pie_from_crafting`
 - `createfood:crafting/shaped/raw_cream_pie_chocolate_graham_cracker_from_shaped` → createfood:raw_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_chocolate_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_cream_pie_chocolate_graham_cracker_from_crafting`
@@ -2215,7 +2214,7 @@
 - `createfood:minecraft/crafting/shaped/chorus_fruit_popsicle_from_shaped` → createfood:chorus_fruit_popsicle ← #c:chorus_fruit, 2×minecraft:ice, minecraft:stick ≈ `createfood:minecraft/crafting/chorus_fruit_popsicle_from_crafting`
 - `createfood:minecraft/crafting/shaped/glow_berry_popsicle_from_shaped` → createfood:glow_berry_popsicle ← minecraft:glow_berries, 2×minecraft:ice, minecraft:stick ≈ `createfood:minecraft/crafting/glow_berry_popsicle_from_crafting`
 
-## Бесформенные из 1 ингредиента — миксер не берёт, одиночный механический крафтер (585)
+## Бесформенные из 1 ингредиента — миксер не берёт, одиночный механический крафтер (568)
 
 - `arphex:ab_block_uncraft` → 9× arphex:abyssal_crystal ← arphex:block_of_abyssal_crystal
 - `arphex:bloodworm_craft` → minecraft:raw_copper ← arphex:bloodworm_grub
@@ -2652,15 +2651,10 @@
 - `garnished:senile_spread_from_senile_bone_block` → 9× garnished:senile_spread ← garnished:senile_bone_block
 - `garnished:sugar_from_sugar_cube` → 4× minecraft:sugar ← garnished:sugar_cube
 - `garnished:wood/nut/nut_button` → garnished:nut_button ← garnished:nut_planks
-- `garnished:wood/nut/nut_planks` → 4× garnished:nut_planks ← #garnished:nut_logs
 - `garnished:wood/sepia/sepia_button` → garnished:sepia_button ← garnished:sepia_planks
-- `garnished:wood/sepia/sepia_planks` → 4× garnished:sepia_planks ← #garnished:sepia_stems
 - `minecraft:acacia_button` → minecraft:acacia_button ← minecraft:acacia_planks
-- `minecraft:acacia_planks` → 4× minecraft:acacia_planks ← #minecraft:acacia_logs
 - `minecraft:bamboo_button` → minecraft:bamboo_button ← minecraft:bamboo_planks
-- `minecraft:bamboo_planks` → 2× minecraft:bamboo_planks ← #minecraft:bamboo_blocks
 - `minecraft:birch_button` → minecraft:birch_button ← minecraft:birch_planks
-- `minecraft:birch_planks` → 4× minecraft:birch_planks ← #minecraft:birch_logs
 - `minecraft:black_dye` → minecraft:black_dye ← minecraft:ink_sac
 - `minecraft:black_dye_from_wither_rose` → minecraft:black_dye ← minecraft:wither_rose
 - `minecraft:blaze_powder` → 2× minecraft:blaze_powder ← minecraft:blaze_rod
@@ -2670,15 +2664,12 @@
 - `minecraft:bone_meal_from_bone_block` → 9× minecraft:bone_meal ← minecraft:bone_block
 - `minecraft:brown_dye` → minecraft:brown_dye ← minecraft:cocoa_beans
 - `minecraft:cherry_button` → minecraft:cherry_button ← minecraft:cherry_planks
-- `minecraft:cherry_planks` → 4× minecraft:cherry_planks ← #minecraft:cherry_logs
 - `minecraft:coal` → 9× minecraft:coal ← minecraft:coal_block
 - `minecraft:copper_ingot` → 9× minecraft:copper_ingot ← minecraft:copper_block
 - `minecraft:copper_ingot_from_waxed_copper_block` → 9× minecraft:copper_ingot ← minecraft:waxed_copper_block
 - `minecraft:crimson_button` → minecraft:crimson_button ← minecraft:crimson_planks
-- `minecraft:crimson_planks` → 4× minecraft:crimson_planks ← #minecraft:crimson_stems
 - `minecraft:cyan_dye_from_pitcher_plant` → 2× minecraft:cyan_dye ← minecraft:pitcher_plant
 - `minecraft:dark_oak_button` → minecraft:dark_oak_button ← minecraft:dark_oak_planks
-- `minecraft:dark_oak_planks` → 4× minecraft:dark_oak_planks ← #minecraft:dark_oak_logs
 - `minecraft:diamond` → 9× minecraft:diamond ← minecraft:diamond_block
 - `minecraft:dried_kelp` → 9× minecraft:dried_kelp ← minecraft:dried_kelp_block
 - `minecraft:emerald` → 9× minecraft:emerald ← minecraft:emerald_block
@@ -2687,7 +2678,6 @@
 - `minecraft:iron_ingot_from_iron_block` → 9× minecraft:iron_ingot ← minecraft:iron_block
 - `minecraft:iron_nugget` → 9× minecraft:iron_nugget ← minecraft:iron_ingot
 - `minecraft:jungle_button` → minecraft:jungle_button ← minecraft:jungle_planks
-- `minecraft:jungle_planks` → 4× minecraft:jungle_planks ← #minecraft:jungle_logs
 - `minecraft:lapis_lazuli` → 9× minecraft:lapis_lazuli ← minecraft:lapis_block
 - `minecraft:light_blue_dye_from_blue_orchid` → minecraft:light_blue_dye ← minecraft:blue_orchid
 - `minecraft:light_gray_dye_from_azure_bluet` → minecraft:light_gray_dye ← minecraft:azure_bluet
@@ -2696,11 +2686,9 @@
 - `minecraft:magenta_dye_from_allium` → minecraft:magenta_dye ← minecraft:allium
 - `minecraft:magenta_dye_from_lilac` → 2× minecraft:magenta_dye ← minecraft:lilac
 - `minecraft:mangrove_button` → minecraft:mangrove_button ← minecraft:mangrove_planks
-- `minecraft:mangrove_planks` → 4× minecraft:mangrove_planks ← #minecraft:mangrove_logs
 - `minecraft:melon_seeds` → minecraft:melon_seeds ← minecraft:melon_slice
 - `minecraft:netherite_ingot_from_netherite_block` → 9× minecraft:netherite_ingot ← minecraft:netherite_block
 - `minecraft:oak_button` → minecraft:oak_button ← minecraft:oak_planks
-- `minecraft:oak_planks` → 4× minecraft:oak_planks ← #minecraft:oak_logs
 - `minecraft:orange_dye_from_orange_tulip` → minecraft:orange_dye ← minecraft:orange_tulip
 - `minecraft:orange_dye_from_torchflower` → minecraft:orange_dye ← minecraft:torchflower
 - `minecraft:pink_dye_from_peony` → 2× minecraft:pink_dye ← minecraft:peony
@@ -2720,7 +2708,6 @@
 - `minecraft:sprinkler_conversion_0` → sliceanddice:sprinkler ← sliceanddice:floor_sprinkler
 - `minecraft:sprinkler_conversion_1` → sliceanddice:floor_sprinkler ← sliceanddice:sprinkler
 - `minecraft:spruce_button` → minecraft:spruce_button ← minecraft:spruce_planks
-- `minecraft:spruce_planks` → 4× minecraft:spruce_planks ← #minecraft:spruce_logs
 - `minecraft:stone_button` → minecraft:stone_button ← minecraft:stone
 - `minecraft:storage_input_from_io` → sophisticatedstorage:storage_input ← sophisticatedstorage:storage_io
 - `minecraft:storage_io_from_output` → sophisticatedstorage:storage_io ← sophisticatedstorage:storage_output
@@ -2728,16 +2715,12 @@
 - `minecraft:sugar_from_honey_bottle` → 3× minecraft:sugar ← minecraft:honey_bottle
 - `minecraft:sugar_from_sugar_cane` → minecraft:sugar ← minecraft:sugar_cane
 - `minecraft:warped_button` → minecraft:warped_button ← minecraft:warped_planks
-- `minecraft:warped_planks` → 4× minecraft:warped_planks ← #minecraft:warped_stems
 - `minecraft:wheat` → 9× minecraft:wheat ← minecraft:hay_block
 - `minecraft:white_dye` → minecraft:white_dye ← minecraft:bone_meal
 - `minecraft:white_dye_from_lily_of_the_valley` → minecraft:white_dye ← minecraft:lily_of_the_valley
 - `minecraft:wind_charge` → 4× minecraft:wind_charge ← minecraft:breeze_rod
 - `minecraft:yellow_dye_from_dandelion` → minecraft:yellow_dye ← minecraft:dandelion
 - `minecraft:yellow_dye_from_sunflower` → 2× minecraft:yellow_dye ← minecraft:sunflower
-- `northstar:argyre_planks` → 4× northstar:argyre_planks ← #northstar:argyre_logs
-- `northstar:calorian_planks` → 4× northstar:calorian_planks ← #northstar:calorian_logs
-- `northstar:coiler_planks` → 4× northstar:coiler_planks ← #northstar:coiler_logs
 - `northstar:crafting/frost` → northstar:frost ← minecraft:ice
 - `northstar:crafting/martian_steel_ingot_from_block` → 9× northstar:martian_steel_ingot ← northstar:martian_steel_block
 - `northstar:crafting/martian_steel_large_plating_from_martian_steel_plating` → northstar:martian_steel_large_plating ← northstar:martian_steel_plating
@@ -2747,7 +2730,6 @@
 - `northstar:crafting/titanium_nugget_from_ingot` → 9× northstar:titanium_nugget ← northstar:titanium_ingot
 - `northstar:crafting/tungsten_ingot_from_block` → 9× northstar:tungsten_ingot ← northstar:tungsten_block
 - `northstar:crafting/tungsten_nugget_from_ingot` → 9× northstar:tungsten_nugget ← northstar:tungsten_ingot
-- `northstar:wilter_planks` → 4× northstar:wilter_planks ← #northstar:wilter_logs
 - `projecte:conversions/aeternalis_fuel_block_deconstruct` → 9× projecte:aeternalis_fuel ← projecte:aeternalis_fuel_block
 - `projecte:conversions/alchemical_coal_block_deconstruct` → 9× projecte:alchemical_coal ← projecte:alchemical_coal_block
 - `projecte:conversions/dark_matter_block_deconstruct` → 4× projecte:dark_matter ← projecte:dark_matter_block

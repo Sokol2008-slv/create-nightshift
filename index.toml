@@ -141,6 +141,14 @@ file = "config/simplebackups-common.toml"
 hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
 
 [[files]]
+file = "kubejs/assets/minecraft/lang/en_us.json"
+hash = "c57106d544580e39702afe97dc71bf10ebe3d87776e81be1f478028e4863da50"
+
+[[files]]
+file = "kubejs/assets/minecraft/lang/ru_ru.json"
+hash = "c5bab6603543c76f2f6bed0137f4aaea8225d9e5e9f87d451c7188fd836098f7"
+
+[[files]]
 file = "kubejs/assets/minecraft/optifine/emissive.properties"
 hash = "b446f7f0a335d4962a9ebc6baf964a29c4c4e285a7f0bddf33b0ef0238aaed71"
 
@@ -331,6 +339,10 @@ hash = "46fd3d0e26b09598d76dbc879ba6349d01289275499f5e563ccbdd0cad49010f"
 [[files]]
 file = "kubejs/client_scripts/nightshift_rerender.js"
 hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
+
+[[files]]
+file = "kubejs/client_scripts/vahta_jei.js"
+hash = "c225fbf1ca7dd03a9bd128e123df35931ef6d64082b02a20ac91cbb5888ed815"
 
 [[files]]
 file = "kubejs/config/common.json"
@@ -602,7 +614,7 @@ hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "453787a8ef10fc1bc6407f09c9385b747bb3d76ff0cce2db8d27f082afd9bcfc"
+hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
