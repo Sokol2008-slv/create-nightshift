@@ -597,6 +597,20 @@ function nsScareStep(server, rec, now) {
 
 	if (step.m === 'dweller') {
 		var ran = now - rec.phaseAt
+		if (rec.jump) {
+			// лицом к лицу 1 с — исчезает со своим звуком, секунда слепоты и темнота
+			if (now >= rec.jump) {
+				try {
+					ent.disappear()
+				} catch (e) {
+					ent.discard()
+				}
+				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:blindness 1 0 true')
+				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:darkness 3 0 true')
+				nsScareNext(rec)
+			}
+			return true
+		}
 		// цель — только наш игрок; «заметил» — один раз, дальше его ИИ сам гонится со своей музыкой
 		ent.setTarget(player)
 		if (!rec.spotted) {
@@ -607,18 +621,43 @@ function nsScareStep(server, rec, now) {
 			} catch (e) {}
 		}
 		if (now % 10 === 0) ent.getNavigation().moveTo(player, 1.0)
-		// догнал (не раньше 6 с погони) или 25 с прошло — исчезает со своим звуком, секунда темноты
-		if ((flat < 2.2 && ran > 120) || ran > 500) {
+		// «на резинке» (28.09: в быстрых ботинках от него просто убегали): далеко — быстрее;
+		// отстал больше 12 блоков — оказывается в ~6 блоках за спиной (не чаще раза в 3 с, до 8 раз)
+		if (now % 20 === 0) nsScareCmd(server, 'attribute ' + rec.uuid + ' minecraft:generic.movement_speed base set ' + (flat > 14 ? 0.5 : flat > 7 ? 0.4 : 0.32))
+		if (flat > 12 && now - (rec.lastBlink || rec.phaseAt) > 60 && (rec.blinks || 0) < 8) {
+			var bs = nsScareSpot(player, rec.K, 6, 180, 100, false)
+			if (bs) {
+				nsScareCmd(server, 'execute in ' + rec.dim + ' run tp ' + rec.uuid + ' ' + bs.x.toFixed(2) + ' ' + bs.y + ' ' + bs.z.toFixed(2))
+				rec.blinks = (rec.blinks || 0) + 1
+			}
+			rec.lastBlink = now
+		}
+		// догнал (не раньше 6 с погони) — исчезает со своим звуком, секунда темноты
+		if (flat < 2.2 && ran > 120) {
 			try {
 				ent.disappear()
 			} catch (e) {
 				ent.discard()
 			}
-			if (flat < 2.2) {
-				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:blindness 1 0 true')
-				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:darkness 3 0 true')
-			}
+			nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:blindness 1 0 true')
+			nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:darkness 3 0 true')
 			nsScareNext(rec)
+			return true
+		}
+		// не догнал за 15 с — сам оказывается лицом к лицу (впереди стена — за спиной, камера поворачивается)
+		if (ran > 300) {
+			ent.setNoAi(true)
+			var dl = player.getLookAngle()
+			var dn = Math.max(0.01, Math.sqrt(dl.x() * dl.x() + dl.z() * dl.z()))
+			var sign = nsScareFree(rec.level, player.getX() + (dl.x() / dn) * 1.4, Math.floor(player.getY()), player.getZ() + (dl.z() / dn) * 1.4, 2) ? 1 : -1
+			var jx = player.getX() + ((sign * dl.x()) / dn) * 1.4,
+				jz = player.getZ() + ((sign * dl.z()) / dn) * 1.4,
+				jy = player.getEyeY() - rec.K.eye
+			nsScareCmd(server, 'execute in ' + rec.dim + ' run tp ' + rec.uuid + ' ' + jx.toFixed(2) + ' ' + jy.toFixed(2) + ' ' + jz.toFixed(2) + ' facing entity ' + rec.name + ' eyes')
+			if (sign < 0) nsScareCmd(server, 'execute as ' + rec.name + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.uuid + ' eyes')
+			nsScareSound(server, rec, 'cave_dweller:spotted', jx, player.getEyeY(), jz, 1, 1)
+			nsScareSound(server, rec, 'minecraft:entity.enderman.scream', jx, player.getEyeY(), jz, 1, 0.5)
+			rec.jump = now + 20
 		}
 		return true
 	}
