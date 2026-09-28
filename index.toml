@@ -50,7 +50,7 @@ hash = "59bd95a81b261beaff375f4f11a43e1a9fe8f1b2fdc14c4a9e281f2332b6e062"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
-hash = "7564d80684854642fd94a465cab4063ef569dfb3db2e1c0e5bd30afc0c9714a4"
+hash = "552aed806e4fa883fee5adca98036f82047ccdbf564aac8eed38513c31e62096"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
@@ -114,11 +114,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "633ffad38a977e7e488466813600175b80d7ae0d04cd988d7e53df7266a1616f"
+hash = "7f4fff070116643893be1ca1a3c3a0f8dd5020dadcfbbc1ae7884849c72f44b0"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "633ffad38a977e7e488466813600175b80d7ae0d04cd988d7e53df7266a1616f"
+hash = "7f4fff070116643893be1ca1a3c3a0f8dd5020dadcfbbc1ae7884849c72f44b0"
 
 [[files]]
 file = "config/iris.properties"
@@ -165,6 +165,10 @@ file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk3_e.png"
 hash = "328c3f23957957a4bb8ab8ace5f95a194898b38fbf615a38f7050363d33e0a5c"
 
 [[files]]
+file = "kubejs/assets/nightshift/font/scare.json"
+hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
+
+[[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
 hash = "ad74c0b69e6c810b2e8809ba006c95147655fd9c98b3dc1553e4af433b685d9c"
 
@@ -183,6 +187,34 @@ hash = "6a3ca9a97e9650dd033edeb784b7c4c6357295ad756c07525b893a7340906e62"
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/watching_eye.png.mcmeta"
 hash = "40013d8c8438f70a25b956ea7aa8de3e7914548ddc5c8913ead626a314414e38"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_black.png"
+hash = "3b93f26267630963185ee67d8020972faee108a7bca80db725817e4680c9955c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_face1.png"
+hash = "2dbc09b81aacbc0ce45cffc70e1cb0f91e0000f22bba8d4c8390f3e01bb338c9"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_face2.png"
+hash = "82d93b9ece7c522c194508b030af5fb0d230ae8c7a4f5f981121862f34f05276"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_face3.png"
+hash = "a7777c2af650a7bd389fe56cbecf013ae9ae09240cf8d6e014045eff5c273c52"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_face4.png"
+hash = "d8d3065e7413fc520b4bcd480760b0cc622baac6a84b196a0c6f0468acd4a11d"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_face5.png"
+hash = "ceb444a2f75c975f3203363e3fbf2e0e8385316dc8d782a01597b67e49d07122"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/font/scare_face6.png"
+hash = "b0be1cb264c2e6a5db13f4ae65be0e81f69f75962d0a187dbd859b9297ae57ec"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/life_tonic.png"
@@ -558,7 +590,7 @@ hash = "a98f24a7aa2456b3f0ff73939e72aa362a1c7c714d9f035c7cdfb94bc343b714"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/20_darkness.js"
-hash = "2e120f72ee65a4b0068579011e5eafce316c7ca62a6e09e7e2180fece7823a89"
+hash = "6aa81665bb6fe52f1749a8262668b4cd189978aeaebdf23a24271be0483d3968"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/30_hordes_safety.js"
@@ -570,7 +602,7 @@ hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "10a17af2043c8b99b9a03952f8f44491db4f980356acd7c786fd9b9d129509d4"
+hash = "453787a8ef10fc1bc6407f09c9385b747bb3d76ff0cce2db8d27f082afd9bcfc"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -578,7 +610,7 @@ hash = "720d5ca96b0f61d71b213578ea3126e0b26b5ed58ad952488a80627229fd4b9a"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
-hash = "b7acb4bfcaedfdc8eb3549afc9e9c8d1d025fa708bfc24b2d114108f1b971268"
+hash = "1411bff39e12a8188abdcb35a99f683d86567d172bbd0e176a9f509bc1850b0d"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_resources.js"
@@ -586,7 +618,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
-hash = "c054a2b5988af5e9188d92bff499153c5031fea39e04f95ffff92b4f1ad3dc89"
+hash = "8bcda6708b8867a9335ffa71072de29705a2da130ee1cd252ff4bdb59933fe60"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_projecte.js"

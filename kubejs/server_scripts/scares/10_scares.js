@@ -26,6 +26,7 @@
 //   /scare voice <ник> [hey|see|behind] — искажённый голос из-за спины
 //   /scare whisper <ник> <текст> — строка над хотбаром тёмно-красным курсивом
 //   /scare stop — убрать всех и вернуть блоки
+// Ещё команды (flash, steps, knock, note, tunnel, lights, twin, join/leave, auto) — scares/20_scares_more.js.
 // Внешность — ресурсы ETF (мод уже в сборке): хаск в команде ns_mono / ns_clown рисуется
 // текстурой assets/minecraft/optifine/random/entity/zombie/husk2.png / husk3.png,
 // глаза светятся (*_e.png). Хаск — потому что не горит на солнце.
@@ -275,7 +276,10 @@ function nsScareSpawn(rec, player, spot, ai) {
 		',{id:"minecraft:generic.follow_range",base:64d}' +
 		',{id:"minecraft:generic.knockback_resistance",base:1d}' +
 		',{id:"minecraft:generic.step_height",base:1.1d}' +
-		',{id:"minecraft:zombie.spawn_reinforcements",base:0d}]}'
+		',{id:"minecraft:zombie.spawn_reinforcements",base:0d}]' +
+		// двойник (20_scares_more.js): на силуэте голова игрока
+		(rec.headNow ? ',ArmorItems:[{},{},{},{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"' + rec.headNow + '"}}}],ArmorDropChances:[0f,0f,0f,0f]' : '') +
+		'}'
 	nsScareCmd(server, 'execute in ' + rec.dim + ' run summon minecraft:husk ' + spot.x.toFixed(2) + ' ' + spot.y.toFixed(2) + ' ' + spot.z.toFixed(2) + ' ' + nbt)
 	rec.uuid = id.str
 	rec.ent = null
@@ -344,6 +348,10 @@ function nsScarePlan(kind, mode) {
 //   quiet — шёпот → голос → Наблюдатель (без погони, на нервы)
 var NS_SCARE_PRESETS = ['hunt', 'mine', 'house', 'quiet']
 function nsScarePreset(name, R) {
+	if (typeof nsScmPreset === 'function') {
+		var more = nsScmPreset(name, R)
+		if (more) return more
+	}
 	if (name === 'mine')
 		return [
 			{ m: 'act', a: 'faces', r: 6, secs: 4, time: 100 },
@@ -384,6 +392,7 @@ function nsScareAct(server, rec, player, step) {
 	}
 	if (step.a === 'faces') nsFaceStart(server, player, step.r || 6, step.secs || 4)
 	if (step.a === 'box') nsScareBox(server, player, step.secs || 7)
+	if (typeof nsScmAct === 'function') nsScmAct(server, rec, player, step) // steps, knock, lights, flash, note, tunnel
 }
 
 // fake — тестовый игрок (FakePlayer) вместо настоящего, только для проверки на витрине
@@ -490,6 +499,7 @@ function nsScareBegin(server, rec, player, step, now) {
 		return
 	}
 	var K = rec.K
+	rec.headNow = step.head ? (step.head === true ? rec.name : step.head) : rec.head || null
 	var spot = null
 	if (step.m === 'stalk') spot = nsScareSpot(player, K, step.d, 180, 70, true)
 	if (step.m === 'peek') spot = nsScarePeekSpot(player, K) || nsScareSpot(player, K, 12, 180, 90, true)
@@ -746,6 +756,7 @@ function nsFaceSave(server) {
 			t.putInt('y', job.list[i][0].getY())
 			t.putInt('z', job.list[i][0].getZ())
 			t.put('state', NS_SCARE_NBT.writeBlockState(job.list[i][1]))
+			if (job.list[i][2]) t.putString('placed', String(NS_SCARE_BLOCKS.getKey(job.list[i][2])))
 			list.add(t)
 		}
 	}
@@ -774,7 +785,8 @@ function nsFaceRecover(server) {
 		var level = nsScareLevel(server, String(t.getString('dim')))
 		if (!level) continue
 		var pos = new NS_SCARE_POS(t.getInt('x'), t.getInt('y'), t.getInt('z'))
-		if (!level.getBlockState(pos)['is(net.minecraft.world.level.block.Block)'](eye)) continue
+		var placed = t.contains('placed') ? NS_SCARE_BLOCKS.get(NS_SCARE_RL.parse(String(t.getString('placed')))) : eye
+		if (!level.getBlockState(pos)['is(net.minecraft.world.level.block.Block)'](placed)) continue
 		level.setBlock(pos, NS_SCARE_NBT.readBlockState(lookup, t.getCompound('state')), 2)
 		n++
 	}
@@ -1034,6 +1046,7 @@ ServerEvents.commandRegistry(event => {
 		)
 		.then(
 			Commands.literal('stop').executes(ctx => {
+				if (typeof nsScmStopAll === 'function') nsScmStopAll(ctx.source.getServer())
 				for (var i = 0; i < nsScares.length; i++) nsScareVanish(nsScares[i])
 				nsScares = []
 				for (var j = 0; j < nsFaceJobs.length; j++) nsFaceRestore(nsFaceJobs[j])
@@ -1044,5 +1057,6 @@ ServerEvents.commandRegistry(event => {
 				return 1
 			})
 		)
+	if (typeof nsScmCommands === 'function') root = nsScmCommands(root, Commands, Arguments, event)
 	event.register(root)
 })

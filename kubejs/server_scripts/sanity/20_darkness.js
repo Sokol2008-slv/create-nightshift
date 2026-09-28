@@ -104,6 +104,7 @@ ServerEvents.tick(event => {
 
 		if (!darkCheck || cap.getSanity() < NS_DARK_INSANITY) continue
 		if (p.getBlock().getLight() > NS_DARK_LIGHT || nsLightInHands(p)) continue
+		if (p.persistentData.getLong('ns_scare_grace') > event.server.getTickCount()) continue // свет погасил скример (/scare lights)
 		var name = p.getUsername()
 		p.persistentData.putLong('ns_dark_hit', event.server.getTickCount()) // смерть от тьмы — см. sanity/40_death.js
 		event.server.runCommandSilent('damage ' + name + ' ' + NS_DARK_DAMAGE + ' minecraft:magic')

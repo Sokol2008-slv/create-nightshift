@@ -37,7 +37,7 @@
 			size: 1.0d
 			tasks: [{ id: "6AF31CCF7A548D2A", item: { count: 1, id: "createoreexcavation:sample_drill" }, type: "item" }]
 			x: 2.20d
-			y: -2.74d
+			y: -2.12d
 		}
 		{
 			dependencies: ["7EC630A4A315D46F"]
@@ -47,7 +47,7 @@
 			size: 1.0d
 			tasks: [{ id: "25A6FC8BD8CFC7B7", item: { count: 1, id: "createoreexcavation:vein_atlas" }, type: "item" }]
 			x: 4.40d
-			y: -2.74d
+			y: -2.12d
 		}
 		{
 			dependencies: ["1DF089F6B46653BC", "2B3AF03BB3F2FDE0"]
@@ -57,26 +57,16 @@
 			size: 1.6d
 			tasks: [{ id: "3BCBF7A6E019DDBD", item: { count: 1, id: "createoreexcavation:drilling_machine" }, type: "item" }]
 			x: 6.60d
-			y: -1.94d
+			y: -1.85d
 		}
 		{
-			id: "07B6C7DFD28F46C7"
-			rewards: [{ id: "1B94595715890DAC", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "581DA7DE8BA233AC", item: { count: 1, id: "projecte:philosophers_stone" }, type: "item" }]
-			x: 0.00d
-			y: 1.60d
-		}
-		{
-			dependencies: ["07B6C7DFD28F46C7"]
 			id: "62D949F92F5E380D"
 			rewards: [{ id: "579DD7F62CE011CB", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "25FEFAB7B623B62A", item: { count: 1, id: "projecte:transmutation_table" }, type: "item" }]
-			x: 2.20d
-			y: 1.91d
+			x: 0.00d
+			y: 1.60d
 		}
 		{
 			dependencies: ["62D949F92F5E380D", "1F3E4DFE744C723D"]
@@ -85,8 +75,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6105BBEFC14FCAE1", item: { count: 1, id: "nightshift:vein_scanner" }, type: "item" }]
-			x: 4.40d
-			y: 1.14d
+			x: 2.20d
+			y: 1.03d
 		}
 		{
 			dependencies: ["01617CC30A73058B"]
@@ -96,8 +86,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "61A170DB7D7DF9BD", type: "checkmark" }]
-			x: 6.60d
-			y: 1.14d
+			x: 4.40d
+			y: 1.03d
 		}
 		{
 			dependencies: ["52B663403D95C5AC"]
@@ -106,8 +96,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "37866BD580841908", item: { count: 1, id: "nightshift:vein_cleaner" }, type: "item" }]
-			x: 8.80d
-			y: 0.34d
+			x: 6.60d
+			y: 0.50d
 		}
 		{
 			dependencies: ["52B663403D95C5AC"]
@@ -116,8 +106,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6181050E3050C826", item: { count: 1, id: "createendertransmission:item_transmitter" }, type: "item" }]
-			x: 8.80d
-			y: 1.94d
+			x: 6.60d
+			y: 2.10d
 		}
 	]
 }
