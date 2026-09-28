@@ -1,0 +1,13 @@
+name = "Create: Golems Galore"
+filename = "creategolemsgalore-0.2.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/kLUAiilr/versions/UkBgKEIn/creategolemsgalore-0.2.1.jar"
+hash-format = "sha512"
+hash = "a752dcd4ae199667297d19b721662dd9ba081b9d2cfadd3a764dc75bd3249fed88f69546dd1068f15e4fba10b3d1b042e9f8ede9691cbd63167a1fbd534bf562"
+
+[update]
+[update.modrinth]
+mod-id = "kLUAiilr"
+version = "UkBgKEIn"

@@ -41,6 +41,8 @@ var NS_VAHTA_STATION_MSGS = {
 var NS_VAHTA_CHISEL = 'rechiseled:chisel' // долото руками закрыто; механическое долото (Rechiseled Create) работает
 var NS_VAHTA_CHISEL_MSG = 'Долото руками не работает — нужно механическое долото'
 var NS_VAHTA_BENCH_RE = /crafting_table|workbench/
+// столы, которые не «верстак», а сборка/станция своего мода — не трогаем
+var NS_VAHTA_BENCH_ALLOW = ['modulargolems:golem_workbench'] // сборка големов (Георгий, 28.09: «моды на разных големов»)
 
 var NS_VAHTA_BENCH_MSGS = [
 	'Руками здесь ничего не собрать — нужен механический крафтер',
@@ -62,6 +64,7 @@ function nsVahtaSay(player, text) {
 
 function nsVahtaIsBench(block) {
 	var id = String(block.getId())
+	if (NS_VAHTA_BENCH_ALLOW.indexOf(id) >= 0) return false
 	if (NS_VAHTA_BENCH_IDS.indexOf(id) >= 0) return true
 	if (id !== 'create:mechanical_crafter' && NS_VAHTA_BENCH_RE.test(id.split(':')[1])) return true
 	try {

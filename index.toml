@@ -561,10 +561,6 @@ file = "kubejs/server_scripts/nightshift/07_dimensions.js"
 hash = "8af50eed918adb4f2da6f010b42fd5b8dcc8dd0846eb6688f930c5de13070019"
 
 [[files]]
-file = "kubejs/server_scripts/nightshift/08_no_imposter.js"
-hash = "9741399ae32e7276482df275383c27312770c2eb0b3cd3dfdc124523cbd1ef70"
-
-[[files]]
 file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
 hash = "c91d4367816eb618cf5b6246810a10753450d50441b02b45ce08b759afc11d1f"
 
@@ -622,7 +618,7 @@ hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
-hash = "bf4b9863f8f1e1d7d583c5eb69d26b82b36f1cfb7bc08ecde139eb18922842c8"
+hash = "aec945f056e49c7f33a5c9803b4195a3f5ec51dc1a57566df2f69f9f35bbca47"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
@@ -973,6 +969,11 @@ metafile = true
 [[files]]
 file = "mods/create-goggles.pw.toml"
 hash = "5de2bbab0826b5241e16746b0b739ca5169b0a9df38181d58e8519e6ea7f535f"
+metafile = true
+
+[[files]]
+file = "mods/create-golems-galore.pw.toml"
+hash = "f7a8dbefbe93d1129faf6f4451030785a244158628a509b531351f106b448bbe"
 metafile = true
 
 [[files]]
@@ -1336,6 +1337,11 @@ hash = "28c19a93e0902ef190500d3c17f3893c6bfb9fa594f3e0dfcea2df03dc595d92"
 metafile = true
 
 [[files]]
+file = "mods/golem-overhaul.pw.toml"
+hash = "1dd77e06dcd06a82bd5e635e0a10ff6fbcefd607fbda7cca542316c4f4c4ab74"
+metafile = true
+
+[[files]]
 file = "mods/horror-faces.pw.toml"
 hash = "7ab43011b7922c811469e1e31a963e65cc08a82c1fcaa20a072818bf193356a3"
 metafile = true
@@ -1353,11 +1359,6 @@ metafile = true
 [[files]]
 file = "mods/immersive-aircraft.pw.toml"
 hash = "e612f6a7f4d6101651ec929647a42d18a6b321d596e29e2b7821ced0bbccdff9"
-metafile = true
-
-[[files]]
-file = "mods/imposter-(horror).pw.toml"
-hash = "dbb2255fd672cde6acca24e0ddfe7ab443346eb3e198477073bf3166ad034243"
 metafile = true
 
 [[files]]
@@ -1431,6 +1432,11 @@ hash = "7e0eca275f27b6543f06c36dec433851a956960cbedd2be57d19e159d636bfc1"
 metafile = true
 
 [[files]]
+file = "mods/l2library.pw.toml"
+hash = "084c968377b79038daf8ce77bee9d86c3be4b2895ccab6f4a50915743d1533e9"
+metafile = true
+
+[[files]]
 file = "mods/lambdynamiclights.pw.toml"
 hash = "ebf0dae777cc19c354a662dc8144009dff7269b2d05624b4591fcb7de56fc14e"
 metafile = true
@@ -1473,6 +1479,11 @@ metafile = true
 [[files]]
 file = "mods/modernfix.pw.toml"
 hash = "c84140c66f233909b392bd7253ca33c59903ffda51beff558d9a2a4a8c6bc269"
+metafile = true
+
+[[files]]
+file = "mods/modular-golems.pw.toml"
+hash = "9611cd39c528e8c75cef727afb8d96d896b0c1521985835f70b75db7883882da"
 metafile = true
 
 [[files]]
@@ -1568,6 +1579,11 @@ metafile = true
 [[files]]
 file = "mods/resourceful-config.pw.toml"
 hash = "27721caca5a03b743bf25888e1d984142948069dace31453f103f94f7f24d2ce"
+metafile = true
+
+[[files]]
+file = "mods/resourceful-lib.pw.toml"
+hash = "c0b066684294c33972d562e0cb08ea17b2d31bcf86cd1d6c63b8e968f0eac7a2"
 metafile = true
 
 [[files]]
