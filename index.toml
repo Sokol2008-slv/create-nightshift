@@ -561,6 +561,10 @@ file = "kubejs/server_scripts/nightshift/07_dimensions.js"
 hash = "8af50eed918adb4f2da6f010b42fd5b8dcc8dd0846eb6688f930c5de13070019"
 
 [[files]]
+file = "kubejs/server_scripts/nightshift/08_no_imposter.js"
+hash = "9741399ae32e7276482df275383c27312770c2eb0b3cd3dfdc124523cbd1ef70"
+
+[[files]]
 file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
 hash = "c91d4367816eb618cf5b6246810a10753450d50441b02b45ce08b759afc11d1f"
 
@@ -622,7 +626,7 @@ hash = "bf4b9863f8f1e1d7d583c5eb69d26b82b36f1cfb7bc08ecde139eb18922842c8"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
-hash = "1411bff39e12a8188abdcb35a99f683d86567d172bbd0e176a9f509bc1850b0d"
+hash = "aea748172091aeaefd1428823d22aef39baa11f13de0c4874ee73639c530c959"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_resources.js"
