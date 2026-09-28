@@ -2096,6 +2096,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/projecte/zero_ring', 'projecte:zero_ring', ['4x minecraft:snow_block', '2x minecraft:snowball', '2x projecte:dark_matter', 'projecte:iron_band']],
 	// --- projectexpansion (91) ---
 	['nightshift:vahta/mix/nightshift/projecte/arcane_transmutation_tablet', 'projectexpansion:arcane_transmutation_tablet', ['northstar:martian_steel_ingot', 'northstar:titanium_ingot', '4x projecte:transmutation_tablet', '2x projectexpansion:magenta_matter', 'projectexpansion:magnum_star_ein']],
+	['nightshift:vahta/mix/nightshift/vahta/projecte/basic_alchemical_book', 'projectexpansion:basic_alchemical_book', ['minecraft:book', 'minecraft:ender_pearl', 'projecte:dark_matter', '4x projecte:high_covalence_dust', '2x projecte:red_matter']],
 	['nightshift:vahta/mix/projectexpansion/advanced_alchemical_book', 'projectexpansion:advanced_alchemical_book', ['projectexpansion:basic_alchemical_book', '4x projectexpansion:magnum_star_ein', '4x projectexpansion:magnum_star_omega']],
 	['nightshift:vahta/mix/projectexpansion/advanced_alchemical_chest/black', 'projectexpansion:black_advanced_alchemical_chest', ['projecte:black_alchemical_bag', '2x projecte:dark_matter', '2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust']],
 	['nightshift:vahta/mix/projectexpansion/advanced_alchemical_chest/blue', 'projectexpansion:blue_advanced_alchemical_chest', ['projecte:blue_alchemical_bag', '2x projecte:dark_matter', '2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust']],
@@ -2114,7 +2115,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/projectexpansion/advanced_alchemical_chest/white', 'projectexpansion:white_advanced_alchemical_chest', ['2x projecte:dark_matter', '2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust', 'projecte:white_alchemical_bag']],
 	['nightshift:vahta/mix/projectexpansion/advanced_alchemical_chest/yellow', 'projectexpansion:yellow_advanced_alchemical_chest', ['2x projecte:dark_matter', '2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust', 'projecte:yellow_alchemical_bag']],
 	['nightshift:vahta/mix/projectexpansion/arcane_alchemical_book', 'projectexpansion:arcane_alchemical_book', ['4x projectexpansion:final_star', '4x projectexpansion:final_star_shard', 'projectexpansion:master_alchemical_book']],
-	['nightshift:vahta/mix/projectexpansion/basic_alchemical_book', 'projectexpansion:basic_alchemical_book', ['minecraft:book', 'minecraft:ender_pearl', '4x projecte:high_covalence_dust', 'projecte:philosophers_stone', '2x projecte:red_matter']],
 	['nightshift:vahta/mix/projectexpansion/collector/basic', 'projectexpansion:basic_collector', ['#c:glass_blocks', 'minecraft:furnace', '6x minecraft:glowstone', 'projecte:aeternalis_fuel_block']],
 	['nightshift:vahta/mix/projectexpansion/compact_sun_1', 'projectexpansion:compact_sun', ['4x projectexpansion:final_star', '4x projectexpansion:final_star_shard', 'projectexpansion:yellow_matter']],
 	['nightshift:vahta/mix/projectexpansion/condenser_mk3', 'projectexpansion:condenser_mk3', ['5x projecte:condenser_mk2', '4x projectexpansion:magenta_matter_block']],
@@ -2668,80 +2668,80 @@ var vahtaCutRecipes = [
 	// --- createdieselgenerators (1) ---
 	['nightshift:vahta/cut/createdieselgenerators/crafting/chip_wood_slab', '2x createdieselgenerators:chip_wood_slab', 'createdieselgenerators:chip_wood_block'],
 	// --- garnished (12) ---
-	['nightshift:vahta/cut/garnished/wood/nut/nut_door', '3x garnished:nut_door', '#garnished:nut_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/garnished/wood/nut/nut_fence', '4x garnished:nut_fence', '#garnished:nut_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/garnished/wood/nut/nut_pressure_plate', '3x garnished:nut_pressure_plate', '#garnished:nut_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/nut/nut_door', '3x garnished:nut_door', 'garnished:nut_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/nut/nut_fence', '4x garnished:nut_fence', 'garnished:nut_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/garnished/wood/nut/nut_pressure_plate', '3x garnished:nut_pressure_plate', 'garnished:nut_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/nut/nut_slab', '2x garnished:nut_slab', 'garnished:nut_planks'],
-	['nightshift:vahta/cut/garnished/wood/nut/nut_stairs', '4x garnished:nut_stairs', '#garnished:nut_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/garnished/wood/nut/nut_trapdoor', '2x garnished:nut_trapdoor', '#garnished:nut_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/garnished/wood/sepia/sepia_door', '3x garnished:sepia_door', '#garnished:sepia_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/garnished/wood/sepia/sepia_fence', '4x garnished:sepia_fence', '#garnished:sepia_stems'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/garnished/wood/sepia/sepia_pressure_plate', '3x garnished:sepia_pressure_plate', '#garnished:sepia_stems'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/nut/nut_stairs', '4x garnished:nut_stairs', 'garnished:nut_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/nut/nut_trapdoor', '2x garnished:nut_trapdoor', 'garnished:nut_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/sepia/sepia_door', '3x garnished:sepia_door', 'garnished:sepia_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/sepia/sepia_fence', '4x garnished:sepia_fence', 'garnished:sepia_stem'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/garnished/wood/sepia/sepia_pressure_plate', '3x garnished:sepia_pressure_plate', 'garnished:sepia_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/garnished/wood/sepia/sepia_slab', '2x garnished:sepia_slab', 'garnished:sepia_planks'],
-	['nightshift:vahta/cut/garnished/wood/sepia/sepia_stairs', '4x garnished:sepia_stairs', '#garnished:sepia_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/garnished/wood/sepia/sepia_trapdoor', '2x garnished:sepia_trapdoor', '#garnished:sepia_stems'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/sepia/sepia_stairs', '4x garnished:sepia_stairs', 'garnished:sepia_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/garnished/wood/sepia/sepia_trapdoor', '2x garnished:sepia_trapdoor', 'garnished:sepia_stem'], // бревно = 6 досок
 	// --- minecraft (61) ---
-	['nightshift:vahta/cut/minecraft/acacia_door', '3x minecraft:acacia_door', '#minecraft:acacia_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/acacia_fence', '4x minecraft:acacia_fence', '#minecraft:acacia_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/acacia_pressure_plate', '3x minecraft:acacia_pressure_plate', '#minecraft:acacia_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/acacia_door', '3x minecraft:acacia_door', 'minecraft:acacia_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/acacia_fence', '4x minecraft:acacia_fence', 'minecraft:acacia_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/acacia_pressure_plate', '3x minecraft:acacia_pressure_plate', 'minecraft:acacia_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/acacia_slab', '2x minecraft:acacia_slab', 'minecraft:acacia_planks'],
-	['nightshift:vahta/cut/minecraft/acacia_stairs', '4x minecraft:acacia_stairs', '#minecraft:acacia_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/acacia_trapdoor', '2x minecraft:acacia_trapdoor', '#minecraft:acacia_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/acacia_stairs', '4x minecraft:acacia_stairs', 'minecraft:acacia_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/acacia_trapdoor', '2x minecraft:acacia_trapdoor', 'minecraft:acacia_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/bamboo_slab', '2x minecraft:bamboo_slab', 'minecraft:bamboo_planks'],
-	['nightshift:vahta/cut/minecraft/birch_door', '3x minecraft:birch_door', '#minecraft:birch_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/birch_fence', '4x minecraft:birch_fence', '#minecraft:birch_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/birch_pressure_plate', '3x minecraft:birch_pressure_plate', '#minecraft:birch_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/birch_door', '3x minecraft:birch_door', 'minecraft:birch_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/birch_fence', '4x minecraft:birch_fence', 'minecraft:birch_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/birch_pressure_plate', '3x minecraft:birch_pressure_plate', 'minecraft:birch_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/birch_slab', '2x minecraft:birch_slab', 'minecraft:birch_planks'],
-	['nightshift:vahta/cut/minecraft/birch_stairs', '4x minecraft:birch_stairs', '#minecraft:birch_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/birch_trapdoor', '2x minecraft:birch_trapdoor', '#minecraft:birch_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/cherry_door', '3x minecraft:cherry_door', '#minecraft:cherry_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/cherry_fence', '4x minecraft:cherry_fence', '#minecraft:cherry_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/cherry_pressure_plate', '3x minecraft:cherry_pressure_plate', '#minecraft:cherry_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/birch_stairs', '4x minecraft:birch_stairs', 'minecraft:birch_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/birch_trapdoor', '2x minecraft:birch_trapdoor', 'minecraft:birch_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/cherry_door', '3x minecraft:cherry_door', 'minecraft:cherry_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/cherry_fence', '4x minecraft:cherry_fence', 'minecraft:cherry_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/cherry_pressure_plate', '3x minecraft:cherry_pressure_plate', 'minecraft:cherry_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/cherry_slab', '2x minecraft:cherry_slab', 'minecraft:cherry_planks'],
-	['nightshift:vahta/cut/minecraft/cherry_stairs', '4x minecraft:cherry_stairs', '#minecraft:cherry_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/cherry_trapdoor', '2x minecraft:cherry_trapdoor', '#minecraft:cherry_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/crimson_door', '3x minecraft:crimson_door', '#minecraft:crimson_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/crimson_fence', '4x minecraft:crimson_fence', '#minecraft:crimson_stems'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/crimson_pressure_plate', '3x minecraft:crimson_pressure_plate', '#minecraft:crimson_stems'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/cherry_stairs', '4x minecraft:cherry_stairs', 'minecraft:cherry_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/cherry_trapdoor', '2x minecraft:cherry_trapdoor', 'minecraft:cherry_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/crimson_door', '3x minecraft:crimson_door', 'minecraft:crimson_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/crimson_fence', '4x minecraft:crimson_fence', 'minecraft:crimson_stem'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/crimson_pressure_plate', '3x minecraft:crimson_pressure_plate', 'minecraft:crimson_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/crimson_slab', '2x minecraft:crimson_slab', 'minecraft:crimson_planks'],
-	['nightshift:vahta/cut/minecraft/crimson_stairs', '4x minecraft:crimson_stairs', '#minecraft:crimson_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/crimson_trapdoor', '2x minecraft:crimson_trapdoor', '#minecraft:crimson_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/dark_oak_door', '3x minecraft:dark_oak_door', '#minecraft:dark_oak_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/dark_oak_fence', '4x minecraft:dark_oak_fence', '#minecraft:dark_oak_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/dark_oak_pressure_plate', '3x minecraft:dark_oak_pressure_plate', '#minecraft:dark_oak_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/crimson_stairs', '4x minecraft:crimson_stairs', 'minecraft:crimson_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/crimson_trapdoor', '2x minecraft:crimson_trapdoor', 'minecraft:crimson_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/dark_oak_door', '3x minecraft:dark_oak_door', 'minecraft:dark_oak_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/dark_oak_fence', '4x minecraft:dark_oak_fence', 'minecraft:dark_oak_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/dark_oak_pressure_plate', '3x minecraft:dark_oak_pressure_plate', 'minecraft:dark_oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/dark_oak_slab', '2x minecraft:dark_oak_slab', 'minecraft:dark_oak_planks'],
-	['nightshift:vahta/cut/minecraft/dark_oak_stairs', '4x minecraft:dark_oak_stairs', '#minecraft:dark_oak_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/dark_oak_trapdoor', '2x minecraft:dark_oak_trapdoor', '#minecraft:dark_oak_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/jungle_door', '3x minecraft:jungle_door', '#minecraft:jungle_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/jungle_fence', '4x minecraft:jungle_fence', '#minecraft:jungle_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/jungle_pressure_plate', '3x minecraft:jungle_pressure_plate', '#minecraft:jungle_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/dark_oak_stairs', '4x minecraft:dark_oak_stairs', 'minecraft:dark_oak_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/dark_oak_trapdoor', '2x minecraft:dark_oak_trapdoor', 'minecraft:dark_oak_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/jungle_door', '3x minecraft:jungle_door', 'minecraft:jungle_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/jungle_fence', '4x minecraft:jungle_fence', 'minecraft:jungle_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/jungle_pressure_plate', '3x minecraft:jungle_pressure_plate', 'minecraft:jungle_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/jungle_slab', '2x minecraft:jungle_slab', 'minecraft:jungle_planks'],
-	['nightshift:vahta/cut/minecraft/jungle_stairs', '4x minecraft:jungle_stairs', '#minecraft:jungle_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/jungle_trapdoor', '2x minecraft:jungle_trapdoor', '#minecraft:jungle_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/mangrove_door', '3x minecraft:mangrove_door', '#minecraft:mangrove_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/mangrove_fence', '4x minecraft:mangrove_fence', '#minecraft:mangrove_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/mangrove_pressure_plate', '3x minecraft:mangrove_pressure_plate', '#minecraft:mangrove_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/jungle_stairs', '4x minecraft:jungle_stairs', 'minecraft:jungle_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/jungle_trapdoor', '2x minecraft:jungle_trapdoor', 'minecraft:jungle_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/mangrove_door', '3x minecraft:mangrove_door', 'minecraft:mangrove_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/mangrove_fence', '4x minecraft:mangrove_fence', 'minecraft:mangrove_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/mangrove_pressure_plate', '3x minecraft:mangrove_pressure_plate', 'minecraft:mangrove_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/mangrove_slab', '2x minecraft:mangrove_slab', 'minecraft:mangrove_planks'],
-	['nightshift:vahta/cut/minecraft/mangrove_stairs', '4x minecraft:mangrove_stairs', '#minecraft:mangrove_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/mangrove_trapdoor', '2x minecraft:mangrove_trapdoor', '#minecraft:mangrove_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/oak_door', '3x minecraft:oak_door', '#minecraft:oak_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/oak_fence', '4x minecraft:oak_fence', '#minecraft:oak_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/oak_pressure_plate', '3x minecraft:oak_pressure_plate', '#minecraft:oak_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/mangrove_stairs', '4x minecraft:mangrove_stairs', 'minecraft:mangrove_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/mangrove_trapdoor', '2x minecraft:mangrove_trapdoor', 'minecraft:mangrove_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/oak_door', '3x minecraft:oak_door', 'minecraft:oak_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/oak_fence', '4x minecraft:oak_fence', 'minecraft:oak_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/oak_pressure_plate', '3x minecraft:oak_pressure_plate', 'minecraft:oak_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/oak_slab', '2x minecraft:oak_slab', 'minecraft:oak_planks'],
-	['nightshift:vahta/cut/minecraft/oak_stairs', '4x minecraft:oak_stairs', '#minecraft:oak_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/oak_trapdoor', '2x minecraft:oak_trapdoor', '#minecraft:oak_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/spruce_door', '3x minecraft:spruce_door', '#minecraft:spruce_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/spruce_fence', '4x minecraft:spruce_fence', '#minecraft:spruce_logs'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/spruce_pressure_plate', '3x minecraft:spruce_pressure_plate', '#minecraft:spruce_logs'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/oak_stairs', '4x minecraft:oak_stairs', 'minecraft:oak_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/oak_trapdoor', '2x minecraft:oak_trapdoor', 'minecraft:oak_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/spruce_door', '3x minecraft:spruce_door', 'minecraft:spruce_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/spruce_fence', '4x minecraft:spruce_fence', 'minecraft:spruce_log'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/spruce_pressure_plate', '3x minecraft:spruce_pressure_plate', 'minecraft:spruce_log'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/spruce_slab', '2x minecraft:spruce_slab', 'minecraft:spruce_planks'],
-	['nightshift:vahta/cut/minecraft/spruce_stairs', '4x minecraft:spruce_stairs', '#minecraft:spruce_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/spruce_trapdoor', '2x minecraft:spruce_trapdoor', '#minecraft:spruce_logs'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/warped_door', '3x minecraft:warped_door', '#minecraft:warped_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/warped_fence', '4x minecraft:warped_fence', '#minecraft:warped_stems'], // честно 3.60 (бревно = 6 досок) — округлено
-	['nightshift:vahta/cut/minecraft/warped_pressure_plate', '3x minecraft:warped_pressure_plate', '#minecraft:warped_stems'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/spruce_stairs', '4x minecraft:spruce_stairs', 'minecraft:spruce_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/spruce_trapdoor', '2x minecraft:spruce_trapdoor', 'minecraft:spruce_log'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/warped_door', '3x minecraft:warped_door', 'minecraft:warped_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/warped_fence', '4x minecraft:warped_fence', 'minecraft:warped_stem'], // честно 3.60 (бревно = 6 досок) — округлено
+	['nightshift:vahta/cut/minecraft/warped_pressure_plate', '3x minecraft:warped_pressure_plate', 'minecraft:warped_stem'], // бревно = 6 досок
 	['nightshift:vahta/cut/minecraft/warped_slab', '2x minecraft:warped_slab', 'minecraft:warped_planks'],
-	['nightshift:vahta/cut/minecraft/warped_stairs', '4x minecraft:warped_stairs', '#minecraft:warped_stems'], // бревно = 6 досок
-	['nightshift:vahta/cut/minecraft/warped_trapdoor', '2x minecraft:warped_trapdoor', '#minecraft:warped_stems'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/warped_stairs', '4x minecraft:warped_stairs', 'minecraft:warped_stem'], // бревно = 6 досок
+	['nightshift:vahta/cut/minecraft/warped_trapdoor', '2x minecraft:warped_trapdoor', 'minecraft:warped_stem'], // бревно = 6 досок
 	// --- tfmg (2) ---
 	['nightshift:vahta/cut/tfmg/crafting/materials/rebar_pillar', 'tfmg:rebar_pillar', 'tfmg:rebar'],
 	['nightshift:vahta/cut/tfmg/crafting/materials/rebar_stairs', 'tfmg:rebar_stairs', 'tfmg:rebar'],

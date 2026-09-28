@@ -1,13 +1,37 @@
 {
- "total_recipes": 23032,
+ "total_recipes": 23033,
  "kubejs_removed": [
   "cgs:mixing/steel_ingot",
+  "create:crushing/asurine",
+  "create:crushing/deepslate_gold_ore",
+  "create:crushing/deepslate_iron_ore",
+  "create:crushing/deepslate_zinc_ore",
   "create:crushing/diorite",
   "create:crushing/dirt",
+  "create:crushing/gold_ore",
+  "create:crushing/iron_ore",
+  "create:crushing/raw_copper",
+  "create:crushing/raw_copper_block",
+  "create:crushing/raw_gold",
+  "create:crushing/raw_gold_block",
+  "create:crushing/raw_iron",
+  "create:crushing/raw_iron_block",
+  "create:crushing/raw_zinc",
+  "create:crushing/raw_zinc_block",
   "create:crushing/tuff",
+  "create:crushing/zinc_ore",
   "create:splashing/gravel",
   "create:splashing/red_sand",
   "create:splashing/soul_sand",
+  "create_copper_and_zinc:crushing_asurine",
+  "create_mechanical_extruder:extruding/andesite",
+  "create_mechanical_extruder:extruding/asurine",
+  "create_mechanical_extruder:extruding/cobblestone",
+  "create_mechanical_extruder:extruding/crimsite",
+  "create_mechanical_extruder:extruding/diorite",
+  "create_mechanical_extruder:extruding/granite",
+  "create_mechanical_extruder:extruding/ochrum",
+  "create_mechanical_extruder:extruding/veridium",
   "create_ultimate_factory:crushing_soulsand",
   "createbigcannons:mixing/alloy_steel",
   "createsifter:sifting/crushed_netherrack_advanced_brass",
@@ -21,16 +45,53 @@
   "createsifter:sifting/sand_brass",
   "createsifter:sifting/soul_sand_advanced_brass",
   "createsifter:sifting/soul_sand_brass",
+  "projecte:aeternalis_fuel",
+  "projecte:alchemical_coal",
   "projecte:collector_mk1",
   "projecte:condenser_mk1",
+  "projecte:conversions/aeternalis_fuel_to_mobius_fuel",
+  "projecte:conversions/alchemical_coal_to_coal",
+  "projecte:conversions/charcoal_to_coal",
+  "projecte:conversions/coal_to_charcoal",
+  "projecte:conversions/diamond_to_emerald",
+  "projecte:conversions/diamond_to_gold_ingot",
+  "projecte:conversions/emerald_to_diamond",
+  "projecte:conversions/gold_ingot_to_diamond",
+  "projecte:conversions/gold_ingot_to_iron_ingot",
+  "projecte:conversions/iron_ingot_to_ender_pearl",
+  "projecte:conversions/iron_ingot_to_gold_ingot",
+  "projecte:conversions/mobius_fuel_to_alchemical_coal",
+  "projecte:interdiction_torch",
+  "projecte:mobius_fuel",
   "projecte:philosophers_stone",
   "projecte:philosophers_stone_alt",
   "projecte:relay_mk1",
   "projecte:transmutation_table",
-  "projectexpansion:arcane_transmutation_tablet"
+  "projectexpansion:arcane_transmutation_tablet",
+  "projectexpansion:basic_alchemical_book",
+  "projectexpansion:fuel/item/blue",
+  "projectexpansion:fuel/item/cyan",
+  "projectexpansion:fuel/item/green",
+  "projectexpansion:fuel/item/lime",
+  "projectexpansion:fuel/item/magenta",
+  "projectexpansion:fuel/item/orange",
+  "projectexpansion:fuel/item/pink",
+  "projectexpansion:fuel/item/purple",
+  "projectexpansion:fuel/item/violet",
+  "projectexpansion:fuel/item/white",
+  "projectexpansion:fuel/item/yellow"
  ],
  "kubejs_added": [
-  "nightshift:projecte/philosophers_stone",
+  "nightshift:alt/leather_tanning",
+  "nightshift:base_marker",
+  "nightshift:base_core",
+  "vahta:mixing/amethyst_shard",
+  "vahta:mixing/blaze_powder",
+  "vahta:mixing/slime_ball",
+  "vahta:mixing/slime_ball_milk",
+  "nightshift:vahta/projecte/alchemical_coal",
+  "nightshift:vahta/projecte/interdiction_torch",
+  "nightshift:vahta/projecte/basic_alchemical_book",
   "nightshift:projecte/transmutation_table",
   "nightshift:projecte/collector_mk1",
   "nightshift:projecte/relay_mk1",
@@ -38,26 +99,26 @@
   "nightshift:projecte/arcane_transmutation_tablet",
   "nightshift:vein_scanner",
   "nightshift:vein_cleaner",
-  "nightshift:blocks/podzol",
-  "nightshift:blocks/rooted_dirt",
   "nightshift:blocks/pointed_dripstone",
-  "nightshift:blocks/amethyst_shard",
-  "nightshift:sedative_mixing",
-  "nightshift:life_tonic_mixing",
-  "nightshift:alt/leather_tanning",
-  "nightshift:alt/honey_from_sugar",
-  "nightshift:base_marker",
-  "nightshift:base_core"
+  "nightshift:life_tonic_mixing"
  ],
  "kubejs_notes": [
-  "kubejs/server_scripts/nightshift/04_drilling_gate.js: условное удаление по фазе (23 id) — не рецепты верстака, не учитываем"
+  "kubejs/server_scripts/nightshift/04_drilling_gate.js: условное удаление по фазе (23 id) — не рецепты верстака, не учитываем",
+  "kubejs/server_scripts/nightshift/09_alt_recipes.js: не разобран вызов mixing (nsIng('#minecraft:flowers'), Fluid.of('m)",
+  "kubejs/server_scripts/vahta/20_recipes.js: не разобран вызов cutting (r[2] + 'x ' + r[1], [r[0]]).id('nightshi)",
+  "kubejs/server_scripts/vahta/20_recipes.js: не разобран вызов cutting (nsIngs(['#minecraft:planks'])).id('night)",
+  "kubejs/server_scripts/vahta/30_projecte.js: не разобран вызов mixing (r[0], ['4x ' + r[1], 'minecraft:glowston)",
+  "kubejs/server_scripts/economy/40_blocks.js: не разобран вызов mixing (nsIngs(['minecraft:dirt', '#minecraft:le)",
+  "kubejs/server_scripts/economy/40_blocks.js: не разобран вызов mixing (nsIngs(['minecraft:dirt', 'minecraft:bon)",
+  "kubejs/server_scripts/economy/40_blocks.js: не разобран вызов mixing (nsIngs(['#c:gems/quartz', '#c:gems/quart)",
+  "kubejs/server_scripts/sanity/10_sedative.js: не разобран вызов mixing (nsIngs(['minecraft:sugar', 'minecraft:sw)"
  ],
  "skipped": {
   "условие загрузки ложно (мода нет и т.п.)": 2243,
-  "удалён в kubejs/server_scripts": 27,
-  "не загрузится: пустой ингредиент (тег пуст или предмет из отсутствующего мода)": 380,
+  "удалён в kubejs/server_scripts": 79,
+  "не загрузится: пустой ингредиент (тег пуст или предмет из отсутствующего мода)": 373,
   "не загрузится: битый формат 1.21.1": 57,
-  "не загрузится: пустой ингредиент": 22,
+  "не загрузится: пустой ингредиент": 21,
   "не разобран: ингредиент своего типа neoforge:block_tag": 1
  },
  "unknown_conditions_assumed_true": {
@@ -77,8 +138,8 @@
   "sophisticatedcore:item_enabled": 385,
   "sophisticatedstorage:drop_packed_disabled": 2
  },
- "craft_total": 8841,
- "shapeless_mixer_auto": 2911,
+ "craft_total": 8820,
+ "shapeless_mixer_auto": 2890,
  "shapeless_single": 585,
  "press_auto": 454,
  "press_auto_shaped": 315,
@@ -99,84 +160,84 @@
    "garnished:nut_fence",
    3.6,
    4,
-   "#garnished:nut_logs"
+   "garnished:nut_log"
   ],
   [
    "garnished:wood/sepia/sepia_fence",
    "garnished:sepia_fence",
    3.6,
    4,
-   "#garnished:sepia_stems"
+   "garnished:sepia_stem"
   ],
   [
    "minecraft:cherry_fence",
    "minecraft:cherry_fence",
    3.6,
    4,
-   "#minecraft:cherry_logs"
+   "minecraft:cherry_log"
   ],
   [
    "minecraft:jungle_fence",
    "minecraft:jungle_fence",
    3.6,
    4,
-   "#minecraft:jungle_logs"
+   "minecraft:jungle_log"
   ],
   [
    "minecraft:oak_fence",
    "minecraft:oak_fence",
    3.6,
    4,
-   "#minecraft:oak_logs"
+   "minecraft:oak_log"
   ],
   [
    "minecraft:acacia_fence",
    "minecraft:acacia_fence",
    3.6,
    4,
-   "#minecraft:acacia_logs"
+   "minecraft:acacia_log"
   ],
   [
    "minecraft:warped_fence",
    "minecraft:warped_fence",
    3.6,
    4,
-   "#minecraft:warped_stems"
+   "minecraft:warped_stem"
   ],
   [
    "minecraft:birch_fence",
    "minecraft:birch_fence",
    3.6,
    4,
-   "#minecraft:birch_logs"
+   "minecraft:birch_log"
   ],
   [
    "minecraft:crimson_fence",
    "minecraft:crimson_fence",
    3.6,
    4,
-   "#minecraft:crimson_stems"
+   "minecraft:crimson_stem"
   ],
   [
    "minecraft:mangrove_fence",
    "minecraft:mangrove_fence",
    3.6,
    4,
-   "#minecraft:mangrove_logs"
+   "minecraft:mangrove_log"
   ],
   [
    "minecraft:dark_oak_fence",
    "minecraft:dark_oak_fence",
    3.6,
    4,
-   "#minecraft:dark_oak_logs"
+   "minecraft:dark_oak_log"
   ],
   [
    "minecraft:spruce_fence",
    "minecraft:spruce_fence",
    3.6,
    4,
-   "#minecraft:spruce_logs"
+   "minecraft:spruce_log"
   ]
  ],
  "crafter_shaped": 170,
@@ -216,7 +277,7 @@
   "свой serializer: minecraft:crafting_special_firework_star_fade": 1
  },
  "mech_crafting": 226,
- "mixing_existing": 1575,
+ "mixing_existing": 1577,
  "groups_pass1": 449,
  "groups_pass1_top": [
   {

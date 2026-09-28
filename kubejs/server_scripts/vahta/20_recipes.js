@@ -341,33 +341,84 @@ var NS_VAHTA_CUTTING = [
 	['northstar:coiler_log', 'northstar:stripped_coiler_log', 1],
 	['northstar:wilter_log', 'northstar:stripped_wilter_log', 1],
 	['minecraft:stripped_oak_log', 'minecraft:oak_planks', 6],
-	['minecraft:stripped_oak_wood', 'minecraft:oak_planks', 6],
 	['minecraft:stripped_spruce_log', 'minecraft:spruce_planks', 6],
-	['minecraft:stripped_spruce_wood', 'minecraft:spruce_planks', 6],
 	['minecraft:stripped_birch_log', 'minecraft:birch_planks', 6],
-	['minecraft:stripped_birch_wood', 'minecraft:birch_planks', 6],
 	['minecraft:stripped_jungle_log', 'minecraft:jungle_planks', 6],
-	['minecraft:stripped_jungle_wood', 'minecraft:jungle_planks', 6],
 	['minecraft:stripped_acacia_log', 'minecraft:acacia_planks', 6],
-	['minecraft:stripped_acacia_wood', 'minecraft:acacia_planks', 6],
 	['minecraft:stripped_dark_oak_log', 'minecraft:dark_oak_planks', 6],
-	['minecraft:stripped_dark_oak_wood', 'minecraft:dark_oak_planks', 6],
 	['minecraft:stripped_mangrove_log', 'minecraft:mangrove_planks', 6],
-	['minecraft:stripped_mangrove_wood', 'minecraft:mangrove_planks', 6],
 	['minecraft:stripped_cherry_log', 'minecraft:cherry_planks', 6],
-	['minecraft:stripped_cherry_wood', 'minecraft:cherry_planks', 6],
 	['minecraft:stripped_crimson_stem', 'minecraft:crimson_planks', 6],
-	['minecraft:stripped_crimson_hyphae', 'minecraft:crimson_planks', 6],
 	['minecraft:stripped_warped_stem', 'minecraft:warped_planks', 6],
-	['minecraft:stripped_warped_hyphae', 'minecraft:warped_planks', 6],
 	['minecraft:stripped_bamboo_block', 'minecraft:bamboo_planks', 3],
 	['northstar:stripped_argyre_log', 'northstar:argyre_planks', 6],
 	['northstar:stripped_coiler_log', 'northstar:coiler_planks', 6],
 	['northstar:stripped_wilter_log', 'northstar:wilter_planks', 6],
 	['northstar:calorian_log', 'northstar:calorian_planks', 6],
-	['garnished:stripped_nut_wood', 'garnished:nut_planks', 6],
-	['garnished:stripped_sepia_hyphae', 'garnished:sepia_planks', 6],
 ]
+
+// Литейные формы пушек (Create Big Cannons + CBC Advanced Technology, 35 шт.) в модах режутся из
+// ЛЮБОГО бревна (#minecraft:logs). Пила без фильтра перебирает все подходящие рецепты по кругу,
+// поэтому бревно выдавало то окорённое, то случайную форму (Георгий, 28.09: «формы какие-то
+// непонятные, выбрать нельзя»). На вахте формы режутся только из окорённой древесины — блока без
+// коры со всех сторон (4 окорённых бревна на крафтерах → 3 блока); выбор формы — фильтром пилы.
+// Сама окорённая древесина в доски больше не пилится.
+var NS_VAHTA_MOULD_WOOD = [
+	'minecraft:stripped_oak_wood',
+	'minecraft:stripped_spruce_wood',
+	'minecraft:stripped_birch_wood',
+	'minecraft:stripped_jungle_wood',
+	'minecraft:stripped_acacia_wood',
+	'minecraft:stripped_dark_oak_wood',
+	'minecraft:stripped_mangrove_wood',
+	'minecraft:stripped_cherry_wood',
+	'minecraft:stripped_crimson_hyphae',
+	'minecraft:stripped_warped_hyphae',
+	'garnished:stripped_nut_wood',
+	'garnished:stripped_sepia_hyphae',
+]
+// [id рецепта мода, выход]
+var NS_VAHTA_MOULDS = [
+	['cbc_at:cutting/autocannon_muzzle_brake_cast_mould', 'cbc_at:autocannon_muzzle_brake_mould'],
+	['cbc_at:cutting/autocannon_silencer_cast_mould', 'cbc_at:autocannon_silencer_mould'],
+	['cbc_at:cutting/fume_extractor_cast_mould', 'cbc_at:fume_extractor_cast_mould'],
+	['cbc_at:cutting/heavy_autocannon_barrel_cast_mould', 'cbc_at:heavy_autocannon_barrel_mould'],
+	['cbc_at:cutting/heavy_autocannon_breech_cast_mould', 'cbc_at:heavy_autocannon_breech_mould'],
+	['cbc_at:cutting/heavy_autocannon_muzzle_brake_cast_mould', 'cbc_at:heavy_autocannon_muzzle_brake_mould'],
+	['cbc_at:cutting/heavy_autocannon_qfbreech_cast_mould', 'cbc_at:heavy_autocannon_qfbreech_mould'],
+	['cbc_at:cutting/heavy_autocannon_recoil_spring_cast_mould', 'cbc_at:heavy_autocannon_recoil_spring_mould'],
+	['cbc_at:cutting/heavy_autocannon_silencer_cast_mould', 'cbc_at:heavy_autocannon_silencer_mould'],
+	['cbc_at:cutting/muzzle_brake_cast_mould', 'cbc_at:muzzle_brake_cast_mould'],
+	['cbc_at:cutting/rifled_barrel_cast_mould', 'cbc_at:rifled_barrel_cast_mould'],
+	['cbc_at:cutting/rocket_pod_breech_cast_mould', 'cbc_at:rocket_pod_breech_mould'],
+	['cbc_at:cutting/rocket_pod_rail_cast_mould', 'cbc_at:rocket_pod_rail_mould'],
+	['cbc_at:cutting/silencer_cast_mould', 'cbc_at:silencer_cast_mould'],
+	['cbc_at:cutting/twin_autocannon_barrel_cast_mould', 'cbc_at:twin_autocannon_barrel_mould'],
+	['cbc_at:cutting/twin_autocannon_breech_cast_mould', 'cbc_at:twin_autocannon_breech_mould'],
+	['cbc_at:cutting/twin_autocannon_muzzle_brake_cast_mould', 'cbc_at:twin_autocannon_muzzle_brake_mould'],
+	['cbc_at:cutting/twin_autocannon_recoil_spring_cast_mould', 'cbc_at:twin_autocannon_recoil_spring_mould'],
+	['cbc_at:cutting/twin_autocannon_silencer_cast_mould', 'cbc_at:twin_autocannon_silencer_mould'],
+	['cbc_at:cutting/vert_twin_autocannon_barrel_cast_mould', 'cbc_at:vert_twin_autocannon_barrel_mould'],
+	['cbc_at:cutting/vert_twin_autocannon_breech_cast_mould', 'cbc_at:vert_twin_autocannon_breech_mould'],
+	['cbc_at:cutting/vert_twin_autocannon_muzzle_brake_cast_mould', 'cbc_at:vert_twin_autocannon_muzzle_brake_mould'],
+	['cbc_at:cutting/vert_twin_autocannon_recoil_spring_cast_mould', 'cbc_at:vert_twin_autocannon_recoil_spring_mould'],
+	['cbc_at:cutting/vert_twin_autocannon_silencer_cast_mould', 'cbc_at:vert_twin_autocannon_silencer_mould'],
+	['createbigcannons:cutting/autocannon_barrel_cast_mould', 'createbigcannons:autocannon_barrel_cast_mould'],
+	['createbigcannons:cutting/autocannon_breech_cast_mould', 'createbigcannons:autocannon_breech_cast_mould'],
+	['createbigcannons:cutting/autocannon_recoil_spring_cast_mould', 'createbigcannons:autocannon_recoil_spring_cast_mould'],
+	['createbigcannons:cutting/cannon_end_cast_mould', 'createbigcannons:cannon_end_cast_mould'],
+	['createbigcannons:cutting/large_cast_mould', 'createbigcannons:large_cast_mould'],
+	['createbigcannons:cutting/medium_cast_mould', 'createbigcannons:medium_cast_mould'],
+	['createbigcannons:cutting/screw_breech_cast_mould', 'createbigcannons:screw_breech_cast_mould'],
+	['createbigcannons:cutting/sliding_breech_cast_mould', 'createbigcannons:sliding_breech_cast_mould'],
+	['createbigcannons:cutting/small_cast_mould', 'createbigcannons:small_cast_mould'],
+	['createbigcannons:cutting/very_large_cast_mould', 'createbigcannons:very_large_cast_mould'],
+	['createbigcannons:cutting/very_small_cast_mould', 'createbigcannons:very_small_cast_mould'],
+]
+
+ServerEvents.tags('item', event => {
+	event.add('nightshift:mould_wood', NS_VAHTA_MOULD_WOOD)
+})
 
 ServerEvents.recipes(event => {
 	var lists = [NS_VAHTA_POCKET_IDS, NS_VAHTA_ORE_SMELT_IDS, NS_VAHTA_PLANK_IDS]
@@ -379,6 +430,12 @@ ServerEvents.recipes(event => {
 		var r = NS_VAHTA_CUTTING[c]
 		var name = r[0].replace(':', '/')
 		event.recipes.create.cutting(r[2] + 'x ' + r[1], [r[0]]).id('nightshift:vahta/cutting/' + name)
+	}
+	for (var m = 0; m < NS_VAHTA_MOULDS.length; m++) {
+		var mould = NS_VAHTA_MOULDS[m]
+		event.remove({ id: mould[0] })
+		event.recipes.create.cutting(mould[1], nsIngs(['#nightshift:mould_wood']))
+			.id('nightshift:vahta/cutting/mould/' + mould[0].replace(':cutting/', '/'))
 	}
 	// палки: 1 доска → 2 палки (как у верстака: 2 доски → 4)
 	event.recipes.create.cutting('2x minecraft:stick', nsIngs(['#minecraft:planks'])).id('nightshift:vahta/cutting/planks_to_sticks')

@@ -2081,7 +2081,7 @@
 - `createfood:crafting/shaped/raw_chicken_calzone_from_shaped` → createfood:raw_chicken_calzone ← #c:cooked_chicken, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_chicken_calzone_from_crafting`
 - `createfood:crafting/shaped/raw_chocolate_pie_from_shaped` → createfood:raw_chocolate_pie ← #c:chocolate_bottle, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_from_crafting`
 - `createfood:crafting/shaped/raw_chocolate_pie_graham_cracker_from_shaped` → createfood:raw_chocolate_pie_graham_cracker ← #c:chocolate_bottle, #c:raw_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_graham_cracker_from_crafting`
-- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:minecraft/crafting/raw_chocolate_sweet_roll_base_from_crafting`
+- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:create/mixing/raw_chocolate_sweet_roll_base_from_mixing`
 - `createfood:crafting/shaped/raw_chorus_fruit_cheesecake_from_shaped` → createfood:raw_chorus_fruit_cheesecake ← #c:chorus_fruit, #c:raw_cheesecake ≈ `createfood:minecraft/crafting/raw_chorus_fruit_cheesecake_from_crafting`
 - `createfood:crafting/shaped/raw_chorus_fruit_pie_from_shaped` → createfood:raw_chorus_fruit_pie ← #c:chorus_fruit_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chorus_fruit_pie_from_crafting`
 - `createfood:crafting/shaped/raw_cream_pie_chocolate_graham_cracker_from_shaped` → createfood:raw_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_chocolate_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_cream_pie_chocolate_graham_cracker_from_crafting`
@@ -2124,7 +2124,7 @@
 - `createfood:crafting/shaped/raw_scone_from_shaped` → 2× createfood:raw_scone ← #c:butter_dough_small, #c:sugar_dough_small ≈ `createfood:minecraft/crafting/raw_scone_from_crafting`
 - `createfood:crafting/shaped/raw_spicy_sausage_roll_from_shaped` → 3× createfood:raw_spicy_sausage_roll ← #c:butter_dough, #c:raw_spicy_sausages ≈ `createfood:minecraft/crafting/raw_spicy_sausage_roll_from_crafting`
 - `createfood:crafting/shaped/raw_spicy_sausages_from_shaped` → createfood:raw_spicy_sausages ← #c:paprika, #c:raw_sausages ≈ `createfood:minecraft/crafting/raw_spicy_sausages_from_crafting`
-- `createfood:crafting/shaped/raw_sweet_roll_base_from_shaped` → createfood:raw_sweet_roll_base ← #c:sugar, #c:sweet_dough ≈ `createfood:minecraft/crafting/raw_sweet_roll_base_from_crafting`
+- `createfood:crafting/shaped/raw_sweet_roll_base_from_shaped` → createfood:raw_sweet_roll_base ← #c:sugar, #c:sweet_dough ≈ `createfood:create/mixing/raw_sweet_roll_base_from_mixing`
 - `createfood:crafting/shaped/red_gelatin_dessert_block_from_shaped_alt` → createfood:red_gelatin_dessert_block ← #c:dyes/red, #c:gelatin_dessert_block ≈ `createfood:minecraft/crafting/red_gelatin_dessert_block_from_crafting_alt`
 - `createfood:crafting/shaped/sausage_biscuit_bacon_from_shaped` → createfood:sausage_biscuit_bacon ← #c:cooked_pork, #c:sausage_biscuit ≈ `createfood:minecraft/crafting/sausage_biscuit_bacon_from_crafting`
 - `createfood:crafting/shaped/sausage_biscuit_cheese_bacon_from_shaped` → createfood:sausage_biscuit_cheese_bacon ← #c:cooked_pork, #c:sausage_biscuit_cheese ≈ `createfood:minecraft/crafting/sausage_biscuit_cheese_bacon_from_crafting`

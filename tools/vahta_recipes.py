@@ -722,6 +722,15 @@ for r in SINGLE:
 PLANKS_PER_LOG = 6   # «Вахта», п.5: 6 досок с бревна пилой
 
 
+def bark_log(log_tag):
+    """Тег брёвен -> единственное бревно в коре (без окорённых и блоков древесины) или None.
+    Формы режем только из бревна в коре: окорённое бревно на пиле = одни доски,
+    окорённая древесина = литейные формы пушек (vahta/20_recipes.js)."""
+    items = [x for x in tag_items(log_tag.lstrip('#'))
+             if 'stripped' not in x and not x.endswith(('_wood', '_hyphae'))]
+    return items[0] if len(items) == 1 else None
+
+
 METAL_WORDS = ('ingot', 'nugget', 'sheet', 'plate', 'rod', 'wire', 'alloy', 'scrap')
 MAX_CUT_DEVIATION = 0.12   # неточный пересчёт допускаем до 12 %, иначе — крафтерам
 
@@ -754,6 +763,7 @@ def plan_cut(r):
     log_tag = LOG_TAG_FOR_PLANK.get(rep) if not rep.startswith('#') else None
     if log_tag:
         per_log = rate * PLANKS_PER_LOG
+        log_tag = bark_log(log_tag) or log_tag
         if abs(per_log - round(per_log)) < 1e-9:
             return {'input': log_tag, 'count': int(round(per_log)), 'exact': True, 'per': 'бревно = 6 досок'}
         n = max(1, int(round(per_log)))
