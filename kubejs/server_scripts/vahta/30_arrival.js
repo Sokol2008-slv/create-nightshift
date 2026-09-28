@@ -81,16 +81,12 @@ function vahtaBookCommand(name) {
 		',author:' + vahtaSnbt(VAHTA_BOOK_AUTHOR) + ',pages:[' + pages.join(',') + ']}] 1'
 }
 
-// выдать ящик и книгу; true — если ящик выдан
+// выдать ящик и книгу. runCommandSilent в KubeJS 2101 ничего не возвращает (undefined) —
+// проверять результат нечем; синтаксис обеих команд проверен на витрине 28.09
+// (give @a … → «No player was found», без ошибок разбора компонентов)
 function vahtaGiveKit(server, name) {
-	var ok = server.runCommandSilent(vahtaKitCommand(name))
-	if (!(ok > 0)) {
-		console.error('[Вахта] ящик вахтовика не выдан ' + name + ': ' + vahtaKitCommand(name))
-		return false
-	}
-	if (!(server.runCommandSilent(vahtaBookCommand(name)) > 0)) {
-		console.error('[Вахта] книга не выдана ' + name + ': ' + vahtaBookCommand(name))
-	}
+	server.runCommandSilent(vahtaKitCommand(name))
+	server.runCommandSilent(vahtaBookCommand(name))
 	return true
 }
 
