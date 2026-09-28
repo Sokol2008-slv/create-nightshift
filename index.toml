@@ -5,6 +5,10 @@ file = "config/ArPhEx Configurations.toml"
 hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
+file = "config/ProjectE/custom_emc.json"
+hash = "38d63d440ae9f9395da2c9e2103ede64e23bc3e9a9b7a115b795a54a1d501ed8"
+
+[[files]]
 file = "config/ProjectE/server.toml"
 hash = "f6418703acaad2e013931f5a901c2da4f00b45de8e3486650b02d7ba0a3bbe4c"
 
@@ -462,7 +466,7 @@ hash = "dad60cd82395e711d5083e22e0215861b4356078d72de3af8f88978ed20e5873"
 
 [[files]]
 file = "kubejs/server_scripts/economy/30_recipes.js"
-hash = "437147372e690eea68cfc0070a00e7ef361f7d120fa0ca6371baf2026dbea4da"
+hash = "0688998990cd5aea1c7dbb629590fafe8ca5f608a8cf09edd1b316940aa39fc2"
 
 [[files]]
 file = "kubejs/server_scripts/economy/40_blocks.js"
@@ -555,6 +559,18 @@ hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
 [[files]]
 file = "kubejs/server_scripts/sanity/40_death.js"
 hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
+hash = "fd3d25f4f45aa92124e87b4a1abc8160bdecd46a628a7d43d52028ce028c8e9f"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/20_recipes.js"
+hash = "dd00ae3375aa1e1ccb35d3c8e8c704ad11b09f87b9edb7d4925c9a1d6e9767a5"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/30_projecte.js"
+hash = "5c60a63a89cd48d43052db9baa44b77fc8d35787d152e66659cb2ccf79baac25"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
