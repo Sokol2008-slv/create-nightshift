@@ -26,83 +26,87 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/airships_cars.snbt"
-hash = "47f41d7bda409ca34401966f4870310550b6dc8f387b72cba4bbad202df5e5e7"
+hash = "a7025d85e6fa3503cd385ef9722a35c2d6c7b081e75fa16e0f111e41fef09670"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "c25f319e24fb652e91a9f501144789f668152e6fe9b1b30ad0d27239dcf2ba26"
+hash = "da6f74aa9fb7643fa936cad3cbd3e92f953b8c7a21a6ec8c3c11e14197891b55"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "b3c213b3eca1c0cd7f354b15c36622d1279b971f116cd7a15fdafc57eadcccb7"
+hash = "81d5641124379d5b38fed56cb799d5f53889dafc248d53dc5d769e21e3f5e423"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
-hash = "03795d7d506c3129378768074e5b443bd0aadc2ae552633f33401569f84c3527"
+hash = "705e775443e3021f0ee1738a3279664d04b0a80a8f5b8107f98d41e0ca011036"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
-hash = "0f7e9a1bef14d53c8e4bead706d83dcdba46b6aa423c6c58328413f7ccc77ae3"
+hash = "5478b5ea7ae70af8b2005e3d328767ad6921022f7a3dc5298739a6ea43c5b24b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "749370eb205b3ff5fc9d46991b391b9df304de28fe604425b051b84ce4446b00"
+hash = "59bd95a81b261beaff375f4f11a43e1a9fe8f1b2fdc14c4a9e281f2332b6e062"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
-hash = "bc2c6456e15152218f50c5980b75d11a5487c03c962f5fcf5b3f5e8483376162"
+hash = "7564d80684854642fd94a465cab4063ef569dfb3db2e1c0e5bd30afc0c9714a4"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "7367e22dd9158af9bf4497e6042a719a5a822edb67872531be3836705504c474"
+hash = "f9fddbfa8092865f2bf98ed40b6741c89c953743ca7b23dec174327817355aca"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "012c1743b4e3bcd4c24aff2a45bb0aab134a8f369599d1b4cb5b428966ea9c6e"
+hash = "4fde9d01317ae820dc3f099524cf5dba0e8e127485da091f111db950314264d9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food.snbt"
-hash = "4aea1e713442fd31ec8a3bd3baee2fbe206d08e4cdea7397c91555164da41e47"
+hash = "dff8cb31d97d97636c0e67b4dd15b383cfb3cc4f20e50cd893c7d5a1e1feaa80"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/fuel_engines.snbt"
-hash = "8524c2bfc6ccd0d540f283df5886144777d4bdcc5094b9222d347504d1c57c9e"
+hash = "6fcbd1f94d773427a9a6abadc0919dba02fa6189a820e229cba71a18fcb5a329"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistics_food.snbt"
-hash = "853412ed64c6c854ce121f6fc937bef6374c574fa28e778e9c00e4b829523ee4"
+hash = "7456df61f402c692fb4df8f29a0bd61b1ff3f71eb6ceadbdfc31f70f05640af8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
-hash = "0545562c96101b73a5dced24e5a4ff725921b5282c810a8d92c571d23efd6bba"
+hash = "879c79337b5aba6c943a5e66631f29c3fa4a6e8e5aac092bac11259e628be500"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "2c42b1b97ef08a332438051dd842e77d8791e64952ec6dc9b1b03e5866fab02a"
+hash = "08d04e0326e1d62debcc771685ef4dc8596976446564530e6563888aaae47bf3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "d73a82a52852eb1a61b2cc6df9cc991d2ddff0e85a28a06df4ef124926c7a873"
+hash = "31777e4eb40f1098350216ff1ea2a84eb2e5172fd368a993f30b45a281eb674b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
-hash = "7c94c4d359384f661fc24d5d8976762fe1e045690261031921a61175b4d08313"
+hash = "9678f20403ed94d33a1e099259a9ed48c0f072cae00f16c761ad0571f5cfbd11"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/submarines.snbt"
-hash = "79e67a650dd948a1a04113dc3c3881d83324799a229026d6a3509df4fd5483d2"
+hash = "fa1519eb45927ea4e78012ea0bc594ccd7730705c74e63dea5a8773501fa68b8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/tower_defense.snbt"
-hash = "7e589098a7a2ee84a74b5069594281c3bd9fe39df35d4b83f33651c88b1fdbcd"
+hash = "6a0e75abcf11a008c740fed06b843bfa6d19b1306d18281a32ce57e6d18bd8ad"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/vahta.snbt"
+hash = "9053a0b7acb8b01938c3a39703558b6840337565ea4ca7fc955140012530cf31"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/weapons.snbt"
-hash = "f957255778d490de160c0de3785e234ffb363338a63bdcd715f832c82f5e18a2"
+hash = "7b207b2ded8d5d88afd4f7a4fd83c0bbf617b27f63b28d58196b3c3b0a2c5869"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
-hash = "42aa83ea81eeecca5376786d7b67056d506f7ba8de9b0d1ebe7bbc5823f775ad"
+hash = "1012075232f1475567a0a5dba16bbc2d9ce84c9bc9a2fe5fac0160e74a408a66"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -110,11 +114,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "aedc770f231d1f265cc8778d72e7f20a57dbd53525395e0a1608dcd0d20988f0"
+hash = "633ffad38a977e7e488466813600175b80d7ae0d04cd988d7e53df7266a1616f"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "aedc770f231d1f265cc8778d72e7f20a57dbd53525395e0a1608dcd0d20988f0"
+hash = "633ffad38a977e7e488466813600175b80d7ae0d04cd988d7e53df7266a1616f"
 
 [[files]]
 file = "config/iris.properties"
@@ -561,12 +565,24 @@ file = "kubejs/server_scripts/sanity/40_death.js"
 hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
+hash = "febb07c981765a4f0e5c906885f117eeac9e20bc3aac18f6411ff3dcc3a0fe03"
+
+[[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
 hash = "fd3d25f4f45aa92124e87b4a1abc8160bdecd46a628a7d43d52028ce028c8e9f"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
 hash = "dd00ae3375aa1e1ccb35d3c8e8c704ad11b09f87b9edb7d4925c9a1d6e9767a5"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/20_resources.js"
+hash = "f35d3bc852d28e5f5793f6a952fcd9ce8faf54688f96af7c9b495634b3eaf721"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/30_arrival.js"
+hash = "c054a2b5988af5e9188d92bff499153c5031fea39e04f95ffff92b4f1ad3dc89"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_projecte.js"
