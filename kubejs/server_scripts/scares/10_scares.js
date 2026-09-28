@@ -19,6 +19,8 @@
 //   /scare faces <ник> [радиус 3–10] [сек 1–10] — открытые блоки камня, земли, досок и
 //        брёвен вокруг становятся моргающими глазами, потом возвращаются как были
 //   /scare box <ник> [сек 2–15] — коробка из глаз вокруг игрока (внутри 3×3×3), потом исчезает
+//   /scare dweller <ник> — погоня Cave Dweller (безвредный, своя анимация и музыка погони)
+//   /scare preset <ник> [hunt|mine|house|quiet] — готовые сценарии (см. nsScarePreset)
 //   /scare watcher <ник> — Наблюдатель (End Watchers) вдали, исчезает, когда на него смотрят
 //   /scare face <ник>    — фото-лицо (Horror Faces) вплотную на 1,5 с + хруст костей
 //   /scare voice <ник> [hey|see|behind] — искажённый голос из-за спины
@@ -309,12 +311,14 @@ function nsScareSound(server, rec, sound, x, y, z, vol, pitch) {
 }
 
 function nsScarePlan(kind, mode) {
-	if (NS_SCARE_EXTRA[kind]) return [{ m: kind, time: NS_SCARE_EXTRA[kind].time }]
 	var R = (a, b) => a + Math.floor(Math.random() * b)
+	if (kind === 'preset') return nsScarePreset(mode, R)
+	if (kind === 'dweller') return [{ m: 'dweller', time: 600 }]
+	if (NS_SCARE_EXTRA[kind]) return [{ m: kind, time: NS_SCARE_EXTRA[kind].time }]
 	if (mode === 'stalk') return [{ m: 'stalk', d: 20, time: 900 }]
 	if (mode === 'peek') return [{ m: 'peek', time: 900 }]
 	if (mode === 'dash') return [{ m: 'dash', d: 10, time: 140 }]
-	if (mode === 'chase') return [{ m: 'chase', d: 16, time: 600 }]
+	if (mode === 'chase') return [{ m: 'dweller', time: 600 }] // бегает Cave Dweller — у хаска анимация кривая
 	if (mode === 'turn') return [{ m: 'turn', time: 160 }]
 	if (kind === 'clown')
 		return [
@@ -322,17 +326,64 @@ function nsScarePlan(kind, mode) {
 			{ m: 'pause', time: R(100, 100) },
 			{ m: 'peek', time: 900 },
 			{ m: 'pause', time: R(60, 60) },
-			{ m: 'chase', d: 12, time: 600 }
+			{ m: 'dweller', time: 600 }
 		]
 	return [
-		{ m: 'stalk', d: 22, time: 900 },
+		{ m: 'watcher', time: 900 },
 		{ m: 'pause', time: R(80, 80) },
-		{ m: 'dash', d: 11, time: 140 },
-		{ m: 'pause', time: R(100, 100) },
-		{ m: 'stalk', d: 9, time: 600 },
+		{ m: 'stalk', d: 12, time: 600 },
 		{ m: 'pause', time: R(60, 60) },
-		{ m: 'chase', d: 16, time: 600 }
+		{ m: 'dweller', time: 600 }
 	]
+}
+
+// Заготовки — готовые сценарии одной командой: /scare preset <ник> <имя>
+//   hunt  — «hey» за спиной → Наблюдатель вдали → шёпот → погоня Cave Dweller → лицо вплотную
+//   mine  — глаза вокруг → «behind you» → клоун из-за угла → погоня Cave Dweller
+//   house — коробка из глаз → лицо внутри коробки
+//   quiet — шёпот → голос → Наблюдатель (без погони, на нервы)
+var NS_SCARE_PRESETS = ['hunt', 'mine', 'house', 'quiet']
+function nsScarePreset(name, R) {
+	if (name === 'mine')
+		return [
+			{ m: 'act', a: 'faces', r: 6, secs: 4, time: 100 },
+			{ m: 'act', a: 'voice', which: 'behind', time: R(60, 60) },
+			{ m: 'peek', kind: 'clown', time: 600 },
+			{ m: 'pause', time: R(60, 60) },
+			{ m: 'dweller', time: 600 }
+		]
+	if (name === 'house')
+		return [
+			{ m: 'act', a: 'box', secs: 7, time: 70 },
+			{ m: 'face', time: 30 }
+		]
+	if (name === 'quiet')
+		return [
+			{ m: 'act', a: 'whisper', text: '…ты здесь не один…', time: R(100, 60) },
+			{ m: 'act', a: 'voice', which: 'see', time: R(60, 60) },
+			{ m: 'watcher', time: 900 }
+		]
+	return [
+		{ m: 'act', a: 'voice', which: 'hey', time: R(40, 40) },
+		{ m: 'watcher', time: 900 },
+		{ m: 'pause', time: R(80, 80) },
+		{ m: 'act', a: 'whisper', text: '…беги…', time: 30 },
+		{ m: 'dweller', time: 600 },
+		{ m: 'pause', time: 40 },
+		{ m: 'face', time: 30 }
+	]
+}
+
+// мгновенное действие шага сценария (без существа)
+function nsScareAct(server, rec, player, step) {
+	var name = rec.name
+	if (step.a === 'whisper') player.setStatusMessage(Text.darkRed(step.text).italic())
+	if (step.a === 'voice') {
+		var map = { hey: 'end_watcher_hey', see: 'end_watcher_i_see_you', behind: 'end_watcher_behind_you' }
+		nsScareCmd(server, 'execute as ' + name + ' at @s rotated ~ 0 positioned ^ ^1.5 ^-2 run playsound end_watchers:' + (map[step.which] || map.behind) + ' hostile ' + name + ' ~ ~ ~ 1 1')
+	}
+	if (step.a === 'faces') nsFaceStart(server, player, step.r || 6, step.secs || 4)
+	if (step.a === 'box') nsScareBox(server, player, step.secs || 7)
 }
 
 // fake — тестовый игрок (FakePlayer) вместо настоящего, только для проверки на витрине
@@ -349,13 +400,13 @@ function nsScareStart(server, player, kind, mode, fake) {
 }
 
 // существо хоррор-мода: без ИИ, бессмертное, рост через generic.scale
-function nsScareSpawnExtra(rec, player, spot, type, scale) {
+function nsScareSpawnExtra(rec, player, spot, type, scale, ai, attrs) {
 	var server = player.getServer()
 	var id = nsScareUuid()
 	var yaw = (Math.atan2(-(player.getX() - spot.x), player.getZ() - spot.z) * 180) / Math.PI
 	nsScareCmd(server, 'execute in ' + rec.dim + ' run summon ' + type + ' ' + spot.x.toFixed(2) + ' ' + spot.y.toFixed(2) + ' ' + spot.z.toFixed(2) +
-		' {UUID:' + id.nbt + ',Tags:["ns_scare"],NoAI:1b,Invulnerable:1b,PersistenceRequired:1b,Rotation:[' + yaw.toFixed(1) + 'f,0f]' +
-		',attributes:[{id:"minecraft:generic.scale",base:' + scale + 'd}]}')
+		' {UUID:' + id.nbt + ',Tags:["ns_scare"],NoAI:' + (ai ? '0b' : '1b') + ',Invulnerable:1b,PersistenceRequired:1b,Rotation:[' + yaw.toFixed(1) + 'f,0f]' +
+		',attributes:[{id:"minecraft:generic.scale",base:' + scale + 'd}' + (attrs || '') + ']}')
 	rec.uuid = id.str
 	rec.ent = null
 	rec.spot = spot
@@ -363,6 +414,24 @@ function nsScareSpawnExtra(rec, player, spot, type, scale) {
 	rec.eye = rec.K.eye
 	rec.h = rec.K.h
 	rec.seen = 0
+}
+
+// Cave Dweller для погони: своя анимация (ползёт, встаёт, несётся на четвереньках), звуки «заметил» и музыка
+// погони. Урон считается от атрибута атаки — с атакой 0 безвреден (иначе бьёт сквозь броню: «was killed»).
+var NS_SCARE_DWELLER = { title: 'Cave Dweller', h: 2, eye: 1.6 }
+function nsScareBeginDweller(server, rec, player, step, now) {
+	rec.K = NS_SCARE_DWELLER
+	var spot = null
+	var tries = [[14, 180, 70], [10, 180, 140], [7, 180, 220], [6, 0, 360]]
+	for (var q = 0; q < tries.length && !spot; q++) spot = nsScareSpot(player, rec.K, tries[q][0], tries[q][1], tries[q][2], false)
+	if (!spot) {
+		rec.t = -1
+		if (++rec.spawnTries > 10) nsScareNext(rec)
+		return
+	}
+	nsScareSpawnExtra(rec, player, spot, 'cave_dweller:cave_dweller', 1.0, true, ',{id:"minecraft:generic.attack_damage",base:0d}')
+	rec.phaseAt = now
+	rec.spotted = false
 }
 
 function nsScareBeginExtra(server, rec, player, step) {
@@ -388,8 +457,8 @@ function nsScareBeginExtra(server, rec, player, step) {
 		fz = player.getZ() + (lk.z() / ln) * 2.0
 	var behind = !nsScareFree(rec.level, fx, fy, fz, K.h)
 	if (behind) {
-		fx = player.getX() - (lk.x() / ln) * 1.8
-		fz = player.getZ() - (lk.z() / ln) * 1.8
+		fx = player.getX() - (lk.x() / ln) * 1.2 // 1,2 — чтобы влезало и внутрь коробки из глаз (внутри 3×3)
+		fz = player.getZ() - (lk.z() / ln) * 1.2
 	}
 	nsScareSpawnExtra(rec, player, { x: fx, y: fy, z: fz }, K.type + (1 + Math.floor(Math.random() * 10)), K.scale)
 	if (behind) nsScareCmd(server, 'execute as ' + rec.name + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.uuid + ' eyes')
@@ -404,6 +473,16 @@ function nsScareBegin(server, rec, player, step, now) {
 	if (step.m === 'turn') {
 		rec.yaw0 = player.getYaw()
 		player.setStatusMessage(Text.darkRed('…обернись…').italic())
+		return
+	}
+	if (step.m === 'act') {
+		nsScareAct(server, rec, player, step)
+		return
+	}
+	// шаги сценария берут своего персонажа: Наблюдатель, лицо, Cave Dweller, клоун
+	rec.K = NS_SCARE_KINDS[step.kind] || NS_SCARE_EXTRA[step.m] || NS_SCARE_KINDS[rec.kind] || NS_SCARE_EXTRA[rec.kind] || NS_SCARE_KINDS.mono
+	if (step.m === 'dweller') {
+		nsScareBeginDweller(server, rec, player, step, now)
 		return
 	}
 	if (NS_SCARE_EXTRA[step.m]) {
@@ -485,7 +564,7 @@ function nsScareStep(server, rec, now) {
 		nsScareBegin(server, rec, player, step, now)
 		return true
 	}
-	if (step.m === 'pause') {
+	if (step.m === 'pause' || step.m === 'act') {
 		if (now >= rec.t) nsScareNext(rec)
 		return true
 	}
@@ -506,6 +585,33 @@ function nsScareStep(server, rec, now) {
 	var dist = Math.sqrt(ex * ex + ey * ey + ez * ez)
 	var flat = Math.sqrt(ex * ex + ez * ez)
 
+	if (step.m === 'dweller') {
+		var ran = now - rec.phaseAt
+		// цель — только наш игрок; «заметил» — один раз, дальше его ИИ сам гонится со своей музыкой
+		ent.setTarget(player)
+		if (!rec.spotted) {
+			rec.spotted = true
+			try {
+				ent.setSpotted(true)
+				ent.playSpottedSound()
+			} catch (e) {}
+		}
+		if (now % 10 === 0) ent.getNavigation().moveTo(player, 1.0)
+		// догнал (не раньше 6 с погони) или 25 с прошло — исчезает со своим звуком, секунда темноты
+		if ((flat < 2.2 && ran > 120) || ran > 500) {
+			try {
+				ent.disappear()
+			} catch (e) {
+				ent.discard()
+			}
+			if (flat < 2.2) {
+				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:blindness 1 0 true')
+				nsScareCmd(server, 'effect give ' + rec.name + ' minecraft:darkness 3 0 true')
+			}
+			nsScareNext(rec)
+		}
+		return true
+	}
 	if (step.m === 'stalk' || step.m === 'peek') {
 		// смотрит на игрока; исчезает, когда тот его увидел (или подошёл)
 		if (now % 10 === 0) nsScareCmd(server, 'execute as ' + rec.uuid + ' at @s run tp @s ~ ~ ~ facing entity ' + rec.name + ' eyes')
@@ -810,6 +916,18 @@ function nsScareRun(ctx, kind, name, mode) {
 	return 1
 }
 
+function nsScareRunKind(ctx, kind, name, mode) {
+	var p = nsScareTarget(ctx, name)
+	if (!p) return 0
+	if (kind === 'preset' && NS_SCARE_PRESETS.indexOf(mode) < 0) {
+		nsScareReply(ctx, 'заготовки: ' + NS_SCARE_PRESETS.join(', '))
+		return 0
+	}
+	nsScareStart(ctx.source.getServer(), p, kind, mode)
+	nsScareReply(ctx, (kind === 'preset' ? 'заготовка ' + mode : 'Cave Dweller') + ' идёт к ' + name)
+	return 1
+}
+
 function nsScareRunExtra(ctx, kind, name) {
 	var p = nsScareTarget(ctx, name)
 	if (!p) return 0
@@ -875,6 +993,14 @@ ServerEvents.commandRegistry(event => {
 							.executes(ctx => nsScareFaces(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'r'), 4))
 							.then(Commands.argument('secs', Arguments.INTEGER.create(event)).executes(ctx => nsScareFaces(ctx, nsScareArgName(ctx), nsScareArgInt(ctx, 'r'), nsScareArgInt(ctx, 'secs'))))
 					)
+			)
+		)
+		.then(Commands.literal('dweller').then(Commands.argument('name', Arguments.STRING.create(event)).executes(ctx => nsScareRunKind(ctx, 'dweller', nsScareArgName(ctx), 'dweller'))))
+		.then(
+			Commands.literal('preset').then(
+				Commands.argument('name', Arguments.STRING.create(event))
+					.executes(ctx => nsScareRunKind(ctx, 'preset', nsScareArgName(ctx), 'hunt'))
+					.then(Commands.argument('preset', Arguments.STRING.create(event)).executes(ctx => nsScareRunKind(ctx, 'preset', nsScareArgName(ctx), String(Arguments.STRING.getResult(ctx, 'preset')))))
 			)
 		)
 		.then(Commands.literal('watcher').then(Commands.argument('name', Arguments.STRING.create(event)).executes(ctx => nsScareRunExtra(ctx, 'watcher', nsScareArgName(ctx)))))
