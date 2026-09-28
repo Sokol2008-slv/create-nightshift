@@ -461,6 +461,10 @@ file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
 hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
 
 [[files]]
+file = "kubejs/server_scripts/00_ingredients.js"
+hash = "fa0db621b2fbbd4485445108910aaa4f56c05664f9b2e83031eaef0c640c277d"
+
+[[files]]
 file = "kubejs/server_scripts/economy/10_probes.js"
 hash = "4cc1dcc56436c35c5a298d3375c3575cc0a93c3597923a95e5e5538bde6bd329"
 
@@ -474,7 +478,7 @@ hash = "0688998990cd5aea1c7dbb629590fafe8ca5f608a8cf09edd1b316940aa39fc2"
 
 [[files]]
 file = "kubejs/server_scripts/economy/40_blocks.js"
-hash = "479fee6478caa6b1d27a34c598bf8d2f46adac1158ff048b88377ab585f6e95e"
+hash = "fcf1524e252dc4d711945b37a326eca5b8a1ec0766d3b4ecbcd8b4ae58261360"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
@@ -518,7 +522,7 @@ hash = "c91d4367816eb618cf5b6246810a10753450d50441b02b45ce08b759afc11d1f"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/09_alt_recipes.js"
-hash = "18d5215d48cd920799e321ef6cab1e879cf1f99ca4ca9956335b467df1df13d8"
+hash = "22b7cd66b16f3afa662c3bd490183bf305694c28b15a0d264f53017283b6edf8"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
@@ -550,7 +554,7 @@ hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"
-hash = "38734c05fe8a7b952356d4c721fa5d721ea298e74731fa3d3e026a42faac5fc0"
+hash = "a98f24a7aa2456b3f0ff73939e72aa362a1c7c714d9f035c7cdfb94bc343b714"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/20_darkness.js"
@@ -566,19 +570,19 @@ hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "febb07c981765a4f0e5c906885f117eeac9e20bc3aac18f6411ff3dcc3a0fe03"
+hash = "10a17af2043c8b99b9a03952f8f44491db4f980356acd7c786fd9b9d129509d4"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
-hash = "fd3d25f4f45aa92124e87b4a1abc8160bdecd46a628a7d43d52028ce028c8e9f"
+hash = "720d5ca96b0f61d71b213578ea3126e0b26b5ed58ad952488a80627229fd4b9a"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
-hash = "dd00ae3375aa1e1ccb35d3c8e8c704ad11b09f87b9edb7d4925c9a1d6e9767a5"
+hash = "b7acb4bfcaedfdc8eb3549afc9e9c8d1d025fa708bfc24b2d114108f1b971268"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_resources.js"
-hash = "f35d3bc852d28e5f5793f6a952fcd9ce8faf54688f96af7c9b495634b3eaf721"
+hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"

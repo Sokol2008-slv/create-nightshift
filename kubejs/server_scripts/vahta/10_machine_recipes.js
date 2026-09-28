@@ -2754,8 +2754,8 @@ ServerEvents.recipes(function (event) {
 		var res = []
 		for (var k = 0; k < list.length; k++) {
 			var m = typeof list[k] === 'string' ? /^(\d+)x (.+)$/.exec(list[k]) : null
-			if (!m) { res.push(list[k]); continue }
-			for (var n = 0; n < parseInt(m[1], 10); n++) res.push(m[2])
+			if (!m) { res.push(nsIng(list[k])); continue }
+			for (var n = 0; n < parseInt(m[1], 10); n++) res.push(nsIng(m[2]))
 		}
 		return res
 	}
@@ -2771,7 +2771,7 @@ ServerEvents.recipes(function (event) {
 	for (var vahtaJ = 0; vahtaJ < vahtaCutRecipes.length; vahtaJ++) {
 		var vahtaC = vahtaCutRecipes[vahtaJ]
 		try {
-			event.recipes.create.cutting(vahtaC[1], vahtaC[2]).id(vahtaC[0])
+			event.recipes.create.cutting(vahtaC[1], nsIng(vahtaC[2])).id(vahtaC[0])
 		} catch (vahtaErr2) {
 			vahtaFailed++
 			console.warn('[vahta] cutting ' + vahtaC[0] + ': ' + vahtaErr2)

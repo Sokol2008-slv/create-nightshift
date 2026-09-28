@@ -137,7 +137,7 @@ function vahtaSift(event, row) {
 function vahtaMineCrush(event, id, input, crushed, xp, extra) {
 	var outs = [Item.of(crushed, extra ? 2 : 1), CreateItem.of(crushed, 0.5), CreateItem.of(Item.of('create:experience_nugget', xp), 0.75)]
 	if (extra) outs.push(CreateItem.of(extra, 0.125))
-	event.recipes.create.crushing(outs, input).id(id)
+	event.recipes.create.crushing(outs, nsIng(input)).id(id)
 }
 
 ServerEvents.recipes(function (event) {
@@ -209,7 +209,7 @@ ServerEvents.recipes(function (event) {
 		['zinc', '#c:storage_blocks/raw_zinc', 'create:crushed_raw_zinc']
 	]
 	vahtaRawBlocks.forEach(function (b) {
-		event.recipes.create.crushing([Item.of(b[2], 13), CreateItem.of(b[2], 0.5), CreateItem.of(Item.of('create:experience_nugget', 9), 0.75)], b[1]).id('vahta:crushing/raw_' + b[0] + '_block')
+		event.recipes.create.crushing([Item.of(b[2], 13), CreateItem.of(b[2], 0.5), CreateItem.of(Item.of('create:experience_nugget', 9), 0.75)], nsIng(b[1])).id('vahta:crushing/raw_' + b[0] + '_block')
 	})
 
 	// --- сито — только подхват ------------------------------------------------------

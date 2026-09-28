@@ -9,7 +9,7 @@ var SEDATIVE_RESTORE = 25
 
 ServerEvents.recipes(event => {
 	// только миксер (вручную нельзя — так интереснее)
-	event.recipes.create.mixing('4x nightshift:sedative', ['minecraft:sugar', 'minecraft:sweet_berries', '#minecraft:small_flowers', 'minecraft:bone_meal']).id('nightshift:sedative_mixing')
+	event.recipes.create.mixing('4x nightshift:sedative', nsIngs(['minecraft:sugar', 'minecraft:sweet_berries', '#minecraft:small_flowers', 'minecraft:bone_meal'])).id('nightshift:sedative_mixing')
 })
 
 ItemEvents.foodEaten('nightshift:sedative', event => {

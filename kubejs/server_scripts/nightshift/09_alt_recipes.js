@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
 
 	// Мёд без ульев: 2 сахара + любой цветок + 250 мБ воды, нагрев → 250 мБ мёда
 	// (мёд Create; в бутылки — спаутом, как обычно)
-	event.recipes.create.mixing(Fluid.of('create:honey', 250), ['2x minecraft:sugar', '#minecraft:flowers', Fluid.of('minecraft:water', 250)]).heated().id('nightshift:alt/honey_from_sugar')
+	event.recipes.create.mixing(Fluid.of('create:honey', 250), ['2x minecraft:sugar', nsIng('#minecraft:flowers'), Fluid.of('minecraft:water', 250)]).heated().id('nightshift:alt/honey_from_sugar')
 
 	// Соты: пресс по бассейну — 250 мБ мёда застывают в соты
 	event.recipes.create.compacting('minecraft:honeycomb', [Fluid.of('create:honey', 250)]).id('nightshift:alt/honeycomb_compacting')

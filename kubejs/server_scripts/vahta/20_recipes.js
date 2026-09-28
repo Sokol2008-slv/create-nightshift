@@ -381,5 +381,5 @@ ServerEvents.recipes(event => {
 		event.recipes.create.cutting(r[2] + 'x ' + r[1], [r[0]]).id('nightshift:vahta/cutting/' + name)
 	}
 	// палки: 1 доска → 2 палки (как у верстака: 2 доски → 4)
-	event.recipes.create.cutting('2x minecraft:stick', ['#minecraft:planks']).id('nightshift:vahta/cutting/planks_to_sticks')
+	event.recipes.create.cutting('2x minecraft:stick', nsIngs(['#minecraft:planks'])).id('nightshift:vahta/cutting/planks_to_sticks')
 })

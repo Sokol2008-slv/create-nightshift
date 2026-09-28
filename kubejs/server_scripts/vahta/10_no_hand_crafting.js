@@ -20,7 +20,7 @@
 //  - state['is(net.minecraft.tags.TagKey)'] для тега блока.
 // ==========================================================================
 
-var NS_VAHTA_GRID_PERIOD = 5 // тиков между проверками сетки 2×2
+var NS_VAHTA_GRID_PERIOD = 1 // каждый тик: иначе быстрый игрок успевает забрать результат (4 слота на игрока — копейки)
 var NS_VAHTA_MSG_COOLDOWN = 60 // тиков между одинаковыми сообщениями одному игроку
 
 var NS_VAHTA_REG = Java.loadClass('net.minecraft.core.registries.Registries')
