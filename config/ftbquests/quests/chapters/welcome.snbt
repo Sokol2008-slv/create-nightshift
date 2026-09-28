@@ -6,7 +6,7 @@
 	icon: { id: "create:goggles" }
 	id: "222972F518CA85E0"
 	images: [ ]
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{

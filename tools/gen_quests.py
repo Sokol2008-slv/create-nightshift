@@ -11,6 +11,7 @@ lang/ru_ru.snbt и lang/en_us.snbt (тексты русские в обоих, �
 включая вложенные jar-in-jar и ванильный клиент) — иначе в книге будет «Missing Item».
 id квестов детерминированные (md5 ключа), повторная генерация не ломает прогресс игроков.
 """
+import gzip
 import hashlib
 import io
 import json
@@ -27,7 +28,7 @@ STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
 # Порядок глав в книге — по фазам Ночной смены
-ORDER = ["welcome", "night_shift", "altar", "tower_defense", "weapons", "food",
+ORDER = ["vahta", "welcome", "night_shift", "altar", "tower_defense", "weapons", "food",
          "create_basics", "ore_processing", "logistics_food",
          "brass_logistics_trains", "automation_extras", "big_cannons",
          "first_plane", "airships_cars", "submarines", "economy",
@@ -59,11 +60,41 @@ def scan_zip(zf, items):
                 scan_zip(inner, items)
 
 
+def dump_items():
+    """Запасной индекс, если jar-файлов нет (облако, CI): id из дампа рецептов —
+    результаты и ингредиенты-предметы, плюс значения тегов предметов. Приблизительно: предмет без рецептов и
+    без участия в рецептах сюда не попадёт, а отсутствующий в jar — не отсеется."""
+    items = set()
+
+    def walk(o, key=None):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k in ("id", "item", "result") and isinstance(v, str) and ":" in v and not v.startswith("#"):
+                    items.add(v)
+                walk(v, k)
+        elif isinstance(o, list):
+            for x in o:
+                walk(x, key)
+
+    with gzip.open(PACK / "tools" / "data" / "recipes-dump.json.gz") as f:
+        for rec in json.load(f).values():
+            walk(rec["json"])
+    with gzip.open(PACK / "tools" / "data" / "item-tags-dump.json.gz") as f:
+        for values in json.load(f).values():
+            walk(values)
+            items.update(v for v in values if isinstance(v, str) and ":" in v and not v.startswith("#"))
+    return items
+
+
 def known_items():
     items = set()
-    for jar in list(MODS.glob("*.jar")) + [VANILLA]:
-        with zipfile.ZipFile(jar) as zf:
-            scan_zip(zf, items)
+    if MODS.is_dir() and VANILLA.is_file():
+        for jar in list(MODS.glob("*.jar")) + [VANILLA]:
+            with zipfile.ZipFile(jar) as zf:
+                scan_zip(zf, items)
+    else:
+        print("jar-файлов сборки нет — предметы сверяются по tools/data/recipes-dump.json.gz (приблизительно)")
+        items = dump_items()
     # предметы Ночной смены регистрирует KubeJS — их нет в jar
     for js in STARTUP.glob("*.js"):
         text = js.read_text()

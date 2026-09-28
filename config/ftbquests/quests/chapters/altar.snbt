@@ -6,7 +6,7 @@
 	icon: { id: "nightshift:altar" }
 	id: "340142421C84EF21"
 	images: [ ]
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{

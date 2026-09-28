@@ -6,7 +6,7 @@
 	icon: { id: "minecraft:lantern" }
 	id: "7E76287511290763"
 	images: [ ]
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
