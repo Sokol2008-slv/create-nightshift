@@ -1,6 +1,6 @@
 // ==========================================================================
 // «Вахта» — прибытие. При первом входе игрока: заголовок на экране, пара строк лора
-// в чат, «Ящик вахтовика» (сундук с компонентом minecraft:container — ставишь, и
+// в чат, «Ящик вахтовика» (только бригадиру VAHTA_KIT_OWNER; остальным — ключ и очки) (сундук с компонентом minecraft:container — ставишь, и
 // механизмы уже внутри) и книга «Инструктаж вахтовика».
 // Выдаём ванильной командой give с компонентами 1.21 — синтаксис не зависит от
 // обёрток KubeJS. Флаг vahta_arrived ставится, только если give ящика прошёл
@@ -12,6 +12,12 @@
 // ==========================================================================
 
 var VAHTA_ARRIVE_FLAG = 'vahta_arrived'
+// ящик один на смену — только бригадиру (Георгий, 28.09); остальным — ключ, очки и инструктаж
+var VAHTA_KIT_OWNER = 'Sokol2008'
+var VAHTA_CREW_KIT = [
+	['create:wrench', 1],
+	['create:goggles', 1]
+]
 var VAHTA_ARRIVE_DELAY = 60 // тиков после входа
 
 // состав ящика: [id, количество]; вёдра не стакаются — каждое в свою ячейку
@@ -85,7 +91,8 @@ function vahtaBookCommand(name) {
 // проверять результат нечем; синтаксис обеих команд проверен на витрине 28.09
 // (give @a … → «No player was found», без ошибок разбора компонентов)
 function vahtaGiveKit(server, name) {
-	server.runCommandSilent(vahtaKitCommand(name))
+	if (name === VAHTA_KIT_OWNER) server.runCommandSilent(vahtaKitCommand(name))
+	else for (var i = 0; i < VAHTA_CREW_KIT.length; i++) server.runCommandSilent('give ' + name + ' ' + VAHTA_CREW_KIT[i][0] + ' ' + VAHTA_CREW_KIT[i][1])
 	server.runCommandSilent(vahtaBookCommand(name))
 	return true
 }
@@ -97,7 +104,8 @@ function vahtaArrive(server, player) {
 	server.runCommandSilent('title ' + name + ' title ' + JSON.stringify({ text: 'Вахта', color: 'gold', bold: true }))
 	server.runCommandSilent('playsound minecraft:block.bell.use master ' + name + ' ~ ~ ~ 1 0.6')
 	player.tell(Text.gold('[Вахта] ').append(Text.gray('Точка высадки. Связи с базой нет, верстак не отвечает — здешний мир признаёт только машины.')))
-	player.tell(Text.gold('[Вахта] ').append(Text.gray('В ящике — первые механизмы. Собери сборочный пост из крафтеров, остальное расскажет инструктаж и книга квестов (глава «Вахта»).')))
+	if (name === VAHTA_KIT_OWNER) player.tell(Text.gold('[Вахта] ').append(Text.gray('В ящике — первые механизмы. Собери сборочный пост из крафтеров, остальное расскажет инструктаж и книга квестов (глава «Вахта»).')))
+	else player.tell(Text.gold('[Вахта] ').append(Text.gray('Ящик с механизмами один на смену — он у бригадира ' + VAHTA_KIT_OWNER + '. У тебя ключ, очки и инструктаж; остальное — книга квестов (глава «Вахта»).')))
 	if (vahtaGiveKit(server, name)) player.persistentData.putBoolean(VAHTA_ARRIVE_FLAG, true)
 	else player.tell(Text.red('[Вахта] Ящик не выдался — сообщи админу (подробности в логе сервера).'))
 }

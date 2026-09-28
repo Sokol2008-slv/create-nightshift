@@ -1,6 +1,7 @@
 // ==========================================================================
 // «Вахта» — ручного крафта нет (docs/VAHTA.md, решение 2).
-//  1. Верстак не открывается: ПКМ по ванильному верстаку, ванильному крафтеру и любому блоку
+//  1. Верстак не открывается: ПКМ по ванильному верстаку, ванильному крафтеру, камнерезу, кузнечному
+//     столу (с 28.09; долото Rechiseled руками — тоже) и любому блоку
 //     с тегом c:player_workstations/crafting_tables или id *crafting_table* / *workbench* —
 //     отмена и строка над хотбаром.
 //  2. Сетка 2×2 в инвентаре не работает: раз в NS_VAHTA_GRID_PERIOD тиков всё, что лежит в
@@ -31,7 +32,14 @@ var NS_VAHTA_TAGKEY = Java.loadClass('net.minecraft.tags.TagKey')
 var NS_VAHTA_BENCH_TAGS = ['c:player_workstations/crafting_tables', 'c:workbench']
 var NS_VAHTA_BENCH_KEYS = NS_VAHTA_BENCH_TAGS.map(t => NS_VAHTA_TAGKEY.create(NS_VAHTA_REG.BLOCK, NS_VAHTA_RL.parse(t)))
 // явные id: ванильный верстак и ванильный крафтер (автокрафтер с окном-сеткой 3×3)
-var NS_VAHTA_BENCH_IDS = ['minecraft:crafting_table', 'minecraft:crafter']
+var NS_VAHTA_BENCH_IDS = ['minecraft:crafting_table', 'minecraft:crafter', 'minecraft:stonecutter', 'minecraft:smithing_table']
+// свои подсказки у станций, которые закрыты позже верстака (Георгий, 28.09: «закрывай камнерез, кузню и долото»)
+var NS_VAHTA_STATION_MSGS = {
+	'minecraft:stonecutter': 'Камнерез мёртв — камень режет механическая пила (форму выбери фильтром)',
+	'minecraft:smithing_table': 'Кузня мёртва — улучшения на механических крафтерах: шаблон, вещь, слиток в ряд',
+}
+var NS_VAHTA_CHISEL = 'rechiseled:chisel' // долото руками закрыто; механическое долото (Rechiseled Create) работает
+var NS_VAHTA_CHISEL_MSG = 'Долото руками не работает — нужно механическое долото'
 var NS_VAHTA_BENCH_RE = /crafting_table|workbench/
 
 var NS_VAHTA_BENCH_MSGS = [
@@ -73,13 +81,28 @@ function nsVahtaIsBench(block) {
 BlockEvents.rightClicked(event => {
 	var player = event.getPlayer()
 	if (!player || player.isCreative()) return
+	// долото по блоку — тоже окно выбора варианта
+	if (String(event.getItem().getId()) === NS_VAHTA_CHISEL) {
+		event.cancel()
+		nsVahtaSay(player, NS_VAHTA_CHISEL_MSG)
+		return
+	}
 	if (!nsVahtaIsBench(event.getBlock())) return
 	// Shift + предмет в руке — ваниль ставит блок/использует предмет, окно не открывает: не мешаем
 	if (player.isShiftKeyDown() && !(player.getMainHandItem().isEmpty() && player.getOffHandItem().isEmpty())) return
 	event.cancel()
 	if (String(event.getHand()) === 'MAIN_HAND') {
-		nsVahtaSay(player, NS_VAHTA_BENCH_MSGS[Math.floor(Math.random() * NS_VAHTA_BENCH_MSGS.length)])
+		var own = NS_VAHTA_STATION_MSGS[String(event.getBlock().getId())]
+		nsVahtaSay(player, own || NS_VAHTA_BENCH_MSGS[Math.floor(Math.random() * NS_VAHTA_BENCH_MSGS.length)])
 	}
+})
+
+// долото в воздух — окно выбора варианта блока
+ItemEvents.rightClicked(NS_VAHTA_CHISEL, event => {
+	var player = event.getPlayer()
+	if (!player || player.isCreative()) return
+	event.cancel()
+	nsVahtaSay(player, NS_VAHTA_CHISEL_MSG)
 })
 
 // ---------- 2. сетка 2×2 в инвентаре ----------

@@ -618,7 +618,7 @@ hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
-hash = "720d5ca96b0f61d71b213578ea3126e0b26b5ed58ad952488a80627229fd4b9a"
+hash = "bf4b9863f8f1e1d7d583c5eb69d26b82b36f1cfb7bc08ecde139eb18922842c8"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
@@ -629,8 +629,12 @@ file = "kubejs/server_scripts/vahta/20_resources.js"
 hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/25_smithing.js"
+hash = "dcb42a93b6cecae43f6aa142300fef8ad674d61aa8ddcc009ec2db09d68229f6"
+
+[[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
-hash = "8bcda6708b8867a9335ffa71072de29705a2da130ee1cd252ff4bdb59933fe60"
+hash = "154d1a221a5388d91f74a0f654f5ea491a7f537c6f042fabe36ea55b63caeb02"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_projecte.js"
