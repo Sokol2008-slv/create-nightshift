@@ -426,10 +426,20 @@ ServerEvents.recipes(event => {
 		for (var i = 0; i < lists[l].length; i++) event.remove({ id: lists[l][i] })
 	}
 
+	var planksOf = {} // окорённое → [доски, сколько]
 	for (var c = 0; c < NS_VAHTA_CUTTING.length; c++) {
 		var r = NS_VAHTA_CUTTING[c]
 		var name = r[0].replace(':', '/')
 		event.recipes.create.cutting(r[2] + 'x ' + r[1], [r[0]]).id('nightshift:vahta/cutting/' + name)
+		if (r[1].indexOf('_planks') > 0) planksOf[r[0]] = [r[1], r[2]]
+	}
+	// бревно в коре → сразу доски: с фильтром «доски» пила иначе выкидывает бревно обратно (нет рецепта),
+	// и доски не получить (Георгий, 28.09, первый вечер вахты). Без фильтра бревно по-прежнему даёт и окорённое
+	for (var b = 0; b < NS_VAHTA_CUTTING.length; b++) {
+		var lr = NS_VAHTA_CUTTING[b]
+		var pl = planksOf[lr[1]]
+		if (lr[0].indexOf('stripped') >= 0 || !pl) continue
+		event.recipes.create.cutting(pl[1] + 'x ' + pl[0], [lr[0]]).id('nightshift:vahta/cutting/' + lr[0].replace(':', '/') + '_to_planks')
 	}
 	for (var m = 0; m < NS_VAHTA_MOULDS.length; m++) {
 		var mould = NS_VAHTA_MOULDS[m]
