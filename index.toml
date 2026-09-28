@@ -126,7 +126,7 @@ hash = "5c057418878ccb2c6ec66b9140955b5570b0d727d2d029615dff0ce06632f1bb"
 
 [[files]]
 file = "config/sanity_renewed/default.toml"
-hash = "483a9f6b033a9c84fbaa94a44c8e7fa05caade53a9ee70eee9f17714510256d2"
+hash = "82c1807e2874f82d7b04b256e7e6995cd2b6b48268d9ae445da02f7bc0f0acc2"
 
 [[files]]
 file = "config/simplebackups-common.toml"
