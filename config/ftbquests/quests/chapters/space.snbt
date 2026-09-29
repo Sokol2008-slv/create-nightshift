@@ -179,7 +179,7 @@
 			size: 1.0d
 			tasks: [{ id: "4144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
 			x: 17.60d
-			y: 0.93d
+			y: 0.40d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
@@ -199,7 +199,27 @@
 			size: 1.0d
 			tasks: [{ id: "5824B3BF551EF814", item: { count: 1, id: "northstar:electrolysis_machine" }, type: "item" }]
 			x: 19.80d
-			y: -2.53d
+			y: -3.07d
+		}
+		{
+			dependencies: ["0811D15A56819E96"]
+			id: "60055E81B084F741"
+			rewards: [{ id: "5739E08034434C9A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6660EEECE4F82E3E", item: { count: 1, id: "axiomativ:planetary_grindstone" }, type: "item" }]
+			x: 17.60d
+			y: 2.00d
+		}
+		{
+			dependencies: ["60055E81B084F741"]
+			id: "539485CE657AFD69"
+			rewards: [{ id: "1F0ED78C64162413", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "2BDCDCBCCC994B87", count: 4L, item: { count: 1, id: "axiomativ:interplanetary_alloy" }, type: "item" }]
+			x: 19.80d
+			y: 2.00d
 		}
 	]
 }

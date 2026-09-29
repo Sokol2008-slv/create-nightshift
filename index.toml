@@ -94,7 +94,7 @@ hash = "08d04e0326e1d62debcc771685ef4dc8596976446564530e6563888aaae47bf3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "97975792495d826534fd67dfafb0b6eb62a9c284b1013d24c4b7136c4f21839b"
+hash = "91de7ac45efb7ae816462d6b108e7949be4ac4df1f8f43a077b0c04e0bb4adc8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
@@ -126,11 +126,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "c237c800e8aa823fd173b19c7498c044bdae1b2b073cb03b357771816d857ec6"
+hash = "6f54961fd1f626a0c3fdaa4db357390a9cafaf7390fca64705c4d2b335b3476b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "c237c800e8aa823fd173b19c7498c044bdae1b2b073cb03b357771816d857ec6"
+hash = "6f54961fd1f626a0c3fdaa4db357390a9cafaf7390fca64705c4d2b335b3476b"
 
 [[files]]
 file = "config/iris.properties"
@@ -347,6 +347,10 @@ hash = "d493b17985302befb61af2643269c0a1c2dbf9c27c9f31ae08f59538a421685f"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/vein_seed_zinc.png"
 hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
+
+[[files]]
+file = "kubejs/client_scripts/axiomativ_jei.js"
+hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
 
 [[files]]
 file = "kubejs/client_scripts/nightshift_pin_key.js"
@@ -677,6 +681,10 @@ file = "kubejs/server_scripts/vahta/40_connector_upgrade.js"
 hash = "c8932d17bcf0cf56cb9b45612ec04210393dba4432c2ac12a167922dc9c97de7"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/45_axiomativ.js"
+hash = "be7f2d7b112fbcd52f50c8e408adb12f514dba4eeda7a3a5fab593e3ab8afd41"
+
+[[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
 hash = "ddbccf8a914a9f993a3f1cf83e116ef2f9f84f99046a075a53635ee109d8f9d5"
 
@@ -746,6 +754,10 @@ metafile = true
 file = "mods/astages.pw.toml"
 hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
 metafile = true
+
+[[files]]
+file = "mods/axiomativ-0.1.0.jar"
+hash = "533e6c42e08ef8226e4b4357d31a26a17975d239e5f72cb998031ea8a7b760b1"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
