@@ -16,7 +16,7 @@
 			size: 1.0d
 			tasks: [{ id: "2BFF29109A6D0C45", item: { count: 1, id: "northstar:titanium_ingot" }, type: "item" }]
 			x: 0.00d
-			y: 0.00d
+			y: -0.80d
 		}
 		{
 			dependencies: ["773E1E8AE9F7B7CF"]
@@ -26,7 +26,7 @@
 			size: 1.0d
 			tasks: [{ id: "398B3DD2807B1822", item: { count: 1, id: "northstar:circuit" }, type: "item" }]
 			x: 2.20d
-			y: -2.40d
+			y: -2.05d
 		}
 		{
 			dependencies: ["773E1E8AE9F7B7CF"]
@@ -36,7 +36,7 @@
 			size: 1.0d
 			tasks: [{ id: "0BD6B1DEFE71D224", item: { count: 1, id: "northstar:hardened_precision_mechanism" }, type: "item" }]
 			x: 2.20d
-			y: -0.80d
+			y: -3.65d
 		}
 		{
 			dependencies: ["33444D6CF34F28A8", "5374E61F4F20603E"]
@@ -46,7 +46,7 @@
 			size: 1.0d
 			tasks: [{ id: "27E62AF318CF4AA9", item: { count: 1, id: "northstar:targeting_computer" }, type: "item" }]
 			x: 4.40d
-			y: -1.46d
+			y: -1.93d
 		}
 		{
 			dependencies: ["773E1E8AE9F7B7CF"]
@@ -56,7 +56,7 @@
 			size: 1.0d
 			tasks: [{ id: "61D52D11D1537115", item: { count: 1, id: "northstar:telescope" }, type: "item" }]
 			x: 2.20d
-			y: 0.80d
+			y: -0.45d
 		}
 		{
 			dependencies: ["688253BB8696726D"]
@@ -66,7 +66,7 @@
 			size: 1.0d
 			tasks: [{ id: "2B281E591AA31FAF", item: { count: 1, id: "northstar:astronomical_reading" }, type: "item" }]
 			x: 4.40d
-			y: 2.41d
+			y: -0.33d
 		}
 		{
 			dependencies: ["577D5A25C2A53FC5"]
@@ -76,7 +76,7 @@
 			size: 1.0d
 			tasks: [{ id: "146DAE8D76BA1B69", item: { count: 1, id: "northstar:space_atlas" }, type: "item" }]
 			x: 6.60d
-			y: 2.18d
+			y: -0.07d
 		}
 		{
 			dependencies: ["5374E61F4F20603E"]
@@ -86,7 +86,7 @@
 			size: 1.0d
 			tasks: [{ id: "4E213AC91640BDB6", item: { count: 1, id: "northstar:rocket_thruster" }, type: "item" }]
 			x: 4.40d
-			y: 0.14d
+			y: -5.13d
 		}
 		{
 			dependencies: ["2B29212FBD9DC938", "200EF6B4A3B73B4B"]
@@ -96,17 +96,27 @@
 			size: 1.0d
 			tasks: [{ id: "678EE2CB4163A4B9", item: { count: 1, id: "northstar:rocket_station" }, type: "item" }]
 			x: 6.60d
-			y: -0.92d
+			y: -3.17d
 		}
 		{
-			dependencies: ["33444D6CF34F28A8"]
+			dependencies: ["5A4B58E3D3636EAA"]
+			id: "70D7CC025ABCB528"
+			rewards: [{ id: "0AA023EAD9D69AF8", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3D62F38C666A7BFE", item: { count: 1, id: "nightshift:navigation_core" }, type: "item" }]
+			x: 0.00d
+			y: 0.80d
+		}
+		{
+			dependencies: ["33444D6CF34F28A8", "70D7CC025ABCB528"]
 			id: "5419BEC0D04A20F0"
 			rewards: [{ id: "00D3954FD4283D18", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "29E01CFB1B8B1AC6", item: { count: 1, id: "northstar:rocket_controls" }, type: "item" }]
 			x: 4.40d
-			y: -4.66d
+			y: 1.27d
 		}
 		{
 			dependencies: ["773E1E8AE9F7B7CF"]
@@ -116,7 +126,7 @@
 			size: 1.0d
 			tasks: [{ id: "12F4781CEC34DB97", item: { count: 1, id: "northstar:iron_space_suit_chestpiece" }, type: "item" }]
 			x: 2.20d
-			y: 2.40d
+			y: 2.65d
 		}
 		{
 			dependencies: ["33444D6CF34F28A8"]
@@ -126,7 +136,7 @@
 			size: 1.0d
 			tasks: [{ id: "43F1755C03BCE9AD", item: { count: 1, id: "northstar:oxygen_filler" }, type: "item" }]
 			x: 4.40d
-			y: -3.06d
+			y: -3.53d
 		}
 		{
 			dependencies: ["63D73C7D0A577B48", "5419BEC0D04A20F0", "200EF6B4A3B73B4B", "206F6135673F26E9", "48E881DFD6B3194F", "6CA219A30AA20749"]
@@ -137,7 +147,7 @@
 			size: 1.0d
 			tasks: [{ id: "737064C1274CF65D", type: "checkmark" }]
 			x: 8.80d
-			y: -0.13d
+			y: -0.94d
 		}
 		{
 			dependencies: ["369117D4B69EA320"]
@@ -148,7 +158,7 @@
 			size: 1.6d
 			tasks: [{ id: "14C1E2B3BC9EABF7", type: "checkmark" }]
 			x: 11.00d
-			y: -0.13d
+			y: -0.94d
 		}
 		{
 			dependencies: ["2BB90C762D8DE0FB"]
@@ -159,7 +169,7 @@
 			size: 1.6d
 			tasks: [{ id: "58E253F42321264F", type: "checkmark" }]
 			x: 13.20d
-			y: -0.13d
+			y: -0.94d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
@@ -169,7 +179,7 @@
 			size: 1.0d
 			tasks: [{ id: "5273CA80C867EF9E", item: { count: 1, id: "northstar:auto_lander" }, type: "item" }]
 			x: 15.40d
-			y: -0.67d
+			y: -1.47d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -179,7 +189,7 @@
 			size: 1.0d
 			tasks: [{ id: "4144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
 			x: 17.60d
-			y: -1.47d
+			y: -3.04d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
@@ -189,7 +199,17 @@
 			size: 1.0d
 			tasks: [{ id: "315AD4B641EE139B", item: { count: 1, id: "northstar:interplanetary_navigator" }, type: "item" }]
 			x: 15.40d
-			y: 0.93d
+			y: 0.13d
+		}
+		{
+			dependencies: ["0811D15A56819E96", "03D58C0D28130D2F"]
+			id: "6C6C1196E042B5E3"
+			rewards: [{ id: "38E32EFB5B8A1F70", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0D6C9F346B121489", item: { count: 1, id: "nightshift:star_pickaxe" }, type: "item" }]
+			x: 17.60d
+			y: 0.76d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -200,17 +220,17 @@
 			size: 1.6d
 			tasks: [{ dimension: "nightshift:axiomativ", id: "2FD8D3F87F74D410", type: "dimension" }]
 			x: 17.60d
-			y: 0.43d
+			y: -1.14d
 		}
 		{
-			dependencies: ["10AB8BC67127FF0D"]
+			dependencies: ["10AB8BC67127FF0D", "6C6C1196E042B5E3"]
 			id: "798AC21976DE3822"
 			rewards: [{ id: "521A1EA751061C30", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "63EF4A988E202A39", item: { count: 1, id: "kubejs:raw_axiomite" }, type: "item" }]
 			x: 19.80d
-			y: -0.21d
+			y: -0.64d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -221,27 +241,27 @@
 			size: 1.6d
 			tasks: [{ dimension: "nightshift:yin_yang", id: "3F57C00E4D2EDED8", type: "dimension" }]
 			x: 17.60d
-			y: 2.63d
+			y: 2.66d
 		}
 		{
-			dependencies: ["6830526159D51413"]
+			dependencies: ["6830526159D51413", "6C6C1196E042B5E3"]
 			id: "7740332F1426A7C8"
 			rewards: [{ id: "3270D71D248A5383", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_light_stabilite" }, type: "item" }]
 			x: 19.80d
-			y: 1.99d
+			y: 1.26d
 		}
 		{
-			dependencies: ["6830526159D51413"]
+			dependencies: ["6830526159D51413", "6C6C1196E042B5E3"]
 			id: "1FE5A71FF393D25F"
 			rewards: [{ id: "118CD0BEB09612CE", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "228223D26D1E68BC", item: { count: 1, id: "kubejs:raw_dark_stabilite" }, type: "item" }]
 			x: 19.80d
-			y: 3.59d
+			y: 2.86d
 		}
 		{
 			dependencies: ["7740332F1426A7C8", "1FE5A71FF393D25F"]
@@ -251,7 +271,7 @@
 			size: 1.0d
 			tasks: [{ id: "3942488F1D1E8491", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
 			x: 22.00d
-			y: 2.79d
+			y: 2.06d
 		}
 		{
 			dependencies: ["798AC21976DE3822", "4653E9EEEA38CD03"]
@@ -262,7 +282,7 @@
 			size: 1.0d
 			tasks: [{ id: "22045A6BEF05B1E2", type: "checkmark" }]
 			x: 24.20d
-			y: 1.29d
+			y: 0.71d
 		}
 		{
 			dependencies: ["48E881DFD6B3194F", "54836B2556E2C657"]
@@ -272,7 +292,7 @@
 			size: 1.0d
 			tasks: [{ id: "5824B3BF551EF814", item: { count: 1, id: "northstar:electrolysis_machine" }, type: "item" }]
 			x: 19.80d
-			y: -5.57d
+			y: -6.97d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -282,7 +302,7 @@
 			size: 1.0d
 			tasks: [{ id: "6660EEECE4F82E3E", item: { count: 1, id: "axiomativ:planetary_grindstone" }, type: "item" }]
 			x: 17.60d
-			y: 4.53d
+			y: 4.56d
 		}
 		{
 			dependencies: ["60055E81B084F741"]
@@ -292,7 +312,7 @@
 			size: 1.6d
 			tasks: [{ id: "2BDCDCBCCC994B87", count: 4L, item: { count: 1, id: "axiomativ:interplanetary_alloy" }, type: "item" }]
 			x: 19.80d
-			y: 5.49d
+			y: 4.76d
 		}
 	]
 }
