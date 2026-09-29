@@ -38,7 +38,7 @@ hash = "f1a7a5df1ae8ed36360d4bc21ab7148e01c86b41ed869abd07bd7f6bce75b50b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "da6f74aa9fb7643fa936cad3cbd3e92f953b8c7a21a6ec8c3c11e14197891b55"
+hash = "61231c5df60593a1ce014b147bdb0a974e66a024737c916e806279527b473a8a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
@@ -66,7 +66,7 @@ hash = "8487d1bf04de34b7ca0f3885af4f46a9723f7fc886f0c30e09992bd199869ed6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "26ebf86e37853c16e3e9fd3c9479d909a21c00b758387efb2a1452044e1387cd"
+hash = "9e42d2bc860882eab1435d3d8d011d6145dcd9ae2c5a51d300662e3f0b48d94f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
@@ -98,7 +98,7 @@ hash = "f3217c29f04f9aaccd1cc4a780abc0cf04dbb4a2414418b624e177266b19a4df"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "36a0fbf2064028caed8c869004b307ca47894bc6cd9b77dbcc54c51295c285b5"
+hash = "c166a4cc3b4190c098a495a6d3986de1e4215cabb9b39b4e439c89e196c2e0b1"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
@@ -130,11 +130,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "e31e971a104e6b0e397d9cb004b28c9553c9f4143b393feb29c5388686eeaba3"
+hash = "5429159f77f1f65eb6af15e8f7c593f9be0f8ac2f47311443fe2eed7bcea7487"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "e31e971a104e6b0e397d9cb004b28c9553c9f4143b393feb29c5388686eeaba3"
+hash = "5429159f77f1f65eb6af15e8f7c593f9be0f8ac2f47311443fe2eed7bcea7487"
 
 [[files]]
 file = "config/iris.properties"
@@ -254,11 +254,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "897b331d04982e6e4697fd90f48cfa9e9c71374b4b7efdab092c11535912e0e5"
+hash = "ef1cbdb1f9519cc913297709f9b85f0d96e5675499bbcf7c344faea7d26de727"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "6442f7a897315731a4c2d0d35cc4527da5807610266ed38f6f10f10f6d7bc119"
+hash = "c2885600086298eb41ba902d3d83f903585c15adad00649bce0a2a80700ec487"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -375,6 +375,10 @@ hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/star_pickaxe.png"
 hash = "0c8789049b78772d7604bf5157b07e4d4ac951e9806ef956c25f10b96bba1a10"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/tactical_nuke.png"
+hash = "aa74f96b8c19dbe835f7b4b0ae47020b17a284a10db7f738d4c56d487e3fe7fd"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/vein_cleaner.png"
@@ -506,7 +510,7 @@ hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
 
 [[files]]
 file = "kubejs/client_scripts/wave_items_tooltips.js"
-hash = "3eafb90672743e10dc1265891951ed3476d1aea158179155124fbab15417bf95"
+hash = "abfe8cce64b9624dbf9b82bebbf0e0084ba393bec4bdf7e0066662bf05fb5a19"
 
 [[files]]
 file = "kubejs/config/common.json"
@@ -1057,6 +1061,10 @@ file = "kubejs/server_scripts/raids/00_nightshift_config.js"
 hash = "be2ff511f895540ff2af207d3e71f753776807f64718ccf02f5625e1710de5d3"
 
 [[files]]
+file = "kubejs/server_scripts/raids/05_cataclysm_bosses.js"
+hash = "e0601e1ec4786d85d4434bba6e5efe56dc48ba65101f9303d1261655c05fb034"
+
+[[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
 hash = "b9e409276f91b29a248ca3201bd0b7dfa4357cf7e9d6b13f239a910abe13b5f3"
 
@@ -1145,6 +1153,10 @@ file = "kubejs/server_scripts/vahta/50_wave_rewards.js"
 hash = "6584225dc069fc2716c7294c81d77bb3aba4a2b9a31afceba4cbca0d139992a7"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/55_tactical_nuke.js"
+hash = "f0eedea0691a67f47b11f2a27fbee37de3722221e8e5617f9da375853edcaab5"
+
+[[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
 hash = "ddbccf8a914a9f993a3f1cf83e116ef2f9f84f99046a075a53635ee109d8f9d5"
 
@@ -1166,7 +1178,7 @@ hash = "3a3447ee82b3363f5fec7582c8eb86deb935fa36782b2431377a6a8bbedf2194"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/20_wave_items.js"
-hash = "4d636b71f1b5add098fed1475472fd9a2fcfa0d3eb58713c0515bf1b9b92c3b6"
+hash = "aa0802c8b5edc83cdfa1b6775af717cce65b7100c8a9e29eb5e0d7820c3afa93"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1968,6 +1980,11 @@ hash = "084c968377b79038daf8ce77bee9d86c3be4b2895ccab6f4a50915743d1533e9"
 metafile = true
 
 [[files]]
+file = "mods/l_enders-cataclysm.pw.toml"
+hash = "f262b49b1038ef9f67704e0629da6aafa84cf4f760273589f5d73530ca5d74b5"
+metafile = true
+
+[[files]]
 file = "mods/lambdynamiclights.pw.toml"
 hash = "ebf0dae777cc19c354a662dc8144009dff7269b2d05624b4591fcb7de56fc14e"
 metafile = true
@@ -1975,6 +1992,11 @@ metafile = true
 [[files]]
 file = "mods/libipn.pw.toml"
 hash = "0d2a00252d64ed7d2d9b19994f7accb780304be61f3903d36e810714b414c6cb"
+metafile = true
+
+[[files]]
+file = "mods/lionfish-api.pw.toml"
+hash = "64acab1580ca6edd8b1dd185e914aeee7aa551a88a7cd7f0f9370a82aaadfef6"
 metafile = true
 
 [[files]]
