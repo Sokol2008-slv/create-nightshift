@@ -47,6 +47,7 @@ function nsHealSleepRule(server) {
 
 // Сброс набега (алтарь пропал, нет конфига орды, /nightshift stop): мобы набега уходят вместе с ним
 function nsResetRaidIdle(state) {
+	var arenaAltar = state.raid.altarId
 	state.raid = nsDefaultState().raid
 	nsReturnAll(state)
 	nsSaveState(state)
@@ -54,6 +55,7 @@ function nsResetRaidIdle(state) {
 	NSG.nsServer.runCommandSilent('kill @e[tag=nightshift_raid]')
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
+	if (typeof nsArenaHook === 'function') nsArenaHook('end', arenaAltar) // арена — восстановить (70_nightshift_arena.js)
 }
 
 function nsHasRaidTag(entity) {
@@ -453,6 +455,7 @@ function nsStartRaid(kind, altarId, difficulty) {
 	nsBossbarCreate('nightshift:raid_countdown', name, kind === 'minor' ? 'yellow' : 'red')
 	nsBossbarMax('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
 	nsBossbarValue('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
+	if (typeof nsArenaHook === 'function') nsArenaHook('start', altarId) // арена — снимок перед набегом
 }
 
 // {waves, boss, buff, mult} текущего набега: выбранная сложность или малый набег по силам команды
@@ -601,6 +604,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 function nsRaidVictory(state) {
 	var kind = state.raid.kind
 	var altar = nsFindAltar(state, state.raid.altarId)
+	if (typeof nsArenaHook === 'function') nsArenaHook('end', state.raid.altarId) // арена — восстановить
 	nsRaidEnded()
 	nsBossbarRemove('nightshift:raid_countdown')
 	nsBossbarRemove('nightshift:raid_wave')
@@ -650,6 +654,7 @@ function nsRaidVictory(state) {
 
 function nsRaidFail(state, mobs) {
 	var d = state.raid.difficulty || 1
+	if (typeof nsArenaHook === 'function') nsArenaHook('end', state.raid.altarId) // арена — восстановить
 	console.info('[nightshift] моб добрался до алтаря — набег сложности ' + d + ' провален')
 	for (var i = 0; i < mobs.length; i++) nsRemoveMob(mobs[i])
 	nsRaidEnded()

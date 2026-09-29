@@ -605,6 +605,10 @@ file = "kubejs/data/modulargolems/modulargolems_config/materials/nightshift_plan
 hash = "9b295c0ec3dd645f3ea6c5d20a6e99373cb333beab270c8c05a0ed9f8b6e1398"
 
 [[files]]
+file = "kubejs/data/nightshift/dimension/arena.json"
+hash = "d1978d9cec4948da526109c2ecbc46540d938c1e412b968fd0fdb2d839f3db2c"
+
+[[files]]
 file = "kubejs/data/nightshift/dimension/axiomativ.json"
 hash = "b40a46a905ee9afa63fdbc3e2ff1edab3c88dc073569f88892facfd25e92b8d6"
 
@@ -619,6 +623,10 @@ hash = "f8177cc03bc37179e4bb44d2b98bc1bf68ce6f02e080cc46b712cc9389fac87e"
 [[files]]
 file = "kubejs/data/nightshift/dimension_physics/yin_yang.json"
 hash = "c3f367b8c02d2f019a4fe0f571a9a74a8e0f12bf1e8a64fa6706d21f73712878"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension_type/arena.json"
+hash = "730600f30156a433b2c3c6c09b304667e8c215899622617a7245e0de18cd9cd1"
 
 [[files]]
 file = "kubejs/data/nightshift/dimension_type/axiomativ.json"
@@ -1138,7 +1146,7 @@ hash = "f7162589d238238ed569567a0e5a6c4f5c5a4e497498369660c7ad8750509a3c"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "5000f0557a8b6acfeb7e5d1fb59a53e1db702f7f7ffb1f3a323063a9d7dff94a"
+hash = "4a6ae09cec7aceb765abf4b1647861703042f227818d77742922ab4366e52e9c"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
@@ -1147,6 +1155,10 @@ hash = "5902d7f5b8592c9dce676f1742eedc5e02c8f6e005674d41f4ff0db0731ba38a"
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
 hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
+
+[[files]]
+file = "kubejs/server_scripts/raids/70_nightshift_arena.js"
+hash = "b212ac1bf9ea1a570614206946ce310c6385e97479549d520949f4ef993b0ef0"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"
