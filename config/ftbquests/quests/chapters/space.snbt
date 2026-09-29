@@ -179,7 +179,7 @@
 			size: 1.0d
 			tasks: [{ id: "4144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
 			x: 17.60d
-			y: 0.93d
+			y: -0.57d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
@@ -192,6 +192,59 @@
 			y: 0.93d
 		}
 		{
+			dependencies: ["0811D15A56819E96"]
+			icon: { id: "kubejs:axiomite_ore" }
+			id: "10AB8BC67127FF0D"
+			rewards: [{ id: "4EECBB83DA120119", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ dimension: "nightshift:axiomativ", id: "2FD8D3F87F74D410", type: "dimension" }]
+			x: 17.60d
+			y: 1.33d
+		}
+		{
+			dependencies: ["10AB8BC67127FF0D"]
+			id: "798AC21976DE3822"
+			rewards: [{ id: "521A1EA751061C30", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "63EF4A988E202A39", item: { count: 1, id: "kubejs:raw_axiomite" }, type: "item" }]
+			x: 19.80d
+			y: 1.33d
+		}
+		{
+			dependencies: ["0811D15A56819E96"]
+			icon: { id: "kubejs:stabilite_ore" }
+			id: "6830526159D51413"
+			rewards: [{ id: "15C023510481C4C1", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ dimension: "nightshift:yin_yang", id: "3F57C00E4D2EDED8", type: "dimension" }]
+			x: 17.60d
+			y: 3.53d
+		}
+		{
+			dependencies: ["6830526159D51413"]
+			id: "7740332F1426A7C8"
+			rewards: [{ id: "3270D71D248A5383", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_stabilite" }, type: "item" }]
+			x: 19.80d
+			y: 3.53d
+		}
+		{
+			dependencies: ["798AC21976DE3822", "7740332F1426A7C8"]
+			icon: { id: "kubejs:stabilite_ingot" }
+			id: "629E15D96732EB91"
+			rewards: [{ id: "656C87225A6A24DD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "22045A6BEF05B1E2", type: "checkmark" }]
+			x: 22.00d
+			y: 2.43d
+		}
+		{
 			dependencies: ["48E881DFD6B3194F", "54836B2556E2C657"]
 			id: "7E6E32EBF6D0D98A"
 			rewards: [{ id: "6188FD6237DAB2B0", type: "xp", xp: 10 }]
@@ -199,7 +252,7 @@
 			size: 1.0d
 			tasks: [{ id: "5824B3BF551EF814", item: { count: 1, id: "northstar:electrolysis_machine" }, type: "item" }]
 			x: 19.80d
-			y: -2.53d
+			y: -4.03d
 		}
 	]
 }
