@@ -98,7 +98,7 @@ hash = "f3217c29f04f9aaccd1cc4a780abc0cf04dbb4a2414418b624e177266b19a4df"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "f3ab2f440bf6abd4c38d758910398a39ca1c6969ad7ebea56e4642cc7dbad987"
+hash = "b2fb98cb1362030e07dd7c62613e4cfd7bade8fc4ea83af0bc3e6495f9ecf7bf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
@@ -130,11 +130,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "63c7dcc47b2d91c0c324165917267b1ffceda24c3be45b7d9245d0344c5a6f00"
+hash = "f032ceff3f52c80dec935fbaa7a49913467b8f7269e8f94d0f94174452626059"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "63c7dcc47b2d91c0c324165917267b1ffceda24c3be45b7d9245d0344c5a6f00"
+hash = "f032ceff3f52c80dec935fbaa7a49913467b8f7269e8f94d0f94174452626059"
 
 [[files]]
 file = "config/iris.properties"
@@ -159,6 +159,54 @@ hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
 [[files]]
 file = "kubejs/assets/dmr/lang/ru_ru.json"
 hash = "bcb6c6ece9efcd27d4439ca9f1342aa62548ec3b889b775c268358f7e3fe0f1a"
+
+[[files]]
+file = "kubejs/assets/kubejs/lang/en_us.json"
+hash = "482c3baa80a01a6fb753f5d518b554b528d28b002a13df639e9d52ee2020c8c7"
+
+[[files]]
+file = "kubejs/assets/kubejs/lang/ru_ru.json"
+hash = "50a265a6efd80fd6826ad7d5d147cb6fd6f04ea00985a6ebc9d531a851eef5c3"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/axiomite_ore.png"
+hash = "6d1f1062eedc4152ba6ec479d50a6625e99e88b0228ba9f85cb8d1fed4265d64"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/dark_stabilite_ore.png"
+hash = "8f4e3b987bdde0906745dfe4004b550444de598f99d4349b8a7111e15e30305b"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/deepslate_axiomite_ore.png"
+hash = "b2dadac4e9cf816f872f5e40db33a7b48aef831c183e1ed1187c951416998b1e"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/stabilite_ore.png"
+hash = "ece288551311f7342dd1f90ba4612a256b8117403618fa759695eef337a34274"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/axiomite_ingot.png"
+hash = "fde034516453bf87a3dab63f53210a214fe044f67567d1b340d6878257a9baa2"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/crushed_raw_axiomite.png"
+hash = "42c88e2c3d630dd0d11a47795daf1a9bfaddeda6697e16bad6884f1c66bb6ce6"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/crushed_raw_stabilite.png"
+hash = "e7d9bb9a8fb164060f97899273495a4ef944358e2093a6e176869400760b8b7b"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/raw_axiomite.png"
+hash = "f501cf11c101e85895d72ba226acfa8ebb1ecd288d09475b9f42ca343b112d82"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/raw_stabilite.png"
+hash = "7d911eeb68f3b8b9ecc10ee1e3df9f38ba39230f41427969343cdc9d9052938f"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/stabilite_ingot.png"
+hash = "65a59172db2d16e53375bac295fb646b6cfcfa6ef1d60614ebb75cf4b18a2b34"
 
 [[files]]
 file = "kubejs/assets/minecraft/lang/en_us.json"
@@ -409,6 +457,22 @@ file = "kubejs/assets/nightshift/textures/item/vein_seed_zinc.png"
 hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/planet/axiomativ.png"
+hash = "6227bdf8148d23fd3171eff7413a083f2ddbb7e22e34cc2b1943539ad5840a8d"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/planet/axiomativ_sky.png"
+hash = "59dc8f062bb85472f699ec53e3a731c69ea5fd978c38c02076bef4813e559952"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/planet/yin_yang.png"
+hash = "1a5b66d7d886ea12b1d251547c8ffb662e53472239083e4a22e8afebd435ad7b"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/planet/yin_yang_sky.png"
+hash = "c891c2d978750a35e0524b17de8e19d6bbc625808127eec4f39c417fd578dede"
+
+[[files]]
 file = "kubejs/client_scripts/axiomativ_jei.js"
 hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
 
@@ -477,8 +541,64 @@ file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/godly_face_biome_mo
 hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
 
 [[files]]
+file = "kubejs/data/kubejs/loot_table/blocks/axiomite_ore.json"
+hash = "6ed4337aba07cdcc9a6678d6825e6d3b8c2744588c1735257dfe8f46b28dc9af"
+
+[[files]]
+file = "kubejs/data/kubejs/loot_table/blocks/dark_stabilite_ore.json"
+hash = "025dc4ff41b87c932e2d90b1df2fd91bbe98432bc9dd890b894c5e3adfd26dea"
+
+[[files]]
+file = "kubejs/data/kubejs/loot_table/blocks/deepslate_axiomite_ore.json"
+hash = "d6bc57c435a8eaec1bff1861151d368f2f407391860f0202049c88c396502032"
+
+[[files]]
+file = "kubejs/data/kubejs/loot_table/blocks/stabilite_ore.json"
+hash = "a5455940f210dd70ec3c0c3c3618d8df4ee9bdc352f2e85ee94297f5a8dd27f6"
+
+[[files]]
 file = "kubejs/data/modulargolems/modulargolems_config/materials/nightshift_planet.json"
 hash = "c54ce37e52cc073ed30728275371449b252c3f8cf537ca35addefc3cda7d80fd"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension/axiomativ.json"
+hash = "b40a46a905ee9afa63fdbc3e2ff1edab3c88dc073569f88892facfd25e92b8d6"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension/yin_yang.json"
+hash = "ab15a1838780d929da661d0341ca709c597d937e4483cdebf17a667f3f7814dc"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension_physics/axiomativ.json"
+hash = "f8177cc03bc37179e4bb44d2b98bc1bf68ce6f02e080cc46b712cc9389fac87e"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension_physics/yin_yang.json"
+hash = "c3f367b8c02d2f019a4fe0f571a9a74a8e0f12bf1e8a64fa6706d21f73712878"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension_type/axiomativ.json"
+hash = "1589ecf44ccc41cf324c98cf5a83e0609de0343a75edef4a827773843d78d637"
+
+[[files]]
+file = "kubejs/data/nightshift/dimension_type/yin_yang.json"
+hash = "1589ecf44ccc41cf324c98cf5a83e0609de0343a75edef4a827773843d78d637"
+
+[[files]]
+file = "kubejs/data/nightshift/northstar/planet/axiomativ.json"
+hash = "953696deb07652de6e656d8aa64c99a108d11742c75b258932e248a91eb69c51"
+
+[[files]]
+file = "kubejs/data/nightshift/northstar/planet/yin_yang.json"
+hash = "e5543814627595981e65091dddbfa8f4219d15e95e2031f489107d28f24a0274"
+
+[[files]]
+file = "kubejs/data/nightshift/northstar/planet_dimension/axiomativ.json"
+hash = "305514d086facdbf90571c4a771534669a10e8528ef1968775d3e37b01332611"
+
+[[files]]
+file = "kubejs/data/nightshift/northstar/planet_dimension/yin_yang.json"
+hash = "d9482311a03c5573d0cbbd1bc1c6a0d6bf35a01d91ce1d8496ed46270e89d01d"
 
 [[files]]
 file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_probes.json"
@@ -689,6 +809,26 @@ file = "kubejs/data/nightshift/recipe/ore_vein_type/tungsten.json"
 hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
 
 [[files]]
+file = "kubejs/data/nightshift/tags/block/axiomativ_deep_stone_replaceable.json"
+hash = "bbb0316d5df4d9d97fd8ffb490d97689795d8c5667cd0f8775ea9f823a6b845f"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/block/axiomativ_stone_replaceable.json"
+hash = "1c61a07cf6700255394db08512aeaa562249548625e97bec906fcd8b36420fc6"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/block/planet_carver_replaceables.json"
+hash = "32785c890dd5d36260eba605384d95f7a41d059a543b92a3358c61d184064c39"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/block/yin_yang_dark_stone.json"
+hash = "81187572341d1e5f4d5ddb9bc8266f6aa2e1e4d1aa7379f8afd8e8c52415ed9f"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/block/yin_yang_light_stone.json"
+hash = "58d3f8f52da92c6f780f245e3eb297a367ba7a296aad9f4ca9fd86cf51417f4e"
+
+[[files]]
 file = "kubejs/data/nightshift/tags/item/phase_1.json"
 hash = "a7501f88d8e3356dffc458238dfdf681f9b004d7775c147cdcb67dac1a6e340f"
 
@@ -713,8 +853,96 @@ file = "kubejs/data/nightshift/tags/item/phase_6.json"
 hash = "29d2e7acc9a252f91c43841d602ee3da6669e35bbb50738006e4f0cc23d68578"
 
 [[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/axiomativ_biomes.json"
+hash = "a2c460b92539df9ba700bf5dc979f50551abd7d992b71a0ddfb3eb997f7d082e"
+
+[[files]]
 file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
 hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/yin_yang_biomes.json"
+hash = "c49148edb20569aa4037aa4b0ed8bd9366c9d058ea9fdaffe0877661cc87b630"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/biome/axiomativ_frozen_foundry.json"
+hash = "b21d731359dec893bc272487512be47bc5d5a7f57e88d1b4c111d4c1843fd3d2"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/biome/axiomativ_steel_plains.json"
+hash = "46413e75a5809655803428160abe19f43616a0ed6764330ed9c5d7b5996b1249"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/biome/yin_yang_yang.json"
+hash = "d13df19125c57a30134d11021afe742b12217a788f275790b50c5d91ea0815ca"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/biome/yin_yang_yin.json"
+hash = "e4bf7752fd5cdcdbd5ffbdf4792afb97f31f04f4e605bbc636b8101eecb7e16b"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_carver/planet_cave.json"
+hash = "79cbac34ccf3b91b76c8ff9bac9fead91ca35a0ddadd49b551cc368989bb6f98"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_carver/planet_cave_extra_underground.json"
+hash = "dc06ab256aa9b3f748b513af76f966bdb2cc0c2f8b33d283270167774ae34ceb"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/axiomativ_ore_axiomite.json"
+hash = "f88818028f2d51168d7f1c549eeffdf78c77a5a0ed289363904c3aa1e0ad5e75"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/axiomativ_ore_axiomite_large.json"
+hash = "83bfa4d0e37e4b81e776c4ba68b69da8fe5a7ba8866b050d30610415a6286262"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/axiomativ_ore_iron.json"
+hash = "613b9fa8ec20874328df8c007ac9fa68d8df85c2b70f0a31f2516160a9aa6c8e"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/axiomativ_raw_iron_blob.json"
+hash = "26bd66cd5542c05a3c7204f869d044212af4c6aa324433318491eee59d5b90bc"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/yin_yang_ore_stabilite.json"
+hash = "253152aefd1d193080e185b75c296ed94f054fc852c46dbed88f248c9b1a0f0d"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/noise_settings/axiomativ.json"
+hash = "a2236c2bb4e1987b7a7973255fd064a0c908ff2c43b4d85d5a4bb8faaa398a80"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/noise_settings/yin_yang.json"
+hash = "c5604d5ab24706100ad30b69d4a8d8c890ed5c2317fc437fcb2e001d24ced1c6"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/axiomativ_basalt_stacks.json"
+hash = "34d5e07574fec0c8152bad0510fdaad561600805e73b5b5749f706e8348b80e6"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/axiomativ_ore_axiomite.json"
+hash = "882342e451266d37bdbe2d159ddd5f790cabee856a8a0f24a7d4d25607d583d4"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/axiomativ_ore_axiomite_large.json"
+hash = "2bdb18e91f2f27f44e3548b428cedde3dd77bc287d29018e5a67465482ef0a6c"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/axiomativ_ore_iron.json"
+hash = "5ccb10329f45a1c5f434342e80f551019a2f77b0c0a6453ebbf3716506962345"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/axiomativ_raw_iron_blob.json"
+hash = "b4711c485373cdc0415866f0f3ec53eab42344eba9d7630774183c72b5cafc14"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/yin_yang_basalt_spires.json"
+hash = "ce5e9d1dcd1518be772c863e73bbd6033aff0b2478d6022ecef36eace2bf54da"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/yin_yang_ore_stabilite.json"
+hash = "de3dfad563e98d7259ea1b85baa3e542b3ae94f68c49f2b8e25d62d344b40dca"
 
 [[files]]
 file = "kubejs/server_scripts/00_ingredients.js"
@@ -782,7 +1010,7 @@ hash = "b58e7be9e2fcbe5ee5164f1f64bfda08047d0c00d20f5a21c9734b0ea7515563"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/07_dimensions.js"
-hash = "8af50eed918adb4f2da6f010b42fd5b8dcc8dd0846eb6688f930c5de13070019"
+hash = "276be318a38d123c39112f64fd9179030c73aa45940a9ab2d2eb1703851ead8f"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/08_rocket_lock.js"
@@ -791,6 +1019,10 @@ hash = "c91d4367816eb618cf5b6246810a10753450d50441b02b45ce08b759afc11d1f"
 [[files]]
 file = "kubejs/server_scripts/nightshift/09_alt_recipes.js"
 hash = "22b7cd66b16f3afa662c3bd490183bf305694c28b15a0d264f53017283b6edf8"
+
+[[files]]
+file = "kubejs/server_scripts/planets/10_ore_recipes.js"
+hash = "3e6ab7574398d0056f2610bc322497efd66e39b1000b1397926092a62e91ba1e"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
@@ -895,6 +1127,10 @@ hash = "b506d905f2574a29cf4cc529e81e70d3a66e553b47101d30e8aebc001be418dd"
 [[files]]
 file = "kubejs/startup_scripts/nightshift_scare_blocks.js"
 hash = "0e82038b246cd2cdd686a7d788c37c0d3b48ec406394ba4c1ee768d2b18bc731"
+
+[[files]]
+file = "kubejs/startup_scripts/planets/10_ores.js"
+hash = "2e24e54fd3a4829b56fbf0309147b8a428da5b2c51fb9638876a65d6d3976089"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"

@@ -1,0 +1,9 @@
+{
+  "dimension": "nightshift:axiomativ",
+  "base_gravity": [
+    0.0,
+    -11.0,
+    0.0
+  ],
+  "base_pressure": 0.0493
+}

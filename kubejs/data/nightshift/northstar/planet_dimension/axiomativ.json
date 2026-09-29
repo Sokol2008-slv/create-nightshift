@@ -1,0 +1,41 @@
+{
+  "atmosphere": {
+    "composition": {
+      "breathable": false,
+      "fluid": "northstar:carbon"
+    },
+    "daytime_star_brightness": 0.6,
+    "pressure_pa": 5000.0
+  },
+  "average_temperature": -120.0,
+  "dimension": "nightshift:axiomativ",
+  "gravity": 11.0,
+  "heat_gradient": 0.3,
+  "heat_intercept": 80.0,
+  "name": "surface",
+  "planet": "nightshift:axiomativ",
+  "sun_multiplier": {
+    "type": "northstar:arithmetic",
+    "a": {
+      "type": "northstar:light",
+      "mode": "sky_darken",
+      "normalize": true
+    },
+    "b": 0.8,
+    "mode": "mul"
+  },
+  "temperature": -120.0,
+  "wind_multiplier": {
+    "type": "northstar:weather",
+    "entries": [
+      {
+        "key": "minecraft:clear",
+        "value": 0.5
+      },
+      {
+        "key": "minecraft:fallback",
+        "value": 1.5
+      }
+    ]
+  }
+}

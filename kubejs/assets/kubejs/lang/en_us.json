@@ -1,0 +1,18 @@
+{
+  "block.kubejs.axiomite_ore": "Axiomite Ore",
+  "block.kubejs.deepslate_axiomite_ore": "Deepslate Axiomite Ore",
+  "block.kubejs.stabilite_ore": "Stabilite Ore",
+  "block.kubejs.dark_stabilite_ore": "Dark Stabilite Ore",
+  "item.kubejs.raw_axiomite": "Raw Axiomite",
+  "item.kubejs.crushed_raw_axiomite": "Crushed Raw Axiomite",
+  "item.kubejs.axiomite_ingot": "Axiomite Ingot",
+  "item.kubejs.raw_stabilite": "Raw Stabilite",
+  "item.kubejs.crushed_raw_stabilite": "Crushed Raw Stabilite",
+  "item.kubejs.stabilite_ingot": "Stabilite Ingot",
+  "nightshift.planets.axiomativ.name": "Axiomativ",
+  "nightshift.planets.yin_yang.name": "Yin-Yang",
+  "biome.nightshift.axiomativ_steel_plains": "Steel Plains",
+  "biome.nightshift.axiomativ_frozen_foundry": "Frozen Foundry",
+  "biome.nightshift.yin_yang_yin": "Yin",
+  "biome.nightshift.yin_yang_yang": "Yang"
+}

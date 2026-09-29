@@ -3,7 +3,8 @@
 
 Вход: спецификации глав (JSON) из tools/quests/*.json:
   {"chapters":[{"key","title","icon","subtitle","quests":[
-     {"key","type":"item"|"checkmark","item","count","title","desc":[...],"deps":[...],"goal"}]}]}
+     {"key","type":"item"|"checkmark"|"stage"|"dimension","item","count","title","desc":[...],"deps":[...],"goal"}]}]}
+  (type "dimension": поле "dimension" — id измерения, item — иконка)
 Выход: config/ftbquests/quests/ — data.snbt, chapter_groups.snbt, chapters/*.snbt,
 lang/ru_ru.snbt и lang/en_us.snbt (тексты русские в обоих, чтобы язык клиента не мешал).
 
@@ -96,11 +97,18 @@ def known_items():
         print("jar-файлов сборки нет — предметы сверяются по tools/data/recipes-dump.json.gz (приблизительно)")
         items = dump_items()
     # предметы Ночной смены регистрирует KubeJS — их нет в jar
-    for js in STARTUP.glob("*.js"):
+    for js in STARTUP.rglob("*.js"):
         text = js.read_text()
         items.update(re.findall(r"create\('(nightshift:[a-z0-9_]+)'", text))
         for t in re.findall(r"'([a-z_]+)'", text.split("NS_PROBE_TYPES = [", 1)[1].split("]", 1)[0]) if "NS_PROBE_TYPES = [" in text else []:
             items.add("nightshift:vein_seed_" + t)
+    # предметы kubejs:* (руды планет и т.п.) собираются в скриптах из частей id — берём их из lang
+    kjs_lang = PACK / "kubejs" / "assets" / "kubejs" / "lang" / "ru_ru.json"
+    if kjs_lang.is_file():
+        for key in json.loads(kjs_lang.read_text()):
+            m = re.match(r"^(?:item|block)\.kubejs\.([a-z0-9_]+)$", key)
+            if m:
+                items.add("kubejs:" + m.group(1))
     return items
 
 
@@ -323,7 +331,7 @@ def main():
                    [qid(*dep.split(":", 1)) for dep in ext]
             if deps:
                 lines.append("\t\t\tdependencies: [" + ", ".join(snbt_str(x) for x in deps) + "]")
-            if q["type"] in ("checkmark", "stage"):
+            if q["type"] in ("checkmark", "stage", "dimension"):
                 lines.append("\t\t\ticon: { id: " + snbt_str(q["item"]) + " }")
             lines.append(f"\t\t\tid: {snbt_str(quest_id)}")
             lines.append("\t\t\trewards: [{ id: " + snbt_str(qid(ck, k, "reward")) +
@@ -332,6 +340,10 @@ def main():
             lines.append(f"\t\t\tsize: {1.6 if goal else 1.0}d")
             if q["type"] == "checkmark":
                 lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ', type: "checkmark" }]')
+            elif q["type"] == "dimension":
+                # «побывать в измерении» (FTB Quests DimensionTask), item — только иконка квеста
+                lines.append("\t\t\ttasks: [{ dimension: " + snbt_str(q["dimension"]) + ", id: " + snbt_str(task_id) +
+                             ', type: "dimension" }]')
             elif q["type"] == "stage":
                 # стадия FTB = тег игрока (EntityTagStageProvider); тег выдаёт KubeJS при открытии фазы
                 lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ", stage: " + snbt_str(q["stage"]) +

@@ -1,0 +1,14 @@
+{
+  "central_body": "northstar:sol",
+  "diameter": 7000.0,
+  "orbit": {
+    "type": "northstar:simple",
+    "duration_days": 365.256,
+    "initial_mean_anomaly_deg": 297.51716,
+    "radius": 1.0
+  },
+  "renderer": "nightshift:yin_yang_sky",
+  "required_science": 7.0,
+  "rotation_period_days": 1.0,
+  "texture": "nightshift:yin_yang"
+}

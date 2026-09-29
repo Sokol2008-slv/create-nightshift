@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#minecraft:overworld_carver_replaceables",
+    "minecraft:smooth_basalt",
+    "minecraft:snow_block",
+    "minecraft:blackstone",
+    "minecraft:calcite",
+    "minecraft:packed_ice",
+    "kubejs:axiomite_ore",
+    "kubejs:deepslate_axiomite_ore",
+    "kubejs:stabilite_ore",
+    "kubejs:dark_stabilite_ore"
+  ]
+}
