@@ -149,6 +149,10 @@ file = "config/simplebackups-common.toml"
 hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
 
 [[files]]
+file = "kubejs/assets/dmr/lang/ru_ru.json"
+hash = "bcb6c6ece9efcd27d4439ca9f1342aa62548ec3b889b775c268358f7e3fe0f1a"
+
+[[files]]
 file = "kubejs/assets/minecraft/lang/en_us.json"
 hash = "c57106d544580e39702afe97dc71bf10ebe3d87776e81be1f478028e4863da50"
 
