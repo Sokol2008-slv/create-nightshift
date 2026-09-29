@@ -170,7 +170,7 @@ hash = "50a265a6efd80fd6826ad7d5d147cb6fd6f04ea00985a6ebc9d531a851eef5c3"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/axiomite_ore.png"
-hash = "6d1f1062eedc4152ba6ec479d50a6625e99e88b0228ba9f85cb8d1fed4265d64"
+hash = "4956a3df3ff418d3def66fd442088f60be830d4f730f0cc809d2afeb91e049fb"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/dark_stabilite_ore.png"
@@ -178,7 +178,7 @@ hash = "8f4e3b987bdde0906745dfe4004b550444de598f99d4349b8a7111e15e30305b"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/deepslate_axiomite_ore.png"
-hash = "b2dadac4e9cf816f872f5e40db33a7b48aef831c183e1ed1187c951416998b1e"
+hash = "debe56606349535bad02134c97d436a6ceaff8333f1f47f9faea5b621470667b"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/stabilite_ore.png"
@@ -186,11 +186,11 @@ hash = "ece288551311f7342dd1f90ba4612a256b8117403618fa759695eef337a34274"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/axiomite_ingot.png"
-hash = "fde034516453bf87a3dab63f53210a214fe044f67567d1b340d6878257a9baa2"
+hash = "e928fd11f60ec2d03d31387013b60ca6d9add278cf5da0aa4b439b96fa0f1c9f"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/crushed_raw_axiomite.png"
-hash = "42c88e2c3d630dd0d11a47795daf1a9bfaddeda6697e16bad6884f1c66bb6ce6"
+hash = "bb1307ecd9406cc32e4a5adfe9dbad345a86af99971880c919df183da1a84f0f"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/crushed_raw_stabilite.png"
@@ -198,7 +198,7 @@ hash = "e7d9bb9a8fb164060f97899273495a4ef944358e2093a6e176869400760b8b7b"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/raw_axiomite.png"
-hash = "f501cf11c101e85895d72ba226acfa8ebb1ecd288d09475b9f42ca343b112d82"
+hash = "22a6979622265a2d74aca5aae4388fd62403cef87c7057ca4105432171a69c6b"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/raw_stabilite.png"
@@ -458,11 +458,11 @@ hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/planet/axiomativ.png"
-hash = "6227bdf8148d23fd3171eff7413a083f2ddbb7e22e34cc2b1943539ad5840a8d"
+hash = "04946ac415ee5bc2ea3c62173fff88e8d5d3ea2d6396747bc1529485c370a62b"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/planet/axiomativ_sky.png"
-hash = "59dc8f062bb85472f699ec53e3a731c69ea5fd978c38c02076bef4813e559952"
+hash = "a825b86b83730912721d90402587c63530483e95c735db975adaf6af084d623a"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/planet/yin_yang.png"
@@ -1188,8 +1188,8 @@ hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
 metafile = true
 
 [[files]]
-file = "mods/axiomativ-0.1.1.jar"
-hash = "a42d9cfee7c9279fd597bcfde729165e982ab4c9dd43c2c566fa4d3a6e7c45b2"
+file = "mods/axiomativ-0.1.2.jar"
+hash = "dc6d326009f3605dcc9669a2d4896135b302309a8a3e31e4a8a2356513600761"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

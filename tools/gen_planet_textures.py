@@ -57,7 +57,10 @@ def ramp(stops, t):
 
 
 def recolor(img, stops, mask=None):
-    """Перекраска по яркости: самый тёмный пиксель → stops[0], самый светлый → stops[-1]."""
+    """Перекраска по яркости: самый тёмный пиксель → stops[0], самый светлый → stops[-1].
+    stops может быть парой (основа, блики, порог) — цвета бренда: бордо в тенях, зелёный в бликах."""
+    if isinstance(stops, tuple):
+        return recolor_split(img, *stops, mask=mask)
     stops = [hexrgb(s) for s in stops]
     px = [(x, y) for y in range(img.height) for x in range(img.width)
           if img.getpixel((x, y))[3] > 0 and (mask is None or mask(x, y))]
@@ -78,9 +81,14 @@ def ore(base_rock, ore_tex, rock_of_ore, stops, threshold=24):
              if sum(abs(a - b) for a, b in zip(ore_tex.getpixel((x, y))[:3], rock_of_ore.getpixel((x, y))[:3])) > threshold]
     ls = [lum(ore_tex.getpixel(p)) for p in spots]
     lo, hi = min(ls), max(ls)
-    st = [hexrgb(s) for s in stops]
+    if isinstance(stops, tuple):  # (основа, блики, порог) — как в recolor_split
+        base, high, cut = [hexrgb(c) for c in stops[0]], [hexrgb(c) for c in stops[1]], stops[2]
+        pick = lambda t: ramp(base, t / cut) if t < cut else ramp(high, (t - cut) / (1 - cut or 1))
+    else:
+        st = [hexrgb(s) for s in stops]
+        pick = lambda t: ramp(st, t)
     for p, l in zip(spots, ls):
-        out.putpixel(p, ramp(st, (l - lo) / (hi - lo or 1)) + (255,))
+        out.putpixel(p, pick((l - lo) / (hi - lo or 1)) + (255,))
     return out
 
 
@@ -95,8 +103,25 @@ def split_diag(img, dark, light):
     return out
 
 
+def recolor_split(img, base, highlight, cut, mask=None):
+    """Как recolor, но пиксели ярче порога cut (0..1) красятся отдельной палитрой бликов."""
+    base = [hexrgb(c) for c in base]
+    highlight = [hexrgb(c) for c in highlight]
+    px = [(x, y) for y in range(img.height) for x in range(img.width)
+          if img.getpixel((x, y))[3] > 0 and (mask is None or mask(x, y))]
+    ls = [lum(img.getpixel(p)) for p in px]
+    lo, hi = min(ls), max(ls)
+    out = img.copy()
+    for p, l in zip(px, ls):
+        t = (l - lo) / (hi - lo or 1)
+        c = ramp(base, t / cut) if t < cut else ramp(highlight, (t - cut) / (1 - cut or 1))
+        out.putpixel(p, c + (img.getpixel(p)[3],))
+    return out
+
+
 # --- палитры ---------------------------------------------------------------------------------
-AXIOMITE = ["#10222c", "#2c6f86", "#56c3dc", "#d8fbff"]       # холодная сталь с голубым отливом
+# цвета бренда Axiomativ (Георгий, 30.09): бордо/вино + денежный зелёный в бликах
+AXIOMITE = (["#1c050b", "#4a0f1d", "#7a1a2e", "#a3283f"], ["#5d8f45", "#85bb65", "#c6e6a8"], 0.9)
 STAB_ORE = ["#0b0b0b", "#4f4862", "#b3abcc", "#ffffff"]       # чёрное → сиреневато-серая середина → белое
 STAB_DARK = ["#050505", "#3a3a3a", "#8c8466"]
 STAB_LIGHT = ["#9d9784", "#e4dfcc", "#ffffff"]
@@ -167,21 +192,21 @@ def sky_yinyang(size, ss=16):
 
 def planets():
     rnd = random.Random(20260929)
-    # Аксиоматив, вид с орбиты: стальная поверхность, сетка заводских кварталов с голубыми огнями,
-    # белые полярные шапки
+    # Аксиоматив, вид с орбиты: бордовая поверхность, сетка заводских кварталов с зелёными огнями
+    # (цвета бренда), светлые полярные шапки
     img = Image.new("RGBA", (20, 20))
     for y in range(20):
         for x in range(20):
-            base = ramp([hexrgb("#2b3640"), hexrgb("#5d6b78"), hexrgb("#8795a3")], rnd.random() * 0.8 + 0.1)
+            base = ramp([hexrgb("#3a0b16"), hexrgb("#6d1a2c"), hexrgb("#9e2a3f")], rnd.random() * 0.8 + 0.1)
             if y in (0, 1, 18, 19) or (y in (2, 17) and rnd.random() < 0.6):
-                base = ramp([hexrgb("#c9d6df"), hexrgb("#f4fbff")], rnd.random())
+                base = ramp([hexrgb("#d9c7c2"), hexrgb("#f6ecea")], rnd.random())
             elif (x % 5 == 2 or y % 5 == 2) and rnd.random() < 0.7:
-                base = ramp([hexrgb("#2c6f86"), hexrgb("#7fe3f5")], rnd.random())
+                base = ramp([hexrgb("#5d8f45"), hexrgb("#a8e07a")], rnd.random())
             img.putpixel((x, y), base + (255,))
     save(img, PLANET_OUT, "axiomativ")
-    # в небе — маленький серо-голубой диск
+    # в небе — маленький винный диск
     sky = Image.new("RGBA", (4, 4))
-    cols = ["#9fb3c2", "#b9d7e3", "#b9d7e3", "#7f93a3"]
+    cols = ["#8e2439", "#b5405a", "#b5405a", "#6d1a2c"]
     for y in range(4):
         for x in range(4):
             sky.putpixel((x, y), hexrgb(cols[(x + y) // 2]) + (255,))
