@@ -41080,6 +41080,22 @@
   {
    "id": "tfmg:zinc_truss",
    "emc": 0
+  },
+  {
+   "id": "nightshift:lightning_charge",
+   "emc": 8192
+  },
+  {
+   "id": "nightshift:navigation_core",
+   "emc": 65536
+  },
+  {
+   "id": "nightshift:star_pickaxe",
+   "emc": 262144
+  },
+  {
+   "id": "nightshift:electric_copper",
+   "emc": 0
   }
  ]
 }

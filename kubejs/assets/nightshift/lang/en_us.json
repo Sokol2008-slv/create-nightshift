@@ -29,5 +29,9 @@
 	"item.nightshift.vein_scanner": "Vein Scanner",
 	"item.nightshift.night_heart": "Heart of the Night",
 	"item.nightshift.life_tonic": "Life Tonic",
-	"block.nightshift.watching_eye": "Watching Eye"
+	"block.nightshift.watching_eye": "Watching Eye",
+	"item.nightshift.lightning_charge": "Lightning Charge",
+	"item.nightshift.electric_copper": "Electric Copper",
+	"item.nightshift.navigation_core": "Navigation Core",
+	"item.nightshift.star_pickaxe": "Star Pickaxe"
 }

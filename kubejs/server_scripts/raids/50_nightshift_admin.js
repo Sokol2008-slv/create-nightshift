@@ -321,7 +321,7 @@ ServerEvents.commandRegistry(event => {
 			.then(
 				Commands.literal('phase').requires(src => src.hasPermission(2)).then(
 					Commands.argument('n', Arguments.INTEGER.create(event)).executes(ctx => {
-						var n = Math.max(0, Math.min(99, Number(Arguments.INTEGER.getResult(ctx, 'n'))))
+						var n = Math.max(0, Math.min(999, Number(Arguments.INTEGER.getResult(ctx, "n"))))
 						var st = nsGetState()
 						st.phase = n
 						nsSaveState(st)

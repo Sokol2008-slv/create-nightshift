@@ -29,5 +29,9 @@
 	"item.nightshift.vein_scanner": "Сканер жил",
 	"item.nightshift.night_heart": "Сердце ночи",
 	"item.nightshift.life_tonic": "Настойка жизни",
-	"block.nightshift.watching_eye": "Глаз"
+	"block.nightshift.watching_eye": "Глаз",
+	"item.nightshift.lightning_charge": "Заряд молнии",
+	"item.nightshift.electric_copper": "Электрическая медь",
+	"item.nightshift.navigation_core": "Ядро навигации",
+	"item.nightshift.star_pickaxe": "Звёздная кирка"
 }

@@ -243,7 +243,7 @@ function nsBossbarRemove(id) {
 // player = null — всем онлайн; при входе — только вошедшему.
 function nsCompletePhaseQuests(player, phase) {
 	var who = player ? String(player.getUsername()) : '@a'
-	for (var p = 1; p <= NSG.NIGHTSHIFT_DIFFICULTY_MAX; p++) NSG.nsServer.runCommandSilent('tag ' + who + ' ' + (p <= phase ? 'add' : 'remove') + ' nightshift_p' + p)
+	for (var p = 1; p <= NSG.NS_WAVES_MAX; p++) NSG.nsServer.runCommandSilent('tag ' + who + ' ' + (p <= phase ? 'add' : 'remove') + ' nightshift_p' + p)
 }
 
 // Максимальное здоровье: −(проклятие алтаря (общее) + раны игрока, вместе не больше

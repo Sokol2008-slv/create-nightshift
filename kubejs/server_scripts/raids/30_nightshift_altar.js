@@ -71,17 +71,17 @@ function nsForecastLines(d) {
 			parts.push(n + '× ' + (wave[i].label || wave[i].id.split(':')[1]))
 		}
 		total += waveHp
-		lines.push('Волна ' + (w + 1) + ': ' + parts.join(', '))
+		lines.push('Подволна ' + (w + 1) + ': ' + parts.join(', '))
 	}
-	if (horde.boss) lines.push('БОСС: ' + (horde.boss.label || horde.boss.id.split(':')[1]) + ' (~' + horde.boss.hpLabel + ' HP)')
+	if (horde.boss) lines.push('БОСС: ' + (horde.boss.label || horde.boss.id.split(':')[1]) + ((horde.bossCount || 1) > 1 ? ' ×' + horde.bossCount : '') + ' (~' + horde.boss.hpLabel + ' HP)')
 	var buffs = []
 	var names = { resistance: 'сопротивление', strength: 'сила', speed: 'скорость' }
 	for (var b in horde.buff || {}) if (horde.buff[b] > 0) buffs.push(names[b] + ' ' + ['', 'I', 'II', 'III'][horde.buff[b]])
 	if (buffs.length) lines.push('Мобы усилены: ' + buffs.join(', '))
-	if (horde.scale) lines.push('Кошмар: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%, скорость +' + Math.round(horde.scale.speed * 100) + '%')
+	if (horde.scale && (horde.scale.hp > 0 || horde.scale.damage > 0)) lines.push('Мобы крепче: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%' + (horde.scale.speed > 0 ? ', скорость +' + Math.round(horde.scale.speed * 100) + '%' : ''))
 	if (horde.scale) total = Math.round(total * (1 + horde.scale.hp))
 	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
-	lines.push('Итого ' + nsPlural(horde.waves.length, 'волна', 'волны', 'волн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
+	lines.push('Итого ' + nsPlural(horde.waves.length, 'подволна', 'подволны', 'подволн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
 	return lines
 }
 
@@ -97,9 +97,8 @@ function nsItemText(id) {
 // Подсказка кнопки сложности: состав орды + что выпадает
 function nsDifficultyHover(state, d) {
 	var L = NSG.NIGHTSHIFT_LOOT
-	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
-	var tier = Math.min(max, d)
-	var k = Math.max(0, d - max)
+	var tier = nsWaveTier(d)
+	var k = nsWaveLate(d)
 	var rolls = nsRaidRolls(d)
 	var t = Text.gold(nsDifficultyName(d))
 	var lines = nsForecastLines(d)
@@ -110,14 +109,17 @@ function nsDifficultyHover(state, d) {
 		if (c > 0) t = t.append(Text.gray(', '))
 		t = t.append(Text.white(common[c][1] + '× ')).append(nsItemText(common[c][0]))
 	}
-	var art = Math.round(Math.min(1, (L.artifactChance[tier] || 0) + 0.04 * k) * 100)
+	var art = Math.round(Math.min(1, (L.artifactChance[tier] || 0) + 0.01 * k) * 100)
 	t = t.append(Text.gray('\nРедкое — ' + Math.round(L.rareChance * 100) + '% за бросок, артефакт — ' + art + '%'))
-	if (k > 0) t = t.append(Text.lightPurple('\nТолько в Кошмаре: ' + nsPlural(1 + Math.floor(k / 2), 'особый бросок', 'особых броска', 'особых бросков') + ' — череп визера, незеритовая броня и оружие с чарами, элитры, маяк'))
+	if (k > 0) t = t.append(Text.lightPurple('\nС 70-й волны: ' + nsPlural(1 + Math.floor(k / 6), 'особый бросок', 'особых броска', 'особых бросков') + ' — череп визера, незеритовая броня и оружие с чарами, элитры, маяк'))
 	if (d > (state.phase || 0)) {
-		var bonus = k === 0 ? 'зонд жилы на команду' : ''
-		if (d >= 5) bonus += (bonus ? ', ' : '') + 'сильный артефакт каждому'
-		if (d === max || (k > 0 && k % 5 === 0)) bonus += ', Сердце ночи каждому'
-		t = t.append(Text.lightPurple('\nПервое прохождение: ' + bonus))
+		var bonus = []
+		if (k === 0 && nsWaveAnchor(d)[1] === 0) bonus.push('зонд жилы на команду')
+		if (d >= 20 && d % 5 === 0) bonus.push('сильный артефакт каждому')
+		if (nsWaveGivesHeart(d)) bonus.push('Сердце ночи каждому')
+		var ms = NSG.NS_WAVE_MILESTONES[d]
+		if (ms) bonus.push('ВЕХА: ' + ms.text)
+		if (bonus.length) t = t.append(Text.lightPurple('\nПервое прохождение: ' + bonus.join(', ')))
 	}
 	t = t.append(Text.gray('\nДобыча — тем, кто у алтаря хотя бы половину волн'))
 	t = t.append(Text.red('\nПровал: −' + nsPlural(nsFailHearts(d), 'сердце', 'сердца', 'сердец') + ' у всех, добычи нет'))
@@ -132,30 +134,26 @@ function nsDifficultyButton(state, d, label) {
 	return btn.clickRunCommand('/nightshift start ' + d).hover(nsDifficultyHover(state, d))
 }
 
-// Меню алтаря: кнопки сложностей 1–10 и уровни Кошмара после десятой
+// Меню алтаря: окно волн вокруг лучшей пройденной (шкала 1–100, выше — Бесконечность) + ближайшая веха
 function nsShowAltarMenu(player, state) {
 	var best = state.phase || 0
-	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
 	if ((state.curse || 0) > 0) {
 		player.tell(nsCurseLine(state))
 		return
 	}
-	player.tell(Text.gold('[Ночная смена] Алтарь: выбери сложность набега (наведи — состав и добыча, нажми — старт):'))
+	player.tell(Text.gold('[Ночная смена] Алтарь: выбери волну набега (наведи — состав и добыча, нажми — старт):'))
+	var top = best + 1
+	var from = Math.max(1, top - 9)
 	var row = Text.of('')
-	for (var d = 1; d <= max; d++) {
-		row = row.append(nsDifficultyButton(state, d, String(d))).append(Text.of(' '))
-		if (d === 5 || d === max) {
-			player.tell(row)
-			row = Text.of('')
-		}
+	for (var d = from; d <= top; d++) {
+		var label = d > NSG.NS_WAVES_MAX ? '∞' + (d - NSG.NS_WAVES_MAX) : String(d)
+		row = row.append(nsDifficultyButton(state, d, label)).append(Text.of(' '))
 	}
-	if (best >= max) {
-		var bestK = best - max
-		row = Text.darkPurple('Кошмар: ')
-		for (var k = Math.max(1, bestK - 3); k <= bestK + 1; k++) row = row.append(nsDifficultyButton(state, max + k, String(k))).append(Text.of(' '))
-		player.tell(row)
-	}
-	player.tell(Text.gray('Пройдено: ' + (best > max ? max + ' + Кошмар ' + (best - max) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
+	player.tell(row)
+	var next = null
+	for (var m in NSG.NS_WAVE_MILESTONES) if (Number(m) > best && (next === null || Number(m) < next)) next = Number(m)
+	if (next !== null) player.tell(Text.lightPurple('Ближайшая веха — волна ' + next + ': ').append(Text.white(NSG.NS_WAVE_MILESTONES[next].text)))
+	player.tell(Text.gray('Пройдено волн: ' + (best > NSG.NS_WAVES_MAX ? NSG.NS_WAVES_MAX + ' + Бесконечность ' + (best - NSG.NS_WAVES_MAX) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
 	var altar = nsNearestAltar(state, player.createCommandSourceStack())
 	var ns = altar && altar.spawns ? altar.spawns.length : 0
 	player.tell(Text.gray(ns > 0 ? 'Точек спавна орды: ' + ns + ' (видно с разметчиком; /nightshift spawn list)' : 'Орда приходит кольцом. Свои точки спавна: встань там и ').append(ns > 0 ? Text.of('') : Text.yellow('/nightshift spawn add')))

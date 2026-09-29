@@ -22,7 +22,7 @@ FAMILY_MODS = {'tfmg', 'railways', 'northstar', 'cbc_at', 'aeronautics', 'simula
                'dndecor', 'dndesires', 'garnished', 'rechiseledcreate', 'interiors'}
 RAW_RE = re.compile(r'(_ore$|^raw_|_raw_|:raw_)')
 # ручные нули вне семейства Create (генератор пересоздаёт все нулевые записи — эти добавляет всегда)
-MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
+MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart', 'nightshift:electric_copper']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')

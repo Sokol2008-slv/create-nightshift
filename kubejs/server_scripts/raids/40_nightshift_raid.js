@@ -532,10 +532,11 @@ function nsSpawnCurrentWave(state, level, altar) {
 	if (!wave) {
 		if (hordeCfg.boss && !state.raid.bossSpawned) {
 			state.raid.bossSpawned = true
-			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true, subtitle: hordeCfg.boss.label, subColor: 'red' })
-			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, 1, state, hordeCfg.boss.nbt))
+			var bossCount = hordeCfg.bossCount || 1 // с 70-й волны боссов несколько
+			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true, subtitle: hordeCfg.boss.label + (bossCount > 1 ? ' ×' + bossCount : ''), subColor: 'red' })
+			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, bossCount, state, hordeCfg.boss.nbt))
 			nsBoostRaidMobs(hordeCfg.buff, hordeCfg.scale)
-			state.raid.waveSize = 1
+			state.raid.waveSize = bossCount
 			nsSaveState(state)
 			return true
 		}
@@ -604,7 +605,7 @@ function nsRaidVictory(state) {
 		} else {
 			if ((state.curse || 0) > 0) state.curse--
 			nsTitleAll('Набег отбит', { color: 'green', subtitle: state.curse > 0 ? 'Проклятие ослабло на сердце' : 'Добыча — в инвентаре', subColor: 'gray' })
-			nsRaidRewards(altar, Math.max(1, Math.min(NSG.NIGHTSHIFT_DIFFICULTY_MAX, state.phase || 0)), 1, false, state.raid.present, 1)
+			nsRaidRewards(altar, Math.max(1, Math.min(NSG.NS_WAVE_BOSS_FROM - 1, state.phase || 0)), 1, false, state.raid.present, 1)
 		}
 		state.raid = nsDefaultState().raid
 		nsReturnAll(state)
@@ -639,32 +640,69 @@ function nsRaidFail(state, mobs) {
 
 // Проклятие за провал: чем выше сложность, тем больнее
 function nsFailHearts(d) {
-	return d <= 2 ? 2 : d <= 5 ? 3 : 5
+	var t = nsWaveTier(d)
+	return t <= 2 ? 2 : t <= 5 ? 3 : 5
 }
 
-// Орда сложности d (NIGHTSHIFT_DIFFICULTY); выше последней — бесконечный «Кошмар»
+// Якорь волны d: [номер прежней сложности 1–10, прогресс внутри якоря 0..1] (шкала — NS_WAVE_ANCHORS)
+function nsWaveAnchor(d) {
+	var A = NSG.NS_WAVE_ANCHORS
+	for (var i = A.length - 1; i >= 0; i--) {
+		if (d >= A[i][0]) {
+			var end = i + 1 < A.length ? A[i + 1][0] : NSG.NS_WAVE_BOSS_FROM
+			return [A[i][1], Math.min(1, (d - A[i][0]) / Math.max(1, end - A[i][0]))]
+		}
+	}
+	return [1, 0]
+}
+
+// Уровень таблиц добычи 1–10 для волны d
+function nsWaveTier(d) {
+	return d >= NSG.NS_WAVE_BOSS_FROM ? NSG.NIGHTSHIFT_DIFFICULTY_MAX : nsWaveAnchor(Math.max(1, d))[0]
+}
+
+// Номер «поздней» волны: 1 на 70-й, 31 на 100-й, дальше растёт (0 — до 70-й)
+function nsWaveLate(d) {
+	return Math.max(0, d - NSG.NS_WAVE_BOSS_FROM + 1)
+}
+
+// Орда волны d (шкала 1–100, выше — Бесконечность). До 70-й: состав якоря × плавный рост,
+// босс каждую 5-ю волну. С 70-й: состав Великой орды + свита, все крепнут, боссов больше.
 function nsChallengeHorde(d) {
 	var D = NSG.NIGHTSHIFT_DIFFICULTY
-	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
-	if (d <= max) return D[Math.max(1, d)]
-	// Кошмар k: волны последней сложности + «Свита Кошмара», мобы плавно крепчают с уровнем
-	var k = d - max
-	var top = D[max]
-	var NM = NSG.NIGHTSHIFT_NIGHTMARE
+	d = Math.max(1, d)
+	var late = nsWaveLate(d)
+	if (late === 0) {
+		var an = nsWaveAnchor(d)
+		var base = D[an[0]]
+		var R = NSG.NS_WAVE_RAMP
+		return {
+			name: base.name,
+			waves: base.waves,
+			boss: d % 5 === 0 ? base.boss || NSG.NS_EARLY_BOSS(d) : null,
+			bossCount: 1,
+			buff: base.buff,
+			mult: R.multFrom + (R.multTo - R.multFrom) * an[1],
+			scale: { hp: R.hpTo * an[1], damage: R.damageTo * an[1], speed: 0 },
+		}
+	}
+	var top = D[NSG.NIGHTSHIFT_DIFFICULTY_MAX]
+	var L = NSG.NS_WAVE_LATE
 	return {
-		name: 'Кошмар ' + k,
-		waves: top.waves.concat([NM.finale]),
+		name: d > NSG.NS_WAVES_MAX ? 'Бесконечность' : 'Кошмар',
+		waves: top.waves.concat([NSG.NIGHTSHIFT_NIGHTMARE.finale]),
 		boss: top.boss,
+		bossCount: 1 + Math.floor(late / L.bossEvery),
 		buff: top.buff,
-		mult: 1 + NM.countPerLevel * k,
-		scale: { hp: NM.hpPerLevel * k, damage: NM.damagePerLevel * k, speed: Math.min(NM.speedMax, NM.speedPerLevel * k) },
+		mult: 1 + L.mult * late,
+		scale: { hp: L.hp * late, damage: L.damage * late, speed: Math.min(L.speedMax, L.speed * late) },
 	}
 }
 
-// Бросков добычи за победу: по одному за волну, два за босса, в Кошмаре ещё rollsPerLevel за уровень
+// Бросков добычи за победу: по одному за подволну, два за каждого босса, после 69-й — ещё по одному за волну
 function nsRaidRolls(d) {
 	var cfg = nsChallengeHorde(d)
-	return cfg.waves.length + (cfg.boss ? 2 : 0) + NSG.NIGHTSHIFT_NIGHTMARE.rollsPerLevel * Math.max(0, d - NSG.NIGHTSHIFT_DIFFICULTY_MAX)
+	return cfg.waves.length + (cfg.boss ? 2 * (cfg.bossCount || 1) : 0) + nsWaveLate(d)
 }
 
 // 1 волна, 3 волны, 5 волн
@@ -678,14 +716,13 @@ function nsPlural(n, one, few, many) {
 
 // «Сложность 3 · Нашествие», «Кошмар 2»
 function nsDifficultyName(d) {
-	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
-	if (d > max) return 'Кошмар ' + (d - max)
-	return 'Сложность ' + d + ' · ' + NSG.NIGHTSHIFT_DIFFICULTY[d].name
+	if (d > NSG.NS_WAVES_MAX) return 'Бесконечность ' + (d - NSG.NS_WAVES_MAX)
+	return 'Волна ' + d + ' · ' + nsChallengeHorde(d).name
 }
 
 function nsMinorHorde(best) {
 	// малый набег по силам команды: наибольшая пройденная сложность → уровень угрозы 0–5
-	var h = NSG.NIGHTSHIFT_CONFIG.hordes[Math.min(5, Math.round((best || 0) * 0.55))]
+	var h = NSG.NIGHTSHIFT_CONFIG.hordes[Math.min(5, Math.round((best ? nsWaveTier(best) : 0) * 0.55))]
 	return h && h.minor ? { waves: [h.minor], boss: null } : null
 }
 
@@ -717,11 +754,10 @@ function nsPick(list) {
 // первое прохождение: зонд жилы этого уровня одному из защитников.
 function nsRaidRewards(altar, d, rolls, first, present, waves) {
 	var L = NSG.NIGHTSHIFT_LOOT
-	var max = NSG.NIGHTSHIFT_DIFFICULTY_MAX
-	var tier = Math.max(1, Math.min(max, d))
-	var k = Math.max(0, d - max) // уровень Кошмара
-	var artChance = Math.min(1, (L.artifactChance[tier] || 0) + 0.04 * k)
-	var legChance = L.legendaryChance + 0.006 * tier + 0.01 * k
+	var tier = nsWaveTier(d)
+	var k = nsWaveLate(d) // «поздняя» волна: с 70-й
+	var artChance = Math.min(1, (L.artifactChance[tier] || 0) + 0.01 * k)
+	var legChance = L.legendaryChance + 0.006 * tier + 0.003 * k
 	var need = Math.ceil((waves || 1) / 2)
 	var ps = []
 	var all = nsParticipants(altar)
@@ -738,23 +774,34 @@ function nsRaidRewards(altar, d, rolls, first, present, waves) {
 			got.push(nsPick(L.common[tier]))
 			if (Math.random() < L.rareChance) got.push(nsPick(L.rare[tier]))
 		}
-		for (var n = 0; n < pool.length && n < 1 + Math.floor(k / 2); n++) got.push(nsPick(pool))
+		for (var n = 0; n < pool.length && n < 1 + Math.floor(k / 6); n++) got.push(nsPick(pool))
 		if (Math.random() < artChance) got.push(['artifacts:' + nsPick(L.artifacts), 1])
 		if (Math.random() < legChance) got.push(nsPick(L.legendary))
 		if (first) {
-			if (d >= 5) got.push(['artifacts:' + nsPick(L.artifactsTop), 1])
-			if (d === max || (k > 0 && k % 5 === 0)) got.push(['nightshift:night_heart', 1])
+			if (d >= 20 && d % 5 === 0) got.push(['artifacts:' + nsPick(L.artifactsTop), 1])
+			if (nsWaveGivesHeart(d)) got.push(['nightshift:night_heart', 1])
+			var ms = NSG.NS_WAVE_MILESTONES[d]
+			if (ms) for (var mi = 0; mi < ms.items.length; mi++) got.push(ms.items[mi])
 		}
 		nsGiveLoot(ps[i], got)
 	}
-	// первое прохождение 1–10: один зонд жилы на команду
-	var probes = first && k === 0 ? NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES[tier] : null
+	// веха: объявление всем
+	var milestone = first ? NSG.NS_WAVE_MILESTONES[d] : null
+	if (milestone && ps.length > 0) nsTellAll(Text.gold('[Ночная смена] Веха — ' + nsDifficultyName(d) + ': ').append(Text.white(milestone.text)))
+	// первое прохождение первой волны нового состава (до 70-й): один зонд жилы на команду
+	var probes = first && k === 0 && nsWaveAnchor(d)[1] === 0 ? NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES[tier] : null
 	if (probes && ps.length > 0) {
 		var lucky = nsPick(ps)
 		var probe = 'nightshift:vein_seed_' + nsPick(probes)
 		NSG.nsServer.runCommandSilent('give ' + lucky.getUsername() + ' ' + probe + ' 1')
 		nsTellAll(Text.gold('[Ночная смена] За первое прохождение ' + lucky.getUsername() + ' получает на команду ').append(nsItemText(probe)))
 	}
+}
+
+// Сердце ночи за первое прохождение: волны 50 и 60, каждая 10-я с 70-й, в Бесконечности — каждая 5-я
+function nsWaveGivesHeart(d) {
+	if (d > NSG.NS_WAVES_MAX) return (d - NSG.NS_WAVES_MAX) % 5 === 0
+	return d === 50 || d === 60 || (d >= NSG.NS_WAVE_BOSS_FROM && d % 10 === 0)
 }
 
 // Выдаёт строки добычи (одинаковые складываются) и пишет сводку игроку
