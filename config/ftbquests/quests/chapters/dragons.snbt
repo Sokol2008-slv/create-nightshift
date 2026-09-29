@@ -1,0 +1,99 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "dragons"
+	group: ""
+	icon: { id: "minecraft:dragon_egg" }
+	id: "3F891490E6C63518"
+	images: [ ]
+	order_index: 21
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "minecraft:dragon_egg" }
+			id: "3A7FEC2616BCC8B5"
+			rewards: [{ id: "6C9BA58EE5EC8221", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1D57993D7AC97B47", type: "checkmark" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["3A7FEC2616BCC8B5"]
+			icon: { id: "dmr:dragon_egg" }
+			id: "5E7E779ADCC9DF09"
+			rewards: [{ id: "519AA20884B7C6A3", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1A62055FCAD5D903", type: "checkmark" }]
+			x: 2.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["5E7E779ADCC9DF09"]
+			icon: { id: "minecraft:cod" }
+			id: "081BCC72EBCBE493"
+			rewards: [{ id: "0E1581CBAF4CA5D2", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4F39E5B06FDC4027", type: "checkmark" }]
+			x: 4.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["081BCC72EBCBE493"]
+			id: "51BC26FDB7EE8214"
+			rewards: [{ id: "2B63A0E691AC7309", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6B3E8F94C66D9FB6", item: { count: 1, id: "minecraft:saddle" }, type: "item" }]
+			x: 6.60d
+			y: -1.60d
+		}
+		{
+			dependencies: ["51BC26FDB7EE8214"]
+			icon: { id: "minecraft:elytra" }
+			id: "5CD1EC681729A76D"
+			rewards: [{ id: "47189D092C7C0F18", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "506D8CC45330245E", type: "checkmark" }]
+			x: 8.80d
+			y: -1.60d
+		}
+		{
+			dependencies: ["081BCC72EBCBE493"]
+			icon: { id: "dmr:dragon_whistle.red" }
+			id: "29FF03022EEE798D"
+			rewards: [{ id: "5BEDC3D7BCC1FA33", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "71C868F17225B7F3", type: "checkmark" }]
+			x: 6.60d
+			y: -0.00d
+		}
+		{
+			dependencies: ["5CD1EC681729A76D"]
+			icon: { id: "minecraft:egg" }
+			id: "312E6921C891CC59"
+			rewards: [{ id: "582DED7A743B7505", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "136CF19A4FAC8A98", type: "checkmark" }]
+			x: 11.00d
+			y: -1.60d
+		}
+		{
+			dependencies: ["081BCC72EBCBE493"]
+			icon: { id: "minecraft:diamond_horse_armor" }
+			id: "6093A92FF80FA235"
+			rewards: [{ id: "1D9C583DE232D047", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "39242BA0A9AEB367", type: "checkmark" }]
+			x: 6.60d
+			y: 1.60d
+		}
+	]
+}
