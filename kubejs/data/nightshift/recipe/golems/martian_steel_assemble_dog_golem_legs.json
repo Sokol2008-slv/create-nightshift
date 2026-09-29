@@ -1,0 +1,98 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "modulargolems:dog_golem_legs"
+  },
+  "loops": 3,
+  "results": [
+    {
+      "id": "modulargolems:dog_golem_legs",
+      "components": {
+        "modulargolems:part_material": "nightshift:martian_steel"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_dog_golem_legs"
+        },
+        {
+          "item": "northstar:martian_steel_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_dog_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_dog_golem_legs"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_dog_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_dog_golem_legs"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_dog_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_dog_golem_legs"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_dog_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_dog_golem_legs"
+        },
+        {
+          "item": "create:wrench"
+        }
+      ],
+      "keep_held_item": true,
+      "results": [
+        {
+          "id": "modulargolems:incomplete_dog_golem_legs"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "modulargolems:incomplete_dog_golem_legs"
+  }
+}

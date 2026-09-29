@@ -1,0 +1,107 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "golems"
+	group: ""
+	icon: { id: "modulargolems:metal_golem_holder" }
+	id: "13F67E96F778A421"
+	images: [ ]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			id: "1CA73A2F9FA9AB14"
+			rewards: [{ id: "16A1952FDDC60049", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2461BB2594B57856", item: { count: 1, id: "modulargolems:metal_golem_template" }, type: "item" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["1CA73A2F9FA9AB14"]
+			id: "160E154A7BFCDF86"
+			rewards: [{ id: "4F272F17891E5E82", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "734C278E5CABEAE6", item: { count: 1, id: "modulargolems:metal_golem_body" }, type: "item" }]
+			x: 2.20d
+			y: -1.60d
+		}
+		{
+			dependencies: ["160E154A7BFCDF86"]
+			icon: { id: "modulargolems:metal_golem_legs" }
+			id: "2314D43D50466F2B"
+			rewards: [{ id: "6F0A2EF0AB7ADCC4", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3A1490645AC1756E", type: "checkmark" }]
+			x: 4.40d
+			y: -1.60d
+		}
+		{
+			dependencies: ["2314D43D50466F2B"]
+			id: "0A221ACB167F5182"
+			rewards: [{ id: "41ED7D473A34E5FD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2823A47A6D1A6B93", item: { count: 1, id: "modulargolems:metal_golem_holder" }, type: "item" }]
+			x: 6.60d
+			y: -1.60d
+		}
+		{
+			dependencies: ["0A221ACB167F5182"]
+			icon: { id: "modulargolems:empty_upgrade" }
+			id: "3B7D9C7933E1D1BB"
+			rewards: [{ id: "3F3754D974ABACF7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "181AE3BB5040CBD6", type: "checkmark" }]
+			x: 8.80d
+			y: -2.40d
+		}
+		{
+			dependencies: ["1CA73A2F9FA9AB14"]
+			icon: { id: "minecraft:barrier" }
+			id: "6F13A953E8C00822"
+			rewards: [{ id: "6427B07F22C61926", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1E93B9FC0FE335D5", type: "checkmark" }]
+			x: 2.20d
+			y: -0.00d
+		}
+		{
+			dependencies: ["1CA73A2F9FA9AB14"]
+			id: "404F6AAA2C0EB4E3"
+			rewards: [{ id: "792BBFCEE15ABA2C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "230BEABF98DAECF2", item: { count: 1, id: "creategolemsgalore:industrial_iron_hat" }, type: "item" }]
+			x: 2.20d
+			y: 1.60d
+		}
+		{
+			dependencies: ["0A221ACB167F5182"]
+			icon: { id: "northstar:titanium_ingot" }
+			id: "7F8A5BCF1F2BC876"
+			rewards: [{ id: "7545820EA48E2358", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3F23CCA53C915726", type: "checkmark" }]
+			x: 8.80d
+			y: -0.80d
+		}
+		{
+			dependencies: ["7F8A5BCF1F2BC876", "3B7D9C7933E1D1BB"]
+			icon: { id: "northstar:tungsten_ingot" }
+			id: "55BEB26DF436B36E"
+			rewards: [{ id: "264FF74763E46CC5", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "37AE362077A0C3A5", type: "checkmark" }]
+			x: 11.00d
+			y: -1.60d
+		}
+	]
+}

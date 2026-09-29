@@ -1,0 +1,88 @@
+{
+  "ingredients": {
+    "nightshift:titanium": {
+      "item": "northstar:titanium_ingot"
+    },
+    "nightshift:martian_steel": {
+      "item": "northstar:martian_steel_ingot"
+    },
+    "nightshift:tungsten": {
+      "item": "northstar:tungsten_ingot"
+    },
+    "nightshift:lunar_sapphire": {
+      "item": "northstar:polished_lunar_sapphire"
+    }
+  },
+  "modifiers": {
+    "nightshift:titanium": {
+      "modulargolems:fire_immune": 1,
+      "modulargolems:explosion_resistant": 1,
+      "modulargolems:damage_cap": 1
+    },
+    "nightshift:martian_steel": {
+      "modulargolems:fire_immune": 1,
+      "modulargolems:thunder_immune": 1,
+      "modulargolems:projectile_reject": 1,
+      "modulargolems:damage_cap": 2
+    },
+    "nightshift:tungsten": {
+      "modulargolems:fire_immune": 1,
+      "modulargolems:thunder_immune": 1,
+      "modulargolems:explosion_resistant": 2,
+      "modulargolems:magic_resistant": 2,
+      "modulargolems:projectile_reject": 1,
+      "modulargolems:armor_penetration": 2,
+      "modulargolems:damage_cap": 3
+    },
+    "nightshift:lunar_sapphire": {
+      "modulargolems:magic_immune": 1,
+      "modulargolems:thunder_immune": 1,
+      "modulargolems:swim": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "nightshift:titanium": {
+      "item": "northstar:titanium_ingot"
+    },
+    "nightshift:martian_steel": {
+      "item": "northstar:martian_steel_ingot"
+    },
+    "nightshift:tungsten": {
+      "item": "northstar:tungsten_ingot"
+    },
+    "nightshift:lunar_sapphire": {
+      "item": "northstar:polished_lunar_sapphire"
+    }
+  },
+  "stats": {
+    "nightshift:titanium": {
+      "modulargolems:attack": 40.0,
+      "modulargolems:max_health": 400.0,
+      "modulargolems:knockback_resistance": 1.0,
+      "modulargolems:sweep": 2.0,
+      "modulargolems:weight": -0.2
+    },
+    "nightshift:martian_steel": {
+      "modulargolems:attack": 50.0,
+      "modulargolems:max_health": 550.0,
+      "modulargolems:knockback_resistance": 1.0,
+      "modulargolems:sweep": 2.0,
+      "modulargolems:regen": 2.0
+    },
+    "nightshift:tungsten": {
+      "modulargolems:attack": 65.0,
+      "modulargolems:max_health": 750.0,
+      "modulargolems:knockback_resistance": 1.0,
+      "modulargolems:sweep": 3.0,
+      "modulargolems:regen": 4.0,
+      "modulargolems:weight": 0.2
+    },
+    "nightshift:lunar_sapphire": {
+      "modulargolems:attack": 35.0,
+      "modulargolems:max_health": 480.0,
+      "modulargolems:regen": 8.0,
+      "modulargolems:weight": -0.4
+    }
+  }
+}
