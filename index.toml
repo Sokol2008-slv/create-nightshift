@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "90e7f7284b1736eade66a8649e42cc61a42fb2b261ef79cd2906cd0e9c68a139"
+hash = "6000688aaea41fe92e8d03b47383cc305e0f536c8daebbe6562c160a304345fc"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -242,11 +242,11 @@ hash = "328c3f23957957a4bb8ab8ace5f95a194898b38fbf615a38f7050363d33e0a5c"
 
 [[files]]
 file = "kubejs/assets/modulargolems/lang/en_us.json"
-hash = "93e31d341c9b31b22b2ec4654f7203b8c83bc1568f24265abd436e7cb29f52c3"
+hash = "016f4ac58fcb809d6adcb541f38d19e73b3dd51967d8518b92114e7dc1d0ee55"
 
 [[files]]
 file = "kubejs/assets/modulargolems/lang/ru_ru.json"
-hash = "dd03d8d47c3c4b7f97f16fec634a66b488a063ec2619d550001da16fcba2b58a"
+hash = "2885bad9c03fae8c59547c49dee373787d4929a8313fa4fa907ee6f7df69a297"
 
 [[files]]
 file = "kubejs/assets/nightshift/font/scare.json"
@@ -254,11 +254,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "897b331d04982e6e4697fd90f48cfa9e9c71374b4b7efdab092c11535912e0e5"
+hash = "acd816ed5f6ac77f23192d66dc723247b4eabdaa123b71ae1823afec71f95c72"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "6442f7a897315731a4c2d0d35cc4527da5807610266ed38f6f10f10f6d7bc119"
+hash = "e9c2f6901a598e8d51673b239e7d105210372e403553175b1307693038a5e780"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -271,6 +271,10 @@ hash = "6a3ca9a97e9650dd033edeb784b7c4c6357295ad756c07525b893a7340906e62"
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/watching_eye.png.mcmeta"
 hash = "40013d8c8438f70a25b956ea7aa8de3e7914548ddc5c8913ead626a314414e38"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/dog_golem/interplanetary_alloy.png"
+hash = "c6bed8133e6ada60d3a80d18bf9c636bda7a8ee0bb61e5e0a0186dbdf9a0f8c2"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/entity/dog_golem/lunar_sapphire.png"
@@ -289,6 +293,10 @@ file = "kubejs/assets/nightshift/textures/entity/dog_golem/tungsten.png"
 hash = "76814dc986c68c33c0b0915ac1dcc32ba9dac928a88301892df23b90091794e5"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/interplanetary_alloy.png"
+hash = "d9a90a102629c867cc04e840790a7ae373b72795b98f6c41456bd5eec927d8a4"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/lunar_sapphire.png"
 hash = "9bc00e1c7d581a024ee20aff4efe4221c16279ce13e5ce9e4960937c16b6f5af"
 
@@ -303,6 +311,10 @@ hash = "59df631a35d71d09f9a23baed9e4786224bb7129261d431804175196d7c696ab"
 [[files]]
 file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/tungsten.png"
 hash = "be57997e6f514dba41cf95efd80015d6f0d23095ad440a3e04f74388d19ace42"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/metal_golem/interplanetary_alloy.png"
+hash = "eda6308b51c1464657c9a1646df95fe70dba8e33c46057aaabb2bb2282a2a151"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/entity/metal_golem/lunar_sapphire.png"
@@ -371,6 +383,10 @@ hash = "083acd774a276b35bfc323e97ce2c3a5848992e503c1aa623fa026f87d4e0189"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/sedative.png"
 hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/star_navigator.png"
+hash = "1bdf96b1f7c030a8825d00e90fb69ce8a8b57d08fe668347a89dd7c576c8b0bd"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/star_pickaxe.png"
@@ -506,7 +522,7 @@ hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
 
 [[files]]
 file = "kubejs/client_scripts/wave_items_tooltips.js"
-hash = "3eafb90672743e10dc1265891951ed3476d1aea158179155124fbab15417bf95"
+hash = "30fc810ed011dd6f0f77fbbe86c1ccc3c772e046c5fd8bb949da5ab7b23c2bd9"
 
 [[files]]
 file = "kubejs/config/common.json"
@@ -562,23 +578,23 @@ hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
 
 [[files]]
 file = "kubejs/data/kubejs/loot_table/blocks/axiomite_ore.json"
-hash = "6ed4337aba07cdcc9a6678d6825e6d3b8c2744588c1735257dfe8f46b28dc9af"
+hash = "200a4d64c354fafa6c96c3763d5ea97b4ee09fdb24d328eb620094d04cf0b137"
 
 [[files]]
 file = "kubejs/data/kubejs/loot_table/blocks/dark_stabilite_ore.json"
-hash = "3eab7dd423939aeebbdc69fd5aa66473c182119b1819f1507225d7696499c7a3"
+hash = "46649fc3e8343c60ef94e5dae03614fe6c341cc00f52f78a9bec4b9bc72884fe"
 
 [[files]]
 file = "kubejs/data/kubejs/loot_table/blocks/deepslate_axiomite_ore.json"
-hash = "d6bc57c435a8eaec1bff1861151d368f2f407391860f0202049c88c396502032"
+hash = "7820233204047b93f84ed91a07fb482551e60ab1dbfaa0672914e65b1a9a39c9"
 
 [[files]]
 file = "kubejs/data/kubejs/loot_table/blocks/light_stabilite_ore.json"
-hash = "232f4c63cfe68aeeb474ab12990d353598927349dfb991fc6ea552023957547d"
+hash = "7d7a2449c9d1ea981d29f9f396d2e78de12597045516e8f2d6cdd9c79dcbe024"
 
 [[files]]
 file = "kubejs/data/modulargolems/modulargolems_config/materials/nightshift_planet.json"
-hash = "c54ce37e52cc073ed30728275371449b252c3f8cf537ca35addefc3cda7d80fd"
+hash = "9b295c0ec3dd645f3ea6c5d20a6e99373cb333beab270c8c05a0ed9f8b6e1398"
 
 [[files]]
 file = "kubejs/data/nightshift/dimension/axiomativ.json"
@@ -663,6 +679,38 @@ hash = "850faeb3555cb99b6c96005645bbc984af571bdd4ea2b960470852d272eaefd2"
 [[files]]
 file = "kubejs/data/nightshift/recipe/drilling/tungsten.json"
 hash = "b15f819ef6e42114389b526fdb7b559dcb5ceb9d3d953e2c94810447e3548cbe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_dog_golem_body.json"
+hash = "ade5f65bcc5a03a195eb0e94760267ec15f47719b5f740740719856e6d286f25"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_dog_golem_legs.json"
+hash = "9f0c4ae32c6686d21ec47ab753ef0fac835be612ef7e14a9584109183df593f9"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_humanoid_golem_arms.json"
+hash = "74c3f2c05528b91623a1c524fe43dc3737ed1f3e48501843c6b7f29f7dacbecd"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_humanoid_golem_body.json"
+hash = "496f5d910e64b65745698554c2f9395fd1040572f6b143688d0b640c4c31ac63"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_humanoid_golem_legs.json"
+hash = "7149b8bc079842cb8e69c0ca73a005168f46bf86df384ba209a3be49921a0171"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_metal_golem_arm.json"
+hash = "b94d4967938b0eb60ee11639b5bcf1d16cc5ccad11f02cc2b3c48346bc079bf6"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_metal_golem_body.json"
+hash = "e3b0a5c442115978cb4e9a616788c7303b7efab51dc054054626c387b83dbeaf"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/interplanetary_alloy_assemble_metal_golem_legs.json"
+hash = "08e27ea4d0ad55f3a91ee8a3ba10c32bceaba9927433f79743debb51b8e7217e"
 
 [[files]]
 file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_dog_golem_body.json"
@@ -871,6 +919,10 @@ hash = "59d0ce2d5601321abb9b52ab4a931bace95ce27e268ff9e13b12c797eed7a660"
 [[files]]
 file = "kubejs/data/nightshift/tags/item/phase_6.json"
 hash = "29d2e7acc9a252f91c43841d602ee3da6669e35bbb50738006e4f0cc23d68578"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/item/star_tools.json"
+hash = "d6442cce1c4c037b77488118c21be3d2da8626c25f87dead15e69ee6d2e267b6"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/worldgen/biome/axiomativ_biomes.json"
@@ -1098,7 +1150,7 @@ hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
+hash = "60fad6119927d20a7c770047171debd333e26fd6b5051909b78ec0048ab518f6"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -1142,7 +1194,11 @@ hash = "7fb4d18449ef9e3df96c6fac83079cdd6924bd5c1c148ad33c69b078ec62ddc1"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/50_wave_rewards.js"
-hash = "e9e3872cdde708578770919c166f97a0b365552a38623b1eb37336d746059966"
+hash = "6584225dc069fc2716c7294c81d77bb3aba4a2b9a31afceba4cbca0d139992a7"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/55_star_gate.js"
+hash = "67124a28dc88b7d96c82122f5a9e321e77f3e6b93bd06451b89bc0c9ef6c2902"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
@@ -1166,7 +1222,7 @@ hash = "3a3447ee82b3363f5fec7582c8eb86deb935fa36782b2431377a6a8bbedf2194"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/20_wave_items.js"
-hash = "4d636b71f1b5add098fed1475472fd9a2fcfa0d3eb58713c0515bf1b9b92c3b6"
+hash = "0f7e8ce07f9a404b5ebbe5e2c599feb5947ca2b95183da5836867271b122f8ea"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"

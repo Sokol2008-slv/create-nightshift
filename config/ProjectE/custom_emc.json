@@ -41096,6 +41096,50 @@
   {
    "id": "nightshift:electric_copper",
    "emc": 0
+  },
+  {
+   "id": "nightshift:star_navigator",
+   "emc": 131072
+  },
+  {
+   "id": "kubejs:axiomite_ingot",
+   "emc": 40960
+  },
+  {
+   "id": "kubejs:stabilite_ingot",
+   "emc": 40960
+  },
+  {
+   "id": "kubejs:raw_axiomite",
+   "emc": 20480
+  },
+  {
+   "id": "kubejs:raw_light_stabilite",
+   "emc": 20480
+  },
+  {
+   "id": "kubejs:raw_dark_stabilite",
+   "emc": 20480
+  },
+  {
+   "id": "kubejs:crushed_raw_axiomite",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:axiomite_ore",
+   "emc": 20480
+  },
+  {
+   "id": "kubejs:deepslate_axiomite_ore",
+   "emc": 20480
+  },
+  {
+   "id": "kubejs:light_stabilite_ore",
+   "emc": 20480
+  },
+  {
+   "id": "kubejs:dark_stabilite_ore",
+   "emc": 20480
   }
  ]
 }

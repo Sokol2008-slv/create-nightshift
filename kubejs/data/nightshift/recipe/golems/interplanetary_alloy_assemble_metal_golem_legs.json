@@ -1,0 +1,130 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "modulargolems:metal_golem_legs"
+  },
+  "loops": 9,
+  "results": [
+    {
+      "id": "modulargolems:metal_golem_legs",
+      "components": {
+        "modulargolems:part_material": "nightshift:interplanetary_alloy"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        },
+        {
+          "item": "axiomativ:interplanetary_alloy"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "modulargolems:incomplete_metal_golem_legs"
+        },
+        {
+          "item": "create:wrench"
+        }
+      ],
+      "keep_held_item": true,
+      "results": [
+        {
+          "id": "modulargolems:incomplete_metal_golem_legs"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "modulargolems:incomplete_metal_golem_legs"
+  }
+}

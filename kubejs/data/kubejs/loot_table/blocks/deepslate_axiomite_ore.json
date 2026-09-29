@@ -45,7 +45,15 @@
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#nightshift:star_tools"
+          }
+        }
+      ]
     }
   ],
   "random_sequence": "kubejs:blocks/deepslate_axiomite_ore"
