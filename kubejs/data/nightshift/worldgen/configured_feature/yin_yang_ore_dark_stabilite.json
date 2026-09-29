@@ -2,17 +2,8 @@
   "type": "minecraft:ore",
   "config": {
     "discard_chance_on_air_exposure": 0.0,
-    "size": 6,
+    "size": 5,
     "targets": [
-      {
-        "state": {
-          "Name": "kubejs:stabilite_ore"
-        },
-        "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "nightshift:yin_yang_light_stone"
-        }
-      },
       {
         "state": {
           "Name": "kubejs:dark_stabilite_ore"

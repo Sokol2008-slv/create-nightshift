@@ -210,11 +210,11 @@
 			size: 1.0d
 			tasks: [{ id: "63EF4A988E202A39", item: { count: 1, id: "kubejs:raw_axiomite" }, type: "item" }]
 			x: 19.80d
-			y: 0.43d
+			y: -0.21d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
-			icon: { id: "kubejs:stabilite_ore" }
+			icon: { id: "kubejs:light_stabilite_ore" }
 			id: "6830526159D51413"
 			rewards: [{ id: "15C023510481C4C1", type: "xp", xp: 50 }]
 			shape: "hexagon"
@@ -229,20 +229,40 @@
 			rewards: [{ id: "3270D71D248A5383", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_stabilite" }, type: "item" }]
+			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_light_stabilite" }, type: "item" }]
 			x: 19.80d
-			y: 2.63d
+			y: 1.99d
 		}
 		{
-			dependencies: ["798AC21976DE3822", "7740332F1426A7C8"]
+			dependencies: ["6830526159D51413"]
+			id: "1FE5A71FF393D25F"
+			rewards: [{ id: "118CD0BEB09612CE", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "228223D26D1E68BC", item: { count: 1, id: "kubejs:raw_dark_stabilite" }, type: "item" }]
+			x: 19.80d
+			y: 3.59d
+		}
+		{
+			dependencies: ["7740332F1426A7C8", "1FE5A71FF393D25F"]
+			id: "4653E9EEEA38CD03"
+			rewards: [{ id: "6936A05421A65A67", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3942488F1D1E8491", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
+			x: 22.00d
+			y: 2.79d
+		}
+		{
+			dependencies: ["798AC21976DE3822", "4653E9EEEA38CD03"]
 			icon: { id: "kubejs:stabilite_ingot" }
 			id: "629E15D96732EB91"
 			rewards: [{ id: "656C87225A6A24DD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "22045A6BEF05B1E2", type: "checkmark" }]
-			x: 22.00d
-			y: 1.53d
+			x: 24.20d
+			y: 1.29d
 		}
 		{
 			dependencies: ["48E881DFD6B3194F", "54836B2556E2C657"]
@@ -252,7 +272,7 @@
 			size: 1.0d
 			tasks: [{ id: "5824B3BF551EF814", item: { count: 1, id: "northstar:electrolysis_machine" }, type: "item" }]
 			x: 19.80d
-			y: -4.93d
+			y: -5.57d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -272,7 +292,7 @@
 			size: 1.6d
 			tasks: [{ id: "2BDCDCBCCC994B87", count: 4L, item: { count: 1, id: "axiomativ:interplanetary_alloy" }, type: "item" }]
 			x: 19.80d
-			y: 4.53d
+			y: 5.49d
 		}
 	]
 }
