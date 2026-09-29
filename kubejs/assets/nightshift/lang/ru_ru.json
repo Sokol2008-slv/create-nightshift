@@ -34,5 +34,7 @@
 	"item.nightshift.electric_copper": "Электрическая медь",
 	"item.nightshift.navigation_core": "Ядро навигации",
 	"item.nightshift.star_pickaxe": "Звёздная кирка",
-	"item.nightshift.tactical_nuke": "Тактический ядерный заряд"
+	"item.nightshift.tactical_nuke": "Тактический ядерный заряд",
+	"item.nightshift.star_navigator": "Звёздный навигатор",
+	"nightshift.msg.star_pickaxe_needed": "Нужна звёздная кирка (награда 70-й волны)"
 }

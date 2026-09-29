@@ -9,6 +9,9 @@
     "nightshift:tungsten": {
       "item": "northstar:tungsten_ingot"
     },
+    "nightshift:interplanetary_alloy": {
+      "item": "axiomativ:interplanetary_alloy"
+    },
     "nightshift:lunar_sapphire": {
       "item": "northstar:polished_lunar_sapphire"
     }
@@ -34,6 +37,16 @@
       "modulargolems:armor_penetration": 2,
       "modulargolems:damage_cap": 3
     },
+    "nightshift:interplanetary_alloy": {
+      "modulargolems:fire_immune": 1,
+      "modulargolems:thunder_immune": 1,
+      "modulargolems:magic_immune": 1,
+      "modulargolems:explosion_resistant": 2,
+      "modulargolems:projectile_reject": 1,
+      "modulargolems:armor_penetration": 3,
+      "modulargolems:damage_cap": 3,
+      "modulargolems:thorn": 1
+    },
     "nightshift:lunar_sapphire": {
       "modulargolems:magic_immune": 1,
       "modulargolems:thunder_immune": 1,
@@ -50,6 +63,9 @@
     },
     "nightshift:tungsten": {
       "item": "northstar:tungsten_ingot"
+    },
+    "nightshift:interplanetary_alloy": {
+      "item": "axiomativ:interplanetary_alloy"
     },
     "nightshift:lunar_sapphire": {
       "item": "northstar:polished_lunar_sapphire"
@@ -77,6 +93,13 @@
       "modulargolems:sweep": 3.0,
       "modulargolems:regen": 4.0,
       "modulargolems:weight": 0.2
+    },
+    "nightshift:interplanetary_alloy": {
+      "modulargolems:attack": 85.0,
+      "modulargolems:max_health": 1000.0,
+      "modulargolems:knockback_resistance": 1.0,
+      "modulargolems:sweep": 4.0,
+      "modulargolems:regen": 8.0
     },
     "nightshift:lunar_sapphire": {
       "modulargolems:attack": 35.0,

@@ -40,6 +40,14 @@ MATS = {
               "projectile_reject": 1, "armor_penetration": 2, "damage_cap": 3},
         pal=((10, 10, 16), (58, 60, 78), (132, 138, 170)),
         extra=["create:precision_mechanism", "create:precision_mechanism", "create:precision_mechanism"]),
+    # межпланетный сплав аддона Axiomativ — сильнее вольфрама; палитра бренда: бордо -> денежный зелёный
+    "interplanetary_alloy": dict(
+        ingot="axiomativ:interplanetary_alloy", ru="Межпланетный сплав", en="Interplanetary Alloy",
+        stats={"attack": 85.0, "max_health": 1000.0, "knockback_resistance": 1.0, "sweep": 4.0, "regen": 8.0},
+        mods={"fire_immune": 1, "thunder_immune": 1, "magic_immune": 1, "explosion_resistant": 2,
+              "projectile_reject": 1, "armor_penetration": 3, "damage_cap": 3, "thorn": 1},
+        pal=((28, 4, 12), (158, 34, 60), (133, 187, 101)),
+        extra=["create:precision_mechanism"] * 4),
     "lunar_sapphire": dict(
         ingot="northstar:polished_lunar_sapphire", ru="Лунный сапфир", en="Lunar Sapphire",
         stats={"attack": 35.0, "max_health": 480.0, "regen": 8.0, "weight": -0.4},

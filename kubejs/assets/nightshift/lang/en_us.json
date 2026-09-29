@@ -34,5 +34,7 @@
 	"item.nightshift.electric_copper": "Electric Copper",
 	"item.nightshift.navigation_core": "Navigation Core",
 	"item.nightshift.star_pickaxe": "Star Pickaxe",
-	"item.nightshift.tactical_nuke": "Tactical Nuke"
+	"item.nightshift.tactical_nuke": "Tactical Nuke",
+	"item.nightshift.star_navigator": "Star Navigator",
+	"nightshift.msg.star_pickaxe_needed": "A Star Pickaxe is required (wave 70 reward)"
 }
