@@ -6,7 +6,11 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "38d63d440ae9f9395da2c9e2103ede64e23bc3e9a9b7a115b795a54a1d501ed8"
+hash = "b08ec510baaca55f792d5e83d7d81b54bc2091416c21a049e474a38054af30a1"
+
+[[files]]
+file = "config/ProjectE/mapping.toml"
+hash = "743586991cd6ae06dbcd69cd2b85b37be8930b12c85ed9e33701ba820726d00d"
 
 [[files]]
 file = "config/ProjectE/server.toml"
@@ -114,11 +118,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "1244d22de456ddb0f42181b0a785be8641120c2bbf755cf3ff8ab53e18f67635"
+hash = "182d4812b704a6f0d767eef9a914e80c81f2aea63d0e548c7b1535a65a4f95c3"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "1244d22de456ddb0f42181b0a785be8641120c2bbf755cf3ff8ab53e18f67635"
+hash = "182d4812b704a6f0d767eef9a914e80c81f2aea63d0e548c7b1535a65a4f95c3"
 
 [[files]]
 file = "config/iris.properties"
@@ -523,6 +527,10 @@ hash = "0688998990cd5aea1c7dbb629590fafe8ca5f608a8cf09edd1b316940aa39fc2"
 [[files]]
 file = "kubejs/server_scripts/economy/40_blocks.js"
 hash = "fcf1524e252dc4d711945b37a326eca5b8a1ec0766d3b4ecbcd8b4ae58261360"
+
+[[files]]
+file = "kubejs/server_scripts/economy/60_emc_sellonly.js"
+hash = "b1ae6dd949b08295e9a15f3b8068153ab2ba38038eb6d5589c601fe6844cf57e"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"

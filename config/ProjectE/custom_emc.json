@@ -1,97 +1,485 @@
 {
-  "comment": "«Вахта»: руды и сырая руда — EMC 0 (штатный чёрный список ProjectE по c:ores / c:raw_materials не выключен: руду не купить и не сжечь); слитки металлов — ×2–4 к ценам ProjectE по умолчанию; строительные блоки — 1–4. Обоснование — docs/VAHTA-RULES.md.",
+  "comment": "«Вахта»: руды и сырая руда — EMC 0 (штатный чёрный список ProjectE по c:ores / c:raw_materials не выключен: руду не купить и не сжечь); слитки металлов — ×2–4 к ценам ProjectE по умолчанию; строительные блоки — 1–4. Обоснование — docs/VAHTA-RULES.md. 29.09: руду и сырые металлы можно покупать (половина цены слитка; чёрные списки ProjectE по c:ores/c:raw_materials выключены в mapping.toml), слитки/алмазы/изумруды/обсидиан — только продать (kubejs/server_scripts/economy/60_emc_sellonly.js).",
   "entries": [
-    {"id": "minecraft:iron_ingot", "emc": 1024},
-    {"id": "minecraft:copper_ingot", "emc": 512},
-    {"id": "minecraft:gold_ingot", "emc": 4096},
-    {"id": "create:zinc_ingot", "emc": 512},
-    {"id": "create:brass_ingot", "emc": 768},
-    {"tag": "c:ingots/iron", "emc": 1024},
-    {"tag": "c:ingots/copper", "emc": 512},
-    {"tag": "c:ingots/gold", "emc": 4096},
-    {"tag": "c:ingots/zinc", "emc": 512},
-    {"tag": "c:ingots/brass", "emc": 768},
-    {"id": "minecraft:redstone", "emc": 128},
-    {"id": "minecraft:coal", "emc": 256},
-    {"id": "projecte:alchemical_coal", "emc": 1152},
-    {"id": "projecte:mobius_fuel", "emc": 4992},
-    {"id": "projecte:aeternalis_fuel", "emc": 20352},
-    {"id": "minecraft:cobblestone", "emc": 1},
-    {"id": "minecraft:stone", "emc": 1},
-    {"id": "minecraft:cobbled_deepslate", "emc": 1},
-    {"id": "minecraft:deepslate", "emc": 1},
-    {"id": "minecraft:granite", "emc": 1},
-    {"id": "minecraft:diorite", "emc": 1},
-    {"id": "minecraft:andesite", "emc": 1},
-    {"id": "minecraft:tuff", "emc": 1},
-    {"id": "minecraft:dirt", "emc": 1},
-    {"id": "minecraft:sand", "emc": 1},
-    {"id": "minecraft:red_sand", "emc": 1},
-    {"id": "minecraft:gravel", "emc": 1},
-    {"id": "minecraft:glass", "emc": 1},
-    {"id": "minecraft:netherrack", "emc": 1},
-    {"id": "minecraft:basalt", "emc": 1},
-    {"id": "minecraft:blackstone", "emc": 1},
-    {"id": "minecraft:end_stone", "emc": 1},
-    {"id": "create:limestone", "emc": 1},
-    {"id": "create:scoria", "emc": 1},
-    {"id": "create:scorchia", "emc": 1},
-    {"id": "create:asurine", "emc": 1},
-    {"id": "create:crimsite", "emc": 1},
-    {"id": "create:ochrum", "emc": 1},
-    {"id": "create:veridium", "emc": 1},
-    {"id": "minecraft:calcite", "emc": 4},
-    {"id": "minecraft:clay_ball", "emc": 4},
-    {"id": "minecraft:white_concrete_powder", "emc": 2},
-    {"id": "minecraft:white_concrete", "emc": 2},
-    {"id": "minecraft:orange_concrete_powder", "emc": 2},
-    {"id": "minecraft:orange_concrete", "emc": 2},
-    {"id": "minecraft:magenta_concrete_powder", "emc": 2},
-    {"id": "minecraft:magenta_concrete", "emc": 2},
-    {"id": "minecraft:light_blue_concrete_powder", "emc": 2},
-    {"id": "minecraft:light_blue_concrete", "emc": 2},
-    {"id": "minecraft:yellow_concrete_powder", "emc": 2},
-    {"id": "minecraft:yellow_concrete", "emc": 2},
-    {"id": "minecraft:lime_concrete_powder", "emc": 2},
-    {"id": "minecraft:lime_concrete", "emc": 2},
-    {"id": "minecraft:pink_concrete_powder", "emc": 2},
-    {"id": "minecraft:pink_concrete", "emc": 2},
-    {"id": "minecraft:gray_concrete_powder", "emc": 2},
-    {"id": "minecraft:gray_concrete", "emc": 2},
-    {"id": "minecraft:light_gray_concrete_powder", "emc": 2},
-    {"id": "minecraft:light_gray_concrete", "emc": 2},
-    {"id": "minecraft:cyan_concrete_powder", "emc": 2},
-    {"id": "minecraft:cyan_concrete", "emc": 2},
-    {"id": "minecraft:purple_concrete_powder", "emc": 2},
-    {"id": "minecraft:purple_concrete", "emc": 2},
-    {"id": "minecraft:blue_concrete_powder", "emc": 2},
-    {"id": "minecraft:blue_concrete", "emc": 2},
-    {"id": "minecraft:brown_concrete_powder", "emc": 2},
-    {"id": "minecraft:brown_concrete", "emc": 2},
-    {"id": "minecraft:green_concrete_powder", "emc": 2},
-    {"id": "minecraft:green_concrete", "emc": 2},
-    {"id": "minecraft:red_concrete_powder", "emc": 2},
-    {"id": "minecraft:red_concrete", "emc": 2},
-    {"id": "minecraft:black_concrete_powder", "emc": 2},
-    {"id": "minecraft:black_concrete", "emc": 2},
-    {"id": "createdieselgenerators:chip_wood_block", "emc": 4},
-    {"id": "garnished:nut_planks", "emc": 4},
-    {"id": "garnished:sepia_planks", "emc": 4},
-    {"id": "interiors:seatwood_planks", "emc": 4},
-    {"id": "minecraft:acacia_planks", "emc": 4},
-    {"id": "minecraft:bamboo_planks", "emc": 4},
-    {"id": "minecraft:birch_planks", "emc": 4},
-    {"id": "minecraft:cherry_planks", "emc": 4},
-    {"id": "minecraft:crimson_planks", "emc": 4},
-    {"id": "minecraft:dark_oak_planks", "emc": 4},
-    {"id": "minecraft:jungle_planks", "emc": 4},
-    {"id": "minecraft:mangrove_planks", "emc": 4},
-    {"id": "minecraft:oak_planks", "emc": 4},
-    {"id": "minecraft:spruce_planks", "emc": 4},
-    {"id": "minecraft:warped_planks", "emc": 4},
-    {"id": "northstar:argyre_planks", "emc": 4},
-    {"id": "northstar:calorian_planks", "emc": 4},
-    {"id": "northstar:coiler_planks", "emc": 4},
-    {"id": "northstar:wilter_planks", "emc": 4}
+    {
+      "id": "minecraft:iron_ingot",
+      "emc": 1024
+    },
+    {
+      "id": "minecraft:copper_ingot",
+      "emc": 512
+    },
+    {
+      "id": "minecraft:gold_ingot",
+      "emc": 4096
+    },
+    {
+      "id": "create:zinc_ingot",
+      "emc": 512
+    },
+    {
+      "id": "create:brass_ingot",
+      "emc": 768
+    },
+    {
+      "tag": "c:ingots/iron",
+      "emc": 1024
+    },
+    {
+      "tag": "c:ingots/copper",
+      "emc": 512
+    },
+    {
+      "tag": "c:ingots/gold",
+      "emc": 4096
+    },
+    {
+      "tag": "c:ingots/zinc",
+      "emc": 512
+    },
+    {
+      "tag": "c:ingots/brass",
+      "emc": 768
+    },
+    {
+      "id": "minecraft:redstone",
+      "emc": 128
+    },
+    {
+      "id": "minecraft:coal",
+      "emc": 256
+    },
+    {
+      "id": "projecte:alchemical_coal",
+      "emc": 1152
+    },
+    {
+      "id": "projecte:mobius_fuel",
+      "emc": 4992
+    },
+    {
+      "id": "projecte:aeternalis_fuel",
+      "emc": 20352
+    },
+    {
+      "id": "minecraft:cobblestone",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:stone",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:cobbled_deepslate",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:deepslate",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:granite",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:diorite",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:andesite",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:tuff",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:dirt",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:sand",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:red_sand",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:gravel",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:glass",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:netherrack",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:basalt",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:blackstone",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:end_stone",
+      "emc": 1
+    },
+    {
+      "id": "create:limestone",
+      "emc": 1
+    },
+    {
+      "id": "create:scoria",
+      "emc": 1
+    },
+    {
+      "id": "create:scorchia",
+      "emc": 1
+    },
+    {
+      "id": "create:asurine",
+      "emc": 1
+    },
+    {
+      "id": "create:crimsite",
+      "emc": 1
+    },
+    {
+      "id": "create:ochrum",
+      "emc": 1
+    },
+    {
+      "id": "create:veridium",
+      "emc": 1
+    },
+    {
+      "id": "minecraft:calcite",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:clay_ball",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:white_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:white_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:orange_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:orange_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:magenta_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:magenta_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:light_blue_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:light_blue_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:yellow_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:yellow_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:lime_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:lime_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:pink_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:pink_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:gray_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:gray_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:light_gray_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:light_gray_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:cyan_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:cyan_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:purple_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:purple_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:blue_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:blue_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:brown_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:brown_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:green_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:green_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:red_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:red_concrete",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:black_concrete_powder",
+      "emc": 2
+    },
+    {
+      "id": "minecraft:black_concrete",
+      "emc": 2
+    },
+    {
+      "id": "createdieselgenerators:chip_wood_block",
+      "emc": 4
+    },
+    {
+      "id": "garnished:nut_planks",
+      "emc": 4
+    },
+    {
+      "id": "garnished:sepia_planks",
+      "emc": 4
+    },
+    {
+      "id": "interiors:seatwood_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:acacia_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:bamboo_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:birch_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:cherry_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:crimson_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:dark_oak_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:jungle_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:mangrove_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:oak_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:spruce_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:warped_planks",
+      "emc": 4
+    },
+    {
+      "id": "northstar:argyre_planks",
+      "emc": 4
+    },
+    {
+      "id": "northstar:calorian_planks",
+      "emc": 4
+    },
+    {
+      "id": "northstar:coiler_planks",
+      "emc": 4
+    },
+    {
+      "id": "northstar:wilter_planks",
+      "emc": 4
+    },
+    {
+      "id": "minecraft:raw_iron",
+      "emc": 512
+    },
+    {
+      "id": "minecraft:iron_ore",
+      "emc": 512
+    },
+    {
+      "id": "minecraft:deepslate_iron_ore",
+      "emc": 512
+    },
+    {
+      "id": "minecraft:raw_copper",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:copper_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:deepslate_copper_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:raw_gold",
+      "emc": 2048
+    },
+    {
+      "id": "minecraft:gold_ore",
+      "emc": 2048
+    },
+    {
+      "id": "minecraft:deepslate_gold_ore",
+      "emc": 2048
+    },
+    {
+      "id": "minecraft:nether_gold_ore",
+      "emc": 1024
+    },
+    {
+      "id": "create:raw_zinc",
+      "emc": 256
+    },
+    {
+      "id": "create:zinc_ore",
+      "emc": 256
+    },
+    {
+      "id": "create:deepslate_zinc_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:coal_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:deepslate_coal_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:redstone_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:deepslate_redstone_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:lapis_ore",
+      "emc": 864
+    },
+    {
+      "id": "minecraft:deepslate_lapis_ore",
+      "emc": 864
+    },
+    {
+      "id": "minecraft:diamond_ore",
+      "emc": 4096
+    },
+    {
+      "id": "minecraft:deepslate_diamond_ore",
+      "emc": 4096
+    },
+    {
+      "id": "minecraft:emerald_ore",
+      "emc": 8192
+    },
+    {
+      "id": "minecraft:deepslate_emerald_ore",
+      "emc": 8192
+    },
+    {
+      "id": "minecraft:nether_quartz_ore",
+      "emc": 256
+    },
+    {
+      "id": "minecraft:ancient_debris",
+      "emc": 8192
+    },
+    {
+      "id": "minecraft:bread",
+      "emc": 72
+    },
+    {
+      "id": "minecraft:cookie",
+      "emc": 22
+    },
+    {
+      "id": "minecraft:pumpkin_pie",
+      "emc": 208
+    }
   ]
 }
