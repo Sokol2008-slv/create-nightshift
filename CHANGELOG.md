@@ -3,7 +3,7 @@
 ## [Unreleased] — 3.1.0 (ветка `next`: аддон, големы, планеты)
 
 ### Added — аддон Axiomativ Industries (ветка feat/axiomativ-addon)
-- **Свой мод-аддон к Create — Axiomativ Industries 0.1.0** (`mods/axiomativ-0.1.0.jar`, исходники —
+- **Свой мод-аддон к Create — Axiomativ Industries 0.1.1** (`mods/axiomativ-0.1.1.jar`, исходники —
   github.com/Sokol2008-slv/axiomativ-industries, приватный). Первая машина — **межпланетное точило**:
   крутится от вала/шестерён (от 100 об/мин, 32 SU за 1 об/мин), 9 ячеек ингредиентов с разных планет, 4 под результат,
   воронки/желоба/конвейер. Тип рецептов `axiomativ:planetary_grinding` — добавляются из KubeJS через `event.custom`.
