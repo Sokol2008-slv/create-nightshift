@@ -821,6 +821,11 @@ hash = "36f2f6e74b7dbeccb504572d47006582207544fa234a095093b97adfc7ecd5ac"
 metafile = true
 
 [[files]]
+file = "mods/construction-wand-kots.pw.toml"
+hash = "8f88f0197bab619a5f15e69a9675d1de32e07dbe2664ff1e35e40b04bde01f33"
+metafile = true
+
+[[files]]
 file = "mods/controlling.pw.toml"
 hash = "65c8086d2ec3d39acc7bd36c7a0306ccc43b602b38fa07d13291bc478ef7dfff"
 metafile = true
