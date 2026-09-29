@@ -38,13 +38,13 @@ grep -n "Feature order cycle\|Failed to parse\|Unbound values\|tried to referenc
 ```
 /give @s kubejs:axiomite_ore
 /give @s kubejs:deepslate_axiomite_ore
-/give @s kubejs:stabilite_ore
+/give @s kubejs:light_stabilite_ore
 /give @s kubejs:dark_stabilite_ore
 /give @s kubejs:raw_axiomite
 /give @s kubejs:crushed_raw_axiomite
 /give @s kubejs:axiomite_ingot
-/give @s kubejs:raw_stabilite
-/give @s kubejs:crushed_raw_stabilite
+/give @s kubejs:raw_light_stabilite
+/give @s kubejs:raw_dark_stabilite
 /give @s kubejs:stabilite_ingot
 ```
 Ожидание: у всех своя текстура (не фиолетово-чёрная), русские имена («Аксиомитовая руда», «Тёмная стабилитовая
@@ -56,7 +56,7 @@ grep -n "Feature order cycle\|Failed to parse\|Unbound values\|tried to referenc
 Поставить все 4 руды. Сломать:
 - рукой / деревянной киркой → **ничего** (нужен инструмент), каменной → ничего;
 - железной киркой: аксиомит → `raw_axiomite`; стабилит → ничего (нужна алмазная);
-- алмазной: стабилит → `raw_stabilite`; с Удачей III — от 1 до 4;
+- алмазной: светлая → `raw_light_stabilite`, тёмная → `raw_dark_stabilite`; с Удачей III — от 1 до 4;
 - с шёлковым касанием → сам блок руды.
 
 Если руда роняет **сама себя** без шёлкового касания — наш `kubejs/data/kubejs/loot_table/blocks/*.json` не перекрыл
@@ -65,8 +65,9 @@ grep -n "Feature order cycle\|Failed to parse\|Unbound values\|tried to referenc
 ## 4. Рецепты (JEI)
 
 - `raw_axiomite` → Дробление: 1 дроблёный + 50% ещё + 75% самородок опыта; блок руды → 2 + 50% + 75%.
-- `crushed_raw_axiomite` → Обдув/печь (огонь) и доменка (лава) → `axiomite_ingot`. То же для стабилита.
+- `crushed_raw_axiomite` → Обдув/печь (огонь) и доменка (лава) → `axiomite_ingot`. Для стабилита дробилки/печи нет.
 - Печь **не** плавит `raw_*` и руду (так задумано правилами «Вахты»).
+- Стабилит: `raw_light_stabilite` + `raw_dark_stabilite` в межпланетное точило → `stabilite_ingot` (JEI: `axiomativ:planetary_grinding`); одну половинку ни печь, ни дробилка, ни точило не обработают.
 - Вживую: дробилка + вентилятор над лавой — слиток выходит.
 
 ## 5. Измерения — телепорт
@@ -99,9 +100,8 @@ grep -n "Feature order cycle\|Failed to parse\|Unbound values\|tried to referenc
 Второй — уже в соседнем квадрате (граница на X = 8192): биом должен смениться.
 
 Шов: в Инь спуститься до y 20 → −20: выше 8 — чернокамень, между 8 и −8 — смесь чернокамня и кальцита, ниже −8 —
-кальцит. В Ян — наоборот. **Стабилит** — только в y −16…16, обе разновидности (светлая в кальците, тёмная в
-чернокамне). Удобно смотреть в режиме наблюдателя. Если руды мало/много — `count` в
-`worldgen/placed_feature/yin_yang_ore_stabilite.json`.
+кальцит. В Ян — наоборот. **Стабилит** — светлая руда только в биоме Ян (на кальците), тёмная только в Инь (на чернокамне), y −8…72. Удобно смотреть в режиме наблюдателя. Если руды мало/много — `count` в
+`worldgen/placed_feature/yin_yang_ore_{light,dark}_stabilite.json`.
 
 Вернуться: `/execute in minecraft:overworld run tp @s ~ 100 ~`.
 

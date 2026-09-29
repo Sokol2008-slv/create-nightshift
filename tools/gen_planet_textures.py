@@ -122,7 +122,10 @@ def recolor_split(img, base, highlight, cut, mask=None):
 # --- палитры ---------------------------------------------------------------------------------
 # цвета бренда Axiomativ (Георгий, 30.09): бордо/вино + денежный зелёный в бликах
 AXIOMITE = (["#1c050b", "#4a0f1d", "#7a1a2e", "#a3283f"], ["#5d8f45", "#85bb65", "#c6e6a8"], 0.9)
-STAB_ORE = ["#0b0b0b", "#4f4862", "#b3abcc", "#ffffff"]       # чёрное → сиреневато-серая середина → белое
+STAB_ORE_LIGHT = ["#a9a4bd", "#e2dff0", "#ffffff"]             # светлая руда: серо-сиреневый → белый
+STAB_ORE_DARK = ["#050507", "#221f2e", "#4d4962"]              # тёмная руда: почти чёрный → тёмно-графитовый
+STAB_RAW_LIGHT = ["#b5b0c4", "#eeecf6", "#ffffff"]             # светлое сырьё
+STAB_RAW_DARK = ["#000000", "#121118", "#34313f"]              # тёмное сырьё
 STAB_DARK = ["#050505", "#3a3a3a", "#8c8466"]
 STAB_LIGHT = ["#9d9784", "#e4dfcc", "#ffffff"]
 
@@ -140,9 +143,9 @@ def blocks():
     # аксиомит: на туфе (порода Аксиоматива) и на глубинном сланце
     save(ore(van("block/tuff"), iron, stone, AXIOMITE), BLOCK_OUT, "axiomite_ore")
     save(ore(deepslate, deep_iron, deepslate, AXIOMITE), BLOCK_OUT, "deepslate_axiomite_ore")
-    # стабилит: светлая руда на кальците (глубины Инь) и тёмная на чернокамне (глубины Ян)
-    save(ore(van("block/calcite"), diamond, stone, STAB_ORE[:3], 90), BLOCK_OUT, "stabilite_ore")
-    save(ore(van("block/blackstone"), diamond, stone, STAB_ORE[1:], 90), BLOCK_OUT, "dark_stabilite_ore")
+    # стабилит: светлая руда на кальците (биом Ян), тёмная на чернокамне (биом Инь)
+    save(ore(van("block/calcite"), diamond, stone, STAB_ORE_LIGHT, 90), BLOCK_OUT, "light_stabilite_ore")
+    save(ore(van("block/blackstone"), diamond, stone, STAB_ORE_DARK, 90), BLOCK_OUT, "dark_stabilite_ore")
 
 
 def items():
@@ -151,8 +154,8 @@ def items():
     save(recolor(raw, AXIOMITE), ITEM_OUT, "raw_axiomite")
     save(recolor(crushed, AXIOMITE), ITEM_OUT, "crushed_raw_axiomite")
     save(recolor(ingot, AXIOMITE), ITEM_OUT, "axiomite_ingot")
-    save(split_diag(raw, STAB_DARK, STAB_LIGHT), ITEM_OUT, "raw_stabilite")
-    save(split_diag(crushed, STAB_DARK, STAB_LIGHT), ITEM_OUT, "crushed_raw_stabilite")
+    save(recolor(raw, STAB_RAW_LIGHT), ITEM_OUT, "raw_light_stabilite")
+    save(recolor(raw, STAB_RAW_DARK), ITEM_OUT, "raw_dark_stabilite")
     save(split_diag(ingot, STAB_DARK, STAB_LIGHT), ITEM_OUT, "stabilite_ingot")
 
 

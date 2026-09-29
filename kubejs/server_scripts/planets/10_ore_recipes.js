@@ -10,8 +10,7 @@
 // ==========================================================================
 
 var NS_PLANET_METAL_RECIPES = [
-	{ metal: 'axiomite', ores: ['kubejs:axiomite_ore', 'kubejs:deepslate_axiomite_ore'], xp: 0.7 },
-	{ metal: 'stabilite', ores: ['kubejs:stabilite_ore', 'kubejs:dark_stabilite_ore'], xp: 1.0 }
+	{ metal: 'axiomite', ores: ['kubejs:axiomite_ore', 'kubejs:deepslate_axiomite_ore'], xp: 0.7 }
 ]
 
 ServerEvents.recipes(function (event) {
@@ -36,4 +35,21 @@ ServerEvents.recipes(function (event) {
 		event.smelting(ingot, crushed).xp(r.xp).id('nightshift:planets/smelting/' + r.metal + '_ingot')
 		event.blasting(ingot, crushed).xp(r.xp).id('nightshift:planets/blasting/' + r.metal + '_ingot')
 	})
+})
+
+// --------------------------------------------------------------------------
+// Стабилит: слиток только из ДВУХ половинок — светлой (руда биома Ян) и тёмной (руда биома Инь).
+// Единственный путь — межпланетное точило аддона (axiomativ:planetary_grinding).
+// Печи/доменки/миксера/дробилки для сырья стабилита НЕТ: одна половинка в слиток не превращается.
+// --------------------------------------------------------------------------
+ServerEvents.recipes(function (event) {
+	event.custom({
+		type: 'axiomativ:planetary_grinding',
+		ingredients: [
+			{ item: 'kubejs:raw_light_stabilite' },
+			{ item: 'kubejs:raw_dark_stabilite' }
+		],
+		results: [{ id: 'kubejs:stabilite_ingot', count: 1 }],
+		processing_time: 300
+	}).id('nightshift:planets/planetary_grinding/stabilite_ingot')
 })
