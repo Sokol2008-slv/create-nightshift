@@ -541,6 +541,10 @@ file = "kubejs/server_scripts/economy/70_nether_star.js"
 hash = "64a0372222a01ab5204b3cd4e3c8ff1f623aa929eacab587e8a7a771b9a1ad42"
 
 [[files]]
+file = "kubejs/server_scripts/economy/75_lava.js"
+hash = "51a736b3e913ed680e4499dfd6224a45b6da2ae1c4dcbf2c23a7bfc3c725af30"
+
+[[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
 hash = "d257243fd240a863051f715aba2674a9768d45e4b0e7236e1c231e16efcd3891"
 
