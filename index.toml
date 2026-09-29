@@ -42,7 +42,7 @@ hash = "f1a7a5df1ae8ed36360d4bc21ab7148e01c86b41ed869abd07bd7f6bce75b50b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "61231c5df60593a1ce014b147bdb0a974e66a024737c916e806279527b473a8a"
+hash = "190117310742a2f3ee1dfaaee1dac00f6ce6a7a8ab4bd9172474c3472f979016"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
@@ -134,11 +134,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "5429159f77f1f65eb6af15e8f7c593f9be0f8ac2f47311443fe2eed7bcea7487"
+hash = "f44abc47ec7b987282c7789f549b9bafe5511a5d59be65821c0742da6133e8d4"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "5429159f77f1f65eb6af15e8f7c593f9be0f8ac2f47311443fe2eed7bcea7487"
+hash = "f44abc47ec7b987282c7789f549b9bafe5511a5d59be65821c0742da6133e8d4"
 
 [[files]]
 file = "config/iris.properties"

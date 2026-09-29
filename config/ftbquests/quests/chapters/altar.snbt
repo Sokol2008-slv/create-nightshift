@@ -204,6 +204,16 @@
 			y: 0.53d
 		}
 		{
+			dependencies: ["5A4B58E3D3636EAA", "539485CE657AFD69"]
+			id: "7FFAED499CB00CC3"
+			rewards: [{ id: "54B887A2506C969C", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "1A9C866A7A42ACE9", item: { count: 1, id: "axiomativ:shield_generator" }, type: "item" }]
+			x: 26.40d
+			y: -0.42d
+		}
+		{
 			dependencies: ["5A4B58E3D3636EAA"]
 			icon: { id: "minecraft:nether_star" }
 			id: "6C9D773A2FC527F8"
@@ -212,7 +222,7 @@
 			size: 1.0d
 			tasks: [{ id: "496F017692F7B7B9", stage: "nightshift_p60", team_stage: false, type: "gamestage" }]
 			x: 26.40d
-			y: 0.53d
+			y: 1.48d
 		}
 		{
 			dependencies: ["6C9D773A2FC527F8"]
@@ -223,7 +233,17 @@
 			size: 1.6d
 			tasks: [{ id: "268EED80C8A52945", stage: "nightshift_p70", team_stage: false, type: "gamestage" }]
 			x: 28.60d
-			y: 0.53d
+			y: 1.48d
+		}
+		{
+			dependencies: ["03D58C0D28130D2F"]
+			id: "7D71F73C8A9DE129"
+			rewards: [{ id: "68F4ABC3C6B15984", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5AE65648192ED425", item: { count: 1, id: "nightshift:tactical_nuke" }, type: "item" }]
+			x: 30.80d
+			y: 0.68d
 		}
 		{
 			dependencies: ["03D58C0D28130D2F"]
@@ -234,7 +254,7 @@
 			size: 1.0d
 			tasks: [{ id: "2D3CE806B2A3B5B7", stage: "nightshift_p80", team_stage: false, type: "gamestage" }]
 			x: 30.80d
-			y: 0.53d
+			y: 2.28d
 		}
 		{
 			dependencies: ["7FE6CF4D0290C173"]
@@ -245,7 +265,7 @@
 			size: 1.0d
 			tasks: [{ id: "08B4B1BEBDEE96A0", stage: "nightshift_p90", team_stage: false, type: "gamestage" }]
 			x: 33.00d
-			y: 0.53d
+			y: 2.28d
 		}
 		{
 			dependencies: ["2CE5CDB303BB7864"]
@@ -256,7 +276,7 @@
 			size: 1.6d
 			tasks: [{ id: "00B974734AFC9A23", stage: "nightshift_p100", team_stage: false, type: "gamestage" }]
 			x: 35.20d
-			y: 0.53d
+			y: 2.28d
 		}
 		{
 			dependencies: ["4423BC3944555606"]
@@ -267,7 +287,7 @@
 			size: 1.6d
 			tasks: [{ id: "144469FEED58985A", type: "checkmark" }]
 			x: 37.40d
-			y: 0.53d
+			y: 2.28d
 		}
 	]
 }
