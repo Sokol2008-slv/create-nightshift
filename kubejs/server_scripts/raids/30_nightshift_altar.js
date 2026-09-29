@@ -74,6 +74,7 @@ function nsForecastLines(d) {
 		lines.push('Подволна ' + (w + 1) + ': ' + parts.join(', '))
 	}
 	if (horde.boss) lines.push('БОСС: ' + (horde.boss.label || horde.boss.id.split(':')[1]) + ((horde.bossCount || 1) > 1 ? ' ×' + horde.bossCount : '') + ' (~' + horde.boss.hpLabel + ' HP)')
+	for (var bx = 0; horde.bossExtra && bx < horde.bossExtra.length; bx++) lines.push('И ЕЩЁ: ' + horde.bossExtra[bx].boss.label + ' ×' + horde.bossExtra[bx].count + ' (~' + horde.bossExtra[bx].boss.hpLabel + ' HP)')
 	var buffs = []
 	var names = { resistance: 'сопротивление', strength: 'сила', speed: 'скорость' }
 	for (var b in horde.buff || {}) if (horde.buff[b] > 0) buffs.push(names[b] + ' ' + ['', 'I', 'II', 'III'][horde.buff[b]])

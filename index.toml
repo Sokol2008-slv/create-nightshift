@@ -1058,11 +1058,15 @@ hash = "9dfe3b6d74a0ca1de12952398f8ae9d87a3c00276feb21af6a23a7b6aaee55e6"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "be2ff511f895540ff2af207d3e71f753776807f64718ccf02f5625e1710de5d3"
+hash = "7cfa6f49d302e70f46c0ba6dddee33ad71e740f493826426bd6a2012d310d44c"
 
 [[files]]
 file = "kubejs/server_scripts/raids/05_cataclysm_bosses.js"
 hash = "e0601e1ec4786d85d4434bba6e5efe56dc48ba65101f9303d1261655c05fb034"
+
+[[files]]
+file = "kubejs/server_scripts/raids/06_cataclysm_safety.js"
+hash = "99405d1905fa57291fa0b190c82412dee74f2f1547c84f925ed2b9bbb668d858"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
@@ -1074,11 +1078,11 @@ hash = "248d3c32eb8356bd181bafe9db9534a2e332cf1d4f08e25b1d2a16ef7ffa071a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "f31eee1c4451c0f800af2360822c1f2eb0ab5adc517e594ea10f6660b294c100"
+hash = "f7162589d238238ed569567a0e5a6c4f5c5a4e497498369660c7ad8750509a3c"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "30f4388a9eadf43c0e01ecf5a0352abfdf84c976d46e43a26a67a433cb5bf649"
+hash = "5000f0557a8b6acfeb7e5d1fb59a53e1db702f7f7ffb1f3a323063a9d7dff94a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"

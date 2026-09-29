@@ -564,7 +564,12 @@ function nsSpawnCurrentWave(state, level, altar) {
 			var bossCount = hordeCfg.bossCount || 1 // с 70-й волны боссов несколько
 			nsTitleAll('Оно пришло…', { color: 'dark_purple', bold: true, subtitle: hordeCfg.boss.label + (bossCount > 1 ? ' ×' + bossCount : ''), subColor: 'red' })
 			nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, hordeCfg.boss.id, bossCount, state, hordeCfg.boss.nbt))
-			nsBoostRaidMobs(hordeCfg.buff, hordeCfg.scale)
+			var extra = hordeCfg.bossExtra || []
+			for (var bx = 0; bx < extra.length; bx++) {
+				nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, extra[bx].boss.id, extra[bx].count, state, extra[bx].boss.nbt))
+				bossCount += extra[bx].count
+			}
+			nsBoostRaidMobs(hordeCfg.buff, hordeCfg.bossScale || hordeCfg.scale)
 			state.raid.waveSize = bossCount
 			nsSaveState(state)
 			return true
@@ -717,15 +722,27 @@ function nsChallengeHorde(d) {
 	}
 	var top = D[NSG.NIGHTSHIFT_DIFFICULTY_MAX]
 	var L = NSG.NS_WAVE_LATE
-	return {
+	var scale = { hp: L.hp * late, damage: L.damage * late, speed: Math.min(L.speedMax, L.speed * late) }
+	var cfg = {
 		name: d > NSG.NS_WAVES_MAX ? 'Бесконечность' : 'Кошмар',
 		waves: top.waves.concat([NSG.NIGHTSHIFT_NIGHTMARE.finale]),
 		boss: top.boss,
 		bossCount: 1 + Math.floor(late / L.bossEvery),
 		buff: top.buff,
 		mult: 1 + L.mult * late,
-		scale: { hp: L.hp * late, damage: L.damage * late, speed: Math.min(L.speedMax, L.speed * late) },
+		scale: scale,
 	}
+	// Боссы L_Ender's Cataclysm (ротация — raids/05_cataclysm_bosses.js): с 70-й вместо одного и того же
+	// скорпиона; на вехах 80/90/100 — пара разных. Их здоровье Кошмар раздувает не больше hpScaleMax —
+	// у боссов мода потолок урона в секунду, иначе их не добить.
+	var cm = NSG.nsCataclysmBossForWave && Platform.isLoaded('cataclysm') ? NSG.nsCataclysmBossForWave(d) : null
+	if (cm && cm.boss) {
+		cfg.boss = cm.boss
+		cfg.bossCount = cm.bossCount || 1
+		cfg.bossExtra = cm.extra || []
+		cfg.bossScale = { hp: Math.min(scale.hp, cm.hpScaleMax === undefined ? scale.hp : cm.hpScaleMax), damage: scale.damage, speed: scale.speed }
+	}
+	return cfg
 }
 
 // Бросков добычи за победу: по одному за подволну, два за каждого босса, после 69-й — ещё по одному за волну

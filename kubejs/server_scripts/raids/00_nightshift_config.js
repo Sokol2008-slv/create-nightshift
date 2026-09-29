@@ -407,6 +407,21 @@ function nsTributeFor(best) {
 // northstar-мобов и мода в целом — оценка "как у зомби", проверить Jade.
 // --------------------------------------------------------------------------
 NSG.NIGHTSHIFT_MOB_HP = {
+	// боссы Cataclysm (для прогноза в меню алтаря)
+	'cataclysm:ignis': 450,
+	'cataclysm:netherite_monstrosity': 600,
+	'cataclysm:ender_guardian': 333,
+	'cataclysm:the_harbinger': 390,
+	'cataclysm:ancient_remnant': 450,
+	'cataclysm:maledictus': 420,
+	'cataclysm:scylla': 390,
+	'cataclysm:kobolediator': 180,
+	'cataclysm:wadjet': 150,
+	'cataclysm:amethyst_crab': 200,
+	'cataclysm:the_prowler': 160,
+	'cataclysm:aptrgangr': 160,
+	'cataclysm:ender_golem': 150,
+	'cataclysm:clawdian': 225,
 	'minecraft:silverfish': 8,
 	'minecraft:vex': 14,
 	'minecraft:zombie': 20,
