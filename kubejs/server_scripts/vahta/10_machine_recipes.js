@@ -366,7 +366,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/create_new_age/shaped/carbon_brushes', 'create_new_age:carbon_brushes', ['6x create:andesite_alloy', 'create:shaft', '2x minecraft:coal']],
 	['nightshift:vahta/mix/create_new_age/shaped/electrical_connector', '2x create_new_age:electrical_connector', ['3x #c:nuggets/copper', '3x create:andesite_alloy']],
 	['nightshift:vahta/mix/create_new_age/shaped/fluxuated_magnetite', '2x create_new_age:fluxuated_magnetite', ['4x create_new_age:magnetite_block', 'create_new_age:overcharged_diamond', '4x create_new_age:overcharged_gold']],
-	['nightshift:vahta/mix/create_new_age/shaped/generator_coil', 'create_new_age:generator_coil', ['8x #c:ingots/copper', 'create:andesite_alloy_block']],
 	['nightshift:vahta/mix/create_new_age/shaped/heat_pipe', '4x create_new_age:heat_pipe', ['2x #c:nuggets/zinc', '#c:plates/copper', '3x minecraft:terracotta']],
 	['nightshift:vahta/mix/create_new_age/shaped/heat_pump', '4x create_new_age:heat_pump', ['2x create_new_age:heat_pipe', 'create_new_age:thorium']],
 	['nightshift:vahta/mix/create_new_age/shaped/heater', 'create_new_age:heater', ['4x #c:nuggets/iron', 'create:empty_blaze_burner', '2x create_new_age:heat_pipe', 'create_new_age:overcharged_iron']],

@@ -13,8 +13,10 @@ ServerEvents.recipes(event => {
 		.keepHeldItem()
 		.id('nightshift:vahta/deploying/electric_copper')
 
-	// катушка New Age: вместо 8 меди — 8 электрической меди (рецепт миксера из 10_machine_recipes.js)
-	event.remove({ id: 'nightshift:vahta/mix/create_new_age/shaped/generator_coil' })
+	// катушка New Age: вместо 8 меди — 8 электрической меди. Исходный рецепт убираем по его id — тогда
+	// tools/vahta_recipes.py не перенесёт его в миксер (10_machine_recipes.js) при перегенерации.
+	// Рецепты, добавленные другим скриптом в том же событии, event.remove не видит — поэтому не по id «вахты».
+	event.remove({ id: 'create_new_age:shaped/generator_coil' })
 	event.recipes.create.mixing('create_new_age:generator_coil', ['8x nightshift:electric_copper', 'create:andesite_alloy_block'])
 		.id('nightshift:vahta/mix/generator_coil_electric')
 
