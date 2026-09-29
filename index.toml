@@ -106,7 +106,7 @@ hash = "6a0e75abcf11a008c740fed06b843bfa6d19b1306d18281a32ce57e6d18bd8ad"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/vahta.snbt"
-hash = "9053a0b7acb8b01938c3a39703558b6840337565ea4ca7fc955140012530cf31"
+hash = "56dd92721d0b2113357da0ab0406848d4eb782e3107b45e39d102cdd1b4f98f2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/weapons.snbt"
@@ -122,11 +122,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "e36cd5d70333243012d6ffa69e67defde4c4f5a81051dbf9f35d99c34dea551f"
+hash = "e7c7f4ba419e5bfe97a1bb05f4c357e617adef11074ef257d2d75c7128364128"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "e36cd5d70333243012d6ffa69e67defde4c4f5a81051dbf9f35d99c34dea551f"
+hash = "e7c7f4ba419e5bfe97a1bb05f4c357e617adef11074ef257d2d75c7128364128"
 
 [[files]]
 file = "config/iris.properties"
@@ -350,7 +350,7 @@ hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_jei.js"
-hash = "c225fbf1ca7dd03a9bd128e123df35931ef6d64082b02a20ac91cbb5888ed815"
+hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
 
 [[files]]
 file = "kubejs/config/common.json"
@@ -659,6 +659,10 @@ hash = "154d1a221a5388d91f74a0f654f5ea491a7f537c6f042fabe36ea55b63caeb02"
 [[files]]
 file = "kubejs/server_scripts/vahta/30_projecte.js"
 hash = "5c60a63a89cd48d43052db9baa44b77fc8d35787d152e66659cb2ccf79baac25"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/35_crafter_cover.js"
+hash = "b46714dbf6036a21f4ca194f23358fb5b2856b4cfc68f74e1ce73a25b584d88f"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"

@@ -32,13 +32,23 @@
 		}
 		{
 			dependencies: ["7AA1D2EC840C70E1"]
+			id: "1E68FEAD8DD9CB10"
+			rewards: [{ id: "029337CFB7A6B4F5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7884787699C8C6C8", item: { count: 1, id: "create:crafter_slot_cover" }, type: "item" }]
+			x: 4.40d
+			y: -0.80d
+		}
+		{
+			dependencies: ["7AA1D2EC840C70E1"]
 			id: "7B5A4EFA0A80ED25"
 			rewards: [{ id: "0C92E7C8F5BFF0A5", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "57F48D5979EC2D70", count: 16L, item: { count: 1, id: "minecraft:oak_planks" }, type: "item" }]
 			x: 4.40d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["7B5A4EFA0A80ED25"]
@@ -48,7 +58,7 @@
 			size: 1.0d
 			tasks: [{ id: "1FCA0FD5A27C1066", count: 16L, item: { count: 1, id: "minecraft:stick" }, type: "item" }]
 			x: 6.60d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["71446C068C190FFF"]
@@ -58,7 +68,7 @@
 			size: 1.0d
 			tasks: [{ id: "39960BC856AD451F", item: { count: 1, id: "minecraft:wooden_pickaxe" }, type: "item" }]
 			x: 8.80d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["4EA7B77FE6CF8ED5"]
@@ -68,7 +78,7 @@
 			size: 1.0d
 			tasks: [{ id: "4EDF36D36E0E1F7B", item: { count: 1, id: "minecraft:stone_pickaxe" }, type: "item" }]
 			x: 11.00d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["4758E9E111669784"]
@@ -78,7 +88,7 @@
 			size: 1.0d
 			tasks: [{ id: "589753596154D5CA", count: 8L, item: { count: 1, id: "minecraft:raw_iron" }, type: "item" }]
 			x: 13.20d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["775583239F36578A"]
@@ -88,7 +98,7 @@
 			size: 1.0d
 			tasks: [{ id: "6F3730B740AD055F", count: 8L, item: { count: 1, id: "create:crushed_raw_iron" }, type: "item" }]
 			x: 15.40d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["09673F6FFB3ADA6C"]
@@ -98,7 +108,7 @@
 			size: 1.0d
 			tasks: [{ id: "6278F970F3173071", count: 27L, item: { count: 1, id: "minecraft:iron_nugget" }, type: "item" }]
 			x: 17.60d
-			y: -0.80d
+			y: 0.00d
 		}
 		{
 			dependencies: ["09673F6FFB3ADA6C"]
@@ -108,7 +118,7 @@
 			size: 1.0d
 			tasks: [{ id: "458517755B2F0A3F", count: 8L, item: { count: 1, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 17.60d
-			y: 0.80d
+			y: 1.60d
 		}
 		{
 			dependencies: ["6A850784B9615901"]
@@ -118,7 +128,7 @@
 			size: 1.0d
 			tasks: [{ id: "6D0B8C3730A1F656", count: 64L, item: { count: 1, id: "create:andesite_alloy" }, type: "item" }]
 			x: 19.80d
-			y: -0.80d
+			y: 0.00d
 		}
 		{
 			dependencies: ["06B5CD629BA1C0AF"]
@@ -128,7 +138,7 @@
 			size: 1.0d
 			tasks: [{ id: "46D71A358EE5E793", count: 4L, item: { count: 1, id: "create:zinc_ingot" }, type: "item" }]
 			x: 19.80d
-			y: 0.80d
+			y: 1.60d
 		}
 		{
 			dependencies: ["54231138C74C436B"]
@@ -138,7 +148,7 @@
 			size: 1.0d
 			tasks: [{ id: "2730AA63C362A8E0", item: { count: 1, id: "create:blaze_burner" }, type: "item" }]
 			x: 22.00d
-			y: -0.80d
+			y: 0.00d
 		}
 		{
 			dependencies: ["38B96CB993ED1D01", "35392A512115E122"]
@@ -148,7 +158,7 @@
 			size: 1.6d
 			tasks: [{ id: "778402C63A7BB4C8", count: 8L, item: { count: 1, id: "create:brass_ingot" }, type: "item" }]
 			x: 24.20d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["29EB13750037A50B"]
@@ -158,7 +168,7 @@
 			size: 1.6d
 			tasks: [{ id: "311ECE0BBF01A0BE", item: { count: 1, id: "projecte:transmutation_table" }, type: "item" }]
 			x: 26.40d
-			y: -0.95d
+			y: -0.15d
 		}
 		{
 			dependencies: ["29EB13750037A50B"]
@@ -169,7 +179,7 @@
 			size: 1.0d
 			tasks: [{ id: "56C2C204BFDC72B5", type: "checkmark" }]
 			x: 26.40d
-			y: 0.95d
+			y: 1.75d
 		}
 		{
 			dependencies: ["6880D921FDA3F837"]
@@ -179,7 +189,7 @@
 			size: 1.0d
 			tasks: [{ id: "5E59EF6C33888BD6", item: { count: 1, id: "create_mechanical_extruder:mechanical_extruder" }, type: "item" }]
 			x: 28.60d
-			y: 0.95d
+			y: 1.75d
 		}
 		{
 			dependencies: ["2DC6D6DFEA84D5FC"]
@@ -190,7 +200,7 @@
 			size: 1.0d
 			tasks: [{ id: "5D62F0CFE53C73D4", type: "checkmark" }]
 			x: 30.80d
-			y: 0.95d
+			y: 1.75d
 		}
 		{
 			dependencies: ["5CE7287EE53022D2"]
@@ -201,7 +211,7 @@
 			size: 1.0d
 			tasks: [{ id: "6AF93EE0F16B7B3D", type: "checkmark" }]
 			x: 33.00d
-			y: 0.95d
+			y: 1.75d
 		}
 		{
 			dependencies: ["26B7189575B37E49", "1B532706F4DD6F3A"]
@@ -212,7 +222,7 @@
 			size: 1.6d
 			tasks: [{ id: "0282820C94504FE1", type: "checkmark" }]
 			x: 35.20d
-			y: 0.00d
+			y: 0.80d
 		}
 	]
 }
