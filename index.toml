@@ -1057,6 +1057,10 @@ file = "kubejs/server_scripts/raids/00_nightshift_config.js"
 hash = "e20fd814d9240b61805e669558880f5a1e11969e5165d045277a0574709d5727"
 
 [[files]]
+file = "kubejs/server_scripts/raids/05_cataclysm_bosses.js"
+hash = "e0601e1ec4786d85d4434bba6e5efe56dc48ba65101f9303d1261655c05fb034"
+
+[[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
 hash = "b9e409276f91b29a248ca3201bd0b7dfa4357cf7e9d6b13f239a910abe13b5f3"
 
