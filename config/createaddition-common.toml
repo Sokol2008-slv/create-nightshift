@@ -102,11 +102,11 @@
 	#Large Connector max input in FE/t (Energy transfer).
 	# Default: 5000
 	# Range: > 0
-	large_connector_max_input = 5000
+	large_connector_max_input = 1000000000
 	#Large Connector max output in FE/t (Energy transfer).
 	# Default: 5000
 	# Range: > 0
-	large_connector_max_output = 5000
+	large_connector_max_output = 1000000000
 	#Large Connector max wire length in blocks.
 	# Default: 32
 	# Range: 0 ~ 256
@@ -121,11 +121,11 @@
 	#Accumulator max input in FE/t (Energy transfer).
 	# Default: 5000
 	# Range: > 0
-	accumulator_max_input = 5000
+	accumulator_max_input = 1000000000
 	#Accumulator max output in FE/t (Energy transfer).
 	# Default: 5000
 	# Range: > 0
-	accumulator_max_output = 5000
+	accumulator_max_output = 1000000000
 	#Accumulator internal capacity per block in FE.
 	# Default: 2000000
 	# Range: > 0

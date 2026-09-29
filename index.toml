@@ -17,8 +17,12 @@ file = "config/ProjectE/server.toml"
 hash = "5b4f9802c51836656497f3335c52ebee061178a170d74933526edf8eb251260f"
 
 [[files]]
+file = "config/create_new_age-server.toml"
+hash = "5bb24cb8e4853f9d9d27ef64603e844ae97440fd814c8585624285c014b6d831"
+
+[[files]]
 file = "config/createaddition-common.toml"
-hash = "d0ec7931b6613a3a75745a91ce34e22a353eb7e0753471f9f1236e5042bee8f7"
+hash = "f6f554476ca23d0e051f1531dcafc4e9f3355c868af6af82e4b8f3b6edb2f5d0"
 
 [[files]]
 file = "config/createdieselgenerators-server.toml"
