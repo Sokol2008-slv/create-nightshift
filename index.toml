@@ -34,7 +34,7 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/airships_cars.snbt"
-hash = "a7025d85e6fa3503cd385ef9722a35c2d6c7b081e75fa16e0f111e41fef09670"
+hash = "f1a7a5df1ae8ed36360d4bc21ab7148e01c86b41ed869abd07bd7f6bce75b50b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
@@ -42,47 +42,51 @@ hash = "da6f74aa9fb7643fa936cad3cbd3e92f953b8c7a21a6ec8c3c11e14197891b55"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "df84bdde8292383665078c50d1bc147bc09b0e13379616ac88e11759d9995c65"
+hash = "1a94f04c696fa9a2a6084d09e3ba564989bf7e7560103370ab1e086c42994217"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/big_cannons.snbt"
-hash = "705e775443e3021f0ee1738a3279664d04b0a80a8f5b8107f98d41e0ca011036"
+hash = "b343f1116d975d4880aaf4877b150ffadc03b3547d9ac69c86dafc2765ca31f7"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
-hash = "5478b5ea7ae70af8b2005e3d328767ad6921022f7a3dc5298739a6ea43c5b24b"
+hash = "fe70ca104bc4c2b3b87295744ccdcfebc486e7667c59b3c4566af44e203dd469"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
-hash = "59bd95a81b261beaff375f4f11a43e1a9fe8f1b2fdc14c4a9e281f2332b6e062"
+hash = "cb1e41a7c83ef71930ce1688d43c6e776add585fb8532c2d65234c81e9508cd7"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/dragons.snbt"
-hash = "414f710d37f961c6864323d27753e675ad4276cfaca7c5650c9531e7cb8d639c"
+hash = "e86b0ca3153267431558ec3a2d04e0eb415d13d20656d53d7f93cca217e7d02c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
-hash = "552aed806e4fa883fee5adca98036f82047ccdbf564aac8eed38513c31e62096"
+hash = "8487d1bf04de34b7ca0f3885af4f46a9723f7fc886f0c30e09992bd199869ed6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "d44260586416d4fca018ba0194ae789a3678990fbc25ff5d81fee3dd08878a3f"
+hash = "26ebf86e37853c16e3e9fd3c9479d909a21c00b758387efb2a1452044e1387cd"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "70a258021405789b4f6eabbe6efeaba997eeabbe0905ebb7be7298011594cd83"
+hash = "f8004aae25f5af2dbd39e1603fb7e7bfa642c1e9889bccc2199424cc392b5256"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food.snbt"
-hash = "dff8cb31d97d97636c0e67b4dd15b383cfb3cc4f20e50cd893c7d5a1e1feaa80"
+hash = "5208b51852f45d6d63bc106b2c98a9f92aaca363642c4f37a7d18ffc007275cc"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/fuel_engines.snbt"
-hash = "6fcbd1f94d773427a9a6abadc0919dba02fa6189a820e229cba71a18fcb5a329"
+hash = "3123694a53e656661831a8d25d16a88c00651f44a4e4db90fedc41fe32822846"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/golems.snbt"
+hash = "22c974ed0e320f118b2b94a74776cda91d68f40a43d56a5c7357e12b08abca6d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistics_food.snbt"
-hash = "7456df61f402c692fb4df8f29a0bd61b1ff3f71eb6ceadbdfc31f70f05640af8"
+hash = "7ef5794d8651f9a64d5669723a21ec5b09228e7a6f2f8fa7a00dea63ac0b9683"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
@@ -90,19 +94,19 @@ hash = "ea6e6b66900d668737380b917c6b98c44d9e1f984b0a6fe90fcaf6d7fbc45740"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "08d04e0326e1d62debcc771685ef4dc8596976446564530e6563888aaae47bf3"
+hash = "f3217c29f04f9aaccd1cc4a780abc0cf04dbb4a2414418b624e177266b19a4df"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "91de7ac45efb7ae816462d6b108e7949be4ac4df1f8f43a077b0c04e0bb4adc8"
+hash = "f3ab2f440bf6abd4c38d758910398a39ca1c6969ad7ebea56e4642cc7dbad987"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
-hash = "9678f20403ed94d33a1e099259a9ed48c0f072cae00f16c761ad0571f5cfbd11"
+hash = "67d4d9116719c1929c9e1e2c8a181f5f527a13079adfa1c2cc273b4042dfefbf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/submarines.snbt"
-hash = "fa1519eb45927ea4e78012ea0bc594ccd7730705c74e63dea5a8773501fa68b8"
+hash = "da8439eafa9b066b9ba5030d9a0e7990b9b9c255dc4afa6e0ab8bddf37cbb754"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/tower_defense.snbt"
@@ -126,11 +130,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "6f54961fd1f626a0c3fdaa4db357390a9cafaf7390fca64705c4d2b335b3476b"
+hash = "63c7dcc47b2d91c0c324165917267b1ffceda24c3be45b7d9245d0344c5a6f00"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "6f54961fd1f626a0c3fdaa4db357390a9cafaf7390fca64705c4d2b335b3476b"
+hash = "63c7dcc47b2d91c0c324165917267b1ffceda24c3be45b7d9245d0344c5a6f00"
 
 [[files]]
 file = "config/iris.properties"
@@ -189,6 +193,14 @@ file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk3_e.png"
 hash = "328c3f23957957a4bb8ab8ace5f95a194898b38fbf615a38f7050363d33e0a5c"
 
 [[files]]
+file = "kubejs/assets/modulargolems/lang/en_us.json"
+hash = "93e31d341c9b31b22b2ec4654f7203b8c83bc1568f24265abd436e7cb29f52c3"
+
+[[files]]
+file = "kubejs/assets/modulargolems/lang/ru_ru.json"
+hash = "dd03d8d47c3c4b7f97f16fec634a66b488a063ec2619d550001da16fcba2b58a"
+
+[[files]]
 file = "kubejs/assets/nightshift/font/scare.json"
 hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
@@ -211,6 +223,54 @@ hash = "6a3ca9a97e9650dd033edeb784b7c4c6357295ad756c07525b893a7340906e62"
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/watching_eye.png.mcmeta"
 hash = "40013d8c8438f70a25b956ea7aa8de3e7914548ddc5c8913ead626a314414e38"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/dog_golem/lunar_sapphire.png"
+hash = "4da8bb70c149500a1e5cf3a515c672769576dd650e4b98d41aeec70f8bf12ae7"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/dog_golem/martian_steel.png"
+hash = "b44781e12ef4b2e31e1750d025cbaf911c9ae14bfec1b0b8ed7182f0a978b2b2"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/dog_golem/titanium.png"
+hash = "40256a80064d97daefba4bd54feeab582c4ec04097fcac8796edd937e16590f7"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/dog_golem/tungsten.png"
+hash = "76814dc986c68c33c0b0915ac1dcc32ba9dac928a88301892df23b90091794e5"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/lunar_sapphire.png"
+hash = "9bc00e1c7d581a024ee20aff4efe4221c16279ce13e5ce9e4960937c16b6f5af"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/martian_steel.png"
+hash = "055e83fc69bad90b6904098ec02614e162ccca452bd739a84a4325da1dc0d2c3"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/titanium.png"
+hash = "59df631a35d71d09f9a23baed9e4786224bb7129261d431804175196d7c696ab"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/humanoid_golem/tungsten.png"
+hash = "be57997e6f514dba41cf95efd80015d6f0d23095ad440a3e04f74388d19ace42"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/metal_golem/lunar_sapphire.png"
+hash = "408cfeb88e696991e6f97792c004df1bd1c925a17ca567c9028bc2608380ada2"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/metal_golem/martian_steel.png"
+hash = "28caa6a55d9355cc0287da000dbb5c4ed9134373e0b520e71fff5e39ed26bb33"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/metal_golem/titanium.png"
+hash = "b2cdb99e9d1ac0a00ef06e63e71bd3785fb0eb44e7d900bbee88c0ee3dbbb921"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/entity/metal_golem/tungsten.png"
+hash = "921bc35a58147c26f83daf6284806eded396692c2db983806e739ad37aff18d8"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/font/scare_black.png"
@@ -417,6 +477,10 @@ file = "kubejs/data/goofy_horror_mod/neoforge/biome_modifier/godly_face_biome_mo
 hash = "d47a9327525c734da68f9c5659e4ae15157e8d2cb691c9b910b00e572825cb6e"
 
 [[files]]
+file = "kubejs/data/modulargolems/modulargolems_config/materials/nightshift_planet.json"
+hash = "c54ce37e52cc073ed30728275371449b252c3f8cf537ca35addefc3cda7d80fd"
+
+[[files]]
 file = "kubejs/data/nightshift/pe_custom_conversions/nightshift_probes.json"
 hash = "1d8c04da3329702197d4d38dda107344aa1dccfd4d2e00e65119c108a4bed46a"
 
@@ -459,6 +523,134 @@ hash = "850faeb3555cb99b6c96005645bbc984af571bdd4ea2b960470852d272eaefd2"
 [[files]]
 file = "kubejs/data/nightshift/recipe/drilling/tungsten.json"
 hash = "b15f819ef6e42114389b526fdb7b559dcb5ceb9d3d953e2c94810447e3548cbe"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_dog_golem_body.json"
+hash = "c006c751f78b5fe4604fd5253f3cd849837617efde44fef6c73bed04dfe2db05"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_dog_golem_legs.json"
+hash = "e25be36c447406ce6582b12e2249728ce081b36bebfce7ecfe48f5d833318680"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_humanoid_golem_arms.json"
+hash = "7a423324a84c3df9d017b8d926c92e7817544792e3cea776ff88cd49c82a9aba"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_humanoid_golem_body.json"
+hash = "3a11c415e2aedb0248bcf598679cdbc2e5989ab60b67119b8bd54872fe62e0e5"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_humanoid_golem_legs.json"
+hash = "eeb92d0d0223fb00a105cd004fd5688ff51f5fc1dd3cbdf1d9922a74ed900c77"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_metal_golem_arm.json"
+hash = "ecde61c10878ccbf02fef1797e5390577947584eb6a166a876f0e249d66e2bb7"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_metal_golem_body.json"
+hash = "b8628c8ef8f886c69dede900f1190c7ed283f4b79128082eaff2472f46ba2e40"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/lunar_sapphire_assemble_metal_golem_legs.json"
+hash = "0779930dd60ce10c458254a0be6a409e8cebff73ca713b5879dcd43b3988170f"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_dog_golem_body.json"
+hash = "94888e43bb1bc3454f16e8104aa872bcaa02cf03b728e22f9e77d3fff491d857"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_dog_golem_legs.json"
+hash = "1a86b3f4852ea067b0d71cf360af1e452ab786ae90c6b3b6cd2ab307ba892fc5"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_humanoid_golem_arms.json"
+hash = "081b2851095e5e369c5443f19c308ca7a8b57f9cf643d3f98129a2743d31b675"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_humanoid_golem_body.json"
+hash = "dfec044916ca5e8f475a81a796898a2ce3662e3f96fd895611315481b4346550"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_humanoid_golem_legs.json"
+hash = "e4b7ffa9ca4326a9c9675e225583d403259784b1ec1ec557a7f8dc0f3fc286e4"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_metal_golem_arm.json"
+hash = "eaeafa8c68f2b9757d8d6827e7873f09d4efa30cdf0cd550ff8d55815e4510ad"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_metal_golem_body.json"
+hash = "25f576a89fa7a74dc578fd12bc3fbd4037b28508e9cd50a3e4671a132715d373"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/martian_steel_assemble_metal_golem_legs.json"
+hash = "fcdafa706f1b5a94dc49a80f8daff790f257db3dc0e09de6399c97d117c17757"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_dog_golem_body.json"
+hash = "31fb0c7c01e83a2a2683552693719cf675409914286f9966922b3b7634fd73c0"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_dog_golem_legs.json"
+hash = "8989cc90749e8868b9b8b1ba8c5f02de456b065c60986c4689325f645e5b13e3"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_humanoid_golem_arms.json"
+hash = "c3bab385ae1c6003a0332c398307a9f19dc69acc0448391023c378d45afec86c"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_humanoid_golem_body.json"
+hash = "ad986d6164c058fa171db42d4d2d1e979766d82a6db35c4965835ee29f38ddce"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_humanoid_golem_legs.json"
+hash = "b6d528f70bd38f86a60dcbed4878f6c47b82a46a44436565540d4468faa44d23"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_metal_golem_arm.json"
+hash = "dea98f9913893b445ffecc33f07de6c0bb4c17aed8a866feddc25aaf3c8e1779"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_metal_golem_body.json"
+hash = "24421e0fda9a88e105959a768148fef1be93afcc444ecbf6c3946c37cd177916"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/titanium_assemble_metal_golem_legs.json"
+hash = "b950efbd888968d7c574b59c02178a3eff21dc090f6e7943d4c05c5c3a802271"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_dog_golem_body.json"
+hash = "41e44102c84dde3a197c54bd169923d61aac06dc79724420c09bdd69571685b9"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_dog_golem_legs.json"
+hash = "f00d41e6ea5ac2e13e01716625ef8f3b79a8bc588e636488faf11b6aa3dfaf51"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_humanoid_golem_arms.json"
+hash = "e4de0d1521c95341f650f40f7606811aa84a0097949d0c988e24f2736f8d478b"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_humanoid_golem_body.json"
+hash = "67eb43967c6401c84f4ccf5214b7a87f360247088eedc29df4fb97ddb52de4d0"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_humanoid_golem_legs.json"
+hash = "2b66944a50b342772a6882ce8048f423a318b247082e3e9e350618a49228d2c1"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_metal_golem_arm.json"
+hash = "72790257a9a261ecbb98a480d568ff530e1d79bb810f53dc6301afe83d320ab7"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_metal_golem_body.json"
+hash = "746414c829bc1eb52c59d14259d644ded841c08bdd75e31152435987290253a5"
+
+[[files]]
+file = "kubejs/data/nightshift/recipe/golems/tungsten_assemble_metal_golem_legs.json"
+hash = "0555ddbec9a2cb874ace142922a21041de8d5e3dea467c741cf0ecc0b6c56055"
 
 [[files]]
 file = "kubejs/data/nightshift/recipe/ore_vein_type/lead.json"
@@ -650,7 +842,7 @@ hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
-hash = "aec945f056e49c7f33a5c9803b4195a3f5ec51dc1a57566df2f69f9f35bbca47"
+hash = "68f943ddb00d7a78d2d2d779a75ba7da2fe5923cf0c0c24b34a1c9b90e3f2b3e"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/20_recipes.js"
@@ -683,6 +875,10 @@ hash = "c8932d17bcf0cf56cb9b45612ec04210393dba4432c2ac12a167922dc9c97de7"
 [[files]]
 file = "kubejs/server_scripts/vahta/45_axiomativ.js"
 hash = "be7f2d7b112fbcd52f50c8e408adb12f514dba4eeda7a3a5fab593e3ab8afd41"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/45_golems.js"
+hash = "7fb4d18449ef9e3df96c6fac83079cdd6924bd5c1c148ad33c69b078ec62ddc1"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
