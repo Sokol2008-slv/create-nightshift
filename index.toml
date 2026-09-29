@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "91d19306882c3351518ab65b148bfb461fe108f3101b5348fa287173ce5bb4c9"
+hash = "b9c326287d368e4a02160f640490e11fed3ac04a4a08144187312e3524039ae8"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -51,6 +51,10 @@ hash = "5478b5ea7ae70af8b2005e3d328767ad6921022f7a3dc5298739a6ea43c5b24b"
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt"
 hash = "59bd95a81b261beaff375f4f11a43e1a9fe8f1b2fdc14c4a9e281f2332b6e062"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/dragons.snbt"
+hash = "414f710d37f961c6864323d27753e675ad4276cfaca7c5650c9531e7cb8d639c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
@@ -118,11 +122,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "3cc596d06e3630688faf884d7444bef94f98dcf29fc9da9eb8750e8305cb96e9"
+hash = "980552afe1d33a4ca79599c53a1337f5c0812d23c052e3b2ec5719fe36a5f644"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "3cc596d06e3630688faf884d7444bef94f98dcf29fc9da9eb8750e8305cb96e9"
+hash = "980552afe1d33a4ca79599c53a1337f5c0812d23c052e3b2ec5719fe36a5f644"
 
 [[files]]
 file = "config/iris.properties"
@@ -533,6 +537,10 @@ file = "kubejs/server_scripts/economy/60_emc_dump.js"
 hash = "cafe1430d311abb8d8e776a88040c583caa11729b6876547ba424df55b04ecbf"
 
 [[files]]
+file = "kubejs/server_scripts/economy/70_nether_star.js"
+hash = "64a0372222a01ab5204b3cd4e3c8ff1f623aa929eacab587e8a7a771b9a1ad42"
+
+[[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
 hash = "d257243fd240a863051f715aba2674a9768d45e4b0e7236e1c231e16efcd3891"
 
@@ -638,7 +646,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/25_smithing.js"
-hash = "dcb42a93b6cecae43f6aa142300fef8ad674d61aa8ddcc009ec2db09d68229f6"
+hash = "c69288c4f6a6a76a2d8598566efafd162d9079e6252a714a36d8501af0c52737"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
@@ -1207,6 +1215,11 @@ metafile = true
 [[files]]
 file = "mods/distanthorizons.pw.toml"
 hash = "6d3e312dbf8db12dd1b6fb3bd1d29f210ab48024a0b2ebdf02fd32c265955c5d"
+metafile = true
+
+[[files]]
+file = "mods/dmr.pw.toml"
+hash = "f0849fc220ab38735f36e04cfeb3bebed09df20194199bcb542cfbf93a240a6e"
 metafile = true
 
 [[files]]

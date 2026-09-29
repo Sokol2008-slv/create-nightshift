@@ -21,6 +21,8 @@ CUSTOM = PACK / 'config' / 'ProjectE' / 'custom_emc.json'
 FAMILY_MODS = {'tfmg', 'railways', 'northstar', 'cbc_at', 'aeronautics', 'simulated', 'sable', 'copycats',
                'dndecor', 'dndesires', 'garnished', 'rechiseledcreate', 'interiors'}
 RAW_RE = re.compile(r'(_ore$|^raw_|_raw_|:raw_)')
+# ручные нули вне семейства Create (генератор пересоздаёт все нулевые записи — эти добавляет всегда)
+MANUAL_ZERO = ['minecraft:nether_star']  # 29.09: звезду не продать и не купить (иначе ферма визеров = печатный станок)
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')
@@ -49,6 +51,7 @@ def main():
     kept = [e for e in data['entries'] if e.get('emc') != 0 and e.get('id') not in locked
             and not (e.get('tag') and FACTORY_RE.search(e['tag']))]
     have = {e.get('id') for e in kept}
+    lock += [i for i in MANUAL_ZERO if i not in lock]
     data['entries'] = kept + [{'id': i, 'emc': 0} for i in sorted(lock) if i not in have]
     json.dump(data, open(CUSTOM, 'w'), ensure_ascii=False, indent=1)
     print('EMC 0: %d предметов, записей всего %d' % (len(lock), len(data['entries'])))

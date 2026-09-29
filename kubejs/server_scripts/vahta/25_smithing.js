@@ -8,6 +8,12 @@
 // [id рецепта стола, шаблон | null, вещь, добавка, результат]
 // ==========================================================================
 var NS_VAHTA_SMITHING = [
+	// Modular Golems (29.09, в буфере «големы»)
+	['modulargolems:netherite_golem_sword', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:diamond_golem_sword', 'minecraft:netherite_ingot', 'modulargolems:netherite_golem_sword'],
+	['modulargolems:netherite_golem_axe', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:diamond_golem_axe', 'minecraft:netherite_ingot', 'modulargolems:netherite_golem_axe'],
+	['modulargolems:netherite_golem_spear', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:diamond_golem_spear', 'minecraft:netherite_ingot', 'modulargolems:netherite_golem_spear'],
+	['modulargolems:netherite_mecha_bow', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:iron_mecha_bow', 'minecraft:netherite_ingot', 'modulargolems:netherite_mecha_bow'],
+	['minecraft:golem_slicing_axe', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:diamond_golem_axe', 'minecraft:stonecutter', 'modulargolems:golem_slicing_axe'],
 	['arphex:chitin_boots_2', null, 'arphex:chitin_armour_boots', 'arphex:chitin', 'arphex:chitin_armour_tier_2_boots'],
 	['arphex:chitin_boots_3', null, 'arphex:chitin_armour_tier_2_boots', 'minecraft:netherite_ingot', 'arphex:chitin_armour_tier_3_boots'],
 	['arphex:chitin_chestplate_2', null, 'arphex:chitin_armour_chestplate', 'arphex:chitin', 'arphex:chitin_armour_tier_2_chestplate'],
