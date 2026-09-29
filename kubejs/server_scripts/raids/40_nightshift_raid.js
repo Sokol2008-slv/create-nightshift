@@ -112,6 +112,8 @@ function nsPlayersNearAltar(level, altar) {
 // Живые мобы набега вокруг алтаря. null — если поиск не удался.
 function nsCollectRaidMobs(level, altar, radius) {
 	var R = radius || NSG.NIGHTSHIFT_TUNABLES.raidTrackRadius
+	var st = nsGetState()
+	var rid = st && st.raid && st.raid.rid ? 'ns_r' + st.raid.rid : null // набег без номера (старый) — как раньше
 	var list
 	try {
 		list = level.getEntitiesWithin(new NS_AABB(altar.x - R, altar.y - 64, altar.z - R, altar.x + R + 1, altar.y + 64, altar.z + R + 1))
@@ -129,9 +131,29 @@ function nsCollectRaidMobs(level, altar, radius) {
 		try {
 			alive = ent.isAlive()
 		} catch (e) {}
-		if (alive && nsHasRaidTag(ent)) out.push(ent)
+		if (!alive || !nsHasRaidTag(ent)) continue
+		if (rid && !nsHasTag(ent, rid)) {
+			// пассажир нашего моба (всадник Кошмара) — свой, хоть номер в его NBT и не вписан
+			var veh = null
+			try {
+				veh = ent.getVehicle()
+			} catch (e) {}
+			if (!(veh && nsHasTag(veh, rid))) {
+				nsRemoveMob(ent) // моб прошлого набега — не наш
+				continue
+			}
+		}
+		out.push(ent)
 	}
 	return out
+}
+
+function nsHasTag(entity, tag) {
+	try {
+		return entity.getTags().contains(tag)
+	} catch (e) {
+		return false
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -207,7 +229,8 @@ function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt) {
 		}
 		if (y === null) continue
 		farthest = Math.max(farthest, Math.sqrt((x - altar.x) * (x - altar.x) + (z - altar.z) * (z - altar.z)))
-		var nbt = '{Tags:["nightshift_raid"],PersistenceRequired:1b' + (extraNbt ? ',' + extraNbt : '') + '}'
+		var rtag = state && state.raid && state.raid.rid ? ',"ns_r' + state.raid.rid + '"' : ''
+		var nbt = '{Tags:["nightshift_raid"' + rtag + '],PersistenceRequired:1b' + (extraNbt ? ',' + extraNbt : '') + '}'
 		NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run summon ' + mobId + ' ' + x + ' ' + y + ' ' + z + ' ' + nbt)
 	}
 	return farthest
@@ -381,8 +404,13 @@ function nsStartRaid(kind, altarId, difficulty) {
 	var state = nsGetState()
 	if (nsRaidActive(state)) return
 	var d = kind === 'minor' ? 0 : difficulty || 1
+	// мобы прошлых набегов с тегом nightshift_raid (недобитые, из выгруженных чанков, с тестов) засчитывались
+	// новому набегу: 30.09 на 15-й волне у алтаря сразу оказался старый зомби — провал за 12 с. Теперь у каждого
+	// набега свой номер (тег ns_r<номер> на его мобах), а старых при старте убираем.
+	NSG.nsServer.runCommandSilent('kill @e[tag=nightshift_raid]')
 
 	state.raid = {
+		rid: String(Math.floor(Math.random() * 1e9)),
 		state: 'countdown',
 		kind: kind, // challenge — выбранная сложность; minor — малый набег раз в 5 ночей
 		difficulty: d,
