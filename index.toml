@@ -17,12 +17,8 @@ file = "config/ProjectE/server.toml"
 hash = "5b4f9802c51836656497f3335c52ebee061178a170d74933526edf8eb251260f"
 
 [[files]]
-file = "config/create_new_age-server.toml"
-hash = "5bb24cb8e4853f9d9d27ef64603e844ae97440fd814c8585624285c014b6d831"
-
-[[files]]
 file = "config/createaddition-common.toml"
-hash = "f6f554476ca23d0e051f1531dcafc4e9f3355c868af6af82e4b8f3b6edb2f5d0"
+hash = "e9d794bc6316cf72512d57479f5260c8539524a20743aab0bad5858157c25a7b"
 
 [[files]]
 file = "config/createdieselgenerators-server.toml"
@@ -70,7 +66,7 @@ hash = "552aed806e4fa883fee5adca98036f82047ccdbf564aac8eed38513c31e62096"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "f9fddbfa8092865f2bf98ed40b6741c89c953743ca7b23dec174327817355aca"
+hash = "d44260586416d4fca018ba0194ae789a3678990fbc25ff5d81fee3dd08878a3f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
@@ -130,11 +126,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "e7c7f4ba419e5bfe97a1bb05f4c357e617adef11074ef257d2d75c7128364128"
+hash = "c237c800e8aa823fd173b19c7498c044bdae1b2b073cb03b357771816d857ec6"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "e7c7f4ba419e5bfe97a1bb05f4c357e617adef11074ef257d2d75c7128364128"
+hash = "c237c800e8aa823fd173b19c7498c044bdae1b2b073cb03b357771816d857ec6"
 
 [[files]]
 file = "config/iris.properties"
@@ -675,6 +671,10 @@ hash = "5c60a63a89cd48d43052db9baa44b77fc8d35787d152e66659cb2ccf79baac25"
 [[files]]
 file = "kubejs/server_scripts/vahta/35_crafter_cover.js"
 hash = "b46714dbf6036a21f4ca194f23358fb5b2856b4cfc68f74e1ce73a25b584d88f"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/40_connector_upgrade.js"
+hash = "c8932d17bcf0cf56cb9b45612ec04210393dba4432c2ac12a167922dc9c97de7"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"

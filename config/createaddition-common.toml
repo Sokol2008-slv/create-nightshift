@@ -82,7 +82,7 @@
 	#The maximum stored amount in the connector network internal buffer.
 	# Default: 80000
 	# Range: > 80000
-	connector_network_internal_buffer = 80000
+	connector_network_internal_buffer = 1000000000
 	#Small Connector max input in FE/t (Energy transfer).
 	# Default: 1000
 	# Range: > 0

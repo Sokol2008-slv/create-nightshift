@@ -39,6 +39,16 @@
 			y: -2.80d
 		}
 		{
+			dependencies: ["6B4A80C8D04DFF1C"]
+			id: "502442B12090F06D"
+			rewards: [{ id: "60AB547B0572FCF0", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1DAD77C5D226CE05", count: 2L, item: { count: 1, id: "createaddition:large_connector" }, type: "item" }]
+			x: 6.60d
+			y: -2.80d
+		}
+		{
 			dependencies: ["20DA09E339E199EE"]
 			id: "0B8DDB0E251F417E"
 			rewards: [{ id: "74A8608EAD3EA468", type: "xp", xp: 10 }]
@@ -69,7 +79,7 @@
 			y: -0.40d
 		}
 		{
-			dependencies: ["448B006147B5FDA1"]
+			dependencies: ["448B006147B5FDA1", "502442B12090F06D"]
 			icon: { id: "createaddition:large_connector" }
 			id: "64ED4267E88744E6"
 			rewards: [{ id: "592F5253360C892C", type: "xp", xp: 50 }]
@@ -77,7 +87,7 @@
 			size: 1.6d
 			tasks: [{ id: "09A0024F4E11AA16", type: "checkmark" }]
 			x: 8.80d
-			y: -0.93d
+			y: -2.13d
 		}
 		{
 			dependencies: ["6A24AF99B3061795"]
