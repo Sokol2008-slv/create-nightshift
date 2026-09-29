@@ -13,6 +13,11 @@ ItemEvents.modifyTooltips(event => {
 		Text.gold('Награда волны 50.'),
 		Text.gray('Без него не собрать контроллер ракеты.')
 	])
+	event.add('nightshift:tactical_nuke', [
+		Text.gold('Оружие поздних волн (70+).'),
+		Text.gray('ПКМ: все монстры в радиусе 48 блоков — насмерть, боссам −35 % здоровья.'),
+		Text.gray('Блоки не ломает, своих не трогает. Перезарядка 60 с.')
+	])
 	event.add('nightshift:star_pickaxe', [
 		Text.gold('Награда волны 70.'),
 		Text.gray('Копает руды наших планет: аксиомит и стабилит.')

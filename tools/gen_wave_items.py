@@ -49,4 +49,6 @@ recolor(van("fire_charge"), ["#0a1a3a", "#1f4fa8", "#4fb6ff"], ["#bfe9ff", "#fff
 recolor(van("copper_ingot"), ["#3a1a0c", "#9a4a24", "#d97a3c"], ["#7fe9ff", "#e0fbff"], 0.82).save(OUT / "electric_copper.png")
 recolor(van("heart_of_the_sea"), ["#1c050b", "#5e1424", "#94243a"], ["#5d8f45", "#85bb65", "#c6e6a8"], 0.7).save(OUT / "navigation_core.png")
 recolor(van("netherite_pickaxe"), ["#1c050b", "#4a0f1d", "#7a1a2e", "#a3283f"], ["#5d8f45", "#85bb65", "#c6e6a8"], 0.85).save(OUT / "star_pickaxe.png")
+# тактический ядерный заряд: радиоактивный жёлто-зелёный с чёрным
+recolor(van("firework_star"), ["#0d0d06", "#2e3a08", "#8fb514"], ["#d4f23a", "#fbff9e"], 0.75).save(OUT / "tactical_nuke.png")
 print("текстуры наград волн готовы")

@@ -6,6 +6,7 @@
 //    генератор TFMG). Только автоматизацией — EMC 0.
 //  - Ядро навигации (волна 50): без него не собрать контроллер ракеты.
 //  - Звёздная кирка (волна 70): копает руды наших планет (аксиомит, стабилит).
+//  - Тактический ядерный заряд: оружие поздних волн (server_scripts/vahta/55_tactical_nuke.js).
 // Рецепты — server_scripts/vahta/50_wave_rewards.js, выдача — raids/40_nightshift_raid.js.
 // ==========================================================================
 StartupEvents.registry('item', event => {
@@ -20,6 +21,12 @@ StartupEvents.registry('item', event => {
 		.texture('nightshift:item/navigation_core')
 		.maxStackSize(16)
 		.rarity('rare')
+		.glow(true)
+	// Тактический ядерный заряд (волны 70+): выносит монстров вокруг, боссам −35 % здоровья, блоки не ломает
+	event.create('nightshift:tactical_nuke')
+		.texture('nightshift:item/tactical_nuke')
+		.maxStackSize(4)
+		.rarity('epic')
 		.glow(true)
 	event.create('nightshift:star_pickaxe', 'pickaxe')
 		.texture('nightshift:item/star_pickaxe')
