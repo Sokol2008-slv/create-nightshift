@@ -34,6 +34,17 @@ function nsRaidEnded() {
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 100')
 }
 
+// Самолечение сна (29.09: «спать не можем», а набег idle и алтарей нет): 101 % ставит только набег.
+// Если набега нет, а правило осталось выше 100 (набег оборвался мимо nsRaidEnded) — возвращаем 100.
+var NS_GAMERULES = Java.loadClass('net.minecraft.world.level.GameRules')
+function nsHealSleepRule(server) {
+	try {
+		if (server.getGameRules().getInt(NS_GAMERULES.RULE_PLAYERS_SLEEPING_PERCENTAGE) > 100) nsRaidEnded()
+	} catch (e) {
+		console.warn('[nightshift] проверка правила сна: ' + e)
+	}
+}
+
 // Сброс набега (алтарь пропал, нет конфига орды, /nightshift stop): мобы набега уходят вместе с ним
 function nsResetRaidIdle(state) {
 	state.raid = nsDefaultState().raid
@@ -953,6 +964,7 @@ ServerEvents.tick(event => {
 	switch (state.raid.state) {
 		case 'idle':
 			nsCheckMinorRaidSchedule(state)
+			if (nsRaidTickCounter % 1200 === 0) nsHealSleepRule(event.server) // раз в минуту
 			break
 		case 'countdown':
 			nsTickCountdown(state)
