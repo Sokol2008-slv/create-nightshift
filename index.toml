@@ -1054,7 +1054,7 @@ hash = "9dfe3b6d74a0ca1de12952398f8ae9d87a3c00276feb21af6a23a7b6aaee55e6"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "e20fd814d9240b61805e669558880f5a1e11969e5165d045277a0574709d5727"
+hash = "be2ff511f895540ff2af207d3e71f753776807f64718ccf02f5625e1710de5d3"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
@@ -1070,7 +1070,7 @@ hash = "f31eee1c4451c0f800af2360822c1f2eb0ab5adc517e594ea10f6660b294c100"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "bcdb4c5f6664e642f9def9e8a0228bb63c7569b5678b0f768d3deb3bd7f3eaa0"
+hash = "30f4388a9eadf43c0e01ecf5a0352abfdf84c976d46e43a26a67a433cb5bf649"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
@@ -1098,7 +1098,7 @@ hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
+hash = "60fad6119927d20a7c770047171debd333e26fd6b5051909b78ec0048ab518f6"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -1134,7 +1134,7 @@ hash = "c8932d17bcf0cf56cb9b45612ec04210393dba4432c2ac12a167922dc9c97de7"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/45_axiomativ.js"
-hash = "be7f2d7b112fbcd52f50c8e408adb12f514dba4eeda7a3a5fab593e3ab8afd41"
+hash = "652bd73f039c49a9c5eece13dd6ebbc5c6b92af2c91eac61758fb66bce0a6ada"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/45_golems.js"
@@ -1142,7 +1142,7 @@ hash = "7fb4d18449ef9e3df96c6fac83079cdd6924bd5c1c148ad33c69b078ec62ddc1"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/50_wave_rewards.js"
-hash = "e9e3872cdde708578770919c166f97a0b365552a38623b1eb37336d746059966"
+hash = "6584225dc069fc2716c7294c81d77bb3aba4a2b9a31afceba4cbca0d139992a7"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
@@ -1224,8 +1224,8 @@ hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
 metafile = true
 
 [[files]]
-file = "mods/axiomativ-0.1.2.jar"
-hash = "dc6d326009f3605dcc9669a2d4896135b302309a8a3e31e4a8a2356513600761"
+file = "mods/axiomativ-0.2.1.jar"
+hash = "51d9643e811ece0b543af919400417478dff65cb3f79324480ba9a85c168abae"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

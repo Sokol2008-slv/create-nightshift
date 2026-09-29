@@ -21,6 +21,21 @@ NSG.NIGHTSHIFT_NS = 'nightshift'
 function nsMob(id, count, label, nbt) {
 	return { id: 'minecraft:' + id, count: count, label: label, nbt: nbt || '' }
 }
+// Моб с доп. тегами сущности (особые против генератора щита, аддон Axiomativ Industries):
+// ns_shield_pierce — проходит сквозь купол, ns_shield_breaker — ×10 по щиту, ns_shield_drain — выжигает запас FE.
+function nsMobT(id, count, label, tags, nbt) {
+	var m = nsMob(id, count, label, nbt)
+	m.tags = tags
+	return m
+}
+// Подволна «против щита» (Георгий, 30.09: «должны быть монстры, которые игнорируют щит, и те, что быстро его
+// разбирают»). Щит появляется после космоса — подволна стоит в составах волн 50+ (Буря, Великая орда).
+var NS_SHIELD_BREAKERS = [
+	nsMobT('vex', 6, 'пронзатель (сквозь щит)', ['ns_shield_pierce']),
+	nsMobT('ravager', 2, 'разрушитель щита (×10 по щиту)', ['ns_shield_breaker']),
+	nsMobT('witch', 4, 'разрядник (выжигает запас щита)', ['ns_shield_drain']),
+	nsMob('silverfish', 16, 'рой'),
+]
 function nsArmor(mat) {
 	var slots = ['boots', 'leggings', 'chestplate', 'helmet']
 	var items = []
@@ -209,13 +224,14 @@ NSG.NIGHTSHIFT_DIFFICULTY = {
 			[nsMob('evoker', 6, 'заклинатель'), nsMob('vindicator', 18, 'поборник'), NS_MIMIC],
 			[nsMob('ravager', 7, 'опустошитель'), nsMob('pillager', 18, 'разбойник')],
 			[nsMob('breeze', 15, 'вихрь'), nsMob('phantom', 18, 'фантом'), nsMob('evoker', 4, 'заклинатель')],
+			NS_SHIELD_BREAKERS,
 		],
 		boss: { id: 'minecraft:ravager', hpLabel: 400, label: 'Громовой таран', nbt: nsName('Громовой таран') + ',Health:400.0f,attributes:[{id:"minecraft:generic.max_health",base:400.0d},{id:"minecraft:generic.scale",base:1.4d}]' },
 	},
 	10: {
 		name: 'Великая орда',
 		buff: { resistance: 1, strength: 1 },
-		waves: NSH[5].waves.concat(NSH[6].waves),
+		waves: NSH[5].waves.concat(NSH[6].waves, [NS_SHIELD_BREAKERS]),
 		boss: NSH[6].boss,
 	},
 }
@@ -391,6 +407,8 @@ function nsTributeFor(best) {
 // northstar-мобов и мода в целом — оценка "как у зомби", проверить Jade.
 // --------------------------------------------------------------------------
 NSG.NIGHTSHIFT_MOB_HP = {
+	'minecraft:silverfish': 8,
+	'minecraft:vex': 14,
 	'minecraft:zombie': 20,
 	'minecraft:husk': 20,
 	'minecraft:drowned': 20,

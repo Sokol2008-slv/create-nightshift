@@ -17,4 +17,16 @@ ServerEvents.recipes(event => {
 		P: 'create:precision_mechanism',
 		W: 'northstar:tungsten_sheet'
 	}).id('nightshift:vahta/axiomativ/planetary_grindstone')
+
+	// Генератор щита (аддон 0.2.0): после космоса — межпланетный сплав, электрическая медь, маяк, аккумулятор
+	event.recipes.create.mechanical_crafting('axiomativ:shield_generator', [
+		'AEA',
+		'EBE',
+		'ACA'
+	], {
+		A: 'axiomativ:interplanetary_alloy',
+		E: 'nightshift:electric_copper',
+		B: 'minecraft:beacon',
+		C: 'createaddition:modular_accumulator'
+	}).id('nightshift:vahta/axiomativ/shield_generator')
 })

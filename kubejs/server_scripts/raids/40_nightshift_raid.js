@@ -194,7 +194,7 @@ function nsFindSpawnY(level, x, z, altarY) {
 
 // Спавн count мобов mobId кольцом raidRingMinDist..raidRingMaxDist от алтаря, вне зон базы.
 // Возвращает наибольшее расстояние спавна — по нему растёт радиус поиска мобов набега.
-function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt) {
+function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt, extraTags) {
 	var T = NSG.NIGHTSHIFT_TUNABLES
 	var farthest = 0
 	var pts = altar.spawns || []
@@ -230,6 +230,7 @@ function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt) {
 		if (y === null) continue
 		farthest = Math.max(farthest, Math.sqrt((x - altar.x) * (x - altar.x) + (z - altar.z) * (z - altar.z)))
 		var rtag = state && state.raid && state.raid.rid ? ',"ns_r' + state.raid.rid + '"' : ''
+		for (var et = 0; extraTags && et < extraTags.length; et++) rtag += ',"' + extraTags[et] + '"'
 		var nbt = '{Tags:["nightshift_raid"' + rtag + '],PersistenceRequired:1b' + (extraNbt ? ',' + extraNbt : '') + '}'
 		NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run summon ' + mobId + ' ' + x + ' ' + y + ' ' + z + ' ' + nbt)
 	}
@@ -583,7 +584,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 	var scale = nsPartyScale() * (hordeCfg.mult || 1)
 	for (var i = 0; i < wave.length; i++) {
 		var n = Math.ceil(wave[i].count * scale)
-		nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, wave[i].id, n, state, wave[i].nbt))
+		nsGrowTrackRadius(state, nsSpawnMobRing(level, altar, wave[i].id, n, state, wave[i].nbt, wave[i].tags))
 		size += n
 	}
 	nsBoostRaidMobs(hordeCfg.buff, hordeCfg.scale)
