@@ -17,6 +17,10 @@ file = "config/ProjectE/server.toml"
 hash = "5b4f9802c51836656497f3335c52ebee061178a170d74933526edf8eb251260f"
 
 [[files]]
+file = "config/createaddition-common.toml"
+hash = "d0ec7931b6613a3a75745a91ce34e22a353eb7e0753471f9f1236e5042bee8f7"
+
+[[files]]
 file = "config/createdieselgenerators-server.toml"
 hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
 
@@ -610,7 +614,7 @@ hash = "5c08ab043cc8b249197f5cfc276f333ec1c90034b252b4b9e8424f385bba4e66"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "732d35a45f9c058897208c1097f4c3a52e4bd023e8f567b459be90718e6e5721"
+hash = "9760f624352d4c3e6cef0361776366e4fd8ff06a9685d87e8bb81f5ca93aa59f"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
