@@ -1098,7 +1098,7 @@ hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "4d551756e38e2e96f0f09024ea7f67ec8cfc75b4ba72be7ca216ce7130e7f9d4"
+hash = "60fad6119927d20a7c770047171debd333e26fd6b5051909b78ec0048ab518f6"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -1142,7 +1142,7 @@ hash = "7fb4d18449ef9e3df96c6fac83079cdd6924bd5c1c148ad33c69b078ec62ddc1"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/50_wave_rewards.js"
-hash = "e9e3872cdde708578770919c166f97a0b365552a38623b1eb37336d746059966"
+hash = "6584225dc069fc2716c7294c81d77bb3aba4a2b9a31afceba4cbca0d139992a7"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
@@ -1968,6 +1968,11 @@ hash = "084c968377b79038daf8ce77bee9d86c3be4b2895ccab6f4a50915743d1533e9"
 metafile = true
 
 [[files]]
+file = "mods/l_enders-cataclysm.pw.toml"
+hash = "f262b49b1038ef9f67704e0629da6aafa84cf4f760273589f5d73530ca5d74b5"
+metafile = true
+
+[[files]]
 file = "mods/lambdynamiclights.pw.toml"
 hash = "ebf0dae777cc19c354a662dc8144009dff7269b2d05624b4591fcb7de56fc14e"
 metafile = true
@@ -1975,6 +1980,11 @@ metafile = true
 [[files]]
 file = "mods/libipn.pw.toml"
 hash = "0d2a00252d64ed7d2d9b19994f7accb780304be61f3903d36e810714b414c6cb"
+metafile = true
+
+[[files]]
+file = "mods/lionfish-api.pw.toml"
+hash = "64acab1580ca6edd8b1dd185e914aeee7aa551a88a7cd7f0f9370a82aaadfef6"
 metafile = true
 
 [[files]]
