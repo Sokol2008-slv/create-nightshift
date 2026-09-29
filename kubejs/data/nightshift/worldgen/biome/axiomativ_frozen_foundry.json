@@ -1,0 +1,55 @@
+{
+  "carvers": {
+    "air": [
+      "nightshift:planet_cave",
+      "nightshift:planet_cave_extra_underground"
+    ]
+  },
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 12175830,
+    "sky_color": 9414328,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.02
+    }
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "nightshift:axiomativ_basalt_stacks",
+      "minecraft:ice_spike"
+    ],
+    [],
+    [
+      "nightshift:axiomativ_ore_axiomite",
+      "nightshift:axiomativ_ore_axiomite_large",
+      "nightshift:axiomativ_ore_iron",
+      "nightshift:axiomativ_raw_iron_blob"
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": -1.0
+}

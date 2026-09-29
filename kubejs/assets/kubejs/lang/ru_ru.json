@@ -1,0 +1,19 @@
+{
+  "block.kubejs.axiomite_ore": "Аксиомитовая руда",
+  "block.kubejs.deepslate_axiomite_ore": "Глубинная аксиомитовая руда",
+  "block.kubejs.stabilite_ore": "Стабилитовая руда",
+  "block.kubejs.dark_stabilite_ore": "Тёмная стабилитовая руда",
+  "item.kubejs.raw_axiomite": "Необработанный аксиомит",
+  "item.kubejs.crushed_raw_axiomite": "Дроблёный рудный аксиомит",
+  "item.kubejs.axiomite_ingot": "Аксиомитовый слиток",
+  "item.kubejs.raw_stabilite": "Необработанный стабилит",
+  "item.kubejs.crushed_raw_stabilite": "Дроблёный рудный стабилит",
+  "item.kubejs.stabilite_ingot": "Стабилитовый слиток",
+  "nightshift.planets.axiomativ.name": "Аксиоматив",
+  "nightshift.planets.yin_yang.name": "Инь-Янь",
+  "biome.nightshift.axiomativ_steel_plains": "Стальные равнины",
+  "biome.nightshift.axiomativ_frozen_foundry": "Мёрзлая литейная",
+  "biome.nightshift.yin_yang_yin": "Инь",
+  "biome.nightshift.yin_yang_yang": "Ян",
+  "northstar.planet.dimension.surface": "Поверхность"
+}

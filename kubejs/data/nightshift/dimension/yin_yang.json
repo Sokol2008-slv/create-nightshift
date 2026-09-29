@@ -1,0 +1,15 @@
+{
+  "type": "nightshift:yin_yang",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "nightshift:yin_yang",
+    "biome_source": {
+      "type": "minecraft:checkerboard",
+      "biomes": [
+        "nightshift:yin_yang_yin",
+        "nightshift:yin_yang_yang"
+      ],
+      "scale": 9
+    }
+  }
+}

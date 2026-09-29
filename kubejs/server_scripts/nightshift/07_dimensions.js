@@ -32,7 +32,9 @@ var NIGHTSHIFT_NORTHSTAR_DIMENSIONS = [
     'northstar:mars', 'northstar:mars_orbit',
     'northstar:mercury', 'northstar:mercury_orbit',
     'northstar:moon',
-    'northstar:venus', 'northstar:venus_orbit'
+    'northstar:venus', 'northstar:venus_orbit',
+    // свои планеты (kubejs/data/nightshift/dimension, docs/PLANETS.md) — орбит у них нет, как у Луны
+    'nightshift:axiomativ', 'nightshift:yin_yang'
 ]
 
 NIGHTSHIFT_NORTHSTAR_DIMENSIONS.forEach(function (dimId) {

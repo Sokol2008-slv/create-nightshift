@@ -1,0 +1,29 @@
+{
+  "atmosphere": {
+    "composition": {
+      "breathable": false,
+      "fluid": "northstar:hydrogen"
+    },
+    "daytime_star_brightness": 0.5,
+    "pressure_pa": 50000.0
+  },
+  "average_temperature": 20.0,
+  "dimension": "nightshift:yin_yang",
+  "gravity": 9.807,
+  "heat_gradient": 0.1,
+  "heat_intercept": 60.0,
+  "name": "surface",
+  "planet": "nightshift:yin_yang",
+  "sun_multiplier": {
+    "type": "northstar:arithmetic",
+    "a": {
+      "type": "northstar:light",
+      "mode": "sky_darken",
+      "normalize": true
+    },
+    "b": 1.0,
+    "mode": "mul"
+  },
+  "temperature": 20.0,
+  "wind_multiplier": 0.0
+}

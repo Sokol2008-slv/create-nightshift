@@ -1,0 +1,9 @@
+{
+  "dimension": "nightshift:yin_yang",
+  "base_gravity": [
+    0.0,
+    -9.807,
+    0.0
+  ],
+  "base_pressure": 0.4935
+}

@@ -1,0 +1,16 @@
+{
+  "central_body": "northstar:sol",
+  "diameter": 9800.0,
+  "orbit": {
+    "type": "northstar:simple",
+    "ascending_node_deg": 121.4,
+    "duration_days": 1191.9,
+    "inclination_deg": 4.2,
+    "initial_mean_anomaly_deg": 250.0,
+    "radius": 2.2
+  },
+  "renderer": "nightshift:axiomativ_sky",
+  "required_science": 8.0,
+  "rotation_period_days": 0.9,
+  "texture": "nightshift:axiomativ"
+}
