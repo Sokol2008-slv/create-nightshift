@@ -1114,11 +1114,11 @@ hash = "5203887c709d2463509bbc019ed0caef1b275dbccaf250759d7684032dac1134"
 
 [[files]]
 file = "kubejs/server_scripts/raids/06_cataclysm_safety.js"
-hash = "99405d1905fa57291fa0b190c82412dee74f2f1547c84f925ed2b9bbb668d858"
+hash = "947fab550cf1795e15d7af9677e4d67ae50cd8673102ed28bfede14d6b189d2b"
 
 [[files]]
 file = "kubejs/server_scripts/raids/07_raid_no_infighting.js"
-hash = "215ebc67301e94a7874db61181bd858ae1f707760974b9499e7ae811ddb209d9"
+hash = "d41fffc8d9e43d18e430504c4764abfb80e543689fcd9e4b03f3e33704591f67"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
