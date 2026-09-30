@@ -19,15 +19,22 @@ function nsCmEntity(e) {
 	}
 }
 
+// тело каждого обработчика — в try: исключение в нативном обработчике роняет сервер (30.09, 07_raid_no_infighting.js)
 NativeEvents.onEvent(NS_CM_GRIEF, function (event) {
-	if (nsCmEntity(event.getEntity())) event.setCanGrief(false)
+	try {
+		if (nsCmEntity(event.getEntity())) event.setCanGrief(false)
+	} catch (x) {}
 })
 
 NativeEvents.onEvent(NS_CM_DETONATE, function (event) {
-	var ex = event.getExplosion()
-	if (nsCmEntity(ex.getDirectSourceEntity()) || nsCmEntity(ex.getIndirectSourceEntity())) event.getAffectedBlocks().clear()
+	try {
+		var ex = event.getExplosion()
+		if (nsCmEntity(ex.getDirectSourceEntity()) || nsCmEntity(ex.getIndirectSourceEntity())) event.getAffectedBlocks().clear()
+	} catch (x) {}
 })
 
 NativeEvents.onEvent(NS_CM_DESTROY, function (event) {
-	if (nsCmEntity(event.getEntity())) event.setCanceled(true)
+	try {
+		if (nsCmEntity(event.getEntity())) event.setCanceled(true)
+	} catch (x) {}
 })
