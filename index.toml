@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "924a4c9623383cdc26fc6c7fc5720b57c59a09d099b87ce04d452e2ad40f4278"
+hash = "c19210656afd21c9b0ad9f462c3da8536cb6cd2040a582cbb2a905556af1597e"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "924a4c9623383cdc26fc6c7fc5720b57c59a09d099b87ce04d452e2ad40f4278"
+hash = "c19210656afd21c9b0ad9f462c3da8536cb6cd2040a582cbb2a905556af1597e"
 
 [[files]]
 file = "config/iris.properties"
@@ -1110,7 +1110,7 @@ hash = "c3609dde17f4d78324dfaa137135e5a4d37711d090379628b7ad7c5dbafecc74"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "31b15327f47f3d5c6bb6c7de7d381b956dd8218d8618d1ed240d709e32ed9b90"
+hash = "90a4824985ed13422155790cde1403dfd9f132fc04a85a179e82dd75b87f78d3"
 
 [[files]]
 file = "kubejs/server_scripts/raids/05_cataclysm_bosses.js"
@@ -1138,7 +1138,7 @@ hash = "f89a68dc402a2ae9ec3d7f9daa6fd4ae0ccbb2fe59b8e5752cc03a71eb17ae28"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "11fd2e70fdafe2edb1df9990e041481eddbe845f91e8564e362afaf7bb317b4e"
+hash = "2ef9fab9744f96b77997e669e127615df69df43f7ff9fbae6365975713cc163b"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"

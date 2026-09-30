@@ -955,11 +955,12 @@ function nsMinorHorde(best) {
 	return nsChallengeHorde(nsMinorWave(best))
 }
 
-// Защитники — игроки у алтаря (в его измерении, ближе raidPlayerRadius)
+// Защитники — все игроки в измерении алтаря, без ограничения по расстоянию (Георгий, 01.10: «когда драки, не
+// засчитывает, что мы у алтаря, потому что мы далеко — сними ограничение»). Пауза набега — отдельно,
+// nsPlayersNearAltar (raidPlayerRadius).
 function nsParticipants(altar) {
 	var out = []
 	if (!altar) return out
-	var r = NSG.NIGHTSHIFT_TUNABLES.raidPlayerRadius
 	var players = NSG.nsServer.getPlayers()
 	for (var i = 0; i < players.length; i++) {
 		var p = players[i]
@@ -967,9 +968,7 @@ function nsParticipants(altar) {
 		try {
 			if (p.isSpectator()) continue
 		} catch (e) {}
-		var dx = p.getX() - altar.x,
-			dz = p.getZ() - altar.z
-		if (dx * dx + dz * dz <= r * r) out.push(p)
+		out.push(p)
 	}
 	return out
 }
