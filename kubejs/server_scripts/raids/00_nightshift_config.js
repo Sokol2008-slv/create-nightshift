@@ -530,7 +530,8 @@ NSG.NIGHTSHIFT_TUNABLES = {
 	zoneParticleType: 'minecraft:end_rod',
 	raidRingMinDist: 30,
 	raidRingMaxDist: 45,
-	raidCountdownSeconds: 60,
+	raidCountdownSeconds: 60, // малый набег (приходит сам ночью — успеть добежать до базы)
+	challengeCountdownSeconds: 15, // набег, запущенный у алтаря (Георгий, 01.10: «ждать минуту волну слишком долго»)
 	raidFailRadius: 2, // моб ближе этого расстояния до алтаря = провал
 	raidPlayerRadius: 64, // набег идёт, только пока игрок ближе этого к алтарю (иначе пауза)
 	raidTrackRadius: 96, // в какой коробке вокруг алтаря ищем мобов набега

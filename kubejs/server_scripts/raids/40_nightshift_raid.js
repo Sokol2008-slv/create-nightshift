@@ -460,6 +460,12 @@ function nsClearNaturalMonsters(altar, r) {
 	}
 }
 
+// Отсчёт до выхода орды: запущенный у алтаря набег — короткий, малый (приходит сам) — минута
+function nsCountdownFor(kind) {
+	var T = NSG.NIGHTSHIFT_TUNABLES
+	return kind === 'minor' ? T.raidCountdownSeconds : T.challengeCountdownSeconds || T.raidCountdownSeconds
+}
+
 function nsStartRaid(kind, altarId, difficulty) {
 	var state = nsGetState()
 	if (nsRaidActive(state)) return
@@ -479,7 +485,7 @@ function nsStartRaid(kind, altarId, difficulty) {
 		waveIndex: -1,
 		waveStartedAtTick: 0,
 		bossSpawned: false,
-		countdownRemaining: NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds,
+		countdownRemaining: nsCountdownFor(kind),
 		waveSize: 0,
 		spawnRetries: 0,
 		paused: false,
@@ -501,7 +507,7 @@ function nsStartRaid(kind, altarId, difficulty) {
 		nsTitleAll(nsDifficultyName(d), {
 			color: 'dark_red',
 			bold: true,
-			subtitle: 'Орда придёт через ' + NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds + ' секунд',
+			subtitle: 'Орда придёт через ' + nsCountdownFor(kind) + ' секунд',
 			subColor: 'gray',
 		})
 		NSG.nsServer.runCommandSilent('playsound minecraft:entity.wither.spawn ambient @a')
@@ -510,8 +516,8 @@ function nsStartRaid(kind, altarId, difficulty) {
 	nsInviteToAltar(nsFindAltar(state, altarId), kind)
 	nsClearNaturalMonsters(nsFindAltar(state, altarId), 48)
 	nsBossbarCreate('nightshift:raid_countdown', name, kind === 'minor' ? 'yellow' : 'red')
-	nsBossbarMax('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
-	nsBossbarValue('nightshift:raid_countdown', NSG.NIGHTSHIFT_TUNABLES.raidCountdownSeconds)
+	nsBossbarMax('nightshift:raid_countdown', nsCountdownFor(kind))
+	nsBossbarValue('nightshift:raid_countdown', nsCountdownFor(kind))
 }
 
 // {waves, boss, buff, mult} текущего набега: выбранная сложность или малый набег по силам команды
