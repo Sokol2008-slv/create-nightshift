@@ -36,7 +36,7 @@
 			size: 1.0d
 			tasks: [{ id: "2B8894FCA431ABD2", count: 2L, item: { count: 1, id: "create:cogwheel" }, type: "item" }]
 			x: 4.40d
-			y: 0.80d
+			y: 0.00d
 		}
 		{
 			dependencies: ["50FADB6F1F2FFCC9"]
@@ -46,27 +46,7 @@
 			size: 1.0d
 			tasks: [{ id: "4094A4872E7F8EBB", count: 2L, item: { count: 1, id: "create:large_cogwheel" }, type: "item" }]
 			x: 6.60d
-			y: -3.20d
-		}
-		{
-			dependencies: ["7A9E4A6FA2EA52AF"]
-			id: "021C59A76EC5D8D5"
-			rewards: [{ id: "1776DD3B3B19180F", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "49B58A6A4CA63A83", item: { count: 1, id: "create:water_wheel" }, type: "item" }]
-			x: 4.40d
-			y: -0.80d
-		}
-		{
-			dependencies: ["192A9E87FB0BF09E"]
-			id: "0C5F009A7468C1F1"
-			rewards: [{ id: "6EFC3A0D8BC5DD8B", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4CA36FD203DEDD1F", item: { count: 1, id: "create:windmill_bearing" }, type: "item" }]
-			x: 8.80d
-			y: -4.40d
+			y: -4.00d
 		}
 		{
 			dependencies: ["50FADB6F1F2FFCC9"]
@@ -76,7 +56,7 @@
 			size: 1.0d
 			tasks: [{ id: "25F10FA0E0222D1C", item: { count: 1, id: "create:mechanical_press" }, type: "item" }]
 			x: 6.60d
-			y: -1.60d
+			y: -2.40d
 		}
 		{
 			dependencies: ["50FADB6F1F2FFCC9"]
@@ -86,7 +66,7 @@
 			size: 1.0d
 			tasks: [{ id: "51E0553E1E53FD1E", item: { count: 1, id: "create:millstone" }, type: "item" }]
 			x: 6.60d
-			y: 1.60d
+			y: 2.40d
 		}
 		{
 			dependencies: ["192A9E87FB0BF09E"]
@@ -96,7 +76,7 @@
 			size: 1.0d
 			tasks: [{ id: "77997A70FD47899B", count: 2L, item: { count: 1, id: "create:crushing_wheel" }, type: "item" }]
 			x: 8.80d
-			y: 0.40d
+			y: -4.00d
 		}
 		{
 			dependencies: ["50FADB6F1F2FFCC9"]
@@ -106,7 +86,7 @@
 			size: 1.0d
 			tasks: [{ id: "6D94D37FC1FE5D48", count: 2L, item: { count: 1, id: "create:belt_connector" }, type: "item" }]
 			x: 6.60d
-			y: 0.00d
+			y: -0.80d
 		}
 		{
 			dependencies: ["5B0EAEACFF067C03"]
@@ -116,7 +96,7 @@
 			size: 1.0d
 			tasks: [{ id: "66431F1939D72F04", item: { count: 1, id: "create:depot" }, type: "item" }]
 			x: 8.80d
-			y: -1.20d
+			y: -0.80d
 		}
 		{
 			dependencies: ["50FADB6F1F2FFCC9"]
@@ -126,7 +106,7 @@
 			size: 1.0d
 			tasks: [{ id: "2FE836E5C2326655", item: { count: 1, id: "create:encased_fan" }, type: "item" }]
 			x: 6.60d
-			y: 4.80d
+			y: 4.00d
 		}
 		{
 			dependencies: ["50FADB6F1F2FFCC9"]
@@ -136,7 +116,7 @@
 			size: 1.0d
 			tasks: [{ id: "523D426A89A2009A", item: { count: 1, id: "create:mechanical_mixer" }, type: "item" }]
 			x: 6.60d
-			y: 3.20d
+			y: 0.80d
 		}
 		{
 			dependencies: ["7518733A66B8092F"]
@@ -146,7 +126,7 @@
 			size: 1.0d
 			tasks: [{ id: "575B16107E6E89C2", item: { count: 1, id: "create:basin" }, type: "item" }]
 			x: 8.80d
-			y: 2.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["634555D06A4EE730"]
@@ -156,7 +136,7 @@
 			size: 1.6d
 			tasks: [{ id: "373D54A265E5895D", item: { count: 1, id: "create:blaze_burner" }, type: "item" }]
 			x: 11.00d
-			y: 2.00d
+			y: 0.93d
 		}
 		{
 			dependencies: ["4F9052A0336C5021", "78495FFD37CE6E68"]
@@ -166,7 +146,7 @@
 			size: 1.6d
 			tasks: [{ id: "04068A1AAB584B56", item: { count: 1, id: "create:deployer" }, type: "item" }]
 			x: 13.20d
-			y: 0.40d
+			y: 0.00d
 		}
 	]
 }

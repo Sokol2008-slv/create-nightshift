@@ -10,6 +10,46 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7A9E4A6FA2EA52AF"]
+			id: "021C59A76EC5D8D5"
+			rewards: [{ id: "1776DD3B3B19180F", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "49B58A6A4CA63A83", item: { count: 1, id: "create:water_wheel" }, type: "item" }]
+			x: 0.00d
+			y: -3.20d
+		}
+		{
+			dependencies: ["192A9E87FB0BF09E"]
+			id: "0C5F009A7468C1F1"
+			rewards: [{ id: "6EFC3A0D8BC5DD8B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4CA36FD203DEDD1F", item: { count: 1, id: "create:windmill_bearing" }, type: "item" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["652D8C7BE73B6E6F"]
+			id: "0CB839EC6B4FFE19"
+			rewards: [{ id: "6A826E037D384EC8", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "499B08668B1CA666", count: 4L, item: { count: 1, id: "create:fluid_tank" }, type: "item" }]
+			x: 0.00d
+			y: -1.60d
+		}
+		{
+			dependencies: ["0CB839EC6B4FFE19"]
+			id: "03D8DE952203E77C"
+			rewards: [{ id: "04C382928EBE359D", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "54E6C19A1C4CEFE7", item: { count: 1, id: "create:steam_engine" }, type: "item" }]
+			x: 2.20d
+			y: -3.81d
+		}
+		{
 			dependencies: ["798ACE3CE5DB69E8"]
 			id: "2ECBF16F87D4CAC1"
 			rewards: [{ id: "4387C2017D25F01C", type: "xp", xp: 10 }]
@@ -17,7 +57,7 @@
 			size: 1.0d
 			tasks: [{ id: "2E5840011D6D6128", item: { count: 1, id: "nightshift:lightning_charge" }, type: "item" }]
 			x: 0.00d
-			y: -0.80d
+			y: 1.60d
 		}
 		{
 			dependencies: ["2ECBF16F87D4CAC1"]
@@ -27,7 +67,7 @@
 			size: 1.0d
 			tasks: [{ id: "481174118C0E7A5A", item: { count: 1, id: "create:deployer" }, type: "item" }]
 			x: 2.20d
-			y: -0.36d
+			y: 2.59d
 		}
 		{
 			dependencies: ["38BFD00AD522076F", "6A24AF99B3061795"]
@@ -37,7 +77,7 @@
 			size: 1.0d
 			tasks: [{ id: "3C6926BED1583D9F", count: 8L, item: { count: 1, id: "nightshift:electric_copper" }, type: "item" }]
 			x: 4.40d
-			y: 1.01d
+			y: 3.96d
 		}
 		{
 			id: "6A24AF99B3061795"
@@ -46,7 +86,7 @@
 			size: 1.0d
 			tasks: [{ id: "1A608241A8E32352", item: { count: 1, id: "createaddition:rolling_mill" }, type: "item" }]
 			x: 0.00d
-			y: 0.80d
+			y: 3.20d
 		}
 		{
 			dependencies: ["6A24AF99B3061795"]
@@ -56,7 +96,7 @@
 			size: 1.0d
 			tasks: [{ id: "2266A0BA7B5C61D2", count: 4L, item: { count: 1, id: "createaddition:copper_wire" }, type: "item" }]
 			x: 2.20d
-			y: -1.96d
+			y: 0.99d
 		}
 		{
 			dependencies: ["20DA09E339E199EE"]
@@ -66,7 +106,7 @@
 			size: 1.0d
 			tasks: [{ id: "20D2E1E8F2AB075B", count: 4L, item: { count: 1, id: "createaddition:connector" }, type: "item" }]
 			x: 4.40d
-			y: -3.69d
+			y: -0.73d
 		}
 		{
 			dependencies: ["6B4A80C8D04DFF1C"]
@@ -76,7 +116,7 @@
 			size: 1.0d
 			tasks: [{ id: "1DAD77C5D226CE05", count: 2L, item: { count: 1, id: "createaddition:large_connector" }, type: "item" }]
 			x: 6.60d
-			y: -4.15d
+			y: -1.20d
 		}
 		{
 			dependencies: ["20DA09E339E199EE", "18984F35EFC9F4EC"]
@@ -86,7 +126,7 @@
 			size: 1.0d
 			tasks: [{ id: "3B81760F8B9D6496", item: { count: 1, id: "createaddition:alternator" }, type: "item" }]
 			x: 6.60d
-			y: -0.23d
+			y: 2.72d
 		}
 		{
 			dependencies: ["20DA09E339E199EE"]
@@ -96,7 +136,7 @@
 			size: 1.0d
 			tasks: [{ id: "1A0FA085569A9E7C", item: { count: 1, id: "createaddition:electric_motor" }, type: "item" }]
 			x: 4.40d
-			y: -2.09d
+			y: 0.87d
 		}
 		{
 			dependencies: ["0B8DDB0E251F417E", "1F2A1A9AED2364A7"]
@@ -106,7 +146,7 @@
 			size: 1.0d
 			tasks: [{ id: "492354D4CA2B013C", item: { count: 1, id: "createaddition:modular_accumulator" }, type: "item" }]
 			x: 8.80d
-			y: -1.39d
+			y: 1.56d
 		}
 		{
 			dependencies: ["448B006147B5FDA1", "502442B12090F06D"]
@@ -117,7 +157,7 @@
 			size: 1.6d
 			tasks: [{ id: "09A0024F4E11AA16", type: "checkmark" }]
 			x: 11.00d
-			y: -3.30d
+			y: -0.35d
 		}
 		{
 			dependencies: ["6A24AF99B3061795"]
@@ -127,7 +167,7 @@
 			size: 1.0d
 			tasks: [{ id: "5B683DA84886D92D", count: 2L, item: { count: 1, id: "tfmg:magnet" }, type: "item" }]
 			x: 2.20d
-			y: 2.74d
+			y: 5.69d
 		}
 		{
 			dependencies: ["7225CD4C5B6131AC", "18984F35EFC9F4EC"]
@@ -137,7 +177,7 @@
 			size: 1.0d
 			tasks: [{ id: "0041DB57E2CCB81A", item: { count: 1, id: "tfmg:generator" }, type: "item" }]
 			x: 6.60d
-			y: 2.87d
+			y: 5.82d
 		}
 		{
 			dependencies: ["69B53E0B6FA14ADE", "18984F35EFC9F4EC"]
@@ -148,7 +188,7 @@
 			size: 1.0d
 			tasks: [{ id: "633EC11346411322", type: "checkmark" }]
 			x: 8.80d
-			y: 2.10d
+			y: 5.05d
 		}
 		{
 			dependencies: ["6098697A991695C9"]
@@ -158,7 +198,7 @@
 			size: 1.0d
 			tasks: [{ id: "5DCCD99C0D3B0E40", item: { count: 1, id: "create_new_age:basic_motor" }, type: "item" }]
 			x: 11.00d
-			y: 3.16d
+			y: 6.12d
 		}
 		{
 			dependencies: ["6098697A991695C9"]
@@ -168,7 +208,7 @@
 			size: 1.0d
 			tasks: [{ id: "375439C720239E7C", item: { count: 1, id: "create_new_age:stirling_engine" }, type: "item" }]
 			x: 11.00d
-			y: 1.56d
+			y: 4.52d
 		}
 		{
 			dependencies: ["79713E00CE3F45AC"]
@@ -178,7 +218,7 @@
 			size: 1.6d
 			tasks: [{ id: "296EB64246CADBE6", item: { count: 1, id: "create_new_age:reactor_rod" }, type: "item" }]
 			x: 13.20d
-			y: 1.56d
+			y: 4.52d
 		}
 	]
 }

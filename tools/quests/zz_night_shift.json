@@ -1,26 +1,6 @@
 {
  "chapters": [
   {
-   "key": "welcome",
-   "title": "Добро пожаловать",
-   "icon": "create:goggles",
-   "quests": [
-    {
-     "key": "team",
-     "type": "checkmark",
-     "item": "minecraft:white_banner",
-     "title": "Одна смена — одна команда",
-     "desc": [
-      "Объединитесь, чтобы прогресс книги был общим на троих:",
-      "&e/ftbteams party create НочнаяСмена&r — создать команду,",
-      "&e/ftbteams party invite <ник>&r — позвать друга (он принимает приглашение в чате)."
-     ],
-     "deps": [],
-     "goal": false
-    }
-   ]
-  },
-  {
    "key": "night_shift",
    "title": "Ночная смена",
    "icon": "minecraft:lantern",
@@ -625,91 +605,6 @@
      "deps": [
       "wave_100"
      ]
-    }
-   ]
-  },
-  {
-   "key": "logistics_food",
-   "title": "Рюкзаки и склад",
-   "icon": "sophisticatedbackpacks:backpack",
-   "subtitle": "Чтобы меньше ходить в темноту",
-   "quests": [
-    {
-     "key": "backpack",
-     "type": "item",
-     "item": "sophisticatedbackpacks:backpack",
-     "title": "Рюкзак",
-     "desc": [
-      "Кожа, сундук и нитки. Носится на спине, в нём вторая половина инвентаря.",
-      "ПКМ — открыть, B — открыть надетый."
-     ],
-     "deps": [],
-     "goal": false
-    },
-    {
-     "key": "pickup",
-     "type": "item",
-     "item": "sophisticatedbackpacks:pickup_upgrade",
-     "title": "Подбор в рюкзак",
-     "desc": [
-      "Улучшение: нужные вещи сами падают в рюкзак, а не в хотбар."
-     ],
-     "deps": [
-      "backpack"
-     ],
-     "goal": false
-    },
-    {
-     "key": "iron_pack",
-     "type": "item",
-     "item": "sophisticatedbackpacks:iron_backpack",
-     "title": "Железный рюкзак",
-     "desc": [
-      "Больше слотов и места под улучшения."
-     ],
-     "deps": [
-      "backpack"
-     ],
-     "goal": false
-    },
-    {
-     "key": "feeding",
-     "type": "item",
-     "item": "sophisticatedbackpacks:feeding_upgrade",
-     "title": "Автокормление",
-     "desc": [
-      "Рюкзак сам кормит тебя едой из себя, когда проголодался. Незаменим в долгих вылазках."
-     ],
-     "deps": [
-      "iron_pack"
-     ],
-     "goal": false
-    },
-    {
-     "key": "barrel",
-     "type": "item",
-     "item": "sophisticatedstorage:barrel",
-     "title": "Умная бочка",
-     "desc": [
-      "Бочка с улучшениями и сортировкой. Работает с воронками и лентами Create."
-     ],
-     "deps": [
-      "backpack"
-     ],
-     "goal": false
-    },
-    {
-     "key": "storage_ctrl",
-     "type": "item",
-     "item": "sophisticatedstorage:controller",
-     "title": "Контроллер склада",
-     "desc": [
-      "Объединяет все бочки и сундуки рядом в один склад: кладёшь в контроллер — само раскладывается."
-     ],
-     "deps": [
-      "barrel"
-     ],
-     "goal": false
     }
    ]
   },

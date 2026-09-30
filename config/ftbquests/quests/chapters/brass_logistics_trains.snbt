@@ -26,7 +26,7 @@
 			size: 1.0d
 			tasks: [{ id: "27165F353DAC4634", count: 2L, item: { count: 1, id: "create:railway_casing" }, type: "item" }]
 			x: 2.20d
-			y: -3.20d
+			y: -2.40d
 		}
 		{
 			dependencies: ["652D8C7BE73B6E6F"]
@@ -36,7 +36,7 @@
 			size: 1.0d
 			tasks: [{ id: "68AD9A17A2F0988F", count: 2L, item: { count: 1, id: "create:electron_tube" }, type: "item" }]
 			x: 2.20d
-			y: 0.00d
+			y: 0.80d
 		}
 		{
 			dependencies: ["652D8C7BE73B6E6F"]
@@ -46,7 +46,7 @@
 			size: 1.0d
 			tasks: [{ id: "1F89110E74018FFE", item: { count: 1, id: "create:precision_mechanism" }, type: "item" }]
 			x: 2.20d
-			y: -1.60d
+			y: -0.80d
 		}
 		{
 			dependencies: ["24B6DBCED47E2AC6", "5F03E560473FFEB2"]
@@ -56,27 +56,7 @@
 			size: 1.0d
 			tasks: [{ id: "2C9C8F88A920808A", item: { count: 1, id: "create:controls" }, type: "item" }]
 			x: 4.40d
-			y: -2.95d
-		}
-		{
-			dependencies: ["652D8C7BE73B6E6F"]
-			id: "0CB839EC6B4FFE19"
-			rewards: [{ id: "6A826E037D384EC8", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "499B08668B1CA666", count: 4L, item: { count: 1, id: "create:fluid_tank" }, type: "item" }]
-			x: 2.20d
-			y: 1.60d
-		}
-		{
-			dependencies: ["0CB839EC6B4FFE19"]
-			id: "03D8DE952203E77C"
-			rewards: [{ id: "04C382928EBE359D", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "54E6C19A1C4CEFE7", item: { count: 1, id: "create:steam_engine" }, type: "item" }]
-			x: 4.40d
-			y: 3.75d
+			y: -1.28d
 		}
 		{
 			dependencies: ["652D8C7BE73B6E6F"]
@@ -86,7 +66,7 @@
 			size: 1.0d
 			tasks: [{ id: "7E126130E30E9EDC", count: 16L, item: { count: 1, id: "create:track" }, type: "item" }]
 			x: 2.20d
-			y: 3.20d
+			y: 2.40d
 		}
 		{
 			dependencies: ["24B6DBCED47E2AC6"]
@@ -96,7 +76,7 @@
 			size: 1.0d
 			tasks: [{ id: "7C97C818F7391B62", item: { count: 1, id: "create:track_station" }, type: "item" }]
 			x: 4.40d
-			y: -4.55d
+			y: -2.88d
 		}
 		{
 			dependencies: ["7B2C996C9330FAFF"]
@@ -106,7 +86,7 @@
 			size: 1.0d
 			tasks: [{ id: "795F258DD4D2915C", count: 6L, item: { count: 1, id: "create:controller_rail" }, type: "item" }]
 			x: 4.40d
-			y: -1.35d
+			y: 0.32d
 		}
 		{
 			dependencies: ["06AA8DFEA3F70CB5"]
@@ -116,7 +96,7 @@
 			size: 1.0d
 			tasks: [{ id: "63C4D48B7F6A7D09", item: { count: 1, id: "create:cart_assembler" }, type: "item" }]
 			x: 4.40d
-			y: 1.85d
+			y: 1.92d
 		}
 		{
 			dependencies: ["749801A6ECAE79FA"]
@@ -126,7 +106,7 @@
 			size: 1.0d
 			tasks: [{ id: "3412459805B093F5", count: 2L, item: { count: 1, id: "create:minecart_coupling" }, type: "item" }]
 			x: 6.60d
-			y: 1.85d
+			y: 1.92d
 		}
 		{
 			dependencies: ["218DDF47E1508988"]
@@ -136,7 +116,7 @@
 			size: 1.0d
 			tasks: [{ id: "4F92A943F024849F", count: 4L, item: { count: 1, id: "create:schedule" }, type: "item" }]
 			x: 6.60d
-			y: -4.55d
+			y: -2.88d
 		}
 		{
 			dependencies: ["507306DCDCF2C239", "412D248CD1A42DB6", "625E481953585276"]
@@ -147,7 +127,7 @@
 			size: 1.6d
 			tasks: [{ id: "54541DC33ED4EFE3", type: "checkmark" }]
 			x: 8.80d
-			y: -1.88d
+			y: -0.75d
 		}
 		{
 			dependencies: ["06AA8DFEA3F70CB5"]
@@ -157,7 +137,7 @@
 			size: 1.0d
 			tasks: [{ id: "390B4C8C8C9C9868", item: { count: 1, id: "railways:track_switch_andesite" }, type: "item" }]
 			x: 4.40d
-			y: 5.65d
+			y: 3.52d
 		}
 		{
 			dependencies: ["0A1DAFEE8419EA9C"]
@@ -167,7 +147,7 @@
 			size: 1.0d
 			tasks: [{ id: "79ADF70CD1E2730B", item: { count: 1, id: "railways:conductor_whistle" }, type: "item" }]
 			x: 11.00d
-			y: -1.88d
+			y: -0.75d
 		}
 	]
 }
