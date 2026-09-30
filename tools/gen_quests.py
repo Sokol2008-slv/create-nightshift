@@ -5,6 +5,11 @@
   {"chapters":[{"key","title","icon","subtitle","quests":[
      {"key","type":"item"|"checkmark"|"stage"|"dimension","item","count","title","desc":[...],"deps":[...],"goal"}]}]}
   (type "dimension": поле "dimension" — id измерения, item — иконка)
+  Необязательные поля квеста (30.09): "pos": [x, y] — ручная раскладка (иначе авто по глубине, колонка = 2.2);
+  "id_as": "глава:ключ" — оставить id квеста со старого места (прогресс игроков не теряется при переносе);
+  "hide_lines": true — не рисовать линии зависимостей; "shape" ("circle", "diamond", "gear", "heart", …) и
+  "size" — форма и размер карточки; "optional": true — справочный квест, не считается в прогрессе главы.
+  Главы: "hide_lines": true — линии скрыты по умолчанию.
 Выход: config/ftbquests/quests/ — data.snbt, chapter_groups.snbt, chapters/*.snbt,
 lang/ru_ru.snbt и lang/en_us.snbt (тексты русские в обоих, чтобы язык клиента не мешал).
 
@@ -291,6 +296,17 @@ def main():
 
     total = 0
     all_keys = {c["key"]: {q["key"] for q in c["quests"]} for c in specs}
+    # база id квеста: (глава, ключ) или старое место из id_as — зависимости ссылаются через эту карту
+    base_of = {(c["key"], q["key"]): tuple(q["id_as"].split(":", 1)) if q.get("id_as") else (c["key"], q["key"])
+               for c in specs for q in c["quests"]}
+    seen_ids = {}
+    for (cck, kk), b in base_of.items():
+        if b in seen_ids:
+            errors.append(f"{cck}/{kk}: id_as {b[0]}:{b[1]} уже занят квестом {seen_ids[b]}")
+        seen_ids[b] = f"{cck}/{kk}"
+
+    def dep_id(dch, dk):
+        return qid(*base_of.get((dch, dk), (dch, dk)))
     ext_checks = []
     for order, ch in enumerate(specs):
         ck = ch["key"]
@@ -322,22 +338,27 @@ def main():
                 dch, dk = dep.split(":", 1)
                 all_keys.setdefault(dch, set())
                 ext_checks.append((f"{ck}/{k}", dch, dk))
-            quest_id = qid(ck, k)
-            task_id = qid(ck, k, "task")
+            base = base_of[(ck, k)]
+            quest_id = qid(*base)
+            task_id = qid(*base, "task")
             goal = q.get("goal", False)
-            x, y = pos[k]
+            x, y = q["pos"] if "pos" in q else pos[k]
             lines = ["\t\t{"]
-            deps = [qid(ck, dep) for dep in q.get("deps", []) if dep in keys] + \
-                   [qid(*dep.split(":", 1)) for dep in ext]
+            deps = [dep_id(ck, dep) for dep in q.get("deps", []) if dep in keys] + \
+                   [dep_id(*dep.split(":", 1)) for dep in ext]
             if deps:
                 lines.append("\t\t\tdependencies: [" + ", ".join(snbt_str(x) for x in deps) + "]")
+            if q.get("hide_lines"):
+                lines.append("\t\t\thide_dependency_lines: true")
             if q["type"] in ("checkmark", "stage", "dimension"):
                 lines.append("\t\t\ticon: { id: " + snbt_str(q["item"]) + " }")
             lines.append(f"\t\t\tid: {snbt_str(quest_id)}")
-            lines.append("\t\t\trewards: [{ id: " + snbt_str(qid(ck, k, "reward")) +
+            if q.get("optional"):
+                lines.append("\t\t\toptional: true")
+            lines.append("\t\t\trewards: [{ id: " + snbt_str(qid(*base, "reward")) +
                          f", type: \"xp\", xp: {50 if goal else 10} }}]")
-            lines.append("\t\t\tshape: " + snbt_str("hexagon" if goal else "rsquare"))
-            lines.append(f"\t\t\tsize: {1.6 if goal else 1.0}d")
+            lines.append("\t\t\tshape: " + snbt_str(q.get("shape") or ("hexagon" if goal else "rsquare")))
+            lines.append(f"\t\t\tsize: {float(q.get('size', 1.6 if goal else 1.0))}d")
             if q["type"] == "checkmark":
                 lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ', type: "checkmark" }]')
             elif q["type"] == "dimension":
@@ -363,7 +384,7 @@ def main():
             total += 1
         body = "\n".join([
             "{",
-            "\tdefault_hide_dependency_lines: false",
+            f"\tdefault_hide_dependency_lines: {'true' if ch.get('hide_lines') else 'false'}",
             '\tdefault_quest_shape: ""',
             f"\tfilename: {snbt_str(ck)}",
             '\tgroup: ""',
