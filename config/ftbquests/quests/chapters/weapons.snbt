@@ -39,6 +39,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["79049C351BB0ADD1"]
 			id: "6AF7098360A5E993"
 			rewards: [{ id: "0926D8EB395C8775", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -48,6 +49,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["6AF7098360A5E993"]
 			id: "5E46C064FCD78091"
 			rewards: [{ id: "70C6EF50C32FC3A0", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -57,6 +59,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["5E46C064FCD78091"]
 			id: "521CD648E130FD9F"
 			rewards: [{ id: "33270B74E98C3336", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -66,6 +69,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["521CD648E130FD9F"]
 			icon: { id: "cataclysm:the_incinerator" }
 			id: "4D8732FCCCBD523B"
 			rewards: [{ id: "1F1963E34CD3BDFD", type: "xp", xp: 10 }]
@@ -76,6 +80,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["3EC55E8A9E16874C"]
 			id: "40A93CAB5BCB6AF7"
 			rewards: [{ id: "5300E373284FF579", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -135,6 +140,7 @@
 			y: 1.92d
 		}
 		{
+			dependencies: ["495D204B1F3208FC"]
 			icon: { id: "cgs:round_revolver" }
 			id: "539FB1F056F8E82A"
 			optional: true
@@ -146,6 +152,7 @@
 			y: 1.92d
 		}
 		{
+			dependencies: ["40A93CAB5BCB6AF7"]
 			id: "6A226AA9E85F7950"
 			rewards: [{ id: "2533A7BBF872F543", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -165,6 +172,7 @@
 			y: 3.68d
 		}
 		{
+			dependencies: ["3BCE829443992885"]
 			icon: { id: "cgs:steel_sheet" }
 			id: "710081270063F8BA"
 			rewards: [{ id: "393AA4DCA0F4076C", type: "xp", xp: 10 }]
@@ -175,6 +183,7 @@
 			y: 3.68d
 		}
 		{
+			dependencies: ["710081270063F8BA"]
 			id: "064C83DE0B941189"
 			rewards: [{ id: "18518EF175BE310A", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -184,6 +193,7 @@
 			y: 3.68d
 		}
 		{
+			dependencies: ["064C83DE0B941189"]
 			id: "02B25E310B8069D6"
 			rewards: [{ id: "2301F8AB482E5CC6", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -193,6 +203,7 @@
 			y: 3.68d
 		}
 		{
+			dependencies: ["02B25E310B8069D6"]
 			id: "3947E4DD03FEF6DA"
 			rewards: [{ id: "598BCC9357B1CCE9", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -202,6 +213,7 @@
 			y: 3.68d
 		}
 		{
+			dependencies: ["3947E4DD03FEF6DA"]
 			id: "291F7DFD4AC666B2"
 			rewards: [{ id: "3828B1579EC86E97", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -211,6 +223,7 @@
 			y: 3.68d
 		}
 		{
+			dependencies: ["6A226AA9E85F7950"]
 			id: "6E1ED7079EA38D72"
 			rewards: [{ id: "1B7E765E0BC77534", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -220,6 +233,7 @@
 			y: 5.44d
 		}
 		{
+			dependencies: ["6E1ED7079EA38D72"]
 			id: "1409D189B5A4B25E"
 			rewards: [{ id: "34F93010E6C61467", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -259,8 +273,7 @@
 			y: 5.44d
 		}
 		{
-			dependencies: ["13720189D8B60053"]
-			hide_dependency_lines: true
+			dependencies: ["648B4A2170FD0077"]
 			id: "17C3D0CDD3773E4F"
 			rewards: [{ id: "6469EA5132454769", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -270,6 +283,7 @@
 			y: 5.44d
 		}
 		{
+			dependencies: ["17C3D0CDD3773E4F"]
 			icon: { id: "create_sa:brass_chestplate" }
 			id: "11807A46F6FD8F33"
 			optional: true

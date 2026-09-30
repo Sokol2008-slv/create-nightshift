@@ -180,25 +180,23 @@
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
-			hide_dependency_lines: true
 			id: "7D06BCB9E657D0AA"
 			rewards: [{ id: "7D9A7133CF40B338", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5273CA80C867EF9E", item: { count: 1, id: "northstar:auto_lander" }, type: "item" }]
-			x: 0.00d
-			y: 9.60d
+			x: 15.52d
+			y: 3.20d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
-			hide_dependency_lines: true
 			id: "0811D15A56819E96"
 			rewards: [{ id: "7E7C7F27FD1410B3", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "315AD4B641EE139B", item: { count: 1, id: "northstar:interplanetary_navigator" }, type: "item" }]
-			x: 0.00d
-			y: 7.68d
+			x: 13.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -207,8 +205,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
-			x: 2.00d
-			y: 7.68d
+			x: 11.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["54836B2556E2C657"]
@@ -217,8 +215,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6019F987211AF294", item: { count: 1, id: "northstar:tungsten_ingot" }, type: "item" }]
-			x: 4.00d
-			y: 7.68d
+			x: 9.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["1F93228FE232CC76"]
@@ -227,8 +225,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6660EEECE4F82E3E", item: { count: 1, id: "axiomativ:planetary_grindstone" }, type: "item" }]
-			x: 6.00d
-			y: 7.68d
+			x: 7.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["60055E81B084F741"]
@@ -237,8 +235,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "2BDCDCBCCC994B87", count: 4L, item: { count: 1, id: "axiomativ:interplanetary_alloy" }, type: "item" }]
-			x: 8.00d
-			y: 7.68d
+			x: 5.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["539485CE657AFD69"]
@@ -247,8 +245,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5A8A677F1A1909F1", item: { count: 1, id: "nightshift:star_navigator" }, type: "item" }]
-			x: 10.00d
-			y: 7.68d
+			x: 3.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["03D58C0D28130D2F"]
@@ -257,8 +255,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0D6C9F346B121489", item: { count: 1, id: "nightshift:star_pickaxe" }, type: "item" }]
-			x: 12.00d
-			y: 7.68d
+			x: 1.52d
+			y: 6.40d
 		}
 		{
 			dependencies: ["69C0C60E738BFA33"]
@@ -268,8 +266,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ dimension: "nightshift:axiomativ", id: "2FD8D3F87F74D410", type: "dimension" }]
-			x: 12.00d
-			y: 5.92d
+			x: 1.52d
+			y: 4.64d
 		}
 		{
 			dependencies: ["69C0C60E738BFA33"]
@@ -279,8 +277,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ dimension: "nightshift:yin_yang", id: "3F57C00E4D2EDED8", type: "dimension" }]
-			x: 12.00d
-			y: 9.44d
+			x: 1.52d
+			y: 8.16d
 		}
 		{
 			dependencies: ["10AB8BC67127FF0D", "6C6C1196E042B5E3"]
@@ -289,8 +287,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "63EF4A988E202A39", item: { count: 1, id: "kubejs:axiomite_ingot" }, type: "item" }]
-			x: 14.00d
-			y: 5.92d
+			x: -0.48d
+			y: 4.64d
 		}
 		{
 			dependencies: ["6830526159D51413", "6C6C1196E042B5E3"]
@@ -299,8 +297,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_light_stabilite" }, type: "item" }]
-			x: 14.00d
-			y: 9.44d
+			x: -0.48d
+			y: 8.16d
 		}
 		{
 			dependencies: ["7740332F1426A7C8"]
@@ -309,8 +307,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3942488F1D1E8491", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
-			x: 16.00d
-			y: 9.44d
+			x: -2.48d
+			y: 8.16d
 		}
 		{
 			dependencies: ["798AC21976DE3822", "4653E9EEEA38CD03"]
@@ -320,10 +318,11 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "22045A6BEF05B1E2", type: "checkmark" }]
-			x: 18.00d
-			y: 7.68d
+			x: -4.48d
+			y: 6.40d
 		}
 		{
+			dependencies: ["0811D15A56819E96"]
 			icon: { id: "northstar:lunar_sapphire_shard" }
 			id: "582913C503B5526D"
 			optional: true
@@ -331,10 +330,11 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "3D4496423D811925", type: "checkmark" }]
-			x: 0.00d
-			y: 5.28d
+			x: 13.52d
+			y: 8.40d
 		}
 		{
+			dependencies: ["54836B2556E2C657"]
 			icon: { id: "northstar:raw_martian_iron_ore" }
 			id: "799CA552C9730DC4"
 			optional: true
@@ -342,10 +342,11 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "6194F2498D51F25D", type: "checkmark" }]
-			x: 2.00d
-			y: 5.28d
+			x: 11.52d
+			y: 8.40d
 		}
 		{
+			dependencies: ["1F93228FE232CC76"]
 			icon: { id: "northstar:mercury_stone" }
 			id: "72B123024288763B"
 			optional: true
@@ -353,10 +354,11 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "7910CE197F4B0237", type: "checkmark" }]
-			x: 4.00d
-			y: 5.28d
+			x: 9.52d
+			y: 8.40d
 		}
 		{
+			dependencies: ["72B123024288763B"]
 			icon: { id: "northstar:venus_stone" }
 			id: "737798268A331D1C"
 			optional: true
@@ -364,8 +366,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "70D8CF1504E3AE07", type: "checkmark" }]
-			x: 6.00d
-			y: 5.28d
+			x: 7.52d
+			y: 8.40d
 		}
 	]
 }

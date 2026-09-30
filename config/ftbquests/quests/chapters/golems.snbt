@@ -21,6 +21,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["1CDF7057BD782920"]
 			id: "1CA73A2F9FA9AB14"
 			rewards: [{ id: "16A1952FDDC60049", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -51,7 +52,7 @@
 			y: 0.00d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["2314D43D50466F2B"]
 			icon: { id: "minecraft:iron_ingot" }
 			id: "56666CC5F6622986"
 			optional: true
@@ -103,6 +104,7 @@
 			y: 1.76d
 		}
 		{
+			dependencies: ["160E154A7BFCDF86"]
 			id: "404F6AAA2C0EB4E3"
 			rewards: [{ id: "792BBFCEE15ABA2C", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -134,6 +136,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["1CDF7057BD782920"]
 			icon: { id: "minecraft:dragon_egg" }
 			id: "7A5BB064B668F255"
 			optional: true
@@ -145,6 +148,7 @@
 			y: 4.80d
 		}
 		{
+			dependencies: ["7A5BB064B668F255"]
 			icon: { id: "dmr:dragon_egg" }
 			id: "3A7FEC2616BCC8B5"
 			rewards: [{ id: "6C9BA58EE5EC8221", type: "xp", xp: 10 }]
@@ -155,7 +159,7 @@
 			y: 4.80d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["3A7FEC2616BCC8B5"]
 			icon: { id: "minecraft:filled_map" }
 			id: "5257CFCF4554E0AE"
 			optional: true
@@ -232,7 +236,7 @@
 			y: 6.56d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["29FF03022EEE798D"]
 			icon: { id: "dmr:dragon_whistle.white" }
 			id: "7FE7DE0EC8DCE5AE"
 			optional: true

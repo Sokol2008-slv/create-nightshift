@@ -20,6 +20,7 @@
 			y: -3.04d
 		}
 		{
+			dependencies: ["65323940C7E98B08"]
 			icon: { id: "minecraft:crafting_table" }
 			id: "2DDBA2AB73BF01A6"
 			rewards: [{ id: "08D56781DA3EAADB", type: "xp", xp: 10 }]
@@ -30,6 +31,7 @@
 			y: -3.04d
 		}
 		{
+			dependencies: ["2DDBA2AB73BF01A6"]
 			icon: { id: "create:cogwheel" }
 			id: "2F27FD3FABF74065"
 			rewards: [{ id: "1723AB8F50AF514A", type: "xp", xp: 10 }]
@@ -40,6 +42,7 @@
 			y: -3.04d
 		}
 		{
+			dependencies: ["2F27FD3FABF74065"]
 			id: "4C3550A20ABDE71C"
 			rewards: [{ id: "37F79FD518483961", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -49,6 +52,7 @@
 			y: -3.04d
 		}
 		{
+			dependencies: ["4C3550A20ABDE71C"]
 			id: "4F2010ED01E72F75"
 			rewards: [{ id: "5000A49051B159E2", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -58,6 +62,7 @@
 			y: -3.04d
 		}
 		{
+			dependencies: ["4F2010ED01E72F75"]
 			icon: { id: "minecraft:white_banner" }
 			id: "144751B87537B6D6"
 			rewards: [{ id: "01CB31268991FC05", type: "xp", xp: 10 }]
@@ -68,6 +73,7 @@
 			y: -3.04d
 		}
 		{
+			dependencies: ["65323940C7E98B08"]
 			icon: { id: "minecraft:chest" }
 			id: "0AFB1385552891D0"
 			rewards: [{ id: "740EF4B70BD6C2EA", type: "xp", xp: 10 }]

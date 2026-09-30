@@ -52,6 +52,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["5D0BB0FB363BCF9C"]
 			id: "6068DECB682A4365"
 			rewards: [{ id: "433B1C8FB6C0854B", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -92,6 +93,7 @@
 			y: 1.98d
 		}
 		{
+			dependencies: ["6068DECB682A4365"]
 			id: "6503EB1CA12CEEC8"
 			rewards: [{ id: "2BC32C5696EEA069", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -121,7 +123,7 @@
 			y: 3.96d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["33E96C5EAAAD3D74"]
 			icon: { id: "create:rotation_speed_controller" }
 			id: "33949459D93D20CF"
 			optional: true
@@ -133,6 +135,7 @@
 			y: 3.96d
 		}
 		{
+			dependencies: ["6503EB1CA12CEEC8"]
 			id: "22689166CC61803D"
 			rewards: [{ id: "41355CF5A28B973F", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -202,6 +205,7 @@
 			y: 6.30d
 		}
 		{
+			dependencies: ["3245368928B123AE"]
 			icon: { id: "createbigcannons:cast_iron_cannon_chamber" }
 			id: "2A1A1E144D91C595"
 			optional: true
@@ -241,6 +245,7 @@
 			y: 8.10d
 		}
 		{
+			dependencies: ["22689166CC61803D"]
 			id: "0842BE7A53F7464B"
 			rewards: [{ id: "341866D6624BD981", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -290,6 +295,7 @@
 			y: 10.17d
 		}
 		{
+			dependencies: ["0842BE7A53F7464B"]
 			icon: { id: "minecraft:phantom_membrane" }
 			id: "784C7BEA8FE085AA"
 			rewards: [{ id: "0CCF553D8B358256", type: "xp", xp: 10 }]
@@ -300,6 +306,7 @@
 			y: 12.24d
 		}
 		{
+			dependencies: ["784C7BEA8FE085AA"]
 			icon: { id: "minecraft:brewing_stand" }
 			id: "721226B028FF97C7"
 			rewards: [{ id: "773C3F88289D0B15", type: "xp", xp: 10 }]
@@ -310,6 +317,7 @@
 			y: 12.24d
 		}
 		{
+			dependencies: ["721226B028FF97C7"]
 			icon: { id: "minecraft:wither_skeleton_skull" }
 			id: "27494CDCCB4DCF99"
 			optional: true
@@ -321,8 +329,7 @@
 			y: 12.24d
 		}
 		{
-			dependencies: ["78A694FC4AC929DC", "33E96C5EAAAD3D74", "23C6E8B8A1FF42FB", "1DB8105E4DA61380"]
-			hide_dependency_lines: true
+			dependencies: ["1DB8105E4DA61380", "27494CDCCB4DCF99"]
 			icon: { id: "nightshift:altar" }
 			id: "27F7FB8A91EB946D"
 			rewards: [{ id: "5A0391ADD902FDEB", type: "xp", xp: 50 }]

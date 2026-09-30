@@ -21,7 +21,7 @@
 			y: 0.00d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["21172F3016C5CB6F"]
 			icon: { id: "minecraft:golden_carrot" }
 			id: "2521B5D333C76592"
 			optional: true
@@ -33,7 +33,7 @@
 			y: 1.92d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["2521B5D333C76592"]
 			icon: { id: "create_confectionery:bar_of_black_chocolate" }
 			id: "4AE3A069B2294E37"
 			optional: true
@@ -45,6 +45,7 @@
 			y: 3.84d
 		}
 		{
+			dependencies: ["21172F3016C5CB6F"]
 			id: "6436250ACE0D60A8"
 			rewards: [{ id: "443567E20A7FDAEC", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -155,6 +156,7 @@
 			y: 0.00d
 		}
 		{
+			dependencies: ["6436250ACE0D60A8"]
 			id: "7074755FA491960A"
 			rewards: [{ id: "6C758C70E9018D1E", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -164,6 +166,7 @@
 			y: 1.92d
 		}
 		{
+			dependencies: ["7074755FA491960A"]
 			id: "32A403330C10E18C"
 			rewards: [{ id: "0B7414333AB4B227", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -173,6 +176,7 @@
 			y: 1.92d
 		}
 		{
+			dependencies: ["32A403330C10E18C"]
 			id: "2842951F59F2E86D"
 			rewards: [{ id: "223A2B1433B11FD5", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -182,6 +186,7 @@
 			y: 1.92d
 		}
 		{
+			dependencies: ["2842951F59F2E86D"]
 			id: "32494E2D2F556718"
 			rewards: [{ id: "59B8526549E74850", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -191,6 +196,7 @@
 			y: 1.92d
 		}
 		{
+			dependencies: ["32494E2D2F556718"]
 			id: "1C53FB94F3D33399"
 			rewards: [{ id: "7F9E4F23135C8B36", type: "xp", xp: 10 }]
 			shape: "rsquare"

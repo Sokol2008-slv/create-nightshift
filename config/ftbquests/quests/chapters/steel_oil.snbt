@@ -211,6 +211,7 @@
 			y: 5.76d
 		}
 		{
+			dependencies: ["40C50273936EC3A2"]
 			icon: { id: "createdieselgenerators:huge_diesel_engine" }
 			id: "575231C024676318"
 			optional: true

@@ -10,6 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7A39018E4BE93584"]
 			id: "58CDE5A8D0227B98"
 			rewards: [{ id: "4BD65EE5FB975346", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -111,7 +112,7 @@
 			y: 0.00d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["40BC59080DC10129"]
 			icon: { id: "simulated:iron_handle" }
 			id: "63884CBF99FC1C65"
 			optional: true
@@ -336,7 +337,7 @@
 			y: 10.24d
 		}
 		{
-			hide_dependency_lines: true
+			dependencies: ["5050456F7CF14F06"]
 			icon: { id: "create_submarine:barometer" }
 			id: "07393EA56E1D767B"
 			optional: true

@@ -10,6 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7A9E4A6FA2EA52AF"]
 			icon: { id: "create:encased_fan" }
 			id: "3674C97A553636B1"
 			optional: true
