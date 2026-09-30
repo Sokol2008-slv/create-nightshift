@@ -842,8 +842,17 @@ function nsWaveToughHp(d) {
 	var W = NSG.NS_WAVE_TOUGH
 	var late = nsWaveLate(d)
 	if (late > 0) return W.lateStart + W.latePerWave * (late - 1)
-	if (d < W.from) return 0
+	if (d < W.from) return W.early || 0
 	return W.start + (W.end - W.start) * Math.min(1, (d - W.from) / Math.max(1, NSG.NS_WAVE_BOSS_FROM - 1 - W.from))
+}
+
+// Бафф набега: базовый для всех (NS_RAID_BASE_BUFF) + бафф состава — по каждому эффекту больший уровень
+function nsRaidBuff(buff) {
+	var out = {}
+	var base = NSG.NS_RAID_BASE_BUFF || {}
+	for (var b in base) out[b] = base[b]
+	for (var e in buff || {}) out[e] = Math.max(out[e] || 0, buff[e])
+	return out
 }
 
 // Размер мобов Кошмара (NS_WAVE_GIANT): 1 до 69-й, дальше растёт
@@ -868,7 +877,7 @@ function nsChallengeHorde(d) {
 			waves: base.waves,
 			boss: d % 5 === 0 ? base.boss || NSG.NS_EARLY_BOSS(d) : null,
 			bossCount: 1,
-			buff: base.buff,
+			buff: nsRaidBuff(base.buff),
 			mult: (R.multFrom + (R.multTo - R.multFrom) * an[1]) * nsWaveDensity(d),
 			scale: { hp: R.hpTo * an[1] + nsWaveToughHp(d), damage: R.damageTo * an[1], speed: 0 },
 		}
@@ -883,7 +892,7 @@ function nsChallengeHorde(d) {
 		waves: top.waves.concat(cmWaves, [NSG.NIGHTSHIFT_NIGHTMARE.finale]),
 		boss: top.boss,
 		bossCount: 1 + Math.floor(late / L.bossEvery),
-		buff: top.buff,
+		buff: nsRaidBuff(top.buff),
 		mult: nsWaveDensity(d),
 		scale: scale,
 	}
