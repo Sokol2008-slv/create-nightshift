@@ -723,6 +723,9 @@ function nsRaidVictory(state) {
 	var first = kind !== 'minor' && d > (state.phase || 0)
 	var reached = raid.reached || 0
 	var T = NSG.NIGHTSHIFT_TUNABLES
+	// кто у алтаря — ДО возврата телепортированных (/nightshift altar): 01.10 добыча доставалась только тому,
+	// кто пришёл сам, — остальных уносило домой раньше раздачи
+	var atAltar = nsParticipants(altar)
 	// Набег закрываем и сохраняем ДО наград: упади выдача с ошибкой — набег не останется «active»
 	// (иначе каждую секунду снова откат арены и снова награды тем, кто их уже получил).
 	state.raid = nsDefaultState().raid
@@ -732,7 +735,6 @@ function nsRaidVictory(state) {
 	} else if (reached > 0) {
 		state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + T.curseHeartsMinor) // прорыв к алтарю
 	} else if ((state.curse || 0) > 0) state.curse--
-	nsReturnAll(state)
 	nsSaveState(state)
 
 	nsTry('откат арены', function () {
@@ -753,7 +755,7 @@ function nsRaidVictory(state) {
 		})
 		NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete master @a')
 		nsTry('награды за волну ' + d, function () {
-			nsRaidRewards(altar, d, nsRaidRolls(d), first, raid.present, nsChallengeHorde(d).waves.length)
+			nsRaidRewards(altar, d, nsRaidRolls(d), first, raid.present, nsChallengeHorde(d).waves.length, atAltar)
 		})
 		if (first)
 			nsTry('квесты волны ' + d, function () {
@@ -769,13 +771,19 @@ function nsRaidVictory(state) {
 			// добыча — как за повтор этой волны (без бонусов первого прохождения)
 			var mw = nsMinorWave(state.phase)
 			nsTry('награды малого набега', function () {
-				nsRaidRewards(altar, mw, nsRaidRolls(mw), false, raid.present, nsChallengeHorde(mw).waves.length)
+				nsRaidRewards(altar, mw, nsRaidRolls(mw), false, raid.present, nsChallengeHorde(mw).waves.length, atAltar)
 			})
 		}
 		nsTry('штраф', function () {
 			nsApplyPenalty(null)
 		})
 	}
+	// телепортированных к алтарю — домой, уже после добычи
+	nsTry('возврат игроков', function () {
+		var st = nsGetState()
+		nsReturnAll(st)
+		nsSaveState(st)
+	})
 }
 
 function nsRaidFail(state, mobs) {
@@ -973,7 +981,7 @@ function nsPick(list) {
 // Добыча в конце набега: каждому защитнику rolls бросков обычной таблицы уровня level,
 // у каждого броска шанс на редкое; раз за набег — шанс на легендарное. probeLevel > 0 —
 // первое прохождение: зонд жилы этого уровня одному из защитников.
-function nsRaidRewards(altar, d, rolls, first, present, waves) {
+function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 	var L = NSG.NIGHTSHIFT_LOOT
 	var tier = nsWaveTier(d)
 	var k = nsWaveLate(d) // «поздняя» волна: с 70-й
@@ -981,12 +989,16 @@ function nsRaidRewards(altar, d, rolls, first, present, waves) {
 	var legChance = L.legendaryChance + 0.006 * tier + 0.003 * k
 	var need = Math.ceil((waves || 1) / 2)
 	var ps = []
-	var all = nsParticipants(altar)
+	var all = atAltar || nsParticipants(altar)
+	var logLine = []
 	for (var a = 0; a < all.length; a++) {
 		var an = String(all[a].getUsername())
-		if (((present || {})[an] || 0) >= need) ps.push(all[a])
-		else all[a].tell(Text.gray('[Ночная смена] Добыча — тем, кто держал алтарь хотя бы ' + nsPlural(need, 'волну', 'волны', 'волн') + '. В следующий раз приходите к началу.'))
+		var was = (present || {})[an] || 0
+		if (was >= need) ps.push(all[a])
+		else all[a].tell(Text.gray('[Ночная смена] Добыча — тем, кто держал алтарь хотя бы ' + nsPlural(need, 'волну', 'волны', 'волн') + ' (у тебя ' + was + '). В следующий раз приходите к началу.'))
+		logLine.push(an + ' ' + was + '/' + waves + (was >= need ? ' — добыча' : ' — нет'))
 	}
+	console.info('[nightshift] добыча волны ' + d + ' (нужно ' + need + ' подволн): ' + (logLine.length ? logLine.join('; ') : 'у алтаря никого') + '; присутствие: ' + JSON.stringify(present || {}))
 	var pool = []
 	for (var q = 0; k > 0 && q < L.nightmare.length; q++) if (L.nightmare[q].minK <= k) pool.push(L.nightmare[q].e)
 	for (var i = 0; i < ps.length; i++) {
