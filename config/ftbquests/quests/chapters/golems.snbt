@@ -17,7 +17,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "78B334F87A883E82", type: "checkmark" }]
-			x: -2.60d
+			x: -2.08d
 			y: 0.00d
 		}
 		{
@@ -36,7 +36,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "734C278E5CABEAE6", item: { count: 1, id: "modulargolems:metal_golem_body" }, type: "item" }]
-			x: 2.30d
+			x: 1.84d
 			y: 0.00d
 		}
 		{
@@ -47,7 +47,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3A1490645AC1756E", type: "checkmark" }]
-			x: 4.60d
+			x: 3.68d
 			y: 0.00d
 		}
 		{
@@ -59,8 +59,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "59DB4B0AD337F4DC", type: "checkmark" }]
-			x: 4.60d
-			y: -2.20d
+			x: 3.68d
+			y: -1.76d
 		}
 		{
 			dependencies: ["2314D43D50466F2B"]
@@ -69,7 +69,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2823A47A6D1A6B93", item: { count: 1, id: "modulargolems:metal_golem_holder" }, type: "item" }]
-			x: 6.90d
+			x: 5.52d
 			y: 0.00d
 		}
 		{
@@ -79,8 +79,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "181AE3BB5040CBD6", item: { count: 1, id: "modulargolems:empty_upgrade" }, type: "item" }]
-			x: 9.20d
-			y: -2.20d
+			x: 7.36d
+			y: -1.76d
 		}
 		{
 			dependencies: ["3B7D9C7933E1D1BB"]
@@ -89,8 +89,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "03142E962EC18047", item: { count: 1, id: "modulargolems:recycle" }, type: "item" }]
-			x: 11.50d
-			y: -2.20d
+			x: 9.20d
+			y: -1.76d
 		}
 		{
 			dependencies: ["0A221ACB167F5182"]
@@ -99,8 +99,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2F975280F9C111A9", item: { count: 1, id: "modulargolems:command_wand" }, type: "item" }]
-			x: 9.20d
-			y: 2.20d
+			x: 7.36d
+			y: 1.76d
 		}
 		{
 			id: "404F6AAA2C0EB4E3"
@@ -108,8 +108,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "230BEABF98DAECF2", item: { count: 1, id: "creategolemsgalore:industrial_iron_hat" }, type: "item" }]
-			x: 2.30d
-			y: 2.20d
+			x: 1.84d
+			y: 1.76d
 		}
 		{
 			dependencies: ["0A221ACB167F5182"]
@@ -119,7 +119,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3F23CCA53C915726", type: "checkmark" }]
-			x: 9.20d
+			x: 7.36d
 			y: 0.00d
 		}
 		{
@@ -130,7 +130,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "37AE362077A0C3A5", type: "checkmark" }]
-			x: 11.80d
+			x: 9.44d
 			y: 0.00d
 		}
 		{
@@ -141,8 +141,8 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "4411906C75570E3B", type: "checkmark" }]
-			x: -2.60d
-			y: 6.00d
+			x: -2.08d
+			y: 4.80d
 		}
 		{
 			icon: { id: "dmr:dragon_egg" }
@@ -152,7 +152,7 @@
 			size: 1.0d
 			tasks: [{ id: "1D57993D7AC97B47", type: "checkmark" }]
 			x: 0.00d
-			y: 6.00d
+			y: 4.80d
 		}
 		{
 			hide_dependency_lines: true
@@ -164,7 +164,7 @@
 			size: 1.0d
 			tasks: [{ id: "707AAF7DB02554FC", type: "checkmark" }]
 			x: 0.00d
-			y: 8.20d
+			y: 6.56d
 		}
 		{
 			dependencies: ["3A7FEC2616BCC8B5"]
@@ -174,8 +174,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1A62055FCAD5D903", type: "checkmark" }]
-			x: 2.30d
-			y: 6.00d
+			x: 1.84d
+			y: 4.80d
 		}
 		{
 			dependencies: ["5E7E779ADCC9DF09"]
@@ -185,8 +185,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4F39E5B06FDC4027", type: "checkmark" }]
-			x: 4.60d
-			y: 6.00d
+			x: 3.68d
+			y: 4.80d
 		}
 		{
 			dependencies: ["081BCC72EBCBE493"]
@@ -195,8 +195,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6B3E8F94C66D9FB6", item: { count: 1, id: "minecraft:saddle" }, type: "item" }]
-			x: 6.90d
-			y: 6.00d
+			x: 5.52d
+			y: 4.80d
 		}
 		{
 			dependencies: ["081BCC72EBCBE493"]
@@ -206,8 +206,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "39242BA0A9AEB367", type: "checkmark" }]
-			x: 6.90d
-			y: 3.80d
+			x: 5.52d
+			y: 3.04d
 		}
 		{
 			dependencies: ["51BC26FDB7EE8214"]
@@ -217,8 +217,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "506D8CC45330245E", type: "checkmark" }]
-			x: 9.40d
-			y: 6.00d
+			x: 7.52d
+			y: 4.80d
 		}
 		{
 			dependencies: ["081BCC72EBCBE493"]
@@ -228,8 +228,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "71C868F17225B7F3", type: "checkmark" }]
-			x: 6.90d
-			y: 8.20d
+			x: 5.52d
+			y: 6.56d
 		}
 		{
 			hide_dependency_lines: true
@@ -240,8 +240,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "70BB736467236013", type: "checkmark" }]
-			x: 9.40d
-			y: 8.20d
+			x: 7.52d
+			y: 6.56d
 		}
 		{
 			dependencies: ["5CD1EC681729A76D"]
@@ -251,8 +251,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "136CF19A4FAC8A98", type: "checkmark" }]
-			x: 11.90d
-			y: 6.00d
+			x: 9.52d
+			y: 4.80d
 		}
 	]
 }

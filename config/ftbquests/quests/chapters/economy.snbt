@@ -26,7 +26,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6AF31CCF7A548D2A", item: { count: 1, id: "createoreexcavation:sample_drill" }, type: "item" }]
-			x: 2.50d
+			x: 2.00d
 			y: 0.00d
 		}
 		{
@@ -36,7 +36,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "25A6FC8BD8CFC7B7", item: { count: 1, id: "createoreexcavation:vein_atlas" }, type: "item" }]
-			x: 5.00d
+			x: 4.00d
 			y: 0.00d
 		}
 		{
@@ -46,8 +46,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3C0D32A103BF837D", item: { count: 1, id: "createoreexcavation:drill" }, type: "item" }]
-			x: 5.00d
-			y: -2.20d
+			x: 4.00d
+			y: -1.76d
 		}
 		{
 			dependencies: ["1DF089F6B46653BC", "2B3AF03BB3F2FDE0"]
@@ -56,7 +56,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "3BCBF7A6E019DDBD", item: { count: 1, id: "createoreexcavation:drilling_machine" }, type: "item" }]
-			x: 7.50d
+			x: 6.00d
 			y: 0.00d
 		}
 		{
@@ -66,7 +66,7 @@
 			size: 1.0d
 			tasks: [{ id: "25FEFAB7B623B62A", item: { count: 1, id: "projecte:transmutation_table" }, type: "item" }]
 			x: 0.00d
-			y: 3.50d
+			y: 2.80d
 		}
 		{
 			dependencies: ["62D949F92F5E380D", "1F3E4DFE744C723D"]
@@ -75,8 +75,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6105BBEFC14FCAE1", item: { count: 1, id: "nightshift:vein_scanner" }, type: "item" }]
-			x: 2.50d
-			y: 3.50d
+			x: 2.00d
+			y: 2.80d
 		}
 		{
 			dependencies: ["01617CC30A73058B"]
@@ -86,8 +86,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "61A170DB7D7DF9BD", type: "checkmark" }]
-			x: 5.00d
-			y: 3.50d
+			x: 4.00d
+			y: 2.80d
 		}
 		{
 			dependencies: ["52B663403D95C5AC"]
@@ -96,8 +96,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "37866BD580841908", item: { count: 1, id: "nightshift:vein_cleaner" }, type: "item" }]
-			x: 7.50d
-			y: 2.60d
+			x: 6.00d
+			y: 2.08d
 		}
 		{
 			dependencies: ["52B663403D95C5AC"]
@@ -106,8 +106,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6181050E3050C826", item: { count: 1, id: "createendertransmission:item_transmitter" }, type: "item" }]
-			x: 7.50d
-			y: 4.60d
+			x: 6.00d
+			y: 3.68d
 		}
 	]
 }

@@ -17,7 +17,7 @@
 			size: 1.0d
 			tasks: [{ id: "78E25C3B5587E1EB", type: "checkmark" }]
 			x: 0.00d
-			y: -3.80d
+			y: -3.04d
 		}
 		{
 			icon: { id: "minecraft:crafting_table" }
@@ -26,8 +26,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "481E56D5FBCE9322", type: "checkmark" }]
-			x: 2.20d
-			y: -3.80d
+			x: 1.76d
+			y: -3.04d
 		}
 		{
 			icon: { id: "create:cogwheel" }
@@ -36,8 +36,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7EAEC97356ABAA08", type: "checkmark" }]
-			x: 4.40d
-			y: -3.80d
+			x: 3.52d
+			y: -3.04d
 		}
 		{
 			id: "4C3550A20ABDE71C"
@@ -45,8 +45,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7721713BA337ACFC", item: { count: 1, id: "create:goggles" }, type: "item" }]
-			x: 6.60d
-			y: -3.80d
+			x: 5.28d
+			y: -3.04d
 		}
 		{
 			id: "4F2010ED01E72F75"
@@ -54,8 +54,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3C2BDC214C4FAA0D", item: { count: 1, id: "create:wrench" }, type: "item" }]
-			x: 8.80d
-			y: -3.80d
+			x: 7.04d
+			y: -3.04d
 		}
 		{
 			icon: { id: "minecraft:white_banner" }
@@ -64,8 +64,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "310CC532D4BE9E56", type: "checkmark" }]
-			x: 11.00d
-			y: -3.80d
+			x: 8.80d
+			y: -3.04d
 		}
 		{
 			icon: { id: "minecraft:chest" }
@@ -85,7 +85,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "16155967E3F6A91C", type: "checkmark" }]
-			x: 2.20d
+			x: 1.76d
 			y: 0.00d
 		}
 		{
@@ -95,8 +95,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7884787699C8C6C8", item: { count: 1, id: "create:crafter_slot_cover" }, type: "item" }]
-			x: 2.20d
-			y: 1.90d
+			x: 1.76d
+			y: 1.52d
 		}
 		{
 			dependencies: ["7AA1D2EC840C70E1"]
@@ -105,7 +105,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "57F48D5979EC2D70", count: 16L, item: { count: 1, id: "minecraft:oak_planks" }, type: "item" }]
-			x: 4.40d
+			x: 3.52d
 			y: 0.00d
 		}
 		{
@@ -115,7 +115,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4EDF36D36E0E1F7B", item: { count: 1, id: "minecraft:stone_pickaxe" }, type: "item" }]
-			x: 6.60d
+			x: 5.28d
 			y: 0.00d
 		}
 		{
@@ -125,7 +125,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6278F970F3173071", count: 27L, item: { count: 1, id: "minecraft:iron_nugget" }, type: "item" }]
-			x: 8.80d
+			x: 7.04d
 			y: 0.00d
 		}
 		{
@@ -135,8 +135,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "458517755B2F0A3F", count: 8L, item: { count: 1, id: "minecraft:iron_ingot" }, type: "item" }]
-			x: 8.80d
-			y: 1.90d
+			x: 7.04d
+			y: 1.52d
 		}
 		{
 			dependencies: ["6A850784B9615901"]
@@ -145,7 +145,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6D0B8C3730A1F656", count: 64L, item: { count: 1, id: "create:andesite_alloy" }, type: "item" }]
-			x: 11.00d
+			x: 8.80d
 			y: 0.00d
 		}
 		{
@@ -155,7 +155,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3417D8D23FB554F3", count: 4L, item: { count: 1, id: "create:andesite_casing" }, type: "item" }]
-			x: 13.20d
+			x: 10.56d
 			y: 0.00d
 		}
 		{
@@ -165,7 +165,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "311ECE0BBF01A0BE", item: { count: 1, id: "projecte:transmutation_table" }, type: "item" }]
-			x: 15.60d
+			x: 12.48d
 			y: 0.00d
 		}
 		{
@@ -175,8 +175,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "46D71A358EE5E793", count: 4L, item: { count: 1, id: "create:zinc_ingot" }, type: "item" }]
-			x: 17.90d
-			y: -1.90d
+			x: 14.32d
+			y: -1.52d
 		}
 		{
 			dependencies: ["06B5CD629BA1C0AF"]
@@ -185,8 +185,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2730AA63C362A8E0", item: { count: 1, id: "create:blaze_burner" }, type: "item" }]
-			x: 17.90d
-			y: 1.90d
+			x: 14.32d
+			y: 1.52d
 		}
 		{
 			dependencies: ["38B96CB993ED1D01", "35392A512115E122"]
@@ -195,7 +195,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "3630415A1733F9C8", count: 8L, item: { count: 1, id: "create:brass_ingot" }, type: "item" }]
-			x: 20.20d
+			x: 16.16d
 			y: 0.00d
 		}
 		{
@@ -205,7 +205,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "77997A70FD47899B", count: 2L, item: { count: 1, id: "create:crushing_wheel" }, type: "item" }]
-			x: 22.40d
+			x: 17.92d
 			y: 0.00d
 		}
 		{
@@ -215,7 +215,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5D027BF4A367A9A4", count: 8L, item: { count: 1, id: "create:crushed_raw_iron" }, type: "item" }]
-			x: 24.60d
+			x: 19.68d
 			y: 0.00d
 		}
 		{
@@ -226,8 +226,8 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "56C2C204BFDC72B5", type: "checkmark" }]
-			x: 20.20d
-			y: 4.20d
+			x: 16.16d
+			y: 3.36d
 		}
 		{
 			dependencies: ["6880D921FDA3F837"]
@@ -236,8 +236,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5E59EF6C33888BD6", item: { count: 1, id: "create_mechanical_extruder:mechanical_extruder" }, type: "item" }]
-			x: 22.40d
-			y: 4.20d
+			x: 17.92d
+			y: 3.36d
 		}
 		{
 			dependencies: ["2DC6D6DFEA84D5FC", "0CA383208BFFC4DA"]
@@ -246,8 +246,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "22FE9EE25E997B5D", count: 16L, item: { count: 1, id: "create:crimsite" }, type: "item" }]
-			x: 24.60d
-			y: 4.20d
+			x: 19.68d
+			y: 3.36d
 		}
 		{
 			dependencies: ["381CF6B331367254"]
@@ -256,8 +256,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6AF93EE0F16B7B3D", item: { count: 1, id: "create_compressed:crushed_iron_pile" }, type: "item" }]
-			x: 26.80d
-			y: 4.20d
+			x: 21.44d
+			y: 3.36d
 		}
 		{
 			dependencies: ["26B7189575B37E49"]
@@ -267,8 +267,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "0282820C94504FE1", type: "checkmark" }]
-			x: 29.40d
-			y: 4.20d
+			x: 23.52d
+			y: 3.36d
 		}
 	]
 }

@@ -25,7 +25,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4CB26BD0AE322B60", item: { count: 1, id: "cgs:hammer" }, type: "item" }]
-			x: 2.30d
+			x: 1.84d
 			y: 0.00d
 		}
 		{
@@ -35,7 +35,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1BE0E21FC7027AC8", item: { count: 1, id: "cgs:hammer_netherite" }, type: "item" }]
-			x: 4.60d
+			x: 3.68d
 			y: 0.00d
 		}
 		{
@@ -44,7 +44,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "08528CCA87882816", item: { count: 1, id: "create_deep_dark:echo_sword" }, type: "item" }]
-			x: 7.20d
+			x: 5.76d
 			y: 0.00d
 		}
 		{
@@ -53,7 +53,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "30793238AB6C171D", item: { count: 1, id: "minecraft:mace" }, type: "item" }]
-			x: 9.50d
+			x: 7.60d
 			y: 0.00d
 		}
 		{
@@ -62,7 +62,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3434B4DD3278ECBD", item: { count: 1, id: "minecraft:trident" }, type: "item" }]
-			x: 11.80d
+			x: 9.44d
 			y: 0.00d
 		}
 		{
@@ -72,7 +72,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6CDA005270C544D3", type: "checkmark" }]
-			x: 14.40d
+			x: 11.52d
 			y: 0.00d
 		}
 		{
@@ -82,7 +82,7 @@
 			size: 1.0d
 			tasks: [{ id: "7980DF4808B20344", item: { count: 1, id: "minecraft:bow" }, type: "item" }]
 			x: 0.00d
-			y: 2.40d
+			y: 1.92d
 		}
 		{
 			dependencies: ["40A93CAB5BCB6AF7"]
@@ -91,8 +91,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "590B2D287CE4F8B0", item: { count: 1, id: "cgs:flintlock" }, type: "item" }]
-			x: 2.30d
-			y: 2.40d
+			x: 1.84d
+			y: 1.92d
 		}
 		{
 			dependencies: ["43AB898E82F67601", "710081270063F8BA"]
@@ -101,8 +101,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1C5B2514396C848E", item: { count: 1, id: "cgs:revolver" }, type: "item" }]
-			x: 4.60d
-			y: 2.40d
+			x: 3.68d
+			y: 1.92d
 		}
 		{
 			dependencies: ["526F0A929AFCF674"]
@@ -111,8 +111,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "77BE7186530EBAD7", item: { count: 1, id: "cgs:shotgun" }, type: "item" }]
-			x: 6.90d
-			y: 2.40d
+			x: 5.52d
+			y: 1.92d
 		}
 		{
 			dependencies: ["475FB140DE9CB6C6"]
@@ -121,8 +121,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "123B7D6141B5EB40", item: { count: 1, id: "cgs:nailgun" }, type: "item" }]
-			x: 9.20d
-			y: 2.40d
+			x: 7.36d
+			y: 1.92d
 		}
 		{
 			dependencies: ["10F9F025767F43F1"]
@@ -131,8 +131,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "78E4E3FCDB43DD97", item: { count: 1, id: "cgs:gatling" }, type: "item" }]
-			x: 11.80d
-			y: 2.40d
+			x: 9.44d
+			y: 1.92d
 		}
 		{
 			icon: { id: "cgs:round_revolver" }
@@ -142,8 +142,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "2D12D8A16B2F3F48", type: "checkmark" }]
-			x: 14.40d
-			y: 2.40d
+			x: 11.52d
+			y: 1.92d
 		}
 		{
 			id: "6A226AA9E85F7950"
@@ -152,7 +152,7 @@
 			size: 1.0d
 			tasks: [{ id: "6C6A62BE5A12AA1B", item: { count: 1, id: "cgs:lead_ingot" }, type: "item" }]
 			x: 0.00d
-			y: 4.60d
+			y: 3.68d
 		}
 		{
 			dependencies: ["6A226AA9E85F7950"]
@@ -161,8 +161,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4837B3521A3B6C64", count: 16L, item: { count: 1, id: "cgs:paper_cartridge" }, type: "item" }]
-			x: 2.30d
-			y: 4.60d
+			x: 1.84d
+			y: 3.68d
 		}
 		{
 			icon: { id: "cgs:steel_sheet" }
@@ -171,8 +171,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "450FC92C80186FCF", type: "checkmark" }]
-			x: 4.60d
-			y: 4.60d
+			x: 3.68d
+			y: 3.68d
 		}
 		{
 			id: "064C83DE0B941189"
@@ -180,8 +180,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "78821CC47601450D", item: { count: 1, id: "create:potato_cannon" }, type: "item" }]
-			x: 6.90d
-			y: 4.60d
+			x: 5.52d
+			y: 3.68d
 		}
 		{
 			id: "02B25E310B8069D6"
@@ -189,8 +189,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6F80ED00013D07BA", count: 4L, item: { count: 1, id: "cgs:frag_grenade" }, type: "item" }]
-			x: 9.20d
-			y: 4.60d
+			x: 7.36d
+			y: 3.68d
 		}
 		{
 			id: "3947E4DD03FEF6DA"
@@ -198,8 +198,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2A8FEE85ED7AE3DB", item: { count: 1, id: "cgs:launcher" }, type: "item" }]
-			x: 11.80d
-			y: 4.60d
+			x: 9.44d
+			y: 3.68d
 		}
 		{
 			id: "291F7DFD4AC666B2"
@@ -207,8 +207,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "16FCA9C4DDB31A0A", item: { count: 1, id: "cgs:blazegun" }, type: "item" }]
-			x: 14.40d
-			y: 4.60d
+			x: 11.52d
+			y: 3.68d
 		}
 		{
 			id: "6E1ED7079EA38D72"
@@ -217,7 +217,7 @@
 			size: 1.0d
 			tasks: [{ id: "17CCBA87AC640332", item: { count: 1, id: "minecraft:shield" }, type: "item" }]
 			x: 0.00d
-			y: 6.80d
+			y: 5.44d
 		}
 		{
 			id: "1409D189B5A4B25E"
@@ -225,8 +225,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1198C8009E01E0A6", item: { count: 1, id: "minecraft:iron_chestplate" }, type: "item" }]
-			x: 2.30d
-			y: 6.80d
+			x: 1.84d
+			y: 5.44d
 		}
 		{
 			dependencies: ["1409D189B5A4B25E"]
@@ -235,8 +235,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "33D60CA5E93D7DAF", item: { count: 1, id: "minecraft:diamond_chestplate" }, type: "item" }]
-			x: 4.60d
-			y: 6.80d
+			x: 3.68d
+			y: 5.44d
 		}
 		{
 			dependencies: ["4D03C9F63A7D2222"]
@@ -245,8 +245,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0388F8CE636C602A", item: { count: 1, id: "minecraft:netherite_chestplate" }, type: "item" }]
-			x: 6.90d
-			y: 6.80d
+			x: 5.52d
+			y: 5.44d
 		}
 		{
 			dependencies: ["13720189D8B60053"]
@@ -255,8 +255,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "267208592DCCAD1C", item: { count: 1, id: "create_deep_dark:echo_armor_chestplate" }, type: "item" }]
-			x: 9.50d
-			y: 6.80d
+			x: 7.60d
+			y: 5.44d
 		}
 		{
 			dependencies: ["13720189D8B60053"]
@@ -266,8 +266,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3800D78E1137385D", item: { count: 1, id: "creategbd:beam_reactor_helmet" }, type: "item" }]
-			x: 11.80d
-			y: 6.80d
+			x: 9.44d
+			y: 5.44d
 		}
 		{
 			icon: { id: "create_sa:brass_chestplate" }
@@ -277,8 +277,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "23006D9766C41C04", type: "checkmark" }]
-			x: 14.40d
-			y: 6.80d
+			x: 11.52d
+			y: 5.44d
 		}
 	]
 }

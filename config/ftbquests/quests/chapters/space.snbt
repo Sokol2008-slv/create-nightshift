@@ -25,8 +25,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "398B3DD2807B1822", item: { count: 1, id: "northstar:circuit" }, type: "item" }]
-			x: 2.30d
-			y: -1.40d
+			x: 1.84d
+			y: -1.12d
 		}
 		{
 			dependencies: ["773E1E8AE9F7B7CF"]
@@ -35,8 +35,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0BD6B1DEFE71D224", item: { count: 1, id: "northstar:hardened_precision_mechanism" }, type: "item" }]
-			x: 2.30d
-			y: 1.40d
+			x: 1.84d
+			y: 1.12d
 		}
 		{
 			dependencies: ["33444D6CF34F28A8", "5374E61F4F20603E"]
@@ -45,7 +45,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "27E62AF318CF4AA9", item: { count: 1, id: "northstar:targeting_computer" }, type: "item" }]
-			x: 4.60d
+			x: 3.68d
 			y: 0.00d
 		}
 		{
@@ -55,8 +55,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3D62F38C666A7BFE", item: { count: 1, id: "nightshift:navigation_core" }, type: "item" }]
-			x: 4.60d
-			y: -2.80d
+			x: 3.68d
+			y: -2.24d
 		}
 		{
 			id: "2022B22D15FA1B25"
@@ -64,8 +64,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "14EE9C763D4B1F5A", count: 48L, item: { count: 1, id: "create:industrial_iron_block" }, type: "item" }]
-			x: 6.90d
-			y: -4.20d
+			x: 5.52d
+			y: -3.36d
 		}
 		{
 			dependencies: ["70D7CC025ABCB528"]
@@ -74,8 +74,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "29E01CFB1B8B1AC6", item: { count: 1, id: "northstar:rocket_controls" }, type: "item" }]
-			x: 6.90d
-			y: -2.10d
+			x: 5.52d
+			y: -1.68d
 		}
 		{
 			dependencies: ["2B29212FBD9DC938"]
@@ -84,7 +84,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "678EE2CB4163A4B9", item: { count: 1, id: "northstar:rocket_station" }, type: "item" }]
-			x: 6.90d
+			x: 5.52d
 			y: 0.00d
 		}
 		{
@@ -94,8 +94,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4E213AC91640BDB6", item: { count: 1, id: "northstar:rocket_thruster" }, type: "item" }]
-			x: 6.90d
-			y: 2.10d
+			x: 5.52d
+			y: 1.68d
 		}
 		{
 			icon: { id: "northstar:hydrocarbon_bucket" }
@@ -104,8 +104,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3D6586B99D327B0D", type: "checkmark" }]
-			x: 6.90d
-			y: 4.20d
+			x: 5.52d
+			y: 3.36d
 		}
 		{
 			dependencies: ["2022B22D15FA1B25", "5419BEC0D04A20F0", "63D73C7D0A577B48", "200EF6B4A3B73B4B", "1172882304DE25C3"]
@@ -115,7 +115,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "14C1E2B3BC9EABF7", type: "checkmark" }]
-			x: 9.40d
+			x: 7.52d
 			y: 0.00d
 		}
 		{
@@ -124,8 +124,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2B281E591AA31FAF", item: { count: 1, id: "northstar:astronomical_reading" }, type: "item" }]
-			x: 9.40d
-			y: -3.20d
+			x: 7.52d
+			y: -2.56d
 		}
 		{
 			dependencies: ["577D5A25C2A53FC5"]
@@ -134,8 +134,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "146DAE8D76BA1B69", item: { count: 1, id: "northstar:space_atlas" }, type: "item" }]
-			x: 11.90d
-			y: -1.80d
+			x: 9.52d
+			y: -1.44d
 		}
 		{
 			id: "206F6135673F26E9"
@@ -143,8 +143,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "12F4781CEC34DB97", item: { count: 1, id: "northstar:iron_space_suit_chestpiece" }, type: "item" }]
-			x: 9.40d
-			y: 3.20d
+			x: 7.52d
+			y: 2.56d
 		}
 		{
 			dependencies: ["206F6135673F26E9"]
@@ -153,8 +153,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "43F1755C03BCE9AD", item: { count: 1, id: "northstar:oxygen_filler" }, type: "item" }]
-			x: 11.90d
-			y: 1.80d
+			x: 9.52d
+			y: 1.44d
 		}
 		{
 			dependencies: ["2BB90C762D8DE0FB", "6CA219A30AA20749", "48E881DFD6B3194F"]
@@ -164,7 +164,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "737064C1274CF65D", type: "checkmark" }]
-			x: 14.40d
+			x: 11.52d
 			y: 0.00d
 		}
 		{
@@ -175,28 +175,30 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ dimension: "northstar:moon", id: "58E253F42321264F", type: "dimension" }]
-			x: 16.90d
+			x: 13.52d
 			y: 0.00d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
+			hide_dependency_lines: true
 			id: "7D06BCB9E657D0AA"
 			rewards: [{ id: "7D9A7133CF40B338", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5273CA80C867EF9E", item: { count: 1, id: "northstar:auto_lander" }, type: "item" }]
-			x: 19.40d
-			y: 2.40d
+			x: 0.00d
+			y: 9.60d
 		}
 		{
 			dependencies: ["08F1549241E129A6"]
+			hide_dependency_lines: true
 			id: "0811D15A56819E96"
 			rewards: [{ id: "7E7C7F27FD1410B3", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "315AD4B641EE139B", item: { count: 1, id: "northstar:interplanetary_navigator" }, type: "item" }]
-			x: 19.40d
-			y: 0.00d
+			x: 0.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["0811D15A56819E96"]
@@ -205,8 +207,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
-			x: 21.90d
-			y: 0.00d
+			x: 2.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["54836B2556E2C657"]
@@ -215,8 +217,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6019F987211AF294", item: { count: 1, id: "northstar:tungsten_ingot" }, type: "item" }]
-			x: 24.40d
-			y: 0.00d
+			x: 4.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["1F93228FE232CC76"]
@@ -225,8 +227,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6660EEECE4F82E3E", item: { count: 1, id: "axiomativ:planetary_grindstone" }, type: "item" }]
-			x: 26.90d
-			y: 0.00d
+			x: 6.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["60055E81B084F741"]
@@ -235,8 +237,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "2BDCDCBCCC994B87", count: 4L, item: { count: 1, id: "axiomativ:interplanetary_alloy" }, type: "item" }]
-			x: 29.40d
-			y: 0.00d
+			x: 8.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["539485CE657AFD69"]
@@ -245,8 +247,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5A8A677F1A1909F1", item: { count: 1, id: "nightshift:star_navigator" }, type: "item" }]
-			x: 31.90d
-			y: 0.00d
+			x: 10.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["03D58C0D28130D2F"]
@@ -255,8 +257,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0D6C9F346B121489", item: { count: 1, id: "nightshift:star_pickaxe" }, type: "item" }]
-			x: 34.40d
-			y: 0.00d
+			x: 12.00d
+			y: 7.68d
 		}
 		{
 			dependencies: ["69C0C60E738BFA33"]
@@ -266,8 +268,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ dimension: "nightshift:axiomativ", id: "2FD8D3F87F74D410", type: "dimension" }]
-			x: 34.40d
-			y: -2.20d
+			x: 12.00d
+			y: 5.92d
 		}
 		{
 			dependencies: ["69C0C60E738BFA33"]
@@ -277,8 +279,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ dimension: "nightshift:yin_yang", id: "3F57C00E4D2EDED8", type: "dimension" }]
-			x: 34.40d
-			y: 2.20d
+			x: 12.00d
+			y: 9.44d
 		}
 		{
 			dependencies: ["10AB8BC67127FF0D", "6C6C1196E042B5E3"]
@@ -287,8 +289,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "63EF4A988E202A39", item: { count: 1, id: "kubejs:axiomite_ingot" }, type: "item" }]
-			x: 36.90d
-			y: -2.20d
+			x: 14.00d
+			y: 5.92d
 		}
 		{
 			dependencies: ["6830526159D51413", "6C6C1196E042B5E3"]
@@ -297,8 +299,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_light_stabilite" }, type: "item" }]
-			x: 36.90d
-			y: 2.20d
+			x: 14.00d
+			y: 9.44d
 		}
 		{
 			dependencies: ["7740332F1426A7C8"]
@@ -307,8 +309,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3942488F1D1E8491", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
-			x: 39.40d
-			y: 2.20d
+			x: 16.00d
+			y: 9.44d
 		}
 		{
 			dependencies: ["798AC21976DE3822", "4653E9EEEA38CD03"]
@@ -318,8 +320,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "22045A6BEF05B1E2", type: "checkmark" }]
-			x: 41.90d
-			y: 0.00d
+			x: 18.00d
+			y: 7.68d
 		}
 		{
 			icon: { id: "northstar:lunar_sapphire_shard" }
@@ -329,8 +331,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "3D4496423D811925", type: "checkmark" }]
-			x: 19.40d
-			y: -3.00d
+			x: 0.00d
+			y: 5.28d
 		}
 		{
 			icon: { id: "northstar:raw_martian_iron_ore" }
@@ -340,8 +342,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "6194F2498D51F25D", type: "checkmark" }]
-			x: 21.90d
-			y: -3.00d
+			x: 2.00d
+			y: 5.28d
 		}
 		{
 			icon: { id: "northstar:mercury_stone" }
@@ -351,8 +353,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "7910CE197F4B0237", type: "checkmark" }]
-			x: 24.40d
-			y: -3.00d
+			x: 4.00d
+			y: 5.28d
 		}
 		{
 			icon: { id: "northstar:venus_stone" }
@@ -362,8 +364,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "70D8CF1504E3AE07", type: "checkmark" }]
-			x: 26.90d
-			y: -3.00d
+			x: 6.00d
+			y: 5.28d
 		}
 	]
 }

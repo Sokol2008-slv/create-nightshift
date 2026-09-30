@@ -26,8 +26,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "68AD9A17A2F0988F", count: 2L, item: { count: 1, id: "create:electron_tube" }, type: "item" }]
-			x: 2.20d
-			y: -1.90d
+			x: 1.76d
+			y: -1.52d
 		}
 		{
 			dependencies: ["652D8C7BE73B6E6F"]
@@ -36,7 +36,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "27165F353DAC4634", count: 2L, item: { count: 1, id: "create:railway_casing" }, type: "item" }]
-			x: 2.20d
+			x: 1.76d
 			y: 0.00d
 		}
 		{
@@ -46,8 +46,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1F89110E74018FFE", item: { count: 1, id: "create:precision_mechanism" }, type: "item" }]
-			x: 2.20d
-			y: 1.90d
+			x: 1.76d
+			y: 1.52d
 		}
 		{
 			dependencies: ["7B2C996C9330FAFF"]
@@ -56,8 +56,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7E126130E30E9EDC", count: 16L, item: { count: 1, id: "create:track" }, type: "item" }]
-			x: 4.40d
-			y: -1.90d
+			x: 3.52d
+			y: -1.52d
 		}
 		{
 			dependencies: ["06AA8DFEA3F70CB5"]
@@ -66,8 +66,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "390B4C8C8C9C9868", item: { count: 1, id: "railways:track_switch_andesite" }, type: "item" }]
-			x: 4.40d
-			y: -3.80d
+			x: 3.52d
+			y: -3.04d
 		}
 		{
 			dependencies: ["24B6DBCED47E2AC6", "06AA8DFEA3F70CB5"]
@@ -76,7 +76,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7C97C818F7391B62", item: { count: 1, id: "create:track_station" }, type: "item" }]
-			x: 4.40d
+			x: 3.52d
 			y: 0.00d
 		}
 		{
@@ -86,8 +86,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2C9C8F88A920808A", item: { count: 1, id: "create:controls" }, type: "item" }]
-			x: 4.40d
-			y: 1.90d
+			x: 3.52d
+			y: 1.52d
 		}
 		{
 			dependencies: ["218DDF47E1508988"]
@@ -96,8 +96,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4F92A943F024849F", count: 4L, item: { count: 1, id: "create:schedule" }, type: "item" }]
-			x: 6.60d
-			y: -1.90d
+			x: 5.28d
+			y: -1.52d
 		}
 		{
 			dependencies: ["507306DCDCF2C239", "218DDF47E1508988", "625E481953585276"]
@@ -107,7 +107,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "54541DC33ED4EFE3", type: "checkmark" }]
-			x: 8.80d
+			x: 7.04d
 			y: 0.00d
 		}
 		{
@@ -117,7 +117,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "79ADF70CD1E2730B", item: { count: 1, id: "railways:conductor_whistle" }, type: "item" }]
-			x: 11.20d
+			x: 8.96d
 			y: 0.00d
 		}
 		{
@@ -127,7 +127,7 @@
 			size: 1.0d
 			tasks: [{ id: "254834813F9FA360", item: { count: 1, id: "sophisticatedbackpacks:backpack" }, type: "item" }]
 			x: 0.00d
-			y: 4.20d
+			y: 3.36d
 		}
 		{
 			dependencies: ["104662E6DA217044"]
@@ -136,8 +136,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4E1689FA20EADEDE", item: { count: 1, id: "sophisticatedbackpacks:feeding_upgrade" }, type: "item" }]
-			x: 2.20d
-			y: 4.20d
+			x: 1.76d
+			y: 3.36d
 		}
 		{
 			id: "36276A9BB7F78AA3"
@@ -145,8 +145,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4BE64B944ABD8C3C", item: { count: 1, id: "sophisticatedstorage:controller" }, type: "item" }]
-			x: 4.40d
-			y: 4.20d
+			x: 3.52d
+			y: 3.36d
 		}
 	]
 }

@@ -17,7 +17,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "6D73256340520B21", type: "checkmark" }]
-			x: -2.60d
+			x: -2.08d
 			y: 0.00d
 		}
 		{
@@ -29,8 +29,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "2C9EFE697A0D1C04", type: "checkmark" }]
-			x: -2.60d
-			y: 2.40d
+			x: -2.08d
+			y: 1.92d
 		}
 		{
 			hide_dependency_lines: true
@@ -41,8 +41,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "269E41615DBF4C6E", type: "checkmark" }]
-			x: -2.60d
-			y: 4.80d
+			x: -2.08d
+			y: 3.84d
 		}
 		{
 			id: "6436250ACE0D60A8"
@@ -60,7 +60,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1312BA954555BA13", item: { count: 1, id: "farmersdelight:cutting_board" }, type: "item" }]
-			x: 2.30d
+			x: 1.84d
 			y: 0.00d
 		}
 		{
@@ -70,7 +70,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0831A02792EA94A0", item: { count: 1, id: "farmersdelight:cooking_pot" }, type: "item" }]
-			x: 4.60d
+			x: 3.68d
 			y: 0.00d
 		}
 		{
@@ -80,7 +80,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3C67AD8F5AC4EE9B", item: { count: 1, id: "farmersdelight:stove" }, type: "item" }]
-			x: 6.90d
+			x: 5.52d
 			y: 0.00d
 		}
 		{
@@ -90,7 +90,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "779A18D4CB6A78CF", item: { count: 1, id: "farmersdelight:bone_broth" }, type: "item" }]
-			x: 9.20d
+			x: 7.36d
 			y: 0.00d
 		}
 		{
@@ -101,8 +101,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "45B0B7544379015A", type: "checkmark" }]
-			x: 2.30d
-			y: -2.40d
+			x: 1.84d
+			y: -1.92d
 		}
 		{
 			dependencies: ["11B7267B7F280CBD"]
@@ -111,8 +111,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4C30CCA9A6DBCAAD", count: 4L, item: { count: 1, id: "farmersdelight:tomato_seeds" }, type: "item" }]
-			x: 4.60d
-			y: -2.40d
+			x: 3.68d
+			y: -1.92d
 		}
 		{
 			dependencies: ["1E4435CC30E236DE"]
@@ -121,8 +121,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5F07036070BF5FF3", item: { count: 1, id: "farmersdelight:organic_compost" }, type: "item" }]
-			x: 6.90d
-			y: -2.40d
+			x: 5.52d
+			y: -1.92d
 		}
 		{
 			dependencies: ["4BDCC99B7C9A545A"]
@@ -131,8 +131,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "17CD6C386C75A8EA", count: 8L, item: { count: 1, id: "farmersdelight:tomato" }, type: "item" }]
-			x: 9.20d
-			y: -2.40d
+			x: 7.36d
+			y: -1.92d
 		}
 		{
 			dependencies: ["0A56940FBB7439AE"]
@@ -141,8 +141,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "36CECB7920EC9240", item: { count: 1, id: "create_integrated_farming:vacuum_harvester" }, type: "item" }]
-			x: 11.50d
-			y: -2.40d
+			x: 9.20d
+			y: -1.92d
 		}
 		{
 			dependencies: ["4E5B7F2646C73C7C", "0A56940FBB7439AE"]
@@ -151,7 +151,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "32D202D74EEF6695", item: { count: 1, id: "farmersdelight:tomato_sauce" }, type: "item" }]
-			x: 11.50d
+			x: 9.20d
 			y: 0.00d
 		}
 		{
@@ -160,8 +160,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "29518BC046FA6283", item: { count: 1, id: "create:dough" }, type: "item" }]
-			x: 2.30d
-			y: 2.40d
+			x: 1.84d
+			y: 1.92d
 		}
 		{
 			id: "32A403330C10E18C"
@@ -169,8 +169,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "598EAC511976020C", item: { count: 1, id: "create_integrated_farming:roost" }, type: "item" }]
-			x: 4.60d
-			y: 2.40d
+			x: 3.68d
+			y: 1.92d
 		}
 		{
 			id: "2842951F59F2E86D"
@@ -178,8 +178,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "12367984A375A453", item: { count: 1, id: "create_integrated_farming:fishing_net" }, type: "item" }]
-			x: 6.90d
-			y: 2.40d
+			x: 5.52d
+			y: 1.92d
 		}
 		{
 			id: "32494E2D2F556718"
@@ -187,8 +187,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "55665961CE015CEB", item: { count: 1, id: "create:bar_of_chocolate" }, type: "item" }]
-			x: 9.20d
-			y: 2.40d
+			x: 7.36d
+			y: 1.92d
 		}
 		{
 			id: "1C53FB94F3D33399"
@@ -196,8 +196,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3C66563F528E87F4", item: { count: 1, id: "cagedmobs:hopping_mob_cage" }, type: "item" }]
-			x: 11.50d
-			y: 2.40d
+			x: 9.20d
+			y: 1.92d
 		}
 		{
 			dependencies: ["1E4D226185FC212A", "1C53FB94F3D33399"]
@@ -206,7 +206,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "6DE04CD902451B8B", item: { count: 1, id: "farmersdelight:hamburger" }, type: "item" }]
-			x: 14.00d
+			x: 11.20d
 			y: 0.00d
 		}
 	]

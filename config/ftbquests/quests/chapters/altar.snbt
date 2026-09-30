@@ -25,7 +25,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4C55491B0B830E42", item: { count: 1, id: "nightshift:base_core" }, type: "item" }]
-			x: 2.50d
+			x: 2.00d
 			y: 0.00d
 		}
 		{
@@ -36,7 +36,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "756FABB8E0AE4A3D", type: "checkmark" }]
-			x: 5.00d
+			x: 4.00d
 			y: 0.00d
 		}
 		{
@@ -49,7 +49,7 @@
 			size: 1.0d
 			tasks: [{ id: "465F8D1D1EADA62A", type: "checkmark" }]
 			x: 0.00d
-			y: 2.50d
+			y: 2.00d
 		}
 		{
 			dependencies: ["515EB053AE51DC78"]
@@ -60,8 +60,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "003EEE33EB1E91C2", type: "checkmark" }]
-			x: 2.50d
-			y: 2.50d
+			x: 2.00d
+			y: 2.00d
 		}
 		{
 			dependencies: ["515EB053AE51DC78"]
@@ -73,7 +73,7 @@
 			size: 1.0d
 			tasks: [{ id: "51BE27D074A9C49D", type: "checkmark" }]
 			x: 0.00d
-			y: 5.00d
+			y: 4.00d
 		}
 		{
 			dependencies: ["515EB053AE51DC78"]
@@ -84,8 +84,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7C53997FFDA8DEBE", type: "checkmark" }]
-			x: 2.50d
-			y: 5.00d
+			x: 2.00d
+			y: 4.00d
 		}
 		{
 			dependencies: ["084D8406F225C967"]
@@ -94,8 +94,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5AF75553E3A1ABA8", item: { count: 1, id: "nightshift:night_heart" }, type: "item" }]
-			x: 2.50d
-			y: 7.50d
+			x: 2.00d
+			y: 6.00d
 		}
 		{
 			dependencies: ["515EB053AE51DC78"]
@@ -107,7 +107,7 @@
 			size: 1.0d
 			tasks: [{ id: "4C41FD60A661F9B4", type: "checkmark" }]
 			x: 0.00d
-			y: 7.50d
+			y: 6.00d
 		}
 		{
 			dependencies: ["515EB053AE51DC78"]
@@ -117,7 +117,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "600DAC6A479D5543", stage: "nightshift_p1", team_stage: false, type: "gamestage" }]
-			x: 7.50d
+			x: 6.00d
 			y: 0.00d
 		}
 		{
@@ -128,7 +128,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "72765AF9EBD89E56", stage: "nightshift_p5", team_stage: false, type: "gamestage" }]
-			x: 9.70d
+			x: 7.76d
 			y: 0.00d
 		}
 		{
@@ -139,7 +139,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "044468B9043D2A5D", stage: "nightshift_p10", team_stage: false, type: "gamestage" }]
-			x: 11.90d
+			x: 9.52d
 			y: 0.00d
 		}
 		{
@@ -150,7 +150,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "7AEF671335F21E86", stage: "nightshift_p15", team_stage: false, type: "gamestage" }]
-			x: 14.30d
+			x: 11.44d
 			y: 0.00d
 		}
 		{
@@ -161,7 +161,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "43AF9B71DA189B22", stage: "nightshift_p20", team_stage: false, type: "gamestage" }]
-			x: 16.70d
+			x: 13.36d
 			y: 0.00d
 		}
 		{
@@ -172,7 +172,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5E59511EAD34BBEE", stage: "nightshift_p30", team_stage: false, type: "gamestage" }]
-			x: 18.90d
+			x: 15.12d
 			y: 0.00d
 		}
 		{
@@ -183,7 +183,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2621DA0981FE1B33", stage: "nightshift_p40", team_stage: false, type: "gamestage" }]
-			x: 21.10d
+			x: 16.88d
 			y: 0.00d
 		}
 		{
@@ -194,8 +194,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "59A7D450D039C3AD", type: "checkmark" }]
-			x: 5.00d
-			y: 3.80d
+			x: 4.00d
+			y: 3.04d
 		}
 		{
 			dependencies: ["3F32929BF605AE5F"]
@@ -206,8 +206,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "701740C09F98626E", stage: "nightshift_p50", team_stage: false, type: "gamestage" }]
-			x: 7.50d
-			y: 3.80d
+			x: 6.00d
+			y: 3.04d
 		}
 		{
 			dependencies: ["5A4B58E3D3636EAA"]
@@ -217,8 +217,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "496F017692F7B7B9", stage: "nightshift_p60", team_stage: false, type: "gamestage" }]
-			x: 9.90d
-			y: 3.80d
+			x: 7.92d
+			y: 3.04d
 		}
 		{
 			dependencies: ["6C9D773A2FC527F8"]
@@ -228,8 +228,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "268EED80C8A52945", stage: "nightshift_p70", team_stage: false, type: "gamestage" }]
-			x: 12.30d
-			y: 3.80d
+			x: 9.84d
+			y: 3.04d
 		}
 		{
 			dependencies: ["03D58C0D28130D2F"]
@@ -239,8 +239,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2D3CE806B2A3B5B7", stage: "nightshift_p80", team_stage: false, type: "gamestage" }]
-			x: 14.70d
-			y: 3.80d
+			x: 11.76d
+			y: 3.04d
 		}
 		{
 			dependencies: ["7FE6CF4D0290C173"]
@@ -250,8 +250,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "08B4B1BEBDEE96A0", stage: "nightshift_p90", team_stage: false, type: "gamestage" }]
-			x: 16.90d
-			y: 3.80d
+			x: 13.52d
+			y: 3.04d
 		}
 		{
 			dependencies: ["2CE5CDB303BB7864"]
@@ -261,8 +261,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "00B974734AFC9A23", stage: "nightshift_p100", team_stage: false, type: "gamestage" }]
-			x: 19.30d
-			y: 3.80d
+			x: 15.44d
+			y: 3.04d
 		}
 		{
 			dependencies: ["4423BC3944555606"]
@@ -272,8 +272,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "144469FEED58985A", type: "checkmark" }]
-			x: 21.90d
-			y: 3.80d
+			x: 17.52d
+			y: 3.04d
 		}
 		{
 			dependencies: ["5A4B58E3D3636EAA", "539485CE657AFD69"]
@@ -282,8 +282,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "1A9C866A7A42ACE9", item: { count: 1, id: "axiomativ:shield_generator" }, type: "item" }]
-			x: 7.50d
-			y: 6.40d
+			x: 6.00d
+			y: 5.12d
 		}
 		{
 			dependencies: ["03D58C0D28130D2F"]
@@ -292,8 +292,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5AE65648192ED425", item: { count: 1, id: "nightshift:tactical_nuke" }, type: "item" }]
-			x: 12.30d
-			y: 6.20d
+			x: 9.84d
+			y: 4.96d
 		}
 	]
 }

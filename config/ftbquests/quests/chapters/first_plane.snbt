@@ -26,7 +26,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "57232A7905A4285C", type: "checkmark" }]
-			x: 2.40d
+			x: 1.92d
 			y: 0.00d
 		}
 		{
@@ -36,7 +36,7 @@
 			size: 1.0d
 			tasks: [{ id: "3BA872B2F10C310C", item: { count: 1, id: "simulated:physics_assembler" }, type: "item" }]
 			x: 0.00d
-			y: 3.60d
+			y: 2.88d
 		}
 		{
 			dependencies: ["7A39018E4BE93584"]
@@ -46,8 +46,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5CA398BCF564CF9E", type: "checkmark" }]
-			x: 2.40d
-			y: 3.60d
+			x: 1.92d
+			y: 2.88d
 		}
 		{
 			dependencies: ["7A39018E4BE93584"]
@@ -57,7 +57,7 @@
 			size: 1.0d
 			tasks: [{ id: "1E7053B289AC8782", item: { count: 1, id: "aeronautics:aviators_goggles" }, type: "item" }]
 			x: 0.00d
-			y: 5.80d
+			y: 4.64d
 		}
 		{
 			dependencies: ["5E4F935500884B5E"]
@@ -66,7 +66,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0879CEEB58A3B9E3", item: { count: 1, id: "aeronautics:andesite_propeller" }, type: "item" }]
-			x: 4.80d
+			x: 3.84d
 			y: 0.00d
 		}
 		{
@@ -76,7 +76,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1565144846A54550", item: { count: 1, id: "simulated:red_portable_engine" }, type: "item" }]
-			x: 7.10d
+			x: 5.68d
 			y: 0.00d
 		}
 		{
@@ -86,7 +86,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2DBF15377230FF46", item: { count: 1, id: "simulated:swivel_bearing" }, type: "item" }]
-			x: 9.40d
+			x: 7.52d
 			y: 0.00d
 		}
 		{
@@ -96,7 +96,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4ED9E4F57EE9A495", item: { count: 1, id: "simulated:throttle_lever" }, type: "item" }]
-			x: 11.70d
+			x: 9.36d
 			y: 0.00d
 		}
 		{
@@ -107,7 +107,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "35E643D7CDFD280D", type: "checkmark" }]
-			x: 14.10d
+			x: 11.28d
 			y: 0.00d
 		}
 		{
@@ -119,8 +119,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "7DC2612002B3C848", type: "checkmark" }]
-			x: 14.10d
-			y: -2.30d
+			x: 11.28d
+			y: -1.84d
 		}
 		{
 			dependencies: ["75D4EA183A7216E8"]
@@ -129,8 +129,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1024BEA8B6CFB74C", item: { count: 1, id: "aeronautics:propeller_bearing" }, type: "item" }]
-			x: 7.10d
-			y: -2.20d
+			x: 5.68d
+			y: -1.76d
 		}
 		{
 			dependencies: ["01594BCF4B0FAA93"]
@@ -139,8 +139,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3E30CCE2B1429349", item: { count: 1, id: "aeronautics:gyroscopic_propeller_bearing" }, type: "item" }]
-			x: 9.40d
-			y: -2.20d
+			x: 7.52d
+			y: -1.76d
 		}
 		{
 			dependencies: ["40BC59080DC10129"]
@@ -149,8 +149,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2F9236530078FF9A", item: { count: 1, id: "simulated:altitude_sensor" }, type: "item" }]
-			x: 16.50d
-			y: -2.20d
+			x: 13.20d
+			y: -1.76d
 		}
 		{
 			dependencies: ["40BC59080DC10129"]
@@ -159,7 +159,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "12E8681CDD0F4545", count: 4L, item: { count: 1, id: "createpropulsion:wing" }, type: "item" }]
-			x: 16.50d
+			x: 13.20d
 			y: 0.00d
 		}
 		{
@@ -169,7 +169,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "69FA3E6AA12531B0", item: { count: 1, id: "createpropulsion:thruster" }, type: "item" }]
-			x: 18.80d
+			x: 15.04d
 			y: 0.00d
 		}
 		{
@@ -179,7 +179,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3ACDF8F03C3D4487", item: { count: 1, id: "aeroworks:control_desk" }, type: "item" }]
-			x: 21.10d
+			x: 16.88d
 			y: 0.00d
 		}
 		{
@@ -189,8 +189,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "77568F5B00F651AD", count: 4L, item: { count: 1, id: "aeronautics:white_envelope" }, type: "item" }]
-			x: 4.80d
-			y: 3.60d
+			x: 3.84d
+			y: 2.88d
 		}
 		{
 			dependencies: ["3E4DC2FF5F9E9A11"]
@@ -199,8 +199,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "70040D6AF5643980", item: { count: 1, id: "aeronautics:adjustable_burner" }, type: "item" }]
-			x: 7.10d
-			y: 3.60d
+			x: 5.68d
+			y: 2.88d
 		}
 		{
 			dependencies: ["6FD1D61B190A391F"]
@@ -210,8 +210,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "753C9F0AA36D7318", type: "checkmark" }]
-			x: 9.50d
-			y: 3.60d
+			x: 7.60d
+			y: 2.88d
 		}
 		{
 			dependencies: ["6B33460399FB68BA"]
@@ -220,8 +220,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3664C44F1D8F4B61", item: { count: 1, id: "aeronautics:levitite" }, type: "item" }]
-			x: 11.90d
-			y: 3.60d
+			x: 9.52d
+			y: 2.88d
 		}
 		{
 			dependencies: ["5E4F935500884B5E"]
@@ -230,8 +230,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6F8C7DE5BC015AA9", item: { count: 1, id: "offroad:wheel_mount" }, type: "item" }]
-			x: 4.80d
-			y: 7.20d
+			x: 3.84d
+			y: 5.76d
 		}
 		{
 			dependencies: ["190E507AE2C83EB5"]
@@ -240,8 +240,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "38C8BB142C924DEA", item: { count: 1, id: "offroad:tire" }, type: "item" }]
-			x: 7.10d
-			y: 7.20d
+			x: 5.68d
+			y: 5.76d
 		}
 		{
 			dependencies: ["6F0ED9E8085BFCE5"]
@@ -251,8 +251,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "340481058A3FBB37", type: "checkmark" }]
-			x: 9.50d
-			y: 7.20d
+			x: 7.60d
+			y: 5.76d
 		}
 		{
 			dependencies: ["64B2071B71444A15"]
@@ -261,8 +261,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2A0290954F4E282E", item: { count: 1, id: "offroad:borehead_bearing" }, type: "item" }]
-			x: 11.90d
-			y: 7.20d
+			x: 9.52d
+			y: 5.76d
 		}
 		{
 			dependencies: ["5E4F935500884B5E"]
@@ -271,8 +271,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3F1D07486590A648", item: { count: 1, id: "create_submarine:ballast_tank" }, type: "item" }]
-			x: 4.80d
-			y: 10.80d
+			x: 3.84d
+			y: 8.64d
 		}
 		{
 			dependencies: ["2CC8CCC2EDA2288D"]
@@ -281,8 +281,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "71E1D3C07C32079D", item: { count: 1, id: "create_submarine:ballast_vent" }, type: "item" }]
-			x: 7.10d
-			y: 10.80d
+			x: 5.68d
+			y: 8.64d
 		}
 		{
 			dependencies: ["5CC2972B8E23DC31"]
@@ -292,8 +292,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5E4E0B551474ABE6", type: "checkmark" }]
-			x: 9.40d
-			y: 10.80d
+			x: 7.52d
+			y: 8.64d
 		}
 		{
 			dependencies: ["0A3DAD1655477A4B"]
@@ -302,8 +302,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "26D172EC65C44FD6", item: { count: 1, id: "create_submarine:water_thruster" }, type: "item" }]
-			x: 11.70d
-			y: 10.80d
+			x: 9.36d
+			y: 8.64d
 		}
 		{
 			dependencies: ["556DE5924DA9D57F"]
@@ -312,8 +312,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2B684FB4F0929565", item: { count: 1, id: "create_submarine:iron_pressurizer" }, type: "item" }]
-			x: 14.00d
-			y: 10.80d
+			x: 11.20d
+			y: 8.64d
 		}
 		{
 			dependencies: ["0A3DAD1655477A4B"]
@@ -322,8 +322,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "79A24CDE7482F116", item: { count: 1, id: "create_submarine:electrolyzer" }, type: "item" }]
-			x: 11.70d
-			y: 12.80d
+			x: 9.36d
+			y: 10.24d
 		}
 		{
 			dependencies: ["46097C31CBD877FE"]
@@ -332,8 +332,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "62747B858AFDD051", item: { count: 1, id: "create_submarine:oxygene_diffuser" }, type: "item" }]
-			x: 14.00d
-			y: 12.80d
+			x: 11.20d
+			y: 10.24d
 		}
 		{
 			hide_dependency_lines: true
@@ -344,8 +344,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "33FD4AFA67704FA1", type: "checkmark" }]
-			x: 16.40d
-			y: 13.00d
+			x: 13.12d
+			y: 10.40d
 		}
 		{
 			dependencies: ["2B93C5ECE763DE47", "3683F15199866889"]
@@ -355,8 +355,8 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "5263023C493D037C", type: "checkmark" }]
-			x: 16.40d
-			y: 10.80d
+			x: 13.12d
+			y: 8.64d
 		}
 	]
 }

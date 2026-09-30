@@ -18,7 +18,7 @@
 			size: 1.0d
 			tasks: [{ id: "2FE836E5C2326655", type: "checkmark" }]
 			x: 0.00d
-			y: -1.90d
+			y: -1.52d
 		}
 		{
 			id: "7A9E4A6FA2EA52AF"
@@ -36,7 +36,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2B8894FCA431ABD2", count: 2L, item: { count: 1, id: "create:cogwheel" }, type: "item" }]
-			x: 2.20d
+			x: 1.76d
 			y: 0.00d
 		}
 		{
@@ -46,7 +46,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4094A4872E7F8EBB", count: 2L, item: { count: 1, id: "create:large_cogwheel" }, type: "item" }]
-			x: 4.40d
+			x: 3.52d
 			y: 0.00d
 		}
 		{
@@ -56,8 +56,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "04516BA347ACC619", item: { count: 1, id: "createsifter:sifter" }, type: "item" }]
-			x: 4.40d
-			y: -1.90d
+			x: 3.52d
+			y: -1.52d
 		}
 		{
 			dependencies: ["7A9E4A6FA2EA52AF"]
@@ -66,8 +66,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6D94D37FC1FE5D48", count: 2L, item: { count: 1, id: "create:belt_connector" }, type: "item" }]
-			x: 2.20d
-			y: 1.90d
+			x: 1.76d
+			y: 1.52d
 		}
 		{
 			dependencies: ["5B0EAEACFF067C03"]
@@ -76,8 +76,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6DEA1F5CC8240E63", item: { count: 1, id: "create:filter" }, type: "item" }]
-			x: 4.40d
-			y: 1.90d
+			x: 3.52d
+			y: 1.52d
 		}
 		{
 			dependencies: ["5B0EAEACFF067C03"]
@@ -86,8 +86,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "04068A1AAB584B56", item: { count: 1, id: "create:deployer" }, type: "item" }]
-			x: 2.20d
-			y: 3.80d
+			x: 1.76d
+			y: 3.04d
 		}
 	]
 }
