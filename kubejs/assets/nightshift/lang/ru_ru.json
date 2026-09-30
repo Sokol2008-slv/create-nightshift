@@ -36,5 +36,7 @@
 	"item.nightshift.star_pickaxe": "Звёздная кирка",
 	"item.nightshift.tactical_nuke": "Тактический ядерный заряд",
 	"item.nightshift.star_navigator": "Звёздный навигатор",
-	"nightshift.msg.star_pickaxe_needed": "Нужна звёздная кирка (награда 70-й волны)"
+	"nightshift.msg.star_pickaxe_needed": "Нужна Звёздная или Стабилитовая кирка (осколок — награда 70-й волны)",
+	"item.nightshift.star_fragment": "Звёздный осколок",
+	"item.nightshift.stabilite_pickaxe": "Стабилитовая кирка"
 }

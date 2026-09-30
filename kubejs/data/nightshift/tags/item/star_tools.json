@@ -4,6 +4,10 @@
     {
       "id": "nightshift:star_pickaxe",
       "required": false
+    },
+    {
+      "id": "nightshift:stabilite_pickaxe",
+      "required": false
     }
   ]
 }

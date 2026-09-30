@@ -2,7 +2,7 @@
 // «Вахта» — «звёздные» применения межпланетного сплава (axiomativ:interplanetary_alloy):
 //   1) руды аксиомита и стабилита открывает только Звёздная кирка (тег nightshift:star_tools);
 //   2) «Звёздный навигатор» — пропуск на планеты Аксиоматив и Инь-Янь;
-//   3) рецепты: навигатор и ещё одна Звёздная кирка (механические крафтеры).
+//   3) рецепты: навигатор, Звёздная кирка (с осколком 70-й волны), Стабилитовая кирка (механические крафтеры).
 // Предметы — startup_scripts/vahta/20_wave_items.js, лут руд — data/kubejs/loot_table/blocks/*.json.
 // Правило Rhino: только var.
 // ==========================================================================
@@ -26,18 +26,28 @@ ServerEvents.recipes(function (event) {
 		D: 'northstar:circuit'
 	}).id('nightshift:vahta/star_navigator')
 
-	// вторая и следующие Звёздные кирки: 3 сплава + незеритовая кирка + слиток стабилита с планет
-	// (стабилит добывается только Звёздной киркой с 70-й волны — то есть копию можно собрать лишь
-	// имея первую)
+	// Звёздная кирка: 3 сплава + незеритовая кирка + Звёздный осколок (веха 70-й волны; Георгий, 30.09: «без
+	// волны 70 нельзя было скрафтить кирку»). Раньше вместо осколка был слиток стабилита — его копают этой же киркой.
 	event.recipes.create.mechanical_crafting('nightshift:star_pickaxe', [
 		'AAA',
 		' P ',
-		' S '
+		' F '
 	], {
 		A: 'axiomativ:interplanetary_alloy',
 		P: 'minecraft:netherite_pickaxe',
-		S: 'kubejs:stabilite_ingot'
-	}).id('nightshift:vahta/star_pickaxe_copy')
+		F: 'nightshift:star_fragment'
+	}).id('nightshift:vahta/star_pickaxe')
+
+	// Стабилитовая кирка — из металлов наших планет: 2 стабилита + аксиомит + 2 межпланетных сплава
+	event.recipes.create.mechanical_crafting('nightshift:stabilite_pickaxe', [
+		'SXS',
+		' A ',
+		' A '
+	], {
+		S: 'kubejs:stabilite_ingot',
+		X: 'kubejs:axiomite_ingot',
+		A: 'axiomativ:interplanetary_alloy'
+	}).id('nightshift:vahta/stabilite_pickaxe')
 })
 
 // --------------------------------------------------------------------------

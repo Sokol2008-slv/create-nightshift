@@ -217,7 +217,7 @@
 		}
 		{
 			dependencies: ["6C9D773A2FC527F8"]
-			icon: { id: "nightshift:star_pickaxe" }
+			icon: { id: "nightshift:star_fragment" }
 			id: "03D58C0D28130D2F"
 			rewards: [{ id: "76FA43D9D6607225", type: "xp", xp: 50 }]
 			shape: "hexagon"

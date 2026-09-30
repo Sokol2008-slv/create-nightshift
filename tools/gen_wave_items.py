@@ -54,3 +54,7 @@ recolor(van("netherite_pickaxe"), ["#1c050b", "#4a0f1d", "#7a1a2e", "#a3283f"], 
 recolor(van("firework_star"), ["#0d0d06", "#2e3a08", "#8fb514"], ["#d4f23a", "#fbff9e"], 0.75).save(OUT / "tactical_nuke.png")
 recolor(van("recovery_compass_00"), ["#1c050b", "#5e1424", "#7a1a2e", "#a3283f"], ["#5d8f45", "#85bb65", "#c6e6a8"], 0.75).save(OUT / "star_navigator.png")
 print("текстуры наград волн готовы")
+# 30.09: Звёздный осколок (веха 70-й волны, сердцевина Звёздной кирки) — звезда Незера в цветах бренда;
+# Стабилитовая кирка — свет и тьма стабилита (белый ↔ графит) с денежно-зелёными бликами
+recolor(van("nether_star"), ["#1c050b", "#5e1424", "#a3283f"], ["#85bb65", "#c6e6a8", "#f4fff0"], 0.72).save(OUT / "star_fragment.png")
+recolor(van("netherite_pickaxe"), ["#16161b", "#3c3c46", "#9ea3ad", "#eef0f4"], ["#85bb65", "#c6e6a8"], 0.9).save(OUT / "stabilite_pickaxe.png")

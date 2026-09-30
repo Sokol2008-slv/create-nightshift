@@ -283,7 +283,7 @@ NSG.NS_EARLY_BOSS = function (d) {
 NSG.NS_WAVE_MILESTONES = {
 	15: { items: [['nightshift:lightning_charge', 1]], text: 'Заряд молнии — в деплоер, бить по меди: электрическая медь для генераторов тока' },
 	50: { items: [['nightshift:navigation_core', 1]], text: 'Ядро навигации — для контроллера ракеты' },
-	70: { items: [['nightshift:star_pickaxe', 1]], text: 'Звёздная кирка — копает руды наших планет' },
+	70: { items: [['nightshift:star_fragment', 1]], text: 'Звёздный осколок — без него не собрать Звёздную кирку (копает руды наших планет)' },
 	100: { items: [['nightshift:night_heart', 2], ['minecraft:nether_star', 2]], text: 'Финал смены. Дальше — Бесконечность' },
 }
 
@@ -360,6 +360,7 @@ NSG.NIGHTSHIFT_LOOT = {
 		{ minK: 1, e: ['minecraft:wither_skeleton_skull', 1] },
 		{ minK: 1, e: ['minecraft:ancient_debris', 4] },
 		{ minK: 1, e: ['minecraft:heart_of_the_sea', 1] },
+		{ minK: 1, e: ['nightshift:star_fragment', 1] }, // осколок Звёздной кирки — на кирки остальной команды
 		{ minK: 1, e: ['minecraft:netherite_upgrade_smithing_template', 1] },
 		{ minK: 1, e: ['minecraft:totem_of_undying', 2] },
 		{ minK: 2, e: ['minecraft:silence_armor_trim_smithing_template', 1] },

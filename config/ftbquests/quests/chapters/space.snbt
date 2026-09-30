@@ -369,5 +369,15 @@
 			x: 7.52d
 			y: 8.40d
 		}
+		{
+			dependencies: ["4653E9EEEA38CD03"]
+			id: "0E9B75BD4A8ACA52"
+			rewards: [{ id: "2A821576415006CA", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "60F5BA49C349B499", item: { count: 1, id: "nightshift:stabilite_pickaxe" }, type: "item" }]
+			x: -2.48d
+			y: 10.08d
+		}
 	]
 }

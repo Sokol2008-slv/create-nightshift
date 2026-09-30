@@ -36,5 +36,7 @@
 	"item.nightshift.star_pickaxe": "Star Pickaxe",
 	"item.nightshift.tactical_nuke": "Tactical Nuke",
 	"item.nightshift.star_navigator": "Star Navigator",
-	"nightshift.msg.star_pickaxe_needed": "A Star Pickaxe is required (wave 70 reward)"
+	"nightshift.msg.star_pickaxe_needed": "A Star or Stabilite Pickaxe is required (fragment — wave 70 reward)",
+	"item.nightshift.star_fragment": "Star Fragment",
+	"item.nightshift.stabilite_pickaxe": "Stabilite Pickaxe"
 }
