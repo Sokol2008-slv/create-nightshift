@@ -1,8 +1,8 @@
 // ==========================================================================
 // Ночная смена — боссы L_Ender's Cataclysm (3.33) для поздних волн 70–100 и «Бесконечности».
-// ЗАГОТОВКА: только данные и функция выбора. К набегу (40_nightshift_raid.js) НЕ подключено —
-// подключать после проверки в игре. Файл безопасен и без мода: классы мода не загружаются,
-// id — просто строки.
+// Данные и функция выбора; набег берёт их в nsChallengeHorde (40_nightshift_raid.js) с 70-й волны.
+// Проверено 30.09 на витрине (70-я волна, Кобольдиатор). Файл безопасен и без мода: классы мода
+// не загружаются, id — просто строки.
 //
 // Разбор мода и обоснование ротации — docs/research/cataclysm.md.
 //
@@ -56,6 +56,21 @@ NSG.NS_CATACLYSM_BOSSES = [
 
 // Фиксированные волны-«вехи»: пара разных боссов. Текущий код набега спавнит bossCount боссов
 // ОДНОГО вида — второй (extra) понадобится поддержать в nsSpawnCurrentWave при подключении.
+// Подволны из обычных мобов Cataclysm для волн 70+ (Георгий, 30.09: «70-е волны — уже с модовыми монстрами»).
+// Здоровье / урон / броня — из атрибутов мода 3.33: драугр 28/4/3, элитный 32/5/3, королевский 30/5/5, кобoletон 25/3,
+// пылающий берсерк 65/7,5/8, пылающий ревенант 80/6/12, глубинник 26/4, громила-глубинник 60/5/8, жрец и
+// чернокнижник глубин 45/4, эндермаптера 16/4/6, коралловый голем 110/11/5, аптргангр 160/18/10.
+// Числа — на одного игрока, дальше их умножают плотность и Кошмар (40_nightshift_raid.js, nsChallengeHorde).
+function nsCmMob(id, count, label, nbt) {
+	return { id: 'cataclysm:' + id, count: count, label: label, nbt: nbt || '' }
+}
+NSG.NS_CATACLYSM_WAVES = [
+	[nsCmMob('draugr', 16, 'драугр'), nsCmMob('elite_draugr', 8, 'элитный драугр'), nsCmMob('royal_draugr', 4, 'королевский драугр')],
+	[nsCmMob('ignited_berserker', 8, 'пылающий берсерк'), nsCmMob('ignited_revenant', 5, 'пылающий ревенант'), nsCmMob('koboleton', 14, 'кобoletон')],
+	[nsCmMob('deepling_brute', 8, 'громила-глубинник'), nsCmMob('deepling', 12, 'глубинник'), nsCmMob('deepling_priest', 3, 'жрец глубин'), nsCmMob('deepling_warlock', 3, 'чернокнижник глубин')],
+	[nsCmMob('coral_golem', 3, 'коралловый голем'), nsCmMob('aptrgangr', 1, 'аптргангр'), nsCmMob('endermaptera', 16, 'эндермаптера')],
+]
+
 NSG.NS_CATACLYSM_FIXED = {
 	80: { boss: 'cataclysm:ender_guardian', count: 1, extra: ['cataclysm:ender_golem', 2] },
 	90: { boss: 'cataclysm:ancient_remnant', count: 1, extra: ['cataclysm:wadjet', 2] },

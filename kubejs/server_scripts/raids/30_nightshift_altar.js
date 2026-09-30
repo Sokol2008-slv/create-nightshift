@@ -79,7 +79,7 @@ function nsForecastLines(d) {
 	var names = { resistance: 'сопротивление', strength: 'сила', speed: 'скорость' }
 	for (var b in horde.buff || {}) if (horde.buff[b] > 0) buffs.push(names[b] + ' ' + ['', 'I', 'II', 'III'][horde.buff[b]])
 	if (buffs.length) lines.push('Мобы усилены: ' + buffs.join(', '))
-	if (horde.scale && (horde.scale.hp > 0 || horde.scale.damage > 0)) lines.push('Мобы крепче: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%' + (horde.scale.speed > 0 ? ', скорость +' + Math.round(horde.scale.speed * 100) + '%' : ''))
+	if (horde.scale && (horde.scale.hp > 0 || horde.scale.damage > 0)) lines.push('Мобы крепче: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%' + (horde.scale.speed > 0 ? ', скорость +' + Math.round(horde.scale.speed * 100) + '%' : '') + (horde.scale.size > 1 ? ', крупнее ×' + horde.scale.size.toFixed(2) : ''))
 	if (horde.scale) total = Math.round(total * (1 + horde.scale.hp))
 	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
 	lines.push('Итого ' + nsPlural(horde.waves.length, 'подволна', 'подволны', 'подволн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
@@ -135,8 +135,32 @@ function nsDifficultyButton(state, d, label) {
 	return btn.clickRunCommand('/nightshift start ' + d).hover(nsDifficultyHover(state, d))
 }
 
-// Меню алтаря: окно волн вокруг лучшей пройденной (шкала 1–100, выше — Бесконечность) + ближайшая веха
-function nsShowAltarMenu(player, state) {
+function nsWaveLabel(d) {
+	return d > NSG.NS_WAVES_MAX ? '∞' + (d - NSG.NS_WAVES_MAX) : String(d)
+}
+
+// Листание волн десятками: [«] [1–10] [11–20] … [»]; клик — /nightshift menu <с какой волны>
+function nsWavePager(from, top) {
+	var last = Math.max(1, top - 9) // последняя страница — 10 волн до следующей
+	var nav = Text.gray('Листать: ')
+	if (from > 1) nav = nav.append(Text.aqua('[«]').clickRunCommand('/nightshift menu ' + Math.max(1, from - 10)).hover(Text.gray('На 10 волн назад'))).append(Text.of(' '))
+	var cur = Math.floor((from - 1) / 10)
+	var lastPage = Math.floor((top - 1) / 10)
+	// в Бесконечности десятков много — показываем до 10 соседних
+	var p0 = Math.max(0, Math.min(cur - 4, lastPage - 9))
+	for (var p = p0; p <= Math.min(lastPage, p0 + 9); p++) {
+		var s = p * 10 + 1
+		var e = Math.min(top, s + 9)
+		var lbl = '[' + nsWaveLabel(s) + (e > s ? '–' + (e > NSG.NS_WAVES_MAX ? e - NSG.NS_WAVES_MAX : e) : '') + ']'
+		var btn = p === cur ? Text.white(lbl).bold(true) : Text.aqua(lbl)
+		nav = nav.append(btn.clickRunCommand('/nightshift menu ' + Math.min(s, last)).hover(Text.gray('Волны ' + nsWaveLabel(s) + '–' + nsWaveLabel(e)))).append(Text.of(' '))
+	}
+	if (from < last) nav = nav.append(Text.aqua('[»]').clickRunCommand('/nightshift menu ' + Math.min(last, from + 10)).hover(Text.gray('На 10 волн вперёд')))
+	return nav
+}
+
+// Меню алтаря: 10 волн (по умолчанию — последние до следующей; from — листание), шкала 1–100, выше — Бесконечность
+function nsShowAltarMenu(player, state, from) {
 	var best = state.phase || 0
 	if ((state.curse || 0) > 0) {
 		player.tell(nsCurseLine(state))
@@ -144,13 +168,14 @@ function nsShowAltarMenu(player, state) {
 	}
 	player.tell(Text.gold('[Ночная смена] Алтарь: выбери волну набега (наведи — состав и добыча, нажми — старт):'))
 	var top = best + 1
-	var from = Math.max(1, top - 9)
+	var last = Math.max(1, top - 9)
+	from = from ? Math.max(1, Math.min(Math.floor(from), last)) : last
 	var row = Text.of('')
-	for (var d = from; d <= top; d++) {
-		var label = d > NSG.NS_WAVES_MAX ? '∞' + (d - NSG.NS_WAVES_MAX) : String(d)
-		row = row.append(nsDifficultyButton(state, d, label)).append(Text.of(' '))
+	for (var d = from; d <= Math.min(top, from + 9); d++) {
+		row = row.append(nsDifficultyButton(state, d, nsWaveLabel(d))).append(Text.of(' '))
 	}
 	player.tell(row)
+	if (top > 10) player.tell(nsWavePager(from, top))
 	var next = null
 	for (var m in NSG.NS_WAVE_MILESTONES) if (Number(m) > best && (next === null || Number(m) < next)) next = Number(m)
 	if (next !== null) player.tell(Text.lightPurple('Ближайшая веха — волна ' + next + ': ').append(Text.white(NSG.NS_WAVE_MILESTONES[next].text)))

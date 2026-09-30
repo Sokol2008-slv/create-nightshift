@@ -1122,15 +1122,19 @@ hash = "9dfe3b6d74a0ca1de12952398f8ae9d87a3c00276feb21af6a23a7b6aaee55e6"
 
 [[files]]
 file = "kubejs/server_scripts/raids/00_nightshift_config.js"
-hash = "7cfa6f49d302e70f46c0ba6dddee33ad71e740f493826426bd6a2012d310d44c"
+hash = "d31d85568c80c4941b45ea12cf25f40e532cae042b7b576dca9683ab3a16e58d"
 
 [[files]]
 file = "kubejs/server_scripts/raids/05_cataclysm_bosses.js"
-hash = "e0601e1ec4786d85d4434bba6e5efe56dc48ba65101f9303d1261655c05fb034"
+hash = "5203887c709d2463509bbc019ed0caef1b275dbccaf250759d7684032dac1134"
 
 [[files]]
 file = "kubejs/server_scripts/raids/06_cataclysm_safety.js"
 hash = "99405d1905fa57291fa0b190c82412dee74f2f1547c84f925ed2b9bbb668d858"
+
+[[files]]
+file = "kubejs/server_scripts/raids/07_raid_no_infighting.js"
+hash = "215ebc67301e94a7874db61181bd858ae1f707760974b9499e7ae811ddb209d9"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
@@ -1142,15 +1146,15 @@ hash = "248d3c32eb8356bd181bafe9db9534a2e332cf1d4f08e25b1d2a16ef7ffa071a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "f7162589d238238ed569567a0e5a6c4f5c5a4e497498369660c7ad8750509a3c"
+hash = "5c9253ab910b2bb824dcd4f22f23cf2bb1d182b2f938022ad7e89ea1b5294bce"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "4a6ae09cec7aceb765abf4b1647861703042f227818d77742922ab4366e52e9c"
+hash = "9e365300bdda5a3a7158cefab6c27f13b4909c6d63d0e8e3dbfa6fafad8858a6"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
-hash = "5902d7f5b8592c9dce676f1742eedc5e02c8f6e005674d41f4ff0db0731ba38a"
+hash = "c65be8fa9f0e835b653cbdac9659129de3d44b6a3b59aa19f31f314a68ad93fe"
 
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
@@ -1158,7 +1162,7 @@ hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
 
 [[files]]
 file = "kubejs/server_scripts/raids/70_nightshift_arena.js"
-hash = "b212ac1bf9ea1a570614206946ce310c6385e97479549d520949f4ef993b0ef0"
+hash = "be19964f0797b71be07d9e7356b3b53c13da9eb86e80376d8af7261a7da7f16b"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"
@@ -1210,7 +1214,7 @@ hash = "b46714dbf6036a21f4ca194f23358fb5b2856b4cfc68f74e1ce73a25b584d88f"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/40_connector_upgrade.js"
-hash = "c8932d17bcf0cf56cb9b45612ec04210393dba4432c2ac12a167922dc9c97de7"
+hash = "0ed7fea2a04fffa1018224dab5312ebc6a1b75caf5febad15a77356cb2c234e6"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/45_axiomativ.js"
@@ -1230,7 +1234,7 @@ hash = "67124a28dc88b7d96c82122f5a9e321e77f3e6b93bd06451b89bc0c9ef6c2902"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/55_tactical_nuke.js"
-hash = "f0eedea0691a67f47b11f2a27fbee37de3722221e8e5617f9da375853edcaab5"
+hash = "660f51e23bc3fc03e3897e0263c63dd901488ec9894a9fa98ba13f2f1351f801"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
@@ -1312,8 +1316,8 @@ hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
 metafile = true
 
 [[files]]
-file = "mods/axiomativ-0.2.1.jar"
-hash = "51d9643e811ece0b543af919400417478dff65cb3f79324480ba9a85c168abae"
+file = "mods/axiomativ-0.2.2.jar"
+hash = "12a665a4f4511e9de7070cf94edf9071be34f3a027064dba21b892786096fe6b"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

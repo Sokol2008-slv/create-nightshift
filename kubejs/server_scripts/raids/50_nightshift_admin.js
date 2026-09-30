@@ -1,7 +1,7 @@
 // ==========================================================================
 // Ночная смена — команды набегов.
 // Любой игрок:
-//   /nightshift menu              — меню сложностей (как ПКМ по алтарю), рядом с алтарём
+//   /nightshift menu [с волны]    — меню сложностей (как ПКМ по алтарю), рядом с алтарём; число — листание
 //   /nightshift start <N>         — набег сложности N у ближайшего алтаря (кнопки меню алтаря)
 //   /nightshift altar             — телепорт к алтарю во время набега, после — обратно
 //   /nightshift spawn add|remove|list|clear — точки спавна орды у ближайшего алтаря (там, где стоишь)
@@ -33,6 +33,25 @@ function nsNearestAltar(state, source) {
 		}
 	}
 	return best
+}
+
+// Меню алтаря командой (кнопки листания волн шлют /nightshift menu <с какой волны>)
+function nsMenuCmd(ctx, from) {
+	var player = ctx.source.getPlayer()
+	if (!player) return 0
+	var st = nsGetState()
+	var altar = nsNearestAltar(st, ctx.source)
+	var pos = ctx.source.getPosition()
+	if (!altar || (altar.x - pos.x()) * (altar.x - pos.x()) + (altar.z - pos.z()) * (altar.z - pos.z()) > 64 * 64) {
+		nsAdminReply(ctx, 'меню набегов — у алтаря (ближе 64 блоков)')
+		return 0
+	}
+	if (nsRaidActive(st)) {
+		nsAdminReply(ctx, 'идёт набег — алтарь занят до его завершения')
+		return 0
+	}
+	nsShowAltarMenu(player, st, from)
+	return 1
 }
 
 // Точки спавна орды: волны появляются у них, а не случайным кольцом
@@ -135,23 +154,9 @@ ServerEvents.commandRegistry(event => {
 		Commands.literal('nightshift')
 			// игроку — старт набега у алтаря и телепорт к алтарю во время набега; остальное — операторам
 			.then(
-				Commands.literal('menu').executes(ctx => {
-					var player = ctx.source.getPlayer()
-					if (!player) return 0
-					var st = nsGetState()
-					var altar = nsNearestAltar(st, ctx.source)
-					var pos = ctx.source.getPosition()
-					if (!altar || (altar.x - pos.x()) * (altar.x - pos.x()) + (altar.z - pos.z()) * (altar.z - pos.z()) > 64 * 64) {
-						nsAdminReply(ctx, 'меню набегов — у алтаря (ближе 64 блоков)')
-						return 0
-					}
-					if (nsRaidActive(st)) {
-						nsAdminReply(ctx, 'идёт набег — алтарь занят до его завершения')
-						return 0
-					}
-					nsShowAltarMenu(player, st)
-					return 1
-				})
+				Commands.literal('menu')
+					.executes(ctx => nsMenuCmd(ctx, 0))
+					.then(Commands.argument('from', Arguments.INTEGER.create(event)).executes(ctx => nsMenuCmd(ctx, Number(Arguments.INTEGER.getResult(ctx, 'from')))))
 			)
 			.then(
 				Commands.literal('spawn')

@@ -67,6 +67,7 @@ function nsNukeDetonate(player) {
 	var srv = player.server
 	var dim = String(level.getDimension())
 	var ex = 'execute in ' + dim + ' run '
+	var exAt = 'execute in ' + dim + ' positioned' + at + ' run ' // «рядом» — от точки взрыва, а не от спавна мира
 	srv.runCommandSilent(ex + 'particle minecraft:flash' + at + ' 6 6 6 0 40 force')
 	srv.runCommandSilent(ex + 'particle minecraft:explosion_emitter' + at + ' 8 2 8 0 30 force')
 	srv.runCommandSilent(ex + 'particle minecraft:campfire_signal_smoke ' + x.toFixed(1) + ' ' + (y + 6).toFixed(1) + ' ' + z.toFixed(1) + ' 2 12 2 0.02 400 force')
@@ -74,9 +75,9 @@ function nsNukeDetonate(player) {
 	srv.runCommandSilent(ex + 'playsound minecraft:entity.generic.explode master @a' + at + ' 16 0.5')
 	srv.runCommandSilent(ex + 'playsound minecraft:entity.lightning_bolt.thunder master @a' + at + ' 16 0.6')
 	srv.runCommandSilent(ex + 'playsound minecraft:entity.wither.death master @a' + at + ' 8 0.5')
-	srv.runCommandSilent(ex + 'title @a[distance=..96] times 0 20 20')
-	srv.runCommandSilent(ex + 'title @a[distance=..96] title {"text":"☢","color":"yellow","bold":true}')
-	srv.runCommandSilent(ex + 'title @a[distance=..96] subtitle {"text":"Уничтожено: ' + killed + (bosses > 0 ? ', боссов задето: ' + bosses : '') + '","color":"gold"}')
+	srv.runCommandSilent(exAt + 'title @a[distance=..96] times 0 20 20')
+	srv.runCommandSilent(exAt + 'title @a[distance=..96] title {"text":"☢","color":"yellow","bold":true}')
+	srv.runCommandSilent(exAt + 'title @a[distance=..96] subtitle {"text":"Уничтожено: ' + killed + (bosses > 0 ? ', боссов задето: ' + bosses : '') + '","color":"gold"}')
 	console.info('[nightshift] ядерный заряд ' + player.username + ' в ' + dim + at + ': убито ' + killed + ', боссов ' + bosses)
 }
 

@@ -26,6 +26,10 @@ function nsVahtaUpgradeConnector(level, pos) {
 	if (NS_CONN_SMALL.indexOf(oldId) < 0) return null
 	var be = level.getBlockEntity(pos)
 	if (!be) return null
+	// большого соединителя нет в реестре (мод обновился, id сменился) — не трогаем: иначе на месте малого
+	// встал бы воздух, а у соседей повисли провода
+	var large = NS_CONN_REGISTRIES.BLOCK.get(NS_CONN_RL.parse(NS_CONN_LARGE))
+	if (!large || large.defaultBlockState().isAir()) return null
 	var reg = level.registryAccess()
 	var tag = be.saveWithoutMetadata(reg)
 	var nodes = tag.getList('nodes', 10).copy()
@@ -36,7 +40,6 @@ function nsVahtaUpgradeConnector(level, pos) {
 	be.loadWithComponents(empty, reg)
 
 	// 2) большой с теми же свойствами блока (у обоих FACING, MODE, ROTATION, VARIANT)
-	var large = NS_CONN_REGISTRIES.BLOCK.get(NS_CONN_RL.parse(NS_CONN_LARGE))
 	var state = large.defaultBlockState()
 	var props = oldState.getProperties().toArray()
 	for (var i = 0; i < props.length; i++) {
@@ -61,6 +64,7 @@ BlockEvents.rightClicked(event => {
 	if (!player || !player.isShiftKeyDown()) return
 	var held = event.item
 	if (!held || held.isEmpty() || String(held.id) !== NS_CONN_LARGE) return
+	if (!event.level.mayInteract(player, event.block.pos)) return // защита спавна / граница мира
 	var removed = nsVahtaUpgradeConnector(event.level, event.block.pos)
 	if (!removed) return
 	if (!player.isCreative()) held.shrink(1)
