@@ -6,10 +6,11 @@
 	icon: { id: "create:controls" }
 	id: "6A8DA5DFF2143038"
 	images: [ ]
-	order_index: 11
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["773E29288CF753D6"]
 			id: "652D8C7BE73B6E6F"
 			rewards: [{ id: "585F4F2C66D2221D", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -20,23 +21,23 @@
 		}
 		{
 			dependencies: ["652D8C7BE73B6E6F"]
-			id: "24B6DBCED47E2AC6"
-			rewards: [{ id: "0A0533173B3386CD", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "27165F353DAC4634", count: 2L, item: { count: 1, id: "create:railway_casing" }, type: "item" }]
-			x: 2.20d
-			y: -2.40d
-		}
-		{
-			dependencies: ["652D8C7BE73B6E6F"]
 			id: "7B2C996C9330FAFF"
 			rewards: [{ id: "5BA9A7B4C06D477D", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "68AD9A17A2F0988F", count: 2L, item: { count: 1, id: "create:electron_tube" }, type: "item" }]
 			x: 2.20d
-			y: 0.80d
+			y: -1.90d
+		}
+		{
+			dependencies: ["652D8C7BE73B6E6F"]
+			id: "24B6DBCED47E2AC6"
+			rewards: [{ id: "0A0533173B3386CD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "27165F353DAC4634", count: 2L, item: { count: 1, id: "create:railway_casing" }, type: "item" }]
+			x: 2.20d
+			y: 0.00d
 		}
 		{
 			dependencies: ["652D8C7BE73B6E6F"]
@@ -46,88 +47,17 @@
 			size: 1.0d
 			tasks: [{ id: "1F89110E74018FFE", item: { count: 1, id: "create:precision_mechanism" }, type: "item" }]
 			x: 2.20d
-			y: -0.80d
+			y: 1.90d
 		}
 		{
-			dependencies: ["24B6DBCED47E2AC6", "5F03E560473FFEB2"]
-			id: "507306DCDCF2C239"
-			rewards: [{ id: "7EEAB777AE7DC064", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "2C9C8F88A920808A", item: { count: 1, id: "create:controls" }, type: "item" }]
-			x: 4.40d
-			y: -1.28d
-		}
-		{
-			dependencies: ["652D8C7BE73B6E6F"]
+			dependencies: ["7B2C996C9330FAFF"]
 			id: "06AA8DFEA3F70CB5"
 			rewards: [{ id: "02D803D845392BBB", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7E126130E30E9EDC", count: 16L, item: { count: 1, id: "create:track" }, type: "item" }]
-			x: 2.20d
-			y: 2.40d
-		}
-		{
-			dependencies: ["24B6DBCED47E2AC6"]
-			id: "218DDF47E1508988"
-			rewards: [{ id: "77EC72BB9B4F3CFA", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "7C97C818F7391B62", item: { count: 1, id: "create:track_station" }, type: "item" }]
 			x: 4.40d
-			y: -2.88d
-		}
-		{
-			dependencies: ["7B2C996C9330FAFF"]
-			id: "71A5FD97FFC26CB3"
-			rewards: [{ id: "40479FAEEC430256", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "795F258DD4D2915C", count: 6L, item: { count: 1, id: "create:controller_rail" }, type: "item" }]
-			x: 4.40d
-			y: 0.32d
-		}
-		{
-			dependencies: ["06AA8DFEA3F70CB5"]
-			id: "749801A6ECAE79FA"
-			rewards: [{ id: "2FB782E8424073C7", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "63C4D48B7F6A7D09", item: { count: 1, id: "create:cart_assembler" }, type: "item" }]
-			x: 4.40d
-			y: 1.92d
-		}
-		{
-			dependencies: ["749801A6ECAE79FA"]
-			id: "412D248CD1A42DB6"
-			rewards: [{ id: "556C83935F2B0377", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "3412459805B093F5", count: 2L, item: { count: 1, id: "create:minecart_coupling" }, type: "item" }]
-			x: 6.60d
-			y: 1.92d
-		}
-		{
-			dependencies: ["218DDF47E1508988"]
-			id: "625E481953585276"
-			rewards: [{ id: "5FC72FC119D5C5D0", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4F92A943F024849F", count: 4L, item: { count: 1, id: "create:schedule" }, type: "item" }]
-			x: 6.60d
-			y: -2.88d
-		}
-		{
-			dependencies: ["507306DCDCF2C239", "412D248CD1A42DB6", "625E481953585276"]
-			icon: { id: "create:track_station" }
-			id: "0A1DAFEE8419EA9C"
-			rewards: [{ id: "686F25E0EC9A8084", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "54541DC33ED4EFE3", type: "checkmark" }]
-			x: 8.80d
-			y: -0.75d
+			y: -1.90d
 		}
 		{
 			dependencies: ["06AA8DFEA3F70CB5"]
@@ -137,7 +67,48 @@
 			size: 1.0d
 			tasks: [{ id: "390B4C8C8C9C9868", item: { count: 1, id: "railways:track_switch_andesite" }, type: "item" }]
 			x: 4.40d
-			y: 3.52d
+			y: -3.80d
+		}
+		{
+			dependencies: ["24B6DBCED47E2AC6", "06AA8DFEA3F70CB5"]
+			id: "218DDF47E1508988"
+			rewards: [{ id: "77EC72BB9B4F3CFA", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7C97C818F7391B62", item: { count: 1, id: "create:track_station" }, type: "item" }]
+			x: 4.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["24B6DBCED47E2AC6", "5F03E560473FFEB2"]
+			id: "507306DCDCF2C239"
+			rewards: [{ id: "7EEAB777AE7DC064", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2C9C8F88A920808A", item: { count: 1, id: "create:controls" }, type: "item" }]
+			x: 4.40d
+			y: 1.90d
+		}
+		{
+			dependencies: ["218DDF47E1508988"]
+			id: "625E481953585276"
+			rewards: [{ id: "5FC72FC119D5C5D0", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4F92A943F024849F", count: 4L, item: { count: 1, id: "create:schedule" }, type: "item" }]
+			x: 6.60d
+			y: -1.90d
+		}
+		{
+			dependencies: ["507306DCDCF2C239", "218DDF47E1508988", "625E481953585276"]
+			icon: { id: "create:track_station" }
+			id: "0A1DAFEE8419EA9C"
+			rewards: [{ id: "686F25E0EC9A8084", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "54541DC33ED4EFE3", type: "checkmark" }]
+			x: 8.80d
+			y: 0.00d
 		}
 		{
 			dependencies: ["0A1DAFEE8419EA9C"]
@@ -146,8 +117,36 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "79ADF70CD1E2730B", item: { count: 1, id: "railways:conductor_whistle" }, type: "item" }]
-			x: 11.00d
-			y: -0.75d
+			x: 11.20d
+			y: 0.00d
+		}
+		{
+			id: "104662E6DA217044"
+			rewards: [{ id: "46CA0512E3B2E391", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "254834813F9FA360", item: { count: 1, id: "sophisticatedbackpacks:backpack" }, type: "item" }]
+			x: 0.00d
+			y: 4.20d
+		}
+		{
+			dependencies: ["104662E6DA217044"]
+			id: "4CB4973DAB869AD0"
+			rewards: [{ id: "67CB02A130914FF9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4E1689FA20EADEDE", item: { count: 1, id: "sophisticatedbackpacks:feeding_upgrade" }, type: "item" }]
+			x: 2.20d
+			y: 4.20d
+		}
+		{
+			id: "36276A9BB7F78AA3"
+			rewards: [{ id: "4319FAF0D15139A2", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4BE64B944ABD8C3C", item: { count: 1, id: "sophisticatedstorage:controller" }, type: "item" }]
+			x: 4.40d
+			y: 4.20d
 		}
 	]
 }

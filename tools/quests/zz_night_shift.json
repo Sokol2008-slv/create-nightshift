@@ -847,7 +847,7 @@
       "Детектор: око Края, аметист, редстоуновая руда и 2 палки — рецепт в JEI (R). ПКМ по земле — подскажет, есть ли жила рядом."
      ],
      "deps": [
-      "ore_processing:crushed_ore"
+      "vahta:crushed_ore"
      ],
      "goal": false,
      "pos": [
@@ -868,7 +868,7 @@
      ],
      "deps": [
       "vein_finder",
-      "ore_processing:brass_ingot"
+      "vahta:brass_ingot"
      ],
      "goal": false,
      "pos": [
@@ -908,7 +908,7 @@
       "&7&o— Отдел закупок: «Бур — расходник. Как и оптимизм».&r"
      ],
      "deps": [
-      "ore_processing:crushed_ore"
+      "vahta:crushed_ore"
      ],
      "goal": false,
      "pos": [

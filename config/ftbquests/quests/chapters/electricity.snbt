@@ -3,51 +3,171 @@
 	default_quest_shape: ""
 	filename: "electricity"
 	group: ""
-	icon: { id: "createaddition:alternator" }
+	icon: { id: "create:steam_engine" }
 	id: "5BC0F6A9CB062861"
 	images: [ ]
-	order_index: 20
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["7A9E4A6FA2EA52AF"]
+			icon: { id: "create:goggles" }
+			id: "32B7B81DD798CAD8"
+			optional: true
+			rewards: [{ id: "0C967C45FD38BBCD", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.3d
+			tasks: [{ id: "0C14B76A8DBEEC6A", type: "checkmark" }]
+			x: -2.60d
+			y: 0.00d
+		}
+		{
+			icon: { id: "create:cogwheel" }
+			id: "579A3577016BCF77"
+			optional: true
+			rewards: [{ id: "1C5B6DEA74CC157B", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "5B3484C8AD319E80", type: "checkmark" }]
+			x: 0.00d
+			y: -2.60d
+		}
+		{
 			id: "021C59A76EC5D8D5"
 			rewards: [{ id: "1776DD3B3B19180F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "49B58A6A4CA63A83", item: { count: 1, id: "create:water_wheel" }, type: "item" }]
 			x: 0.00d
-			y: -3.20d
+			y: 0.00d
 		}
 		{
-			dependencies: ["192A9E87FB0BF09E"]
+			dependencies: ["021C59A76EC5D8D5"]
+			id: "03272886A0764215"
+			rewards: [{ id: "64F92F6DD9A7D978", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5ECCE43280EA24FF", item: { count: 1, id: "create:large_water_wheel" }, type: "item" }]
+			x: 2.20d
+			y: 0.00d
+		}
+		{
 			id: "0C5F009A7468C1F1"
 			rewards: [{ id: "6EFC3A0D8BC5DD8B", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "4CA36FD203DEDD1F", item: { count: 1, id: "create:windmill_bearing" }, type: "item" }]
-			x: 0.00d
-			y: 0.00d
+			x: 1.10d
+			y: 2.20d
 		}
 		{
-			dependencies: ["652D8C7BE73B6E6F"]
+			icon: { id: "minecraft:water_bucket" }
+			id: "448C11C81BCE9735"
+			optional: true
+			rewards: [{ id: "5AB466EEEA8873A8", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "7FA89CE0B9C9CB01", type: "checkmark" }]
+			x: 4.80d
+			y: -2.60d
+		}
+		{
 			id: "0CB839EC6B4FFE19"
 			rewards: [{ id: "6A826E037D384EC8", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "499B08668B1CA666", count: 4L, item: { count: 1, id: "create:fluid_tank" }, type: "item" }]
-			x: 0.00d
+			x: 4.80d
+			y: 0.00d
+		}
+		{
+			id: "095F889A350581BE"
+			rewards: [{ id: "459A3BDFB688D938", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "396C68F5D29DF82C", item: { count: 1, id: "create:blaze_burner" }, type: "item" }]
+			x: 7.20d
 			y: -1.60d
 		}
 		{
-			dependencies: ["0CB839EC6B4FFE19"]
+			id: "26583EE3D60C0310"
+			rewards: [{ id: "4851485E343C0E9D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "412FCD2240E4BEA2", item: { count: 1, id: "create:mechanical_pump" }, type: "item" }]
+			x: 7.20d
+			y: 1.60d
+		}
+		{
+			dependencies: ["0CB839EC6B4FFE19", "095F889A350581BE", "26583EE3D60C0310"]
 			id: "03D8DE952203E77C"
 			rewards: [{ id: "04C382928EBE359D", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "54E6C19A1C4CEFE7", item: { count: 1, id: "create:steam_engine" }, type: "item" }]
-			x: 2.20d
-			y: -3.81d
+			x: 9.60d
+			y: 0.00d
+		}
+		{
+			icon: { id: "create:steam_whistle" }
+			id: "6F174BDE59A5B3BF"
+			optional: true
+			rewards: [{ id: "5EFC001019B94C63", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7ADE8E1F5FBAC2D1", type: "checkmark" }]
+			x: 9.60d
+			y: 2.60d
+		}
+		{
+			icon: { id: "create_new_age:heat_pipe" }
+			id: "009008A465A1264B"
+			optional: true
+			rewards: [{ id: "67CE16123553E9C6", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "4C15297ACCE2253D", type: "checkmark" }]
+			x: 12.20d
+			y: -2.60d
+		}
+		{
+			id: "663530EB05D899C2"
+			rewards: [{ id: "3E71637111C021FD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "105067D6AB395369", item: { count: 1, id: "create_new_age:basic_solar_heating_plate" }, type: "item" }]
+			x: 12.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["663530EB05D899C2"]
+			id: "79713E00CE3F45AC"
+			rewards: [{ id: "763C46579DF274CE", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "375439C720239E7C", item: { count: 1, id: "create_new_age:stirling_engine" }, type: "item" }]
+			x: 14.40d
+			y: -1.20d
+		}
+		{
+			dependencies: ["663530EB05D899C2"]
+			id: "43FE6A7416401283"
+			rewards: [{ id: "029B029E4BF001D6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1905A07BACF1E3B5", item: { count: 1, id: "create_new_age:heater" }, type: "item" }]
+			x: 14.40d
+			y: 1.20d
+		}
+		{
+			icon: { id: "minecraft:lightning_rod" }
+			id: "2436DCEE675739AA"
+			optional: true
+			rewards: [{ id: "3B34BB506F704C7E", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "31D32B8E12D067D6", type: "checkmark" }]
+			x: 17.00d
+			y: -2.60d
 		}
 		{
 			dependencies: ["798ACE3CE5DB69E8"]
@@ -56,8 +176,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2E5840011D6D6128", item: { count: 1, id: "nightshift:lightning_charge" }, type: "item" }]
-			x: 0.00d
-			y: 1.60d
+			x: 17.00d
+			y: 0.00d
 		}
 		{
 			dependencies: ["2ECBF16F87D4CAC1"]
@@ -66,18 +186,59 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "481174118C0E7A5A", item: { count: 1, id: "create:deployer" }, type: "item" }]
-			x: 2.20d
-			y: 2.59d
+			x: 19.20d
+			y: 0.00d
 		}
 		{
-			dependencies: ["38BFD00AD522076F", "6A24AF99B3061795"]
+			dependencies: ["38BFD00AD522076F"]
 			id: "18984F35EFC9F4EC"
 			rewards: [{ id: "043D9F1ACC3B4843", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3C6926BED1583D9F", count: 8L, item: { count: 1, id: "nightshift:electric_copper" }, type: "item" }]
-			x: 4.40d
-			y: 3.96d
+			x: 21.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["18984F35EFC9F4EC"]
+			id: "0B8DDB0E251F417E"
+			rewards: [{ id: "74A8608EAD3EA468", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "3B81760F8B9D6496", item: { count: 1, id: "createaddition:alternator" }, type: "item" }]
+			x: 23.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["18984F35EFC9F4EC"]
+			id: "6098697A991695C9"
+			rewards: [{ id: "520E8BDC11B53AE5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "633EC11346411322", item: { count: 1, id: "create_new_age:generator_coil" }, type: "item" }]
+			x: 23.80d
+			y: -2.30d
+		}
+		{
+			dependencies: ["18984F35EFC9F4EC"]
+			id: "69B53E0B6FA14ADE"
+			rewards: [{ id: "14BFB7FF28B9B797", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0041DB57E2CCB81A", item: { count: 1, id: "tfmg:generator" }, type: "item" }]
+			x: 23.80d
+			y: -4.50d
+		}
+		{
+			icon: { id: "create_new_age:netherite_magnet" }
+			id: "2EA5301A0872E5B3"
+			optional: true
+			rewards: [{ id: "5FFBE9B16DE610DD", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "26594F51FE370BDD", type: "checkmark" }]
+			x: 26.20d
+			y: -2.30d
 		}
 		{
 			id: "6A24AF99B3061795"
@@ -85,28 +246,18 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1A608241A8E32352", item: { count: 1, id: "createaddition:rolling_mill" }, type: "item" }]
-			x: 0.00d
-			y: 3.20d
+			x: 21.40d
+			y: 2.60d
 		}
 		{
 			dependencies: ["6A24AF99B3061795"]
-			id: "20DA09E339E199EE"
-			rewards: [{ id: "2FDA93E85AD70A4A", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "2266A0BA7B5C61D2", count: 4L, item: { count: 1, id: "createaddition:copper_wire" }, type: "item" }]
-			x: 2.20d
-			y: 0.99d
-		}
-		{
-			dependencies: ["20DA09E339E199EE"]
 			id: "6B4A80C8D04DFF1C"
 			rewards: [{ id: "358E9B4B2A0B6DC6", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "20D2E1E8F2AB075B", count: 4L, item: { count: 1, id: "createaddition:connector" }, type: "item" }]
-			x: 4.40d
-			y: -0.73d
+			x: 23.80d
+			y: 2.60d
 		}
 		{
 			dependencies: ["6B4A80C8D04DFF1C"]
@@ -115,110 +266,92 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "1DAD77C5D226CE05", count: 2L, item: { count: 1, id: "createaddition:large_connector" }, type: "item" }]
-			x: 6.60d
-			y: -1.20d
+			x: 26.20d
+			y: 2.60d
 		}
 		{
-			dependencies: ["20DA09E339E199EE", "18984F35EFC9F4EC"]
-			id: "0B8DDB0E251F417E"
-			rewards: [{ id: "74A8608EAD3EA468", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "3B81760F8B9D6496", item: { count: 1, id: "createaddition:alternator" }, type: "item" }]
-			x: 6.60d
-			y: 2.72d
-		}
-		{
-			dependencies: ["20DA09E339E199EE"]
+			icon: { id: "createaddition:electric_motor" }
 			id: "1F2A1A9AED2364A7"
+			optional: true
 			rewards: [{ id: "60198CAC4ECC2413", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "1A0FA085569A9E7C", item: { count: 1, id: "createaddition:electric_motor" }, type: "item" }]
-			x: 4.40d
-			y: 0.87d
+			tasks: [{ id: "1A0FA085569A9E7C", type: "checkmark" }]
+			x: 26.20d
+			y: 0.00d
 		}
 		{
-			dependencies: ["0B8DDB0E251F417E", "1F2A1A9AED2364A7"]
+			icon: { id: "create_new_age:basic_energiser" }
+			id: "11275B17FBDCC7ED"
+			optional: true
+			rewards: [{ id: "28AE7D77E410606B", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7BF26E5AA4D71D9B", type: "checkmark" }]
+			x: 28.60d
+			y: -2.30d
+		}
+		{
+			icon: { id: "createaddition:modular_accumulator" }
 			id: "448B006147B5FDA1"
+			optional: true
 			rewards: [{ id: "171B556CD067C3C0", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "492354D4CA2B013C", type: "checkmark" }]
+			x: 28.60d
+			y: 0.00d
+		}
+		{
+			icon: { id: "createaddition:gold_spool" }
+			id: "0F09FFA3A4ED3DAF"
+			optional: true
+			rewards: [{ id: "19AB74A266F30208", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "60FDF679EACA0DB1", type: "checkmark" }]
+			x: 28.60d
+			y: 2.60d
+		}
+		{
+			icon: { id: "create_new_age:reactor_casing" }
+			id: "39DC36FC4BCD8389"
+			optional: true
+			rewards: [{ id: "372C45437D5F2DE2", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "444E2F4AD4EA5E6F", type: "checkmark" }]
+			x: 31.40d
+			y: -2.60d
+		}
+		{
+			id: "30DE9EDE66363F31"
+			rewards: [{ id: "31DD8B7514B4FB59", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "492354D4CA2B013C", item: { count: 1, id: "createaddition:modular_accumulator" }, type: "item" }]
-			x: 8.80d
-			y: 1.56d
+			tasks: [{ id: "7F9924B4DD2179FF", count: 4L, item: { count: 1, id: "create_new_age:thorium" }, type: "item" }]
+			x: 31.40d
+			y: 0.00d
 		}
 		{
-			dependencies: ["448B006147B5FDA1", "502442B12090F06D"]
-			icon: { id: "createaddition:large_connector" }
-			id: "64ED4267E88744E6"
-			rewards: [{ id: "592F5253360C892C", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "09A0024F4E11AA16", type: "checkmark" }]
-			x: 11.00d
-			y: -0.35d
-		}
-		{
-			dependencies: ["6A24AF99B3061795"]
-			id: "7225CD4C5B6131AC"
-			rewards: [{ id: "764F9EF8B808843A", type: "xp", xp: 10 }]
+			dependencies: ["30DE9EDE66363F31"]
+			id: "7F5182591CB8A08F"
+			rewards: [{ id: "0D8A5A91A426F837", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "5B683DA84886D92D", count: 2L, item: { count: 1, id: "tfmg:magnet" }, type: "item" }]
-			x: 2.20d
-			y: 5.69d
+			tasks: [{ id: "0A1305071C9C15D3", item: { count: 1, id: "create_new_age:nuclear_fuel" }, type: "item" }]
+			x: 33.60d
+			y: 0.00d
 		}
 		{
-			dependencies: ["7225CD4C5B6131AC", "18984F35EFC9F4EC"]
-			id: "69B53E0B6FA14ADE"
-			rewards: [{ id: "14BFB7FF28B9B797", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "0041DB57E2CCB81A", item: { count: 1, id: "tfmg:generator" }, type: "item" }]
-			x: 6.60d
-			y: 5.82d
-		}
-		{
-			dependencies: ["69B53E0B6FA14ADE", "18984F35EFC9F4EC"]
-			icon: { id: "create_new_age:generator_coil" }
-			id: "6098697A991695C9"
-			rewards: [{ id: "520E8BDC11B53AE5", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "633EC11346411322", type: "checkmark" }]
-			x: 8.80d
-			y: 5.05d
-		}
-		{
-			dependencies: ["6098697A991695C9"]
-			id: "5DA20D7514DF8398"
-			rewards: [{ id: "458F880FD046DE7F", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "5DCCD99C0D3B0E40", item: { count: 1, id: "create_new_age:basic_motor" }, type: "item" }]
-			x: 11.00d
-			y: 6.12d
-		}
-		{
-			dependencies: ["6098697A991695C9"]
-			id: "79713E00CE3F45AC"
-			rewards: [{ id: "763C46579DF274CE", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "375439C720239E7C", item: { count: 1, id: "create_new_age:stirling_engine" }, type: "item" }]
-			x: 11.00d
-			y: 4.52d
-		}
-		{
-			dependencies: ["79713E00CE3F45AC"]
+			dependencies: ["7F5182591CB8A08F"]
 			id: "1E4BD02D9BF9BE76"
 			rewards: [{ id: "343E825C7215C31C", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "296EB64246CADBE6", item: { count: 1, id: "create_new_age:reactor_rod" }, type: "item" }]
-			x: 13.20d
-			y: 4.52d
+			x: 36.00d
+			y: 0.00d
 		}
 	]
 }

@@ -410,7 +410,11 @@ NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES = {
 // Искупление проклятия алтаря: стопка ресурса по наибольшей пройденной сложности
 // (ПКМ по алтарю или конвейером в алтарь) снимает одно сердце проклятия.
 // Пока проклятие не снято, алтарь не начинает новый набег.
-function nsTributeFor(best) {
+// best — наибольшая пройденная ВОЛНА (1–100+). Пороги — по составу волны (якорь 1–10, nsWaveTier): раньше тут
+// сравнивали номер волны с порогами старых 10 сложностей, и с 8-й волны откуп стоил 32 тория (найдено 30.09).
+// Сейчас: брёвна — волны 1–3, сплав — 4–13, латунь — 14–26, сталь — 27–42, торий — с 43-й.
+function nsTributeFor(wave) {
+	var best = typeof nsWaveTier === 'function' ? nsWaveTier(Math.max(1, wave || 0)) : wave
 	if (best <= 1) return { item: '#minecraft:logs', count: 64, label: 'брёвен' }
 	if (best <= 3) return { item: 'create:andesite_alloy', count: 64, label: 'андезитового сплава' }
 	if (best <= 5) return { item: 'create:brass_ingot', count: 64, label: 'латунных слитков' }

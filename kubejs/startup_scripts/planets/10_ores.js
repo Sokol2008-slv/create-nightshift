@@ -66,4 +66,9 @@ StartupEvents.registry('item', function (event) {
 	event.create('kubejs:stabilite_ingot')
 		.tag('c:ingots')
 		.tag('c:ingots/stabilite')
+	// титан Northstar: у мода нет дроблёного титана, а «Вахта» убрала переплавку сырого — без этого предмета
+	// титан с планет было не переработать (найдено 30.09). Путь — server_scripts/planets/15_space_metals.js
+	event.create('kubejs:crushed_raw_titanium')
+		.tag('create:crushed_raw_materials')
+		.tag('create:crushed_raw_materials/titanium')
 })

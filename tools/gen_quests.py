@@ -34,12 +34,14 @@ STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
 # Порядок глав в книге — по фазам Ночной смены
-ORDER = ["vahta", "welcome", "night_shift", "altar", "tower_defense", "weapons", "golems", "food",
-         "create_basics", "ore_processing", "logistics_food",
-         "brass_logistics_trains", "automation_extras", "big_cannons",
-         "first_plane", "airships_cars", "submarines", "economy",
-         "steel_oil", "fuel_engines",
-         "electricity", "space"]
+ORDER = ["vahta", "night_shift", "altar",
+         "create_basics", "electricity", "brass_logistics_trains", "food",
+         "weapons", "tower_defense", "golems",
+         "automation_extras", "economy", "steel_oil",
+         "first_plane", "space"]
+# 30.09: главы слиты (welcome → vahta, ore_processing → create_basics/vahta, logistics_food → brass,
+# fuel_engines → steel_oil, big_cannons → tower_defense, dragons → golems, airships_cars → first_plane);
+# энергия стоит рано — её первые стадии (колёса, пар) нужны с начала игры
 
 # Открытый мир (с 2.0.7): главы не запираются, набеги — выбор сложности у алтаря.
 # False вернёт старую схему: фаза главы → префикс «Фаза N ·» и запирание до altar:phase_N.

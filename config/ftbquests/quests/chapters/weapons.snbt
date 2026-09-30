@@ -6,7 +6,7 @@
 	icon: { id: "cgs:gatling" }
 	id: "337BD701D154F1B7"
 	images: [ ]
-	order_index: 5
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -16,16 +16,45 @@
 			size: 1.0d
 			tasks: [{ id: "3560CC81700D49A8", item: { count: 1, id: "minecraft:stone_sword" }, type: "item" }]
 			x: 0.00d
-			y: -2.40d
+			y: 0.00d
 		}
 		{
+			dependencies: ["3EC55E8A9E16874C"]
 			id: "3B3BC2D592599387"
 			rewards: [{ id: "5E534BA24AA0E8D5", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "4CB26BD0AE322B60", item: { count: 1, id: "cgs:hammer_stone" }, type: "item" }]
-			x: 0.00d
-			y: -0.80d
+			tasks: [{ id: "4CB26BD0AE322B60", item: { count: 1, id: "cgs:hammer" }, type: "item" }]
+			x: 2.30d
+			y: 0.00d
+		}
+		{
+			dependencies: ["3B3BC2D592599387"]
+			id: "79049C351BB0ADD1"
+			rewards: [{ id: "32D98047C7AD5D34", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1BE0E21FC7027AC8", item: { count: 1, id: "cgs:hammer_netherite" }, type: "item" }]
+			x: 4.60d
+			y: 0.00d
+		}
+		{
+			id: "6AF7098360A5E993"
+			rewards: [{ id: "0926D8EB395C8775", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "08528CCA87882816", item: { count: 1, id: "create_deep_dark:echo_sword" }, type: "item" }]
+			x: 7.20d
+			y: 0.00d
+		}
+		{
+			id: "5E46C064FCD78091"
+			rewards: [{ id: "70C6EF50C32FC3A0", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "30793238AB6C171D", item: { count: 1, id: "minecraft:mace" }, type: "item" }]
+			x: 9.50d
+			y: 0.00d
 		}
 		{
 			id: "521CD648E130FD9F"
@@ -33,107 +62,171 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3434B4DD3278ECBD", item: { count: 1, id: "minecraft:trident" }, type: "item" }]
-			x: 0.00d
-			y: 0.80d
+			x: 11.80d
+			y: 0.00d
 		}
 		{
-			id: "1C041F3B6BC1AA69"
-			rewards: [{ id: "4F975D9AA2BD0A4A", type: "xp", xp: 10 }]
+			icon: { id: "cataclysm:the_incinerator" }
+			id: "4D8732FCCCBD523B"
+			rewards: [{ id: "1F1963E34CD3BDFD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "1A0589818939E365", item: { count: 1, id: "minecraft:turtle_helmet" }, type: "item" }]
+			tasks: [{ id: "6CDA005270C544D3", type: "checkmark" }]
+			x: 14.40d
+			y: 0.00d
+		}
+		{
+			id: "40A93CAB5BCB6AF7"
+			rewards: [{ id: "5300E373284FF579", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7980DF4808B20344", item: { count: 1, id: "minecraft:bow" }, type: "item" }]
 			x: 0.00d
 			y: 2.40d
 		}
 		{
-			dependencies: ["3B3BC2D592599387"]
-			id: "2F42EF4EFE1E9881"
-			rewards: [{ id: "4A0A0AB70C559CBB", type: "xp", xp: 10 }]
+			dependencies: ["40A93CAB5BCB6AF7"]
+			id: "43AB898E82F67601"
+			rewards: [{ id: "4AC67522969317F8", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "4D8B0E2CE1FFA183", item: { count: 1, id: "cgs:hammer_iron" }, type: "item" }]
-			x: 2.20d
-			y: -0.80d
-		}
-		{
-			dependencies: ["3EC55E8A9E16874C"]
-			id: "219CB0D675EF5EEE"
-			rewards: [{ id: "5D8A06ADA97E425E", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "384262A3E5C62C79", item: { count: 1, id: "cgs:spear" }, type: "item" }]
-			x: 2.20d
-			y: -2.40d
-		}
-		{
-			dependencies: ["1C041F3B6BC1AA69"]
-			id: "1409D189B5A4B25E"
-			rewards: [{ id: "34F93010E6C61467", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "1198C8009E01E0A6", item: { count: 1, id: "minecraft:iron_chestplate" }, type: "item" }]
-			x: 2.20d
+			tasks: [{ id: "590B2D287CE4F8B0", item: { count: 1, id: "cgs:flintlock" }, type: "item" }]
+			x: 2.30d
 			y: 2.40d
 		}
 		{
-			dependencies: ["219CB0D675EF5EEE"]
-			id: "603FB87D3ED2B581"
-			rewards: [{ id: "64351961F725A291", type: "xp", xp: 10 }]
+			dependencies: ["43AB898E82F67601", "710081270063F8BA"]
+			id: "526F0A929AFCF674"
+			rewards: [{ id: "4EBA12A0692B56A9", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "1F569E1085622ADD", item: { count: 1, id: "cgs:bayonet" }, type: "item" }]
-			x: 4.40d
-			y: -3.60d
+			tasks: [{ id: "1C5B2514396C848E", item: { count: 1, id: "cgs:revolver" }, type: "item" }]
+			x: 4.60d
+			y: 2.40d
 		}
 		{
-			dependencies: ["603FB87D3ED2B581"]
-			id: "553F4DF7DAB32787"
-			rewards: [{ id: "78666E15139D72AD", type: "xp", xp: 10 }]
+			dependencies: ["526F0A929AFCF674"]
+			id: "475FB140DE9CB6C6"
+			rewards: [{ id: "1D95991FC674F9F1", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "765A8AAE6ECBF938", item: { count: 1, id: "cgs:big_bayonet" }, type: "item" }]
-			x: 6.60d
-			y: -3.60d
+			tasks: [{ id: "77BE7186530EBAD7", item: { count: 1, id: "cgs:shotgun" }, type: "item" }]
+			x: 6.90d
+			y: 2.40d
 		}
 		{
-			dependencies: ["2F42EF4EFE1E9881"]
-			id: "02B25E310B8069D6"
-			rewards: [{ id: "2301F8AB482E5CC6", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "6F80ED00013D07BA", item: { count: 1, id: "cgs:frag_grenade" }, type: "item" }]
-			x: 4.40d
-			y: -2.00d
-		}
-		{
-			dependencies: ["02B25E310B8069D6"]
+			dependencies: ["475FB140DE9CB6C6"]
 			id: "10F9F025767F43F1"
 			rewards: [{ id: "1E6A678E0F347244", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "123B7D6141B5EB40", item: { count: 1, id: "cgs:nailgun" }, type: "item" }]
-			x: 6.60d
-			y: -2.00d
+			x: 9.20d
+			y: 2.40d
 		}
 		{
 			dependencies: ["10F9F025767F43F1"]
+			id: "495D204B1F3208FC"
+			rewards: [{ id: "688DEB4BC5A124A4", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "78E4E3FCDB43DD97", item: { count: 1, id: "cgs:gatling" }, type: "item" }]
+			x: 11.80d
+			y: 2.40d
+		}
+		{
+			icon: { id: "cgs:round_revolver" }
+			id: "539FB1F056F8E82A"
+			optional: true
+			rewards: [{ id: "5C2CA8E6EE14DB34", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2D12D8A16B2F3F48", type: "checkmark" }]
+			x: 14.40d
+			y: 2.40d
+		}
+		{
+			id: "6A226AA9E85F7950"
+			rewards: [{ id: "2533A7BBF872F543", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6C6A62BE5A12AA1B", item: { count: 1, id: "cgs:lead_ingot" }, type: "item" }]
+			x: 0.00d
+			y: 4.60d
+		}
+		{
+			dependencies: ["6A226AA9E85F7950"]
+			id: "3BCE829443992885"
+			rewards: [{ id: "3F82E471482EB9A6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4837B3521A3B6C64", count: 16L, item: { count: 1, id: "cgs:paper_cartridge" }, type: "item" }]
+			x: 2.30d
+			y: 4.60d
+		}
+		{
+			icon: { id: "cgs:steel_sheet" }
+			id: "710081270063F8BA"
+			rewards: [{ id: "393AA4DCA0F4076C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "450FC92C80186FCF", type: "checkmark" }]
+			x: 4.60d
+			y: 4.60d
+		}
+		{
+			id: "064C83DE0B941189"
+			rewards: [{ id: "18518EF175BE310A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "78821CC47601450D", item: { count: 1, id: "create:potato_cannon" }, type: "item" }]
+			x: 6.90d
+			y: 4.60d
+		}
+		{
+			id: "02B25E310B8069D6"
+			rewards: [{ id: "2301F8AB482E5CC6", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6F80ED00013D07BA", count: 4L, item: { count: 1, id: "cgs:frag_grenade" }, type: "item" }]
+			x: 9.20d
+			y: 4.60d
+		}
+		{
 			id: "3947E4DD03FEF6DA"
 			rewards: [{ id: "598BCC9357B1CCE9", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "2A8FEE85ED7AE3DB", item: { count: 1, id: "cgs:ballistazooka" }, type: "item" }]
-			x: 8.80d
-			y: -2.00d
+			tasks: [{ id: "2A8FEE85ED7AE3DB", item: { count: 1, id: "cgs:launcher" }, type: "item" }]
+			x: 11.80d
+			y: 4.60d
 		}
 		{
-			dependencies: ["2F42EF4EFE1E9881"]
-			id: "1B6E419378350D2B"
-			rewards: [{ id: "39FA3314C2EA5896", type: "xp", xp: 10 }]
+			id: "291F7DFD4AC666B2"
+			rewards: [{ id: "3828B1579EC86E97", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "090D9CA9C983F6CC", item: { count: 1, id: "cgs:hammer_diamond" }, type: "item" }]
-			x: 4.40d
-			y: 2.80d
+			tasks: [{ id: "16FCA9C4DDB31A0A", item: { count: 1, id: "cgs:blazegun" }, type: "item" }]
+			x: 14.40d
+			y: 4.60d
+		}
+		{
+			id: "6E1ED7079EA38D72"
+			rewards: [{ id: "1B7E765E0BC77534", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "17CCBA87AC640332", item: { count: 1, id: "minecraft:shield" }, type: "item" }]
+			x: 0.00d
+			y: 6.80d
+		}
+		{
+			id: "1409D189B5A4B25E"
+			rewards: [{ id: "34F93010E6C61467", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1198C8009E01E0A6", item: { count: 1, id: "minecraft:iron_chestplate" }, type: "item" }]
+			x: 2.30d
+			y: 6.80d
 		}
 		{
 			dependencies: ["1409D189B5A4B25E"]
@@ -142,28 +235,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "33D60CA5E93D7DAF", item: { count: 1, id: "minecraft:diamond_chestplate" }, type: "item" }]
-			x: 4.40d
-			y: 1.20d
-		}
-		{
-			dependencies: ["3947E4DD03FEF6DA"]
-			id: "291F7DFD4AC666B2"
-			rewards: [{ id: "3828B1579EC86E97", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "16FCA9C4DDB31A0A", item: { count: 1, id: "cgs:blazegun" }, type: "item" }]
-			x: 11.00d
-			y: -2.53d
-		}
-		{
-			dependencies: ["1B6E419378350D2B"]
-			id: "79049C351BB0ADD1"
-			rewards: [{ id: "32D98047C7AD5D34", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "1BE0E21FC7027AC8", item: { count: 1, id: "cgs:hammer_netherite" }, type: "item" }]
-			x: 6.60d
-			y: 2.80d
+			x: 4.60d
+			y: 6.80d
 		}
 		{
 			dependencies: ["4D03C9F63A7D2222"]
@@ -172,48 +245,40 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "0388F8CE636C602A", item: { count: 1, id: "minecraft:netherite_chestplate" }, type: "item" }]
-			x: 6.60d
-			y: 1.20d
+			x: 6.90d
+			y: 6.80d
 		}
 		{
 			dependencies: ["13720189D8B60053"]
-			id: "710081270063F8BA"
-			rewards: [{ id: "393AA4DCA0F4076C", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "450FC92C80186FCF", item: { count: 1, id: "cgs:steel_ingot" }, type: "item" }]
-			x: 8.80d
-			y: 1.20d
-		}
-		{
-			dependencies: ["710081270063F8BA"]
-			id: "526F0A929AFCF674"
-			rewards: [{ id: "4EBA12A0692B56A9", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "1C5B2514396C848E", item: { count: 1, id: "cgs:revolver" }, type: "item" }]
-			x: 11.00d
-			y: 0.67d
-		}
-		{
-			dependencies: ["710081270063F8BA"]
-			id: "475FB140DE9CB6C6"
-			rewards: [{ id: "1D95991FC674F9F1", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "77BE7186530EBAD7", item: { count: 1, id: "cgs:shotgun" }, type: "item" }]
-			x: 11.00d
-			y: 2.27d
-		}
-		{
-			dependencies: ["526F0A929AFCF674", "475FB140DE9CB6C6"]
-			id: "495D204B1F3208FC"
-			rewards: [{ id: "688DEB4BC5A124A4", type: "xp", xp: 50 }]
+			id: "648B4A2170FD0077"
+			rewards: [{ id: "1425A4E09CA270C2", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "78E4E3FCDB43DD97", item: { count: 1, id: "cgs:gatling" }, type: "item" }]
-			x: 13.20d
-			y: 1.47d
+			tasks: [{ id: "267208592DCCAD1C", item: { count: 1, id: "create_deep_dark:echo_armor_chestplate" }, type: "item" }]
+			x: 9.50d
+			y: 6.80d
+		}
+		{
+			dependencies: ["13720189D8B60053"]
+			hide_dependency_lines: true
+			id: "17C3D0CDD3773E4F"
+			rewards: [{ id: "6469EA5132454769", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3800D78E1137385D", item: { count: 1, id: "creategbd:beam_reactor_helmet" }, type: "item" }]
+			x: 11.80d
+			y: 6.80d
+		}
+		{
+			icon: { id: "create_sa:brass_chestplate" }
+			id: "11807A46F6FD8F33"
+			optional: true
+			rewards: [{ id: "37DBDFE9608A60A3", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "23006D9766C41C04", type: "checkmark" }]
+			x: 14.40d
+			y: 6.80d
 		}
 	]
 }

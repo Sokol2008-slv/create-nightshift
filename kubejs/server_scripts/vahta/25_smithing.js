@@ -8,6 +8,16 @@
 // [id рецепта стола, шаблон | null, вещь, добавка, результат]
 // ==========================================================================
 var NS_VAHTA_SMITHING = [
+	// L_Ender's Cataclysm 3.33 (с 30.09; мода не было в слепке 28.09 — броня была недоступна, нашёл агент квестов)
+	['cataclysm:smithing/ignitium_helmet', 'cataclysm:ignitium_upgrade_smithing_template', 'minecraft:netherite_helmet', 'cataclysm:ignitium_ingot', 'cataclysm:ignitium_helmet'],
+	['cataclysm:smithing/ignitium_chestplate', 'cataclysm:ignitium_upgrade_smithing_template', 'minecraft:netherite_chestplate', 'cataclysm:ignitium_ingot', 'cataclysm:ignitium_chestplate'],
+	['cataclysm:smithing/ignitium_leggings', 'cataclysm:ignitium_upgrade_smithing_template', 'minecraft:netherite_leggings', 'cataclysm:ignitium_ingot', 'cataclysm:ignitium_leggings'],
+	['cataclysm:smithing/ignitium_boots', 'cataclysm:ignitium_upgrade_smithing_template', 'minecraft:netherite_boots', 'cataclysm:ignitium_ingot', 'cataclysm:ignitium_boots'],
+	['cataclysm:smithing/cursium_helmet', 'cataclysm:cursium_upgrade_smithing_template', 'minecraft:netherite_helmet', 'cataclysm:cursium_ingot', 'cataclysm:cursium_helmet'],
+	['cataclysm:smithing/cursium_chestplate', 'cataclysm:cursium_upgrade_smithing_template', 'minecraft:netherite_chestplate', 'cataclysm:cursium_ingot', 'cataclysm:cursium_chestplate'],
+	['cataclysm:smithing/cursium_leggings', 'cataclysm:cursium_upgrade_smithing_template', 'minecraft:netherite_leggings', 'cataclysm:cursium_ingot', 'cataclysm:cursium_leggings'],
+	['cataclysm:smithing/cursium_boots', 'cataclysm:cursium_upgrade_smithing_template', 'minecraft:netherite_boots', 'cataclysm:cursium_ingot', 'cataclysm:cursium_boots'],
+	['cataclysm:smithing/monstrous_helm', 'minecraft:netherite_upgrade_smithing_template', 'minecraft:netherite_helmet', 'cataclysm:monstrous_horn', 'cataclysm:monstrous_helm'],
 	// Modular Golems (29.09, в буфере «големы»)
 	['modulargolems:netherite_golem_sword', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:diamond_golem_sword', 'minecraft:netherite_ingot', 'modulargolems:netherite_golem_sword'],
 	['modulargolems:netherite_golem_axe', 'minecraft:netherite_upgrade_smithing_template', 'modulargolems:diamond_golem_axe', 'minecraft:netherite_ingot', 'modulargolems:netherite_golem_axe'],
