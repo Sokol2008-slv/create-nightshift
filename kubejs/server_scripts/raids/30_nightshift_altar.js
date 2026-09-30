@@ -160,10 +160,19 @@ function nsWavePager(from, top) {
 }
 
 // Меню алтаря: 10 волн (по умолчанию — последние до следующей; from — листание), шкала 1–100, выше — Бесконечность
+// Кнопка арены в меню алтаря (30.09, Георгий: «не можем тепнуться в измерение, нажав на блок базы» — вход был
+// только командой /arena). В арене — кнопка назад.
+function nsArenaButton(player) {
+	var inArena = String(player.getLevel().getDimension()) === 'nightshift:arena'
+	if (inArena) return Text.aqua('[⇦ На базу]').clickRunCommand('/arena leave').hover(Text.gray('Вернуться туда, откуда пришёл'))
+	return Text.aqua('[⇨ Арена]').clickRunCommand('/arena').hover(Text.gray('Отдельное измерение: коридор 128 блоков с алтарём. После набега всё сломанное восстанавливается'))
+}
+
 function nsShowAltarMenu(player, state, from) {
 	var best = state.phase || 0
 	if ((state.curse || 0) > 0) {
 		player.tell(nsCurseLine(state))
+		player.tell(nsArenaButton(player))
 		return
 	}
 	player.tell(Text.gold('[Ночная смена] Алтарь: выбери волну набега (наведи — состав и добыча, нажми — старт):'))
@@ -180,6 +189,7 @@ function nsShowAltarMenu(player, state, from) {
 	for (var m in NSG.NS_WAVE_MILESTONES) if (Number(m) > best && (next === null || Number(m) < next)) next = Number(m)
 	if (next !== null) player.tell(Text.lightPurple('Ближайшая веха — волна ' + next + ': ').append(Text.white(NSG.NS_WAVE_MILESTONES[next].text)))
 	player.tell(Text.gray('Пройдено волн: ' + (best > NSG.NS_WAVES_MAX ? NSG.NS_WAVES_MAX + ' + Бесконечность ' + (best - NSG.NS_WAVES_MAX) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
+	player.tell(Text.gray('Арена для боёв без риска для базы: ').append(nsArenaButton(player)))
 	var altar = nsNearestAltar(state, player.createCommandSourceStack())
 	var ns = altar && altar.spawns ? altar.spawns.length : 0
 	player.tell(Text.gray(ns > 0 ? 'Точек спавна орды: ' + ns + ' (видно с разметчиком; /nightshift spawn list)' : 'Орда приходит кольцом. Свои точки спавна: встань там и ').append(ns > 0 ? Text.of('') : Text.yellow('/nightshift spawn add')))
