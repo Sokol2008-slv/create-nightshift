@@ -23,6 +23,11 @@ FAMILY_MODS = {'tfmg', 'railways', 'northstar', 'cbc_at', 'aeronautics', 'simula
 RAW_RE = re.compile(r'(_ore$|^raw_|_raw_|:raw_)')
 # ручные нули вне семейства Create (генератор пересоздаёт все нулевые записи — эти добавляет всегда)
 MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart', 'nightshift:electric_copper']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
+# 30.09 (Георгий: «нельзя, чтобы наши слитки можно было покупать — тогда заряд слишком читерный»): металлы наших
+# планет, Стабилитовая кирка и ядерный заряд — только добычей и крафтом
+MANUAL_ZERO += ['kubejs:axiomite_ingot', 'kubejs:stabilite_ingot', 'kubejs:raw_axiomite', 'kubejs:raw_light_stabilite',
+                'kubejs:raw_dark_stabilite', 'kubejs:crushed_raw_axiomite', 'kubejs:axiomite_ore', 'kubejs:deepslate_axiomite_ore',
+                'kubejs:light_stabilite_ore', 'kubejs:dark_stabilite_ore', 'nightshift:stabilite_pickaxe', 'nightshift:tactical_nuke']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')

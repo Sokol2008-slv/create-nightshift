@@ -41094,12 +41094,16 @@
    "emc": 262144
   },
   {
+   "id": "nightshift:tactical_nuke",
+   "emc": 0
+  },
+  {
    "id": "nightshift:star_fragment",
    "emc": 131072
   },
   {
    "id": "nightshift:stabilite_pickaxe",
-   "emc": 393216
+   "emc": 0
   },
   {
    "id": "nightshift:electric_copper",
@@ -41111,23 +41115,23 @@
   },
   {
    "id": "kubejs:axiomite_ingot",
-   "emc": 40960
+   "emc": 0
   },
   {
    "id": "kubejs:stabilite_ingot",
-   "emc": 40960
+   "emc": 0
   },
   {
    "id": "kubejs:raw_axiomite",
-   "emc": 20480
+   "emc": 0
   },
   {
    "id": "kubejs:raw_light_stabilite",
-   "emc": 20480
+   "emc": 0
   },
   {
    "id": "kubejs:raw_dark_stabilite",
-   "emc": 20480
+   "emc": 0
   },
   {
    "id": "kubejs:crushed_raw_axiomite",
@@ -41135,19 +41139,19 @@
   },
   {
    "id": "kubejs:axiomite_ore",
-   "emc": 20480
+   "emc": 0
   },
   {
    "id": "kubejs:deepslate_axiomite_ore",
-   "emc": 20480
+   "emc": 0
   },
   {
    "id": "kubejs:light_stabilite_ore",
-   "emc": 20480
+   "emc": 0
   },
   {
    "id": "kubejs:dark_stabilite_ore",
-   "emc": 20480
+   "emc": 0
   }
  ]
 }

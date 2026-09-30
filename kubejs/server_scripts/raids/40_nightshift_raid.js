@@ -495,8 +495,8 @@ function nsStartRaid(kind, altarId, difficulty) {
 	// на время набега ночь не проспать: утро и солнце сожгли бы орду
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 101')
 
-	var name = kind === 'minor' ? 'Малый набег' : 'Набег: ' + nsDifficultyName(d)
-	if (kind === 'minor') nsTitleAll('Мир неспокоен…', { color: 'yellow', subtitle: 'К базе идут гости', subColor: 'gray' })
+	var name = kind === 'minor' ? 'Малый набег · ' + nsDifficultyName(nsMinorWave(state.phase)) : 'Набег: ' + nsDifficultyName(d)
+	if (kind === 'minor') nsTitleAll('Мир неспокоен…', { color: 'yellow', subtitle: 'К базе идут гости: ' + nsDifficultyName(nsMinorWave(state.phase)), subColor: 'gray' })
 	else {
 		nsTitleAll(nsDifficultyName(d), {
 			color: 'dark_red',
@@ -760,8 +760,10 @@ function nsRaidVictory(state) {
 			nsTellAll(nsCurseLine(state))
 		} else {
 			nsTitleAll('Набег отбит', { color: 'green', subtitle: state.curse > 0 ? 'Проклятие ослабло на сердце' : 'Добыча — в инвентаре', subColor: 'gray' })
+			// добыча — как за повтор этой волны (без бонусов первого прохождения)
+			var mw = nsMinorWave(state.phase)
 			nsTry('награды малого набега', function () {
-				nsRaidRewards(altar, Math.max(1, Math.min(NSG.NS_WAVE_BOSS_FROM - 1, state.phase || 0)), 1, false, raid.present, 1)
+				nsRaidRewards(altar, mw, nsRaidRolls(mw), false, raid.present, nsChallengeHorde(mw).waves.length)
 			})
 		}
 		nsTry('штраф', function () {
@@ -919,10 +921,15 @@ function nsDifficultyName(d) {
 	return 'Волна ' + d + ' · ' + nsChallengeHorde(d).name
 }
 
+// Волна малого набега (Георгий, 30.09: «на 40-й волне малый набег — это 30-я, на 1-й — просто авто-набег»):
+// на 10 волн ниже лучшей пройденной, но не ниже 1-й
+function nsMinorWave(best) {
+	return Math.max(1, (best || 0) - 10)
+}
+
+// малый набег — полноценная волна (состав, подволны, босс каждой 5-й) на 10 ниже лучшей
 function nsMinorHorde(best) {
-	// малый набег по силам команды: наибольшая пройденная сложность → уровень угрозы 0–5
-	var h = NSG.NIGHTSHIFT_CONFIG.hordes[Math.min(5, Math.round((best ? nsWaveTier(best) : 0) * 0.55))]
-	return h && h.minor ? { waves: [h.minor], boss: null } : null
+	return nsChallengeHorde(nsMinorWave(best))
 }
 
 // Защитники — игроки у алтаря (в его измерении, ближе raidPlayerRadius)
