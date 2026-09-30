@@ -29,6 +29,10 @@ file = "config/createdieselgenerators-server.toml"
 hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
 
 [[files]]
+file = "config/dmr-server.toml"
+hash = "1deaecb99d8128832e2c4ae2f3cdc2d7231b9dc3252107ffae8ff4e403daa284"
+
+[[files]]
 file = "config/end_watchers.toml"
 hash = "3d8ba9fcffbf458f56a3dbd9e972c6e6b7b3a5b39392ca3191227f788713e3bb"
 
