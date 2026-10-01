@@ -623,6 +623,12 @@ function nsStartRaid(kind, altarId, difficulty) {
 		NSG.nsServer.runCommandSilent('playsound minecraft:entity.wither.spawn ambient @a')
 	}
 
+	// арена: тема по номеру волны (снег, пекло, Край…) — перестройка за отсчёт (70_nightshift_arena.js)
+	if (kind !== 'minor' && typeof nsArenaOnRaidStart === 'function') {
+		nsTry('тема арены', function () {
+			nsArenaOnRaidStart(altarId, d)
+		})
+	}
 	nsInviteToAltar(nsFindAltar(state, altarId), kind)
 	nsClearNaturalMonsters(nsFindAltar(state, altarId), 48)
 	nsBossbarCreate('nightshift:raid_countdown', name, kind === 'minor' ? 'yellow' : 'red')
@@ -722,6 +728,12 @@ function nsBoostRaidMobs(buff, scale) {
 		if (scale.hp > 0) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run data modify entity @s Health set value 100000f')
 		// Кошмар: мобы крупнее (не боссы — у них size: 1)
 		if (scale.size > 1) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run attribute @s minecraft:generic.scale modifier add nightshift:giant ' + (scale.size - 1).toFixed(3) + ' add_multiplied_base')
+	}
+	// тема арены (70_nightshift_arena.js): Пекло — горящая злая орда, Мерзлота — медленная и закалённая, Край — прыгучая…
+	var afx = NSG.nsArenaMobFx
+	if (afx) {
+		for (var ae in afx.effects || {}) NSG.nsServer.runCommandSilent('effect give ' + sel + ' minecraft:' + ae + ' infinite ' + (afx.effects[ae] - 1) + ' true')
+		if (afx.burning) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run data modify entity @s Fire set value 32000s')
 	}
 	NSG.nsServer.runCommandSilent('tag ' + sel + ' add ns_boosted')
 }
@@ -1164,7 +1176,7 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 		// артефакты Ночной смены (7 уровней редкости) — свой бросок каждому защитнику
 		if (typeof NSG.nsNsArtifactRoll === 'function') {
 			try {
-				got = got.concat(NSG.nsNsArtifactRoll(d, first) || [])
+				got = got.concat(NSG.nsNsArtifactRoll(d, first, nsArtifactCtx(altar, d, ps.length)) || [])
 			} catch (e) {
 				console.error('[nightshift] бросок артефакта смены: ' + e)
 			}
@@ -1189,6 +1201,17 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 		NSG.nsServer.runCommandSilent('give ' + lucky.getUsername() + ' ' + probe + ' 1')
 		nsTellAll(Text.gold('[Ночная смена] За первое прохождение ' + lucky.getUsername() + ' получает на команду ').append(nsItemText(probe)))
 	}
+}
+
+// Обстановка победы для артефактов смены (09_ns_artifacts.js): на арене ли, тема арены, боссы волны, защитников
+function nsArtifactCtx(altar, d, players) {
+	var st = nsGetState()
+	var arena = !!(st.arena && altar && st.arena.altarId === altar.id)
+	var cfg = nsChallengeHorde(d)
+	var bosses = []
+	if (cfg.boss) bosses.push(cfg.boss.id)
+	for (var b = 0; cfg.bossExtra && b < cfg.bossExtra.length; b++) if (bosses.indexOf(cfg.bossExtra[b].boss.id) < 0) bosses.push(cfg.bossExtra[b].boss.id)
+	return { arena: arena, theme: arena && NSG.nsArenaThemeFor ? NSG.nsArenaThemeFor(d).key : null, bosses: bosses, players: players }
 }
 
 // Сердце ночи за первое прохождение: волны 50 и 60, каждая 10-я с 70-й, в Бесконечности — каждая 5-я

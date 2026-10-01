@@ -314,5 +314,17 @@
 			x: 13.36d
 			y: -2.00d
 		}
+		{
+			dependencies: ["3657C1A4FAB03885"]
+			icon: { id: "minecraft:blue_ice" }
+			id: "3DCA31B7087B87A2"
+			optional: true
+			rewards: [{ id: "46F43427A83DEB89", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1ED619CF3E1CD2EC", type: "checkmark" }]
+			x: 0.00d
+			y: 8.00d
+		}
 	]
 }
