@@ -38,5 +38,9 @@
 	"item.nightshift.star_navigator": "Звёздный навигатор",
 	"nightshift.msg.star_pickaxe_needed": "Нужна Звёздная или Стабилитовая кирка (осколок — награда 70-й волны)",
 	"item.nightshift.star_fragment": "Звёздный осколок",
-	"item.nightshift.stabilite_pickaxe": "Стабилитовая кирка"
+	"item.nightshift.stabilite_pickaxe": "Стабилитовая кирка",
+	"item.nightshift.alloy_helmet": "Шлем из сплава",
+	"item.nightshift.alloy_chestplate": "Нагрудник из сплава",
+	"item.nightshift.alloy_leggings": "Поножи из сплава",
+	"item.nightshift.alloy_boots": "Ботинки из сплава"
 }

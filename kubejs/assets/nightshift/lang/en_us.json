@@ -38,5 +38,9 @@
 	"item.nightshift.star_navigator": "Star Navigator",
 	"nightshift.msg.star_pickaxe_needed": "A Star or Stabilite Pickaxe is required (fragment — wave 70 reward)",
 	"item.nightshift.star_fragment": "Star Fragment",
-	"item.nightshift.stabilite_pickaxe": "Stabilite Pickaxe"
+	"item.nightshift.stabilite_pickaxe": "Stabilite Pickaxe",
+	"item.nightshift.alloy_helmet": "Alloy Helmet",
+	"item.nightshift.alloy_chestplate": "Alloy Chestplate",
+	"item.nightshift.alloy_leggings": "Alloy Leggings",
+	"item.nightshift.alloy_boots": "Alloy Boots"
 }

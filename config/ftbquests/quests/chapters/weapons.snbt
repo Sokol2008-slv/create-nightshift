@@ -294,5 +294,15 @@
 			x: 11.52d
 			y: 5.44d
 		}
+		{
+			dependencies: ["13720189D8B60053"]
+			id: "5E9F40AEAEB40403"
+			rewards: [{ id: "291857FA35FD5889", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7E49CE2C2ACF0CA9", item: { count: 1, id: "nightshift:alloy_chestplate" }, type: "item" }]
+			x: 5.52d
+			y: 7.20d
+		}
 	]
 }

@@ -98,7 +98,7 @@ hash = "13e59b7c3500cadb8a000a3d8b443a51201b759f685658968b0e8ee418b8c9ac"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/weapons.snbt"
-hash = "67f1f81307d94587eedd73317121f8796f2aadbda0f576589f3b6ca52f806d80"
+hash = "4afccff33887eb9aa11211f34615ec04faef0833459736b7c045fd602c2cab1c"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "43a64b29025c92c6d32fe7baa00b3f9df3495ec9b4d9b62581029af47716e64d"
+hash = "c814bfef670936f4a7ec9f32318d09777f5a4865ec490285fd9ee069d01aa6d2"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "43a64b29025c92c6d32fe7baa00b3f9df3495ec9b4d9b62581029af47716e64d"
+hash = "c814bfef670936f4a7ec9f32318d09777f5a4865ec490285fd9ee069d01aa6d2"
 
 [[files]]
 file = "config/iris.properties"
@@ -234,11 +234,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "998b17acdd1a2dd36c32eef73d0f0054857a3318fe42c30be1bb57d0ecb1aff3"
+hash = "13151ca89bed855fb26d16f4491ae3eb58082c5bb7772953db9cbe91c40ae1b9"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "16f83ead3456f1692b8f696c08595f1239fe264a1ab2620a344de2a6a807ed46"
+hash = "441571672977f914109683e898450218dcc6eeb5190d73c53b9d121c5e7ae5ef"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -339,6 +339,22 @@ hash = "ceb444a2f75c975f3203363e3fbf2e0e8385316dc8d782a01597b67e49d07122"
 [[files]]
 file = "kubejs/assets/nightshift/textures/font/scare_face6.png"
 hash = "b0be1cb264c2e6a5db13f4ae65be0e81f69f75962d0a187dbd859b9297ae57ec"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/alloy_boots.png"
+hash = "5053b09ef218fbd13952f5d28d2cb6c9960cf21f13dc1e9ba9da6b99cf6a6b33"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/alloy_chestplate.png"
+hash = "9edf520f336ac03c7b314f002e024a2d837e179194bdcb28bed76de20c54d413"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/alloy_helmet.png"
+hash = "4382279339b07f34584cbd7ebf75a3fce674fe9827098727380d482d0cbd9686"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/alloy_leggings.png"
+hash = "2c1dd738252f1a52510ebe1583a4b05ece20862dd9dfb83ff52a9d119761e838"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/electric_copper.png"
@@ -481,6 +497,14 @@ file = "kubejs/assets/nightshift/textures/item/vein_seed_zinc.png"
 hash = "1819eae01a16dbdcd233904aab532b17bb3863f300fc4378be27f6ae994ed8e7"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/models/armor/alloy_layer_1.png"
+hash = "942f190e2c43640b3859c146866c8a6e8c71e2ed70655d4f3ca77de1116928db"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/models/armor/alloy_layer_2.png"
+hash = "1ab26101fdb3fc492e6adf263466a8074a90b794edb433f97d5611fc023084f4"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/planet/axiomativ.png"
 hash = "04946ac415ee5bc2ea3c62173fff88e8d5d3ea2d6396747bc1529485c370a62b"
 
@@ -514,7 +538,7 @@ hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
 
 [[files]]
 file = "kubejs/client_scripts/wave_items_tooltips.js"
-hash = "d3a9f537bfa7a43ec9e9cf1e4c0c66616d0e5bf27816499ec6a8cc10faca2821"
+hash = "18df7331c52b7bafd97eff3baea0f69cf4df6ee9ae762086b8fbcaf433909db6"
 
 [[files]]
 file = "kubejs/config/common.json"
@@ -1186,7 +1210,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/25_smithing.js"
-hash = "0e1f4ab69ef6cbdeeb14a72cb2095c34fe2ea9e557b52a580a5a2b0a06820a86"
+hash = "30a8406a2c758791fe891780e03a6bbe72b607f4030cc1b54738d67b7e24ec43"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
@@ -1247,6 +1271,10 @@ hash = "619f48c33c54660a995ea7d6d54a0a4c3ab0bdd38930adbcfc22d3206ee831ce"
 [[files]]
 file = "kubejs/startup_scripts/vahta/20_wave_items.js"
 hash = "f5383205478fe23035cce0ffe42d19a6463b1ddae934503a0d245a4efec5165b"
+
+[[files]]
+file = "kubejs/startup_scripts/vahta/25_alloy_armor.js"
+hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"

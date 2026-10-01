@@ -8,6 +8,11 @@
 // [id рецепта стола, шаблон | null, вещь, добавка, результат]
 // ==========================================================================
 var NS_VAHTA_SMITHING = [
+	// броня из межпланетного сплава (01.10): сплав | незеритовая вещь | сплав
+	['nightshift:alloy_armor/helmet', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_helmet', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_helmet'],
+	['nightshift:alloy_armor/chestplate', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_chestplate', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_chestplate'],
+	['nightshift:alloy_armor/leggings', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_leggings', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_leggings'],
+	['nightshift:alloy_armor/boots', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_boots', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_boots'],
 	// L_Ender's Cataclysm 3.33 (с 30.09; мода не было в слепке 28.09 — броня была недоступна, нашёл агент квестов)
 	['cataclysm:smithing/ignitium_helmet', 'cataclysm:ignitium_upgrade_smithing_template', 'minecraft:netherite_helmet', 'cataclysm:ignitium_ingot', 'cataclysm:ignitium_helmet'],
 	['cataclysm:smithing/ignitium_chestplate', 'cataclysm:ignitium_upgrade_smithing_template', 'minecraft:netherite_chestplate', 'cataclysm:ignitium_ingot', 'cataclysm:ignitium_chestplate'],

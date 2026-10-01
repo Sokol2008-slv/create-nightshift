@@ -32,6 +32,10 @@ ItemEvents.modifyTooltips(event => {
 		Text.gold('Кирка из металлов наших планет: 2 стабилита + аксиомит + 2 межпланетных сплава.'),
 		Text.gray('Копает руды планет, как Звёздная, но прочность 6 000, скорость 14, урон выше, не горит в лаве.')
 	])
+	event.add(['nightshift:alloy_helmet', 'nightshift:alloy_chestplate', 'nightshift:alloy_leggings', 'nightshift:alloy_boots'], [
+		Text.gold('Броня из межпланетного сплава — как у лучшего голема.'),
+		Text.gray('Комплект: защита 24 (незерит 20), вязкость 4, не горит в лаве. Улучшение незерита: сплав | вещь | сплав — механические крафтеры, чары сохраняются.')
+	])
 	// сколько прочности осталось — видно без F3+H
 	event.modify('nightshift:star_pickaxe', function (t) {
 		t.dynamic('ns_durability')

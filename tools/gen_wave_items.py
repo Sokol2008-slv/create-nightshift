@@ -58,3 +58,17 @@ print("текстуры наград волн готовы")
 # Стабилитовая кирка — свет и тьма стабилита (белый ↔ графит) с денежно-зелёными бликами
 recolor(van("nether_star"), ["#1c050b", "#5e1424", "#a3283f"], ["#85bb65", "#c6e6a8", "#f4fff0"], 0.72).save(OUT / "star_fragment.png")
 recolor(van("netherite_pickaxe"), ["#16161b", "#3c3c46", "#9ea3ad", "#eef0f4"], ["#85bb65", "#c6e6a8"], 0.9).save(OUT / "stabilite_pickaxe.png")
+
+# 01.10: броня из межпланетного сплава — незеритовая в цветах сплава (бордо + денежный зелёный); иконки и слои модели
+def van_path(path):
+    with zipfile.ZipFile(MC) as z:
+        return Image.open(io.BytesIO(z.read("assets/minecraft/textures/" + path + ".png"))).convert("RGBA")
+
+
+ALLOY_BASE, ALLOY_HIGH = ["#1c050b", "#5e1424", "#94243a"], ["#5d8f45", "#85bb65", "#c6e6a8"]
+for part in ("helmet", "chestplate", "leggings", "boots"):
+    recolor(van("netherite_" + part), ALLOY_BASE, ALLOY_HIGH, 0.78).save(OUT / ("alloy_" + part + ".png"))
+ARMOR = PACK / "kubejs/assets/nightshift/textures/models/armor"
+ARMOR.mkdir(parents=True, exist_ok=True)
+for layer in ("1", "2"):
+    recolor(van_path("models/armor/netherite_layer_" + layer), ALLOY_BASE, ALLOY_HIGH, 0.78).save(ARMOR / ("alloy_layer_" + layer + ".png"))
