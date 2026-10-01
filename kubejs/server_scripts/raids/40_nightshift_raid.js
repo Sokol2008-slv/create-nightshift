@@ -1250,6 +1250,10 @@ function nsCheckMinorRaidSchedule(state) {
 	// Набег взведён (5-й день) — приходит, когда ночь наступит сама, без перемотки времени
 	// с 12000 (до того, как можно лечь спать) — иначе ночь проспали бы и набег не пришёл
 	if (state.minorPending && tod >= 12000 && tod < 23000) {
+		// кто-то в арене — малый набег на базу ждёт (01.10: пришёл на пустую базу и закрыл набеги в арене —
+		// одновременно идёт только один набег)
+		var ps = NSG.nsServer.getPlayers()
+		for (var pi = 0; pi < ps.length; pi++) if (String(ps[pi].getLevel().getDimension()) === 'nightshift:arena') return
 		state.minorPending = false
 		nsSaveState(state)
 		if (nsMinorHorde(state.phase)) nsStartRaid('minor', nsHomeAltar(state).id)

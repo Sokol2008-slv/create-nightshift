@@ -1158,11 +1158,11 @@ hash = "248d3c32eb8356bd181bafe9db9534a2e332cf1d4f08e25b1d2a16ef7ffa071a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "f89a68dc402a2ae9ec3d7f9daa6fd4ae0ccbb2fe59b8e5752cc03a71eb17ae28"
+hash = "d751607ef4a32d940bdf0317b22bf5044aab36fdf30b906be0e600a334712b24"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "2ef9fab9744f96b77997e669e127615df69df43f7ff9fbae6365975713cc163b"
+hash = "8f781c21b5609d2c86f0ca276a57380ee90779570380925a99947785c5e7b93a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"

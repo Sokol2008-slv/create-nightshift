@@ -250,7 +250,7 @@ function nsAltarUse(player, altarBlock, stack) {
 	nsSaveState(state)
 
 	if (nsRaidActive(state)) {
-		player.tell(Text.red('[Ночная смена] Идёт набег — алтарь занят до его завершения.'))
+		player.tell(Text.red('[Ночная смена] Идёт набег — алтарь занят до его завершения. ').append(nsArenaButton(player)))
 		return
 	}
 	if ((state.curse || 0) > 0 && nsTryTribute(state, player, stack)) return
