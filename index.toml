@@ -1174,7 +1174,7 @@ hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
 
 [[files]]
 file = "kubejs/server_scripts/raids/70_nightshift_arena.js"
-hash = "be19964f0797b71be07d9e7356b3b53c13da9eb86e80376d8af7261a7da7f16b"
+hash = "7af70a6da59e5f4aa9722f551996b39508778fd4183127ad342efdffbe59b5af"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"

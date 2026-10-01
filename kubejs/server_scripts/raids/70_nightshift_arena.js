@@ -178,11 +178,30 @@ function nsArenaHook(kind, altarId) {
 
 ServerEvents.commandRegistry(event => {
 	var C = event.commands
+	// выход из арены (кнопка «На базу», /arena leave, и /arena изнутри арены — старые кнопки «Арена» в чате тоже ведут домой)
+	function nsArenaLeave(player) {
+		var st = nsGetState()
+		var name = String(player.getUsername())
+		var back = (st.arenaReturns || {})[name]
+		if (!back) {
+			// нет записи, откуда пришёл, — к алтарю базы, а если его нет — на поверхность у 0 0
+			var home = typeof nsHomeAltar === 'function' ? nsHomeAltar(st) : null
+			if (home) NSG.nsServer.runCommandSilent('execute in ' + home.dim + ' run tp ' + name + ' ' + (home.x + 0.5) + ' ' + (home.y + 1) + ' ' + (home.z + 2.5))
+			else NSG.nsServer.runCommandSilent('execute in minecraft:overworld positioned 0 0 0 positioned over motion_blocking_no_leaves run tp ' + name + ' ~ ~ ~')
+		} else {
+			nsReturnPlayer(name, back)
+			delete st.arenaReturns[name]
+			nsSaveState(st)
+		}
+		return 1
+	}
+
 	event.register(
 		C.literal('arena')
 			.executes(ctx => {
 				var player = ctx.source.getPlayer()
 				if (!player) return 0
+				if (String(player.getLevel().getDimension()) === NS_ARENA_DIM) return nsArenaLeave(player)
 				var st = nsGetState()
 				if (!st.arena || !st.arena.built) nsArenaBuild(st)
 				st = nsGetState()
@@ -194,24 +213,14 @@ ServerEvents.commandRegistry(event => {
 					nsSaveState(st)
 				}
 				NSG.nsServer.runCommandSilent('execute in ' + NS_ARENA_DIM + ' run tp ' + name + ' 0 65 2 0 0')
-				player.tell(Text.gold('[Ночная смена] Арена: алтарь впереди, орда выйдет из дальнего конца коридора. ').append(Text.gray('Всё, что сломается в набеге, восстановится. Назад — /arena leave')))
+				player.tell(Text.gold('[Ночная смена] Арена: алтарь впереди, орда выйдет из дальнего конца коридора. ').append(Text.gray('Всё, что сломается в набеге, восстановится. Назад — /arena ещё раз (или кнопка «На базу» в меню алтаря)')))
 				return 1
 			})
 			.then(
 				C.literal('leave').executes(ctx => {
 					var player = ctx.source.getPlayer()
 					if (!player) return 0
-					var st = nsGetState()
-					var name = String(player.getUsername())
-					var back = (st.arenaReturns || {})[name]
-					if (!back) {
-						NSG.nsServer.runCommandSilent('execute in minecraft:overworld positioned 0 0 0 positioned over motion_blocking_no_leaves run tp ' + name + ' ~ ~ ~')
-					} else {
-						nsReturnPlayer(name, back)
-						delete st.arenaReturns[name]
-						nsSaveState(st)
-					}
-					return 1
+					return nsArenaLeave(player)
 				})
 			)
 			.then(
