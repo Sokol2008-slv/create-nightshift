@@ -24,6 +24,10 @@
 //    от твоих ударов; LivingDeathEvent: лечение и эффекты за убийство; MobEffectEvent$Applicable: иммунитеты;
 //  - одинаковые не складываются: второй такой же в слот не встанет (CurioCanEquipEvent), эффекты — по уникальным id.
 //    Неуязвимость после удара, второе дыхание и аура не суммируются — работает лучший.
+// Эндгейм «Пробуждение» (02.10): осколки орды падают с мобов набега в копилку набега (NSG.nsNsHordeShardTake —
+// раздаёт набег победителям), завод Create делает из них эссенцию (vahta/75_ns_awakening.js), сборка по шагам
+// пробуждает артефакт эпического уровня и выше (art_<id>_aw: +50 % к числам). Обычный и пробуждённый одного
+// вида вместе не надеваются; здоровье от артефактов — не больше caps.hp.
 // Справка — глава квест-бука «Артефакты смены» (tools/quests/spec_artifacts.json).
 // Команды: /nsart — что даёт надетое; /nsart reforge — переплавка; /nsart odds <волна> — шансы;
 // оператор: /nsart roll <волна> [first], /nsart rolltheme <тема> — 1000 бросков.
@@ -87,7 +91,44 @@ var NS_ART = {
 		"nightshift:art_tr_ignis": {"tier": 5, "name": "Ядро Игниса", "pool": "boss", "buffs": [["minecraft:fire_resistance", 0]], "aura": {"r": 4, "dmg": 2, "fire": 3}},
 		"nightshift:art_tr_maledictus": {"tier": 5, "name": "Венец Маледиктуса", "pool": "boss", "dmg": 3, "hitFx": [["minecraft:wither", 1, 60], ["minecraft:weakness", 0, 60]], "immune": ["minecraft:wither"]},
 		"nightshift:art_tr_remnant": {"tier": 5, "name": "Ожерелье реликта", "pool": "boss", "dr": 0.12, "buffs": [["minecraft:water_breathing", 0]], "immune": ["minecraft:slowness", "minecraft:blindness"]},
-		"nightshift:art_tr_monstrosity": {"tier": 5, "name": "Незеритовое сердце", "pool": "boss", "hp": 12, "armor": 4, "tough": 2, "speed": -0.05}
+		"nightshift:art_tr_monstrosity": {"tier": 5, "name": "Незеритовое сердце", "pool": "boss", "hp": 12, "armor": 4, "tough": 2, "speed": -0.05},
+		"nightshift:art_stone_heart_aw": {"tier": 3, "name": "Каменное сердце ✦", "pool": "awakened", "base": "nightshift:art_stone_heart", "hp": 12, "kb": 0.375, "speed": -0.05},
+		"nightshift:art_rosary_aw": {"tier": 3, "name": "Чётки дозорного ✦", "pool": "awakened", "base": "nightshift:art_rosary", "iframes": 18, "dr": 0.075},
+		"nightshift:art_butcher_glove_aw": {"tier": 3, "name": "Перчатка мясника ✦", "pool": "awakened", "base": "nightshift:art_butcher_glove", "life": 0.15, "lifeCap": 4.5, "dmg": 3.0},
+		"nightshift:art_titan_blood_aw": {"tier": 4, "name": "Кровь титана ✦", "pool": "awakened", "base": "nightshift:art_titan_blood", "hp": 18, "regen": 0.75},
+		"nightshift:art_visor_aw": {"tier": 4, "name": "Щиток бригадира ✦", "pool": "awakened", "base": "nightshift:art_visor", "dr": 0.18, "armor": 4.5, "kb": 0.3},
+		"nightshift:art_second_wind_aw": {"tier": 4, "name": "Жетон второго дыхания ✦", "pool": "awakened", "base": "nightshift:art_second_wind", "hp": 6, "wind": {"cd": 4000, "after": 60}},
+		"nightshift:art_hourglass_aw": {"tier": 5, "name": "Песочные часы смены ✦", "pool": "awakened", "base": "nightshift:art_hourglass", "shield": {"dur": 30, "cd": 80}, "armor": 3.0},
+		"nightshift:art_horde_heart_aw": {"tier": 5, "name": "Сердце орды ✦", "pool": "awakened", "base": "nightshift:art_horde_heart", "hp": 21, "life": 0.09, "lifeCap": 4.5, "regen": 0.75},
+		"nightshift:art_vakhta_heart_aw": {"tier": 6, "name": "Сердце Вахты ✦", "pool": "awakened", "base": "nightshift:art_vakhta_heart", "hp": 27, "armor": 6.0, "dr": 0.15, "regen": 1.5},
+		"nightshift:art_halo_aw": {"tier": 6, "name": "Нимб бессменного ✦", "pool": "awakened", "base": "nightshift:art_halo", "shield": {"dur": 30, "cd": 53}, "wind": {"cd": 1600, "after": 90}, "life": 0.15, "lifeCap": 6.0},
+		"nightshift:art_shaft_helmet_aw": {"tier": 3, "name": "Каска проходчика ✦", "pool": "awakened", "base": "nightshift:art_shaft_helmet", "armor": 4.5, "mine": 0.45, "immune": ["minecraft:mining_fatigue"]},
+		"nightshift:art_shaft_mace_aw": {"tier": 3, "name": "Шахтёрский обушок ✦", "pool": "awakened", "base": "nightshift:art_shaft_mace", "dmg": 3.0, "aspd": 0.15},
+		"nightshift:art_canyon_silk_aw": {"tier": 3, "name": "Паучий шёлк ✦", "pool": "awakened", "base": "nightshift:art_canyon_silk", "speed": 0.15, "immune": ["arphex:webbed", "minecraft:slowness", "minecraft:poison"]},
+		"nightshift:art_canyon_gland_aw": {"tier": 4, "name": "Ядовитая железа ✦", "pool": "awakened", "base": "nightshift:art_canyon_gland", "dmg": 3.0, "hitFx": [["minecraft:wither", 0, 120]]},
+		"nightshift:art_frost_shard_aw": {"tier": 3, "name": "Осколок вечной мерзлоты ✦", "pool": "awakened", "base": "nightshift:art_frost_shard", "armor": 3.0, "hurtFx": [["minecraft:slowness", 2, 90]]},
+		"nightshift:art_frost_heart_aw": {"tier": 4, "name": "Сердце метели ✦", "pool": "awakened", "base": "nightshift:art_frost_heart", "hp": 15, "noDmg": ["freeze"], "immune": ["minecraft:slowness"]},
+		"nightshift:art_inferno_ash_aw": {"tier": 4, "name": "Пепельное сердце ✦", "pool": "awakened", "base": "nightshift:art_inferno_ash", "hp": 9, "buffs": [["minecraft:fire_resistance", 0]], "hurtFire": 7.5},
+		"nightshift:art_inferno_crown_aw": {"tier": 5, "name": "Корона пекла ✦", "pool": "awakened", "base": "nightshift:art_inferno_crown", "dmg": 4.5, "hitFire": 6.0, "buffs": [["minecraft:fire_resistance", 0]]},
+		"nightshift:art_ender_feather_aw": {"tier": 4, "name": "Перо Края ✦", "pool": "awakened", "base": "nightshift:art_ender_feather", "speed": 0.15, "noDmg": ["fall"], "featherfall": true},
+		"nightshift:art_ender_void_aw": {"tier": 5, "name": "Осколок пустоты ✦", "pool": "awakened", "base": "nightshift:art_ender_void", "hp": 12, "dodge": 0.225},
+		"nightshift:art_nightmare_lantern_aw": {"tier": 5, "name": "Фонарь кошмара ✦", "pool": "awakened", "base": "nightshift:art_nightmare_lantern", "hp": 12, "buffs": [["minecraft:night_vision", 0]], "sanity": true, "immune": ["minecraft:darkness", "minecraft:blindness", "arphex:moth_curse", "arphex:splintered_sanity"]},
+		"nightshift:art_nightmare_claw_aw": {"tier": 4, "name": "Коготь кошмара ✦", "pool": "awakened", "base": "nightshift:art_nightmare_claw", "dmg": 6.0, "life": 0.09, "lifeCap": 4.5},
+		"nightshift:art_abyss_star_aw": {"tier": 6, "name": "Осколок звезды ✦", "pool": "awakened", "base": "nightshift:art_abyss_star", "hp": 18, "dr": 0.12, "speed": 0.15, "shield": {"dur": 30, "cd": 67}},
+		"nightshift:art_tr_matriarch_aw": {"tier": 4, "name": "Хитин матриарх ✦", "pool": "awakened", "base": "nightshift:art_tr_matriarch", "armor": 6.0, "tough": 3.0, "immune": ["minecraft:poison", "arphex:necrosis"]},
+		"nightshift:art_tr_termite_aw": {"tier": 4, "name": "Панцирь подземного короля ✦", "pool": "awakened", "base": "nightshift:art_tr_termite", "hp": 15, "armor": 3.0, "kb": 0.45, "mine": 0.375},
+		"nightshift:art_tr_scorpioid_aw": {"tier": 4, "name": "Жало скорпиоида ✦", "pool": "awakened", "base": "nightshift:art_tr_scorpioid", "life": 0.12, "lifeCap": 4.5, "hitFx": [["minecraft:poison", 1, 90], ["minecraft:slowness", 0, 90]]},
+		"nightshift:art_tr_voidlasher_aw": {"tier": 4, "name": "Хвост драконохвоста ✦", "pool": "awakened", "base": "nightshift:art_tr_voidlasher", "speed": 0.225, "hurtFx": [["minecraft:weakness", 1, 120]], "immune": ["arphex:supergravity", "arphex:chaos_controlled", "arphex:voidlasher_chaos_control"]},
+		"nightshift:art_tr_trisector_aw": {"tier": 5, "name": "Клинок трисектора ✦", "pool": "awakened", "base": "nightshift:art_tr_trisector", "dmg": 6.0, "aspd": 0.225},
+		"nightshift:art_tr_diabolos_aw": {"tier": 5, "name": "Рог диаболоса ✦", "pool": "awakened", "base": "nightshift:art_tr_diabolos", "hp": 9, "dmg": 4.5, "killHeal": 6.0},
+		"nightshift:art_tr_amethyst_aw": {"tier": 4, "name": "Аметистовый панцирь ✦", "pool": "awakened", "base": "nightshift:art_tr_amethyst", "armor": 6.0, "thorns": 0.3, "immune": ["arphex:constricted"]},
+		"nightshift:art_tr_gladiator_aw": {"tier": 4, "name": "Медальон гладиатора ✦", "pool": "awakened", "base": "nightshift:art_tr_gladiator", "dmg": 3.0, "killFx": [["minecraft:strength", 0, 180], ["minecraft:speed", 0, 180]]},
+		"nightshift:art_tr_golem_aw": {"tier": 4, "name": "Ядро голема ✦", "pool": "awakened", "base": "nightshift:art_tr_golem", "kb": 1.0, "armor": 4.5, "tough": 3.0, "immune": ["arphex:paralysis"]},
+		"nightshift:art_tr_guardian_aw": {"tier": 5, "name": "Око Стража Края ✦", "pool": "awakened", "base": "nightshift:art_tr_guardian", "hp": 9, "wind": {"cd": 2400, "after": 60, "tp": true}},
+		"nightshift:art_tr_ignis_aw": {"tier": 5, "name": "Ядро Игниса ✦", "pool": "awakened", "base": "nightshift:art_tr_ignis", "buffs": [["minecraft:fire_resistance", 0]], "aura": {"r": 6, "dmg": 3.0, "fire": 4}},
+		"nightshift:art_tr_maledictus_aw": {"tier": 5, "name": "Венец Маледиктуса ✦", "pool": "awakened", "base": "nightshift:art_tr_maledictus", "dmg": 4.5, "hitFx": [["minecraft:wither", 1, 90], ["minecraft:weakness", 0, 90]], "immune": ["minecraft:wither"]},
+		"nightshift:art_tr_remnant_aw": {"tier": 5, "name": "Ожерелье реликта ✦", "pool": "awakened", "base": "nightshift:art_tr_remnant", "dr": 0.18, "buffs": [["minecraft:water_breathing", 0]], "immune": ["minecraft:slowness", "minecraft:blindness"]},
+		"nightshift:art_tr_monstrosity_aw": {"tier": 5, "name": "Незеритовое сердце ✦", "pool": "awakened", "base": "nightshift:art_tr_monstrosity", "hp": 18, "armor": 6.0, "tough": 3.0, "speed": -0.05}
 	},
 	"byTier": [["nightshift:art_patch", "nightshift:art_badge", "nightshift:art_thermos"], ["nightshift:art_buckle", "nightshift:art_qc_stripe", "nightshift:art_watch_charm"], ["nightshift:art_fang", "nightshift:art_pauldron", "nightshift:art_collar"], ["nightshift:art_stone_heart", "nightshift:art_rosary", "nightshift:art_butcher_glove"], ["nightshift:art_titan_blood", "nightshift:art_visor", "nightshift:art_second_wind"], ["nightshift:art_hourglass", "nightshift:art_horde_heart"], ["nightshift:art_vakhta_heart", "nightshift:art_halo"]],
 	"chance": {"from": 0.08, "to": 0.6, "toWave": 100, "infPerWave": 0.0125, "infMax": 0.85, "firstMult": 1.5, "firstMax": 0.95, "firstSureEvery": 10},
@@ -103,7 +144,7 @@ var NS_ART = {
 		[100, [6, 12, 20, 24, 19, 16, 3]],
 		[120, [4, 10, 18, 24, 21, 17, 6]]
 	],
-	"caps": {"dr": 0.35, "life": 0.2, "lifeCap": 5, "regen": 2, "thorns": 0.5, "dodge": 0.25, "killHeal": 8},
+	"caps": {"dr": 0.35, "life": 0.2, "lifeCap": 5, "regen": 2, "thorns": 0.5, "dodge": 0.25, "killHeal": 8, "hp": 60},
 	"combatTicks": 100,
 	"attrs": [["hp", "minecraft:generic.max_health", "ADD_VALUE"], ["armor", "minecraft:generic.armor", "ADD_VALUE"], ["tough", "minecraft:generic.armor_toughness", "ADD_VALUE"], ["kb", "minecraft:generic.knockback_resistance", "ADD_VALUE"], ["speed", "minecraft:generic.movement_speed", "ADD_MULTIPLIED_BASE"], ["dmg", "minecraft:generic.attack_damage", "ADD_VALUE"], ["aspd", "minecraft:generic.attack_speed", "ADD_MULTIPLIED_BASE"], ["mine", "minecraft:player.block_break_speed", "ADD_MULTIPLIED_BASE"], ["iframes", "artifacts:generic.invincibility_ticks", "ADD_VALUE"]],
 	"themes": {
@@ -166,7 +207,8 @@ var NS_ART = {
 		"cataclysm:scylla": "Сцилла"
 	},
 	"trophyChance": {"4": 0.15, "5": 0.1},
-	"reforge": {"n": 3, "maxTier": 5}
+	"reforge": {"n": 3, "maxTier": 5},
+	"shards": {"early": [1, 0.005, 15, 0.015], "mid": [16, 0.015, 70, 0.06], "latePerWave": 0.0005, "max": 0.08, "vanillaMult": 0.5, "boss": [4, 8]}
 }
 // </ДАННЫЕ>
 
@@ -406,19 +448,25 @@ function nsArtRelicStacks(entity) {
 	return h == null ? null : h.getStacks()
 }
 
-// Уникальные id надетых артефактов смены
+// Вид артефакта: у пробуждённого — id обычного (одного вида вместе не носят)
+function nsArtBase(id) {
+	var e = NS_ART.items[id]
+	return e && e.base ? e.base : id
+}
+
+// Уникальные по виду id надетых артефактов смены (обычный и пробуждённый одного вида — считается пробуждённый)
 function nsArtWorn(player) {
 	var out = []
 	var st = nsArtRelicStacks(player)
 	if (st == null) return out
-	var seen = {}
+	var byBase = {}
 	for (var i = 0; i < st.getSlots(); i++) {
 		var id = nsArtItemId(st.getStackInSlot(i))
-		if (id && NS_ART.items[id] && !seen[id]) {
-			seen[id] = true
-			out.push(id)
-		}
+		if (!id || !NS_ART.items[id]) continue
+		var b = nsArtBase(id)
+		if (!byBase[b] || NS_ART.items[id].pool === 'awakened') byBase[b] = id
 	}
+	for (var k in byBase) out.push(byBase[k])
 	return out
 }
 
@@ -467,6 +515,7 @@ function nsArtSum(ids) {
 	a.dodge = Math.min(C.dodge, a.dodge)
 	a.killHeal = Math.min(C.killHeal, a.killHeal)
 	a.kb = Math.min(1, a.kb)
+	if (C.hp) a.hp = Math.min(C.hp, a.hp)
 	a.hasImmune = Object.keys(a.immune).length > 0
 	a.hasHit = a.life > 0 || a.hitFire > 0 || Object.keys(a.hitFx).length > 0
 	a.hasKill = a.killHeal > 0 || Object.keys(a.killFx).length > 0
@@ -931,7 +980,7 @@ if (NS_ART_EV_APPL && NS_ART_APPL_RES) {
 	})
 }
 
-// Одинаковые не складываются: второй такой же артефакт в слот «Реликвия» не встанет
+// Одинаковые не складываются: второй такой же (или обычный и пробуждённый одного вида) в «Реликвию» не встанет
 if (NS_ART_EV_EQUIP && NS_ART_TRI) {
 	NativeEvents.onEvent(NS_ART_EV_EQUIP, function (event) {
 		try {
@@ -942,8 +991,10 @@ if (NS_ART_EV_EQUIP && NS_ART_TRI) {
 			var st = nsArtRelicStacks(ctx.entity())
 			if (st == null) return
 			var idx = Number(ctx.index())
+			var base = nsArtBase(id)
 			for (var i = 0; i < st.getSlots(); i++) {
-				if (i !== idx && nsArtItemId(st.getStackInSlot(i)) === id) {
+				var other = nsArtItemId(st.getStackInSlot(i))
+				if (i !== idx && other && nsArtBase(other) === base) {
 					event.setEquipResult(NS_ART_TRI.FALSE)
 					return
 				}
@@ -959,6 +1010,126 @@ if (NS_ART_EV_CHANGE) {
 			if (String(event.getIdentifier()) !== NS_ART.slot) return
 			var u = nsArtUuid(event.getEntity())
 			if (u) NS_ART_DIRTY[u] = true
+		} catch (x) {}
+	})
+}
+
+// --------------------------------------------------------------------------
+// Осколки орды: падают с мобов набега в копилку набега (server.persistentData, ключ ns_horde_pool = {rid, n}) —
+// на землю не кладём: турели бьют в 40 блоках от алтаря, а арену после набега откатывают вместе с предметами.
+// Набег раздаёт копилку победителям (NSG.nsNsHordeShardTake в nsRaidRewards); провал — копилка сгорает
+// (следующий набег начнёт свою: rid — из метки ns_r<номер> на мобах). /kill и пустота осколков не дают.
+// --------------------------------------------------------------------------
+
+// Шанс осколка с моба на волне d (выше 100 — Бесконечность); ванильные мобы — ×vanillaMult
+function nsArtShardChance(d, typeId) {
+	var S = NS_ART.shards
+	d = Math.max(1, Number(d) || 1)
+	var p
+	if (d <= S.early[2]) p = S.early[1] + ((S.early[3] - S.early[1]) * (d - S.early[0])) / (S.early[2] - S.early[0])
+	else if (d <= S.mid[2]) p = S.mid[1] + ((S.mid[3] - S.mid[1]) * Math.max(0, d - S.mid[0])) / (S.mid[2] - S.mid[0])
+	else p = Math.min(S.max, S.mid[3] + S.latePerWave * (d - S.mid[2]))
+	if (typeId && String(typeId).indexOf('minecraft:') === 0) p *= S.vanillaMult
+	return p
+}
+
+function nsArtPoolGet() {
+	try {
+		var pd = NSG.nsServer.persistentData
+		if (pd.contains('ns_horde_pool')) return JSON.parse(String(pd.getString('ns_horde_pool')))
+	} catch (e) {}
+	return { rid: '', n: 0 }
+}
+
+function nsArtPoolSet(p) {
+	NSG.nsServer.persistentData.putString('ns_horde_pool', JSON.stringify(p))
+}
+
+// Сколько осколков в копилке текущего (или только что законченного) набега
+NSG.nsNsHordeShardCount = function () {
+	return nsArtPoolGet().n || 0
+}
+
+// Забрать копилку (вызывает nsRaidRewards ОДИН раз за победу, до раздачи): число осколков, копилка обнуляется
+NSG.nsNsHordeShardTake = function () {
+	var p = nsArtPoolGet()
+	var n = p.n || 0
+	try {
+		nsArtPoolSet({ rid: p.rid, n: 0 })
+	} catch (e) {}
+	return n
+}
+
+// Метка набега на мобе (ns_r<номер>) или null — не моб набега
+function nsArtRaidRid(e) {
+	var tags = e.getTags()
+	if (!tags.contains('nightshift_raid')) return null
+	var it = tags.iterator()
+	while (it.hasNext()) {
+		var t = String(it.next())
+		if (t.indexOf('ns_r') === 0) return t
+	}
+	return 'ns_r?'
+}
+
+function nsArtTypeId(e) {
+	try {
+		var t = String(e.getType()) // KubeJS: id строкой
+		if (t.indexOf(':') > 0) return t
+	} catch (x) {}
+	try {
+		return String(NS_ART_REG.ENTITY_TYPE.getKey(e.getEntityType()))
+	} catch (y) {
+		return ''
+	}
+}
+
+// id боссов волны d (босс приходит после всех подволн — raid.bossSpawned)
+var NS_ART_BOSS_IDS = { d: -1, ids: [] }
+function nsArtBossIds(d) {
+	if (NS_ART_BOSS_IDS.d === d) return NS_ART_BOSS_IDS.ids
+	var ids = []
+	try {
+		var cfg = nsChallengeHorde(d)
+		if (cfg.boss) ids.push(String(cfg.boss.id))
+		for (var i = 0; cfg.bossExtra && i < cfg.bossExtra.length; i++) ids.push(String(cfg.bossExtra[i].boss.id))
+	} catch (e) {}
+	NS_ART_BOSS_IDS = { d: d, ids: ids }
+	return ids
+}
+
+// Моб набега умер: бросок осколка (босс — boss[0]..boss[1] наверняка) в копилку набега rid. Возвращает число осколков.
+function nsArtHordeDrop(v, rid) {
+	var S = NS_ART.shards
+	var raid = nsGetStateRO().raid || {}
+	var d = Math.max(1, Number(raid.difficulty) || 1)
+	var typeId = nsArtTypeId(v)
+	var n = 0
+	var boss = !!raid.bossSpawned && nsArtBossIds(d).indexOf(typeId) >= 0
+	if (boss) n = S.boss[0] + Math.floor(Math.random() * (S.boss[1] - S.boss[0] + 1))
+	else if (Math.random() < nsArtShardChance(d, typeId)) n = 1
+	if (n <= 0) return 0
+	var p = nsArtPoolGet()
+	if (p.rid !== rid) p = { rid: rid, n: 0 }
+	p.n += n
+	nsArtPoolSet(p)
+	try {
+		var dim = String(v.getLevel().getDimension())
+		nsArtRun('execute in ' + dim + ' run particle minecraft:end_rod ' + v.getX() + ' ' + (v.getY() + 1) + ' ' + v.getZ() + ' 0.2 0.4 0.2 0.05 ' + 4 * n)
+		if (boss && typeof nsTellAll === 'function') nsTellAll(Text.lightPurple('[Ночная смена] Босс оставил ' + n + ' осколков орды — в копилке набега ' + p.n + '.'))
+	} catch (x) {}
+	return n
+}
+
+if (NS_ART_EV_DEATH) {
+	NativeEvents.onEvent(NS_ART_EV_DEATH, function (event) {
+		try {
+			var v = event.getEntity()
+			if (v == null || v.isPlayer()) return
+			var rid = nsArtRaidRid(v)
+			if (!rid) return
+			if (nsArtBypass(event.getSource())) return // /kill (уборка мобов набега) и пустота — не добыча
+			nsArtHordeDrop(v, rid)
 		} catch (x) {}
 	})
 }
@@ -1093,6 +1264,8 @@ function nsArtStatus(ctx) {
 	ctx.source.sendSystemMessage(Text.gray('Здоровье ' + nsArtNum(p.getHealth()) + ' / ' + nsArtNum(p.getMaxHealth()) + (NS_ART_P[u] ? '' : ' (эффекты включатся в течение секунды)')))
 	var btn = NSG.nsNsArtifactReforgeText(p)
 	if (btn) ctx.source.sendSystemMessage(Text.gray('Есть что переплавить: ').append(btn))
+	var pool = NSG.nsNsHordeShardCount()
+	if (pool > 0) ctx.source.sendSystemMessage(Text.lightPurple('Осколков орды в копилке набега: ' + pool + ' (раздадут победителям)'))
 	return 1
 }
 

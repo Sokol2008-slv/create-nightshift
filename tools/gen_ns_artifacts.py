@@ -71,7 +71,7 @@ WEIGHTS = [
     [120, [4, 10, 18, 24, 21, 17, 6]],
 ]
 # Потолки суммы эффектов: срез урона ≤35 % (поверх — энергощит −50 % и броня с «Защитой», непробиваемости не надо)
-CAPS = dict(dr=0.35, life=0.20, lifeCap=5, regen=2, thorns=0.5, dodge=0.25, killHeal=8)
+CAPS = dict(dr=0.35, life=0.20, lifeCap=5, regen=2, thorns=0.5, dodge=0.25, killHeal=8, hp=60)  # hp — здоровье от артефактов
 COMBAT_TICKS = 100  # «вне боя» — 5 с без полученного урона
 
 # Темы арены (ключи и волны — как NSG.nsArenaThemeFor в 70_nightshift_arena.js). chance — шанс артефакта арены
@@ -281,6 +281,68 @@ ARTS = [
       dict(hp=12, armor=4, tough=2, speed=-0.05), "Тяжёлое, как само чудовище.", pool="boss", bosses=["cataclysm:netherite_monstrosity"]),
 ]
 
+# ---------------- эндгейм: «Пробуждение артефактов» (02.10, Георгий: «крафты и механики замутить, новый эндгейм») ----------------
+# Набеги → завод Create → артефакты. Осколки орды падают с мобов набега в «копилку» набега (раздаётся победителям вместе
+# с добычей — убитые турелью в 40 блоках и на арене, которую после набега откатывают, не теряются).
+# Шанс осколка с моба: волны 1–15 — 0,5 → 1,5 %, 16–70 — 1,5 → 6 %, дальше +0,05 % за волну до 8 %; ванильные мобы ×0,5;
+# босс — 4–8 наверняка.
+SHARDS = dict(early=[1, 0.005, 15, 0.015], mid=[16, 0.015, 70, 0.06], latePerWave=0.0005, max=0.08, vanillaMult=0.5, boss=[4, 8])
+# Завод: дробилка — осколок → пыль (+10 % ещё одна), жернова — 1 к 1; миксер с супернагревом — 16 пыли + звёздный
+# осколок + 1000 мБ лавы → эссенция пробуждения; рычаг магии — 8 пыли + 8 арканной эссенции (Iron's Spells) + осколок + лава.
+# Звёздный осколок продаётся за EMC (131 072) — рычаг экономики. Итого ~14,5 осколка орды на эссенцию.
+ESSENCE = dict(dust=16, dustMagic=8, arcane=8, lava=1000, crushBonus=0.10)
+# Пробуждение — сборка Create по шагам (деплоер: эссенция → пресс → наполнитель: 250 мБ лавы), кругов = эссенций.
+# Пробуждаются эпические и выше: +50 % к числам, перезарядки на треть короче; потолки суммы — прежние (+ здоровье ≤60).
+AWAKEN = dict(mult=1.5, minTier=3, essences={3: 2, 4: 3, 5: 4, 6: 5}, lava=250)
+MATERIALS = [
+    # ключ, имя, англ., ванильная основа, палитра, подсказка
+    ("horde_shard", "Осколок орды", "Horde Shard", "echo_shard", ["#14030a", "#4a0a24", "#a01a48", "#ff7aa8"],
+     "Падает с мобов набега в копилку набега — раздаётся победителям. Дробилка Create → пыль орды."),
+    ("horde_dust", "Пыль орды", "Horde Dust", "glowstone_dust", ["#1a0510", "#5a1030", "#c03060", "#ffb0d0"],
+     "Миксер с супернагревом: 16 пыли + звёздный осколок + 1000 мБ лавы → эссенция пробуждения."),
+    ("awakening_essence", "Эссенция пробуждения", "Awakening Essence", "experience_bottle", ["#1a0a02", "#7a3a08", "#ffb020", "#fff8d0"],
+     "Пробуждает артефакт: сборка Create по шагам — деплоер (эссенция), пресс, наполнитель (лава)."),
+]
+INCOMPLETE = ("incomplete_awakening", "Пробуждаемый артефакт", "Awakening Artifact", "nether_star", ["#0a0a0a", "#3a2a40", "#8a6aa0", "#d8c8e8"])
+
+
+def awaken_fx(fx):
+    """Числа ×1,5 (минус скорости не усиливаем), перезарядки ÷1,5, длительности ×1,5, уровни эффектов — прежние."""
+    m = AWAKEN["mult"]
+    out = {}
+    for k, v in fx.items():
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            if k == "speed" and v < 0:
+                out[k] = v
+            else:
+                out[k] = round(v * m, 4)
+                if k in ("hp", "iframes"):
+                    out[k] = int(round(v * m))
+                if k == "kb":
+                    out[k] = min(1.0, out[k])
+        elif k == "shield":
+            out[k] = dict(dur=int(round(v["dur"] * m)), cd=int(round(v["cd"] / m)))
+        elif k == "wind":
+            out[k] = dict(v, after=int(round(v["after"] * m)), cd=int(round(v["cd"] / m)))
+        elif k == "aura":
+            out[k] = dict(r=int(round(v["r"] * m)), dmg=round(v["dmg"] * m, 2), fire=int(round(v["fire"] * m)))
+        elif k in ("hitFx", "hurtFx", "killFx"):
+            out[k] = [[e[0], e[1], int(round(e[2] * m))] for e in v]
+        else:
+            out[k] = v
+    return out
+
+
+def awaken_art(a):
+    aw = dict(a)
+    aw.update(key=a["key"] + "_aw", id=a["id"] + "_aw", ru=a["ru"] + " ✦", en=a["en"] + " ✦", fx=awaken_fx(a["fx"]),
+              pool="awakened", base_pool=a["pool"], base_id=a["id"], base_ru=a["ru"], theme=None, bosses=[],
+              about="Пробуждённый: +50 % к числам, перезарядки на треть короче.")
+    return aw
+
+
+ARTS += [awaken_art(a) for a in list(ARTS) if a["tier"] >= AWAKEN["minTier"]]
+
 # Шутки для квест-бука (серым курсивом, через раз)
 JOKES = {
     "how": "— Отдел кадров: «Четыре слота — не ограничение, а корпоративная культура. Пятый выдают посмертно».",
@@ -484,10 +546,24 @@ def trophy_line(a):
 
 
 def kind_word(a):
-    return {"wave": "артефакт смены", "theme": "артефакт арены", "boss": "трофей босса"}[a["pool"]]
+    return {"wave": "артефакт смены", "theme": "артефакт арены", "boss": "трофей босса"}[a.get("base_pool", a["pool"])]
+
+
+def plural(n, one, few, many):
+    if n % 10 == 1 and n % 100 != 11:
+        return f"{n} {one}"
+    if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14:
+        return f"{n} {few}"
+    return f"{n} {many}"
+
+
+def essences(tier):
+    return plural(AWAKEN["essences"][tier], "эссенция", "эссенции", "эссенций")
 
 
 def where_line(a):
+    if a["pool"] == "awakened":
+        return f"Пробуждение: «{a['base_ru']}» + {essences(a['tier'])} пробуждения — сборка Create: деплоер, пресс, наполнитель (лава)"
     if a["pool"] == "theme":
         return "Выпадает " + theme_line(a)
     if a["pool"] == "boss":
@@ -515,15 +591,21 @@ def gen_startup():
         "// ==========================================================================",
         "StartupEvents.registry('item', function (event) {",
     ]
-    for pool, title in (("wave", "волны"), ("theme", "арена"), ("boss", "трофеи боссов")):
+    for pool, title in (("wave", "волны"), ("theme", "арена"), ("boss", "трофеи боссов"), ("awakened", "пробуждённые")):
         for t, T in enumerate(TIERS):
             arts = [x for x in ARTS if x["tier"] == t and x["pool"] == pool]
             if not arts:
                 continue
             lines.append(f"\t// {title}: {T['ru']}")
             for a in arts:
-                glow = ".glow(true)" if t >= 5 or pool == "boss" else ""
-                lines.append(f"\tevent.create('{a['id']}').texture('nightshift:item/art_{a['key']}').maxStackSize(1).fireResistant().tag('curios:{SLOT}'){glow}")
+                glow = ".glow(true)" if t >= 5 or pool in ("boss", "awakened") else ""
+                extra = ".tag('nightshift:awakened_artifacts')" if pool == "awakened" else ""
+                lines.append(f"\tevent.create('{a['id']}').texture('nightshift:item/art_{a['key']}').maxStackSize(1).fireResistant().tag('curios:{SLOT}'){extra}{glow}")
+    lines.append("\t// пробуждение: осколок орды (набеги) → пыль орды (дробилка) → эссенция пробуждения (миксер, супернагрев)")
+    for key, *_ in MATERIALS:
+        glow = ".glow(true)" if key == "awakening_essence" else ""
+        lines.append(f"\tevent.create('nightshift:{key}').texture('nightshift:item/{key}').fireResistant(){glow}")
+    lines.append(f"\tevent.create('nightshift:{INCOMPLETE[0]}', 'create:sequenced_assembly').texture('nightshift:item/{INCOMPLETE[0]}').maxStackSize(1).fireResistant()")
     lines.append("})")
     write(PACK / "kubejs/startup_scripts/vahta/30_ns_artifacts.js", "\n".join(lines) + "\n")
 
@@ -534,6 +616,8 @@ def gen_data_block():
         e = dict(tier=a["tier"], name=a["ru"], pool=a["pool"])
         if a["theme"]:
             e["theme"] = a["theme"]
+        if a.get("base_id"):
+            e["base"] = a["base_id"]
         e.update(a["fx"])
         items[a["id"]] = e
     trophies = {}
@@ -558,6 +642,7 @@ def gen_data_block():
         bossNames={b: v[0] for b, v in BOSSES.items()},
         trophyChance={str(k): v for k, v in TROPHY_CHANCE.items()},
         reforge=REFORGE,
+        shards=SHARDS,
     )
     # компактно: ключ верхнего уровня — строка, артефакт — строка
     one = lambda v: json.dumps(v, ensure_ascii=False, separators=(", ", ": "))
@@ -591,10 +676,13 @@ def gen_tooltips():
     ]
     for a in ARTS:
         T = TIERS[a["tier"]]
-        rows = [f"Text.{T['text']}({js_str(T['ru'].capitalize() + ' ' + kind_word(a))})"]
+        head = ("Пробуждённый " + T["ru"] if a["pool"] == "awakened" else T["ru"].capitalize()) + " " + kind_word(a)
+        rows = [f"Text.{T['text']}({js_str(head)})"]
         for good, txt in fx_lines(a["fx"]):
             rows.append(f"Text.{'green' if good else 'red'}({js_str(txt[0].upper() + txt[1:])})")
         slot = f"Слот «Реликвия» ({SLOTS} шт.) — кнопка Curios в инвентаре. Второй такой же не наденется."
+        if a["pool"] == "awakened":
+            slot += " С обычной версией вместе не наденется."
         if a["pool"] != "wave":
             slot += " В переплавку не идёт."
         rows.append(f"Text.gray({js_str(slot)})")
@@ -623,6 +711,9 @@ def gen_lang():
         data = json.loads(text)
         for a in ARTS:
             data["item.nightshift.art_" + a["key"]] = item_name(a, en)
+        for key, ru, eng, *_ in MATERIALS:
+            data["item.nightshift." + key] = eng if en else ru
+        data["item.nightshift." + INCOMPLETE[0]] = INCOMPLETE[2] if en else INCOMPLETE[1]
         data["curios.identifier." + SLOT] = "Relic" if en else "Реликвия"
         data["curios.modifiers." + SLOT] = "When worn as relic:" if en else "Когда надето как реликвия:"
         f.write_text(dump_like(text, data))
@@ -636,6 +727,55 @@ def gen_curios():
           json.dumps({"entities": ["minecraft:player"], "slots": [SLOT]}, indent=2) + "\n")
     write(PACK / f"kubejs/data/curios/tags/item/{SLOT}.json",
           json.dumps({"replace": False, "values": [a["id"] for a in ARTS]}, indent=2) + "\n")
+    write(PACK / "kubejs/data/nightshift/tags/item/awakened_artifacts.json",
+          json.dumps({"replace": False, "values": [a["id"] for a in ARTS if a["pool"] == "awakened"]}, indent=2) + "\n")
+
+
+def gen_recipes():
+    """Рецепты пробуждения — только машины Create («Вахта»: руками не крафтят)."""
+    inc = "nightshift:" + INCOMPLETE[0]
+    lava = lambda n: {"type": "neoforge:single", "amount": n, "fluid": "minecraft:lava"}
+    star = {"item": "nightshift:star_fragment"}
+    dust = {"item": "nightshift:horde_dust"}
+    E = ESSENCE
+    rec = [
+        ("crush_horde_shard", {"type": "create:crushing", "ingredients": [{"item": "nightshift:horde_shard"}], "processing_time": 150,
+                               "results": [{"id": "nightshift:horde_dust"}, {"id": "nightshift:horde_dust", "chance": E["crushBonus"]}]}),
+        ("mill_horde_shard", {"type": "create:milling", "ingredients": [{"item": "nightshift:horde_shard"}], "processing_time": 300,
+                              "results": [{"id": "nightshift:horde_dust"}]}),
+        ("essence", {"type": "create:mixing", "heat_requirement": "superheated",
+                     "ingredients": [dust] * E["dust"] + [star, lava(E["lava"])], "results": [{"id": "nightshift:awakening_essence"}]}),
+    ]
+    magic = ("essence_magic", {"type": "create:mixing", "heat_requirement": "superheated",
+                               "ingredients": [dust] * E["dustMagic"] + [{"item": "irons_spellbooks:arcane_essence"}] * E["arcane"] + [star, lava(E["lava"])],
+                               "results": [{"id": "nightshift:awakening_essence"}]})
+    step = [
+        {"type": "create:deploying", "ingredients": [{"item": inc}, {"item": "nightshift:awakening_essence"}], "results": [{"id": inc}]},
+        {"type": "create:pressing", "ingredients": [{"item": inc}], "results": [{"id": inc}]},
+        {"type": "create:filling", "ingredients": [{"item": inc}, lava(AWAKEN["lava"])], "results": [{"id": inc}]},
+    ]
+    for a in ARTS:
+        if a["pool"] != "awakened":
+            continue
+        rec.append(("art_" + a["key"], {"type": "create:sequenced_assembly", "ingredient": {"item": a["base_id"]}, "loops": AWAKEN["essences"][a["tier"]],
+                                        "results": [{"id": a["id"]}], "sequence": step, "transitional_item": {"id": inc}}))
+    one = lambda v: json.dumps(v, ensure_ascii=False, separators=(",", ":"))
+    lines = [
+        "// ==========================================================================",
+        "// Пробуждение артефактов — рецепты завода (СГЕНЕРИРОВАНО tools/gen_ns_artifacts.py — правки в таблице генератора).",
+        "// Осколок орды (копилка набега, raids/09_ns_artifacts.js) → дробилка/жернова → пыль орды → миксер с супернагревом",
+        "// (+ звёздный осколок, лава; или + арканная эссенция Iron's Spells) → эссенция пробуждения → сборка по шагам:",
+        "// артефакт + эссенции (деплоер), пресс, наполнитель (лава) → пробуждённый артефакт (art_<id>_aw). Только машины.",
+        "// Правило Rhino: только var.",
+        "// ==========================================================================",
+        "ServerEvents.recipes(function (event) {",
+    ]
+    for rid, j in rec:
+        lines.append(f"\tevent.custom({one(j)}).id('nightshift:awakening/{rid}')")
+    lines.append("\t// рычаг магии — только если Iron's Spells в сборке")
+    lines.append(f"\tif (Platform.isLoaded('irons_spellbooks')) event.custom({one(magic[1])}).id('nightshift:awakening/{magic[0]}')")
+    lines.append("})")
+    write(PACK / "kubejs/server_scripts/vahta/75_ns_awakening.js", "\n".join(lines) + "\n")
 
 
 def gen_emc():
@@ -643,9 +783,10 @@ def gen_emc():
     data = json.loads(f.read_text())
     have = {e.get("id") for e in data["entries"]}
     added = 0
-    for a in ARTS:
-        if a["id"] not in have:
-            data["entries"].append({"id": a["id"], "emc": 0})
+    ids = [a["id"] for a in ARTS] + ["nightshift:" + m[0] for m in MATERIALS] + ["nightshift:" + INCOMPLETE[0]]
+    for i in ids:
+        if i not in have:
+            data["entries"].append({"id": i, "emc": 0})
             added += 1
     if added:
         f.write_text(json.dumps(data, ensure_ascii=False, indent=1))
@@ -707,6 +848,17 @@ def frame(img, tier, dotted=False):
     return out
 
 
+def sparkle(img):
+    """Пробуждённый: золотая звёздочка-«искра» в правом верхнем углу поверх иконки."""
+    out = img.copy()
+    core = (255, 250, 210, 255)
+    ray = (255, 205, 60, 255)
+    for x, y, c in ((13, 2, core), (13, 1, ray), (13, 3, ray), (12, 2, ray), (14, 2, ray), (13, 0, (255, 230, 120, 200)),
+                    (15, 2, (255, 230, 120, 200)), (11, 2, (255, 230, 120, 160)), (13, 4, (255, 230, 120, 160))):
+        out.putpixel((x, y), c)
+    return out
+
+
 def halo_base():
     """Нимб — своё кольцо 16×16 (ванильного нет): эллипс с бликом."""
     from PIL import Image, ImageDraw
@@ -753,9 +905,16 @@ def gen_icons():
     out = PACK / "kubejs/assets/nightshift/textures/item"
     out.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(MC) as z:
+        van = lambda name: Image.open(io.BytesIO(z.read("assets/minecraft/textures/item/" + name + ".png"))).convert("RGBA")
         for a in ARTS:
-            base = halo_base() if a["base"] is None else Image.open(io.BytesIO(z.read("assets/minecraft/textures/item/" + a["base"] + ".png"))).convert("RGBA")
-            frame(recolor(base, a["pal"]), a["tier"], dotted=a["pool"] == "boss").save(out / f"art_{a['key']}.png")
+            base = halo_base() if a["base"] is None else van(a["base"])
+            img = frame(recolor(base, a["pal"]), a["tier"], dotted=a.get("base_pool", a["pool"]) == "boss")
+            if a["pool"] == "awakened":
+                img = sparkle(img)
+            img.save(out / f"art_{a['key']}.png")
+        for key, _ru, _en, tex, pal, _tip in MATERIALS:
+            recolor(van(tex), pal).save(out / f"{key}.png")
+        recolor(van(INCOMPLETE[3]), INCOMPLETE[4]).save(out / f"{INCOMPLETE[0]}.png")
     slot = PACK / f"kubejs/assets/nightshift/textures/slot/{SLOT}.png"
     slot.parent.mkdir(parents=True, exist_ok=True)
     slot_icon().save(slot)
@@ -777,8 +936,7 @@ def art_line(a, with_where=False):
 
 def gen_quests():
     icons = ["patch", "qc_stripe", "fang", "rosary", "second_wind", "hourglass", "vakhta_heart"]
-    best_hp = sorted((a["fx"].get("hp", 0) for a in ARTS), reverse=True)[:SLOTS]
-    max_dr = sorted((a["fx"].get("dr", 0) for a in ARTS), reverse=True)[:SLOTS]
+    best_hp = sorted((a["fx"].get("hp", 0) for a in ARTS if a["pool"] != "awakened"), reverse=True)[:SLOTS]
     n_theme = len([a for a in ARTS if a["pool"] == "theme"])
     n_boss = len([a for a in ARTS if a["pool"] == "boss"])
     quests = []
@@ -792,7 +950,7 @@ def gen_quests():
         "Ни купить, ни продать: EMC у них нет. После смерти и смены надетого эффекты включаются за секунду; /nsart — что даёт твой билд.",
         "{@pagebreak}",
         f"Потолки суммы: срез урона ≤{round(CAPS['dr'] * 100)} %, вампиризм ≤{round(CAPS['life'] * 100)} % (до {CAPS['lifeCap']} HP за удар), лечение вне боя ≤{CAPS['regen']} HP/с, отражение ≤{round(CAPS['thorns'] * 100)} %, уклонение ≤{round(CAPS['dodge'] * 100)} %.",
-        f"Здоровье: 20 + &d5 Сердец ночи&r (+10) + 4 лучших по здоровью (+{sum(best_hp)}) = &a{30 + sum(best_hp)} HP&r — больше четырёх рядов сердец. Срез урона упирается в потолок {round(CAPS['dr'] * 100)} %.",
+        f"Здоровье: 20 + &d5 Сердец ночи&r (+10) + 4 лучших по здоровью (+{sum(best_hp)}) = &a{30 + sum(best_hp)} HP&r — больше четырёх рядов сердец. Потолок здоровья от артефактов — +{CAPS['hp']} (пробуждённые доходят до него за три слота), срез урона упирается в {round(CAPS['dr'] * 100)} %.",
         "Артефакты мода Artifacts (крест-ожерелье, кристальное сердце…) носятся в своих слотах и складываются с этими.",
         "&7&o" + JOKES["how"] + "&r",
     ]
@@ -895,8 +1053,43 @@ def gen_quests():
     trophy_quest("trophies_cataclysm", "&cТрофеи боссов Cataclysm&r", "nightshift:art_tr_ignis", "cataclysm:", [13.2, 2.2], "tier_mythic",
                  "Боссы L_Ender's Cataclysm — с 70-й волны: мини-боссы до 92-й, настоящие — с 80-й. Их трофеи — самые сильные в паке.",
                  "trophies_cm")
+    # ветка «Пробуждение»: осколки → пыль → эссенция → пробуждение
+    E = ESSENCE
+    sh = SHARDS
+    n_aw = len([a for a in ARTS if a["pool"] == "awakened"])
+    per_ess = E["dust"] / (1 + E["crushBonus"])
+    quests.append(dict(key="aw_shard", type="item", item="nightshift:horde_shard", title="&dОсколок орды&r", deps=["reforge"], pos=[2.2, 4.4], desc=[
+        "Сырьё эндгейма: завод делает из осколков эссенцию, а она &eпробуждает артефакты&r.",
+        "Падают с мобов набега — не на землю, а в &eкопилку набега&r: что выбили вы и ваши турели, после победы получает каждый защитник вместе с добычей. Провал — копилка сгорает.",
+        f"Шанс с моба: волны 1–15 — {num(sh['early'][1] * 100)}–{num(sh['early'][3] * 100)} %, 16–70 — {num(sh['mid'][1] * 100)}–{num(sh['mid'][3] * 100)} %, дальше до {num(sh['max'] * 100)} %; ванильные мобы — вдвое реже. Босс — {sh['boss'][0]}–{sh['boss'][1]} осколков наверняка.",
+        "Сколько в копилке прямо сейчас — команда /nsart.",
+        "&7&o— Отдел снабжения: «Орда не знает, что её разбирают на запчасти. Не говорите ей».&r",
+    ]))
+    quests.append(dict(key="aw_dust", type="item", item="nightshift:horde_dust", title="Пыль орды", deps=["aw_shard"], pos=[4.4, 4.4], desc=[
+        "Пыль — то, что дробилка достаёт из осколка; из неё варят эссенцию.",
+        f"&eДробильные колёса&r: осколок → пыль + {round(E['crushBonus'] * 100)} % ещё одна. &eЖернова&r: 1 к 1 и медленнее. Хочешь быстрее — больше колёс и оборотов.",
+        "Руками не мелется: «Вахта» — руками только собирать.",
+    ]))
+    quests.append(dict(key="aw_essence", type="item", item="nightshift:awakening_essence", title="&6Эссенция пробуждения&r", deps=["aw_dust"], pos=[6.6, 4.4], desc=[
+        "Эссенция — то, чем пробуждают артефакт: одна эссенция на круг сборки.",
+        f"&eМиксер с супернагревом&r (горелка всполоха на торте всполоха): {E['dust']} пыли орды + звёздный осколок + {E['lava']} мБ лавы.",
+        f"&dРычаг магии&r: {E['dustMagic']} пыли + {E['arcane']} арканной эссенции (Iron's Spells, добыча набегов) + звёздный осколок + лава — пыли вдвое меньше.",
+        f"Звёздный осколок — веха 70-й волны и добыча Кошмара, покупается за EMC (131 072). Итого ~{round(per_ess)} осколков орды на эссенцию.",
+        "&7&o— Столовая: «Эссенция пробуждения — не кофе. Пить её запрещено. Особенно вам».&r",
+    ]))
+    ex = next(a for a in ARTS if a["key"] == "horde_heart_aw")
+    quests.append(dict(key="aw_awaken", type="checkmark", item="nightshift:art_horde_heart_aw", title="&6Пробуждение ✦&r", deps=["aw_essence"], pos=[8.8, 4.4],
+                       goal=True, desc=[
+        "Пробуждённый артефакт — та же вещь, но сильнее: &a+50 % к числам&r, перезарядки щита и второго дыхания на треть короче, эффекты держатся дольше.",
+        f"Как: &eсборка по шагам&r Create — артефакт на ленте проходит деплоер (эссенция), пресс и наполнитель ({AWAKEN['lava']} мБ лавы). Кругов — сколько эссенций: эпический {AWAKEN['essences'][3]}, легендарный {AWAKEN['essences'][4]}, мифический {AWAKEN['essences'][5]}, божественный {AWAKEN['essences'][6]}.",
+        "{@pagebreak}",
+        f"Пробуждаются эпические и выше — артефакты волн, арены и трофеи боссов, всего {n_aw}. Имя — со звёздочкой ✦.",
+        f"Потолки суммы прежние: срез урона ≤{round(CAPS['dr'] * 100)} %, вампиризм ≤{round(CAPS['life'] * 100)} %, уклонение ≤{round(CAPS['dodge'] * 100)} %; здоровье от артефактов — не больше +{CAPS['hp']}. Обычный и пробуждённый одного вида вместе не наденутся. В переплавку пробуждённые не идут.",
+        "Пример: " + art_line(ex),
+        "&7&o— ОТК: «Пробуждённый артефакт проверен прессом. Трижды. Претензии — к прессу».&r",
+    ]))
     spec = {"chapters": [{"key": "artifacts", "title": "Артефакты смены", "icon": "nightshift:art_hourglass",
-                          "subtitle": "7 уровней, 4 слота «Реликвия»: волны, арена, трофеи боссов, переплавка", "quests": quests}]}
+                          "subtitle": "7 уровней, 4 слота «Реликвия»: волны, арена, трофеи, переплавка, пробуждение", "quests": quests}]}
     write(PACK / "tools/quests/spec_artifacts.json", json.dumps(spec, ensure_ascii=False, indent=1) + "\n")
 
 
@@ -905,9 +1098,11 @@ def report():
     for d in (1, 8, 15, 27, 30, 43, 50, 70, 90, 100, 110, 120):
         w = weights(d)
         print(f"  волна {d:>3}: {pct(chance(d)):>5} %  " + "  ".join(f"{TIERS[t]['key'][:4]} {w[t]:4.1f}" for t in range(7)))
-    hp = sorted((a["fx"].get("hp", 0) for a in ARTS), reverse=True)[:SLOTS]
-    print(f"  лучшие {SLOTS} по здоровью: +{sum(hp)} → {30 + sum(hp)} HP с пятью Сердцами ночи")
-    print(f"  артефактов: волны {len(wave_arts())}, арена {len([a for a in ARTS if a['pool'] == 'theme'])}, трофеи {len([a for a in ARTS if a['pool'] == 'boss'])}, всего {len(ARTS)}")
+    hp = sorted((a["fx"].get("hp", 0) for a in ARTS if a["pool"] != "awakened"), reverse=True)[:SLOTS]
+    hpa = sorted((a["fx"].get("hp", 0) for a in ARTS), reverse=True)[:SLOTS]
+    print(f"  лучшие {SLOTS} по здоровью: +{sum(hp)} → {30 + sum(hp)} HP; с пробуждёнными +{sum(hpa)}, потолок +{CAPS['hp']} → {30 + min(CAPS['hp'], sum(hpa))} HP")
+    print(f"  артефактов: волны {len(wave_arts())}, арена {len([a for a in ARTS if a['pool'] == 'theme'])}, трофеи {len([a for a in ARTS if a['pool'] == 'boss'])}, пробуждённые {len([a for a in ARTS if a['pool'] == 'awakened'])}, всего {len(ARTS)}")
+    print(f"  эссенция: ~{ESSENCE['dust'] / (1 + ESSENCE['crushBonus']):.1f} осколков орды; пробуждение: " + ", ".join(f"{TIERS[t]['ru']} {n} эсс." for t, n in AWAKEN["essences"].items()))
     missing = [b for b in BOSSES if not any(b in a["bosses"] for a in ARTS)]
     if missing:
         print("  ВНИМАНИЕ: боссы без трофея:", ", ".join(missing))
@@ -938,6 +1133,7 @@ def main():
     gen_tooltips()
     gen_lang()
     gen_curios()
+    gen_recipes()
     gen_emc()
     gen_icons()
     gen_quests()
