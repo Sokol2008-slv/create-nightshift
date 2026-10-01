@@ -175,5 +175,46 @@
 			x: 13.20d
 			y: 2.20d
 		}
+		{
+			dependencies: ["741AD72C451408C4"]
+			id: "6C0ECF8DB46B242F"
+			rewards: [{ id: "6CE8D065DA2738E7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "785C4AA6BBF9506C", item: { count: 1, id: "nightshift:horde_shard" }, type: "item" }]
+			x: 2.20d
+			y: 4.40d
+		}
+		{
+			dependencies: ["6C0ECF8DB46B242F"]
+			id: "4AAC4C0B6EC1E5CE"
+			rewards: [{ id: "25B0824028046EA5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "296267137AAD93E1", item: { count: 1, id: "nightshift:horde_dust" }, type: "item" }]
+			x: 4.40d
+			y: 4.40d
+		}
+		{
+			dependencies: ["4AAC4C0B6EC1E5CE"]
+			id: "7F274304A2B7CC90"
+			rewards: [{ id: "3E843CFFF8CB7302", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2C656758D1EBC357", item: { count: 1, id: "nightshift:awakening_essence" }, type: "item" }]
+			x: 6.60d
+			y: 4.40d
+		}
+		{
+			dependencies: ["7F274304A2B7CC90"]
+			icon: { id: "nightshift:art_horde_heart_aw" }
+			id: "4F818187E549D44C"
+			rewards: [{ id: "3BF50AD4E5F24763", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "4EEA8181D6DC02ED", type: "checkmark" }]
+			x: 8.80d
+			y: 4.40d
+		}
 	]
 }

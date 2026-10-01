@@ -1199,6 +1199,8 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut) {
 			console.error('[nightshift] трофеи боссов: ' + e)
 		}
 	}
+	// копилка осколков орды этого набега (09_ns_artifacts.js) — каждому защитнику целиком
+	var nsShards = typeof NSG.nsNsHordeShardTake === 'function' ? NSG.nsNsHordeShardTake() : 0
 	for (var i = 0; i < ps.length; i++) {
 		var got = []
 		for (var r = 0; r < rolls; r++) {
@@ -1225,6 +1227,7 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut) {
 			if (ms) for (var mi = 0; mi < ms.items.length; mi++) got.push(ms.items[mi])
 		}
 		for (var tq = 0; tq < nsTrophies.length; tq++) if (nsTrophies[tq].player === i) got.push(nsTrophies[tq].line)
+		if (nsShards > 0) got.push(['nightshift:horde_shard', nsShards, 'nightshift:horde_shard', 'копилка набега'])
 		nsGiveLoot(ps[i], got)
 	}
 	// веха: объявление всем
