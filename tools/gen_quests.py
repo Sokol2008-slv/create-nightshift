@@ -34,7 +34,7 @@ STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
 # Порядок глав в книге — по фазам Ночной смены
-ORDER = ["vahta", "night_shift", "altar",
+ORDER = ["vahta", "night_shift", "altar", "artifacts",
          "create_basics", "electricity", "brass_logistics_trains", "food",
          "weapons", "tower_defense", "golems",
          "automation_extras", "economy", "steel_oil",

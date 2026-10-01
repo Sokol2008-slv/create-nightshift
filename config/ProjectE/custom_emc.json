@@ -41152,6 +41152,82 @@
   {
    "id": "kubejs:dark_stabilite_ore",
    "emc": 0
+  },
+  {
+   "id": "nightshift:art_patch",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_badge",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_thermos",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_buckle",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_qc_stripe",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_watch_charm",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_fang",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_pauldron",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_collar",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_stone_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_rosary",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_butcher_glove",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_titan_blood",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_visor",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_second_wind",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_hourglass",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_horde_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_vakhta_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_halo",
+   "emc": 0
   }
  ]
 }
