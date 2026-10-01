@@ -580,6 +580,7 @@ function nsStartRaid(kind, altarId, difficulty) {
 	var state = nsGetState()
 	if (nsRaidActive(state)) return
 	var d = kind === 'minor' ? 0 : difficulty || 1
+	NSG.nsRaidKills = {} // счёт бойцов этого набега (14_contracts.js)
 	// мобы прошлых набегов с тегом nightshift_raid (недобитые, из выгруженных чанков, с тестов) засчитывались
 	// новому набегу: 30.09 на 15-й волне у алтаря сразу оказался старый зомби — провал за 12 с. Теперь у каждого
 	// набега свой номер (тег ns_r<номер> на его мобах), а старых при старте убираем.

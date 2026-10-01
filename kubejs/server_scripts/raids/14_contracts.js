@@ -174,12 +174,29 @@ function nsCtComplete(st, c) {
 	}
 }
 
-// Убийство моба набега — засчитать «убей N» и «завали босса»
+// Кто убил моба набега: игрок по имени или «турели и ловушки» (перебор имён методов источника — как в 07_)
+function nsCtKiller(src) {
+	var names = ['getActual', 'getEntity', 'getPlayer']
+	for (var i = 0; i < names.length; i++) {
+		try {
+			var f = src[names[i]]
+			if (typeof f !== 'function') continue
+			var e = f.call(src)
+			if (e != null && e.isPlayer && e.isPlayer()) return String(e.getUsername())
+		} catch (x) {}
+	}
+	return null
+}
+
+// Убийство моба набега — счёт бойцов (итог боя) и контракты «убей N» / «завали босса»
 EntityEvents.death(event => {
 	try {
 		var e = event.entity
 		if (!e || e.isPlayer()) return
 		if (!e.getTags().contains('nightshift_raid')) return
+		var who = nsCtKiller(event.source) || 'турели и ловушки'
+		NSG.nsRaidKills = NSG.nsRaidKills || {}
+		NSG.nsRaidKills[who] = (NSG.nsRaidKills[who] || 0) + 1
 		var st = nsGetState()
 		if (!st || !st.contracts || !st.contracts.list) return
 		var id = String(e.getType())
@@ -206,6 +223,21 @@ EntityEvents.death('minecraft:player', event => {
 
 // Победа в набеге (40_: nsRaidVictory, после наград): волна, условие, арена, без смертей
 function nsContractsOnVictory(d, raid, altar) {
+	// итог боя: лучший боец и счёт турелей (с последнего старта набега)
+	var K = NSG.nsRaidKills || {}
+	var best = null,
+		total = 0,
+		parts = []
+	for (var n in K) {
+		total += K[n]
+		parts.push(n + ' — ' + K[n])
+		if (n !== 'турели и ловушки' && (best === null || K[n] > K[best])) best = n
+	}
+	if (total > 0) {
+		console.info('[nightshift] итог боя: ' + parts.join(', '))
+		nsTellAll(Text.gold('[Ночная смена] Итог боя: ').append(Text.white('убито ' + total + '. ' + parts.join(', ') + '.')).append(best ? Text.yellow(' Лучший боец смены — ' + best + '!') : Text.of('')))
+	}
+	NSG.nsRaidKills = {}
 	var st = nsGetState()
 	var list = nsCtBoard(st)
 	var arena = !!(st.arena && altar && st.arena.altarId === altar.id)
