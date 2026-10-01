@@ -1222,7 +1222,7 @@ function nsGiveLoot(player, got) {
 		}
 		NSG.nsServer.runCommandSilent('give ' + name + ' ' + e[0] + ' ' + e[1])
 		if (m > 0) line = line.append(Text.gray(', '))
-		var rare = e[0].indexOf('artifacts:') === 0 || e[0] === 'nightshift:night_heart'
+		var rare = e[0].indexOf('artifacts:') === 0 || e[0] === 'nightshift:night_heart' || (NSG.nsNsArtifactIs && NSG.nsNsArtifactIs(e[0]))
 		var itemText = nsItemText(e[2] || e[0])
 		if (e[3]) itemText = itemText.append(Text.of(' (' + e[3] + ')'))
 		line = line.append(Text.white(e[1] + '× ')).append(rare ? Text.lightPurple('').append(itemText) : itemText)
@@ -1230,6 +1230,11 @@ function nsGiveLoot(player, got) {
 	player.tell(line)
 	for (var a = 0; a < merged.length; a++) {
 		if (merged[a][0].indexOf('artifacts:') === 0) nsTellAll(Text.lightPurple('[Ночная смена] ' + name + ' получает артефакт: ').append(nsItemText(merged[a][0])))
+		// артефакт смены легендарный и выше (уровень 4+) — объявление всем
+		else if (NSG.nsNsArtifactTier && NSG.nsNsArtifactTier(merged[a][0]) >= 4) {
+			nsTellAll(Text.gold('[Ночная смена] ' + name + ' получает ' + (merged[a][3] || 'артефакт смены') + ': ').append(nsItemText(merged[a][0])))
+			NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete player @a')
+		}
 	}
 }
 

@@ -1,0 +1,131 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "artifacts"
+	group: ""
+	icon: { id: "nightshift:art_hourglass" }
+	id: "693229FDEF1E72F0"
+	images: [ ]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "nightshift:art_badge" }
+			id: "33EB747527C6AAA4"
+			rewards: [{ id: "39E4E9B6D96E7C64", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.3d
+			tasks: [{ id: "367C45625A68C4EC", type: "checkmark" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["33EB747527C6AAA4"]
+			icon: { id: "minecraft:clock" }
+			id: "3A41ED9C7325801D"
+			optional: true
+			rewards: [{ id: "7BE10FD7A53E449A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2E18862F2A30F76C", type: "checkmark" }]
+			x: 0.00d
+			y: 2.20d
+		}
+		{
+			dependencies: ["33EB747527C6AAA4"]
+			icon: { id: "minecraft:armor_stand" }
+			id: "00C1E5D9F1E192B0"
+			optional: true
+			rewards: [{ id: "228C6E761070C0B6", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "667666454D94FC2E", type: "checkmark" }]
+			x: 0.00d
+			y: -2.20d
+		}
+		{
+			dependencies: ["33EB747527C6AAA4"]
+			icon: { id: "nightshift:art_patch" }
+			id: "4258DA3E82C76B90"
+			optional: true
+			rewards: [{ id: "3EBDD6DC7616109C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "78EB4726C01067C0", type: "checkmark" }]
+			x: 2.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["4258DA3E82C76B90"]
+			icon: { id: "nightshift:art_qc_stripe" }
+			id: "2D977C8542ABDF12"
+			optional: true
+			rewards: [{ id: "0CC09A3551E8C418", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0550AA4820F0A0DD", type: "checkmark" }]
+			x: 4.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["2D977C8542ABDF12"]
+			icon: { id: "nightshift:art_fang" }
+			id: "0A1E924D269679FA"
+			optional: true
+			rewards: [{ id: "4C73ACF58084EA26", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1A2BE8A0F51BCE84", type: "checkmark" }]
+			x: 6.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["0A1E924D269679FA"]
+			icon: { id: "nightshift:art_rosary" }
+			id: "2888590EA4BC7883"
+			optional: true
+			rewards: [{ id: "2BB98021B057216E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "56D1B07B4E16CAB5", type: "checkmark" }]
+			x: 8.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["2888590EA4BC7883"]
+			icon: { id: "nightshift:art_second_wind" }
+			id: "6A79D752E0C6BF84"
+			optional: true
+			rewards: [{ id: "0D53A3E640BCEB1D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3B0FA6D224F2AD23", type: "checkmark" }]
+			x: 11.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["6A79D752E0C6BF84"]
+			icon: { id: "nightshift:art_hourglass" }
+			id: "6C614AF71546A618"
+			optional: true
+			rewards: [{ id: "3B81E27DD9CCF416", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "66F85AA3DE112808", type: "checkmark" }]
+			x: 13.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["6C614AF71546A618"]
+			icon: { id: "nightshift:art_vakhta_heart" }
+			id: "3143F5CDAE9CD77D"
+			optional: true
+			rewards: [{ id: "3666AF41D0A796D5", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7F69887591117A96", type: "checkmark" }]
+			x: 15.40d
+			y: 0.00d
+		}
+	]
+}

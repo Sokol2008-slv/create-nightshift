@@ -290,5 +290,29 @@
 			x: 13.68d
 			y: 4.96d
 		}
+		{
+			dependencies: ["798ACE3CE5DB69E8"]
+			icon: { id: "minecraft:firework_rocket" }
+			id: "5132CCC7A875B401"
+			optional: true
+			rewards: [{ id: "5079426445D8CF19", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3E7B73CB3FFC0140", type: "checkmark" }]
+			x: 11.44d
+			y: -2.00d
+		}
+		{
+			dependencies: ["5132CCC7A875B401"]
+			icon: { id: "minecraft:tnt" }
+			id: "0DBAB77BAE915A5D"
+			optional: true
+			rewards: [{ id: "5D7663EA52EA2B96", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7052EB1EE98717F4", type: "checkmark" }]
+			x: 13.36d
+			y: -2.00d
+		}
 	]
 }

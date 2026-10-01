@@ -6,7 +6,7 @@
 	icon: { id: "cgs:gatling" }
 	id: "337BD701D154F1B7"
 	images: [ ]
-	order_index: 7
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
@@ -302,6 +302,70 @@
 			size: 1.0d
 			tasks: [{ id: "7E49CE2C2ACF0CA9", item: { count: 1, id: "nightshift:alloy_chestplate" }, type: "item" }]
 			x: 5.52d
+			y: 7.20d
+		}
+		{
+			dependencies: ["1409D189B5A4B25E"]
+			id: "29FD0B60775645E1"
+			rewards: [{ id: "600855C9D0CC3268", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1B91652C53A5943C", item: { count: 1, id: "nightshift:module_spring_boots" }, type: "item" }]
+			x: 1.84d
+			y: 7.20d
+		}
+		{
+			dependencies: ["29FD0B60775645E1"]
+			icon: { id: "nightshift:module_sprint" }
+			id: "6BE2AB1CA7A7B150"
+			optional: true
+			rewards: [{ id: "00DF7A328A69957D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7C19CE0B2D3EF9D8", type: "checkmark" }]
+			x: 3.68d
+			y: 7.20d
+		}
+		{
+			dependencies: ["29FD0B60775645E1"]
+			id: "36DE1D2FAB859594"
+			rewards: [{ id: "770EFEFB1C6A0884", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "06F9311D25317967", item: { count: 1, id: "nightshift:module_night_vision" }, type: "item" }]
+			x: 1.84d
+			y: 9.00d
+		}
+		{
+			dependencies: ["5E9F40AEAEB40403"]
+			id: "43B32A69C5B37F32"
+			rewards: [{ id: "69136778CBB08A02", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "183DC52368707225", item: { count: 1, id: "axiomativ:energy_shield_mk1" }, type: "item" }]
+			x: 7.60d
+			y: 7.20d
+		}
+		{
+			dependencies: ["43B32A69C5B37F32"]
+			id: "73867618D704282A"
+			rewards: [{ id: "5EC4117757072995", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "79F56B5B3C1F530F", item: { count: 1, id: "axiomativ:energy_shield_mk2" }, type: "item" }]
+			x: 9.44d
+			y: 7.20d
+		}
+		{
+			dependencies: ["73867618D704282A"]
+			icon: { id: "axiomativ:shield_generator" }
+			id: "336E7B754D05AD3C"
+			optional: true
+			rewards: [{ id: "595FE5C7ABB9AFDB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "702D3A4BB519E057", type: "checkmark" }]
+			x: 11.52d
 			y: 7.20d
 		}
 	]

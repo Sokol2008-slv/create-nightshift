@@ -6,7 +6,7 @@
 	icon: { id: "creategbd:advanced_laser_turret" }
 	id: "7B1A7BF00B1F7A99"
 	images: [ ]
-	order_index: 8
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
@@ -338,6 +338,46 @@
 			tasks: [{ id: "15C077B8923DEC60", type: "checkmark" }]
 			x: 7.60d
 			y: 12.24d
+		}
+		{
+			dependencies: ["09F356C146A17F96"]
+			id: "57E36735D748B165"
+			rewards: [{ id: "55123716C378C676", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3FC26275A415326D", item: { count: 1, id: "cbc_firepower_components:compact_autocannon_mount" }, type: "item" }]
+			x: 11.84d
+			y: 8.10d
+		}
+		{
+			dependencies: ["57E36735D748B165"]
+			id: "4B15D3F36F382850"
+			rewards: [{ id: "1B260AE4FE5C36A9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4587906A7987CDCC", item: { count: 1, id: "cbc_firepower_components:autocannon_ammo_feed" }, type: "item" }]
+			x: 13.92d
+			y: 8.10d
+		}
+		{
+			dependencies: ["4B15D3F36F382850"]
+			id: "65BDB0A73D405268"
+			rewards: [{ id: "1DEDB7F681CB98D7", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "6F5ADA5C9FD3CC81", item: { count: 1, id: "cbc_firepower_components:large_autocannon_breech" }, type: "item" }]
+			x: 13.92d
+			y: 9.90d
+		}
+		{
+			dependencies: ["686F94EE226A9895"]
+			id: "39ADAE75A36F405C"
+			rewards: [{ id: "37E8CB2EB8B68CDC", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4429433C1B16BB6D", item: { count: 1, id: "cbc_firepower_components:cannon_magazine_loader" }, type: "item" }]
+			x: 9.68d
+			y: 4.60d
 		}
 	]
 }

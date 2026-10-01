@@ -6,7 +6,7 @@
 	icon: { id: "modulargolems:metal_golem_holder" }
 	id: "13F67E96F778A421"
 	images: [ ]
-	order_index: 9
+	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{

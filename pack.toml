@@ -1,12 +1,12 @@
 name = "Create: Ночная смена"
 author = "Georgij"
-version = "3.1.2"
+version = "3.2.0"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "98b0eb8bdee2ac66b29404ce684195e4fd244db2899033f93e6856be0fe4df84"
+hash = "c42d1e0743d27879906d67cf6de884d96f98cb89f39bb7aa979a9a417c502f36"
 
 [versions]
 minecraft = "1.21.1"

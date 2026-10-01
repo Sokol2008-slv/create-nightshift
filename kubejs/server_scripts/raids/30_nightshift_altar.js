@@ -114,7 +114,7 @@ function nsDifficultyHover(state, d) {
 	t = t.append(Text.gray('\nРедкое — ' + Math.round(L.rareChance * 100) + '% за бросок, артефакт — ' + art + '%'))
 	if (typeof NSG.nsNsArtifactHoverText === 'function') {
 		try {
-			t = t.append(Text.lightPurple('\n' + NSG.nsNsArtifactHoverText(d)))
+			t = t.append(Text.lightPurple('\n' + NSG.nsNsArtifactHoverText(d, d > (state.phase || 0))))
 		} catch (e) {}
 	}
 	if (k > 0) t = t.append(Text.lightPurple('\nС 70-й волны: ' + nsPlural(1 + Math.floor(k / 6), 'особый бросок', 'особых броска', 'особых бросков') + ' — череп визера, незеритовая броня и оружие с чарами, элитры, маяк'))
