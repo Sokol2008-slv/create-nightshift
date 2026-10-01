@@ -1342,6 +1342,9 @@ function nsTickCountdown(state) {
 		// арена — снимок в момент выхода орды: всё построенное за отсчёт тоже в нём (70_nightshift_arena.js)
 		nsTry('снимок арены', function () {
 			if (typeof nsArenaHook === 'function') nsArenaHook('start', state.raid.altarId)
+			// хук мог достроить тему и сохранить её в свежем состоянии — не затереть своим (ревью 01.10)
+			var fresh = nsGetState()
+			if (fresh.arena) state.arena = fresh.arena
 		})
 		if (!nsSpawnCurrentWave(state, level, altar)) nsRaidVictory(state)
 		else if (state.raid.state === 'active') nsMarkWaveSeen(state, level, altar)
