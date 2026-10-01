@@ -675,7 +675,8 @@ ServerEvents.commandRegistry(event => {
 					nsSaveState(st)
 				}
 				NSG.nsServer.runCommandSilent('execute in ' + NS_ARENA_DIM + ' run tp ' + name + ' 0 65 2 0 0')
-				player.tell(Text.gold('[Ночная смена] Арена: алтарь впереди, орда выйдет из дальнего конца коридора. ').append(Text.gray('Всё, что сломается в набеге, восстановится. Назад — /arena ещё раз (или кнопка «На базу» в меню алтаря)')))
+				var thNow = NSG.nsArenaThemeByKey((st.arena && st.arena.theme) || 'shaft')
+				player.tell(Text.gold('[Ночная смена] Арена «' + thNow.name + '»: алтарь впереди, орда выйдет из ворот в дальнем конце. ').append(Text.gray('Тема меняется по номеру волны набега. Всё, что сломается, восстановится. Назад — /arena ещё раз (или «На базу» в меню алтаря)')))
 				return 1
 			})
 			.then(
