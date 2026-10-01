@@ -600,6 +600,12 @@ function nsStartRaid(kind, altarId, difficulty) {
 		spawnRetries: 0,
 		paused: false,
 	}
+	// условия смены — на весь набег такими, какими были на старте (малый набег — без условий)
+	if (kind !== 'minor' && state.mutators) {
+		var mut = {}
+		for (var mk in state.mutators) if (state.mutators[mk]) mut[mk] = true
+		state.raid.mut = mut
+	}
 	nsSaveState(state)
 
 	// Ночь и гроза. Время только вперёд до ближайшей ночи (не откатываем дни —
@@ -628,6 +634,10 @@ function nsStartRaid(kind, altarId, difficulty) {
 		nsTry('тема арены', function () {
 			nsArenaOnRaidStart(altarId, d)
 		})
+	}
+	if (state.raid.mut && typeof nsMutNames === 'function') {
+		var mn = nsMutNames(state.raid.mut)
+		if (mn.length) nsTellAll(Text.red('[Ночная смена] Условия смены: ' + mn.join(', ')).append(Text.gold(' — добыча +' + Math.round(nsMutBonus(state.raid.mut) * 100) + ' %')))
 	}
 	nsInviteToAltar(nsFindAltar(state, altarId), kind)
 	nsClearNaturalMonsters(nsFindAltar(state, altarId), 48)
@@ -677,7 +687,11 @@ function nsReturnAll(state) {
 }
 
 function nsHordeCfg(state) {
-	return state.raid.kind === 'minor' ? nsMinorHorde(state.phase) : nsChallengeHorde(state.raid.difficulty || 1)
+	if (state.raid.kind === 'minor') return nsMinorHorde(state.phase)
+	var d = state.raid.difficulty || 1
+	var cfg = nsChallengeHorde(d)
+	// «Условия смены» (12_mutators.js): двойная орда, стеклянная пушка, ночь боссов…
+	return typeof nsApplyMutators === 'function' ? nsApplyMutators(cfg, state, d) : cfg
 }
 
 function nsWaveList(state, hordeCfg) {
@@ -889,7 +903,7 @@ function nsRaidVictory(state) {
 		})
 		NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete master @a')
 		nsTry('награды за волну ' + d, function () {
-			nsRaidRewards(altar, d, nsRaidRolls(d), first, raid.present, nsChallengeHorde(d).waves.length, atAltar)
+			nsRaidRewards(altar, d, nsRaidRolls(d), first, raid.present, nsChallengeHorde(d).waves.length, atAltar, raid.mut)
 		})
 		if (first)
 			nsTry('квесты волны ' + d, function () {
@@ -1145,8 +1159,11 @@ function nsPick(list) {
 // Добыча в конце набега: каждому защитнику rolls бросков обычной таблицы уровня level,
 // у каждого броска шанс на редкое; раз за набег — шанс на легендарное. probeLevel > 0 —
 // первое прохождение: зонд жилы этого уровня одному из защитников.
-function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
+function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut) {
 	var L = NSG.NIGHTSHIFT_LOOT
+	// «Условия смены»: бросков ×(1 + бонус/2), артефакт смены — лишние броски (12_mutators.js)
+	var mutBonus = typeof nsMutBonus === 'function' ? nsMutBonus(mut) : 0
+	if (mutBonus > 0) rolls = Math.round(rolls * (1 + mutBonus / 2))
 	var tier = nsWaveTier(d)
 	var k = nsWaveLate(d) // «поздняя» волна: с 70-й
 	var artChance = Math.min(1, (L.artifactChance[tier] || 0) + 0.01 * k)
@@ -1165,6 +1182,18 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 	console.info('[nightshift] добыча волны ' + d + ' (нужно ' + need + ' подволн): ' + (logLine.length ? logLine.join('; ') : 'у алтаря никого') + '; присутствие: ' + JSON.stringify(present || {}))
 	var pool = []
 	for (var q = 0; k > 0 && q < L.nightmare.length; q++) if (L.nightmare[q].minK <= k) pool.push(L.nightmare[q].e)
+	// трофеи боссов (09_ns_artifacts.js): индексы защитников — Java-объекты через === в Rhino сравнивать ненадёжно
+	var nsCtx = nsArtifactCtx(altar, d, ps.length)
+	var nsIdx = []
+	for (var ti = 0; ti < ps.length; ti++) nsIdx.push(ti)
+	var nsTrophies = []
+	if (typeof NSG.nsNsBossTrophyRoll === 'function') {
+		try {
+			nsTrophies = NSG.nsNsBossTrophyRoll(d, first, nsCtx.bosses, nsIdx) || []
+		} catch (e) {
+			console.error('[nightshift] трофеи боссов: ' + e)
+		}
+	}
 	for (var i = 0; i < ps.length; i++) {
 		var got = []
 		for (var r = 0; r < rolls; r++) {
@@ -1176,7 +1205,9 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 		// артефакты Ночной смены (7 уровней редкости) — свой бросок каждому защитнику
 		if (typeof NSG.nsNsArtifactRoll === 'function') {
 			try {
-				got = got.concat(NSG.nsNsArtifactRoll(d, first, nsArtifactCtx(altar, d, ps.length)) || [])
+				got = got.concat(NSG.nsNsArtifactRoll(d, first, nsCtx) || [])
+				var extra = typeof nsMutExtraArtifactRolls === 'function' ? nsMutExtraArtifactRolls(mutBonus) : 0
+				for (var xr = 0; xr < extra; xr++) got = got.concat(NSG.nsNsArtifactRoll(d, false, nsCtx) || [])
 			} catch (e) {
 				console.error('[nightshift] бросок артефакта смены: ' + e)
 			}
@@ -1188,6 +1219,7 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 			var ms = NSG.NS_WAVE_MILESTONES[d]
 			if (ms) for (var mi = 0; mi < ms.items.length; mi++) got.push(ms.items[mi])
 		}
+		for (var tq = 0; tq < nsTrophies.length; tq++) if (nsTrophies[tq].player === i) got.push(nsTrophies[tq].line)
 		nsGiveLoot(ps[i], got)
 	}
 	// веха: объявление всем

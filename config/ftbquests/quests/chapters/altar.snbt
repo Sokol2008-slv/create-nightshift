@@ -326,5 +326,17 @@
 			x: 0.00d
 			y: 8.00d
 		}
+		{
+			dependencies: ["084D8406F225C967"]
+			icon: { id: "minecraft:redstone_torch" }
+			id: "65CB6AE9800DF7D3"
+			optional: true
+			rewards: [{ id: "023D36A99651F63F", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "15A87EDCE7FA4506", type: "checkmark" }]
+			x: 4.00d
+			y: 6.00d
+		}
 	]
 }

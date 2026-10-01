@@ -56,7 +56,8 @@ function nsUpsertAltar(state, block) {
 
 // Состав орды сложности d под текущую команду — строки для подсказки меню
 function nsForecastLines(d) {
-	var horde = nsChallengeHorde(d)
+	var st0 = nsGetState()
+	var horde = typeof nsApplyMutators === 'function' ? nsApplyMutators(nsChallengeHorde(d), st0, d) : nsChallengeHorde(d)
 	var hpTable = NSG.NIGHTSHIFT_MOB_HP
 	var scale = nsPartyScale() * (horde.mult || 1)
 	var lines = []
@@ -81,6 +82,8 @@ function nsForecastLines(d) {
 	if (buffs.length) lines.push('Мобы усилены: ' + buffs.join(', '))
 	if (horde.scale && (horde.scale.hp > 0 || horde.scale.damage > 0)) lines.push('Мобы крепче: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%' + (horde.scale.speed > 0 ? ', скорость +' + Math.round(horde.scale.speed * 100) + '%' : '') + (horde.scale.size > 1 ? ', крупнее ×' + horde.scale.size.toFixed(2) : ''))
 	if (horde.scale) total = Math.round(total * (1 + horde.scale.hp))
+	var mn = typeof nsMutNames === 'function' ? nsMutNames(nsMutSet(st0)) : []
+	if (mn.length) lines.push('Условия смены: ' + mn.join(', ') + ' (добыча +' + Math.round(nsMutBonus(nsMutSet(st0)) * 100) + ' %)')
 	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
 	lines.push('Итого ' + nsPlural(horde.waves.length, 'подволна', 'подволны', 'подволн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
 	return lines
@@ -114,7 +117,7 @@ function nsDifficultyHover(state, d) {
 	t = t.append(Text.gray('\nРедкое — ' + Math.round(L.rareChance * 100) + '% за бросок, артефакт — ' + art + '%'))
 	if (typeof NSG.nsNsArtifactHoverText === 'function') {
 		try {
-			t = t.append(Text.lightPurple('\n' + NSG.nsNsArtifactHoverText(d, d > (state.phase || 0))))
+			t = t.append(Text.lightPurple('\n' + NSG.nsNsArtifactHoverText(d, d > (state.phase || 0), { arena: false, theme: null, bosses: nsArtifactCtx(null, d, 1).bosses, players: 1 })))
 		} catch (e) {}
 	}
 	if (k > 0) t = t.append(Text.lightPurple('\nС 70-й волны: ' + nsPlural(1 + Math.floor(k / 6), 'особый бросок', 'особых броска', 'особых бросков') + ' — череп визера, незеритовая броня и оружие с чарами, элитры, маяк'))
@@ -195,6 +198,12 @@ function nsShowAltarMenu(player, state, from) {
 	if (next !== null) player.tell(Text.lightPurple('Ближайшая веха — волна ' + next + ': ').append(Text.white(NSG.NS_WAVE_MILESTONES[next].text)))
 	player.tell(Text.gray('Пройдено волн: ' + (best > NSG.NS_WAVES_MAX ? NSG.NS_WAVES_MAX + ' + Бесконечность ' + (best - NSG.NS_WAVES_MAX) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
 	player.tell(Text.gray('Арена для боёв без риска для базы: ').append(nsArenaButton(player)))
+	// «Условия смены» (12_mutators.js) и переплавка артефактов (09_ns_artifacts.js)
+	if (typeof nsMutatorsRow === 'function') player.tell(nsMutatorsRow(state))
+	try {
+		var rf = NSG.nsNsArtifactReforgeText && NSG.nsNsArtifactReforgeText(player)
+		if (rf) player.tell(Text.gray('Артефакты: ').append(rf))
+	} catch (e) {}
 	var altar = nsNearestAltar(state, player.createCommandSourceStack())
 	var ns = altar && altar.spawns ? altar.spawns.length : 0
 	player.tell(Text.gray(ns > 0 ? 'Точек спавна орды: ' + ns + ' (видно с разметчиком; /nightshift spawn list)' : 'Орда приходит кольцом. Свои точки спавна: встань там и ').append(ns > 0 ? Text.of('') : Text.yellow('/nightshift spawn add')))

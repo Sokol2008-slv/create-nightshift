@@ -5217,7 +5217,7 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/config/ftbquests/quests/chapters/altar.snbt"
-hash = "4849bfe9c9e08f9b2246f7f7c7c0bf963a6af936aa7eb22ce677b84e264dabf9"
+hash = "25206eede9a5674d59fe2a35aadcae166fb427471dd5030709e8d4d2bac4d3f3"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/config/ftbquests/quests/chapters/artifacts.snbt"
@@ -5289,11 +5289,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/config/ftbquests/quests/lang/en_us.snbt"
-hash = "69bebb02fd993c79182d4fdde1f581303107ef256061ef297ed35573023fa6d3"
+hash = "70c055c697dc18219b5174973fe63da42d64649671cece324ee3814e8473812b"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "69bebb02fd993c79182d4fdde1f581303107ef256061ef297ed35573023fa6d3"
+hash = "70c055c697dc18219b5174973fe63da42d64649671cece324ee3814e8473812b"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/config/iris.properties"
@@ -5317,7 +5317,7 @@ hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/index.toml"
-hash = "c42d1e0743d27879906d67cf6de884d96f98cb89f39bb7aa979a9a417c502f36"
+hash = "30eb47f2a920a4127bfdcb1d97c44480196270abdb8745beacbb82c16f95c5a7"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/assets/arphex/lang/ru_ru.json"
@@ -5429,11 +5429,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/assets/nightshift/lang/en_us.json"
-hash = "bc49e7dadb92f5ce60726e5cda74799b483c006301b3a71dec1a5a678d8db0d5"
+hash = "4fdcc67c3d70607fac292a9a204b6f2707da0d9e4fcb588eaf30d5121825625a"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "213e47f4c2ee8cfd98db8d4bfb159cdfca42d1451e41b58449fecab35854868e"
+hash = "54939afc4926cabb87479b677e6631a2dd38cc68cd7304f5a444bcb0f6b92583"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -6360,6 +6360,10 @@ file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/data/nightshift/recipe/
 hash = "1f99f2be2d11f222ac9ec0be109f752761931190d795db93eb24a991dac50426"
 
 [[files]]
+file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/data/nightshift/tags/block/arena_decor.json"
+hash = "710192a271bc55661d43885f8265752fe3d3c84743ff20164f395f39b0999b92"
+
+[[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/data/nightshift/tags/block/axiomativ_deep_stone_replaceable.json"
 hash = "bbb0316d5df4d9d97fd8ffb490d97689795d8c5667cd0f8775ea9f823a6b845f"
 
@@ -6633,7 +6637,7 @@ hash = "0d4f00d76b85fe23db56b629019ebd7d2932168784f5cb70445111ea22c9e8bc"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "789970a97decd61970849e1e9ceb415a89c4ecc97495ee03fcd17ed1dda8d319"
+hash = "9f5825ba9dfa55c794af2f9502e0bfcfe1019ebac926804cb6b6292899829f18"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/server_scripts/raids/50_nightshift_admin.js"
@@ -6645,7 +6649,7 @@ hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/server_scripts/raids/70_nightshift_arena.js"
-hash = "8f745c164092696440084f88e2dd22e5230ea4438f2fed396f9e32724724f63f"
+hash = "d8ff7fb6bb0c49a615952e1a06bf2639fd1ea66e38b0b5f9ec28dabfdf9b992c"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/kubejs/server_scripts/sanity/10_sedative.js"
@@ -8030,7 +8034,7 @@ hash = "348fa3c01ee08040a518f98b13c7e937877e3b1a7327ea6c09ca10923a39440e"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/pack.toml"
-hash = "540ccd1adb515a3ef8e8de398edce5d814a23c8a5be617a511b85fb65800b2b7"
+hash = "6104784e1505f530bcc2abc5e0df7a6e658b229b30c60f9b08357286519b307b"
 
 [[files]]
 file = ".claude/worktrees/agent-ac0db66661f6c163b/shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
@@ -8061,7 +8065,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "aa0c03328a45c5333cc55f5ea7c1cdd66c43639c3ed7cf3ed295f300bffd4ccd"
+hash = "94d51dfb6ab4f2f4a7ad1de809bd8fdd4c959c045628d88d2891cb23926ff15e"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -8097,11 +8101,11 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "25206eede9a5674d59fe2a35aadcae166fb427471dd5030709e8d4d2bac4d3f3"
+hash = "5cd4e3e2148adf1358bdca9ac84b6549dab0f5a58f133039c5a4f53a755332de"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/artifacts.snbt"
-hash = "9a8c2782c0da4efa8bb9a7a4dadebc8aedd7b4201df31efd8967699513314af2"
+hash = "7a8860565ddb8c8be22215d0369213d2981ed3b0a759927d644427cb6ae8617b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
@@ -8169,11 +8173,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "70c055c697dc18219b5174973fe63da42d64649671cece324ee3814e8473812b"
+hash = "37d6a7517e404e6183ec39d49fe7887d446b778412074adc7930a18c4648bd03"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "70c055c697dc18219b5174973fe63da42d64649671cece324ee3814e8473812b"
+hash = "37d6a7517e404e6183ec39d49fe7887d446b778412074adc7930a18c4648bd03"
 
 [[files]]
 file = "config/iris.properties"
@@ -8305,11 +8309,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "63f72b35663f9a754b8d3c9f593ea92c31b294ed42ef1a897cea6d3fe30b80b6"
+hash = "4fdcc67c3d70607fac292a9a204b6f2707da0d9e4fcb588eaf30d5121825625a"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "e53389a616076a6a4666ffbc20ae4b62cb5c8b15b474357c460d5dbfa3ba2342"
+hash = "54939afc4926cabb87479b677e6631a2dd38cc68cd7304f5a444bcb0f6b92583"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -8432,6 +8436,10 @@ file = "kubejs/assets/nightshift/textures/item/alloy_staff.png"
 hash = "8799fd1e38f8b4837cd5caffc650a934b79577a3936269adebca75fd7a3a3d42"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/art_abyss_star.png"
+hash = "b583d0fb4f3e43d0c05171bbd8d2449a41a760f37df3a488e6c42ff244bb6880"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/art_badge.png"
 hash = "f71ecf4cbc37c4b62bc8f03ff4d33b47a2f96a2e48d55e9de76f5cd0524a3807"
 
@@ -8444,12 +8452,36 @@ file = "kubejs/assets/nightshift/textures/item/art_butcher_glove.png"
 hash = "4036d742f5034caded5345d96845948ca86df7098c35858770fb977473794a22"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/art_canyon_gland.png"
+hash = "11f7d15c1b47b3d27eb6546fa300630cb17de3e1995d5d22c315282fff1bbe8f"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_canyon_silk.png"
+hash = "a4ce2ed71d9c5d12f03171a443193c6234d60915acf068877b3d2c45e922fc3c"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/art_collar.png"
 hash = "731e76479ea81d3854ae294c1b21452adbfe99252df9badacfc93d29088283bf"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/art_ender_feather.png"
+hash = "fdf1a1176e73e2ae98ef0f10299b56ca7b82c9926f908244a8496d80e6a0df22"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_ender_void.png"
+hash = "60f71f285d975f5be1a951ff8ecd78ff3169f58e3ca9d70fc900e29d503dd8ef"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/art_fang.png"
 hash = "23ee4c3a826d447b2b669bcd20266eb6547da8c29637dcdfcbca9aadb78305ef"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_frost_heart.png"
+hash = "0e83b15287e76ea52fbb84d8e7b5787048036a2ec7937df2876bc8c959c58cd8"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_frost_shard.png"
+hash = "71e813b904fd86ac0c46c8843c81163649a7a0e9e3ed9ba9c2af8863d2863d7b"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/art_halo.png"
@@ -8462,6 +8494,22 @@ hash = "876339ddea7886d4db83a519233e95516e56a3d751f2587977926b7e025b2c5a"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/art_hourglass.png"
 hash = "5363c15747f311898c155cfa33efe186b5a020b03d7bc409abe0684d60d3773a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_inferno_ash.png"
+hash = "be21446572242bdff39fcb914aefa3b21980cd02200b1fb1d20e4779dff8526e"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_inferno_crown.png"
+hash = "4181942fe885a42173d792270893f02e6ea9aaf718f8f7500f5cae0c7c71e91a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_nightmare_claw.png"
+hash = "f43ff6e916dd4ef1da06828632ac1bcf7f01515cb9aabd6dc3f0bcf55c06c9ce"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_nightmare_lantern.png"
+hash = "1d5a748c32d7aeab8c2e7241795ac2ad560dd0f3396f06742147041fb19c3e0d"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/art_patch.png"
@@ -8484,6 +8532,14 @@ file = "kubejs/assets/nightshift/textures/item/art_second_wind.png"
 hash = "fd69e6c9e0a8c6ba9dfd8c4c0f9c552b099e4775655534172db62b0ec348d23f"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/art_shaft_helmet.png"
+hash = "5ec45c856d3ce7daca90515aa50cda0bdaa1c2c1fd39fdcbc481030f4b130ba7"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_shaft_mace.png"
+hash = "52c99f92449020dd8826e5f2f1ba2a07742b5bd2471895b8abc1d49d5c5c2314"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/art_stone_heart.png"
 hash = "7810a432dd73f79567f02a63676952e3462c6226148734ba73c7d3a65b6b97ff"
 
@@ -8494,6 +8550,62 @@ hash = "fbe86b12da2d415c7ecbd98466dbd0b7f78fba9c28463ba41cd957bcdeab256b"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/art_titan_blood.png"
 hash = "91ac99070a6beb42904cb7d767a1da405173b345dd95211ceaced4123cd64819"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_amethyst.png"
+hash = "cfd9868c1c1d6b6b935111a50f3d633430d2ac0f890506e91807cb7a67e0c072"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_diabolos.png"
+hash = "266e1a8879c4f12dc2df9c7a43e2dfb75a1b28ddb22df965d9556438265b7929"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_gladiator.png"
+hash = "4039a6288bd639ede008e7923e211d5c5bfe54c88530c1adbdb853d2eaa213b0"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_golem.png"
+hash = "dbd503d9e713084dfd5ea8407f3018990520a62c0d97b9b745d48f07f97f2057"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_guardian.png"
+hash = "6b2e40a1c191894784119b9a07dbc693ea919874450a006c35c3cc9968e18d02"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_ignis.png"
+hash = "22b7e099d8a5df05975b0e430009cba5011a880d96114c84eb91bb794fca4bcc"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_maledictus.png"
+hash = "8d7e24903a1c7a999e86edb2a0f3648d881e64667e64b602f9bb7064a9cd0df4"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_matriarch.png"
+hash = "4e0c4d6a199912e45ae95adc710544c940b3e5644b0d8dd61ef82a894bcdaf03"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_monstrosity.png"
+hash = "c38a4bb3820b96c8c63964caf0310f90f4a194bead6bee91d81b2448f3ad8fa8"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_remnant.png"
+hash = "e4614bbf8d55c8d4816eff2e739aefa0e630700241c379f9fa3b961bc5b39480"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_scorpioid.png"
+hash = "62005cf250dbef11357069dc976a7a7cde9a9e4d5c406b4c5cc96f82a652e5de"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_termite.png"
+hash = "5f376ddc62630c33581e0f420b1ce97acfa9821be7bf5e122d978d2f9a90256d"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_trisector.png"
+hash = "d6f246525fdfcd461a008529202da5ac86d47cbae62867cd8c7716ecefc69a63"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/art_tr_voidlasher.png"
+hash = "c43dae979484a4a17e182d07028d4cc2ed57780d5125c3a768f2330e9f56ea7b"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/art_vakhta_heart.png"
@@ -8737,7 +8849,7 @@ hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
 
 [[files]]
 file = "kubejs/client_scripts/ns_artifacts_tooltips.js"
-hash = "deefcaf3f6b1bb0710d978542681993be3327f3802641d151f56c97e1935e75a"
+hash = "5a4a298a9f4501fe0919a87f6a9a0b742a97fec58611f1e2fa57ddfe839d378e"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_jei.js"
@@ -8753,7 +8865,7 @@ hash = "21b1aa77bebcc5a4557c4f90ee7a6bf80a049fd20fd7508c427a9f3f549ed6e4"
 
 [[files]]
 file = "kubejs/data/curios/tags/item/relic.json"
-hash = "720a9de3c7c2f795d1e644d9e4d6c68ae74f049a73693c2746cb0da6e80c3080"
+hash = "f43d82c34fd88ca71b9335e40ef5c560766e3a44f0ff181c6bc6eeef9b5e0976"
 
 [[files]]
 file = "kubejs/data/end_watchers/neoforge/biome_modifier/end_watcher_standing_biome_modifier.json"
@@ -9389,11 +9501,15 @@ hash = "24e06bfbb41b824ca15feaf4082da67041ca36de79b1b622fa4c610ee001b0fa"
 
 [[files]]
 file = "kubejs/server_scripts/raids/09_ns_artifacts.js"
-hash = "00a8ec45d41b2f7597628149391cd54ac5e7beda0631fa760b556a9bebf7c882"
+hash = "db0827f4e34bf04ded6d195b07bc7f55f333fc58663b6988d9d494af1069ba50"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
 hash = "bbc48144858c51d681aee3e0566954e1117eb357cd54df7f5409247896057994"
+
+[[files]]
+file = "kubejs/server_scripts/raids/12_mutators.js"
+hash = "4a909fc9c2e71cdd59e7343438920f4f387acf52e9515b6c8d938e282a894804"
 
 [[files]]
 file = "kubejs/server_scripts/raids/20_nightshift_zones.js"
@@ -9401,11 +9517,11 @@ hash = "248d3c32eb8356bd181bafe9db9534a2e332cf1d4f08e25b1d2a16ef7ffa071a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "0d4f00d76b85fe23db56b629019ebd7d2932168784f5cb70445111ea22c9e8bc"
+hash = "6e3e5ab85f4a4adf8270bdddaac65c27c14ab2c68bd8d6912f453ba9dd541b74"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "9f5825ba9dfa55c794af2f9502e0bfcfe1019ebac926804cb6b6292899829f18"
+hash = "48ec92c39ca51cbc7f38e02689dad50c90892fcce241852beff3ae5990b25f32"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
@@ -9537,7 +9653,7 @@ hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/30_ns_artifacts.js"
-hash = "97c3d9ce4c7b37cd38f3a97d5f7002e827536cf734904f9d99e7cc162dcfdb53"
+hash = "9daca33b9ef3cd642cb754c93bba976d5c3623a56c9564feb41c63e0cd769ce9"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/60_staffs.js"

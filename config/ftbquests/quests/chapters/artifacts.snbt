@@ -127,5 +127,53 @@
 			x: 15.40d
 			y: 0.00d
 		}
+		{
+			dependencies: ["4258DA3E82C76B90"]
+			icon: { id: "minecraft:blast_furnace" }
+			id: "741AD72C451408C4"
+			optional: true
+			rewards: [{ id: "662FC557645CE213", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "74B7DDB06DAFE309", type: "checkmark" }]
+			x: 2.20d
+			y: 2.20d
+		}
+		{
+			dependencies: ["2888590EA4BC7883"]
+			icon: { id: "nightshift:art_frost_shard" }
+			id: "7A54A188DFC80DA9"
+			optional: true
+			rewards: [{ id: "1F03C64522602669", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3008FF5CDDA3CC61", type: "checkmark" }]
+			x: 8.80d
+			y: -2.20d
+		}
+		{
+			dependencies: ["6A79D752E0C6BF84"]
+			icon: { id: "nightshift:art_tr_matriarch" }
+			id: "3F54E637A97857D1"
+			optional: true
+			rewards: [{ id: "15762D5833746B7D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "02743379F0E181E4", type: "checkmark" }]
+			x: 11.00d
+			y: 2.20d
+		}
+		{
+			dependencies: ["6C614AF71546A618"]
+			icon: { id: "nightshift:art_tr_ignis" }
+			id: "6FE93BB8113FA436"
+			optional: true
+			rewards: [{ id: "4BA045036A10DDC9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "452C86894DDF6DA0", type: "checkmark" }]
+			x: 13.20d
+			y: 2.20d
+		}
 	]
 }
