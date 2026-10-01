@@ -234,11 +234,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "13151ca89bed855fb26d16f4491ae3eb58082c5bb7772953db9cbe91c40ae1b9"
+hash = "72e7cd2f68f2f209a9c812b5b1c5b6e168c037578bf76ed044875a19d082a337"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "441571672977f914109683e898450218dcc6eeb5190d73c53b9d121c5e7ae5ef"
+hash = "88efb8023063111d28a4200a955293cf60f8612b0dd024764a66b027e8368ceb"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -357,6 +357,14 @@ file = "kubejs/assets/nightshift/textures/item/alloy_leggings.png"
 hash = "2c1dd738252f1a52510ebe1583a4b05ece20862dd9dfb83ff52a9d119761e838"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/alloy_staff.png"
+hash = "8799fd1e38f8b4837cd5caffc650a934b79577a3936269adebca75fd7a3a3d42"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/balance_staff.png"
+hash = "ab09c20452958f0657016ae0e79e0049db23f858f6ca7a7cab3badd470e9971b"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/electric_copper.png"
 hash = "4377df0093d7a1a6b3f4749352f3c8cd300fca23c9b2a7de22adae6c530c11b0"
 
@@ -367,6 +375,10 @@ hash = "994d67d72d2acb688269b7b3e5d4fd8c50c034ad6b9177cb5fad848f85123a25"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/lightning_charge.png"
 hash = "84494a86cfb1e43ab4383ed3da911017345fbc03042d8a384d2f0b604270634e"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/lightning_staff.png"
+hash = "50adf0455870e67b87f7f8118a4aebff9a216d2970357f281f4141f0a74c3703"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/navigation_core.png"
@@ -525,6 +537,10 @@ file = "kubejs/client_scripts/axiomativ_jei.js"
 hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
 
 [[files]]
+file = "kubejs/client_scripts/magic_tooltips.js"
+hash = "1dcda2e8c88ab0c33e0ea860b97eb2324acbb974dae93508200e51b38bc8238c"
+
+[[files]]
 file = "kubejs/client_scripts/nightshift_pin_key.js"
 hash = "46fd3d0e26b09598d76dbc879ba6349d01289275499f5e563ccbdd0cad49010f"
 
@@ -643,6 +659,14 @@ hash = "1589ecf44ccc41cf324c98cf5a83e0609de0343a75edef4a827773843d78d637"
 [[files]]
 file = "kubejs/data/nightshift/dimension_type/yin_yang.json"
 hash = "1589ecf44ccc41cf324c98cf5a83e0609de0343a75edef4a827773843d78d637"
+
+[[files]]
+file = "kubejs/data/nightshift/loot_table/magic/wave_scroll.json"
+hash = "a49afd753148057bf3f46b580f21f947f03872e8b3e89ee01ca21b05debb2517"
+
+[[files]]
+file = "kubejs/data/nightshift/loot_table/magic/wave_scroll_strong.json"
+hash = "9c8519182992c100e522594f505abffb180d0de67cb2162e5c6989344a2065cc"
 
 [[files]]
 file = "kubejs/data/nightshift/northstar/planet/axiomativ.json"
@@ -1149,6 +1173,10 @@ file = "kubejs/server_scripts/raids/07_raid_no_infighting.js"
 hash = "d41fffc8d9e43d18e430504c4764abfb80e543689fcd9e4b03f3e33704591f67"
 
 [[files]]
+file = "kubejs/server_scripts/raids/08_magic_loot.js"
+hash = "c20b16fa510ae6c818fb38b73bd59029472d35bbc52bf6858d09435dad1605c6"
+
+[[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
 hash = "b9e409276f91b29a248ca3201bd0b7dfa4357cf7e9d6b13f239a910abe13b5f3"
 
@@ -1249,6 +1277,14 @@ file = "kubejs/server_scripts/vahta/55_tactical_nuke.js"
 hash = "660f51e23bc3fc03e3897e0263c63dd901488ec9894a9fa98ba13f2f1351f801"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/60_magic.js"
+hash = "c3b1fc699988b943ad4af2e1a00addf5bb9eb04a5b374619a53138fe23ec56d7"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/60_staffs.js"
+hash = "4f5a970a7bacbee377ce7311b0aa5cedae2c794df2cda43c9ed8e517e1b6827e"
+
+[[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
 hash = "ddbccf8a914a9f993a3f1cf83e116ef2f9f84f99046a075a53635ee109d8f9d5"
 
@@ -1275,6 +1311,10 @@ hash = "f5383205478fe23035cce0ffe42d19a6463b1ddae934503a0d245a4efec5165b"
 [[files]]
 file = "kubejs/startup_scripts/vahta/25_alloy_armor.js"
 hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
+
+[[files]]
+file = "kubejs/startup_scripts/vahta/60_staffs.js"
+hash = "a01377deb8fd5a08da0d21e49cbb7b0adce4b77b2006f3c8018f4ff620f3d13e"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -2018,6 +2058,16 @@ metafile = true
 [[files]]
 file = "mods/iris.pw.toml"
 hash = "db1c1e6382878b78e994dba1b9026935f8d1c5ca685c89d2437858e0a0dcab58"
+metafile = true
+
+[[files]]
+file = "mods/irons-lib.pw.toml"
+hash = "93f7a09e0d9a05c31b55bb9725545c49dc68067556a98d470e4f405bdbf3b25c"
+metafile = true
+
+[[files]]
+file = "mods/irons-spells-n-spellbooks.pw.toml"
+hash = "4623bbc102dd3b7648a96569a1ab49b868774d46355b305ac40c4c79ad1c74e2"
 metafile = true
 
 [[files]]
