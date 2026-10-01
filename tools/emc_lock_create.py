@@ -33,6 +33,12 @@ MANUAL_ZERO += ['kubejs:axiomite_ingot', 'kubejs:stabilite_ingot', 'kubejs:raw_a
 MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist', 'nightshift:module_sprint',
                 'nightshift:module_jump_springs', 'nightshift:module_armor_plate', 'nightshift:module_night_vision',
                 'nightshift:incomplete_armor_module', 'axiomativ:energy_shield_mk1', 'axiomativ:energy_shield_mk2']
+# 01.10: артефакты смены (tools/gen_ns_artifacts.py) — только из набегов, ни купить, ни продать
+MANUAL_ZERO += ['nightshift:art_patch', 'nightshift:art_badge', 'nightshift:art_thermos', 'nightshift:art_buckle',
+                'nightshift:art_qc_stripe', 'nightshift:art_watch_charm', 'nightshift:art_fang', 'nightshift:art_pauldron',
+                'nightshift:art_collar', 'nightshift:art_stone_heart', 'nightshift:art_rosary', 'nightshift:art_butcher_glove',
+                'nightshift:art_titan_blood', 'nightshift:art_visor', 'nightshift:art_second_wind', 'nightshift:art_hourglass',
+                'nightshift:art_horde_heart', 'nightshift:art_vakhta_heart', 'nightshift:art_halo']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')
