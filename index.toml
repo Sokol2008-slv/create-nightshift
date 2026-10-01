@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "c19210656afd21c9b0ad9f462c3da8536cb6cd2040a582cbb2a905556af1597e"
+hash = "43a64b29025c92c6d32fe7baa00b3f9df3495ec9b4d9b62581029af47716e64d"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "c19210656afd21c9b0ad9f462c3da8536cb6cd2040a582cbb2a905556af1597e"
+hash = "43a64b29025c92c6d32fe7baa00b3f9df3495ec9b4d9b62581029af47716e64d"
 
 [[files]]
 file = "config/iris.properties"
