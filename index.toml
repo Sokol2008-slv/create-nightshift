@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "bace0d8e80b81bdd27e28bfb6c20148c8e35cf8b955a9aacb23217f00e0c4024"
+hash = "61f21d77f5236878594c4270d2b870b95f96588cf2c2bd57c367bc8113db6555"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -234,11 +234,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "13151ca89bed855fb26d16f4491ae3eb58082c5bb7772953db9cbe91c40ae1b9"
+hash = "0a9374549c7973de6cc80a76b1ff54e68bbb815b6de2db18b9e3913ca35ccb14"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "441571672977f914109683e898450218dcc6eeb5190d73c53b9d121c5e7ae5ef"
+hash = "07ec8d29b589f57d78d07e90f0646e9a8a6d9a267cb01a2f9be6a509667ba20b"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -361,12 +361,40 @@ file = "kubejs/assets/nightshift/textures/item/electric_copper.png"
 hash = "4377df0093d7a1a6b3f4749352f3c8cd300fca23c9b2a7de22adae6c530c11b0"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/incomplete_armor_module.png"
+hash = "e2d8129684b3cc41da77c21aee562eabea438279dcc890e9de25417cf82901db"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/life_tonic.png"
 hash = "994d67d72d2acb688269b7b3e5d4fd8c50c034ad6b9177cb5fad848f85123a25"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/lightning_charge.png"
 hash = "84494a86cfb1e43ab4383ed3da911017345fbc03042d8a384d2f0b604270634e"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/module_armor_plate.png"
+hash = "a4dd0bd49db62e3e9f30d988dcd6f12e7020f9dcb5e6374133acb2306e347e6e"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/module_jump_springs.png"
+hash = "ac7624944418a794dbcd982bf0b0d6da65ad9157eb3061a697e41c93e79a506a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/module_night_vision.png"
+hash = "00a0a88c1ccac1f5cdfb8eb3c510213bde59648e440b873ff686ede5b8b0bf8a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/module_spring_boots.png"
+hash = "baa4a83ea566fe51e49a3eaf32e25fa1870225c759ddd88b91a67e02baaf4ca4"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/module_sprint.png"
+hash = "e5ba7ad57204b79d870de4ab2aa08628bcb298f2da90ae776dca1bd02d15da12"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/module_step_assist.png"
+hash = "58d9ff8e22bc3800f0be7eaffb338ac2e0d3c0a36930bb20215a6362148db5fd"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/navigation_core.png"
@@ -521,8 +549,16 @@ file = "kubejs/assets/nightshift/textures/planet/yin_yang_sky.png"
 hash = "c891c2d978750a35e0524b17de8e19d6bbc625808127eec4f39c417fd578dede"
 
 [[files]]
+file = "kubejs/client_scripts/armor_modules_tooltips.js"
+hash = "d83b56129f3946c595492d7b1c46c326b68399756249dec452c848bee3d144f5"
+
+[[files]]
 file = "kubejs/client_scripts/axiomativ_jei.js"
 hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
+
+[[files]]
+file = "kubejs/client_scripts/cbc_firepower_jei.js"
+hash = "a7f19f7a9adfb24bc20ddbffec9b07b443f48e7e8a6fe4a591e1f99e12717852"
 
 [[files]]
 file = "kubejs/client_scripts/nightshift_pin_key.js"
@@ -1249,6 +1285,14 @@ file = "kubejs/server_scripts/vahta/55_tactical_nuke.js"
 hash = "660f51e23bc3fc03e3897e0263c63dd901488ec9894a9fa98ba13f2f1351f801"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/70_armor_modules.js"
+hash = "cabf7f0acb1ba802fc3d505ce229b0e92ada1e98f4f57a41fc601c8ea3b785af"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/72_cbc_firepower.js"
+hash = "c5a35bb5d9eccffd7bf64a5e7be1ca61f2738715b2b7a9e06feb364f5519d877"
+
+[[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
 hash = "ddbccf8a914a9f993a3f1cf83e116ef2f9f84f99046a075a53635ee109d8f9d5"
 
@@ -1275,6 +1319,10 @@ hash = "f5383205478fe23035cce0ffe42d19a6463b1ddae934503a0d245a4efec5165b"
 [[files]]
 file = "kubejs/startup_scripts/vahta/25_alloy_armor.js"
 hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
+
+[[files]]
+file = "kubejs/startup_scripts/vahta/70_armor_modules.js"
+hash = "8fb0a894f2a3d5985bcb7b88ddde25c1aecda62c67eb2a3c324e5de558971426"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1332,8 +1380,8 @@ hash = "e664b1048cba657fe755727f53376a06f0a9ef8c4096e1ebd24678f80d7c04cf"
 metafile = true
 
 [[files]]
-file = "mods/axiomativ-0.2.2.jar"
-hash = "12a665a4f4511e9de7070cf94edf9071be34f3a027064dba21b892786096fe6b"
+file = "mods/axiomativ-0.3.0.jar"
+hash = "075802df7146d2c771c867d244233f396669c4116f7c6da9f9fa6cd8c408ac6d"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
@@ -1388,6 +1436,11 @@ metafile = true
 [[files]]
 file = "mods/cave-dweller-reevolved.pw.toml"
 hash = "11974c0d81204d919175190916a2badb4aecb77a62be3f3201b5f7f6d1233db8"
+metafile = true
+
+[[files]]
+file = "mods/cbc-firepower-components.pw.toml"
+hash = "0f37995da3338120187c80351505d02ec7d6174a132a7e9c81fb8431b0484b2c"
 metafile = true
 
 [[files]]

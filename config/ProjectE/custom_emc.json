@@ -41152,6 +41152,122 @@
   {
    "id": "kubejs:dark_stabilite_ore",
    "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:autocannon_ammo_feed",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:automatic_cannon_controller",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:cannon_limiter",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:cannon_magazine_loader",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:carousel_ammunition_rack",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:compact_autocannon_mount",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:compact_cannon_mount",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_ammo_box",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_breech",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_he_round",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_round",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:ready_ammunition_compartment",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:spent_casing_collector",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_large_autocannon_barrel",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_large_autocannon_muzzle_brake",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_thick_large_autocannon_barrel",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_twin_large_autocannon_barrel",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_twin_large_autocannon_muzzle_brake",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:twin_large_autocannon_breech",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:vertical_compact_cannon_mount",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_spring_boots",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_step_assist",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_sprint",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_jump_springs",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_armor_plate",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_night_vision",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_armor_module",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_shield_mk1",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_shield_mk2",
+   "emc": 0
   }
  ]
 }

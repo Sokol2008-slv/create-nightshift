@@ -42,5 +42,18 @@
 	"item.nightshift.alloy_helmet": "Шлем из сплава",
 	"item.nightshift.alloy_chestplate": "Нагрудник из сплава",
 	"item.nightshift.alloy_leggings": "Поножи из сплава",
-	"item.nightshift.alloy_boots": "Ботинки из сплава"
+	"item.nightshift.alloy_boots": "Ботинки из сплава",
+	"item.nightshift.module_spring_boots": "Модуль «Пружинные ботинки»",
+	"item.nightshift.module_step_assist": "Модуль «Шаговый подъёмник»",
+	"item.nightshift.module_sprint": "Модуль «Ускоритель бега»",
+	"item.nightshift.module_jump_springs": "Модуль «Прыжковые пружины»",
+	"item.nightshift.module_armor_plate": "Модуль «Бронепластина»",
+	"item.nightshift.module_night_vision": "Модуль «Прибор ночного видения»",
+	"item.nightshift.incomplete_armor_module": "Заготовка модуля",
+	"item.nightshift.module_spring_boots.short": "Пружинные ботинки",
+	"item.nightshift.module_step_assist.short": "Шаговый подъёмник",
+	"item.nightshift.module_sprint.short": "Ускоритель бега",
+	"item.nightshift.module_jump_springs.short": "Прыжковые пружины",
+	"item.nightshift.module_armor_plate.short": "Бронепластина",
+	"item.nightshift.module_night_vision.short": "Прибор ночного видения"
 }

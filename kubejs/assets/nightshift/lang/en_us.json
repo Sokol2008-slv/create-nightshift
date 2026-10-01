@@ -42,5 +42,18 @@
 	"item.nightshift.alloy_helmet": "Alloy Helmet",
 	"item.nightshift.alloy_chestplate": "Alloy Chestplate",
 	"item.nightshift.alloy_leggings": "Alloy Leggings",
-	"item.nightshift.alloy_boots": "Alloy Boots"
+	"item.nightshift.alloy_boots": "Alloy Boots",
+	"item.nightshift.module_spring_boots": "Spring Boots Module",
+	"item.nightshift.module_step_assist": "Step Assist Module",
+	"item.nightshift.module_sprint": "Sprint Booster Module",
+	"item.nightshift.module_jump_springs": "Jump Springs Module",
+	"item.nightshift.module_armor_plate": "Armor Plate Module",
+	"item.nightshift.module_night_vision": "Night Vision Module",
+	"item.nightshift.incomplete_armor_module": "Incomplete Module",
+	"item.nightshift.module_spring_boots.short": "Spring Boots",
+	"item.nightshift.module_step_assist.short": "Step Assist",
+	"item.nightshift.module_sprint.short": "Sprint Booster",
+	"item.nightshift.module_jump_springs.short": "Jump Springs",
+	"item.nightshift.module_armor_plate.short": "Armor Plate",
+	"item.nightshift.module_night_vision.short": "Night Vision"
 }
