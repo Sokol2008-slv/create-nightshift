@@ -200,6 +200,7 @@ function nsShowAltarMenu(player, state, from) {
 	player.tell(Text.gray('Арена для боёв без риска для базы: ').append(nsArenaButton(player)))
 	// «Условия смены» (12_mutators.js) и переплавка артефактов (09_ns_artifacts.js)
 	if (typeof nsMutatorsRow === 'function') player.tell(nsMutatorsRow(state))
+	if (typeof nsContractsRows === 'function') player.tell(nsContractsRows(state))
 	try {
 		var rf = NSG.nsNsArtifactReforgeText && NSG.nsNsArtifactReforgeText(player)
 		if (rf) player.tell(Text.gray('Артефакты: ').append(rf))

@@ -909,6 +909,10 @@ function nsRaidVictory(state) {
 			nsTry('квесты волны ' + d, function () {
 				nsCompletePhaseQuests(null, d)
 			})
+		// контракты бригадира (14_contracts.js): волна, условие смены, арена, без смертей
+		nsTry('контракты', function () {
+			if (typeof nsContractsOnVictory === 'function') nsContractsOnVictory(d, raid, altar)
+		})
 	} else {
 		console.info('[nightshift] малый набег закончился, до алтаря дошли: ' + reached)
 		if (reached > 0) {

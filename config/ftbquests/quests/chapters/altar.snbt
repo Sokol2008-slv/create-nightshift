@@ -338,5 +338,17 @@
 			x: 4.00d
 			y: 6.00d
 		}
+		{
+			dependencies: ["65CB6AE9800DF7D3"]
+			icon: { id: "minecraft:writable_book" }
+			id: "23790F79B2B609BB"
+			optional: true
+			rewards: [{ id: "4F241A268F7F2D0A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "648109E4AA4BDEBB", type: "checkmark" }]
+			x: 6.00d
+			y: 6.00d
+		}
 	]
 }
