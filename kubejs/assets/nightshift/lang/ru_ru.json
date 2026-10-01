@@ -42,5 +42,8 @@
 	"item.nightshift.alloy_helmet": "Шлем из сплава",
 	"item.nightshift.alloy_chestplate": "Нагрудник из сплава",
 	"item.nightshift.alloy_leggings": "Поножи из сплава",
-	"item.nightshift.alloy_boots": "Ботинки из сплава"
+	"item.nightshift.alloy_boots": "Ботинки из сплава",
+	"item.nightshift.lightning_staff": "Посох молнии",
+	"item.nightshift.alloy_staff": "Посох сплава",
+	"item.nightshift.balance_staff": "Посох равновесия"
 }
