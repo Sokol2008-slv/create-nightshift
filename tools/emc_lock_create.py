@@ -19,7 +19,8 @@ import sys
 PACK = pathlib.Path(__file__).resolve().parent.parent
 CUSTOM = PACK / 'config' / 'ProjectE' / 'custom_emc.json'
 FAMILY_MODS = {'tfmg', 'railways', 'northstar', 'cbc_at', 'aeronautics', 'simulated', 'sable', 'copycats',
-               'dndecor', 'dndesires', 'garnished', 'rechiseledcreate', 'interiors'}
+               'dndecor', 'dndesires', 'garnished', 'rechiseledcreate', 'interiors',
+               'cbc_firepower_components'}  # 01.10: CBC Firepower Components — лафеты, подача, магазины
 RAW_RE = re.compile(r'(_ore$|^raw_|_raw_|:raw_)')
 # ручные нули вне семейства Create (генератор пересоздаёт все нулевые записи — эти добавляет всегда)
 MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart', 'nightshift:electric_copper']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
@@ -28,6 +29,10 @@ MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:nig
 MANUAL_ZERO += ['kubejs:axiomite_ingot', 'kubejs:stabilite_ingot', 'kubejs:raw_axiomite', 'kubejs:raw_light_stabilite',
                 'kubejs:raw_dark_stabilite', 'kubejs:crushed_raw_axiomite', 'kubejs:axiomite_ore', 'kubejs:deepslate_axiomite_ore',
                 'kubejs:light_stabilite_ore', 'kubejs:dark_stabilite_ore', 'nightshift:stabilite_pickaxe', 'nightshift:tactical_nuke']
+# 01.10: модули брони и энергощит — техника, только машинами
+MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist', 'nightshift:module_sprint',
+                'nightshift:module_jump_springs', 'nightshift:module_armor_plate', 'nightshift:module_night_vision',
+                'nightshift:incomplete_armor_module', 'axiomativ:energy_shield_mk1', 'axiomativ:energy_shield_mk2']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')

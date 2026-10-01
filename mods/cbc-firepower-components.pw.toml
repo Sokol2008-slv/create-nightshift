@@ -1,0 +1,14 @@
+name = "CBC: Firepower Components"
+filename = "cbc_firepower_components-neoforge-1.21.1-0.4.0+mc.1.21.1-neoforge.jar"
+side = "both"
+pin = true
+
+[download]
+url = "https://cdn.modrinth.com/data/fRWr6eJq/versions/8G09rkh2/cbc_firepower_components-neoforge-1.21.1-0.4.0%2Bmc.1.21.1-neoforge.jar"
+hash-format = "sha512"
+hash = "099d5593c6dcfd79b94dbdf8fb637857e6300ef7fd9b9bb9f30fe7bf99ae981e34a679f3729bac8c53a557f5c2e85d797e3beb786a5a244505546b9eac7b5b24"
+
+[update]
+[update.modrinth]
+mod-id = "fRWr6eJq"
+version = "8G09rkh2"
