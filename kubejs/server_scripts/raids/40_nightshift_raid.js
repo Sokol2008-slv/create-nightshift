@@ -304,7 +304,14 @@ function nsGrowTrackRadius(state, farthest) {
 // --------------------------------------------------------------------------
 function nsTickMobNavigation(mob, altar, level) {
 	var T = NSG.NIGHTSHIFT_TUNABLES
-	if (NS_FLYERS[String(mob.getType())]) return // летают сами вокруг точки над алтарём (nsFlyerAnchorNbt)
+	var type = String(mob.getType())
+	if (NS_FLYERS[type]) return // летают сами вокруг точки над алтарём (nsFlyerAnchorNbt)
+	var kami = nsHasTag(mob, 'ns_kamikaze')
+	// подрывник рядом с игроком — взрыв сразу
+	if (kami && nsKamikazeNearPlayer(mob, level)) {
+		nsKamikazeBlast(mob, level, altar)
+		return
+	}
 
 	// моб, занятый игроком/турелью, дерётся сам; остальных ведём к алтарю
 	var hasTarget = false
@@ -325,7 +332,7 @@ function nsTickMobNavigation(mob, altar, level) {
 	// путь пересчитываем, когда прежний кончился, и раз в 5 с — поиск на 64 блока не бесплатный
 	if (!hasTarget && nav && (nav.isDone() || navTick % 5 === 1)) {
 		try {
-			nav.moveTo(altar.x + 0.5, altar.y, altar.z + 0.5, 1.0)
+			nav.moveTo(altar.x + 0.5, altar.y, altar.z + 0.5, kami ? NSG.NS_KAMIKAZE.navSpeed : 1.0)
 		} catch (e) {
 			if (!NSG.nsNavWarned) {
 				console.warn('[nightshift] mob.getNavigation().moveTo(...) недоступен: ' + e)
@@ -333,6 +340,8 @@ function nsTickMobNavigation(mob, altar, level) {
 			}
 		}
 	}
+
+	if (NSG.NS_MOD_FLYERS && NSG.NS_MOD_FLYERS[type]) return // летуны модов: путь к алтарю есть, стены и крыши не грызут
 
 	var pd
 	try {
@@ -355,7 +364,108 @@ function nsTickMobNavigation(mob, altar, level) {
 	}
 	var stuckTicks = (pd.contains('ns_stuck') ? pd.getInt('ns_stuck') : 0) + T.navTickInterval
 	pd.putInt('ns_stuck', stuckTicks)
+	// подрывник упёрся в стену (секунду не продвигается, впереди блок) — взрыв
+	if (kami && stuckTicks >= T.navTickInterval && nsKamikazeWallAhead(mob, altar, level)) {
+		nsKamikazeBlast(mob, level, altar)
+		return
+	}
 	if (stuckTicks >= T.stuckTicksToChew) nsChewTowardAltar(mob, altar, pd, level)
+}
+
+// --------------------------------------------------------------------------
+// Подрывник (08_modded_waves.js, тег ns_kamikaze; Георгий, 01.10: «камикадзе — быстрые, легко убить, бегут и
+// взрывают стены»). Взрыв — сами: урон и отброс игрокам — ванильным взрывом без разрушения блоков (мобы набега
+// от него не страдают — 07_raid_no_infighting.js), а дыру выбиваем руками по правилам грызения: блоки с
+// блок-сущностью (машины, сундуки), моды обороны и всё с взрывоустойчивостью ≥ maxResistance (обсидиан, плачущий
+// обсидиан, незерит) не трогаем; на арене стены, пол и крыша не ломаются (nsIsBlockProtected).
+// --------------------------------------------------------------------------
+NSG.NS_KAMIKAZE = { power: 2.2, powerHeavy: 3.2, radius: 2.0, radiusHeavy: 3.2, maxResistance: 100, dropChance: 0.3, nearPlayer: 3, navSpeed: 1.2 }
+var NS_EXPLOSION_NONE = null
+try {
+	NS_EXPLOSION_NONE = Java.loadClass('net.minecraft.world.level.Level$ExplosionInteraction').NONE
+} catch (e) {
+	console.warn('[nightshift] Level.ExplosionInteraction недоступен: ' + e)
+}
+
+function nsKamikazeNearPlayer(mob, level) {
+	var r = NSG.NS_KAMIKAZE.nearPlayer
+	try {
+		var players = level.getPlayers()
+		for (var i = 0; i < players.length; i++) {
+			var p = players[i]
+			if (p.isSpectator() || p.isCreative()) continue
+			var dx = p.getX() - mob.getX(),
+				dy = p.getY() - mob.getY(),
+				dz = p.getZ() - mob.getZ()
+			if (dx * dx + dy * dy + dz * dz <= r * r) return true
+		}
+	} catch (e) {}
+	return false
+}
+
+function nsKamikazeWallAhead(mob, altar, level) {
+	var c = nsChewCandidates(mob, altar)
+	for (var i = 0; i < c.length; i++) {
+		try {
+			var st = level.getBlock(c[i][0], c[i][1], c[i][2]).getBlockState()
+			if (!st.isAir() && st.getFluidState().isEmpty()) return true
+		} catch (e) {}
+	}
+	return false
+}
+
+function nsKamikazeBlast(mob, level, altar) {
+	var K = NSG.NS_KAMIKAZE
+	var heavy = nsHasTag(mob, 'ns_kamikaze_heavy')
+	var x = mob.getX(),
+		y = mob.getY(),
+		z = mob.getZ()
+	try {
+		level.explode(mob, x, y + 0.5, z, heavy ? K.powerHeavy : K.power, NS_EXPLOSION_NONE)
+	} catch (e) {
+		if (!NSG.nsKamiWarned) {
+			console.warn('[nightshift] взрыв подрывника через level.explode не сработал, запасной путь: ' + e)
+			NSG.nsKamiWarned = true
+		}
+		var at = 'execute in ' + altar.dim + ' positioned ' + x.toFixed(1) + ' ' + y.toFixed(1) + ' ' + z.toFixed(1) + ' run '
+		NSG.nsServer.runCommandSilent(at + 'particle minecraft:explosion_emitter ~ ~1 ~')
+		NSG.nsServer.runCommandSilent(at + 'playsound minecraft:entity.generic.explode hostile @a ~ ~ ~ 2')
+		NSG.nsServer.runCommandSilent(at + 'damage @a[distance=..' + (heavy ? 5 : 3.5) + ',gamemode=!creative,gamemode=!spectator] ' + (heavy ? 14 : 8) + ' minecraft:explosion')
+	}
+	nsRemoveMob(mob)
+	// дыра: центр — на блок ближе к алтарю, на уровне груди; край рваный
+	var dx = altar.x + 0.5 - x,
+		dz = altar.z + 0.5 - z
+	var len = Math.sqrt(dx * dx + dz * dz) || 1
+	var cx = x + dx / len,
+		cy = y + 1,
+		cz = z + dz / len
+	var r = heavy ? K.radiusHeavy : K.radius
+	var R = Math.ceil(r)
+	var broken = 0
+	for (var ix = -R; ix <= R; ix++) {
+		for (var iy = -R; iy <= R; iy++) {
+			for (var iz = -R; iz <= R; iz++) {
+				var dist = Math.sqrt(ix * ix + iy * iy + iz * iz)
+				if (dist > r) continue
+				if (dist > r - 0.7 && Math.random() < 0.5) continue
+				try {
+					var b = level.getBlock(Math.floor(cx) + ix, Math.floor(cy) + iy, Math.floor(cz) + iz)
+					var st = b.getBlockState()
+					if (st.isAir() || !st.getFluidState().isEmpty()) continue
+					if (nsIsBlockProtected(b)) continue
+					if (st.getDestroySpeed(level, b.getPos()) < 0) continue
+					if (st.getBlock().getExplosionResistance() >= K.maxResistance) continue
+					level.destroyBlock(b.getPos(), Math.random() < K.dropChance)
+					broken++
+				} catch (e) {}
+			}
+		}
+	}
+	if (broken > 0 && NSG.nsKamiLog !== true) {
+		console.info('[nightshift] подрывник выбил блоков: ' + broken + ' (дальше в лог не пишу)')
+		NSG.nsKamiLog = true
+	}
 }
 
 // Блоки, которые моб грызёт, чтобы пройти к алтарю: стена на уровне ног и
@@ -606,13 +716,24 @@ function nsBoostRaidMobs(buff, scale) {
 	if (scale) {
 		var attrs = { 'minecraft:generic.max_health': scale.hp, 'minecraft:generic.attack_damage': scale.damage, 'minecraft:generic.movement_speed': scale.speed }
 		for (var a in attrs) {
-			if (attrs[a] > 0) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run attribute @s ' + a + ' modifier add nightshift:nightmare ' + attrs[a].toFixed(3) + ' add_multiplied_base')
+			// урон может быть и меньше базы (боссы ArPhEx на ранних волнах — nsModBossFor)
+			if (attrs[a] && attrs[a] !== 0) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run attribute @s ' + a + ' modifier add nightshift:nightmare ' + attrs[a].toFixed(3) + ' add_multiplied_base')
 		}
 		if (scale.hp > 0) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run data modify entity @s Health set value 100000f')
 		// Кошмар: мобы крупнее (не боссы — у них size: 1)
 		if (scale.size > 1) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run attribute @s minecraft:generic.scale modifier add nightshift:giant ' + (scale.size - 1).toFixed(3) + ' add_multiplied_base')
 	}
 	NSG.nsServer.runCommandSilent('tag ' + sel + ' add ns_boosted')
+}
+
+// Премьера волны (модовые волны, 08_modded_waves.js): титр и подсказка в чат — что за моб и как с ним бороться.
+// На волнах без премьеры (64+, Кошмар) — «звезда вечера».
+function nsAnnounceStar(hordeCfg) {
+	var m = hordeCfg.star
+	var head = hordeCfg.premiere ? 'Премьера!' : 'Звезда вечера'
+	nsTitleAll(head, { color: 'gold', bold: true, subtitle: m.name, subColor: 'yellow' })
+	NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete ambient @a')
+	nsTellAll(Text.gold('[Ночная смена] ' + head + ' ').append(Text.yellow(m.name)).append(Text.gray(' — ' + m.tip)))
 }
 
 // Спавнит текущую волну. Возвращает false, если волн больше нет (победа).
@@ -645,7 +766,8 @@ function nsSpawnCurrentWave(state, level, altar) {
 		return false
 	}
 
-	nsTitleAll('Волна ' + (state.raid.waveIndex + 1), { color: 'red', bold: true })
+	if (state.raid.waveIndex === 0 && hordeCfg.star) nsAnnounceStar(hordeCfg)
+	else nsTitleAll('Волна ' + (state.raid.waveIndex + 1), { color: 'red', bold: true })
 	// кто стоит у алтаря на старте волны — в счёт присутствия (добыча — за половину волн и больше)
 	state.raid.present = state.raid.present || {}
 	var here = nsParticipants(altar)
@@ -876,17 +998,22 @@ function nsWaveGiant(d) {
 	return late > 0 ? Math.min(G.max, G.start + G.perWave * (late - 1)) : 1
 }
 
+// Модовые волны (raids/08_modded_waves.js): с этой волны в ордах только мобы модов, у каждой — премьера
+NSG.NS_MOD_WAVES_FROM = 16
+
 // Орда волны d (шкала 1–100, выше — Бесконечность). До 70-й: состав якоря × плавный рост,
-// босс каждую 5-ю волну. С 70-й: состав Великой орды + свита, все крепнут, боссов больше.
+// босс каждую 5-ю волну. С 16-й состав — модовый (тот же «бюджет здоровья» подволны, что у якоря), боссы с 15-й —
+// ArPhEx. С 70-й: модовые подволны + подволны Cataclysm + Свита Кошмара, все крепнут, боссы Cataclysm.
 function nsChallengeHorde(d) {
 	var D = NSG.NIGHTSHIFT_DIFFICULTY
 	d = Math.max(1, d)
 	var late = nsWaveLate(d)
+	var mod = NSG.nsModWave && d >= NSG.NS_MOD_WAVES_FROM
 	if (late === 0) {
 		var an = nsWaveAnchor(d)
 		var base = D[an[0]]
 		var R = NSG.NS_WAVE_RAMP
-		return {
+		var cfg0 = {
 			name: base.name,
 			waves: base.waves,
 			boss: d % 5 === 0 ? base.boss || NSG.NS_EARLY_BOSS(d) : null,
@@ -895,20 +1022,46 @@ function nsChallengeHorde(d) {
 			mult: (R.multFrom + (R.multTo - R.multFrom) * an[1]) * nsWaveDensity(d),
 			scale: { hp: R.hpTo * an[1] + nsWaveToughHp(d), damage: R.damageTo * an[1], speed: 0 },
 		}
+		if (mod) {
+			var mw = NSG.nsModWave(d, nsMwBudget(base.waves), base.waves.length, false)
+			cfg0.name = mw.name
+			cfg0.waves = mw.waves
+			cfg0.star = mw.star
+			cfg0.premiere = mw.premiere
+		}
+		var mb = d % 5 === 0 && NSG.nsModBossFor ? NSG.nsModBossFor(d, cfg0.scale.hp) : null
+		if (mb) {
+			cfg0.boss = mb.boss
+			cfg0.bossExtra = mb.extra
+			cfg0.bossScale = mb.scale
+		}
+		return cfg0
 	}
 	var top = D[NSG.NIGHTSHIFT_DIFFICULTY_MAX]
 	var L = NSG.NS_WAVE_LATE
 	var scale = { hp: nsWaveToughHp(d), damage: L.damage * late, speed: Math.min(L.speedMax, L.speed * late), size: nsWaveGiant(d) }
-	// с модом — подволны из обычных мобов Cataclysm между Великой ордой и Свитой Кошмара
+	// с модом — подволны из обычных мобов Cataclysm между модовыми подволнами и Свитой Кошмара
 	var cmWaves = NSG.NS_CATACLYSM_WAVES && Platform.isLoaded('cataclysm') ? NSG.NS_CATACLYSM_WAVES : []
+	var lateWaves = top.waves
+	var finale = NSG.NIGHTSHIFT_NIGHTMARE.finale
+	var star = null
+	var name = d > NSG.NS_WAVES_MAX ? 'Бесконечность' : 'Кошмар'
+	if (mod) {
+		var lw = NSG.nsModWave(d, nsMwBudget(top.waves), top.waves.length, true)
+		lateWaves = lw.waves
+		star = lw.star
+		finale = NSG.NS_MOD_FINALE()
+		name = name + ' · ' + lw.name
+	}
 	var cfg = {
-		name: d > NSG.NS_WAVES_MAX ? 'Бесконечность' : 'Кошмар',
-		waves: top.waves.concat(cmWaves, [NSG.NIGHTSHIFT_NIGHTMARE.finale]),
+		name: name,
+		waves: lateWaves.concat(cmWaves, [finale]),
 		boss: top.boss,
 		bossCount: 1 + Math.floor(late / L.bossEvery),
 		buff: nsRaidBuff(top.buff),
 		mult: nsWaveDensity(d),
 		scale: scale,
+		star: star,
 	}
 	// Боссы L_Ender's Cataclysm (ротация — raids/05_cataclysm_bosses.js): с 70-й вместо одного и того же
 	// скорпиона; на вехах 80/90/100 — пара разных. Их здоровье Кошмар раздувает не больше hpScaleMax —
@@ -1008,6 +1161,14 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar) {
 		}
 		for (var n = 0; n < pool.length && n < 1 + Math.floor(k / 6); n++) got.push(nsPick(pool))
 		if (Math.random() < artChance) got.push(['artifacts:' + nsPick(L.artifacts), 1])
+		// артефакты Ночной смены (7 уровней редкости) — свой бросок каждому защитнику
+		if (typeof NSG.nsNsArtifactRoll === 'function') {
+			try {
+				got = got.concat(NSG.nsNsArtifactRoll(d, first) || [])
+			} catch (e) {
+				console.error('[nightshift] бросок артефакта смены: ' + e)
+			}
+		}
 		if (Math.random() < legChance) got.push(nsPick(L.legendary))
 		if (first) {
 			if (d >= 20 && d % 5 === 0) got.push(['artifacts:' + nsPick(L.artifactsTop), 1])
@@ -1052,6 +1213,13 @@ function nsGiveLoot(player, got) {
 	var line = Text.gold('[Ночная смена] Добыча: ')
 	for (var m = 0; m < merged.length; m++) {
 		var e = merged[m]
+		if (e[0].indexOf('loot:') === 0) {
+			// ['loot:<таблица>', N, …] — N бросков таблицы добычи (свитки магии и т.п.), подпись — пояснение строки
+			for (var lr = 0; lr < e[1]; lr++) NSG.nsServer.runCommandSilent('loot give ' + name + ' loot ' + e[0].substring(5))
+			if (m > 0) line = line.append(Text.gray(', '))
+			line = line.append(Text.white(e[1] + '× ')).append(Text.lightPurple(e[3] || 'добыча ' + e[0].substring(5)))
+			continue
+		}
 		NSG.nsServer.runCommandSilent('give ' + name + ' ' + e[0] + ' ' + e[1])
 		if (m > 0) line = line.append(Text.gray(', '))
 		var rare = e[0].indexOf('artifacts:') === 0 || e[0] === 'nightshift:night_heart'
@@ -1135,7 +1303,13 @@ function nsTickActiveRaid(state) {
 			dy = mob.getY() - altar.y,
 			dz = mob.getZ() - (altar.z + 0.5)
 		if (dx * dx + dy * dy + dz * dz <= T.raidFailRadius * T.raidFailRadius) {
-			if (NS_FLYERS[String(mob.getType())]) continue // летун пикирует на защитника у алтаря — не «дошёл»
+			if (NS_FLYERS[String(mob.getType())] || (NSG.NS_MOD_FLYERS && NSG.NS_MOD_FLYERS[String(mob.getType())])) continue // летун пикирует на защитника у алтаря — не «дошёл»
+			// подрывник, добежавший до алтаря, взрывается (бьёт защитников), а не проваливает набег
+			if (nsHasTag(mob, 'ns_kamikaze')) {
+				nsKamikazeBlast(mob, level, altar)
+				mobs.splice(i, 1)
+				continue
+			}
 			if (state.raid.kind !== 'minor') {
 				console.info('[nightshift] у алтаря ' + String(mob.getType()) + ' на ' + mob.getX().toFixed(1) + ' ' + mob.getY().toFixed(1) + ' ' + mob.getZ().toFixed(1))
 				nsRaidFail(state, mobs)

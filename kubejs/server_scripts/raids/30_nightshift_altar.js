@@ -67,7 +67,7 @@ function nsForecastLines(d) {
 		var parts = []
 		for (var i = 0; i < wave.length; i++) {
 			var n = Math.ceil(wave[i].count * scale)
-			waveHp += (hpTable[wave[i].id] || 20) * n
+			waveHp += (wave[i].hp || hpTable[wave[i].id] || 20) * n
 			parts.push(n + '× ' + (wave[i].label || wave[i].id.split(':')[1]))
 		}
 		total += waveHp
@@ -112,6 +112,11 @@ function nsDifficultyHover(state, d) {
 	}
 	var art = Math.round(Math.min(1, (L.artifactChance[tier] || 0) + 0.01 * k) * 100)
 	t = t.append(Text.gray('\nРедкое — ' + Math.round(L.rareChance * 100) + '% за бросок, артефакт — ' + art + '%'))
+	if (typeof NSG.nsNsArtifactHoverText === 'function') {
+		try {
+			t = t.append(Text.lightPurple('\n' + NSG.nsNsArtifactHoverText(d)))
+		} catch (e) {}
+	}
 	if (k > 0) t = t.append(Text.lightPurple('\nС 70-й волны: ' + nsPlural(1 + Math.floor(k / 6), 'особый бросок', 'особых броска', 'особых бросков') + ' — череп визера, незеритовая броня и оружие с чарами, элитры, маяк'))
 	if (d > (state.phase || 0)) {
 		var bonus = []

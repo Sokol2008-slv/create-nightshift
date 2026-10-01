@@ -173,6 +173,10 @@ function nsIsBlockProtected(levelBlock) {
 		var blockId = levelBlock.getBlockState().getBlock().id // "modid:path", подтверждено BlockProviderKJS.kjs$getId()
 		var ns = String(blockId).split(':')[0]
 		if (NSG.NIGHTSHIFT_PROTECTED_NAMESPACES.indexOf(ns) !== -1) return true
+		// алтарь и блок базы — никогда (подрывник у алтаря взрывается рядом с ними)
+		if (String(blockId) === 'nightshift:altar' || String(blockId) === 'nightshift:base_core') return true
+		// арена: стены, пол, крыша и ландшафт не ломаются (70_nightshift_arena.js)
+		if (typeof nsArenaIsShell === 'function' && nsArenaIsShell(String(levelBlock.getLevel().getDimension()), levelBlock.getX(), levelBlock.getY(), levelBlock.getZ())) return true
 		return false
 	} catch (e) {
 		// Если что-то пошло не так при проверке — лучше перестраховаться и НЕ ломать блок.

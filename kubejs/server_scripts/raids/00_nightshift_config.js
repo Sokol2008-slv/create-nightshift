@@ -272,15 +272,15 @@ NSG.NS_WAVE_DENSITY = { from: 50, start: 1.5, end: 2.5, lateStart: 3, latePerWav
 // в очереди и выходят по мере гибели — не больше NS_RAID_SPAWN_PORTION за секунду (без пика лага).
 NSG.NS_RAID_MAX_ALIVE = 120
 NSG.NS_RAID_SPAWN_PORTION = 40
-// Босс каждой 5-й волны там, где у якоря своего босса нет (5, 10, 15, … 30 — у «Легиона» тоже нет);
-// до 70-й, дальше боссы Cataclysm. Здоровье 40 + 10 × волна
+// Босс 5-й и 10-й волн (с 15-й — боссы ArPhEx, raids/08_modded_waves.js). Здоровье 60 + 20 × волна, «Скорость I» и
+// «Сила I» (Георгий, 01.10: «боссы слабые — медленные»; было 40 + 10 × волна и шаг зомби)
 NSG.NS_EARLY_BOSS = function (d) {
-	var hp = 40 + 10 * d
+	var hp = 60 + 20 * d
 	return {
 		id: 'minecraft:zombie',
 		hpLabel: hp,
 		label: 'Вожак орды',
-		nbt: nsName('Вожак орды') + ',' + NS_ARMOR.iron + ',' + nsHand(d >= 10 ? 'diamond_sword' : 'iron_sword') + ',Health:' + hp + '.0f,attributes:[{id:"minecraft:generic.max_health",base:' + hp + '.0d},{id:"minecraft:generic.scale",base:1.25d}]',
+		nbt: nsName('Вожак орды') + ',' + NS_ARMOR.iron + ',' + nsHand(d >= 10 ? 'diamond_sword' : 'iron_sword') + ',Health:' + hp + '.0f,attributes:[{id:"minecraft:generic.max_health",base:' + hp + '.0d},{id:"minecraft:generic.scale",base:1.35d}],active_effects:[{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b},{id:"minecraft:strength",amplifier:0b,duration:-1,show_particles:0b}]',
 	}
 }
 // Награды за первое прохождение вех — каждому защитнику

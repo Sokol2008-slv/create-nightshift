@@ -9,12 +9,35 @@
 // Коридор: x −10…10, пол y=64, z 0…127; алтарь у входа (0, 66, 6); орда выходит в дальнем конце (z≈120).
 // Ток с базы — передатчиком энергии Create: Ender Transmission (передаёт между измерениями).
 // Големы и драконы — мобы, их снимок не сохраняет (решение Георгия: «их восстанавливать нам самим»).
+//
+// Арена v2 (01.10, Георгий: «стены и фонари неразрушимые, крутой ландшафт, приукрасить, нужна крыша — фантомы
+// убегают; главное — не делать кривым пол, а то с турелями сложно»):
+//  - коридор тот же (постройки игроков внутри не трогаются), пол ровный;
+//  - стены до крыши (y 64…92) с колоннами, окнами и светом, стеклянная крыша на балках с висячими фонарями,
+//    ворота орды в дальнем конце;
+//  - снаружи — каньон: долина с руинами, фонарями и лавовыми озёрами, за ней скалы до y≈135 (видно в окна и сквозь
+//    крышу), звёзды и луна (в измерении вечная полночь);
+//  - оболочка (стены, пол, крыша, верх под крышей, всё снаружи) не ломается ни грызением, ни подрывниками —
+//    nsArenaIsShell в nsIsBlockProtected. Ломаются только постройки игроков (и откатываются после набега);
+//  - старая арена (v1) достраивается сама при загрузке сервера, если набега нет (nsArenaUpgradeTick).
 // ==========================================================================
 var NS_ARENA_DIM = 'nightshift:arena'
 var NS_ARENA_BACKUP_DX = 4000 // резервная копия — та же арена, сдвинутая по x
-// блок арены [x1, y1, z1, x2, y2, z2], кусками — у /clone предел 32 768 блоков за раз
-var NS_ARENA_BOX = [-12, 63, -2, 12, 80, 130]
-var NS_ARENA_Z_SLICES = [[-2, 42], [43, 87], [88, 130]]
+var NS_ARENA_VERSION = 2
+var NS_ARENA_ROOF = 92
+// блок арены [x1, y1, z1, x2, y2, z2], кусками — у /clone предел 32 768 блоков за раз (25 × 31 × 33 ≈ 25,6 тыс.)
+var NS_ARENA_BOX = [-12, 63, -2, 12, 93, 130]
+var NS_ARENA_Z_SLICES = [[-2, 30], [31, 63], [64, 96], [97, 130]]
+// ландшафт вокруг: [x1, z1, x2, z2]
+var NS_ARENA_LAND = [-44, -30, 44, 158]
+
+// Оболочка арены — стены, пол, крыша, полоса под крышей (висячие фонари) и всё снаружи коридора.
+// Мобы её не грызут, подрывники не выбивают (10_nightshift_state.js, nsIsBlockProtected).
+function nsArenaIsShell(dim, x, y, z) {
+	if (dim !== NS_ARENA_DIM) return false
+	if (x < NS_ARENA_LAND[0] - 16 || x > NS_ARENA_LAND[2] + 16) return false // запасная копия (x+4000) — не здесь
+	return x <= -11 || x >= 11 || z <= -1 || z >= 128 || y <= 64 || y >= NS_ARENA_ROOF - 4
+}
 var NS_ARENA_CONTAINER = Java.loadClass('net.minecraft.world.Container')
 
 function nsArenaRun(cmd) {
@@ -45,9 +68,14 @@ function nsArenaClone(toBackup) {
 		try {
 			var src = level.getBlock(from, B[1], z1).getBlockState()
 			var dst = level.getBlock(to, B[1], z1).getBlockState()
-			if (!src.equals(dst)) ok = false
+			// сравнение строкой: у части состояний (трава снаружи арены v2) Rhino не видит equals — снимок «не удавался»
+			if (String(src) !== String(dst)) {
+				ok = false
+				console.warn('[nightshift] арена: кусок z ' + z1 + '…' + z2 + ' не скопировался (' + src + ' → ' + dst + ')')
+			}
 		} catch (e) {
 			ok = false
+			console.warn('[nightshift] арена: проверка куска z ' + z1 + ': ' + e)
 		}
 	}
 	return ok
@@ -114,18 +142,12 @@ function nsArenaApplyLive(level, live) {
 
 function nsArenaBuild(st) {
 	nsArenaForceload()
-	// пол, стены, подсветка; верх открыт — летающим боссам есть где летать
-	nsArenaRun('fill -12 63 -2 12 80 130 minecraft:air')
+	// пол ровный, по центру — дорожка света; дальний конец — «ворота» орды
+	nsArenaRun('fill -12 63 -2 12 ' + (NS_ARENA_ROOF + 1) + ' 130 minecraft:air')
 	nsArenaRun('fill -10 64 0 10 64 127 minecraft:polished_blackstone_bricks')
-	nsArenaRun('fill -11 64 -1 -11 74 128 minecraft:deepslate_tiles')
-	nsArenaRun('fill 11 64 -1 11 74 128 minecraft:deepslate_tiles')
-	nsArenaRun('fill -10 64 -1 10 74 -1 minecraft:deepslate_tiles')
-	for (var z = 4; z < 128; z += 8) {
-		nsArenaRun('setblock -11 68 ' + z + ' minecraft:sea_lantern')
-		nsArenaRun('setblock 11 68 ' + z + ' minecraft:sea_lantern')
-		nsArenaRun('setblock 0 64 ' + z + ' minecraft:shroomlight')
-	}
-	// дальний конец — «ворота» орды
+	nsArenaRun('fill -5 64 0 -5 64 117 minecraft:polished_deepslate')
+	nsArenaRun('fill 5 64 0 5 64 117 minecraft:polished_deepslate')
+	for (var z = 4; z < 128; z += 8) nsArenaRun('setblock 0 64 ' + z + ' minecraft:shroomlight')
 	nsArenaRun('fill -10 64 118 10 64 127 minecraft:crying_obsidian')
 	// алтарь и блок базы
 	nsArenaRun('setblock 0 65 6 nightshift:base_core')
@@ -137,11 +159,210 @@ function nsArenaBuild(st) {
 		{ x: 0, y: 65, z: 124 },
 		{ x: 6, y: 65, z: 122 },
 	]
-	st.arena = { built: true, altarId: altar.id }
+	st.arena = { built: true, altarId: altar.id, v: 1 }
 	nsSaveState(st)
-	nsArenaClone(true)
-	console.info('[nightshift] арена построена, алтарь ' + altar.id)
+	nsArenaRun('setblock -11 64 -1 minecraft:deepslate_tiles') // пока стены строятся — хоть угол
+	console.info('[nightshift] арена: пол и алтарь ' + altar.id + ', стены и ландшафт — следом')
+	nsArenaStartDecor(st)
 }
+
+// --------------------------------------------------------------------------
+// Стены, крыша, ворота и ландшафт v2 — очередью команд по ~400 за тик (тысячи fill разом подвесили бы сервер),
+// чанки ландшафта сначала грузим (fill в незагруженном чанке молча не срабатывает), в конце — снимок арены.
+// --------------------------------------------------------------------------
+// Шум для рельефа: детерминированный хеш по клетке + билинейная сглаживающая сетка
+function nsArenaHash(x, z) {
+	var h = Math.sin(x * 127.1 + z * 311.7) * 43758.5453
+	return h - Math.floor(h)
+}
+function nsArenaNoise(x, z, cell) {
+	var gx = Math.floor(x / cell),
+		gz = Math.floor(z / cell)
+	var fx = x / cell - gx,
+		fz = z / cell - gz
+	var a = nsArenaHash(gx, gz),
+		b = nsArenaHash(gx + 1, gz),
+		c = nsArenaHash(gx, gz + 1),
+		d = nsArenaHash(gx + 1, gz + 1)
+	var sx = fx * fx * (3 - 2 * fx),
+		sz = fz * fz * (3 - 2 * fz)
+	return (a + (b - a) * sx + (c - a) * sz + (a - b - c + d) * sx * sz) * 2 - 1
+}
+// Высота земли снаружи: долина у стен (62–65), дальше скалы ступенями до ~135
+function nsArenaLandHeight(x, z) {
+	var dx = Math.max(0, Math.abs(x) - 11),
+		dz = Math.max(0, -1 - z, z - 128)
+	var d = Math.max(dx, dz)
+	var n = nsArenaNoise(x, z, 9) * 0.65 + nsArenaNoise(x, z, 4) * 0.35
+	if (d <= 7) return 63 + Math.round(n * 1.5)
+	var h = 66 + (d - 7) * 3.4 + n * 9
+	h = Math.floor(h / 3) * 3 + (nsArenaHash(x, z) < 0.3 ? 1 : 0) // уступы
+	return Math.max(64, Math.min(136, h))
+}
+
+function nsArenaDecorCmds() {
+	var c = []
+	var R = NS_ARENA_ROOF
+	var L = NS_ARENA_LAND
+	// --- ландшафт: колонны рельефа, кроме коридора и стен ---
+	var rocks = ['minecraft:stone', 'minecraft:andesite', 'minecraft:tuff', 'minecraft:deepslate', 'minecraft:stone', 'minecraft:blackstone']
+	var glows = ['minecraft:ochre_froglight', 'minecraft:verdant_froglight', 'minecraft:pearlescent_froglight', 'minecraft:glowstone', 'minecraft:crying_obsidian']
+	for (var x = L[0]; x <= L[2]; x++) {
+		for (var z = L[1]; z <= L[3]; z++) {
+			if (x >= -11 && x <= 11 && z >= -1 && z <= 128) continue
+			var h = nsArenaLandHeight(x, z)
+			var r = nsArenaHash(x * 3 + 7, z * 5 + 1)
+			var rock = rocks[Math.floor(nsArenaNoise(x + 500, z, 7) * 2.99 + 3) % rocks.length]
+			c.push('fill ' + x + ' 52 ' + z + ' ' + x + ' ' + (h - 1) + ' ' + z + ' ' + rock)
+			var top
+			if (h <= 66) top = r < 0.12 ? 'minecraft:coarse_dirt' : r < 0.2 ? 'minecraft:moss_block' : 'minecraft:grass_block'
+			else if (h >= 120) top = 'minecraft:snow_block'
+			else if (h >= 100) top = r < 0.5 ? 'minecraft:moss_block' : rock
+			else top = r < 0.04 ? glows[Math.floor(r * 100) % glows.length] : r < 0.5 ? 'minecraft:grass_block' : rock
+			c.push('setblock ' + x + ' ' + h + ' ' + z + ' ' + top)
+			// убранство долины: фонари на столбах, трава, руины, сухие деревья на склонах
+			if (h <= 66) {
+				if (r > 0.985) {
+					c.push('fill ' + x + ' ' + (h + 1) + ' ' + z + ' ' + x + ' ' + (h + 2) + ' ' + z + ' minecraft:dark_oak_fence')
+					c.push('setblock ' + x + ' ' + (h + 3) + ' ' + z + ' minecraft:lantern')
+				} else if (r > 0.975) c.push('fill ' + x + ' ' + (h + 1) + ' ' + z + ' ' + x + ' ' + (h + 1 + Math.floor(r * 1000) % 5) + ' ' + z + ' minecraft:cracked_stone_bricks')
+				else if (r > 0.96) c.push('fill ' + x + ' ' + (h + 1) + ' ' + z + ' ' + x + ' ' + (h + 2 + Math.floor(r * 1000) % 3) + ' ' + z + ' minecraft:mossy_stone_bricks')
+				else if (r > 0.8 && top === 'minecraft:grass_block') c.push('setblock ' + x + ' ' + (h + 1) + ' ' + z + ' ' + (r > 0.9 ? 'minecraft:fern' : 'minecraft:short_grass'))
+			} else if (h < 112 && top === 'minecraft:grass_block' && r > 0.992) c.push('fill ' + x + ' ' + (h + 1) + ' ' + z + ' ' + x + ' ' + (h + 3 + Math.floor(r * 1000) % 3) + ' ' + z + ' minecraft:dark_oak_log')
+		}
+	}
+	// лавовые озёра в долине: ровная площадка 5×5, кромка из чернокамня, лава 3×3
+	var pools = [[-16, 18], [16, 46], [-17, 78], [17, 104], [0, 142], [0, -14]]
+	for (var i = 0; i < pools.length; i++) {
+		var px = pools[i][0],
+			pz = pools[i][1]
+		c.push('fill ' + (px - 2) + ' 52 ' + (pz - 2) + ' ' + (px + 2) + ' 63 ' + (pz + 2) + ' minecraft:blackstone')
+		c.push('fill ' + (px - 2) + ' 64 ' + (pz - 2) + ' ' + (px + 2) + ' 67 ' + (pz + 2) + ' minecraft:air')
+		c.push('fill ' + (px - 2) + ' 63 ' + (pz - 2) + ' ' + (px + 2) + ' 63 ' + (pz + 2) + ' minecraft:polished_blackstone')
+		c.push('fill ' + (px - 1) + ' 63 ' + (pz - 1) + ' ' + (px + 1) + ' 63 ' + (pz + 1) + ' minecraft:lava')
+	}
+	// --- стены коридора (x = ±11) до крыши: цоколь, кладка, пояс, колонны с огнями, окна в долину ---
+	var sides = [-11, 11]
+	for (var si = 0; si < 2; si++) {
+		var X = sides[si]
+		c.push('fill ' + X + ' 63 -1 ' + X + ' 66 128 minecraft:polished_deepslate')
+		c.push('fill ' + X + ' 67 -1 ' + X + ' ' + (R - 1) + ' 128 minecraft:deepslate_bricks')
+		c.push('fill ' + X + ' 80 -1 ' + X + ' 80 128 minecraft:chiseled_deepslate')
+		for (var p = 0; p <= 128; p += 8) {
+			c.push('fill ' + X + ' 64 ' + p + ' ' + X + ' ' + (R - 1) + ' ' + p + ' minecraft:polished_basalt')
+			c.push('setblock ' + X + ' 70 ' + p + ' minecraft:ochre_froglight')
+			c.push('setblock ' + X + ' 86 ' + p + ' minecraft:ochre_froglight')
+			if (p + 6 <= 127) {
+				c.push('fill ' + X + ' 73 ' + (p + 2) + ' ' + X + ' 78 ' + (p + 6) + ' minecraft:glass')
+				c.push('setblock ' + X + ' 69 ' + (p + 4) + ' minecraft:sea_lantern')
+			}
+		}
+	}
+	// --- торцы: у входа (z = −1) — стена со щелями-окнами, в дальнем конце (z = 128) — ворота орды ---
+	c.push('fill -10 63 -1 10 66 -1 minecraft:polished_deepslate')
+	c.push('fill -10 67 -1 10 ' + (R - 1) + ' -1 minecraft:deepslate_bricks')
+	c.push('fill -10 80 -1 10 80 -1 minecraft:chiseled_deepslate')
+	for (var w = -8; w <= 8; w += 8) c.push('fill ' + w + ' 70 -1 ' + w + ' 84 -1 minecraft:glass')
+	c.push('fill -10 63 128 10 66 128 minecraft:polished_deepslate')
+	c.push('fill -10 67 128 10 ' + (R - 1) + ' 128 minecraft:deepslate_bricks')
+	c.push('fill -6 64 128 6 78 128 minecraft:crying_obsidian')
+	c.push('fill -5 65 128 5 77 128 minecraft:iron_bars')
+	c.push('fill -6 63 129 6 79 131 minecraft:magma_block') // за решёткой — раскалённое нутро
+	c.push('fill -1 79 128 1 81 128 minecraft:gilded_blackstone')
+	// --- крыша: стекло на балках, висячие фонари ---
+	c.push('fill -11 ' + R + ' -1 11 ' + R + ' 128 minecraft:glass')
+	for (var bz = 0; bz <= 128; bz += 8) {
+		c.push('fill -11 ' + R + ' ' + bz + ' 11 ' + R + ' ' + bz + ' minecraft:polished_deepslate')
+		var lx = [-6, 0, 6]
+		for (var li = 0; li < lx.length; li++) {
+			c.push('setblock ' + lx[li] + ' ' + (R - 1) + ' ' + bz + ' minecraft:chain[axis=y] keep')
+			c.push('setblock ' + lx[li] + ' ' + (R - 2) + ' ' + bz + ' minecraft:lantern[hanging=true] keep')
+		}
+	}
+	c.push('fill 0 ' + R + ' -1 0 ' + R + ' 128 minecraft:polished_deepslate')
+	return c
+}
+
+// Очередь: строки — команды в измерении арены, {wait: N} — пауза в тиках, {fn} — шаг кодом
+NSG.nsArenaJobs = NSG.nsArenaJobs || []
+function nsArenaStartDecor(st) {
+	var L = NS_ARENA_LAND
+	var jobs = []
+	jobs.push({ fn: function () {
+		nsArenaRun('forceload add ' + L[0] + ' ' + L[1] + ' ' + L[2] + ' ' + L[3])
+	} })
+	jobs.push({ wait: 60 }) // чанки ландшафта догружаются
+	jobs = jobs.concat(nsArenaDecorCmds())
+	jobs.push({ fn: function () {
+		var s2 = nsGetState()
+		// контроль: крыша над серединой коридора и стена на месте
+		var lvl = NSG.nsServer.getLevel(NS_ARENA_DIM)
+		var ok = String(lvl.getBlock(3, NS_ARENA_ROOF, 60).getBlockState().getBlock().id) === 'minecraft:glass' && String(lvl.getBlock(11, 75, 60).getBlockState().getBlock().id) !== 'minecraft:air'
+		nsArenaRun('forceload remove ' + L[0] + ' ' + L[1] + ' ' + L[2] + ' ' + L[3])
+		nsArenaForceload()
+		if (!ok) {
+			console.warn('[nightshift] арена v2: проверка не прошла (чанки не загрузились?) — повторю при следующей загрузке')
+			return
+		}
+		if (s2.arena) {
+			s2.arena.v = NS_ARENA_VERSION
+			nsSaveState(s2)
+		}
+		// снимок — только вне набега на арене (во время набега его снимет начало следующего)
+		var active = s2.raid && s2.raid.state !== 'idle' && s2.raid.altarId === (s2.arena && s2.arena.altarId)
+		if (!active) nsArenaClone(true)
+		console.info('[nightshift] арена v2 готова: стены до крыши, крыша, ландшафт' + (active ? ' (снимок — в начале следующего набега)' : ', снимок обновлён'))
+		nsArenaRun('tellraw @a[distance=0..] {"text":"[Ночная смена] Арена перестроена: крыша, стены до неба, каньон вокруг. Пол — как был.","color":"gold"}')
+	} })
+	NSG.nsArenaJobs = NSG.nsArenaJobs.concat(jobs)
+	console.info('[nightshift] арена v2: в очереди ' + jobs.length + ' шагов')
+}
+
+// Достройка старой арены (v1) — один раз после загрузки сервера, когда на арене нет набега
+var nsArenaUpgradeWait = 0
+ServerEvents.tick(event => {
+	try {
+		var jobs = NSG.nsArenaJobs
+		if (jobs && jobs.length) {
+			var budget = 400
+			while (budget > 0 && jobs.length) {
+				var j = jobs[0]
+				if (typeof j === 'string') {
+					jobs.shift()
+					nsArenaRun(j)
+					budget--
+				} else if (j.wait !== undefined) {
+					if (j.wait-- <= 0) jobs.shift()
+					break
+				} else {
+					jobs.shift()
+					try {
+						j.fn()
+					} catch (e) {
+						console.error('[nightshift] арена: шаг очереди: ' + e)
+					}
+					budget -= 50
+				}
+			}
+			return
+		}
+		if (NSG.nsArenaUpgradeChecked) return
+		if (++nsArenaUpgradeWait < 400) return // ~20 с после старта
+		NSG.nsArenaUpgradeChecked = true
+		var st = nsGetState()
+		if (!st || !st.arena || !st.arena.built || (st.arena.v || 1) >= NS_ARENA_VERSION) return
+		var busy = st.raid && st.raid.state !== 'idle' && st.raid.altarId === st.arena.altarId
+		if (busy) {
+			NSG.nsArenaUpgradeChecked = false
+			nsArenaUpgradeWait = 0 // на арене набег — проверим позже
+			return
+		}
+		nsArenaForceload()
+		nsArenaStartDecor(st)
+	} catch (e) {
+		console.error('[nightshift] арена: ' + e)
+	}
+})
 
 // Хук набега (из 40_nightshift_raid.js): 'start' — снимок (в момент выхода орды, чтобы попало всё построенное
 // за отсчёт), 'end' — откат. Только для алтаря арены. Снимок не удался — не откатываем (иначе вернули бы
