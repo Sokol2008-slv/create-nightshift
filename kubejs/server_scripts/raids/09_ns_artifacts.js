@@ -1,26 +1,38 @@
 // ==========================================================================
 // Ночная смена — артефакты смены (01.10.2026, Георгий: «урон мобов не режем, делаем нас плотнее»;
-// «хоть 4 ряда сердец»; «гриндить волны ради крутого артефакта — чем выше волна, тем выше шанс»).
+// «хоть 4 ряда сердец»; «гриндить волны ради крутого артефакта — чем выше волна, тем выше шанс»;
+// 02.10: «если есть идеи для артов и редкого дропа — действуй, креативь на полную»).
 //
-// 19 артефактов, 7 уровней: обычный, редкий, сверхредкий, эпический, легендарный, мифический, божественный.
+// 7 уровней: обычный, редкий, сверхредкий, эпический, легендарный, мифический, божественный. Три источника:
+//  - артефакты волн — бросок каждому защитнику за любую победу (NSG.nsNsArtifactRoll), шанс и уровень растут с волной;
+//  - артефакты арены — только за победу на арене в её теме (тот же nsNsArtifactRoll с ctx = {arena, theme});
+//  - трофеи боссов ArPhEx и Cataclysm — NSG.nsNsBossTrophyRoll: шанс каждому, первое прохождение — наверняка одному.
+// Переплавка: 3 артефакта волн одного уровня → 1 случайный следующего (до мифического) — /nsart reforge и кнопка
+// NSG.nsNsArtifactReforgeText(player) для меню алтаря. Трофеи и артефакты арены не переплавляются.
+//
 // Надеваются в свой слот Curios «Реликвия» (4 слота — это и есть билд). Слот, тег и предметы — датапаком и
 // стартовым скриптом (tools/gen_ns_artifacts.py), интеграции KubeJS↔Curios в паке нет: эффекты считаем здесь.
 //  - раз в секунду (и сразу после смены надетого — CurioChangeEvent) смотрим слоты «Реликвия» через Java-API
-//    Curios и ставим постоянные модификаторы атрибутов с id nightshift:relic_<стат> (здоровье, броня, прочность
-//    брони, отбрасывание, скорость, урон, тики неуязвимости мода Artifacts). Чужие модификаторы
+//    Curios и ставим постоянные модификаторы атрибутов с id nightshift:relic_<стат>. Чужие модификаторы
 //    (nightshift:penalty — проклятие, раны, «Сердца ночи») не трогаем. Постоянные — чтобы при входе в игру
 //    здоровье сверх 20 не обрезалось до загрузки скрипта;
-//  - срез входящего урона и «щит» мифического (1 с полной неуязвимости после удара, потом перезарядка) —
-//    LivingIncomingDamageEvent; второе дыхание (смертельный удар оставляет 1 HP) — LivingDamageEvent$Pre;
-//    вампиризм, отражение, «был в бою» — LivingDamageEvent$Post;
-//  - одинаковые не складываются: второй такой же в слот не встанет (CurioCanEquipEvent), а эффекты считаются
-//    по уникальным id. Неуязвимость после удара и второе дыхание не суммируются — работает лучший.
-// Добыча: NSG.nsNsArtifactRoll(d, first) и NSG.nsNsArtifactHoverText(d) — вызывает набег (40_nightshift_raid.js,
-// алтарь), сами функции здесь. Справка — глава квест-бука «Артефакты смены» (tools/quests/spec_artifacts.json).
-// Проверка в игре: /nsart — что даёт надетое; /nsart odds <волна> — шансы; /nsart roll <волна> — 1000 бросков (оп).
+//  - там же: постоянные эффекты (огнестойкость, ночное зрение…), снятие эффектов, к которым иммунитет, лечение вне
+//    боя, огненная аура, «во тьме рассудок не падает»; раз в 4 тика — медленное падение с Shift;
+//  - LivingIncomingDamageEvent: щит после удара, нет урона от падения/мороза, уклонение, срез урона;
+//    LivingDamageEvent$Pre: второе дыхание (и телепорт в сторону — на следующем тике);
+//    LivingDamageEvent$Post: «был в бою», щит, отражение, эффекты и поджог ударившего, вампиризм, эффекты и поджог
+//    от твоих ударов; LivingDeathEvent: лечение и эффекты за убийство; MobEffectEvent$Applicable: иммунитеты;
+//  - одинаковые не складываются: второй такой же в слот не встанет (CurioCanEquipEvent), эффекты — по уникальным id.
+//    Неуязвимость после удара, второе дыхание и аура не суммируются — работает лучший.
+// Справка — глава квест-бука «Артефакты смены» (tools/quests/spec_artifacts.json).
+// Команды: /nsart — что даёт надетое; /nsart reforge — переплавка; /nsart odds <волна> — шансы;
+// оператор: /nsart roll <волна> [first], /nsart rolltheme <тема> — 1000 бросков.
 //
 // ВАЖНО (30.09): исключение внутри нативного обработчика роняет сервер — тело КАЖДОГО обработчика в try/catch.
-// У DamageSource в KubeJS 2101 нет надёжного getEntity — атакующего берём перебором имён методов.
+// KubeJS 2101 переименовывает для JS часть методов Mojang (RemapForJS, проверено javap 01.10): getStringUUID →
+// getStringUuid, Level.getGameTime → getTime, DamageSource.getMsgId → getType, getEntity → getActual,
+// getDirectEntity → getImmediate; Entity.hurt скрыт (есть attack(источник, урон)), level — свойство, а не метод;
+// AttributeInstance.removeModifier неоднозначен в Rhino. Поэтому — перебор имён (nsArtCall) и обходы ниже.
 // Правило Rhino: только var.
 // ==========================================================================
 
@@ -28,27 +40,54 @@
 var NS_ART = {
 	"slot": "relic",
 	"slots": 4,
-	"tiers": [{"key": "common", "name": "обычный", "from": 1}, {"key": "rare", "name": "редкий", "from": 1}, {"key": "superrare", "name": "сверхредкий", "from": 8}, {"key": "epic", "name": "эпический", "from": 15}, {"key": "legendary", "name": "легендарный", "from": 27}, {"key": "mythic", "name": "мифический", "from": 43}, {"key": "divine", "name": "божественный", "from": 90}],
+	"tiers": [{"key": "common", "name": "обычный", "gen": "обычных", "from": 1}, {"key": "rare", "name": "редкий", "gen": "редких", "from": 1}, {"key": "superrare", "name": "сверхредкий", "gen": "сверхредких", "from": 8}, {"key": "epic", "name": "эпический", "gen": "эпических", "from": 15}, {"key": "legendary", "name": "легендарный", "gen": "легендарных", "from": 27}, {"key": "mythic", "name": "мифический", "gen": "мифических", "from": 43}, {"key": "divine", "name": "божественный", "gen": "божественных", "from": 90}],
 	"items": {
-		"nightshift:art_patch": {"tier": 0, "name": "Заплатка вахтовика", "hp": 4},
-		"nightshift:art_badge": {"tier": 0, "name": "Жетон смены", "armor": 1, "speed": 0.05},
-		"nightshift:art_thermos": {"tier": 0, "name": "Термос бригадира", "regen": 0.5},
-		"nightshift:art_buckle": {"tier": 1, "name": "Стальная пряжка", "hp": 6, "kb": 0.1},
-		"nightshift:art_qc_stripe": {"tier": 1, "name": "Нашивка ОТК", "dr": 0.05},
-		"nightshift:art_watch_charm": {"tier": 1, "name": "Оберег сторожа", "iframes": 6, "armor": 1},
-		"nightshift:art_fang": {"tier": 2, "name": "Клык кровососа", "life": 0.05, "lifeCap": 2, "dmg": 1},
-		"nightshift:art_pauldron": {"tier": 2, "name": "Наплечник из сплава", "armor": 4, "tough": 2},
-		"nightshift:art_collar": {"tier": 2, "name": "Шипастый ошейник", "thorns": 0.25, "armor": 1},
-		"nightshift:art_stone_heart": {"tier": 3, "name": "Каменное сердце", "hp": 8, "kb": 0.25, "speed": -0.05},
-		"nightshift:art_rosary": {"tier": 3, "name": "Чётки дозорного", "iframes": 12, "dr": 0.05},
-		"nightshift:art_butcher_glove": {"tier": 3, "name": "Перчатка мясника", "life": 0.1, "lifeCap": 3, "dmg": 2},
-		"nightshift:art_titan_blood": {"tier": 4, "name": "Кровь титана", "hp": 12, "regen": 0.5},
-		"nightshift:art_visor": {"tier": 4, "name": "Щиток бригадира", "dr": 0.12, "armor": 3, "kb": 0.2},
-		"nightshift:art_second_wind": {"tier": 4, "name": "Жетон второго дыхания", "hp": 4, "wind": {"cd": 6000, "after": 40}},
-		"nightshift:art_hourglass": {"tier": 5, "name": "Песочные часы смены", "shield": {"dur": 20, "cd": 120}, "armor": 2},
-		"nightshift:art_horde_heart": {"tier": 5, "name": "Сердце орды", "hp": 14, "life": 0.06, "lifeCap": 3, "regen": 0.5},
-		"nightshift:art_vakhta_heart": {"tier": 6, "name": "Сердце Вахты", "hp": 18, "armor": 4, "dr": 0.1, "regen": 1.0},
-		"nightshift:art_halo": {"tier": 6, "name": "Нимб бессменного", "shield": {"dur": 20, "cd": 80}, "wind": {"cd": 2400, "after": 60}, "life": 0.1, "lifeCap": 4}
+		"nightshift:art_patch": {"tier": 0, "name": "Заплатка вахтовика", "pool": "wave", "hp": 4},
+		"nightshift:art_badge": {"tier": 0, "name": "Жетон смены", "pool": "wave", "armor": 1, "speed": 0.05},
+		"nightshift:art_thermos": {"tier": 0, "name": "Термос бригадира", "pool": "wave", "regen": 0.5},
+		"nightshift:art_buckle": {"tier": 1, "name": "Стальная пряжка", "pool": "wave", "hp": 6, "kb": 0.1},
+		"nightshift:art_qc_stripe": {"tier": 1, "name": "Нашивка ОТК", "pool": "wave", "dr": 0.05},
+		"nightshift:art_watch_charm": {"tier": 1, "name": "Оберег сторожа", "pool": "wave", "iframes": 6, "armor": 1},
+		"nightshift:art_fang": {"tier": 2, "name": "Клык кровососа", "pool": "wave", "life": 0.05, "lifeCap": 2, "dmg": 1},
+		"nightshift:art_pauldron": {"tier": 2, "name": "Наплечник из сплава", "pool": "wave", "armor": 4, "tough": 2},
+		"nightshift:art_collar": {"tier": 2, "name": "Шипастый ошейник", "pool": "wave", "thorns": 0.25, "armor": 1},
+		"nightshift:art_stone_heart": {"tier": 3, "name": "Каменное сердце", "pool": "wave", "hp": 8, "kb": 0.25, "speed": -0.05},
+		"nightshift:art_rosary": {"tier": 3, "name": "Чётки дозорного", "pool": "wave", "iframes": 12, "dr": 0.05},
+		"nightshift:art_butcher_glove": {"tier": 3, "name": "Перчатка мясника", "pool": "wave", "life": 0.1, "lifeCap": 3, "dmg": 2},
+		"nightshift:art_titan_blood": {"tier": 4, "name": "Кровь титана", "pool": "wave", "hp": 12, "regen": 0.5},
+		"nightshift:art_visor": {"tier": 4, "name": "Щиток бригадира", "pool": "wave", "dr": 0.12, "armor": 3, "kb": 0.2},
+		"nightshift:art_second_wind": {"tier": 4, "name": "Жетон второго дыхания", "pool": "wave", "hp": 4, "wind": {"cd": 6000, "after": 40}},
+		"nightshift:art_hourglass": {"tier": 5, "name": "Песочные часы смены", "pool": "wave", "shield": {"dur": 20, "cd": 120}, "armor": 2},
+		"nightshift:art_horde_heart": {"tier": 5, "name": "Сердце орды", "pool": "wave", "hp": 14, "life": 0.06, "lifeCap": 3, "regen": 0.5},
+		"nightshift:art_vakhta_heart": {"tier": 6, "name": "Сердце Вахты", "pool": "wave", "hp": 18, "armor": 4, "dr": 0.1, "regen": 1.0},
+		"nightshift:art_halo": {"tier": 6, "name": "Нимб бессменного", "pool": "wave", "shield": {"dur": 20, "cd": 80}, "wind": {"cd": 2400, "after": 60}, "life": 0.1, "lifeCap": 4},
+		"nightshift:art_shaft_helmet": {"tier": 3, "name": "Каска проходчика", "pool": "theme", "theme": "shaft", "armor": 3, "mine": 0.3, "immune": ["minecraft:mining_fatigue"]},
+		"nightshift:art_shaft_mace": {"tier": 3, "name": "Шахтёрский обушок", "pool": "theme", "theme": "shaft", "dmg": 2, "aspd": 0.1},
+		"nightshift:art_canyon_silk": {"tier": 3, "name": "Паучий шёлк", "pool": "theme", "theme": "canyon", "speed": 0.1, "immune": ["arphex:webbed", "minecraft:slowness", "minecraft:poison"]},
+		"nightshift:art_canyon_gland": {"tier": 4, "name": "Ядовитая железа", "pool": "theme", "theme": "canyon", "dmg": 2, "hitFx": [["minecraft:wither", 0, 80]]},
+		"nightshift:art_frost_shard": {"tier": 3, "name": "Осколок вечной мерзлоты", "pool": "theme", "theme": "frost", "armor": 2, "hurtFx": [["minecraft:slowness", 2, 60]]},
+		"nightshift:art_frost_heart": {"tier": 4, "name": "Сердце метели", "pool": "theme", "theme": "frost", "hp": 10, "noDmg": ["freeze"], "immune": ["minecraft:slowness"]},
+		"nightshift:art_inferno_ash": {"tier": 4, "name": "Пепельное сердце", "pool": "theme", "theme": "inferno", "hp": 6, "buffs": [["minecraft:fire_resistance", 0]], "hurtFire": 5},
+		"nightshift:art_inferno_crown": {"tier": 5, "name": "Корона пекла", "pool": "theme", "theme": "inferno", "dmg": 3, "hitFire": 4, "buffs": [["minecraft:fire_resistance", 0]]},
+		"nightshift:art_ender_feather": {"tier": 4, "name": "Перо Края", "pool": "theme", "theme": "ender", "speed": 0.1, "noDmg": ["fall"], "featherfall": true},
+		"nightshift:art_ender_void": {"tier": 5, "name": "Осколок пустоты", "pool": "theme", "theme": "ender", "hp": 8, "dodge": 0.15},
+		"nightshift:art_nightmare_lantern": {"tier": 5, "name": "Фонарь кошмара", "pool": "theme", "theme": "nightmare", "hp": 8, "buffs": [["minecraft:night_vision", 0]], "sanity": true, "immune": ["minecraft:darkness", "minecraft:blindness", "arphex:moth_curse", "arphex:splintered_sanity"]},
+		"nightshift:art_nightmare_claw": {"tier": 4, "name": "Коготь кошмара", "pool": "theme", "theme": "nightmare", "dmg": 4, "life": 0.06, "lifeCap": 3},
+		"nightshift:art_abyss_star": {"tier": 6, "name": "Осколок звезды", "pool": "theme", "theme": "abyss", "hp": 12, "dr": 0.08, "speed": 0.1, "shield": {"dur": 20, "cd": 100}},
+		"nightshift:art_tr_matriarch": {"tier": 4, "name": "Хитин матриарх", "pool": "boss", "armor": 4, "tough": 2, "immune": ["minecraft:poison", "arphex:necrosis"]},
+		"nightshift:art_tr_termite": {"tier": 4, "name": "Панцирь подземного короля", "pool": "boss", "hp": 10, "armor": 2, "kb": 0.3, "mine": 0.25},
+		"nightshift:art_tr_scorpioid": {"tier": 4, "name": "Жало скорпиоида", "pool": "boss", "life": 0.08, "lifeCap": 3, "hitFx": [["minecraft:poison", 1, 60], ["minecraft:slowness", 0, 60]]},
+		"nightshift:art_tr_voidlasher": {"tier": 4, "name": "Хвост драконохвоста", "pool": "boss", "speed": 0.15, "hurtFx": [["minecraft:weakness", 1, 80]], "immune": ["arphex:supergravity", "arphex:chaos_controlled", "arphex:voidlasher_chaos_control"]},
+		"nightshift:art_tr_trisector": {"tier": 5, "name": "Клинок трисектора", "pool": "boss", "dmg": 4, "aspd": 0.15},
+		"nightshift:art_tr_diabolos": {"tier": 5, "name": "Рог диаболоса", "pool": "boss", "hp": 6, "dmg": 3, "killHeal": 4},
+		"nightshift:art_tr_amethyst": {"tier": 4, "name": "Аметистовый панцирь", "pool": "boss", "armor": 4, "thorns": 0.2, "immune": ["arphex:constricted"]},
+		"nightshift:art_tr_gladiator": {"tier": 4, "name": "Медальон гладиатора", "pool": "boss", "dmg": 2, "killFx": [["minecraft:strength", 0, 120], ["minecraft:speed", 0, 120]]},
+		"nightshift:art_tr_golem": {"tier": 4, "name": "Ядро голема", "pool": "boss", "kb": 1.0, "armor": 3, "tough": 2, "immune": ["arphex:paralysis"]},
+		"nightshift:art_tr_guardian": {"tier": 5, "name": "Око Стража Края", "pool": "boss", "hp": 6, "wind": {"cd": 3600, "after": 40, "tp": true}},
+		"nightshift:art_tr_ignis": {"tier": 5, "name": "Ядро Игниса", "pool": "boss", "buffs": [["minecraft:fire_resistance", 0]], "aura": {"r": 4, "dmg": 2, "fire": 3}},
+		"nightshift:art_tr_maledictus": {"tier": 5, "name": "Венец Маледиктуса", "pool": "boss", "dmg": 3, "hitFx": [["minecraft:wither", 1, 60], ["minecraft:weakness", 0, 60]], "immune": ["minecraft:wither"]},
+		"nightshift:art_tr_remnant": {"tier": 5, "name": "Ожерелье реликта", "pool": "boss", "dr": 0.12, "buffs": [["minecraft:water_breathing", 0]], "immune": ["minecraft:slowness", "minecraft:blindness"]},
+		"nightshift:art_tr_monstrosity": {"tier": 5, "name": "Незеритовое сердце", "pool": "boss", "hp": 12, "armor": 4, "tough": 2, "speed": -0.05}
 	},
 	"byTier": [["nightshift:art_patch", "nightshift:art_badge", "nightshift:art_thermos"], ["nightshift:art_buckle", "nightshift:art_qc_stripe", "nightshift:art_watch_charm"], ["nightshift:art_fang", "nightshift:art_pauldron", "nightshift:art_collar"], ["nightshift:art_stone_heart", "nightshift:art_rosary", "nightshift:art_butcher_glove"], ["nightshift:art_titan_blood", "nightshift:art_visor", "nightshift:art_second_wind"], ["nightshift:art_hourglass", "nightshift:art_horde_heart"], ["nightshift:art_vakhta_heart", "nightshift:art_halo"]],
 	"chance": {"from": 0.08, "to": 0.6, "toWave": 100, "infPerWave": 0.0125, "infMax": 0.85, "firstMult": 1.5, "firstMax": 0.95, "firstSureEvery": 10},
@@ -64,9 +103,70 @@ var NS_ART = {
 		[100, [6, 12, 20, 24, 19, 16, 3]],
 		[120, [4, 10, 18, 24, 21, 17, 6]]
 	],
-	"caps": {"dr": 0.35, "life": 0.2, "lifeCap": 5, "regen": 2, "thorns": 0.5},
+	"caps": {"dr": 0.35, "life": 0.2, "lifeCap": 5, "regen": 2, "thorns": 0.5, "dodge": 0.25, "killHeal": 8},
 	"combatTicks": 100,
-	"attrs": [["hp", "minecraft:generic.max_health", "ADD_VALUE"], ["armor", "minecraft:generic.armor", "ADD_VALUE"], ["tough", "minecraft:generic.armor_toughness", "ADD_VALUE"], ["kb", "minecraft:generic.knockback_resistance", "ADD_VALUE"], ["speed", "minecraft:generic.movement_speed", "ADD_MULTIPLIED_BASE"], ["dmg", "minecraft:generic.attack_damage", "ADD_VALUE"], ["iframes", "artifacts:generic.invincibility_ticks", "ADD_VALUE"]]
+	"attrs": [["hp", "minecraft:generic.max_health", "ADD_VALUE"], ["armor", "minecraft:generic.armor", "ADD_VALUE"], ["tough", "minecraft:generic.armor_toughness", "ADD_VALUE"], ["kb", "minecraft:generic.knockback_resistance", "ADD_VALUE"], ["speed", "minecraft:generic.movement_speed", "ADD_MULTIPLIED_BASE"], ["dmg", "minecraft:generic.attack_damage", "ADD_VALUE"], ["aspd", "minecraft:generic.attack_speed", "ADD_MULTIPLIED_BASE"], ["mine", "minecraft:player.block_break_speed", "ADD_MULTIPLIED_BASE"], ["iframes", "artifacts:generic.invincibility_ticks", "ADD_VALUE"]],
+	"themes": {
+		"shaft": {"name": "Шахта", "chance": 0.12, "items": ["nightshift:art_shaft_helmet", "nightshift:art_shaft_mace"]},
+		"canyon": {"name": "Каньон пауков", "chance": 0.12, "items": ["nightshift:art_canyon_silk", "nightshift:art_canyon_gland"]},
+		"frost": {"name": "Вечная мерзлота", "chance": 0.12, "items": ["nightshift:art_frost_shard", "nightshift:art_frost_heart"]},
+		"inferno": {"name": "Пекло", "chance": 0.12, "items": ["nightshift:art_inferno_ash", "nightshift:art_inferno_crown"]},
+		"ender": {"name": "Край", "chance": 0.12, "items": ["nightshift:art_ender_feather", "nightshift:art_ender_void"]},
+		"nightmare": {"name": "Кошмар", "chance": 0.12, "items": ["nightshift:art_nightmare_lantern", "nightshift:art_nightmare_claw"]},
+		"abyss": {"name": "Звёздная бездна", "chance": 0.04, "items": ["nightshift:art_abyss_star"]}
+	},
+	"themeFirstMult": 2,
+	"themeTierWeight": {"3": 6, "4": 3, "5": 1, "6": 1},
+	"trophies": {
+		"arphex:spider_goliath": "nightshift:art_tr_matriarch",
+		"arphex:spider_matriarch": "nightshift:art_tr_matriarch",
+		"arphex:termite_tunneler_king": "nightshift:art_tr_termite",
+		"arphex:arthropleura_abomination": "nightshift:art_tr_termite",
+		"arphex:scorpioid_bloodluster": "nightshift:art_tr_scorpioid",
+		"arphex:draconic_voidlasher": "nightshift:art_tr_voidlasher",
+		"arphex:arachnoid_trisector": "nightshift:art_tr_trisector",
+		"arphex:diabolos_decimator": "nightshift:art_tr_diabolos",
+		"cataclysm:amethyst_crab": "nightshift:art_tr_amethyst",
+		"cataclysm:clawdian": "nightshift:art_tr_amethyst",
+		"cataclysm:kobolediator": "nightshift:art_tr_gladiator",
+		"cataclysm:aptrgangr": "nightshift:art_tr_gladiator",
+		"cataclysm:wadjet": "nightshift:art_tr_gladiator",
+		"cataclysm:ender_golem": "nightshift:art_tr_golem",
+		"cataclysm:the_prowler": "nightshift:art_tr_golem",
+		"cataclysm:ender_guardian": "nightshift:art_tr_guardian",
+		"cataclysm:ignis": "nightshift:art_tr_ignis",
+		"cataclysm:maledictus": "nightshift:art_tr_maledictus",
+		"cataclysm:the_harbinger": "nightshift:art_tr_maledictus",
+		"cataclysm:ancient_remnant": "nightshift:art_tr_remnant",
+		"cataclysm:scylla": "nightshift:art_tr_remnant",
+		"cataclysm:netherite_monstrosity": "nightshift:art_tr_monstrosity"
+	},
+	"bossNames": {
+		"arphex:spider_goliath": "Голиаф",
+		"arphex:spider_matriarch": "Паучиха-матриарх",
+		"arphex:termite_tunneler_king": "Термитный король",
+		"arphex:arthropleura_abomination": "Артроплевра-мерзость",
+		"arphex:scorpioid_bloodluster": "Скорпиоид-кровопийца",
+		"arphex:draconic_voidlasher": "Пустотный драконохвост",
+		"arphex:arachnoid_trisector": "Арахноид-трисектор",
+		"arphex:diabolos_decimator": "Диаболос-истребитель",
+		"cataclysm:amethyst_crab": "Аметистовый краб",
+		"cataclysm:clawdian": "Клаудиан",
+		"cataclysm:kobolediator": "Кобольдиатор",
+		"cataclysm:aptrgangr": "Аптргангр",
+		"cataclysm:wadjet": "Уаджет",
+		"cataclysm:ender_golem": "Голем Края",
+		"cataclysm:the_prowler": "Рыскун",
+		"cataclysm:ender_guardian": "Страж Края",
+		"cataclysm:ignis": "Игнис",
+		"cataclysm:maledictus": "Маледиктус",
+		"cataclysm:the_harbinger": "Предвестник",
+		"cataclysm:ancient_remnant": "Древний реликт",
+		"cataclysm:netherite_monstrosity": "Незеритовое чудовище",
+		"cataclysm:scylla": "Сцилла"
+	},
+	"trophyChance": {"4": 0.15, "5": 0.1},
+	"reforge": {"n": 3, "maxTier": 5}
 }
 // </ДАННЫЕ>
 
@@ -82,6 +182,9 @@ var NS_ART_CURIOS = nsArtClass('top.theillusivec4.curios.api.CuriosApi')
 var NS_ART_EV_IN = nsArtClass('net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent')
 var NS_ART_EV_PRE = nsArtClass('net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Pre')
 var NS_ART_EV_POST = nsArtClass('net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Post')
+var NS_ART_EV_DEATH = nsArtClass('net.neoforged.neoforge.event.entity.living.LivingDeathEvent')
+var NS_ART_EV_APPL = nsArtClass('net.neoforged.neoforge.event.entity.living.MobEffectEvent$Applicable')
+var NS_ART_APPL_RES = nsArtClass('net.neoforged.neoforge.event.entity.living.MobEffectEvent$Applicable$Result')
 var NS_ART_EV_EQUIP = nsArtClass('top.theillusivec4.curios.api.event.CurioCanEquipEvent')
 var NS_ART_EV_CHANGE = nsArtClass('top.theillusivec4.curios.api.event.CurioChangeEvent')
 var NS_ART_TRI = nsArtClass('net.neoforged.neoforge.common.util.TriState')
@@ -90,19 +193,28 @@ var NS_ART_RL = nsArtClass('net.minecraft.resources.ResourceLocation')
 var NS_ART_MOD = nsArtClass('net.minecraft.world.entity.ai.attributes.AttributeModifier')
 var NS_ART_OP = nsArtClass('net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation')
 var NS_ART_DTT = nsArtClass('net.minecraft.tags.DamageTypeTags')
+var NS_ART_MEI = nsArtClass('net.minecraft.world.effect.MobEffectInstance')
+var NS_ART_ENEMY = nsArtClass('net.minecraft.world.entity.monster.Enemy')
 
 var NS_ART_P = {} // uuid → сумма эффектов надетого (null — ничего не надето)
-var NS_ART_M = {} // uuid → {hurt, shieldUntil, shieldReady, fill, windTold} — память боя
+var NS_ART_M = {} // uuid → {hurt, shieldUntil, shieldReady, fill, windTold, san} — память боя
 var NS_ART_DIRTY = {} // uuid → пересчитать на ближайшем тике (сменили надетое, возродился, вошёл)
-var NS_ART_ANY = 0 // сколько игроков онлайн с артефактами — быстрый выход из обработчиков урона
-var NS_ART_LIFE = 0 // у скольких есть вампиризм — иначе урон по мобам (турели!) не разбираем вовсе
-var NS_ART_HOLDERS = {} // id атрибута → Holder (или false, если атрибута нет)
+var NS_ART_TP = {} // uuid → телепорт второго дыхания на ближайшем тике (не внутри события урона)
+// сколько игроков онлайн с артефактами / с эффектами от своих ударов / за убийство / с медленным падением /
+// с иммунитетами — быстрый выход из обработчиков (урон по мобам от турелей идёт сотнями в секунду)
+var NS_ART_ANY = 0
+var NS_ART_HIT = 0
+var NS_ART_KILL = 0
+var NS_ART_FF = 0
+var NS_ART_IMM = 0
+var NS_ART_HOLDERS = {} // id атрибута → Holder (или false)
+var NS_ART_EFFECTS = {} // id эффекта → Holder (или false)
 
 // --------------------------------------------------------------------------
-// Шансы выпадения (числа — в блоке данных: NS_ART.chance, NS_ART.weights)
+// Шансы выпадения (числа — в блоке данных: NS_ART.chance, NS_ART.weights, NS_ART.themes, NS_ART.trophyChance)
 // --------------------------------------------------------------------------
 
-// Шанс получить артефакт смены за победу на волне d (выше 100 — Бесконечность). first — первое прохождение:
+// Шанс получить артефакт волн за победу на волне d (выше 100 — Бесконечность). first — первое прохождение:
 // шанс ×firstMult, каждая firstSureEvery-я волна в первый раз — наверняка.
 function nsArtChance(d, first) {
 	var C = NS_ART.chance
@@ -151,18 +263,81 @@ function nsArtPickTier(w) {
 	return last
 }
 
-// Добыча набега — для КАЖДОГО защитника отдельно: [] или [[id, 1, id, 'мифический артефакт смены']]
-// (формат строк nsGiveLoot). d — номер волны (выше 100 — Бесконечность), first — первое прохождение.
-NSG.nsNsArtifactRoll = function (d, first) {
+// Тема арены из ctx (только победа НА арене): {name, chance, items} или null
+function nsArtTheme(ctx) {
+	if (!ctx || !ctx.arena || !ctx.theme) return null
+	return NS_ART.themes[String(ctx.theme)] || null
+}
+
+// Артефакт арены: шанс темы (первое прохождение ×themeFirstMult), внутри темы — по весу уровня
+function nsArtThemeRoll(ctx, first) {
+	var T = nsArtTheme(ctx)
+	if (!T || !T.items.length) return null
+	if (Math.random() >= Math.min(1, T.chance * (first ? NS_ART.themeFirstMult : 1))) return null
+	var total = 0
+	for (var i = 0; i < T.items.length; i++) total += NS_ART.themeTierWeight[String(NS_ART.items[T.items[i]].tier)] || 1
+	var r = Math.random() * total
+	for (var j = 0; j < T.items.length; j++) {
+		r -= NS_ART.themeTierWeight[String(NS_ART.items[T.items[j]].tier)] || 1
+		if (r < 0) return T.items[j]
+	}
+	return T.items[T.items.length - 1]
+}
+
+// Добыча набега — для КАЖДОГО защитника отдельно: [] или строки [id, 1, id, пояснение] (формат nsGiveLoot).
+// d — номер волны (выше 100 — Бесконечность), first — первое прохождение,
+// ctx (необязательно) — {arena: true/false, theme: 'frost'|…} — артефакт арены в теме волны. Трофеи боссов здесь
+// НЕ бросаются — для них NSG.nsNsBossTrophyRoll (там «наверняка одному» на всю команду).
+NSG.nsNsArtifactRoll = function (d, first, ctx) {
 	var out = []
 	try {
-		if (Math.random() >= nsArtChance(d, first)) return out
-		var t = nsArtPickTier(nsArtWeights(d))
-		var pool = NS_ART.byTier[t]
-		var id = pool[Math.floor(Math.random() * pool.length)]
-		out.push([id, 1, id, NS_ART.tiers[t].name + ' артефакт смены'])
+		if (Math.random() < nsArtChance(d, first)) {
+			var t = nsArtPickTier(nsArtWeights(d))
+			var pool = NS_ART.byTier[t]
+			var id = pool[Math.floor(Math.random() * pool.length)]
+			out.push([id, 1, id, NS_ART.tiers[t].name + ' артефакт смены'])
+		}
 	} catch (e) {
 		console.warn('[nightshift] артефакт смены: бросок не удался: ' + e)
+	}
+	try {
+		var th = nsArtThemeRoll(ctx, first)
+		if (th) out.push([th, 1, th, 'артефакт арены «' + nsArtTheme(ctx).name + '»'])
+	} catch (e2) {
+		console.warn('[nightshift] артефакт арены: бросок не удался: ' + e2)
+	}
+	return out
+}
+
+// Трофей босса id: {id, name, tier, chance, boss} или null
+NSG.nsNsBossTrophyFor = function (bossId) {
+	var tid = NS_ART.trophies[String(bossId)]
+	if (!tid) return null
+	var e = NS_ART.items[tid]
+	return { id: tid, name: e.name, tier: e.tier, chance: NS_ART.trophyChance[String(e.tier)] || 0.1, boss: NS_ART.bossNames[String(bossId)] || String(bossId) }
+}
+
+// Трофеи боссов за победу: bosses — id убитых в волне боссов (повторы не важны), players — защитники с добычей.
+// Каждому — шанс трофея (легендарный 15 %, мифический 10 %); first — первое прохождение волны: один случайный
+// защитник получает трофей наверняка. Возвращает [{player, line}], line — строка добычи для nsGiveLoot.
+NSG.nsNsBossTrophyRoll = function (d, first, bosses, players) {
+	var out = []
+	try {
+		var list = bosses || []
+		var ps = players || []
+		var seen = {}
+		for (var b = 0; b < list.length; b++) {
+			var bid = String(list[b])
+			var tr = NSG.nsNsBossTrophyFor(bid)
+			if (!tr || seen[tr.id]) continue
+			seen[tr.id] = true
+			var lucky = first && ps.length ? Math.floor(Math.random() * ps.length) : -1
+			for (var i = 0; i < ps.length; i++) {
+				if (i === lucky || Math.random() < tr.chance) out.push({ player: ps[i], line: [tr.id, 1, tr.id, 'трофей: ' + tr.boss] })
+			}
+		}
+	} catch (e) {
+		console.warn('[nightshift] трофей босса: бросок не удался: ' + e)
 	}
 	return out
 }
@@ -172,22 +347,33 @@ function nsArtPct(x) {
 	return String(Math.round(x))
 }
 
-// Подсказка у алтаря: «Артефакт смены: 34 % — обычный 24 %, редкий 26 %, …» (first — с учётом первого прохождения)
-NSG.nsNsArtifactHoverText = function (d, first) {
+// Подсказка у алтаря: «Артефакт смены: 34 % — обычный 24 %, редкий 26 %, …»; first — с учётом первого прохождения;
+// ctx (необязательно) — {arena, theme, bosses}: добавит артефакт арены и трофеи боссов волны
+NSG.nsNsArtifactHoverText = function (d, first, ctx) {
 	try {
 		var w = nsArtWeights(d)
 		var parts = []
 		for (var t = 0; t < w.length; t++) if (w[t] > 0) parts.push(NS_ART.tiers[t].name + ' ' + nsArtPct(w[t]) + ' %')
-		var p = nsArtChance(d, false)
-		var head = 'Артефакт смены: ' + nsArtPct(p * 100) + ' %'
+		var head = 'Артефакт смены: ' + nsArtPct(nsArtChance(d, false) * 100) + ' %'
 		if (first) head += ' (первое прохождение — ' + nsArtPct(nsArtChance(d, true) * 100) + ' %)'
-		return head + ' — ' + parts.join(', ')
+		var s = head + ' — ' + parts.join(', ')
+		var T = nsArtTheme(ctx)
+		if (T) s += '. Арена «' + T.name + '»: артефакт арены ' + nsArtPct(Math.min(1, T.chance * (first ? NS_ART.themeFirstMult : 1)) * 100) + ' %'
+		var seen = {}
+		var bs = (ctx && ctx.bosses) || []
+		for (var b = 0; b < bs.length; b++) {
+			var tr = NSG.nsNsBossTrophyFor(bs[b])
+			if (!tr || seen[tr.id]) continue
+			seen[tr.id] = true
+			s += '. Трофей «' + tr.name + '»: ' + nsArtPct(tr.chance * 100) + ' %' + (first ? ', одному — наверняка' : '')
+		}
+		return s
 	} catch (e) {
 		return 'Артефакт смены: шанс растёт с волной'
 	}
 }
 
-// Это артефакт смены? (для подсветки в сводке добычи) и его уровень 0–6 (-1 — нет)
+// Это артефакт смены (любой: волн, арены, трофей)? и его уровень 0–6 (-1 — нет)
 NSG.nsNsArtifactIs = function (id) {
 	return !!NS_ART.items[String(id)]
 }
@@ -236,15 +422,41 @@ function nsArtWorn(player) {
 	return out
 }
 
-// Сумма эффектов с потолками NS_ART.caps; щит и второе дыхание — лучший из надетых
+var NS_ART_SUM_KEYS = ['hp', 'armor', 'tough', 'kb', 'speed', 'dmg', 'aspd', 'mine', 'iframes', 'dr', 'life', 'lifeCap', 'regen', 'thorns', 'dodge', 'killHeal']
+
+// [[эффект, уровень, тики]] → в словарь {эффект: [уровень, тики]}, больший уровень и дольше
+function nsArtMergeFx(into, list) {
+	for (var i = 0; i < (list || []).length; i++) {
+		var e = list[i]
+		var cur = into[e[0]]
+		into[e[0]] = cur ? [Math.max(cur[0], e[1]), Math.max(cur[1], e[2] || 0)] : [e[1], e[2] || 0]
+	}
+}
+
+// Сумма эффектов с потолками NS_ART.caps; щит, второе дыхание и аура — лучший из надетых
 function nsArtSum(ids) {
-	var a = { ids: ids, hp: 0, armor: 0, tough: 0, kb: 0, speed: 0, dmg: 0, iframes: 0, dr: 0, life: 0, lifeCap: 0, regen: 0, thorns: 0, shield: null, wind: null }
-	var sums = ['hp', 'armor', 'tough', 'kb', 'speed', 'dmg', 'iframes', 'dr', 'life', 'lifeCap', 'regen', 'thorns']
+	var a = { ids: ids, shield: null, wind: null, aura: null, buffs: {}, immune: {}, noDmg: {}, hitFx: {}, hurtFx: {}, killFx: {}, hitFire: 0, hurtFire: 0, featherfall: false, sanity: false }
+	for (var k = 0; k < NS_ART_SUM_KEYS.length; k++) a[NS_ART_SUM_KEYS[k]] = 0
 	for (var i = 0; i < ids.length; i++) {
 		var e = NS_ART.items[ids[i]]
-		for (var k = 0; k < sums.length; k++) if (e[sums[k]]) a[sums[k]] += e[sums[k]]
+		for (var s = 0; s < NS_ART_SUM_KEYS.length; s++) if (e[NS_ART_SUM_KEYS[s]]) a[NS_ART_SUM_KEYS[s]] += e[NS_ART_SUM_KEYS[s]]
 		if (e.shield && (!a.shield || e.shield.cd < a.shield.cd)) a.shield = e.shield
-		if (e.wind && (!a.wind || e.wind.cd < a.wind.cd)) a.wind = e.wind
+		if (e.wind) {
+			var tp = !!e.wind.tp || (a.wind ? a.wind.tp : false)
+			var best = !a.wind || e.wind.cd < a.wind.cd ? e.wind : a.wind
+			a.wind = { cd: best.cd, after: best.after, tp: tp }
+		}
+		if (e.aura && (!a.aura || e.aura.dmg > a.aura.dmg)) a.aura = e.aura
+		for (var b = 0; b < (e.buffs || []).length; b++) a.buffs[e.buffs[b][0]] = Math.max(a.buffs[e.buffs[b][0]] || 0, e.buffs[b][1])
+		for (var m = 0; m < (e.immune || []).length; m++) a.immune[e.immune[m]] = true
+		for (var n = 0; n < (e.noDmg || []).length; n++) a.noDmg[e.noDmg[n]] = true
+		nsArtMergeFx(a.hitFx, e.hitFx)
+		nsArtMergeFx(a.hurtFx, e.hurtFx)
+		nsArtMergeFx(a.killFx, e.killFx)
+		if (e.hitFire) a.hitFire = Math.max(a.hitFire, e.hitFire)
+		if (e.hurtFire) a.hurtFire = Math.max(a.hurtFire, e.hurtFire)
+		if (e.featherfall) a.featherfall = true
+		if (e.sanity) a.sanity = true
 	}
 	var C = NS_ART.caps
 	a.dr = Math.min(C.dr, a.dr)
@@ -252,7 +464,12 @@ function nsArtSum(ids) {
 	a.lifeCap = Math.min(C.lifeCap, a.lifeCap)
 	a.regen = Math.min(C.regen, a.regen)
 	a.thorns = Math.min(C.thorns, a.thorns)
+	a.dodge = Math.min(C.dodge, a.dodge)
+	a.killHeal = Math.min(C.killHeal, a.killHeal)
 	a.kb = Math.min(1, a.kb)
+	a.hasImmune = Object.keys(a.immune).length > 0
+	a.hasHit = a.life > 0 || a.hitFire > 0 || Object.keys(a.hitFx).length > 0
+	a.hasKill = a.killHeal > 0 || Object.keys(a.killFx).length > 0
 	return a
 }
 
@@ -266,6 +483,46 @@ function nsArtHolder(attrId) {
 	if (!h) console.warn('[nightshift] артефакты смены: атрибута ' + attrId + ' нет — этот эффект пропускается')
 	NS_ART_HOLDERS[attrId] = h
 	return h
+}
+
+function nsArtEffect(effId) {
+	if (NS_ART_EFFECTS[effId] !== undefined) return NS_ART_EFFECTS[effId]
+	var h = false
+	try {
+		var o = NS_ART_REG.MOB_EFFECT.getHolder(NS_ART_RL.parse(effId))
+		if (o.isPresent()) h = o.get()
+	} catch (e) {}
+	if (!h) console.warn('[nightshift] артефакты смены: эффекта ' + effId + ' нет — пропускается')
+	NS_ART_EFFECTS[effId] = h
+	return h
+}
+
+// Эффект сущности: quiet — без частиц (постоянные эффекты артефактов)
+function nsArtGive(e, effId, amp, ticks, quiet) {
+	var h = nsArtEffect(effId)
+	if (!h) return
+	e.addEffect(quiet ? new NS_ART_MEI(h, ticks, amp, true, false) : new NS_ART_MEI(h, ticks, amp))
+}
+
+function nsArtIgnite(e, seconds) {
+	try {
+		e.igniteForSeconds(seconds)
+	} catch (x) {
+		try {
+			e.setSecondsOnFire(seconds)
+		} catch (y) {}
+	}
+}
+
+function nsArtEffectId(inst) {
+	try {
+		return String(inst.getEffect().getRegisteredName())
+	} catch (x) {}
+	try {
+		return String(NS_ART_REG.MOB_EFFECT.getKey(inst.getEffect().value()))
+	} catch (y) {
+		return ''
+	}
 }
 
 // Модификаторы атрибутов nightshift:relic_<стат>: меняем только то, что разошлось с надетым
@@ -289,9 +546,18 @@ function nsArtApplyAttrs(player, a) {
 	}
 }
 
-// KubeJS 2101 переименовывает для JS часть методов Mojang (RemapForJS, проверено javap 01.10):
-// getStringUUID → getStringUuid, Level.getGameTime → getTime, DamageSource.getMsgId → getType,
-// getEntity → getActual, getDirectEntity → getImmediate. Поэтому — перебор имён (nsArtCall).
+function nsArtCall(o, names) {
+	for (var i = 0; i < names.length; i++) {
+		try {
+			var f = o[names[i]]
+			if (typeof f !== 'function') continue
+			var r = f.call(o)
+			if (r != null) return r
+		} catch (x) {}
+	}
+	return null
+}
+
 function nsArtUuid(e) {
 	try {
 		if (e == null || !e.isPlayer()) return null
@@ -308,7 +574,6 @@ function nsArtMem(u) {
 }
 
 // Игровое время мира (общее для измерений, переживает рестарт) — для перезарядок
-// (у сущности в JS level — свойство, а не метод; берём getLevel)
 function nsArtNow(e) {
 	var lvl = e != null ? nsArtCall(e, ['getLevel']) : null
 	if (lvl == null) lvl = NSG.nsServer.overworld()
@@ -321,7 +586,44 @@ function nsArtRun(cmd) {
 	} catch (e) {}
 }
 
-// Пересчёт игрока: надетое → модификаторы; раз в секунду (second) — лечение вне боя и «второе дыхание готово»
+function nsArtFx(name, sound, particle) {
+	if (sound) nsArtRun('execute at ' + name + ' run playsound ' + sound + ' player ' + name + ' ~ ~ ~ 0.7 1.4')
+	if (particle) nsArtRun('execute at ' + name + ' run particle ' + particle)
+}
+
+// Огненная аура: монстры рядом горят и получают урон «шипами» игрока (убийство засчитывается ему, вампиризм — нет)
+function nsArtAura(p, au) {
+	if (!NS_ART_ENEMY) return
+	var list = p.getLevel().getEntitiesOfClass(NS_ART_ENEMY, p.getBoundingBox().inflate(au.r))
+	var n = Math.min(24, list.size())
+	if (n <= 0) return
+	var src = p.damageSources().thorns(p)
+	for (var i = 0; i < n; i++) {
+		var e = list.get(i)
+		if (!e.isAlive() || e.isPlayer()) continue
+		if (au.fire) nsArtIgnite(e, au.fire)
+		e.attack(src, au.dmg)
+	}
+	var nm = String(p.getUsername())
+	nsArtRun('execute at ' + nm + ' run particle minecraft:flame ~ ~1 ~ ' + au.r / 2 + ' 0.4 ' + au.r / 2 + ' 0.01 12')
+}
+
+// Второе дыхание с телепортом: до 16 попыток в квадрате ±6 блоков (как хорус), на следующем тике после спасения
+function nsArtTeleport(p) {
+	for (var i = 0; i < 16; i++) {
+		var x = p.getX() + (Math.random() - 0.5) * 12
+		var y = p.getY() + Math.floor(Math.random() * 5) - 2
+		var z = p.getZ() + (Math.random() - 0.5) * 12
+		if (p.randomTeleport(x, y, z, true)) {
+			nsArtFx(String(p.getUsername()), 'minecraft:entity.enderman.teleport', null)
+			return true
+		}
+	}
+	return false
+}
+
+// Пересчёт игрока: надетое → модификаторы; раз в секунду (second) — постоянные эффекты, иммунитеты, лечение вне
+// боя, аура, рассудок, «второе дыхание готово»
 function nsArtRefresh(player, u, second) {
 	var ids = nsArtWorn(player)
 	var a = ids.length ? nsArtSum(ids) : null
@@ -335,7 +637,28 @@ function nsArtRefresh(player, u, second) {
 	}
 	if (!second || !a) return
 	var now = nsArtNow(player)
+	for (var b in a.buffs) nsArtGive(player, b, a.buffs[b], b === 'minecraft:night_vision' ? 320 : 80, true) // ночное зрение — дольше 10 с, иначе мигает
+	for (var im in a.immune) {
+		var h = nsArtEffect(im)
+		if (h && player.hasEffect(h)) player.removeEffect(h)
+	}
 	if (a.regen > 0 && now - m.hurt >= NS_ART.combatTicks && !player.isDeadOrDying() && player.getHealth() < player.getMaxHealth()) player.heal(a.regen)
+	if (a.aura) {
+		try {
+			nsArtAura(player, a.aura)
+		} catch (e) {}
+	}
+	if (a.sanity && typeof NS_SANITY !== 'undefined') {
+		// Sanity: Renewed хранит долю безумия (0 — вменяем). Во тьме (свет ≤ 7) не даём ей расти.
+		try {
+			var cap = NS_SANITY.get(player)
+			if (cap) {
+				var cur = cap.getSanity()
+				if (player.getBlock().getLight() <= 7 && m.san !== undefined && cur > m.san) cap.setSanity(m.san)
+				else m.san = cur
+			}
+		} catch (e2) {}
+	}
 	if (a.wind && !m.windTold) {
 		var pd = player.persistentData
 		if (!pd.contains('ns_art_wind') || now >= Number(pd.getLong('ns_art_wind'))) {
@@ -347,35 +670,58 @@ function nsArtRefresh(player, u, second) {
 
 ServerEvents.tick(event => {
 	var server = event.server
-	var second = server.getTickCount() % 20 === 0
-	var dirty = false
+	var tick = server.getTickCount()
+	var second = tick % 20 === 0
+	var feather = NS_ART_FF > 0 && tick % 4 === 0
+	var pending = false
 	for (var k in NS_ART_DIRTY) {
-		dirty = true
+		pending = true
 		break
 	}
-	if (!second && !dirty) return
+	for (var k2 in NS_ART_TP) {
+		pending = true
+		break
+	}
+	if (!second && !pending && !feather) return
 	try {
 		var players = server.getPlayers()
 		var any = 0
-		var life = 0
+		var hit = 0
+		var kill = 0
+		var ff = 0
+		var imm = 0
 		for (var i = 0; i < players.length; i++) {
 			var p = players[i]
 			var u = nsArtUuid(p)
 			if (!u) continue
 			try {
 				if (second || NS_ART_DIRTY[u]) nsArtRefresh(p, u, second)
+				var a = NS_ART_P[u]
+				if (NS_ART_TP[u]) nsArtTeleport(p)
+				// медленное падение с Shift: проверка раз в 4 тика, эффект на полсекунды
+				if (a && a.featherfall && (feather || second) && p.isShiftKeyDown() && !nsArtCall(p, ['onGround', 'isOnGround'])) nsArtGive(p, 'minecraft:slow_falling', 0, 10, true)
 			} catch (e) {
 				console.warn('[nightshift] артефакты смены: пересчёт ' + p.getUsername() + ': ' + e)
 			}
-			if (NS_ART_P[u]) any++
-			if (NS_ART_P[u] && NS_ART_P[u].life > 0) life++
+			var s = NS_ART_P[u]
+			if (s) {
+				any++
+				if (s.hasHit) hit++
+				if (s.hasKill) kill++
+				if (s.featherfall) ff++
+				if (s.hasImmune) imm++
+			}
 		}
 		NS_ART_ANY = any
-		NS_ART_LIFE = life
+		NS_ART_HIT = hit
+		NS_ART_KILL = kill
+		NS_ART_FF = ff
+		NS_ART_IMM = imm
 	} catch (e) {
 		console.warn('[nightshift] артефакты смены: тик: ' + e)
 	}
 	NS_ART_DIRTY = {}
+	NS_ART_TP = {}
 })
 
 PlayerEvents.loggedIn(event => {
@@ -414,19 +760,7 @@ function nsArtBypass(src) {
 	}
 }
 
-function nsArtCall(o, names) {
-	for (var i = 0; i < names.length; i++) {
-		try {
-			var f = o[names[i]]
-			if (typeof f !== 'function') continue
-			var r = f.call(o)
-			if (r != null) return r
-		} catch (x) {}
-	}
-	return null
-}
-
-// id типа урона («thorns», «outOfWorld», …)
+// id типа урона («thorns», «fall», «outOfWorld», …)
 function nsArtMsgId(src) {
 	var id = nsArtCall(src, ['getType', 'getMsgId'])
 	return id == null ? '' : String(id)
@@ -440,12 +774,19 @@ function nsArtDirect(src) {
 	return nsArtCall(src, ['getImmediate', 'getDirectEntity'])
 }
 
-function nsArtFx(name, sound, particle) {
-	if (sound) nsArtRun('execute at ' + name + ' run playsound ' + sound + ' player ' + name + ' ~ ~ ~ 0.7 1.4')
-	if (particle) nsArtRun('execute at ' + name + ' run particle ' + particle)
+// Урон «тьмы» (sanity/20_darkness.js): /damage magic в тот же тик, что метка ns_dark_hit
+function nsArtDarkHit(p, msg) {
+	if (msg !== 'magic') return false
+	try {
+		var pd = p.persistentData
+		return pd.contains('ns_dark_hit') && Number(pd.getLong('ns_dark_hit')) >= NSG.nsServer.getTickCount() - 1
+	} catch (x) {
+		return false
+	}
 }
 
-// Срез урона и щит после удара: удар во время щита отменяется целиком (ни урона, ни отбрасывания)
+// Щит после удара, иммунитет к типам урона, урон тьмы под «Фонарём», уклонение, срез урона.
+// Удар во время щита или уклонение отменяются целиком (ни урона, ни отбрасывания).
 if (NS_ART_EV_IN) {
 	NativeEvents.onEvent(NS_ART_EV_IN, function (event) {
 		try {
@@ -460,6 +801,17 @@ if (NS_ART_EV_IN) {
 			var m = NS_ART_M[u]
 			if (m && m.shieldUntil > nsArtNow(p)) {
 				event.setCanceled(true)
+				return
+			}
+			var msg = nsArtMsgId(src)
+			if (a.noDmg[msg] || (a.sanity && nsArtDarkHit(p, msg))) {
+				event.setCanceled(true)
+				return
+			}
+			if (a.dodge > 0 && Math.random() < a.dodge && (nsArtAttacker(src) != null || nsArtDirect(src) != null)) {
+				event.setCanceled(true)
+				var nm = String(p.getUsername())
+				nsArtFx(nm, 'minecraft:entity.enderman.teleport', 'minecraft:portal ~ ~1 ~ 0.3 0.6 0.3 0.4 20 normal ' + nm)
 				return
 			}
 			if (a.dr > 0) event.setAmount(event.getAmount() * (1 - a.dr))
@@ -489,14 +841,16 @@ if (NS_ART_EV_PRE) {
 			var m = nsArtMem(u)
 			m.shieldUntil = Math.max(m.shieldUntil, now + a.wind.after)
 			m.windTold = false
+			if (a.wind.tp) NS_ART_TP[u] = true
 			var name = String(p.getUsername())
 			nsArtFx(name, 'minecraft:item.totem.use', 'minecraft:totem_of_undying ~ ~1 ~ 0.4 0.6 0.4 0.4 40 normal ' + name)
-			p.tell(Text.gold('[Ночная смена] Второе дыхание! ').append(Text.white('Смертельный удар оставил 1 HP, ' + Math.round(a.wind.after / 20) + ' с неуязвимости. Снова — через ' + Math.round(a.wind.cd / 1200) + ' мин.')))
+			p.tell(Text.gold('[Ночная смена] Второе дыхание! ').append(Text.white('Смертельный удар оставил 1 HP, ' + Math.round(a.wind.after / 20) + ' с неуязвимости' + (a.wind.tp ? ', рывок в сторону' : '') + '. Снова — через ' + Math.round(a.wind.cd / 1200) + ' мин.')))
 		} catch (x) {}
 	})
 }
 
-// После урона: щит мифических, отражение, «был в бою»; вампиризм — когда урон нанёс игрок
+// После урона. Игрок ранен: «был в бою», щит, отражение, эффекты и поджог ударившего вплотную.
+// Урон нанёс игрок: вампиризм, эффекты и поджог от его ударов (кроме отражённого и ауры — источник «шипы»).
 if (NS_ART_EV_POST) {
 	NativeEvents.onEvent(NS_ART_EV_POST, function (event) {
 		try {
@@ -521,23 +875,58 @@ if (NS_ART_EV_POST) {
 					var nm = String(v.getUsername())
 					nsArtFx(nm, 'minecraft:block.amethyst_block.chime', 'minecraft:end_rod ~ ~1 ~ 0.3 0.5 0.3 0.02 8 normal ' + nm)
 				}
-				if (a.thorns > 0) {
-					// только ближний бой: прямой источник — сам атакующий, а не стрела
-					if (by != null && direct != null && !by.isPlayer() && by.getId() === direct.getId() && by.getId() !== v.getId() && by.isAlive()) {
-						by.attack(v.damageSources().thorns(v), dmg * a.thorns) // hurt в KubeJS для JS скрыт — attack(источник, урон)
-					}
+				// только ближний бой: прямой источник — сам атакующий, а не стрела
+				if (by != null && direct != null && !by.isPlayer() && by.getId() === direct.getId() && by.getId() !== v.getId() && by.isAlive()) {
+					for (var hf in a.hurtFx) nsArtGive(by, hf, a.hurtFx[hf][0], a.hurtFx[hf][1], false)
+					if (a.hurtFire > 0) nsArtIgnite(by, a.hurtFire)
+					if (a.thorns > 0) by.attack(v.damageSources().thorns(v), dmg * a.thorns) // hurt в KubeJS для JS скрыт — attack(источник, урон)
 				}
 				return
 			}
-			if (NS_ART_LIFE <= 0) return
+			if (NS_ART_HIT <= 0) return
 			var att = nsArtAttacker(src)
 			var bu = nsArtUuid(att)
 			if (!bu) return
 			var b = NS_ART_P[bu]
-			if (!b || !(b.life > 0)) return
-			if (nsArtMsgId(src) === 'thorns') return // отражённый урон не лечит
-			if (att.isDeadOrDying()) return
-			att.heal(Math.min(b.lifeCap, dmg * b.life))
+			if (!b || !b.hasHit) return
+			if (nsArtMsgId(src) === 'thorns') return // отражённый урон и аура не лечат и не накладывают эффекты
+			if (b.life > 0 && !att.isDeadOrDying()) att.heal(Math.min(b.lifeCap, dmg * b.life))
+			if (v.isAlive()) {
+				for (var xf in b.hitFx) nsArtGive(v, xf, b.hitFx[xf][0], b.hitFx[xf][1], false)
+				if (b.hitFire > 0) nsArtIgnite(v, b.hitFire)
+			}
+		} catch (x) {}
+	})
+}
+
+// За убийство: лечение и эффекты (Рог диаболоса, Медальон гладиатора)
+if (NS_ART_EV_DEATH) {
+	NativeEvents.onEvent(NS_ART_EV_DEATH, function (event) {
+		try {
+			if (NS_ART_KILL <= 0) return
+			var v = event.getEntity()
+			if (v == null || v.isPlayer()) return
+			var att = nsArtAttacker(event.getSource())
+			var u = nsArtUuid(att)
+			if (!u) return
+			var b = NS_ART_P[u]
+			if (!b || !b.hasKill || att.isDeadOrDying()) return
+			if (b.killHeal > 0) att.heal(b.killHeal)
+			for (var kf in b.killFx) nsArtGive(att, kf, b.killFx[kf][0], b.killFx[kf][1], true)
+		} catch (x) {}
+	})
+}
+
+// Иммунитеты: эффект из списка надетого не накладывается (а уже наложенный снимается раз в секунду — nsArtRefresh)
+if (NS_ART_EV_APPL && NS_ART_APPL_RES) {
+	NativeEvents.onEvent(NS_ART_EV_APPL, function (event) {
+		try {
+			if (NS_ART_IMM <= 0) return
+			var u = nsArtUuid(event.getEntity())
+			if (!u) return
+			var a = NS_ART_P[u]
+			if (!a || !a.hasImmune) return
+			if (a.immune[nsArtEffectId(event.getEffectInstance())]) event.setResult(NS_ART_APPL_RES.DO_NOT_APPLY)
 		} catch (x) {}
 	})
 }
@@ -575,7 +964,84 @@ if (NS_ART_EV_CHANGE) {
 }
 
 // --------------------------------------------------------------------------
-// Команды: /nsart — что даёт надетое; /nsart odds <волна> — шансы; /nsart roll <волна> [first] — 1000 бросков (оп)
+// Переплавка: n артефактов волн одного уровня из инвентаря → 1 случайный следующего (не выше мифического)
+// --------------------------------------------------------------------------
+
+// План: самый низкий уровень, где набралось n; сначала повторы. {tier, take: [{slot, id}]} или null
+function nsArtReforgePlan(player) {
+	var R = NS_ART.reforge
+	var inv = player.getInventory()
+	var byTier = []
+	for (var t = 0; t < NS_ART.tiers.length; t++) byTier.push([])
+	for (var i = 0; i < 36; i++) {
+		var id = nsArtItemId(inv.getItem(i))
+		var e = NS_ART.items[id]
+		if (!e || e.pool !== 'wave' || e.tier >= R.maxTier) continue
+		byTier[e.tier].push({ slot: i, id: id })
+	}
+	for (var k = 0; k < byTier.length; k++) {
+		var list = byTier[k]
+		if (list.length < R.n) continue
+		var cnt = {}
+		for (var j = 0; j < list.length; j++) cnt[list[j].id] = (cnt[list[j].id] || 0) + 1
+		list.sort(function (x, y) {
+			return cnt[y.id] - cnt[x.id] || x.slot - y.slot
+		})
+		return { tier: k, take: list.slice(0, R.n) }
+	}
+	return null
+}
+
+// Переплавить: {from, to, id} или null (нечего). Выдача — в инвентарь, не влезло — под ноги.
+NSG.nsNsArtifactReforge = function (player) {
+	var plan = nsArtReforgePlan(player)
+	if (!plan) return null
+	var inv = player.getInventory()
+	for (var i = 0; i < plan.take.length; i++) if (nsArtItemId(inv.getItem(plan.take[i].slot)) !== plan.take[i].id) return null
+	for (var j = 0; j < plan.take.length; j++) inv.removeItem(plan.take[j].slot, 1)
+	var pool = NS_ART.byTier[plan.tier + 1]
+	var id = pool[Math.floor(Math.random() * pool.length)]
+	player.give(Item.of(id))
+	return { from: plan.tier, to: plan.tier + 1, id: id }
+}
+
+// Кнопка для меню алтаря: «[Переплавить 3 → 1]» с подсказкой, или null — переплавлять нечего
+NSG.nsNsArtifactReforgeText = function (player) {
+	try {
+		var plan = nsArtReforgePlan(player)
+		if (!plan) return null
+		var R = NS_ART.reforge
+		return Text.lightPurple('[Переплавить ' + R.n + ' → 1]')
+			.clickRunCommand('/nsart reforge')
+			.hover(Text.gray(R.n + ' ' + NS_ART.tiers[plan.tier].gen + ' артефакта из инвентаря → 1 случайный ' + NS_ART.tiers[plan.tier + 1].name + '. Сначала повторы. Трофеи и артефакты арены не переплавляются.'))
+	} catch (e) {
+		return null
+	}
+}
+
+function nsArtReforgeCmd(ctx) {
+	var p = ctx.source.getPlayer()
+	if (!p) return 0
+	var r = null
+	try {
+		r = NSG.nsNsArtifactReforge(p)
+	} catch (e) {
+		console.warn('[nightshift] переплавка: ' + e)
+	}
+	if (!r) {
+		p.tell(Text.gray('[Ночная смена] Переплавлять нечего: нужно ' + NS_ART.reforge.n + ' артефакта волн одного уровня в инвентаре (не в слотах), не выше легендарного.'))
+		return 0
+	}
+	var line = Text.lightPurple('[Ночная смена] Переплавка: ' + NS_ART.reforge.n + ' ' + NS_ART.tiers[r.from].gen + ' → ').append(Text.translate('item.' + r.id.replace(':', '.')))
+	if (r.to >= 4 && typeof nsTellAll === 'function') nsTellAll(Text.lightPurple('[Ночная смена] ' + p.getUsername() + ' переплавляет артефакты: ').append(Text.translate('item.' + r.id.replace(':', '.'))))
+	else p.tell(line)
+	nsArtFx(String(p.getUsername()), 'minecraft:block.anvil.use', null)
+	return 1
+}
+
+// --------------------------------------------------------------------------
+// Команды: /nsart — что даёт надетое; /nsart reforge; /nsart odds <волна>;
+// оператор: /nsart roll <волна> [first], /nsart rolltheme <тема> — 1000 бросков
 // --------------------------------------------------------------------------
 
 function nsArtNum(x) {
@@ -604,11 +1070,18 @@ function nsArtStatus(ctx) {
 	if (a.kb) parts.push('отбрасывание −' + Math.round(a.kb * 100) + ' %')
 	if (a.speed) parts.push('скорость ' + (a.speed > 0 ? '+' : '−') + Math.round(Math.abs(a.speed) * 100) + ' %')
 	if (a.dmg) parts.push('урон +' + nsArtNum(a.dmg))
+	if (a.aspd) parts.push('скорость атаки +' + Math.round(a.aspd * 100) + ' %')
+	if (a.mine) parts.push('копание +' + Math.round(a.mine * 100) + ' %')
 	if (a.iframes) parts.push('неуязвимость после удара +' + nsArtNum(a.iframes / 20) + ' с')
 	if (a.dr) parts.push('входящий урон −' + Math.round(a.dr * 100) + ' %')
+	if (a.dodge) parts.push('уклонение ' + Math.round(a.dodge * 100) + ' %')
 	if (a.life) parts.push('вампиризм ' + Math.round(a.life * 100) + ' % (до ' + nsArtNum(a.lifeCap) + ' HP за удар)')
 	if (a.regen) parts.push('вне боя +' + nsArtNum(a.regen) + ' HP/с')
 	if (a.thorns) parts.push('отражение ' + Math.round(a.thorns * 100) + ' %')
+	if (a.killHeal) parts.push('убийство лечит ' + nsArtNum(a.killHeal) + ' HP')
+	if (a.aura) parts.push('огненная аура ' + a.aura.r + ' бл.')
+	var imm = Object.keys(a.immune)
+	if (imm.length) parts.push('иммунитетов: ' + imm.length)
 	if (a.shield) parts.push('щит ' + nsArtNum(a.shield.dur / 20) + ' с после удара, раз в ' + nsArtNum(a.shield.cd / 20) + ' с')
 	if (a.wind) {
 		var pd = p.persistentData
@@ -618,6 +1091,8 @@ function nsArtStatus(ctx) {
 	ctx.source.sendSystemMessage(t)
 	ctx.source.sendSystemMessage(Text.white(parts.join('; ')))
 	ctx.source.sendSystemMessage(Text.gray('Здоровье ' + nsArtNum(p.getHealth()) + ' / ' + nsArtNum(p.getMaxHealth()) + (NS_ART_P[u] ? '' : ' (эффекты включатся в течение секунды)')))
+	var btn = NSG.nsNsArtifactReforgeText(p)
+	if (btn) ctx.source.sendSystemMessage(Text.gray('Есть что переплавить: ').append(btn))
 	return 1
 }
 
@@ -627,6 +1102,7 @@ ServerEvents.commandRegistry(event => {
 	event.register(
 		Commands.literal('nsart')
 			.executes(ctx => nsArtStatus(ctx))
+			.then(Commands.literal('reforge').executes(ctx => nsArtReforgeCmd(ctx)))
 			.then(
 				Commands.literal('odds').then(
 					Commands.argument('wave', Arguments.INTEGER.create(event)).executes(ctx => {
@@ -645,6 +1121,11 @@ ServerEvents.commandRegistry(event => {
 							.then(Commands.literal('first').executes(ctx => nsArtRollTest(ctx, Number(Arguments.INTEGER.getResult(ctx, 'wave')), true)))
 					)
 			)
+			.then(
+				Commands.literal('rolltheme')
+					.requires(src => src.hasPermission(2))
+					.then(Commands.argument('theme', Arguments.STRING.create(event)).executes(ctx => nsArtThemeTest(ctx, String(Arguments.STRING.getResult(ctx, 'theme')))))
+			)
 	)
 })
 
@@ -662,5 +1143,26 @@ function nsArtRollTest(ctx, d, first) {
 	var parts = []
 	for (var t = 0; t < byTier.length; t++) if (byTier[t]) parts.push(NS_ART.tiers[t].name + ' ' + byTier[t])
 	ctx.source.sendSystemMessage(Text.gold('[Ночная смена] ' + n + ' бросков, волна ' + d + (first ? ' (первое прохождение)' : '') + ': ').append(Text.white('артефактов ' + got + ' — ' + parts.join(', '))))
+	return 1
+}
+
+// 1000 побед на арене в теме key (без первого прохождения): сколько артефактов арены и каких
+function nsArtThemeTest(ctx, key) {
+	var T = NS_ART.themes[key]
+	if (!T) {
+		ctx.source.sendSystemMessage(Text.red('Нет темы ' + key + '. Есть: ' + Object.keys(NS_ART.themes).join(', ')))
+		return 0
+	}
+	var cnt = {}
+	var got = 0
+	for (var i = 0; i < 1000; i++) {
+		var id = nsArtThemeRoll({ arena: true, theme: key }, false)
+		if (!id) continue
+		got++
+		cnt[id] = (cnt[id] || 0) + 1
+	}
+	var parts = []
+	for (var k in cnt) parts.push(NS_ART.items[k].name + ' ' + cnt[k])
+	ctx.source.sendSystemMessage(Text.gold('[Ночная смена] Арена «' + T.name + '», 1000 побед: ').append(Text.white('артефактов арены ' + got + ' — ' + parts.join(', '))))
 	return 1
 }

@@ -41344,6 +41344,114 @@
   {
    "id": "nightshift:art_halo",
    "emc": 0
+  },
+  {
+   "id": "nightshift:art_shaft_helmet",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_shaft_mace",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_canyon_silk",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_canyon_gland",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_frost_shard",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_frost_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_inferno_ash",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_inferno_crown",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_ender_feather",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_ender_void",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_nightmare_lantern",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_nightmare_claw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_abyss_star",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_matriarch",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_termite",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_scorpioid",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_voidlasher",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_trisector",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_diabolos",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_amethyst",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_gladiator",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_golem",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_guardian",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_ignis",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_maledictus",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_remnant",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_monstrosity",
+   "emc": 0
   }
  ]
 }
