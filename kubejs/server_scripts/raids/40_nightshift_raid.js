@@ -1396,6 +1396,9 @@ function nsTickActiveRaid(state) {
 	for (var j = 0; j < mobs.length; j++) nsTickMobNavigation(mobs[j], altar, level)
 
 	var queued = nsQueuedCount(state)
+	nsTry('хвост подволны', function () {
+		nsTailCheck(state, level, altar, mobs, queued)
+	})
 	if (mobs.length > 0) {
 		if (!state.raid.waveSeen) {
 			state.raid.waveSeen = true // волна действительно появилась — теперь её зачистка засчитается
@@ -1449,6 +1452,79 @@ function nsTickActiveRaid(state) {
 		return
 	}
 	nsMarkWaveSeen(state, level, altar)
+}
+
+// --------------------------------------------------------------------------
+// Застрявший хвост подволны (02.10, Георгий: «волна баганулась — монстров нет, а волна идёт»: 4 моба сидели на крыше
+// базы над алтарём, в пещере на глубине 44 и на горе на 124 — подволна не кончалась). Осталось мало мобов и они не
+// гибнут: через glowAfter с — свечение сквозь стены, через recallAfter с — назад к месту выхода орды (и снова идут на
+// алтарь), повтор раз в 30 с. Счёт сбрасывается, как только кто-то из хвоста погиб.
+// --------------------------------------------------------------------------
+NSG.NS_RAID_TAIL = { maxLeft: 5, share: 0.15, glowAfter: 20, recallAfter: 45 }
+function nsTailCheck(state, level, altar, mobs, queued) {
+	var T = NSG.NS_RAID_TAIL
+	var limit = Math.max(T.maxLeft, Math.ceil((state.raid.waveSize || 0) * T.share))
+	if (queued > 0 || mobs.length === 0 || mobs.length > limit) {
+		NSG.nsTail = null
+		return
+	}
+	var tl = NSG.nsTail
+	if (!tl || tl.rid !== state.raid.rid || tl.wave !== state.raid.waveIndex || tl.boss !== !!state.raid.bossSpawned || tl.left !== mobs.length) {
+		NSG.nsTail = { rid: state.raid.rid, wave: state.raid.waveIndex, boss: !!state.raid.bossSpawned, left: mobs.length, secs: 0 }
+		return
+	}
+	tl.secs++
+	if (tl.secs === T.glowAfter) {
+		for (var i = 0; i < mobs.length; i++) {
+			try {
+				mobs[i].addEffect(new NS_MOB_EFFECT_INSTANCE(NS_GLOWING, 20 * 600, 0, false, false))
+			} catch (e) {
+				NSG.nsServer.runCommandSilent('effect give ' + mobs[i].getStringUuid() + ' minecraft:glowing 600 0 true')
+			}
+		}
+		nsTellAll(Text.gray('[Ночная смена] Остались ' + nsPlural(mobs.length, 'моб', 'моба', 'мобов') + ' — подсвечены, их видно сквозь стены.'))
+	}
+	if (tl.secs >= T.recallAfter && (tl.secs - T.recallAfter) % 30 === 0) {
+		var moved = 0
+		for (var k = 0; k < mobs.length; k++) {
+			var pt = nsRingPoint(level, altar, state)
+			if (!pt) continue
+			try {
+				mobs[k].teleportTo(pt.x + 0.5, pt.y, pt.z + 0.5)
+				var pd = mobs[k].persistentData
+				pd.putDouble('ns_best', 1e9)
+				pd.putInt('ns_stuck', 0)
+				moved++
+			} catch (e) {}
+		}
+		if (moved > 0) {
+			console.info('[nightshift] хвост подволны: вернул к месту выхода орды ' + moved)
+			nsTellAll(Text.gray('[Ночная смена] Застрявшие мобы возвращены к месту выхода орды — идут на алтарь.'))
+		}
+	}
+}
+var NS_MOB_EFFECT_INSTANCE = Java.loadClass('net.minecraft.world.effect.MobEffectInstance')
+var NS_GLOWING = Java.loadClass('net.minecraft.world.effect.MobEffects').GLOWING
+
+// Точка на кольце выхода орды (как у nsSpawnMobRing): свои точки спавна или кольцо вокруг алтаря вне зон базы
+function nsRingPoint(level, altar, state) {
+	var T = NSG.NIGHTSHIFT_TUNABLES
+	var pts = altar.spawns || []
+	if (pts.length > 0) {
+		var p = pts[Math.floor(Math.random() * pts.length)]
+		var y0 = nsFindSpawnY(level, p.x, p.z, p.y)
+		return { x: p.x, y: y0 === null ? p.y : y0, z: p.z }
+	}
+	for (var attempt = 0; attempt < 40; attempt++) {
+		var angle = Math.random() * Math.PI * 2
+		var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + attempt * 8
+		var x = Math.round(altar.x + Math.cos(angle) * dist)
+		var z = Math.round(altar.z + Math.sin(angle) * dist)
+		if (nsPointInAnyZone(state, altar.dim, x, altar.y, z)) continue
+		var y = nsFindSpawnY(level, x, z, altar.y)
+		if (y !== null) return { x: x, y: y, z: z }
+	}
+	return null
 }
 
 // Сразу после спавна: волна на месте — отмечаем (иначе турели, убившие её за секунду, выглядели бы как
