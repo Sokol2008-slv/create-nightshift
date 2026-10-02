@@ -1634,7 +1634,7 @@ hash = "043fadcff6495d3c725c934f24d98419ec822c0f8de5382d18116fcd581aa15e"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "59d6cb9882bcc3c8aefaf47284bfcf7720650721f9f60a1a5d85a5ad41c24ae3"
+hash = "3ab94f5156673ce71026321212abd7ae055312d31e83ee7a37c7f338d4b08388"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"

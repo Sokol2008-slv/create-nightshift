@@ -218,7 +218,9 @@ function nsIsAir(level, x, y, z) {
 	}
 }
 
-function nsFindSpawnY(level, x, z, altarY) {
+// strict — только на высоте алтаря ±16, без «верха колонки» (02.10: орда выходила на вершинах гор у базы на y 124 и
+// там застревала — кольцо брало первую же точку с запасным путём, не поискав ровного места по кругу)
+function nsFindSpawnY(level, x, z, altarY, strict) {
 	for (var d = 0; d <= 16; d++) {
 		var ys = d === 0 ? [altarY] : [altarY + d, altarY - d]
 		for (var k = 0; k < ys.length; k++) {
@@ -226,6 +228,7 @@ function nsFindSpawnY(level, x, z, altarY) {
 			if (nsIsAir(level, x, y, z) && nsIsAir(level, x, y + 1, z) && nsIsSolid(level, x, y - 1, z)) return y
 		}
 	}
+	if (strict) return null
 	// запасной путь — верх колонки, но не вода и не лава (иначе орда тонет)
 	for (var y2 = 319; y2 > -64; y2--) {
 		if (!nsIsAir(level, x, y2, z)) return nsIsSolid(level, x, y2, z) ? y2 + 1 : null
@@ -257,15 +260,15 @@ function nsSpawnMobRing(level, altar, mobId, count, state, extraNbt, extraTags) 
 				y = p.y
 			}
 		} else {
-			// кольцо расширяется с каждой попыткой: у большой базы орда встаёт сразу за периметром
-			for (var attempt = 0; attempt < 40; attempt++) {
+			// кольцо расширяется с каждой попыткой: у большой базы орда встаёт сразу за периметром.
+			// Сначала 40 попыток строго на высоте алтаря ±16, и лишь потом — верх колонки (вершины гор)
+			for (var attempt = 0; attempt < 80 && y === null; attempt++) {
 				var angle = Math.random() * Math.PI * 2
-				var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + attempt * 8
+				var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + (attempt % 40) * 8
 				x = Math.round(altar.x + Math.cos(angle) * dist)
 				z = Math.round(altar.z + Math.sin(angle) * dist)
 				if (nsPointInAnyZone(state, altar.dim, x, altar.y, z)) continue
-				y = nsFindSpawnY(level, x, z, altar.y)
-				if (y !== null) break
+				y = nsFindSpawnY(level, x, z, altar.y, attempt < 40)
 			}
 		}
 		if (y === null) continue
@@ -1515,13 +1518,13 @@ function nsRingPoint(level, altar, state) {
 		var y0 = nsFindSpawnY(level, p.x, p.z, p.y)
 		return { x: p.x, y: y0 === null ? p.y : y0, z: p.z }
 	}
-	for (var attempt = 0; attempt < 40; attempt++) {
+	for (var attempt = 0; attempt < 80; attempt++) {
 		var angle = Math.random() * Math.PI * 2
-		var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + attempt * 8
+		var dist = T.raidRingMinDist + Math.random() * (T.raidRingMaxDist - T.raidRingMinDist) + (attempt % 40) * 8
 		var x = Math.round(altar.x + Math.cos(angle) * dist)
 		var z = Math.round(altar.z + Math.sin(angle) * dist)
 		if (nsPointInAnyZone(state, altar.dim, x, altar.y, z)) continue
-		var y = nsFindSpawnY(level, x, z, altar.y)
+		var y = nsFindSpawnY(level, x, z, altar.y, attempt < 40)
 		if (y !== null) return { x: x, y: y, z: z }
 	}
 	return null
