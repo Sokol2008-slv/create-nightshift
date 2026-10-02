@@ -32,7 +32,32 @@ function nsFindAltar(state, altarId) {
 // Конец набега: снова можно спать
 function nsRaidEnded() {
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 100')
+	// детёныши мобов набега (личинки и т.п., без метки набега) — после набега долой
+	for (var m in NS_MINION_TYPES) NSG.nsServer.runCommandSilent('kill @e[type=' + m + ',tag=!nightshift_raid]')
 }
+
+// Детёныши, которых плодят мобы набега (02.10, Георгий: «лагает сильно — пауки спавнят мелких пауков»): паучий
+// выводок при смерти лопается на личинок, паук-рыщущий плодит личинок на ходу, матриарх / выселитель / моль — когда
+// их бьют, краб-душитель — при смерти. Метки набега у них нет: волну не держат, но копятся и грузят сервер.
+// Во время набега их у алтаря не больше NS_MINION_CAP (лишние исчезают), после набега убираются все.
+var NS_MINION_TYPES = {
+	'arphex:spider_larvae': 1,
+	'arphex:spider_larvae_tiny': 1,
+	'arphex:spider_matriarch_larvae': 1,
+	'arphex:centipede_evictor_larvae': 1,
+	'arphex:spider_moth_larvae': 1,
+	'arphex:spider_moth_summon_larvae': 1,
+	'arphex:scorpion_larvae': 1,
+	'arphex:crab_larvae': 1,
+	'arphex:maggot_larvae': 1,
+	'arphex:beetle_tick_mite': 1,
+	'arphex:long_legs_tiny': 1,
+	'arphex:spider_brood': 1,
+	'arphex:spider_lurker': 1,
+	'arphex:termite_tunneler_worker': 1,
+	'arphex:termite_tunneler_alate': 1,
+}
+var NS_MINION_CAP = 12
 
 // Самолечение сна (29.09: «спать не можем», а набег idle и алтарей нет): 101 % ставит только набег.
 // Если набега нет, а правило осталось выше 100 (набег оборвался мимо nsRaidEnded) — возвращаем 100.
@@ -127,13 +152,21 @@ function nsCollectRaidMobs(level, altar, radius) {
 		return null
 	}
 	var out = []
+	var minions = []
 	for (var i = 0; i < list.size(); i++) {
 		var ent = list.get(i)
 		var alive = false
 		try {
 			alive = ent.isAlive()
 		} catch (e) {}
-		if (!alive || !nsHasRaidTag(ent)) continue
+		if (!alive) continue
+		if (!nsHasRaidTag(ent)) {
+			// детёныш моба набега — в счёт лимита (лишние исчезают ниже)
+			try {
+				if (NS_MINION_TYPES[String(ent.getType())]) minions.push(ent)
+			} catch (e) {}
+			continue
+		}
 		if (rid && !nsHasTag(ent, rid)) {
 			// пассажир нашего моба (всадник Кошмара) — свой, хоть номер в его NBT и не вписан
 			var veh = null
@@ -146,6 +179,13 @@ function nsCollectRaidMobs(level, altar, radius) {
 			}
 		}
 		out.push(ent)
+	}
+	if (minions.length > NS_MINION_CAP) {
+		for (var mi = NS_MINION_CAP; mi < minions.length; mi++) nsRemoveMob(minions[mi])
+		if (!NSG.nsMinionLogged) {
+			console.info('[nightshift] детёныши мобов набега сверх ' + NS_MINION_CAP + ' убраны: ' + (minions.length - NS_MINION_CAP) + ' (дальше в лог не пишу)')
+			NSG.nsMinionLogged = true
+		}
 	}
 	return out
 }
