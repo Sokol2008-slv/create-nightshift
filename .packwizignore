@@ -7,3 +7,4 @@ dist/
 docs/
 modes/
 kubejs/server_scripts/scares/
+.claude/
