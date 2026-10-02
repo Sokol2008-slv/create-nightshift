@@ -353,6 +353,19 @@ function nsTickMobNavigation(mob, altar, level) {
 		return
 	}
 
+	// Арена: пауки лезут по стенам под самую крышу и висят там, снизу не видно (02.10, Георгий: «на волне с пауками
+	// найти их — анрил, 5 минут бегаем»). Наземный моб выше алтаря на 15+ блоков дольше 8 с — на пол под ним.
+	if (altar.dim === 'nightshift:arena' && mob.getY() > altar.y + 15) {
+		var hi = (pd.contains('ns_high') ? pd.getInt('ns_high') : 0) + 1
+		pd.putInt('ns_high', hi)
+		if (hi >= 8) {
+			try {
+				mob.teleportTo(Math.max(-9.5, Math.min(9.5, mob.getX())), altar.y - 1, Math.max(1, Math.min(126, mob.getZ())))
+			} catch (e) {}
+			pd.putInt('ns_high', 0)
+		}
+	} else if (pd.contains('ns_high')) pd.putInt('ns_high', 0)
+
 	// Застрял = за stuckTicksToChew не подошёл к алтарю ближе, чем был, хотя бы на блок. Раньше мерили смещение:
 	// толпа у стены толкается и лезет друг на друга — смещение есть, а стену никто не грыз (30.09, Георгий).
 	var ax = altar.x + 0.5 - mob.getX(),
