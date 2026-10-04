@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_mountain",
+  "features": "nightshift:outpost_helium",
+  "step": "underground_ores"
+}

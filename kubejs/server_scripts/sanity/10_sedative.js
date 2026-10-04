@@ -1,7 +1,7 @@
 // ==========================================================================
 // Ночная смена — «Успокоительное»: рецепты и эффект.
-// Рецепты: верстак — 1 таблетка (доступно с P0), миксер Create — 4 таблетки
-// (автоматизация даёт ×4). Ингредиенты растут/добываются с первого дня.
+// Рецепт: миксер Create — 6 таблеток из сахара, сладких ягод, цветка и целебных спор (форпост «Грибные пещеры»:
+// грибные поля или пышные пещеры, 04.10). Без спор рассудок не лечится.
 // Эффект: +SEDATIVE_RESTORE % рассудка через команду мода /sanity add.
 // ==========================================================================
 
@@ -9,7 +9,8 @@ var SEDATIVE_RESTORE = 25
 
 ServerEvents.recipes(event => {
 	// только миксер (вручную нельзя — так интереснее)
-	event.recipes.create.mixing('4x nightshift:sedative', nsIngs(['minecraft:sugar', 'minecraft:sweet_berries', '#minecraft:small_flowers', 'minecraft:bone_meal'])).id('nightshift:sedative_mixing')
+	// форпосты (04.10): основа — целебные споры Грибных пещер (одна спора — 6 таблеток)
+	event.recipes.create.mixing('6x nightshift:sedative', nsIngs(['minecraft:sugar', 'minecraft:sweet_berries', '#minecraft:small_flowers', 'nightshift:spores'])).id('nightshift:sedative_mixing')
 })
 
 ItemEvents.foodEaten('nightshift:sedative', event => {

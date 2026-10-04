@@ -13,12 +13,14 @@
 // лунного сапфира (межпланетное точило).
 // --------------------------------------------------------------------------
 ServerEvents.recipes(function (event) {
-	// навигатор: два сплава, ядро навигации (награда 50-й волны), схемы Northstar, механизмы
+	// навигатор: два сплава, ядро навигации (награда 50-й волны), схемы Northstar, механизмы, звёздные карты
+	// Обсерватории (форпост, 04.10: «без звёздных карт — ни ядра навигации, ни пути в космос»)
 	event.recipes.create.mechanical_crafting('nightshift:star_navigator', [
 		'ACA',
 		'PNP',
-		' D '
+		'SDS'
 	], {
+		S: 'nightshift:star_chart',
 		A: 'axiomativ:interplanetary_alloy',
 		C: 'northstar:advanced_circuit',
 		P: 'create:precision_mechanism',

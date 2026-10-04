@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#nightshift:outpost_spore_caves",
+  "features": "nightshift:outpost_mycelium_caves",
+  "step": "underground_ores"
+}

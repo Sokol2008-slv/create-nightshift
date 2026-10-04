@@ -3,8 +3,8 @@
 // Оборона на токе из ветки «Энергия» (Георгий, 04.10: «катушка теслы прикольно звучит»); огнестрел остаётся.
 //  - Основание — механические крафтеры: латунный корпус, конденсаторы и медная катушка C&A, громоотвод,
 //    электрическая медь. Электрическая медь = заряд молнии (награда 15-й волны) → башня только после 15-й.
-//  - Катушка-сегмент — сборка по шагам на конвейере (деплоеры + пресс) из медного корпуса: медные катушки C&A
-//    и электрическая медь, 2 круга. Полуфабрикат — axiomativ:incomplete_tesla_tower_coil (аддон).
+//  - Катушка-сегмент — сборка по шагам на конвейере (деплоеры + пресс) из медного корпуса: медные катушки C&A,
+//    электрическая медь и магнетитовый порошок (форпост «Магнитная аномалия», 04.10), 2 круга. Полуфабрикат — axiomativ:incomplete_tesla_tower_coil (аддон).
 //  - Ручных рецептов у аддона нет: это единственный путь. EMC 0 обоим — config/ProjectE/custom_emc.json.
 // Цифры башни (дальность 8 + 4/катушку, урон 6 + 2, перескоки 1 + 1, 2 000 FE за выстрел + 500 за перескок) —
 // в аддоне, TeslaMath.java. Правило Rhino: только var.
@@ -31,6 +31,8 @@ ServerEvents.recipes(function (event) {
 		sequence: [
 			{ type: 'create:deploying', ingredients: [{ item: part }, { item: 'createaddition:copper_spool' }], results: [{ id: part }] },
 			{ type: 'create:deploying', ingredients: [{ item: part }, { item: 'nightshift:electric_copper' }], results: [{ id: part }] },
+			// сердечник — магнетит Магнитной аномалии (форпост, 04.10)
+			{ type: 'create:deploying', ingredients: [{ item: part }, { item: 'nightshift:magnetite_dust' }], results: [{ id: part }] },
 			{ type: 'create:pressing', ingredients: [{ item: part }], results: [{ id: part }] }
 		],
 		transitional_item: { id: part }

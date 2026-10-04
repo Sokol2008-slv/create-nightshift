@@ -43,6 +43,14 @@ MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nig
 MANUAL_ZERO += ['nightshift:meteor_iron', 'nightshift:meteor_iron_ingot', 'nightshift:sky_crystal', 'nightshift:shift_token']  # 04.10: материалы второй фазы — только из событий и факторий
 # 04.10: котельная и прожектор (аддон 0.5.0) — техника, только машинами
 MANUAL_ZERO += ['axiomativ:heat_exchanger', 'axiomativ:heat_valve', 'axiomativ:heating_element', 'axiomativ:searchlight']
+# 04.10: «Сеть форпостов» — месторождения, полуфабрикаты и продукция (алюминий, серная пыль, соль): только с форпоста.
+# id предметов Ночной смены — из стартового скрипта (новые попадают сюда сами)
+OUTPOSTS_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '80_outposts.js'
+if OUTPOSTS_JS.is_file():
+    MANUAL_ZERO += [i for i in re.findall(r"create\('(nightshift:[a-z0-9_]+)'", OUTPOSTS_JS.read_text())
+                    if i.split(':')[1] not in ('liquid_sulfur', 'electrolyte', 'helium', 'coolant')]
+MANUAL_ZERO += ['nightshift:liquid_sulfur_bucket', 'nightshift:electrolyte_bucket', 'nightshift:helium_bucket', 'nightshift:coolant_bucket',
+                'tfmg:aluminum_ingot', 'tfmg:aluminum_nugget', 'tfmg:aluminum_block', 'tfmg:sulfur_dust', 'cgs:sulfur', 'northstar:salt']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'

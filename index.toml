@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "b9d56db2ac71a06c306b3f64b28a4d1d79afc47436767bea2c6a3fd697bf4e8c"
+hash = "650892f4862640af72d9df143d11dc5d6029ed12a47ef3367a48c14a78a9a8eb"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -70,7 +70,7 @@ hash = "a0e71f9d6a1c11762e5277ba8fa6d023cd5fba85d9d7d6f67c62047f5396d45a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "af2df539b42b0d397222d74624d898a0bb2a9eb4d2a80a8c5c5bdd7b4471cd7d"
+hash = "a95d2f676e95883aef0a3a52438c15deba21f993e89befc78e260c50cc540648"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food.snbt"
@@ -89,8 +89,12 @@ file = "config/ftbquests/quests/chapters/night_shift.snbt"
 hash = "2337939968e505337472604408fa291092f1dc88cde2d0d3a15e2d6b1fe226b6"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/outposts.snbt"
+hash = "659e91b3bb7a3cf4f9a9781cf14acaca4b384c16398abc14ccc9d60125f8743a"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "ef367cf1fedeb86f8798bbc85e1494b548c73fecc7e3ed1d9f6a04520f24a04e"
+hash = "4d65854e59265a27c7b608bb9ddb20361979c2c82abcec579b6ce44ba03b2cfe"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
@@ -114,11 +118,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "8ebb1d96b0c5ca25f9636d6533253bfa4c7c2a655f55d2bcdc23e7a07f18f0c4"
+hash = "382da682cd0fdaa8c51d262fb7e9740b9473953d948096e45f681bb3f441780b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "8ebb1d96b0c5ca25f9636d6533253bfa4c7c2a655f55d2bcdc23e7a07f18f0c4"
+hash = "382da682cd0fdaa8c51d262fb7e9740b9473953d948096e45f681bb3f441780b"
 
 [[files]]
 file = "config/iris.properties"
@@ -250,15 +254,63 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "0f4b5dab334b96cdbecdde51aa0a42059356609490b18297205879e4e35386b9"
+hash = "c972d7bbd3705ab59864539a05c107ccf7e96d92814500883983979a5be7064b"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "9abaa391d111617c6063116392a2d14a52086abbde4356af43f3061d16390503"
+hash = "cc8cc27e75cfd13bea1e7826fd9aece1060707de184517d6eb0feef5cd08043a"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
 hash = "f7f02e4f527adf429cb725202b76f48f9e3d54769346e1397f4f6e8757f56a5c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/bauxite_deposit.png"
+hash = "8ac0a96cbd151df0dd5a11b6a4d547260b4aef00fc93926eabb7181ab4dbe07b"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/helium_ice.png"
+hash = "3f445dc17de12b8f64708a3175567dbec242850b2c4686ff60ea425c7ff4e116"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/hevea_log.png"
+hash = "9c6a5b8c777003cf47ee09c680d96ef80c680426cf49d63379feeb62919c8fe9"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/hevea_soil.png"
+hash = "6e8429d293db301905de87b9be882dceed9aad406ed9b8cea1e38c8b8bdad663"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/magnetic_anomaly.png"
+hash = "db9a2bd136adb22d31eb1dccddcb7ac902040cb73c7130cd4460a3c7b9e0622a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/mycelium_vein.png"
+hash = "d1af0a82d59de8c22ce8512c07d6e4b2008ce5012b75d5bf16c6a62655d4eb15"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/peat_bog.png"
+hash = "f49c9271f5edd94e2715b88b796f238087934558f4ba48083f617e37510805d1"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/permafrost.png"
+hash = "0fac7940aba7514f0919b10ee7b3a67b920843673c63e0cdac4c19659cbf4ebb"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/quartz_vein.png"
+hash = "d23937a3688d34f5de17e434fa5d4f74e86dd2ba10294c218db44c6f94249641"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/salt_deposit.png"
+hash = "90c329794ec816e43cc3c6089ff04b7d4928a67ceb2af3381077522098bc6527"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/star_stone.png"
+hash = "f33cfd7d7b3f67c6d0e221bdaf5a037b7ae852b0a94ec6f9fb5e283d3e75c997"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/sulfur_spring.png"
+hash = "8cd58eec02e970f3936ba17d0d7a66a645664c5323f4eae0177eaae3587de572"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/watching_eye.png"
@@ -357,8 +409,16 @@ file = "kubejs/assets/nightshift/textures/font/scare_face6.png"
 hash = "b0be1cb264c2e6a5db13f4ae65be0e81f69f75962d0a187dbd859b9297ae57ec"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/activated_carbon.png"
+hash = "8c1de7a7f1b201246cc9e6985e66bebe641d8898d273f51cbc492e6a275d4890"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/afterburner_blueprint.png"
 hash = "9f3d22ec1fefcc6fbd5d1890ca77412fb992918a3c26028e321dd72fcaa43cda"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/air_filter.png"
+hash = "26054eed2210b4a618b73ee1c52894740857e704822010bc8b3d14f53962ae13"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/alloy_boots.png"
@@ -725,8 +785,24 @@ file = "kubejs/assets/nightshift/textures/item/coil_core.png"
 hash = "8e1bc67e7db1a4f5dc68fb04163c0a1bc7e76f8343f4b6d5096d9de4010fa40a"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/cryo_crystal.png"
+hash = "c26a04644316161c3cd1924741a9737a7f257471dcb679b1a32afd6fdb53d826"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/electric_copper.png"
 hash = "4377df0093d7a1a6b3f4749352f3c8cd300fca23c9b2a7de22adae6c530c11b0"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/glowcap.png"
+hash = "b351b1f42f0c44f8ff6fc1f3806ae645991b977816e0ef8370277f300645bd9c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/helium_canister.png"
+hash = "306f30a0d16976356d2bb8d50f59b767df4aed9b730b953bb43aa658701cb8c6"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/helium_frost.png"
+hash = "c6ed7408cd2f9763f7e41c6992447b460c6afcb17bca8eeb1b85458ca1a1863e"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/horde_dust.png"
@@ -745,6 +821,18 @@ file = "kubejs/assets/nightshift/textures/item/incomplete_awakening.png"
 hash = "6ae4eea2f3318f66ab2390b0077dbd5f006913fe08c1af7da8f44e0520a12c50"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/incomplete_star_chart.png"
+hash = "487a620f2976c75a898b1e53ec21968c94e1c832101ba459f713c3b15fe9c60f"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/latex.png"
+hash = "925a849a6f1a73460b0aeac3ceca64ecfb1f6f7724336ef64cc3d554bc5d9b22"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/lens.png"
+hash = "ba2afd404e8eade0e44c67d491eaf816e74ababf2feed3b7647a5261bc7f492c"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/life_tonic.png"
 hash = "994d67d72d2acb688269b7b3e5d4fd8c50c034ad6b9177cb5fad848f85123a25"
 
@@ -755,6 +843,10 @@ hash = "84494a86cfb1e43ab4383ed3da911017345fbc03042d8a384d2f0b604270634e"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/lightning_staff.png"
 hash = "50adf0455870e67b87f7f8118a4aebff9a216d2970357f281f4141f0a74c3703"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/magnetite_dust.png"
+hash = "7e0a9bdae56db60232fbaef433f25509597e222e4bcf4d9bcf619a56f844c8bc"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/meteor_iron.png"
@@ -801,12 +893,36 @@ file = "kubejs/assets/nightshift/textures/item/otk_armor_plate.png"
 hash = "92061a11e2cac67e1bfe02625a27295c17dd9359f38ea96ae523b761a4cc7f89"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/peat.png"
+hash = "6ef25db94ee06d54137ab39b95758a414d654a7dc71a1233646cbca288b6b649"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/prism_lens.png"
 hash = "e411a3efff1d291a2daf3c55549bab58d5bbb4055c266fef755d847f464ef28d"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/quartz_glass.png"
+hash = "e8f60c12ccc31084a906297ec50ec6a11ff3b8b091c119b3b09c86772f5c3e51"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/quartz_sand.png"
+hash = "ad5ef9f7e159568cc2f88f1295813a7bec63b6c8dee9963ab9cccaeac391f69e"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/queen_heart.png"
 hash = "127e7cc05942a0942abae4fffba4423003497664580629fd54e03a09745db7fd"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/radiator.png"
+hash = "1569bedca9b6e8c6a6d3550db55723717d658fc6f33b49956cdefd738314d866"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/raw_magnetite.png"
+hash = "c1c2ab85b74e52412fe1e228aa34e13e50fb63291094e6dc06333f42a9cf794a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/rock_salt.png"
+hash = "2399b51c818905b953e3c39e96c06b45029d89774a7a3910d5ad611293f20bcc"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/runner_badge.png"
@@ -825,12 +941,24 @@ file = "kubejs/assets/nightshift/textures/item/sky_crystal.png"
 hash = "f52ab3daa6407941636849e4ef93951a2583a82b974f0d940564b90d8f970911"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/smokeless_powder.png"
+hash = "992bf5b1ef6b70ce426e3baff37474da4a71ef7bcd290481e6d6fca64beafef8"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/spirit_essence.png"
 hash = "17935c774be6aa400f37ec993063ee8119c1447816101aa6152b383aadf49459"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/spores.png"
+hash = "215cc8bf3decaf0f03576aaebd035a19e111ed55544b382f7b0ed3507d7363fb"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/stabilite_pickaxe.png"
 hash = "305822b045ecfe3ed2300cebecb2b8e9a36b7516a7cca81aa0fb8e5019b65404"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/star_chart.png"
+hash = "2077392d63245c3c290ce16602b60cc4e4e2f07a08432c583bded7e9afaf2221"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/star_fragment.png"
@@ -845,8 +973,20 @@ file = "kubejs/assets/nightshift/textures/item/star_pickaxe.png"
 hash = "0c8789049b78772d7604bf5157b07e4d4ac951e9806ef956c25f10b96bba1a10"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/stardust.png"
+hash = "b43edfb56ab15d8b94ee429ddd2e66d251f87609cc92e16fcddef2286641aaed"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/sulfur_crust.png"
+hash = "127a768c2ada5abf9f916d96a519ecb09dce82de0adacb41743fe43072ee2ae2"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/tactical_nuke.png"
 hash = "aa74f96b8c19dbe835f7b4b0ae47020b17a284a10db7f738d4c56d487e3fe7fd"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/tapping_knife.png"
+hash = "549675387bc33f7b07b5376615e7199e68f0cba3b0cdc596a08a0bc2bbe58d7f"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/vein_cleaner.png"
@@ -986,7 +1126,7 @@ hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_tesla_jei.js"
-hash = "fa622d4f17167555ce866ba278e204deadb15da97f825123b1b2e70efd390a03"
+hash = "df1f5a92f56025a1c60ea98ace7c9fe7c91966d4ba49eaa661e077b56d0cac6a"
 
 [[files]]
 file = "kubejs/client_scripts/cbc_firepower_jei.js"
@@ -1013,6 +1153,10 @@ file = "kubejs/client_scripts/ns_artifacts_tooltips.js"
 hash = "f5476f4651e9bf3aa05546f85ee8a851005cfe3976a250c9546ed6eb8e1472a9"
 
 [[files]]
+file = "kubejs/client_scripts/outposts_jei.js"
+hash = "1ed411257acb07eb2916285258af63af4f85904275560887b9f875c14d495971"
+
+[[files]]
 file = "kubejs/client_scripts/special_stage_tooltips.js"
 hash = "4474623637fa097dc055d124067fad20a86c5c1c452d7486d1b7485964f317fd"
 
@@ -1027,6 +1171,14 @@ hash = "18df7331c52b7bafd97eff3baea0f69cf4df6ee9ae762086b8fbcaf433909db6"
 [[files]]
 file = "kubejs/config/common.json"
 hash = "21b1aa77bebcc5a4557c4f90ee7a6bf80a049fd20fd7508c427a9f3f549ed6e4"
+
+[[files]]
+file = "kubejs/data/cgs/neoforge/biome_modifier/add_sulfur_ore.json"
+hash = "99b969132018e9da1071065a8593ba9564928b1ed0aa5ae3ab45f9dac071f7d5"
+
+[[files]]
+file = "kubejs/data/create_new_age/neoforge/biome_modifier/magnetite_block.json"
+hash = "99b969132018e9da1071065a8593ba9564928b1ed0aa5ae3ab45f9dac071f7d5"
 
 [[files]]
 file = "kubejs/data/curios/tags/item/relic.json"
@@ -1147,6 +1299,62 @@ hash = "a49afd753148057bf3f46b580f21f947f03872e8b3e89ee01ca21b05debb2517"
 [[files]]
 file = "kubejs/data/nightshift/loot_table/magic/wave_scroll_strong.json"
 hash = "9c8519182992c100e522594f505abffb180d0de67cb2162e5c6989344a2065cc"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_bauxite.json"
+hash = "6340072d247028a94b0e0a485d5b7df9b4a027c6c717ab77cdbfa0d7b62c6868"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_helium.json"
+hash = "942cd5a4ffe8b4da20942052fef94e421a2275179023abc8ac2feb1920811ffc"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_hevea_soil.json"
+hash = "1c6281613ceb977a9c730ca966be395cf6311b05c96f9204dee4840bbba4512e"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_hevea_tree.json"
+hash = "24b3aa8f4920f1c16b70256210fe328bd5794c3732c876f8e0cc27e059658bd5"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_magnetic_anomaly.json"
+hash = "3ee1758ffb3a49ec384c3d58979dabc250e8bdd6b2a875b3fae12e9975884690"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_mycelium_caves.json"
+hash = "e240db28113191b23523d9e8dc1e5f0dad84b6a397758ae015e58620fe6934dd"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_mycelium_surface.json"
+hash = "8c409e7246e6536aa8d734c40d462e1586daa3ba659ec273d5c7ed1a103568a4"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_peat.json"
+hash = "5b69161fe63265813f953638baa0b7b14b962b0a5b7d5ec48dae47d1193dada9"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_permafrost.json"
+hash = "fe7f75222fa2f643a89f161e9d273cc1ae7c7fd0218747fcb2a769a8cfbf5faa"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_quartz.json"
+hash = "00b18a3fd323be6a98b4774077da62acadbcecd144d4797510106a75bacc5fa3"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_salt.json"
+hash = "341c36f88394f1a8b4832531dc63b63534940ef01d06df788ed36ed6b0c1b8f0"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_star_stone.json"
+hash = "1d4e531ca518002188fb5e814b1913fdc016b923433fee4c29492796da190e46"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_sulfur_deep.json"
+hash = "28e73ee5873445c4c854d7b6b7d14062532810524890f0ece2f23890b37cd427"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_sulfur_surface.json"
+hash = "6093888d8e288372c1984922a1da167374b098fca9ebe7c7b1b0db4e0c3d5942"
 
 [[files]]
 file = "kubejs/data/nightshift/northstar/planet/axiomativ.json"
@@ -1417,6 +1625,10 @@ file = "kubejs/data/nightshift/tags/block/axiomativ_stone_replaceable.json"
 hash = "1c61a07cf6700255394db08512aeaa562249548625e97bec906fcd8b36420fc6"
 
 [[files]]
+file = "kubejs/data/nightshift/tags/block/outpost_ground.json"
+hash = "e226a2853af4cb01f4ea57be50e8434f6bb1f6c27c8d797a130c61330949347b"
+
+[[files]]
 file = "kubejs/data/nightshift/tags/block/planet_carver_replaceables.json"
 hash = "a822af553c6f37e93b101280d94b85bac0972182256d7eed61cb1284ec87adef"
 
@@ -1463,6 +1675,14 @@ hash = "359de492aa9773ecfa779974f9baa9b3a4f5f00b8dd9642c6196082090bb66df"
 [[files]]
 file = "kubejs/data/nightshift/tags/worldgen/biome/axiomativ_biomes.json"
 hash = "a2c460b92539df9ba700bf5dc979f50551abd7d992b71a0ddfb3eb997f7d082e"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/outpost_bauxite.json"
+hash = "27934bb9c2b079a2edb49db8dc35ef865aafb134a00d4859a6237843b0d01d6a"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/outpost_spore_caves.json"
+hash = "6dd13bbd8e9cbd75290aec5d25eb8c514db08e517869d76339efa4610bc430a4"
 
 [[files]]
 file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
@@ -1513,6 +1733,62 @@ file = "kubejs/data/nightshift/worldgen/configured_feature/axiomativ_raw_iron_bl
 hash = "26bd66cd5542c05a3c7204f869d044212af4c6aa324433318491eee59d5b90bc"
 
 [[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_bauxite.json"
+hash = "2ce65b93a2fbad13f78293dfcb1bf11863bfbcbbfc970bbfd28f03f91aced3e1"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_helium.json"
+hash = "691d9d91bbff20b8e2473ed2a5c196278cb9ae9b56e4bbcbda0b32511f05da4b"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_hevea_soil.json"
+hash = "a13a558f5ebc27dea106ca50f0233976ee297e09e0a8ba11d72799380f8c2e0a"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_hevea_tree.json"
+hash = "db5de83a98766fb70023b8ad1a25267796235e78d843e4f9dd6edb03d0a3a17b"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_magnetic_anomaly.json"
+hash = "41b58e4b9d1bc99d1b9caaf214ed980384c0bfe6197ab4d1dc311a793072ac9f"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_mycelium_caves.json"
+hash = "69b442d8415c60011458a1e20733be92c03986ecd714182be190a9866e1ae326"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_mycelium_surface.json"
+hash = "198c0bba7b53376d980476283a50e3febd1c47972461a9be4b150fa316a66ccb"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_peat.json"
+hash = "b551c71e43ccda0414433b5700acd6ea0e2c2635c0218268063199c847bab14d"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_permafrost.json"
+hash = "bf92d55452675d4894870ef65357ee5b16aa1e8acab63811b26d543200500973"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_quartz.json"
+hash = "75082a0480fb7c5972b7ef6d670d466bc7419ae9ad888a6c0dac90d3d26b31bb"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_salt.json"
+hash = "287459c4faf5b75b9fcfbbd4329ccabb50fe18654821a1f4a2dffcca1fb6ae7a"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_star_stone.json"
+hash = "c01f804ab69d358e12e04cc3c2a3281f6a70502ce0e8eb39fcde251b364e2dc7"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_sulfur_deep.json"
+hash = "a89e9c31214b34ba5e5f890611d61644507f540e87c0c403eec6676b83aed916"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_sulfur_surface.json"
+hash = "a89e9c31214b34ba5e5f890611d61644507f540e87c0c403eec6676b83aed916"
+
+[[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/yin_yang_ore_dark_stabilite.json"
 hash = "c37df4a98e4f14a0b4f3bf00e82f21ddf4059d9dc52e7fee3aba9e1e3f817ab3"
 
@@ -1549,6 +1825,62 @@ file = "kubejs/data/nightshift/worldgen/placed_feature/axiomativ_raw_iron_blob.j
 hash = "b4711c485373cdc0415866f0f3ec53eab42344eba9d7630774183c72b5cafc14"
 
 [[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_bauxite.json"
+hash = "94653a9df78d838ebbb460765302552c7a65e3c99b9d9d63452cb7052ecfe710"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_helium.json"
+hash = "1556b52d46503339ba291cb87c4772874cb1d021f18c05fafcf26a65c57cb98b"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_hevea_soil.json"
+hash = "e4a3cbed0fab56b1df8f5bb9d335a8d18a85a784f06415c3193b66759f0ce7cf"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_hevea_tree.json"
+hash = "fd535ef676374d0672030dda2ea89cdbb2a6c3c32e2d6771913c70bdfa17b877"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_magnetic_anomaly.json"
+hash = "22267ad6f1a0cc15d8cfdb864c9922042fc7ac6c1233de5c2198670094b926bb"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_mycelium_caves.json"
+hash = "80baa5f8fbf80e6f266957b9f6e162ffabcdc0e09108be53fc290828a3ea762a"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_mycelium_surface.json"
+hash = "f83de9940640f023037959357e77be0128cb8d04f1bc2862b886e9493d6bc6fb"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_peat.json"
+hash = "0b19dc537b6fe35381fe9205fb0935fd1d41e19dc6d87573c1829f550573442a"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_permafrost.json"
+hash = "872600e800c10fd29ae897518f117942440bfe649a3f7d550895c801912e52c3"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_quartz.json"
+hash = "07c3756a5bed55788ab2de454b0eed5e63ea51bc32825a5a09585e35d6ef6798"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_salt.json"
+hash = "dc73ea25f6e46a6a37cffdacceef398e4323c03eab015abb29dc7796517aa112"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_star_stone.json"
+hash = "1182abc521d5138acea2602f8720ba4153a351cc1e14a73ccf3ec982cdcaab0d"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_sulfur_deep.json"
+hash = "6c8e141ebb9e2c20ab5efa22a9e48bf9b1dc56fba24949d9cdd8ab27e5e8c843"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_sulfur_surface.json"
+hash = "da489031387a786bdfab8789728154d0aa7c5e7be09e610b9881d33370d43808"
+
+[[files]]
 file = "kubejs/data/nightshift/worldgen/placed_feature/yin_yang_basalt_spires.json"
 hash = "ce5e9d1dcd1518be772c863e73bbd6033aff0b2478d6022ecef36eace2bf54da"
 
@@ -1559,6 +1891,10 @@ hash = "c6a9f229fb793e86a1f0362a56b48c6cbf801933053808aaa69d83066c5e495d"
 [[files]]
 file = "kubejs/data/nightshift/worldgen/placed_feature/yin_yang_ore_light_stabilite.json"
 hash = "8191a855f8713ceb581b5cb7cf8037e2348011b3121885797a0ee6c4cc2713ee"
+
+[[files]]
+file = "kubejs/data/tfmg/neoforge/biome_modifier/bauxite.json"
+hash = "99b969132018e9da1071065a8593ba9564928b1ed0aa5ae3ab45f9dac071f7d5"
 
 [[files]]
 file = "kubejs/server_scripts/00_ingredients.js"
@@ -1718,7 +2054,7 @@ hash = "ff600ef67f064597e8cc68f6c58dc05d0ee8938cf017ecf61d5d6b48a0570834"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"
-hash = "a98f24a7aa2456b3f0ff73939e72aa362a1c7c714d9f035c7cdfb94bc343b714"
+hash = "d3edde0fa0e72752ed9fd35407a3cd731f834314761e0d5140ea9ad50522cce6"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/20_darkness.js"
@@ -1730,11 +2066,11 @@ hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/40_death.js"
-hash = "ff2f8003cdc1d37d732171a615c406a970160da96f7f83cde55cfce2d0b59664"
+hash = "a89901ac7cc6436453d6b8c9ad35c7e1755865877fa85ff1b2091d5d8e04819e"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "d01e4b74fc4ee047f76980de43ec347f375b8e6f8ee640af4cb14f881f10d3fb"
+hash = "c5ca5e1d653faffdba38fcc4d9d3548601d7b47f8291cd5bf7e297bebd6ae9f9"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -1778,7 +2114,7 @@ hash = "7fb4d18449ef9e3df96c6fac83079cdd6924bd5c1c148ad33c69b078ec62ddc1"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/46_axiomativ_tesla.js"
-hash = "47724fac9a47a5cb5d33861f36389e374052d5318bc5439304d5fb71cb964fa8"
+hash = "3ae21c7101562a7f15aca41ea2edf718ebd646a8247d279a8f500df2a52f7abd"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/47_axiomativ_heat.js"
@@ -1786,11 +2122,11 @@ hash = "b4f2ebcbe75c69dbbaa240f94cffba1f2025c3ebfab949e54159acf239e9933f"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/50_wave_rewards.js"
-hash = "6584225dc069fc2716c7294c81d77bb3aba4a2b9a31afceba4cbca0d139992a7"
+hash = "3431a3b2e4a21400958c3074da2bd24e4f42627928d8f229db56e71a7415e717"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/55_star_gate.js"
-hash = "cdd11e2d1a3b45d633fd56041d237a5073fb2f443c52bce4d57d2387bb75bfc9"
+hash = "05d9480c3e23f2e473cb66dbfdc162683fdefdb9bbac720c8053f32bd41900bd"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/55_tactical_nuke.js"
@@ -1815,6 +2151,10 @@ hash = "c5a35bb5d9eccffd7bf64a5e7be1ca61f2738715b2b7a9e06feb364f5519d877"
 [[files]]
 file = "kubejs/server_scripts/vahta/75_ns_awakening.js"
 hash = "5b3f7e4c8c7276ccdcd250a03169826addd82043c4950ec75d9adca7a0057617"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/80_outposts.js"
+hash = "46e28757ff43f45488fdbdecdf8bbc383b6cdbf38d0fa04d9edc4452708c752a"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"
@@ -1863,6 +2203,10 @@ hash = "a01377deb8fd5a08da0d21e49cbb7b0adce4b77b2006f3c8018f4ff620f3d13e"
 [[files]]
 file = "kubejs/startup_scripts/vahta/70_armor_modules.js"
 hash = "8fb0a894f2a3d5985bcb7b88ddde25c1aecda62c67eb2a3c324e5de558971426"
+
+[[files]]
+file = "kubejs/startup_scripts/vahta/80_outposts.js"
+hash = "8548cd5e6a4733e3356d4f5f103cc5f4775f977a7f280f349a613bd16703dac5"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
