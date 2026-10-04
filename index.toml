@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "650892f4862640af72d9df143d11dc5d6029ed12a47ef3367a48c14a78a9a8eb"
+hash = "724d1881201e502dc758c1371a8c38ac907e28650bafd8d0823b5a46b5403216"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -42,7 +42,7 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "0d34b5d106e3399abe27edcbced942ac9dbac38988988cdba7faefb31216c80c"
+hash = "2a8bcab71746ee1fb61a0ccef883d1d8ab2343f9f288e9f7fde12a9873de7995"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/artifacts.snbt"
@@ -118,11 +118,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "382da682cd0fdaa8c51d262fb7e9740b9473953d948096e45f681bb3f441780b"
+hash = "539d83d6fb8af3b7bf5b00d020568a00379e435047a189b4a256eced2b557955"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "382da682cd0fdaa8c51d262fb7e9740b9473953d948096e45f681bb3f441780b"
+hash = "539d83d6fb8af3b7bf5b00d020568a00379e435047a189b4a256eced2b557955"
 
 [[files]]
 file = "config/iris.properties"
@@ -254,11 +254,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "c972d7bbd3705ab59864539a05c107ccf7e96d92814500883983979a5be7064b"
+hash = "aca1277240820a547ef912da9827f03b0f181a9d0c5b94f2a2b62f496c3569df"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "cc8cc27e75cfd13bea1e7826fd9aece1060707de184517d6eb0feef5cd08043a"
+hash = "f6eff1b1f8958dc439d87ae43f7f47bd49152b9e1dc4ec2ea06be3be0c47993d"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -781,8 +781,16 @@ file = "kubejs/assets/nightshift/textures/item/balance_staff.png"
 hash = "ab09c20452958f0657016ae0e79e0049db23f858f6ca7a7cab3badd470e9971b"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/bastion_core.png"
+hash = "f77f9b70c08be14d74b5d2062b6610cc11795ac30dd326a2120dda6922b633e4"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/coil_core.png"
 hash = "8e1bc67e7db1a4f5dc68fb04163c0a1bc7e76f8343f4b6d5096d9de4010fa40a"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/convoy_seal.png"
+hash = "0af4cac8bb6ce92cd0dc3850c19a56081c40514d260d0b0fd1e23817d8be7eb3"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/cryo_crystal.png"
@@ -1158,7 +1166,7 @@ hash = "1ed411257acb07eb2916285258af63af4f85904275560887b9f875c14d495971"
 
 [[files]]
 file = "kubejs/client_scripts/special_stage_tooltips.js"
-hash = "4474623637fa097dc055d124067fad20a86c5c1c452d7486d1b7485964f317fd"
+hash = "a2d50b52e71083ec83da5a2c6288ffcbf2e1f6ce978733b9c2d01e9d209f9108"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_jei.js"
@@ -2034,15 +2042,19 @@ hash = "45fac2acb21034bba22b360d8b8a6bdfb5d72de6c1537e8da945a954350f5a13"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "faaab963985d1dae28c4b9bf4fd5057c5c0e32ca3125b8e9287a4b68158ac828"
+hash = "3d8ac2360217211f057c21b081479e55521c47808358fe5c1bd823a49f815cb8"
 
 [[files]]
 file = "kubejs/server_scripts/raids/45_special_stages.js"
-hash = "cd2c343e0a254945c0f4e7f0f85277e48b5a9a98bec9372435f1dd33ebfda239"
+hash = "48acc2adee5a9a96244cc604d35366e4139a891f0eb313ee03a7fa060fc9db22"
+
+[[files]]
+file = "kubejs/server_scripts/raids/46_outpost_siege.js"
+hash = "3ad5c5765f672140759fdefb33d8e922010498aea6d5ef7bbe26a96fa8ac0bfb"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
-hash = "bf2cfbb35428e0da5f6b3720000aaa2d0ef18b8134eed187adbef3cf6e9238dd"
+hash = "074c773640b59ad7224bb9805f449ee93153b0a003352d6a82dfe89c7b354935"
 
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
@@ -2186,7 +2198,7 @@ hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/26_special_stage_items.js"
-hash = "b5519449b479f95919c405c0009bef2d1bcead62373e5a324db4433d00ffe081"
+hash = "ffafd1386a9177732a3e2054276945630720cf749cb9df87734c4addb723d837"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/27_phase2_materials.js"

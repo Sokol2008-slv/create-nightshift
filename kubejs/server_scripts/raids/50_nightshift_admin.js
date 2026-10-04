@@ -146,6 +146,16 @@ function nsStartChallenge(ctx, d, check) {
 		nsAdminReply(ctx, '«' + spc.name + '» — особая стадия под открытым небом: начните её у алтаря базы, не на арене')
 		return 0
 	}
+	// «Осада форпоста»: набег идёт на один из форпостов сети (46_outpost_siege.js)
+	if (spc && spc.kind === 'siege') {
+		var sa = typeof nsSiegeAltarFor === 'function' ? nsSiegeAltarFor(st) : null
+		if (!sa) {
+			nsAdminReply(ctx, '«' + spc.name + '» — орда идёт на форпост, а в сети форпостов пусто: поставьте механический экструдер на месторождение (глава «Сеть форпостов»)')
+			return 0
+		}
+		altar = sa
+		nsTellAll(Text.gold('[Ночная смена] Орда идёт на форпост «' + sa.name + '» (' + sa.x + ', ' + sa.z + '). Моб у экструдера — провал. ').append(Text.gray('Кто далеко — кнопка телепорта придёт со стартом.')))
+	}
 	var who = ctx.source.getPlayer()
 	nsStartRaid('challenge', altar.id, d)
 	nsTellAll(Text.gold('[Ночная смена] ' + (who ? who.getUsername() + ' начинает набег: ' : 'Набег: ')).append(Text.white(nsDifficultyName(d))))

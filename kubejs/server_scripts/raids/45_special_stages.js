@@ -32,20 +32,24 @@ NSG.NS_SPECIAL_STAGES = {
 	32: nsSs('immune', 'magic', 'Духи', 'Духов ранит только магия: посохи, заклинания, зелья вреда.'),
 	34: nsSs('invis', 'invis', 'Невидимки', 'Вся орда невидима. Видно только в луче прожектора — ставьте их на подходах.'),
 	36: nsSs('scenario', 'nest', 'Штурм гнезда', 'Вдали выросло гнездо. Долететь, пробиться через стражу и убить матку до конца таймера.'),
+	38: nsSs('siege', 'siege', 'Осада форпоста', 'Орда идёт не на базу, а на один из форпостов сети. Моб у экструдера — провал. Укрепляйте и форпосты.'),
 	42: nsSs('scenario', 'air', 'Воздушный бой II', 'Ульев больше, и они злее. Нужна авиация.'),
+	43: nsSs('scenario', 'convoy', 'Конвой', 'Обоз из трёх вьючных лам идёт к базе издалека, по пути — засады. Встретить, прикрыть и довести хоть одну.'),
 	44: nsSs('immune', 'tesla', 'Механоиды II', 'Только ток. Нужна сеть, которая держит залпы тесла-башен.'),
 	46: nsSs('scenario', 'escape', 'Побег II', 'Эвакуация дальше, Пожиратель быстрее.'),
 	48: nsSs('immune', 'turrets', 'Бронеколонна II', 'Только машины. Ручное оружие не берёт.'),
 	52: nsSs('immune', 'magic', 'Духи II', 'Только магия.'),
 	54: nsSs('scenario', 'nest', 'Штурм гнезда II', 'Матка толще, стражи больше.'),
 	56: nsSs('invis', 'invis', 'Блэкаут', 'Орда невидима, а у защитников «Тьма» весь набег. Свет и цель даёт только прожектор.'),
+	57: nsSs('siege', 'siege', 'Осада форпоста II', 'Форпост выбирается случайно — укрепляйте все.'),
 	58: nsSs('scenario', 'air', 'Воздушный бой III', 'Небо чёрное от крыльев.'),
 	62: nsSs('scenario', 'escape', 'Побег III', 'Самая дальняя эвакуация.'),
+	63: nsSs('scenario', 'convoy', 'Конвой II', 'Путь длиннее, засады злее.'),
 	64: nsSs('immune', 'tesla', 'Механоиды III', 'Только ток.'),
 	66: nsSs('scenario', 'nest', 'Штурм гнезда III', 'Гнездо-крепость.'),
 	68: nsSs('immune', 'turrets', 'Бронеколонна III', 'Только машины.'),
 }
-NSG.NS_SPECIAL_KEYS = { tesla: 'nightshift:coil_core', air: 'nightshift:afterburner_blueprint', turrets: 'nightshift:otk_armor_plate', escape: 'nightshift:runner_badge', magic: 'nightshift:spirit_essence', nest: 'nightshift:queen_heart', invis: 'nightshift:prism_lens' }
+NSG.NS_SPECIAL_KEYS = { tesla: 'nightshift:coil_core', air: 'nightshift:afterburner_blueprint', turrets: 'nightshift:otk_armor_plate', escape: 'nightshift:runner_badge', magic: 'nightshift:spirit_essence', nest: 'nightshift:queen_heart', invis: 'nightshift:prism_lens', siege: 'nightshift:bastion_core', convoy: 'nightshift:convoy_seal' }
 NSG.NS_SPECIAL_KEY_TEXT = {
 	tesla: 'Сердечник катушки — для тесла-техники следующего уровня',
 	air: 'Чертёж форсажа — открывает сверхбыстрые улучшения самолётов',
@@ -54,6 +58,8 @@ NSG.NS_SPECIAL_KEY_TEXT = {
 	magic: 'Эссенция духа — для сильной магии',
 	nest: 'Сердце матки — для живой брони и трофеев',
 	invis: 'Призменная линза — для оптики: прожекторы и прицелы следующего уровня',
+	siege: 'Ядро бастиона — для обороны форпостов',
+	convoy: 'Пломба конвоя — для грузовой логистики следующего уровня',
 }
 // вехи первого прохождения: ключевой предмет каждой особой стадии
 for (var nsSw in NSG.NS_SPECIAL_STAGES) {
@@ -70,7 +76,9 @@ NSG.nsSpecialFor = function (d, cfg) {
 	out.special = sp
 	out.name = sp.name
 	if (sp.kind === 'immune') out.immunity = sp.key
-	else if (sp.kind === 'invis') {
+	else if (sp.kind === 'siege') {
+		out.siege = true // состав обычный, цель — форпост (46_outpost_siege.js, nsStartChallenge)
+	} else if (sp.kind === 'invis') {
 		out.invis = true // подволны те же, мобы невидимы (nsBoostRaidMobs)
 		out.blackout = sp.name === 'Блэкаут' // у защитников «Тьма» весь набег (тик ниже)
 	} else {
@@ -88,6 +96,13 @@ NSG.nsSpecialFor = function (d, cfg) {
 function nsSpecialForecast(horde, d) {
 	var sp = horde.special
 	var lines = ['ОСОБАЯ СТАДИЯ: ' + sp.name, sp.need]
+	if (sp.kind === 'siege') {
+		var no = 0
+		try {
+			no = (nsGetState().outposts || []).length
+		} catch (e) {}
+		lines.push(no > 0 ? 'Форпостов в сети: ' + no + ' — орда выберет один. Список — /outposts.' : 'В сети форпостов пусто — стадию не начать: поставьте механический экструдер на месторождение.')
+	}
 	if (sp.kind === 'invis') lines.push('Нужен прожектор (аддон Axiomativ): в луче мобы видны и светятся ещё 5 с.')
 	if (sp.kind === 'scenario') {
 		var p = nsScenarioParams(sp.key, d)
@@ -95,6 +110,7 @@ function nsSpecialForecast(horde, d) {
 		if (sp.key === 'air') lines.push('Ульев: ' + p.hives + ', здоровье улья ~' + p.hiveHp)
 		if (sp.key === 'escape') lines.push('До эвакуации ~' + p.dist + ' блоков')
 		if (sp.key === 'nest') lines.push('До гнезда ~' + p.dist + ' блоков, матка ~' + p.queenHp + ' HP')
+		if (sp.key === 'convoy') lines.push('Обоз — ' + p.llamas + ' ламы по ~' + p.llamaHp + ' HP, путь ~' + p.dist + ' блоков, засада каждые ' + p.ambushEvery + ' с')
 	}
 	lines.push('Первое прохождение: ' + NSG.NS_SPECIAL_KEY_TEXT[sp.key] + ' и артефакт смены наверняка')
 	return lines
@@ -104,6 +120,7 @@ function nsSpecialForecast(horde, d) {
 function nsScenarioParams(key, d) {
 	var lvl = d >= 58 ? 3 : d >= 42 ? 2 : 1
 	if (key === 'air') return { lvl: lvl, hives: 2 + lvl, hiveHp: Math.round(250 * (1 + d / 20)), time: 600 + 120 * lvl, flyersPer: 1 + lvl }
+	if (key === 'convoy') return { lvl: lvl, dist: 250 + 100 * lvl, time: 240 + 60 * lvl, llamas: 3, llamaHp: Math.round(200 * (1 + d / 20)), ambushEvery: 15, ambushN: 2 + lvl }
 	if (key === 'escape') return { lvl: lvl, dist: 300 + 100 * lvl, time: 180 + 60 * lvl, speed: 0.26 + 0.04 * lvl } // 0.30 — чуть быстрее бегущего игрока: пешком не уйти, нужен транспорт
 	return { lvl: lvl, dist: 220 + 60 * lvl, time: 420 + 60 * lvl, queenHp: Math.round(350 * (1 + d / 12)), guards: 3 + 2 * lvl }
 }
@@ -197,6 +214,11 @@ NativeEvents.onEvent(NS_SS_DAMAGE, function (event) {
 	try {
 		var v = event.getEntity()
 		var tags = v.getTags()
+		if (tags.contains('ns_convoy')) {
+			var tc = nsSsDmgType(event.getSource())
+			if (tc === 'minecraft:fall' || tc === 'minecraft:in_wall' || tc === 'minecraft:cramming' || nsSsRealPlayer(nsNfAttacker(event.getSource()))) event.setCanceled(true)
+			return
+		}
 		var hive = tags.contains('ns_hive')
 		var mode = tags.contains('ns_imm_tesla') ? 'tesla' : tags.contains('ns_imm_turrets') ? 'turrets' : tags.contains('ns_imm_magic') ? 'magic' : null
 		if (!hive && !mode) return
@@ -356,6 +378,22 @@ function nsScenarioStart(state, level, altar, hordeCfg) {
 		sc.speed = p.speed
 		nsSsSummon(altar, 'minecraft:shulker', pt.x, pt.y, pt.z, '{Tags:' + nsSsTags(state, 'ns_marker') + ',NoAI:1b,Invulnerable:1b,PersistenceRequired:1b,Glowing:1b,Color:5b,CustomName:\'"Точка эвакуации"\',CustomNameVisible:1b}')
 		nsTitleAll('Побег!', { color: 'red', bold: true, subtitle: 'Все к точке эвакуации: ' + p.dist + ' блоков, ' + nsSsCompass(pt.x - altar.x, pt.z - altar.z), subColor: 'yellow' })
+	} else if (key === 'convoy') {
+		var cp = nsSsSurfacePoint(level, altar, state, p.dist)
+		if (!cp) cp = { x: altar.x + p.dist, y: altar.y + 1, z: altar.z }
+		sc.target = cp
+		sc.lost = 0
+		sc.llamas = p.llamas
+		sc.forced = [cp.x, cp.z]
+		NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run forceload add ' + cp.x + ' ' + cp.z)
+		var carpets = ['red', 'yellow', 'blue']
+		for (var li = 0; li < p.llamas; li++) {
+			var lx = cp.x + (li - 1) * 3,
+				lz = cp.z + (li - 1) * 2
+			// без метки nightshift_raid: орда не считает обоз «своим» (07_raid_no_infighting.js) и бьёт его
+			nsSsSummon(altar, 'minecraft:llama', lx, cp.y + 1, lz, '{Tags:["ns_r' + state.raid.rid + '","ns_convoy"],PersistenceRequired:1b,Glowing:1b,Tame:1b,ChestedHorse:1b,Strength:5,Variant:' + li + ',body_armor_item:{id:"minecraft:' + carpets[li % 3] + '_carpet",count:1},CustomName:\'"Обоз ' + (li + 1) + '"\',CustomNameVisible:1b,attributes:[{id:"minecraft:generic.max_health",base:' + p.llamaHp + '.0d},{id:"minecraft:generic.movement_speed",base:0.4d},{id:"minecraft:generic.follow_range",base:64.0d}],Health:' + p.llamaHp + '.0f}')
+		}
+		nsTitleAll('Конвой', { color: 'gold', bold: true, subtitle: 'Обоз ждёт охрану в ' + p.dist + ' блоках, ' + nsSsCompass(cp.x - altar.x, cp.z - altar.z), subColor: 'yellow' })
 	} else {
 		var np = nsSsSurfacePoint(level, altar, state, p.dist)
 		if (!np) np = { x: altar.x - p.dist, y: altar.y + 1, z: altar.z }
@@ -445,6 +483,13 @@ function nsScenarioTick(state, level, altar) {
 		nsBossbarValue('nightshift:raid_wave', got)
 		if (need > 0 && got >= need) return nsScenarioWin(state, level, 'Все на точке эвакуации — Пожиратель остался ни с чем!')
 		nsSsChaser(state, level, altar, sc, ps)
+	} else if (sc.key === 'convoy') {
+		var cv = nsSsConvoyTick(state, level, altar, sc, now)
+		if (cv === 'win') return nsScenarioWin(state, level, 'Обоз дошёл до базы — снабжение доставлено!')
+		if (cv === 'fail') {
+			nsTellAll(Text.red('[Ночная смена] Обоз потерян целиком.'))
+			return nsScenarioFail(state, level, altar)
+		}
 	} else {
 		nsSsGuide(altar, sc.target, 'Гнездо')
 		nsBossbarCreate('nightshift:raid_wave', 'Штурм гнезда: матка ' + (sc.queenDead ? 'убита' : 'жива') + ' · ' + nsSsClock(left), 'green')
@@ -540,6 +585,134 @@ function nsSsChaser(state, level, altar, sc, ps) {
 	}
 }
 
+// --------------------------------------------------------------------------
+// Конвой: ламы идут к алтарю, пока рядом охрана; засады бьют обоз
+// --------------------------------------------------------------------------
+var NS_SS_AMBUSH = ['arphex:spider_prowler', 'arphex:spider_reaper', 'arphex:solifuge_skulker', 'arphex:dragonfly_dreadnought']
+
+function nsSsConvoyTick(state, level, altar, sc, now) {
+	var p = nsScenarioParams('convoy', sc.d)
+	var left = sc.time - (now - sc.t0) / 20
+	// провал — только по гибели лам (death-событие): в первые секунды чанк обоза может ещё не отдать сущности
+	if ((sc.lost || 0) >= sc.llamas) return 'fail'
+	var ll = nsSsFind(level, state, 'ns_convoy')
+	if (!ll.length) {
+		nsSsGuide(altar, sc.target, 'Обоз ждёт охрану')
+		return null
+	}
+	var ps = nsSsPlayers(altar)
+	var arrived = 0,
+		lead = null,
+		leadD = 1e18
+	for (var i = 0; i < ll.length; i++) {
+		var l = ll[i]
+		var dx = altar.x - l.getX(),
+			dz = altar.z - l.getZ()
+		var dd = Math.sqrt(dx * dx + dz * dz)
+		if (dd <= 12) {
+			arrived++
+			continue
+		}
+		if (dd < leadD) {
+			leadD = dd
+			lead = l
+		}
+	}
+	if (arrived === ll.length) return 'win'
+	// охрана рядом — обоз идёт; нет никого ближе 48 блоков — ждёт
+	var guarded = false
+	for (var g = 0; g < ps.length && lead; g++) {
+		var gx = ps[g].getX() - lead.getX(),
+			gz = ps[g].getZ() - lead.getZ()
+		if (gx * gx + gz * gz <= 48 * 48) guarded = true
+	}
+	var pos = lead ? { x: Math.round(lead.getX()), y: Math.round(lead.getY()), z: Math.round(lead.getZ()) } : sc.target
+	nsSsGuide(altar, pos, guarded ? 'Обоз идёт, до базы ' + Math.round(leadD) + ' бл. · к обозу' : 'Обоз ждёт охрану')
+	nsBossbarCreate('nightshift:raid_wave', 'Конвой: дошло ' + arrived + ', в пути ' + (ll.length - arrived) + ', потеряно ' + (sc.lost || 0) + ' · ' + nsSsClock(left), 'yellow')
+	nsBossbarMax('nightshift:raid_wave', sc.llamas)
+	nsBossbarValue('nightshift:raid_wave', ll.length)
+	// загрузка чанка идёт за головой обоза
+	if (lead) {
+		var cx = pos.x,
+			cz = pos.z
+		if (!sc.forced || cx >> 4 !== sc.forced[0] >> 4 || cz >> 4 !== sc.forced[1] >> 4) {
+			if (sc.forced) NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run forceload remove ' + sc.forced[0] + ' ' + sc.forced[1])
+			NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run forceload add ' + cx + ' ' + cz)
+			sc.forced = [cx, cz]
+		}
+	}
+	if (!guarded) return null
+	sc.moved = (sc.moved || 0) + 1
+	for (var k = 0; k < ll.length; k++) nsSsConvoyStep(level, altar, ll[k])
+	// засада — через раз по ambushEvery, впереди и сбоку от головы обоза
+	if (lead && sc.moved % p.ambushEvery === 0) {
+		var base = Math.atan2(altar.z - lead.getZ(), altar.x - lead.getX())
+		for (var a = 0; a < p.ambushN; a++) {
+			var ang = base + (Math.random() - 0.5) * 2.2
+			var r = 18 + Math.random() * 8
+			var ax = Math.round(lead.getX() + Math.cos(ang) * r),
+				az = Math.round(lead.getZ() + Math.sin(ang) * r)
+			var ay = altar.y + 1
+			try {
+				ay = level.getHeight(NS_SS_HEIGHTMAP, ax, az)
+			} catch (e) {}
+			nsSsSummon(altar, NS_SS_AMBUSH[(a + sc.moved) % NS_SS_AMBUSH.length], ax, ay, az, '{Tags:' + nsSsTags(state, 'ns_ambush') + ',PersistenceRequired:1b}')
+		}
+		nsBoostRaidMobs(nsRaidBuff({}), { hp: nsWaveToughHp(sc.d), damage: 0, speed: 0 })
+		NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' positioned ' + pos.x + ' ' + pos.y + ' ' + pos.z + ' run playsound minecraft:event.raid.horn hostile @a[distance=..96] ~ ~ ~ 2')
+	}
+	// засада целится в обоз
+	var amb = nsSsFind(level, state, 'ns_ambush')
+	for (var m = 0; m < amb.length; m++) {
+		try {
+			var t = amb[m].getTarget()
+			if (t != null && t.isAlive()) continue
+			var best = null,
+				bd = 1e18
+			for (var q = 0; q < ll.length; q++) {
+				var ex = ll[q].getX() - amb[m].getX(),
+					ez = ll[q].getZ() - amb[m].getZ()
+				if (ex * ex + ez * ez < bd) {
+					bd = ex * ex + ez * ez
+					best = ll[q]
+				}
+			}
+			if (best) amb[m].setTarget(best)
+		} catch (e) {}
+	}
+	return null
+}
+
+// Шаг ламы: путь к точке в 20 блоках по направлению к алтарю; застряла на 6 с — подталкиваем на 6 блоков
+function nsSsConvoyStep(level, altar, l) {
+	try {
+		var dx = altar.x - l.getX(),
+			dz = altar.z - l.getZ()
+		var dd = Math.sqrt(dx * dx + dz * dz)
+		if (dd <= 12) return
+		var step = Math.min(20, dd)
+		var wx = Math.round(l.getX() + (dx / dd) * step),
+			wz = Math.round(l.getZ() + (dz / dd) * step)
+		var wy = level.getHeight(NS_SS_HEIGHTMAP, wx, wz)
+		l.getNavigation().moveTo(wx + 0.5, wy, wz + 0.5, 1.6) // ~3 бл/с: 450 блоков — около 2,5 минут чистого хода
+		var pd = l.persistentData
+		var best = pd.contains('ns_cv_d') ? pd.getDouble('ns_cv_d') : 1e9
+		if (dd < best - 1) {
+			pd.putDouble('ns_cv_d', dd)
+			pd.putInt('ns_cv_s', 0)
+			return
+		}
+		var st = pd.getInt('ns_cv_s') + 1
+		pd.putInt('ns_cv_s', st)
+		if (st >= 6) {
+			var tx = Math.round(l.getX() + (dx / dd) * 6),
+				tz = Math.round(l.getZ() + (dz / dd) * 6)
+			l.teleportTo(tx + 0.5, level.getHeight(NS_SS_HEIGHTMAP, tx, tz), tz + 0.5)
+			pd.putInt('ns_cv_s', 0)
+		}
+	} catch (e) {}
+}
+
 function nsScenarioCleanup(state) {
 	var sc = state.raid.sc
 	if (sc && sc.forced) {
@@ -550,7 +723,7 @@ function nsScenarioCleanup(state) {
 	var al2 = nsFindAltar(state, state.raid.altarId)
 	if (al2) {
 		var lv = nsAltarLevel(al2)
-		var all = nsSsFind(lv, state, 'nightshift_raid')
+		var all = nsSsFind(lv, state, 'nightshift_raid').concat(nsSsFind(lv, state, 'ns_convoy'))
 		for (var i = 0; i < all.length; i++) nsRemoveMob(all[i])
 	}
 }
@@ -561,8 +734,9 @@ EntityEvents.death(event => {
 		var e = event.entity
 		var tg = e.getTags()
 		var hive = tg.contains('ns_hive'),
-			queen = tg.contains('ns_queen')
-		if (!hive && !queen) return
+			queen = tg.contains('ns_queen'),
+			convoy = tg.contains('ns_convoy')
+		if (!hive && !queen && !convoy) return
 		var st = nsGetState()
 		if (!st || !st.raid || !st.raid.sc || !tg.contains('ns_r' + st.raid.rid)) return
 		if (hive) {
@@ -570,6 +744,10 @@ EntityEvents.death(event => {
 			nsTellAll(Text.aqua('[Ночная смена] Улей сбит! Осталось ' + Math.max(0, st.raid.sc.hives - st.raid.sc.hiveKills) + '.'))
 		}
 		if (queen) st.raid.sc.queenDead = true
+		if (convoy) {
+			st.raid.sc.lost = (st.raid.sc.lost || 0) + 1
+			nsTellAll(Text.red('[Ночная смена] ' + String(e.getName().getString()) + ' потерян! В обозе осталось ' + Math.max(0, st.raid.sc.llamas - st.raid.sc.lost) + '.'))
+		}
 		nsSaveState(st)
 	} catch (x) {}
 })
@@ -602,4 +780,20 @@ ServerEvents.tick(event => {
 		var altar = nsFindAltar(st, st.raid.altarId)
 		if (altar) NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:darkness 7 0 true')
 	} catch (e) {}
+})
+
+// Сироты сценариев: обоз, ульи, стража, Пожиратель от прошлого набега всплывают при загрузке чанка — убираем
+var NS_SS_ORPHAN_TAGS = ['ns_convoy', 'ns_hive', 'ns_queen', 'ns_guard', 'ns_chaser', 'ns_marker', 'ns_ambush', 'ns_hivespawn']
+EntityEvents.spawned(event => {
+	try {
+		var e = event.entity
+		var tg = e.getTags()
+		if (tg.isEmpty()) return
+		var hit = false
+		for (var i = 0; i < NS_SS_ORPHAN_TAGS.length; i++) if (tg.contains(NS_SS_ORPHAN_TAGS[i])) hit = true
+		if (!hit) return
+		var st = nsGetState()
+		if (st && st.raid && st.raid.state === 'active' && tg.contains('ns_r' + st.raid.rid)) return
+		event.cancel()
+	} catch (x) {}
 })

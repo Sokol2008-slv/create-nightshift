@@ -443,8 +443,32 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "39403AC5AE222609", stage: "nightshift_p36", team_stage: false, type: "gamestage" }]
-			x: 24.72d
-			y: -4.00d
+			x: 23.12d
+			y: -5.60d
+		}
+		{
+			dependencies: ["4DADC2F0709A2873"]
+			icon: { id: "nightshift:bastion_core" }
+			id: "350402D904DEB977"
+			optional: true
+			rewards: [{ id: "06719BF9F211AC87", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1A44F221D12E134C", stage: "nightshift_p38", team_stage: false, type: "gamestage" }]
+			x: 21.52d
+			y: -5.60d
+		}
+		{
+			dependencies: ["350402D904DEB977"]
+			icon: { id: "nightshift:convoy_seal" }
+			id: "4E80ABFD6CFAE6FF"
+			optional: true
+			rewards: [{ id: "07AE9746F541F855", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "14E5EAD32DF1ACC2", stage: "nightshift_p43", team_stage: false, type: "gamestage" }]
+			x: 19.92d
+			y: -5.60d
 		}
 	]
 }

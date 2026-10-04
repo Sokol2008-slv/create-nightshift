@@ -10,4 +10,6 @@ StartupEvents.registry('item', event => {
 	event.create('nightshift:spirit_essence').texture('nightshift:item/spirit_essence').maxStackSize(16).rarity('epic').glow(true) // Духи
 	event.create('nightshift:queen_heart').texture('nightshift:item/queen_heart').maxStackSize(16).rarity('epic').glow(true) // Штурм гнезда
 	event.create('nightshift:prism_lens').texture('nightshift:item/prism_lens').maxStackSize(16).rarity('epic').glow(true) // Невидимки, Блэкаут
+	event.create('nightshift:bastion_core').texture('nightshift:item/bastion_core').maxStackSize(16).rarity('epic').glow(true) // Осада форпоста
+	event.create('nightshift:convoy_seal').texture('nightshift:item/convoy_seal').maxStackSize(16).rarity('epic').glow(true) // Конвой
 })

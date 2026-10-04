@@ -41880,6 +41880,14 @@
   {
    "id": "nightshift:prism_lens",
    "emc": 0
+  },
+  {
+   "id": "nightshift:bastion_core",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:convoy_seal",
+   "emc": 0
   }
  ]
 }

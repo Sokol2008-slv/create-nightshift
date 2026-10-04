@@ -26,6 +26,8 @@ function nsFindAltar(state, altarId) {
 	for (var i = 0; i < state.altars.length; i++) {
 		if (state.altars[i].id === altarId) return state.altars[i]
 	}
+	// «Осада форпоста» (46_outpost_siege.js): на время набега «алтарь» — экструдер форпоста
+	if (state.siege && state.siege.id === altarId) return state.siege
 	return null
 }
 
