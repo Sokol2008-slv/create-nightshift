@@ -140,6 +140,12 @@ function nsStartChallenge(ctx, d, check) {
 			return 0
 		}
 	} else if (nsRaidActive(st)) nsResetRaidIdle(st)
+	// сценарии особых стадий — только под открытым небом у алтаря базы (арена закрыта крышей)
+	var spc = NSG.NS_SPECIAL_STAGES ? NSG.NS_SPECIAL_STAGES[d] : null
+	if (spc && spc.kind === 'scenario' && altar.dim === 'nightshift:arena') {
+		nsAdminReply(ctx, '«' + spc.name + '» — особая стадия под открытым небом: начните её у алтаря базы, не на арене')
+		return 0
+	}
 	var who = ctx.source.getPlayer()
 	nsStartRaid('challenge', altar.id, d)
 	nsTellAll(Text.gold('[Ночная смена] ' + (who ? who.getUsername() + ' начинает набег: ' : 'Набег: ')).append(Text.white(nsDifficultyName(d))))

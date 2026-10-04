@@ -72,3 +72,10 @@ ARMOR = PACK / "kubejs/assets/nightshift/textures/models/armor"
 ARMOR.mkdir(parents=True, exist_ok=True)
 for layer in ("1", "2"):
     recolor(van_path("models/armor/netherite_layer_" + layer), ALLOY_BASE, ALLOY_HIGH, 0.78).save(ARMOR / ("alloy_layer_" + layer + ".png"))
+# 04.10: ключевые предметы особых стадий (raids/45_special_stages.js)
+recolor(van("heart_of_the_sea"), ["#2a1404", "#9a4a24", "#d97a3c"], ["#7fe9ff", "#e0fbff"], 0.7).save(OUT / "coil_core.png")          # Механоиды
+recolor(van("paper"), ["#0b1d33", "#1f4fa8", "#4fb6ff"], ["#bfe9ff", "#ffffff"], 0.8).save(OUT / "afterburner_blueprint.png")     # Воздушный бой
+recolor(van("iron_ingot"), ["#1a1d22", "#4b5563", "#9ca3af"], ["#e5c07b", "#fff1c1"], 0.82).save(OUT / "otk_armor_plate.png")     # Бронеколонна
+recolor(van("gold_nugget"), ["#3a0c0c", "#a3283f", "#e5484d"], ["#fde68a", "#fffbe6"], 0.7).save(OUT / "runner_badge.png")        # Побег
+recolor(van("ghast_tear"), ["#120a2a", "#5b3fa8", "#a78bfa"], ["#e9d5ff", "#ffffff"], 0.7).save(OUT / "spirit_essence.png")       # Духи
+recolor(van("fermented_spider_eye"), ["#1a0606", "#5e1424", "#94243a"], ["#85bb65", "#c6e6a8"], 0.75).save(OUT / "queen_heart.png")  # Штурм гнезда

@@ -41628,6 +41628,30 @@
   {
    "id": "nightshift:incomplete_awakening",
    "emc": 0
+  },
+  {
+   "id": "nightshift:coil_core",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:afterburner_blueprint",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:otk_armor_plate",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:runner_badge",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:spirit_essence",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:queen_heart",
+   "emc": 0
   }
  ]
 }

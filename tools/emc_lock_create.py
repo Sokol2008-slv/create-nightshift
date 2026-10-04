@@ -35,6 +35,7 @@ MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist
                 'nightshift:incomplete_armor_module', 'axiomativ:energy_shield_mk1', 'axiomativ:energy_shield_mk2']
 # 04.10: тесла-башня (аддон 0.4.0) — оборона, только машинами
 MANUAL_ZERO += ['axiomativ:tesla_tower', 'axiomativ:tesla_tower_coil', 'axiomativ:incomplete_tesla_tower_coil']
+MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nightshift:otk_armor_plate', 'nightshift:runner_badge', 'nightshift:spirit_essence', 'nightshift:queen_heart']  # 04.10: ключи особых стадий — только из набегов
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'

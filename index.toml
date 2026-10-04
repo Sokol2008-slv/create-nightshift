@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "6bea13b56827dab4352b2373bbe8bfdb7e36ccc3db30157c04168ae6d9a22b20"
+hash = "cd432d23eef78dc4980acffd8e4991aed3c53733be561a33fbbf0c0000cba93f"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -42,7 +42,7 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/altar.snbt"
-hash = "854d6e4e46e191a6b67ad267e37e08c2f6fca5e6e434eef16bc823a6e1839db5"
+hash = "0e768f43b95e6501bc23a2c24c2c20efe62d5e458ec6f2ff8a79bb7c40bf694e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/artifacts.snbt"
@@ -114,11 +114,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "b4e34fcbd7dae71f299f2f7dbb33b804b42399e297188c54dde44f2f723f08d6"
+hash = "abdfd5c04d1ba7fed648f9636e3059e41347d2fbcd27a00036d59e02891c93d7"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "b4e34fcbd7dae71f299f2f7dbb33b804b42399e297188c54dde44f2f723f08d6"
+hash = "abdfd5c04d1ba7fed648f9636e3059e41347d2fbcd27a00036d59e02891c93d7"
 
 [[files]]
 file = "config/iris.properties"
@@ -250,11 +250,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "76d605b1f7ce03a227f05a0498d7f50c7133cc3758379b7149b4062c9956547a"
+hash = "94791e96b7b16181db0f2abc9835b9896b87d38cb9ba2c3ed20f609a26832791"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "f110066f96188be5d44ab88c9f18963e016d74af2bd03a5350d08e6705766785"
+hash = "3ba51e0a6a7e2b4bc804e3259e354c53526109faa5e971cc1cc1d5098d577df2"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -355,6 +355,10 @@ hash = "ceb444a2f75c975f3203363e3fbf2e0e8385316dc8d782a01597b67e49d07122"
 [[files]]
 file = "kubejs/assets/nightshift/textures/font/scare_face6.png"
 hash = "b0be1cb264c2e6a5db13f4ae65be0e81f69f75962d0a187dbd859b9297ae57ec"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/afterburner_blueprint.png"
+hash = "9f3d22ec1fefcc6fbd5d1890ca77412fb992918a3c26028e321dd72fcaa43cda"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/alloy_boots.png"
@@ -717,6 +721,10 @@ file = "kubejs/assets/nightshift/textures/item/balance_staff.png"
 hash = "ab09c20452958f0657016ae0e79e0049db23f858f6ca7a7cab3badd470e9971b"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/coil_core.png"
+hash = "8e1bc67e7db1a4f5dc68fb04163c0a1bc7e76f8343f4b6d5096d9de4010fa40a"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/electric_copper.png"
 hash = "4377df0093d7a1a6b3f4749352f3c8cd300fca23c9b2a7de22adae6c530c11b0"
 
@@ -781,8 +789,24 @@ file = "kubejs/assets/nightshift/textures/item/night_heart.png"
 hash = "083acd774a276b35bfc323e97ce2c3a5848992e503c1aa623fa026f87d4e0189"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/otk_armor_plate.png"
+hash = "92061a11e2cac67e1bfe02625a27295c17dd9359f38ea96ae523b761a4cc7f89"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/queen_heart.png"
+hash = "127e7cc05942a0942abae4fffba4423003497664580629fd54e03a09745db7fd"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/runner_badge.png"
+hash = "0e6ed1616d5d8f232942402d447f5f7e1bc601ba7aaad3c98dae37f0c8b34483"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/sedative.png"
 hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/spirit_essence.png"
+hash = "17935c774be6aa400f37ec993063ee8119c1447816101aa6152b383aadf49459"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/stabilite_pickaxe.png"
@@ -959,6 +983,10 @@ hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
 [[files]]
 file = "kubejs/client_scripts/ns_artifacts_tooltips.js"
 hash = "f5476f4651e9bf3aa05546f85ee8a851005cfe3976a250c9546ed6eb8e1472a9"
+
+[[files]]
+file = "kubejs/client_scripts/special_stage_tooltips.js"
+hash = "8ea41854b0d2b5bed9adb9a22ed0338c6f49ae2791523af0287c843a039dcec8"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_jei.js"
@@ -1618,7 +1646,7 @@ hash = "5b40f8bd59e018974020e225a13fa94485162175ea93ca558780d6b24c91afc2"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
-hash = "bbc48144858c51d681aee3e0566954e1117eb357cd54df7f5409247896057994"
+hash = "f218932903c5ac70c8173672649eaca541eeacfd1b626f3666adf267a8fa9140"
 
 [[files]]
 file = "kubejs/server_scripts/raids/12_mutators.js"
@@ -1634,15 +1662,19 @@ hash = "248d3c32eb8356bd181bafe9db9534a2e332cf1d4f08e25b1d2a16ef7ffa071a"
 
 [[files]]
 file = "kubejs/server_scripts/raids/30_nightshift_altar.js"
-hash = "043fadcff6495d3c725c934f24d98419ec822c0f8de5382d18116fcd581aa15e"
+hash = "1185b9bd06090d31bb06a8b5b27a9f7d37a609247476ae62892a00414d4cefc7"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "cc77c347634470fcb6e3db836f0441374e898cc55573e2645076f4511bc728f7"
+hash = "38d53fb61ebefbcc429a9ada4dd211c47791cdf4325d7d75600a0aaf74f51a57"
+
+[[files]]
+file = "kubejs/server_scripts/raids/45_special_stages.js"
+hash = "651aecbd66d8c4ed003649141a76787b91746a5c7945edd5fad47607fa414975"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
-hash = "c65be8fa9f0e835b653cbdac9659129de3d44b6a3b59aa19f31f314a68ad93fe"
+hash = "3ade6684ff4319ab7af1ac1eeeaef231cb28fb955be0d6d59f52aefc74f9e592"
 
 [[files]]
 file = "kubejs/server_scripts/raids/60_nightshift_recipes.js"
@@ -1775,6 +1807,10 @@ hash = "f5383205478fe23035cce0ffe42d19a6463b1ddae934503a0d245a4efec5165b"
 [[files]]
 file = "kubejs/startup_scripts/vahta/25_alloy_armor.js"
 hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
+
+[[files]]
+file = "kubejs/startup_scripts/vahta/26_special_stage_items.js"
+hash = "a187c94cfd5695d0a4ffa57878c4757c70a7a115892bca086c1128d744c97cfa"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/30_ns_artifacts.js"

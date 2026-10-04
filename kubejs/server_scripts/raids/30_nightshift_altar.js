@@ -58,6 +58,8 @@ function nsUpsertAltar(state, block) {
 function nsForecastLines(d) {
 	var st0 = nsGetState()
 	var horde = typeof nsApplyMutators === 'function' ? nsApplyMutators(nsChallengeHorde(d), st0, d) : nsChallengeHorde(d)
+	// особая стадия: сценарий — только описание; неуязвимость — описание сверху, состав ниже
+	if (horde.special && typeof nsSpecialForecast === 'function' && horde.scenario) return nsSpecialForecast(horde, d)
 	var hpTable = NSG.NIGHTSHIFT_MOB_HP
 	var scale = nsPartyScale() * (horde.mult || 1)
 	var lines = []
@@ -84,6 +86,7 @@ function nsForecastLines(d) {
 	if (horde.scale) total = Math.round(total * (1 + horde.scale.hp))
 	var mn = typeof nsMutNames === 'function' ? nsMutNames(nsMutSet(st0)) : []
 	if (mn.length) lines.push('Условия смены: ' + mn.join(', ') + ' (добыча +' + Math.round(nsMutBonus(nsMutSet(st0)) * 100) + ' %)')
+	if (horde.special && typeof nsSpecialForecast === 'function') lines = nsSpecialForecast(horde, d).concat(lines)
 	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
 	lines.push('Итого ' + nsPlural(horde.waves.length, 'подволна', 'подволны', 'подволн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
 	return lines

@@ -77,6 +77,10 @@ function nsHealSleepRule(server) {
 // Сброс набега (алтарь пропал, нет конфига орды, /nightshift stop): мобы набега уходят вместе с ним
 function nsResetRaidIdle(state) {
 	var arenaAltar = state.raid.altarId
+	// особая стадия (45_special_stages.js): снять forceload гнезда и убрать ульи/стражу/Пожирателя
+	if (state.raid.sc && typeof nsScenarioCleanup === 'function') nsTry('уборка сценария', function () {
+		nsScenarioCleanup(state)
+	})
 	state.raid = nsDefaultState().raid
 	nsReturnAll(state)
 	nsSaveState(state)
@@ -806,6 +810,8 @@ function nsBoostRaidMobs(buff, scale) {
 		// Кошмар: мобы крупнее (не боссы — у них size: 1)
 		if (scale.size > 1) NSG.nsServer.runCommandSilent('execute as ' + sel + ' run attribute @s minecraft:generic.scale modifier add nightshift:giant ' + (scale.size - 1).toFixed(3) + ' add_multiplied_base')
 	}
+	// неуязвимость особой стадии (45_special_stages.js)
+	if (NSG.nsCurImmunity) NSG.nsServer.runCommandSilent('tag ' + sel + ' add ns_imm_' + NSG.nsCurImmunity)
 	// тема арены (70_nightshift_arena.js): Пекло — горящая злая орда, Мерзлота — медленная и закалённая, Край — прыгучая…
 	var afx = NSG.nsArenaMobFx
 	if (afx) {
@@ -833,6 +839,12 @@ function nsSpawnCurrentWave(state, level, altar) {
 		nsResetRaidIdle(state)
 		return true
 	}
+	// особая стадия-сценарий: вместо подволн своя логика (45_special_stages.js)
+	if (hordeCfg.scenario) {
+		if (!state.raid.sc && typeof nsScenarioStart === 'function') nsScenarioStart(state, level, altar, hordeCfg)
+		return true
+	}
+	NSG.nsCurImmunity = hordeCfg.immunity || null // неуязвимость особой стадии — метка мобам в nsBoostRaidMobs
 	var wave = nsWaveList(state, hordeCfg)[state.raid.waveIndex]
 
 	if (!wave) {
@@ -1128,7 +1140,8 @@ function nsChallengeHorde(d) {
 			cfg0.bossExtra = mb.extra
 			cfg0.bossScale = mb.scale
 		}
-		return cfg0
+		// особая стадия (45_special_stages.js): неуязвимость или сценарий вместо подволн
+		return NSG.nsSpecialFor ? NSG.nsSpecialFor(d, cfg0) : cfg0
 	}
 	var top = D[NSG.NIGHTSHIFT_DIFFICULTY_MAX]
 	var L = NSG.NS_WAVE_LATE
@@ -1172,6 +1185,7 @@ function nsChallengeHorde(d) {
 // Бросков добычи за победу: по одному за подволну, два за каждого босса, после 69-й — ещё по одному за волну
 function nsRaidRolls(d) {
 	var cfg = nsChallengeHorde(d)
+	if (cfg.scenario) return 10 + nsWaveLate(d) // сценарий без подволн — бросков как за обычную волну
 	return cfg.waves.length + (cfg.boss ? 2 * (cfg.bossCount || 1) : 0) + nsWaveLate(d)
 }
 
@@ -1287,6 +1301,8 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut) {
 			if (nsWaveGivesHeart(d)) got.push(['nightshift:night_heart', 1])
 			var ms = NSG.NS_WAVE_MILESTONES[d]
 			if (ms) for (var mi = 0; mi < ms.items.length; mi++) got.push(ms.items[mi])
+			// особая стадия впервые — артефакт смены наверняка (как с волны на 10 выше)
+			if (NSG.NS_SPECIAL_STAGES && NSG.NS_SPECIAL_STAGES[d] && typeof nsCtArtifact === 'function') got = got.concat(nsCtArtifact(d + 10))
 		}
 		for (var tq = 0; tq < nsTrophies.length; tq++) if (nsTrophies[tq].player === i) got.push(nsTrophies[tq].line)
 		if (nsShards > 0) got.push(['nightshift:horde_shard', nsShards, 'nightshift:horde_shard', 'копилка набега'])
@@ -1423,6 +1439,13 @@ function nsTickActiveRaid(state) {
 		return
 	}
 	var level = nsAltarLevel(altar)
+	// сценарий особой стадии — своя логика, без паузы: побег и штурм гнезда уводят игроков от алтаря
+	if (state.raid.sc && typeof nsScenarioTick === 'function') {
+		nsTry('сценарий особой стадии', function () {
+			nsScenarioTick(state, level, altar)
+		})
+		return
+	}
 	if (nsRaidPaused(state, level, altar)) return
 	var T = NSG.NIGHTSHIFT_TUNABLES
 

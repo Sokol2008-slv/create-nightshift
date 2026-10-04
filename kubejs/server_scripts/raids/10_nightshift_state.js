@@ -225,6 +225,8 @@ function nsActionBarAll(text, color) {
 
 function nsBossbarCreate(id, name, color) {
 	NSG.nsServer.runCommandSilent('bossbar add ' + id + ' ' + JSON.stringify({ text: name }))
+	// add не меняет уже созданную полосу — имя обновляем отдельно (иначе висело «Волна 1 из 6» до конца набега)
+	NSG.nsServer.runCommandSilent('bossbar set ' + id + ' name ' + JSON.stringify({ text: name }))
 	NSG.nsServer.runCommandSilent('bossbar set ' + id + ' players @a')
 	NSG.nsServer.runCommandSilent('bossbar set ' + id + ' color ' + (color || 'red'))
 	NSG.nsServer.runCommandSilent('bossbar set ' + id + ' visible true')

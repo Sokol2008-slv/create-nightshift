@@ -350,5 +350,89 @@
 			x: 6.00d
 			y: 6.00d
 		}
+		{
+			dependencies: ["2FBF34DA191F4F4E"]
+			icon: { id: "minecraft:ender_eye" }
+			id: "7A0F0FB1F4DD3514"
+			optional: true
+			rewards: [{ id: "7DE6938B28EFDB8E", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "4036E91A5398F96B", type: "checkmark" }]
+			x: 15.12d
+			y: -2.00d
+		}
+		{
+			dependencies: ["7A0F0FB1F4DD3514"]
+			icon: { id: "nightshift:coil_core" }
+			id: "6396C3E683386BB8"
+			optional: true
+			rewards: [{ id: "2774398289157432", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6511B3806C3C8C5C", stage: "nightshift_p22", team_stage: false, type: "gamestage" }]
+			x: 15.12d
+			y: -4.00d
+		}
+		{
+			dependencies: ["6396C3E683386BB8"]
+			icon: { id: "nightshift:afterburner_blueprint" }
+			id: "2FCFABA930668036"
+			optional: true
+			rewards: [{ id: "57EA7CEDB418BCA1", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "63DD1C50331E90CD", stage: "nightshift_p24", team_stage: false, type: "gamestage" }]
+			x: 16.72d
+			y: -4.00d
+		}
+		{
+			dependencies: ["2FCFABA930668036"]
+			icon: { id: "nightshift:otk_armor_plate" }
+			id: "16915B107FB94D45"
+			optional: true
+			rewards: [{ id: "71AC12278C093627", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7127BBADED718ECD", stage: "nightshift_p26", team_stage: false, type: "gamestage" }]
+			x: 18.32d
+			y: -4.00d
+		}
+		{
+			dependencies: ["16915B107FB94D45"]
+			icon: { id: "nightshift:runner_badge" }
+			id: "0201C86BA400031C"
+			optional: true
+			rewards: [{ id: "0582917BF58B5C81", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "655CAA0666FC575A", stage: "nightshift_p28", team_stage: false, type: "gamestage" }]
+			x: 19.92d
+			y: -4.00d
+		}
+		{
+			dependencies: ["0201C86BA400031C"]
+			icon: { id: "nightshift:spirit_essence" }
+			id: "363F2895D397D822"
+			optional: true
+			rewards: [{ id: "6406417FAA444FDA", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4EA4B1AE8F96E84E", stage: "nightshift_p32", team_stage: false, type: "gamestage" }]
+			x: 21.52d
+			y: -4.00d
+		}
+		{
+			dependencies: ["363F2895D397D822"]
+			icon: { id: "nightshift:queen_heart" }
+			id: "4DADC2F0709A2873"
+			optional: true
+			rewards: [{ id: "41A2FB73EBF5C5A8", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "39403AC5AE222609", stage: "nightshift_p36", team_stage: false, type: "gamestage" }]
+			x: 23.12d
+			y: -4.00d
+		}
 	]
 }
