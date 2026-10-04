@@ -95,8 +95,9 @@ ItemEvents.foodEaten('nightshift:night_heart', event => {
 })
 
 ServerEvents.recipes(event => {
-	// Настойка жизни: мёд, светящиеся ягоды (пышные пещеры — туда ещё надо дойти), сладкие ягоды, костная мука
-	var ing = ['minecraft:honey_bottle', 'minecraft:glow_berries', 'minecraft:sweet_berries', 'minecraft:sweet_berries', 'minecraft:bone_meal']
+	// Настойка жизни: мёд, светящиеся ягоды (пышные пещеры — туда ещё надо дойти), сладкие ягоды, костная мука и
+	// целебные споры форпоста «Грибные пещеры» (04.10)
+	var ing = ['minecraft:honey_bottle', 'minecraft:glow_berries', 'minecraft:sweet_berries', 'nightshift:spores', 'nightshift:spores', 'minecraft:bone_meal']
 	// только миксер (вручную нельзя — так интереснее; и миксер больше не подхватывает ручной рецепт на 1 шт.)
 	event.recipes.create.mixing('2x nightshift:life_tonic', ing).id('nightshift:life_tonic_mixing')
 })

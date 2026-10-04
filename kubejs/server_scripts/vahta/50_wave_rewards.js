@@ -4,7 +4,7 @@
 //  - Генераторы тока — только с электрической медью: катушка New Age (миксер), генератор C&A
 //    (механические крафтеры: медная катушка → электрическая медь), генератор TFMG (сборочная линия: магнит →
 //    электрическая медь). Без заряда молнии с 15-й волны тока нет.
-//  - Контроллер ракеты — с ядром навигации (награда 50-й волны).
+//  - Контроллер ракеты — с ядром навигации (награда 50-й волны) и 3 звёздными картами (форпост «Обсерватория», 04.10).
 // ==========================================================================
 var NS_TFMG_GENERATOR = {"type": "create:sequenced_assembly", "ingredient": {"item": "create:shaft"}, "loops": 3, "results": [{"chance": 120.0, "id": "tfmg:generator"}, {"chance": 8.0, "id": "tfmg:steel_casing"}, {"chance": 8.0, "id": "tfmg:steel_cogwheel"}, {"chance": 8.0, "id": "tfmg:capacitor_item"}], "sequence": [{"type": "create:deploying", "ingredients": [{"item": "tfmg:unfinished_generator"}, {"item": "tfmg:capacitor_item"}], "results": [{"id": "tfmg:unfinished_generator"}]}, {"type": "create:deploying", "ingredients": [{"item": "tfmg:unfinished_generator"}, {"tag": "c:plates/steel"}], "results": [{"id": "tfmg:unfinished_generator"}]}, {"type": "tfmg:winding", "ingredients": [{"item": "tfmg:unfinished_generator"}, {"item": "tfmg:copper_spool"}], "processing_time": 75, "results": [{"id": "tfmg:unfinished_generator"}]}, {"type": "create:deploying", "ingredients": [{"item": "tfmg:unfinished_generator"}, {"item": "nightshift:electric_copper"}], "results": [{"id": "tfmg:unfinished_generator"}]}, {"type": "create:deploying", "ingredients": [{"item": "tfmg:unfinished_generator"}, {"item": "tfmg:steel_mechanism"}], "results": [{"id": "tfmg:unfinished_generator"}]}, {"type": "create:deploying", "ingredients": [{"item": "tfmg:unfinished_generator"}, {"item": "tfmg:screwdriver"}], "results": [{"id": "tfmg:unfinished_generator"}]}], "transitional_item": {"id": "tfmg:unfinished_generator"}}
 
@@ -27,11 +27,12 @@ ServerEvents.recipes(event => {
 	event.remove({ id: 'tfmg:sequenced_assembly/generator' })
 	event.custom(NS_TFMG_GENERATOR).id('nightshift:vahta/tfmg_generator_electric')
 
-	// контроллер ракеты: рычаги, ядро навигации, титан, схемы, промышленное железо
+	// контроллер ракеты: рычаги, ядро навигации, звёздные карты Обсерватории (форпост, 04.10), титан, схемы, промышленное железо
 	event.remove({ id: 'northstar:mechanical_crafting/rocket_controls' })
-	event.recipes.create.mechanical_crafting('northstar:rocket_controls', ['LNL', 'TTT', 'CCC', 'III'], {
+	event.recipes.create.mechanical_crafting('northstar:rocket_controls', ['LNL', 'SSS', 'TTT', 'CCC', 'III'], {
 		L: 'minecraft:lever',
 		N: 'nightshift:navigation_core',
+		S: 'nightshift:star_chart',
 		T: nsIng('#c:plates/titanium'),
 		C: 'northstar:circuit',
 		I: 'create:industrial_iron_block'

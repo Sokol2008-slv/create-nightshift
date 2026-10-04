@@ -356,21 +356,16 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/create_mobile_packages/bee_port', 'create_mobile_packages:bee_port', ['5x create:andesite_alloy', '3x create:andesite_casing', 'create:transmitter']],
 	['nightshift:vahta/mix/create_mobile_packages/mobile_packager', 'create_mobile_packages:mobile_packager', ['2x create:brass_sheet', 'create:cardboard', 'create:packager', '2x minecraft:stick']],
 	['nightshift:vahta/mix/create_mobile_packages/robo_bee', 'create_mobile_packages:robo_bee', ['create:andesite_alloy', 'create:item_vault', '2x create:propeller', '2x minecraft:honeycomb']],
-	// --- create_new_age (18) ---
+	// --- create_new_age (12) ---
 	['nightshift:vahta/mix/create_new_age/shaped/advanced_energiser', 'create_new_age:advanced_energiser', ['create_new_age:basic_energiser', '2x create_new_age:overcharged_gold', '2x minecraft:lightning_rod']],
-	['nightshift:vahta/mix/create_new_age/shaped/advanced_motor', 'create_new_age:advanced_motor', ['6x #c:nuggets/gold', 'create:brass_casing', 'create:shaft', 'create_new_age:overcharged_iron']],
-	['nightshift:vahta/mix/create_new_age/shaped/advanced_solar_heating_plate', 'create_new_age:advanced_solar_heating_plate', ['3x #c:glass_blocks/colorless', '2x create_new_age:heat_pipe', '4x create_new_age:overcharged_iron']],
 	['nightshift:vahta/mix/create_new_age/shaped/basic_motor', 'create_new_age:basic_motor', ['6x #c:nuggets/iron', 'create:andesite_casing', 'create:shaft', 'create_new_age:magnetite_block']],
 	['nightshift:vahta/mix/create_new_age/shaped/basic_motor_extension', 'create_new_age:basic_motor_extension', ['create_new_age:basic_motor', '2x create_new_age:copper_circuit', '6x create_new_age:overcharged_iron']],
-	['nightshift:vahta/mix/create_new_age/shaped/basic_solar_heating_plate', 'create_new_age:basic_solar_heating_plate', ['3x #c:glass_blocks/colorless', '4x #c:ingots/iron', '2x create_new_age:heat_pipe']],
 	['nightshift:vahta/mix/create_new_age/shaped/carbon_brushes', 'create_new_age:carbon_brushes', ['6x create:andesite_alloy', 'create:shaft', '2x minecraft:coal']],
 	['nightshift:vahta/mix/create_new_age/shaped/electrical_connector', '2x create_new_age:electrical_connector', ['3x #c:nuggets/copper', '3x create:andesite_alloy']],
 	['nightshift:vahta/mix/create_new_age/shaped/fluxuated_magnetite', '2x create_new_age:fluxuated_magnetite', ['4x create_new_age:magnetite_block', 'create_new_age:overcharged_diamond', '4x create_new_age:overcharged_gold']],
 	['nightshift:vahta/mix/create_new_age/shaped/heat_pipe', '4x create_new_age:heat_pipe', ['2x #c:nuggets/zinc', '#c:plates/copper', '3x minecraft:terracotta']],
 	['nightshift:vahta/mix/create_new_age/shaped/heat_pump', '4x create_new_age:heat_pump', ['2x create_new_age:heat_pipe', 'create_new_age:thorium']],
 	['nightshift:vahta/mix/create_new_age/shaped/heater', 'create_new_age:heater', ['4x #c:nuggets/iron', 'create:empty_blaze_burner', '2x create_new_age:heat_pipe', 'create_new_age:overcharged_iron']],
-	['nightshift:vahta/mix/create_new_age/shaped/layered_magnet', '4x create_new_age:layered_magnet', ['3x create_new_age:overcharged_gold', '6x create_new_age:overcharged_iron']],
-	['nightshift:vahta/mix/create_new_age/shaped/netherite_magnet', '2x create_new_age:netherite_magnet', ['5x create_new_age:overcharged_diamond', '4x minecraft:netherite_scrap']],
 	['nightshift:vahta/mix/create_new_age/shaped/reactor_fuel_acceptor', 'create_new_age:reactor_fuel_acceptor', ['create:andesite_funnel', 'create:brass_funnel', '4x create_new_age:reactor_casing']],
 	['nightshift:vahta/mix/create_new_age/shaped/reactor_glass', 'create_new_age:reactor_glass', ['5x #c:glass_blocks/colorless', '4x create_new_age:reactor_casing']],
 	['nightshift:vahta/mix/create_new_age/shaped/street_light', 'create_new_age:street_light', ['#c:glass_blocks/colorless', '#c:plates/iron', 'create_new_age:electrical_connector']],
@@ -404,13 +399,12 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/create_sa/zinc_handle_recipe', '2x create_sa:zinc_handle', ['2x #c:ingots/zinc']],
 	['nightshift:vahta/mix/create_sa/zinc_helmet_recipe', 'create_sa:zinc_helmet', ['5x #c:ingots/zinc']],
 	['nightshift:vahta/mix/create_sa/zinc_leggings_recipe', 'create_sa:zinc_leggings', ['7x #c:ingots/zinc']],
-	// --- create_submarine (8) ---
+	// --- create_submarine (7) ---
 	['nightshift:vahta/mix/create_submarine/ballast_tank', 'create_submarine:ballast_tank', ['4x create:andesite_alloy', 'create:fluid_tank', '4x create:iron_sheet']],
 	['nightshift:vahta/mix/create_submarine/ballast_vent', 'create_submarine:ballast_vent', ['5x create:copper_nugget', '4x minecraft:copper_block']],
 	['nightshift:vahta/mix/create_submarine/barometer', 'create_submarine:barometer', ['3x create:industrial_iron_block', '5x create_submarine:iron_pressurizer', 'minecraft:water_bucket']], // остаток-контейнер: проверить вживую
 	['nightshift:vahta/mix/create_submarine/copper_pressurizer', 'create_submarine:copper_pressurizer', ['minecraft:copper_block', '8x minecraft:glass']],
 	['nightshift:vahta/mix/create_submarine/iron_pressurizer', 'create_submarine:iron_pressurizer', ['create:industrial_iron_block', '8x minecraft:glass']],
-	['nightshift:vahta/mix/create_submarine/oxygen_diffuser', 'create_submarine:oxygene_diffuser', ['2x create:electron_tube', 'create:item_drain', 'create:nozzle', 'create:propeller', '2x create:redstone_link']],
 	['nightshift:vahta/mix/create_submarine/underwater_mine', 'create_submarine:underwater_mine', ['4x create:industrial_iron_block', 'minecraft:lodestone', '4x minecraft:tnt']],
 	['nightshift:vahta/mix/create_submarine/water_thruster', 'create_submarine:water_thruster', ['create:mechanical_pump', 'create:propeller', '5x minecraft:copper_block']],
 	// --- create_things_and_misc (7) ---
@@ -448,13 +442,9 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/create_winery/white_grape_crate_unpack', '9x create_winery:white_grapes', ['create_winery:white_grape_crate']],
 	['nightshift:vahta/mix/create_winery/white_grape_pomace_recipe', 'create_winery:white_grape_pomace', ['5x create_winery:white_grapes']],
 	['nightshift:vahta/mix/create_winery/wine_cellar_recipe', 'create_winery:wine_cellar', ['5x #minecraft:planks', '#minecraft:wooden_slabs', '2x minecraft:iron_ingot']],
-	// --- createaddition (9) ---
+	// --- createaddition (5) ---
 	['nightshift:vahta/mix/createaddition/crafting/barbed_wire', '2x createaddition:barbed_wire', ['4x #c:wires/iron']],
-	['nightshift:vahta/mix/createaddition/crafting/capacitor_1', 'createaddition:capacitor', ['#c:plates/copper', '#c:plates/zinc', 'minecraft:redstone_torch']],
-	['nightshift:vahta/mix/createaddition/crafting/copper_spool', 'createaddition:copper_spool', ['4x #c:wires/copper', 'createaddition:spool']],
 	['nightshift:vahta/mix/createaddition/crafting/electrum_amulet', 'createaddition:electrum_amulet', ['#c:dusts/diamond', '2x #c:ingots/electrum', '#c:plates/zinc', '3x #c:wires/electrum']],
-	['nightshift:vahta/mix/createaddition/crafting/electrum_spool', 'createaddition:electrum_spool', ['4x #c:wires/electrum', 'createaddition:spool']],
-	['nightshift:vahta/mix/createaddition/crafting/gold_spool', 'createaddition:gold_spool', ['4x #c:wires/gold', 'createaddition:spool']],
 	['nightshift:vahta/mix/createaddition/crafting/modular_accumulator', 'createaddition:modular_accumulator', ['#c:rods/copper', '#c:wires/electrum', 'create:brass_casing', '2x createaddition:capacitor']],
 	['nightshift:vahta/mix/createaddition/crafting/rolling_mill', 'createaddition:rolling_mill', ['2x #c:plates/iron', '4x create:andesite_alloy', 'create:andesite_casing', '2x create:shaft']],
 	['nightshift:vahta/mix/createaddition/crafting/spool', '24x createaddition:spool', ['2x #c:plates/iron', '#c:rods/iron']],
@@ -463,7 +453,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/createadditionallogistics/crafting/logistics/cash_register', 'createadditionallogistics:cash_register', ['#c:chests', '#c:glass_blocks', 'create:brass_sheet', 'create:stock_link', 'minecraft:book']],
 	['nightshift:vahta/mix/createadditionallogistics/crafting/logistics/package_accelerator', 'createadditionallogistics:package_accelerator', ['create:brass_casing', 'create:cardboard_block', 'create:cogwheel', 'create:precision_mechanism', 'create:super_glue']],
 	['nightshift:vahta/mix/createadditionallogistics/crafting/logistics/package_editor', 'createadditionallogistics:package_editor', ['create:clipboard', '4x minecraft:iron_ingot', '2x minecraft:redstone']],
-	// --- createbigcannons (28) ---
+	// --- createbigcannons (27) ---
 	['nightshift:vahta/mix/createbigcannons/ap_autocannon_round', '4x createbigcannons:ap_autocannon_round', ['#c:ingots/cast_iron', '#c:ingots/iron']],
 	['nightshift:vahta/mix/createbigcannons/ap_shot', 'createbigcannons:ap_shot', ['#c:ingots/cast_iron', '3x #c:ingots/iron', '#minecraft:wooden_slabs']],
 	['nightshift:vahta/mix/createbigcannons/autocannon_ammo_container', 'createbigcannons:autocannon_ammo_container', ['#c:ingots/brass', '5x #c:plates/iron']],
@@ -477,7 +467,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/createbigcannons/cast_iron_sliding_breechblock', 'createbigcannons:cast_iron_sliding_breechblock', ['3x #c:ingots/cast_iron', '2x create:cogwheel']],
 	['nightshift:vahta/mix/createbigcannons/drop_mortar_shell', 'createbigcannons:drop_mortar_shell', ['2x #c:plates/iron', '#createbigcannons:high_explosive_materials', 'create:shaft', 'createbigcannons:powder_charge']],
 	['nightshift:vahta/mix/createbigcannons/empty_powder_charge', 'createbigcannons:empty_powder_charge', ['#minecraft:wool', '2x minecraft:string']],
-	['nightshift:vahta/mix/createbigcannons/gas_mask', 'createbigcannons:gas_mask', ['#createbigcannons:glass', '#minecraft:wool', '3x minecraft:leather']],
 	['nightshift:vahta/mix/createbigcannons/mortar_stone', 'createbigcannons:mortar_stone', ['4x #createbigcannons:stone', '#minecraft:wooden_slabs']],
 	['nightshift:vahta/mix/createbigcannons/nethersteel_screw_lock', 'createbigcannons:nethersteel_screw_lock', ['create:shaft', '3x createbigcannons:nethersteel_ingot']],
 	['nightshift:vahta/mix/createbigcannons/pair_of_cannon_wheels', '2x createbigcannons:pair_of_cannon_wheels', ['4x #c:plates/iron', '#minecraft:logs']],
@@ -720,7 +709,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/zinc_bars_overlay', '16x createdeco:zinc_bars_overlay', ['6x #c:plates/zinc']],
 	['nightshift:vahta/mix/minecraft/zinc_catwalk_forge', '4x createdeco:zinc_catwalk', ['4x #c:plates/zinc', 'createdeco:zinc_bars']],
 	['nightshift:vahta/mix/minecraft/zinc_catwalk_railing_forge', '8x createdeco:zinc_catwalk_railing', ['3x #c:plates/zinc', '4x createdeco:zinc_bars']],
-	// --- createdieselgenerators (23) ---
+	// --- createdieselgenerators (21) ---
 	['nightshift:vahta/mix/createdieselgenerators/crafting/asphalt_block', '8x createdieselgenerators:asphalt_block', ['createdieselgenerators:crude_oil_bucket', '4x minecraft:gravel', '4x minecraft:sand']], // остаток-контейнер: проверить вживую
 	['nightshift:vahta/mix/createdieselgenerators/crafting/basin_lid', 'createdieselgenerators:basin_lid', ['3x create:andesite_alloy', 'minecraft:clock']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/bulk_fermenter', 'createdieselgenerators:bulk_fermenter', ['#c:barrels/wooden', '2x create:andesite_alloy']],
@@ -735,9 +724,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/createdieselgenerators/crafting/engine_silencer', 'createdieselgenerators:engine_silencer', ['2x #c:plates/iron', '4x #minecraft:wool', 'create:andesite_alloy', 'create:fluid_pipe']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/engine_turbocharger', 'createdieselgenerators:engine_turbocharger', ['2x #c:ingots/zinc', '2x #c:plates/iron', '3x create:andesite_alloy', 'create:fluid_pipe', 'create:propeller']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/entity_filter', 'createdieselgenerators:entity_filter', ['2x #c:nuggets/copper', '#minecraft:wool']],
-	['nightshift:vahta/mix/createdieselgenerators/crafting/huge_diesel_engine', 'createdieselgenerators:huge_diesel_engine', ['2x #c:plates/brass', '#c:storage_blocks/brass', '2x create:andesite_alloy', '2x create:fluid_pipe', 'create:steam_engine', 'minecraft:flint_and_steel']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/kelp_handle', 'createdieselgenerators:kelp_handle', ['create:andesite_alloy', '3x minecraft:dried_kelp']],
-	['nightshift:vahta/mix/createdieselgenerators/crafting/large_diesel_engine', 'createdieselgenerators:large_diesel_engine', ['2x #c:plates/brass', 'create:andesite_alloy', 'createdieselgenerators:diesel_engine', 'minecraft:polished_blackstone_slab']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/lighter', 'createdieselgenerators:lighter', ['5x #c:plates/brass', 'create:andesite_alloy', 'minecraft:flint_and_steel', 'minecraft:string']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/oil_scanner', 'createdieselgenerators:oil_scanner', ['2x #c:ingots/iron', '2x #c:plates/iron', '2x create:andesite_alloy', 'minecraft:clock']],
 	['nightshift:vahta/mix/createdieselgenerators/crafting/pumpjack_bearing', 'createdieselgenerators:pumpjack_bearing', ['4x #c:ingots/zinc', '4x create:andesite_alloy', 'create:mechanical_bearing']],
@@ -1578,29 +1565,20 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/genshinstrument/ukulele', 'genshinstrument:ukulele', ['4x minecraft:birch_planks', 'minecraft:string']],
 	['nightshift:vahta/mix/genshinstrument/vintage_lyre', 'genshinstrument:vintage_lyre', ['4x minecraft:dark_oak_planks', '2x minecraft:string']],
 	['nightshift:vahta/mix/genshinstrument/windsong_lyre', 'genshinstrument:windsong_lyre', ['4x minecraft:oak_planks', '2x minecraft:string']],
-	// --- immersive_aircraft (26) ---
-	['nightshift:vahta/mix/immersive_aircraft/airship', 'immersive_aircraft:airship', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail'])]],
+	// --- immersive_aircraft (17) ---
 	['nightshift:vahta/mix/immersive_aircraft/bamboo_hopper', 'immersive_aircraft:bamboo_hopper', [Ingredient.of(['immersive_aircraft:biplane']), Ingredient.of(['immersive_aircraft:biplane']), Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['minecraft:bamboo_block']), Ingredient.of(['minecraft:bamboo_block']), Ingredient.of(['minecraft:bamboo_block']), Ingredient.of(['minecraft:bamboo_block']), Ingredient.of(['minecraft:bamboo_block'])]],
-	['nightshift:vahta/mix/immersive_aircraft/biplane', 'immersive_aircraft:biplane', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:propeller'])]],
 	['nightshift:vahta/mix/immersive_aircraft/boiler', 'immersive_aircraft:boiler', [Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:furnace'])]],
 	['nightshift:vahta/mix/immersive_aircraft/bomb_bay', 'immersive_aircraft:bomb_bay', [Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:tnt'])]],
 	['nightshift:vahta/mix/immersive_aircraft/cargo_airship', 'immersive_aircraft:cargo_airship', [Ingredient.of(['immersive_aircraft:airship']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['minecraft:chest']), Ingredient.of(['minecraft:chest']), Ingredient.of(['minecraft:chest']), Ingredient.of(['minecraft:chest'])]],
 	['nightshift:vahta/mix/immersive_aircraft/eco_engine', 'immersive_aircraft:eco_engine', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['minecraft:brick']), Ingredient.of(['minecraft:brick']), Ingredient.of(['minecraft:brick']), Ingredient.of(['minecraft:gold_ingot']), Ingredient.of(['minecraft:gold_ingot']), Ingredient.of(['minecraft:gold_ingot']), Ingredient.of(['minecraft:slime_ball']), Ingredient.of(['minecraft:slime_ball'])]],
 	['nightshift:vahta/mix/immersive_aircraft/engine', 'immersive_aircraft:engine', [Ingredient.of(['immersive_aircraft:boiler']), Ingredient.of(['minecraft:blast_furnace']), Ingredient.of(['minecraft:cobblestone']), Ingredient.of(['minecraft:cobblestone']), Ingredient.of(['minecraft:cobblestone']), Ingredient.of(['minecraft:piston']), Ingredient.of(['minecraft:piston'])]],
-	['nightshift:vahta/mix/immersive_aircraft/enhanced_propeller', 'immersive_aircraft:enhanced_propeller', [Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot'])]],
-	['nightshift:vahta/mix/immersive_aircraft/gyrodyne', 'immersive_aircraft:gyrodyne', [Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail'])]],
 	['nightshift:vahta/mix/immersive_aircraft/gyroscope', 'immersive_aircraft:gyroscope', [Ingredient.of(['minecraft:comparator']), Ingredient.of(['minecraft:comparator']), Ingredient.of(['minecraft:compass'])]],
 	['nightshift:vahta/mix/immersive_aircraft/gyroscope_dials', 'immersive_aircraft:gyroscope_dials', [Ingredient.of(['immersive_aircraft:gyroscope']), Ingredient.of(['minecraft:clock']), Ingredient.of(['minecraft:clock']), Ingredient.of(['minecraft:clock']), Ingredient.of(['minecraft:lever']), Ingredient.of(['minecraft:note_block'])]],
-	['nightshift:vahta/mix/immersive_aircraft/gyroscope_hud', 'immersive_aircraft:gyroscope_hud', [Ingredient.of(['immersive_aircraft:gyroscope']), Ingredient.of(['minecraft:glass_pane']), Ingredient.of(['minecraft:gold_ingot']), Ingredient.of(['minecraft:gold_ingot']), Ingredient.of(['minecraft:gold_nugget']), Ingredient.of(['minecraft:gold_nugget']), Ingredient.of(['minecraft:lever']), Ingredient.of(['minecraft:note_block']), Ingredient.of(['minecraft:redstone_lamp'])]],
 	['nightshift:vahta/mix/immersive_aircraft/heavy_crossbow', 'immersive_aircraft:heavy_crossbow', [Ingredient.of(['#minecraft:logs']), Ingredient.of(['minecraft:crossbow']), Ingredient.of(['minecraft:tripwire_hook'])]],
-	['nightshift:vahta/mix/immersive_aircraft/hull', 'immersive_aircraft:hull', [Ingredient.of(['#minecraft:logs']), Ingredient.of(['#minecraft:logs']), Ingredient.of(['#minecraft:logs']), Ingredient.of(['#minecraft:logs']), Ingredient.of(['#minecraft:logs']), Ingredient.of(['#minecraft:logs']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
 	['nightshift:vahta/mix/immersive_aircraft/hull_reinforcement', 'immersive_aircraft:hull_reinforcement', [Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
-	['nightshift:vahta/mix/immersive_aircraft/improved_landing_gear', 'immersive_aircraft:improved_landing_gear', [Ingredient.of(['minecraft:coal']), Ingredient.of(['minecraft:coal']), Ingredient.of(['minecraft:coal']), Ingredient.of(['minecraft:coal']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
 	['nightshift:vahta/mix/immersive_aircraft/industrial_gears', 'immersive_aircraft:industrial_gears', [Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:lever'])]],
 	['nightshift:vahta/mix/immersive_aircraft/nether_engine', 'immersive_aircraft:nether_engine', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['minecraft:blaze_rod']), Ingredient.of(['minecraft:blaze_rod']), Ingredient.of(['minecraft:magma_cream']), Ingredient.of(['minecraft:magma_cream']), Ingredient.of(['minecraft:nether_brick']), Ingredient.of(['minecraft:nether_brick']), Ingredient.of(['minecraft:nether_brick']), Ingredient.of(['minecraft:netherite_ingot'])]],
-	['nightshift:vahta/mix/immersive_aircraft/quadrocopter', 'immersive_aircraft:quadrocopter', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['minecraft:bamboo']), Ingredient.of(['minecraft:bamboo']), Ingredient.of(['minecraft:bamboo']), Ingredient.of(['minecraft:bamboo'])]],
 	['nightshift:vahta/mix/immersive_aircraft/rotary_cannon', 'immersive_aircraft:rotary_cannon', [Ingredient.of(['immersive_aircraft:industrial_gears']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:dispenser'])]],
-	['nightshift:vahta/mix/immersive_aircraft/sail', 'immersive_aircraft:sail', [Ingredient.of(['minecraft:string']), Ingredient.of(['minecraft:string']), Ingredient.of(['minecraft:string']), Ingredient.of(['minecraft:white_carpet']), Ingredient.of(['minecraft:white_carpet']), Ingredient.of(['minecraft:white_carpet']), Ingredient.of(['minecraft:white_carpet']), Ingredient.of(['minecraft:white_carpet']), Ingredient.of(['minecraft:white_carpet'])]],
 	['nightshift:vahta/mix/immersive_aircraft/steel_boiler', 'immersive_aircraft:steel_boiler', [Ingredient.of(['immersive_aircraft:boiler']), Ingredient.of(['minecraft:blast_furnace']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
 	['nightshift:vahta/mix/immersive_aircraft/sturdy_pipes', 'immersive_aircraft:sturdy_pipes', [Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
 	['nightshift:vahta/mix/immersive_aircraft/telescope', 'immersive_aircraft:telescope', [Ingredient.of(['minecraft:copper_ingot']), Ingredient.of(['minecraft:spyglass'])]],
@@ -1608,7 +1586,7 @@ var vahtaMixRecipes = [
 	// --- man_of_many_planes (2) ---
 	['nightshift:vahta/mix/man_of_many_planes/economy_plane', 'man_of_many_planes:economy_plane', [Ingredient.of(['immersive_aircraft:engine']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:industrial_gears']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['immersive_aircraft:sail']), Ingredient.of(['immersive_aircraft:sail'])]],
 	['nightshift:vahta/mix/man_of_many_planes/scarlet_biplane', 'man_of_many_planes:scarlet_biplane', [Ingredient.of(['immersive_aircraft:biplane']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:hull']), Ingredient.of(['immersive_aircraft:propeller']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot']), Ingredient.of(['minecraft:iron_ingot'])]],
-	// --- minecraft (367) ---
+	// --- minecraft (366) ---
 	['nightshift:vahta/mix/create/crafting/appliances/chain_from_zinc', 'minecraft:chain', ['#c:ingots/zinc', '2x #c:nuggets/zinc']],
 	['nightshift:vahta/mix/create/crafting/curiosities/cake', 'minecraft:cake', ['#c:eggs', '#c:foods/dough', 'minecraft:milk_bucket', '2x minecraft:sugar']], // остаток-контейнер: проверить вживую
 	['nightshift:vahta/mix/create_aquatic_ambitions/crafting/materials/trident', 'minecraft:trident', ['2x create_aquatic_ambitions:prismarine_alloy_rod', '3x create_aquatic_ambitions:spiky_shell']],
@@ -1914,7 +1892,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/minecraft/spruce_hanging_sign', '6x minecraft:spruce_hanging_sign', ['2x minecraft:chain', '6x minecraft:stripped_spruce_log']],
 	['nightshift:vahta/mix/minecraft/spruce_pressure_plate', 'minecraft:spruce_pressure_plate', ['2x minecraft:spruce_planks']],
 	['nightshift:vahta/mix/minecraft/spruce_sign', '3x minecraft:spruce_sign', ['6x minecraft:spruce_planks', 'minecraft:stick']],
-	['nightshift:vahta/mix/minecraft/spyglass', 'minecraft:spyglass', ['minecraft:amethyst_shard', '2x minecraft:copper_ingot']],
 	['nightshift:vahta/mix/minecraft/stick_from_bamboo_item', 'minecraft:stick', ['2x minecraft:bamboo']],
 	['nightshift:vahta/mix/minecraft/sticky_piston', 'minecraft:sticky_piston', ['minecraft:piston', 'minecraft:slime_ball']],
 	['nightshift:vahta/mix/minecraft/stone_hoe', 'minecraft:stone_hoe', ['2x #minecraft:stone_tool_materials', '2x minecraft:stick']],
@@ -1979,7 +1956,7 @@ var vahtaMixRecipes = [
 	// --- nightshift (2) ---
 	['nightshift:vahta/mix/nightshift/base_core', 'nightshift:base_core', ['minecraft:campfire', 'minecraft:chiseled_stone_bricks', '5x minecraft:stone_bricks']],
 	['nightshift:vahta/mix/nightshift/vein_scanner', 'nightshift:vein_scanner', ['3x create:brass_ingot', 'create:electron_tube', 'createoreexcavation:vein_finder']],
-	// --- northstar (52) ---
+	// --- northstar (46) ---
 	['nightshift:vahta/mix/northstar/chiseled_mars_stone', 'northstar:chiseled_mars_stone', ['2x northstar:mars_stone_brick_slab']],
 	['nightshift:vahta/mix/northstar/chiseled_mercury_stone', 'northstar:chiseled_mercury_stone', ['2x northstar:mercury_stone_brick_slab']],
 	['nightshift:vahta/mix/northstar/chiseled_moon_stone', 'northstar:chiseled_moon_stone', ['2x northstar:moon_stone_brick_slab']],
@@ -1994,8 +1971,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/northstar/crafting/glowstone_torch', '4x northstar:glowstone_torch', ['minecraft:glowstone_dust', 'minecraft:iron_ingot']],
 	['nightshift:vahta/mix/northstar/crafting/ice_box', 'northstar:ice_box', ['4x #c:plates/iron', 'create:basin', '4x minecraft:blue_ice']],
 	['nightshift:vahta/mix/northstar/crafting/iron_space_suit_boots', 'northstar:iron_space_suit_boots', ['4x #c:plates/iron', 'minecraft:iron_boots', '4x northstar:durable_fabric']],
-	['nightshift:vahta/mix/northstar/crafting/iron_space_suit_chestpiece', 'northstar:iron_space_suit_chestpiece', ['4x #c:plates/iron', 'create:copper_backtank', 'minecraft:iron_chestplate', '3x northstar:durable_fabric']],
-	['nightshift:vahta/mix/northstar/crafting/iron_space_suit_helmet', 'northstar:iron_space_suit_helmet', ['3x #c:plates/iron', 'minecraft:iron_helmet', '5x minecraft:tinted_glass']],
 	['nightshift:vahta/mix/northstar/crafting/iron_space_suit_leggings', 'northstar:iron_space_suit_leggings', ['4x #c:plates/iron', 'minecraft:iron_leggings', '4x northstar:durable_fabric']],
 	['nightshift:vahta/mix/northstar/crafting/large_fan', 'northstar:large_fan', ['6x #c:ingots/titanium', '2x #c:plates/titanium', 'create:shaft']],
 	['nightshift:vahta/mix/northstar/crafting/lunar_sapphire_crystal', 'northstar:lunar_sapphire_crystal', ['2x minecraft:iron_ingot', '2x minecraft:redstone', '3x northstar:polished_lunar_sapphire']],
@@ -2009,18 +1984,14 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/northstar/crafting/martian_steel_lamp', '4x northstar:martian_steel_lamp', ['4x #c:plates/martian_steel', 'minecraft:glowstone']],
 	['nightshift:vahta/mix/northstar/crafting/martian_steel_leggings', 'northstar:martian_steel_leggings', ['7x northstar:martian_steel_ingot']],
 	['nightshift:vahta/mix/northstar/crafting/martian_steel_space_suit_boots', 'northstar:martian_steel_space_suit_boots', ['4x #c:plates/martian_steel', '4x northstar:durable_fabric', 'northstar:martian_steel_boots']],
-	['nightshift:vahta/mix/northstar/crafting/martian_steel_space_suit_chestpiece', 'northstar:martian_steel_space_suit_chestpiece', ['4x #c:plates/martian_steel', 'create:copper_backtank', '3x northstar:durable_fabric', 'northstar:martian_steel_chestplate']],
-	['nightshift:vahta/mix/northstar/crafting/martian_steel_space_suit_helmet', 'northstar:martian_steel_space_suit_helmet', ['3x #c:plates/martian_steel', '5x minecraft:tinted_glass', 'northstar:martian_steel_helmet']],
 	['nightshift:vahta/mix/northstar/crafting/martian_steel_space_suit_leggings', 'northstar:martian_steel_space_suit_leggings', ['4x #c:plates/martian_steel', '4x northstar:durable_fabric', 'northstar:martian_steel_leggings']],
 	['nightshift:vahta/mix/northstar/crafting/martian_sword', 'northstar:martian_sword', ['create:zinc_ingot', '2x northstar:martian_steel_ingot']],
 	['nightshift:vahta/mix/northstar/crafting/mercury_stone_lamp', '4x northstar:mercury_stone_lamp', ['minecraft:glowstone', '4x northstar:mercury_stone']],
 	['nightshift:vahta/mix/northstar/crafting/moon_stone_lamp', '4x northstar:moon_stone_lamp', ['minecraft:glowstone', '4x northstar:moon_stone']],
 	['nightshift:vahta/mix/northstar/crafting/oxygen_detector', 'northstar:oxygen_detector', ['6x #c:plates/martian_steel', '#minecraft:wool', 'minecraft:observer', 'northstar:advanced_circuit']],
-	['nightshift:vahta/mix/northstar/crafting/oxygen_filler', 'northstar:oxygen_filler', ['3x #c:plates/iron', '4x #c:plates/titanium', 'northstar:circuit', 'northstar:oxygen_separator']],
 	['nightshift:vahta/mix/northstar/crafting/oxygen_separator', '2x northstar:oxygen_separator', ['3x #c:plates/iron', 'create:electron_tube', '3x create:fluid_pipe']],
 	['nightshift:vahta/mix/northstar/crafting/rocket_combustion_chamber', 'northstar:rocket_combustion_chamber', ['4x #c:plates/titanium', 'create:propeller', 'northstar:hardened_precision_mechanism', 'northstar:oxygen_separator']],
 	['nightshift:vahta/mix/northstar/crafting/rocket_thruster', 'northstar:rocket_thruster', ['6x #c:plates/titanium', 'create:propeller', 'northstar:rocket_combustion_chamber']],
-	['nightshift:vahta/mix/northstar/crafting/telescope', 'northstar:telescope', ['2x #c:ingots/brass', 'minecraft:amethyst_shard', '3x minecraft:stick']],
 	['nightshift:vahta/mix/northstar/crafting/titanium_space_door', 'northstar:titanium_space_door', ['4x #c:plates/titanium', '2x minecraft:glass', 'northstar:circuit']],
 	['nightshift:vahta/mix/northstar/crafting/titanium_trapdoor', '2x northstar:titanium_trapdoor', ['4x #c:plates/titanium', '2x minecraft:glass']],
 	['nightshift:vahta/mix/northstar/crafting/vent', '3x northstar:vent', ['6x #c:ingots/titanium', '3x #c:plates/titanium']],

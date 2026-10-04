@@ -35,6 +35,14 @@ MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist
                 'nightshift:incomplete_armor_module', 'axiomativ:energy_shield_mk1', 'axiomativ:energy_shield_mk2']
 # 04.10: тесла-башня (аддон 0.4.0) — оборона, только машинами
 MANUAL_ZERO += ['axiomativ:tesla_tower', 'axiomativ:tesla_tower_coil', 'axiomativ:incomplete_tesla_tower_coil']
+# 04.10: «Сеть форпостов» — месторождения, полуфабрикаты и продукция (алюминий, серная пыль, соль): только с форпоста.
+# id предметов Ночной смены — из стартового скрипта (новые попадают сюда сами)
+OUTPOSTS_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '80_outposts.js'
+if OUTPOSTS_JS.is_file():
+    MANUAL_ZERO += [i for i in re.findall(r"create\('(nightshift:[a-z0-9_]+)'", OUTPOSTS_JS.read_text())
+                    if i.split(':')[1] not in ('liquid_sulfur', 'electrolyte', 'helium', 'coolant')]
+MANUAL_ZERO += ['nightshift:liquid_sulfur_bucket', 'nightshift:electrolyte_bucket', 'nightshift:helium_bucket', 'nightshift:coolant_bucket',
+                'tfmg:aluminum_ingot', 'tfmg:aluminum_nugget', 'tfmg:aluminum_block', 'tfmg:sulfur_dust', 'cgs:sulfur', 'northstar:salt']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'

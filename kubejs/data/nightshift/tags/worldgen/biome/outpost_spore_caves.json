@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#c:is_lush",
+    {
+      "id": "terralith:cave/fungal_caves",
+      "required": false
+    }
+  ]
+}

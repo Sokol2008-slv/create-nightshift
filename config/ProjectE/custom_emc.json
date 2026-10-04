@@ -2,6 +2,182 @@
  "comment": "«Вахта»: цены EMC. Техника модов Create (кроме ресурсов и стройблоков) — EMC 0, ни купить, ни продать (tools/emc_lock_create.py). Руда и сырые металлы — половина цены слитка (чёрные списки руды ProjectE выключены в mapping.toml). Продажа по полной цене (covalenceLoss 1.0 в server.toml). Наросты незера 8, грибосвет 32 (было 216/400 — фарм без заводов). Обоснование — docs/VAHTA-RULES.md.",
  "entries": [
   {
+   "id": "nightshift:hevea_soil",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:hevea_log",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:salt_deposit",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:magnetic_anomaly",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sulfur_spring",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:quartz_vein",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:bauxite_deposit",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_ice",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:permafrost",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:peat_bog",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:mycelium_vein",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:star_stone",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:latex",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:tapping_knife",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:rock_salt",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:raw_magnetite",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:magnetite_dust",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sulfur_crust",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:smokeless_powder",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:quartz_sand",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:quartz_glass",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:lens",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_frost",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_canister",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:cryo_crystal",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:radiator",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:peat",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:activated_carbon",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:air_filter",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:glowcap",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:spores",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:stardust",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_star_chart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:star_chart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:liquid_sulfur_bucket",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:electrolyte_bucket",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_bucket",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:coolant_bucket",
+   "emc": 0
+  },
+  {
+   "id": "tfmg:aluminum_ingot",
+   "emc": 0
+  },
+  {
+   "id": "tfmg:aluminum_nugget",
+   "emc": 0
+  },
+  {
+   "id": "tfmg:aluminum_block",
+   "emc": 0
+  },
+  {
+   "id": "tfmg:sulfur_dust",
+   "emc": 0
+  },
+  {
+   "id": "cgs:sulfur",
+   "emc": 0
+  },
+  {
+   "id": "northstar:salt",
+   "emc": 0
+  },
+  {
    "id": "minecraft:iron_ingot",
    "emc": 1024
   },

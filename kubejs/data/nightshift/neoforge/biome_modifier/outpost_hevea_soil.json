@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_jungle",
+  "features": "nightshift:outpost_hevea_soil",
+  "step": "underground_ores"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_beach",
+  "features": "nightshift:outpost_salt",
+  "step": "underground_ores"
+}

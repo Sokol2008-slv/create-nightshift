@@ -269,7 +269,7 @@
 - `sophisticatedstorage:white_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
 - `sophisticatedstorage:yellow_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
 
-## Фигурные с совпадающим набором — остаются механическим крафтерам (169)
+## Фигурные с совпадающим набором — остаются механическим крафтерам (168)
 
 - `create:crafting/kinetics/fluid_tank` → create:fluid_tank ← #c:barrels/wooden, 2×#c:plates/copper
 - `create:crafting/kinetics/gearbox` → create:gearbox ← create:andesite_casing, 4×create:cogwheel
@@ -381,7 +381,6 @@
 - `garnished:stone/zultanite/white/polished` → garnished:polished_white_zultanite ← 2×garnished:polished_white_zultanite_slab
 - `garnished:stone/zultanite/yellow/chiseled` → garnished:chiseled_yellow_zultanite_bricks ← 2×garnished:polished_yellow_zultanite_slab
 - `garnished:stone/zultanite/yellow/polished` → garnished:polished_yellow_zultanite ← 2×garnished:polished_yellow_zultanite_slab
-- `immersive_aircraft:propeller` → immersive_aircraft:propeller ← 5×[minecraft:iron_ingot]
 - `minecraft:bamboo_door` → 3× minecraft:bamboo_door ← 6×minecraft:bamboo_planks
 - `minecraft:bamboo_fence` → 3× minecraft:bamboo_fence ← 4×minecraft:bamboo_planks, 2×minecraft:stick
 - `minecraft:bamboo_stairs` → 4× minecraft:bamboo_stairs ← 6×minecraft:bamboo_planks
@@ -3545,7 +3544,7 @@
 - `interiors:seatwood_planks_arr_two` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
 - `interiors:wall_table` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
 
-## create:mechanical_crafting и родственные — механические крафтеры (226)
+## create:mechanical_crafting и родственные — механические крафтеры (218)
 
 - `aeroworks:joystick` (create:mechanical_crafting)
 - `cgs:mechanical_crafting/auto_fire` (create:mechanical_crafting)
@@ -3575,8 +3574,6 @@
 - `create_mechanical_spawner:loot_collector` (create:mechanical_crafting)
 - `create_mechanical_spawner:mechanical_spawner` (create:mechanical_crafting)
 - `create_new_age:mechanical_crafting/advanced_motor_extension` (create:mechanical_crafting)
-- `create_new_age:mechanical_crafting/reactor_rod` (create:mechanical_crafting)
-- `create_new_age:mechanical_crafting/reinforced_motor` (create:mechanical_crafting)
 - `create_power_loader:empty_brass_chunk_loader` (create:mechanical_crafting)
 - `create_recipes:mechanical_crafting/economy_plane` (create:mechanical_crafting)
 - `create_recipes:mechanical_crafting/scarlet_biplane` (create:mechanical_crafting)
@@ -3594,7 +3591,6 @@
 - `create_things_and_misc:canon_craft` (create:mechanical_crafting)
 - `create_things_and_misc:spout_craft` (create:mechanical_crafting)
 - `createaddition:mechanical_crafting/alternator` (create:mechanical_crafting)
-- `createaddition:mechanical_crafting/electric_motor` (create:mechanical_crafting)
 - `createaddition:mechanical_crafting/electric_pump` (create:mechanical_crafting)
 - `createaddition:mechanical_crafting/tesla_coil` (create:mechanical_crafting)
 - `createbigcannons:ap_shell` (create:mechanical_crafting)
@@ -3630,12 +3626,8 @@
 - `northstar:mechanical_crafting/circuit_engraver` (create:mechanical_crafting)
 - `northstar:mechanical_crafting/computer_rack` (create:mechanical_crafting)
 - `northstar:mechanical_crafting/electrolysis_machine` (create:mechanical_crafting)
-- `northstar:mechanical_crafting/interplanetary_navigator` (create:mechanical_crafting)
-- `northstar:mechanical_crafting/oxygen_sealer` (create:mechanical_crafting)
-- `northstar:mechanical_crafting/rocket_controls` (create:mechanical_crafting)
 - `northstar:mechanical_crafting/rocket_station` (create:mechanical_crafting)
 - `northstar:mechanical_crafting/rocket_waypoint` (create:mechanical_crafting)
-- `northstar:mechanical_crafting/solar_panel` (create:mechanical_crafting)
 - `northstar:mechanical_crafting/temperature_regulator` (create:mechanical_crafting)
 - `railways:mechanical_crafting/black_brass_wrapped_locometal_boiler` (create:mechanical_crafting)
 - `railways:mechanical_crafting/black_copper_wrapped_locometal_boiler` (create:mechanical_crafting)
@@ -3767,7 +3759,6 @@
 - `railways:mechanical_crafting/yellow_locometal_boiler` (create:mechanical_crafting)
 - `tfmg:mechanical_crafting/advanced_potato_cannon` (create:mechanical_crafting)
 - `tfmg:mechanical_crafting/flamethrower` (create:mechanical_crafting)
-- `tfmg:mechanical_crafting/large_engine` (create:mechanical_crafting)
 - `tfmg:mechanical_crafting/quad_potato_cannon` (create:mechanical_crafting)
 - `tfmg:mechanical_crafting/rotor` (create:mechanical_crafting)
 - `tfmg:mechanical_crafting/simple_large_engine` (create:mechanical_crafting)
