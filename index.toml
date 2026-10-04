@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "277495597d1e5269a0e16df72298da0d4bee8ee9a4ac038c2b3a152303fef3b4"
+hash = "70eafbdb9b0f4ff685943c58c65e7b82a2ec1b5db0a3fc2fd9347622ce167c93"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -250,11 +250,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "94791e96b7b16181db0f2abc9835b9896b87d38cb9ba2c3ed20f609a26832791"
+hash = "e8965aa1d70d5f53b33268746a9749d3d209cee09a3d53a12ec84ee60b7c11e8"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "3ba51e0a6a7e2b4bc804e3259e354c53526109faa5e971cc1cc1d5098d577df2"
+hash = "39e987f0a4341a5209fba72e6b6cf9ed1f65e4dd224d08e22e4955498bf53b1f"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -757,6 +757,14 @@ file = "kubejs/assets/nightshift/textures/item/lightning_staff.png"
 hash = "50adf0455870e67b87f7f8118a4aebff9a216d2970357f281f4141f0a74c3703"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/meteor_iron.png"
+hash = "3545d2994eaf9ba829921652cb5ad07a460e4353ae517425cb84d9f3b6f005f8"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/meteor_iron_ingot.png"
+hash = "08ab40dc0af818fe5b999441dd215479c155465ce6fb95c98a06d45ce019d86c"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/module_armor_plate.png"
 hash = "a4dd0bd49db62e3e9f30d988dcd6f12e7020f9dcb5e6374133acb2306e347e6e"
 
@@ -803,6 +811,14 @@ hash = "0e6ed1616d5d8f232942402d447f5f7e1bc601ba7aaad3c98dae37f0c8b34483"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/sedative.png"
 hash = "9f5069e63497218a1cf6cd653e3481d68ba6b0f7a00e1260ea301549b6506a7c"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/shift_token.png"
+hash = "4f2d798df7780ebde3e3e3d981d611b302bbd93979b19b463e5ff645ac777528"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/sky_crystal.png"
+hash = "f52ab3daa6407941636849e4ef93951a2583a82b974f0d940564b90d8f970911"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/spirit_essence.png"
@@ -1827,6 +1843,10 @@ hash = "71f3871e9926e55860da0dc92e00d06332345dd0b471b7d2694fce214d710590"
 [[files]]
 file = "kubejs/startup_scripts/vahta/26_special_stage_items.js"
 hash = "a187c94cfd5695d0a4ffa57878c4757c70a7a115892bca086c1128d744c97cfa"
+
+[[files]]
+file = "kubejs/startup_scripts/vahta/27_phase2_materials.js"
+hash = "aacd690b5a8b691acd6ed2b80588fce2d5f29fa0f0ee916f1ac62a36f7674493"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/30_ns_artifacts.js"

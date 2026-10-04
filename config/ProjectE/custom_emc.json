@@ -41684,6 +41684,22 @@
   {
    "id": "nightshift:queen_heart",
    "emc": 0
+  },
+  {
+   "id": "nightshift:meteor_iron",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:meteor_iron_ingot",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sky_crystal",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:shift_token",
+   "emc": 0
   }
  ]
 }

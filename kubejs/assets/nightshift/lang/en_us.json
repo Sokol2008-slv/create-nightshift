@@ -153,5 +153,9 @@
   "item.nightshift.otk_armor_plate": "QC Armor Plate",
   "item.nightshift.runner_badge": "Runner's Badge",
   "item.nightshift.spirit_essence": "Spirit Essence",
-  "item.nightshift.queen_heart": "Queen Heart"
+  "item.nightshift.queen_heart": "Queen Heart",
+  "item.nightshift.meteor_iron": "Meteoric Iron",
+  "item.nightshift.meteor_iron_ingot": "Meteoric Iron Ingot",
+  "item.nightshift.sky_crystal": "Sky Crystal",
+  "item.nightshift.shift_token": "Shift Token"
 }
