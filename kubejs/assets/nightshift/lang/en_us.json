@@ -157,5 +157,8 @@
   "item.nightshift.meteor_iron": "Meteoric Iron",
   "item.nightshift.meteor_iron_ingot": "Meteoric Iron Ingot",
   "item.nightshift.sky_crystal": "Sky Crystal",
-  "item.nightshift.shift_token": "Shift Token"
+  "item.nightshift.shift_token": "Shift Token",
+  "block.nightshift.meteor_ore": "Meteoric Ore",
+  "block.nightshift.sky_crystal_cluster": "Sky Crystal Cluster",
+  "item.nightshift.crushed_meteor_iron": "Crushed Meteoric Iron"
 }

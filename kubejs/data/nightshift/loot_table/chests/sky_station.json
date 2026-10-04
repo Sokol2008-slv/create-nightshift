@@ -1,0 +1,272 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:sky_crystal",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_ingot",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:brass_ingot",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:andesite_alloy",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:electron_tube",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:precision_mechanism",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_rocket",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:gyroscope",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:telescope",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 84
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_coal",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_copper",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_iron",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_zinc",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_redstone",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_gold",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_lead",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:vein_seed_nickel",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_patch",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_badge",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_thermos",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_buckle",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_qc_stripe",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_watch_charm",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_fang",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_pauldron",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_collar",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "random_sequence": "nightshift:chests/sky_station"
+}

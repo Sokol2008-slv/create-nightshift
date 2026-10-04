@@ -41,6 +41,7 @@ MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist
 MANUAL_ZERO += ['axiomativ:tesla_tower', 'axiomativ:tesla_tower_coil', 'axiomativ:incomplete_tesla_tower_coil']
 MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nightshift:otk_armor_plate', 'nightshift:runner_badge', 'nightshift:spirit_essence', 'nightshift:queen_heart']  # 04.10: ключи особых стадий — только из набегов
 MANUAL_ZERO += ['nightshift:meteor_iron', 'nightshift:meteor_iron_ingot', 'nightshift:sky_crystal', 'nightshift:shift_token']  # 04.10: материалы второй фазы — только из событий и факторий
+MANUAL_ZERO += ['nightshift:crushed_meteor_iron', 'nightshift:meteor_ore', 'nightshift:sky_crystal_cluster']  # 04.10: небо — дроблёное метеоритное железо, руда метеорита, друза кристалла (только событием и островами)
 # 04.10: котельная и прожектор (аддон 0.5.0) — техника, только машинами
 MANUAL_ZERO += ['axiomativ:heat_exchanger', 'axiomativ:heat_valve', 'axiomativ:heating_element', 'axiomativ:searchlight']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
