@@ -366,5 +366,25 @@
 			x: 14.90d
 			y: 5.00d
 		}
+		{
+			dependencies: ["6B4A80C8D04DFF1C"]
+			id: "5B0D0D05577E8BCF"
+			rewards: [{ id: "2AE1488F21798414", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7B89DA1310385E30", item: { count: 1, id: "axiomativ:tesla_tower" }, type: "item" }]
+			x: 7.60d
+			y: 9.00d
+		}
+		{
+			dependencies: ["5B0D0D05577E8BCF"]
+			id: "2B67A130566B547B"
+			rewards: [{ id: "20D52F3F55C4AE1D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "09D53AFE058CC897", item: { count: 1, id: "axiomativ:tesla_tower_coil" }, type: "item" }]
+			x: 9.40d
+			y: 9.00d
+		}
 	]
 }

@@ -41270,6 +41270,18 @@
    "emc": 0
   },
   {
+   "id": "axiomativ:tesla_tower",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:tesla_tower_coil",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_tesla_tower_coil",
+   "emc": 0
+  },
+  {
    "id": "nightshift:art_patch",
    "emc": 0
   },

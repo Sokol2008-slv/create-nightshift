@@ -33,6 +33,8 @@ MANUAL_ZERO += ['kubejs:axiomite_ingot', 'kubejs:stabilite_ingot', 'kubejs:raw_a
 MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist', 'nightshift:module_sprint',
                 'nightshift:module_jump_springs', 'nightshift:module_armor_plate', 'nightshift:module_night_vision',
                 'nightshift:incomplete_armor_module', 'axiomativ:energy_shield_mk1', 'axiomativ:energy_shield_mk2']
+# 04.10: тесла-башня (аддон 0.4.0) — оборона, только машинами
+MANUAL_ZERO += ['axiomativ:tesla_tower', 'axiomativ:tesla_tower_coil', 'axiomativ:incomplete_tesla_tower_coil']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'

@@ -523,6 +523,7 @@ NSG.NIGHTSHIFT_PROTECTED_NAMESPACES = [
 	'create_radar',
 	'creategbd', // Create Guardian Beam Defense
 	'cbc_at', // автопушки для Big Cannons
+	'axiomativ', // аддон Axiomativ Industries: катушки тесла-башни (без блок-сущности) не грызть и не взрывать
 ]
 
 // Параметры набега/зон — общие константы.
