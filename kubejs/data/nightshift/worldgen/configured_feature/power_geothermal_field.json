@@ -1,0 +1,7 @@
+{
+  "type": "axiomativ:geothermal_field",
+  "config": {
+    "min_count": 4,
+    "max_count": 6
+  }
+}

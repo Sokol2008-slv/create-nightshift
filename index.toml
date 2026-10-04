@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "724d1881201e502dc758c1371a8c38ac907e28650bafd8d0823b5a46b5403216"
+hash = "f36fe01e5a18e1af36154094a171fdebec0ece1f5a744f2935c5a36c1b4955b6"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -66,7 +66,7 @@ hash = "150cd5eafdd8c51d24caa65fbd09f901d6a4522d3b6b4034cfbdd8622ef9d1d3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "a0e71f9d6a1c11762e5277ba8fa6d023cd5fba85d9d7d6f67c62047f5396d45a"
+hash = "9c750fc0f4876a6089e5f96ce0311fc5b3910d33e2c31bd4c884c6f4c60b8de6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
@@ -118,11 +118,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "539d83d6fb8af3b7bf5b00d020568a00379e435047a189b4a256eced2b557955"
+hash = "d75a7c656cdbc78cc3ca2d847d3da738fa72b8013f3735c04f0f90a8b9c8d6c8"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "539d83d6fb8af3b7bf5b00d020568a00379e435047a189b4a256eced2b557955"
+hash = "d75a7c656cdbc78cc3ca2d847d3da738fa72b8013f3735c04f0f90a8b9c8d6c8"
 
 [[files]]
 file = "config/iris.properties"
@@ -1365,6 +1365,18 @@ file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_sulfur_surface.js
 hash = "6093888d8e288372c1984922a1da167374b098fca9ebe7c7b1b0db4e0c3d5942"
 
 [[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/power_geothermal_caves.json"
+hash = "ba72ba24eeeecff90dd468879b5fcc91fb02fbce62111c5d8d495c81f7065b85"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/power_geothermal_surface.json"
+hash = "77f032d04206f6f5149752897a4b1a457beb1816f5d8805ba67604b18d1f0e10"
+
+[[files]]
+file = "kubejs/data/nightshift/neoforge/biome_modifier/power_river_rapids.json"
+hash = "58eeedbf00f1add9baebed369f3f82dd097c4108f8fa763c80e4ccbf92966a70"
+
+[[files]]
 file = "kubejs/data/nightshift/northstar/planet/axiomativ.json"
 hash = "953696deb07652de6e656d8aa64c99a108d11742c75b258932e248a91eb69c51"
 
@@ -1693,6 +1705,18 @@ file = "kubejs/data/nightshift/tags/worldgen/biome/outpost_spore_caves.json"
 hash = "6dd13bbd8e9cbd75290aec5d25eb8c514db08e517869d76339efa4610bc430a4"
 
 [[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/power_geothermal_caves.json"
+hash = "9a3e6f3be4924673349b76829e74025f3acfb7908a14452101c17441a36d725e"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/power_geothermal_surface.json"
+hash = "7e5f6fe14a71f37485f9eee368db5cfa979c33be924402f621d50c1d9bfa0246"
+
+[[files]]
+file = "kubejs/data/nightshift/tags/worldgen/biome/power_river_rapids.json"
+hash = "5e2408c6e7243666d56c87797f918c35644b4dbf307e24a31877bb007918cd48"
+
+[[files]]
 file = "kubejs/data/nightshift/tags/worldgen/biome/titanium_planets.json"
 hash = "2b83069298f48263989a5995ebd7b61b32c2f3d2cb3fa5362d198d5cc6367466"
 
@@ -1797,6 +1821,14 @@ file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_sulfur_surfac
 hash = "a89e9c31214b34ba5e5f890611d61644507f540e87c0c403eec6676b83aed916"
 
 [[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/power_geothermal_field.json"
+hash = "d4dae81e586ebc17bf3f28b5480baef30219c2d539776287183fe18dd24544b7"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/configured_feature/power_river_rapids.json"
+hash = "bd7b87f1b35de76e13736e955aef5eb3e735ea1c45cd2ca26342be1149dde4de"
+
+[[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/yin_yang_ore_dark_stabilite.json"
 hash = "c37df4a98e4f14a0b4f3bf00e82f21ddf4059d9dc52e7fee3aba9e1e3f817ab3"
 
@@ -1887,6 +1919,18 @@ hash = "6c8e141ebb9e2c20ab5efa22a9e48bf9b1dc56fba24949d9cdd8ab27e5e8c843"
 [[files]]
 file = "kubejs/data/nightshift/worldgen/placed_feature/outpost_sulfur_surface.json"
 hash = "da489031387a786bdfab8789728154d0aa7c5e7be09e610b9881d33370d43808"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/power_geothermal_caves.json"
+hash = "1e9773be9d668551e79002f7dc27c3cd7c249c2d7d29ac96bcf1d2b067a00402"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/power_geothermal_surface.json"
+hash = "adde74231b9587539163fdd7a88a038336d43f0909ff4b5fc0f6444201439d07"
+
+[[files]]
+file = "kubejs/data/nightshift/worldgen/placed_feature/power_river_rapids.json"
+hash = "82594aa4cee248aea802d8730353e568386a898d26e64135ee5537c9765aaa43"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/placed_feature/yin_yang_basalt_spires.json"
@@ -2133,6 +2177,10 @@ file = "kubejs/server_scripts/vahta/47_axiomativ_heat.js"
 hash = "b4f2ebcbe75c69dbbaa240f94cffba1f2025c3ebfab949e54159acf239e9933f"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/48_axiomativ_power.js"
+hash = "7d6958b57e583715a54ec3e142bf908997b6e7e77618fb5def3f0c5217e1dae9"
+
+[[files]]
 file = "kubejs/server_scripts/vahta/50_wave_rewards.js"
 hash = "3431a3b2e4a21400958c3074da2bd24e4f42627928d8f229db56e71a7415e717"
 
@@ -2281,8 +2329,8 @@ hash = "f0edb6932d0c3f97338cf660763ff43bc5febdf0eb5edeca3a1927c20f14e296"
 metafile = true
 
 [[files]]
-file = "mods/axiomativ-0.5.0.jar"
-hash = "870ec6a2634e1804bd11c768bee260377d240c66f0719e8e3d4b1271fa157ed7"
+file = "mods/axiomativ-0.6.0.jar"
+hash = "78f8e409d04612b9d622e3889755382fa8d40d4298d37a627dfe4d9c9a641a54"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

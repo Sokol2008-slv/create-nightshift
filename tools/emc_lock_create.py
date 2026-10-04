@@ -43,6 +43,8 @@ MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nig
 MANUAL_ZERO += ['nightshift:meteor_iron', 'nightshift:meteor_iron_ingot', 'nightshift:sky_crystal', 'nightshift:shift_token']  # 04.10: материалы второй фазы — только из событий и факторий
 # 04.10: котельная и прожектор (аддон 0.5.0) — техника, только машинами
 MANUAL_ZERO += ['axiomativ:heat_exchanger', 'axiomativ:heat_valve', 'axiomativ:heating_element', 'axiomativ:searchlight']
+# 04.10: энергоячейки, станции, генераторы форпостов и месторождения (аддон 0.6.0) — техника и неломаемые блоки
+MANUAL_ZERO += ['axiomativ:energy_cell', 'axiomativ:incomplete_energy_cell', 'axiomativ:charging_station', 'axiomativ:discharging_station', 'axiomativ:geothermal_generator', 'axiomativ:hydro_generator', 'axiomativ:geothermal_source', 'axiomativ:river_rapids']
 # 04.10: «Сеть форпостов» — месторождения, полуфабрикаты и продукция (алюминий, серная пыль, соль): только с форпоста.
 # id предметов Ночной смены — из стартового скрипта (новые попадают сюда сами)
 OUTPOSTS_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '80_outposts.js'

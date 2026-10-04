@@ -41490,6 +41490,38 @@
    "emc": 0
   },
   {
+   "id": "axiomativ:energy_cell",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_energy_cell",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:charging_station",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:discharging_station",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:geothermal_generator",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:hydro_generator",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:geothermal_source",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:river_rapids",
+   "emc": 0
+  },
+  {
    "id": "nightshift:art_patch",
    "emc": 0
   },

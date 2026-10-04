@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#nightshift:power_geothermal_surface",
+  "features": "nightshift:power_geothermal_surface",
+  "step": "local_modifications"
+}

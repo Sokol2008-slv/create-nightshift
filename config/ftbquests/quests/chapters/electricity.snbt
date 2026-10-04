@@ -428,5 +428,89 @@
 			x: 14.20d
 			y: -0.60d
 		}
+		{
+			icon: { id: "axiomativ:geothermal_source" }
+			id: "62547FC1406CDC2E"
+			optional: true
+			rewards: [{ id: "525B02204B329014", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "14946D1B4BAB55AD", type: "checkmark" }]
+			x: 13.00d
+			y: 7.20d
+		}
+		{
+			dependencies: ["62547FC1406CDC2E", "502442B12090F06D"]
+			id: "68AEF2EB9277660D"
+			rewards: [{ id: "7D22D8028DD8E2B0", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "22442F46FA52E908", count: 4L, item: { count: 1, id: "axiomativ:energy_cell" }, type: "item" }]
+			x: 13.00d
+			y: 9.00d
+		}
+		{
+			dependencies: ["68AEF2EB9277660D"]
+			id: "5EBA2668E0066D4F"
+			rewards: [{ id: "4A3E567CC9324680", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "39953B6A2ED80DC3", item: { count: 1, id: "axiomativ:charging_station" }, type: "item" }]
+			x: 14.80d
+			y: 9.00d
+		}
+		{
+			dependencies: ["5EBA2668E0066D4F"]
+			id: "0C6D145FAD7B7DE5"
+			rewards: [{ id: "73745D1E6ECE3A63", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "09BE00764A203305", item: { count: 1, id: "axiomativ:discharging_station" }, type: "item" }]
+			x: 16.60d
+			y: 9.00d
+		}
+		{
+			dependencies: ["5EBA2668E0066D4F"]
+			id: "75992F7000BD731C"
+			rewards: [{ id: "2AD066119E205C99", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7678145D0DEF193A", item: { count: 1, id: "axiomativ:geothermal_generator" }, type: "item" }]
+			x: 14.80d
+			y: 7.20d
+		}
+		{
+			dependencies: ["5EBA2668E0066D4F"]
+			id: "3B9FFE578028950D"
+			rewards: [{ id: "1E0E152B5D0CD0BD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "09241DD127AE0842", item: { count: 1, id: "axiomativ:hydro_generator" }, type: "item" }]
+			x: 16.60d
+			y: 7.20d
+		}
+		{
+			dependencies: ["0C6D145FAD7B7DE5", "0A1DAFEE8419EA9C"]
+			icon: { id: "create:portable_storage_interface" }
+			id: "51F5B4A18F78FE96"
+			rewards: [{ id: "10B3A393DC9B0094", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "1E0B4A8909DE76CF", type: "checkmark" }]
+			x: 18.40d
+			y: 9.00d
+		}
+		{
+			dependencies: ["3B9FFE578028950D"]
+			icon: { id: "axiomativ:energy_cell" }
+			id: "06A9EE3F9100586B"
+			optional: true
+			rewards: [{ id: "3A97D7B41B2A995E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3446F02B895F6B17", type: "checkmark" }]
+			x: 18.40d
+			y: 7.20d
+		}
 	]
 }

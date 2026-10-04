@@ -1,0 +1,7 @@
+{
+  "type": "axiomativ:river_rapids",
+  "config": {
+    "min_count": 3,
+    "max_count": 5
+  }
+}
