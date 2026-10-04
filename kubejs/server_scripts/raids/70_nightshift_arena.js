@@ -241,7 +241,7 @@ NSG.NS_ARENA_THEMES = [
 	},
 	{
 		key: 'frost', name: 'Вечная мерзлота', from: 30, biome: 'snowy_plains', color: 'aqua',
-		note: 'метель: снег в набег, вы на льду быстрее («Скорость I»), орда медленнее, но закалённая («Медлительность I», «Сопротивление II»)',
+		note: 'метель: вы на льду быстрее («Скорость I»), орда медленнее, но закалённая («Медлительность I», «Сопротивление II»)',
 		rocks: ['stone', 'calcite', 'diorite', 'packed_ice', 'snow_block', 'andesite'],
 		top: { low: ['powder_snow', 'snow_block', 'snow_block'], mid: 'snow_block', high: 'snow_block', peak: 'packed_ice' },
 		glows: ['pearlescent_froglight', 'blue_ice'],
@@ -549,6 +549,8 @@ function nsArenaFxTickRun() {
 		for (var e in th.fx.players || {}) nsArenaRun('effect give @a[distance=0..] minecraft:' + e + ' 15 ' + (th.fx.players[e] - 1) + ' true')
 	}
 	if (th.fx.darkness && nsArenaFxTick % 30 === 0) nsArenaRun('effect give @a[distance=0..,gamemode=!creative] minecraft:darkness 5 0 true')
+	// метель Мерзлоты — частицами (грозы в набегах больше нет, а без неё снег не идёт)
+	if (th.key === 'frost') nsArenaRun('execute as @a[distance=0..] at @s run particle minecraft:snowflake ~ ~6 ~ 10 4 10 0.02 120 normal')
 }
 
 // Достройка старой арены (v1) — один раз после загрузки сервера, когда на арене нет набега

@@ -1634,7 +1634,7 @@ hash = "043fadcff6495d3c725c934f24d98419ec822c0f8de5382d18116fcd581aa15e"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "5a38030885d010701b25122eecd4e7620392f51ab0751afb26280ed4bf2335f8"
+hash = "cc77c347634470fcb6e3db836f0441374e898cc55573e2645076f4511bc728f7"
 
 [[files]]
 file = "kubejs/server_scripts/raids/50_nightshift_admin.js"
@@ -1646,7 +1646,7 @@ hash = "c8fa1a899fd41feec05f8b45357717e3173075c72c1d5b8bb7241135450d26db"
 
 [[files]]
 file = "kubejs/server_scripts/raids/70_nightshift_arena.js"
-hash = "f3bd2422e4a11376fabe6cdfe54b879dfaff0bd9dba925c8adf34e1e465ef77a"
+hash = "ff600ef67f064597e8cc68f6c58dc05d0ee8938cf017ecf61d5d6b48a0570834"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"

@@ -32,6 +32,7 @@ function nsFindAltar(state, altarId) {
 // Конец набега: снова можно спать
 function nsRaidEnded() {
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 100')
+	NSG.nsServer.runCommandSilent('gamerule doDaylightCycle true') // ночь набега кончилась — время снова идёт
 	// детёныши мобов набега (личинки и т.п., без метки набега) — после набега долой
 	for (var m in NS_MINION_TYPES) NSG.nsServer.runCommandSilent('kill @e[type=' + m + ',tag=!nightshift_raid]')
 }
@@ -64,7 +65,10 @@ var NS_MINION_CAP = 12
 var NS_GAMERULES = Java.loadClass('net.minecraft.world.level.GameRules')
 function nsHealSleepRule(server) {
 	try {
-		if (server.getGameRules().getInt(NS_GAMERULES.RULE_PLAYERS_SLEEPING_PERCENTAGE) > 100) nsRaidEnded()
+		// набег оборвался мимо nsRaidEnded (падение сервера) — сон и ход времени вернуть
+		var st = nsGetState()
+		var idle = !st || !st.raid || st.raid.state === 'idle'
+		if (server.getGameRules().getInt(NS_GAMERULES.RULE_PLAYERS_SLEEPING_PERCENTAGE) > 100 || (idle && !server.getGameRules().getBoolean(NS_GAMERULES.RULE_DAYLIGHT))) nsRaidEnded()
 	} catch (e) {
 		console.warn('[nightshift] проверка правила сна: ' + e)
 	}
@@ -670,7 +674,9 @@ function nsStartRaid(kind, altarId, difficulty) {
 	var level = NSG.nsServer.getOverworld()
 	var tod = Number(level.getDayTime()) % 24000
 	if (tod < 13000) NSG.nsServer.runCommandSilent('time add ' + (13000 - tod))
-	NSG.nsServer.runCommandSilent('weather thunder 6000')
+	// без грозы (Георгий, 04.10: «грозу во время набега убирай»): ночь стоит до конца набега — время суток на паузе,
+	// рассвет посреди боя не сожжёт нежить; после набега nsRaidEnded запускает время обратно
+	NSG.nsServer.runCommandSilent('gamerule doDaylightCycle false')
 	// на время набега ночь не проспать: утро и солнце сожгли бы орду
 	NSG.nsServer.runCommandSilent('gamerule playersSleepingPercentage 101')
 
@@ -1680,9 +1686,6 @@ ServerEvents.tick(event => {
 			nsTickCountdown(state)
 			break
 		case 'active':
-			// гроза на весь набег (старт даёт 5 минут, а набег дольше): под дождём нежить не горит,
-			// рассвет посреди набега не «выигрывает» волны солнцем
-			if (nsRaidTickCounter % 1200 === 0) event.server.runCommandSilent('weather thunder 6000')
 			nsTickActiveRaid(state)
 			break
 		case 'cooldown':
