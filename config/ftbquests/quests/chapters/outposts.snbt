@@ -6,7 +6,7 @@
 	icon: { id: "nightshift:sulfur_crust" }
 	id: "274E7329A14BDF5C"
 	images: [ ]
-	order_index: 15
+	order_index: 16
 	quest_links: [ ]
 	quests: [
 		{

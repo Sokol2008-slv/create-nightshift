@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "f36fe01e5a18e1af36154094a171fdebec0ece1f5a744f2935c5a36c1b4955b6"
+hash = "c22d7ad755427f8b0b5665e63b45630078c684794a4896ccfa251a49d6e5f27a"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -50,7 +50,7 @@ hash = "de9a288667df6c7b84ff97ad9cd656804409feaccec2b84c932539d5dc85339a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "aac42b1d2c38f9147515255faa13f51bc8053123cd8e7b18c8d66c8ee0b49209"
+hash = "92c5e0d9d7caadb5f5c81b3dbb21543c169ff7139e36690c45e816cb254ab85b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
@@ -62,27 +62,31 @@ hash = "f2e8717588b7a85c33c6b6208cb8bee5b1bf52d41ce83bc12689a84986946abd"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/economy.snbt"
-hash = "150cd5eafdd8c51d24caa65fbd09f901d6a4522d3b6b4034cfbdd8622ef9d1d3"
+hash = "f10627544dde342bf2cf42ab0af93050cc63a32ccc6130e4fda5ae56adfbb155"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
 hash = "9c750fc0f4876a6089e5f96ce0311fc5b3910d33e2c31bd4c884c6f4c60b8de6"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/factories.snbt"
+hash = "5ba24cb7a6b3231c04eeaebe869b481b2cd0d841b4246199f957a7d95e15b49b"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "a95d2f676e95883aef0a3a52438c15deba21f993e89befc78e260c50cc540648"
+hash = "64f78f1ebbfc13f7dd7b2cb8652c5f51d9546f758bd567ad003410260c3589a6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food.snbt"
-hash = "196cc1c17fbc3a1602f1b5ca5aeaa864846c213233b476974a8bac1089e09d8f"
+hash = "47c6340a6fce7f6ee2752f4b476476d6f7ed09584a83f5a6c47b3bebc430799d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/golems.snbt"
-hash = "9bad152f16bf6db4aa16f8d3bb935ca7c8dd9da1c32b70719c24fa0e8b4b18cc"
+hash = "b3e2fdd8bfedd07574c66a8e9f8d7f247a43223f31543c7c6c6a57a18fd82754"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/magic.snbt"
-hash = "fa89bd2cadb46c69d0e3b2a397f2cf4eca89b0a370743b4e8ee505ee5680246c"
+hash = "2f1e62388a4a48c8c971213074826dfcc65e907a2ba0ab5b59c26a16fe3f4b40"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/night_shift.snbt"
@@ -90,19 +94,19 @@ hash = "2337939968e505337472604408fa291092f1dc88cde2d0d3a15e2d6b1fe226b6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/outposts.snbt"
-hash = "659e91b3bb7a3cf4f9a9781cf14acaca4b384c16398abc14ccc9d60125f8743a"
+hash = "f1f4ed12af44039ca4b44d155a97b8ae69ac91325bf2c19438a482ac56956de2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
-hash = "4d65854e59265a27c7b608bb9ddb20361979c2c82abcec579b6ce44ba03b2cfe"
+hash = "7dfb7ce5911d98c724d7864821a918d5b403c01728a57d864dc44539189a710b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steel_oil.snbt"
-hash = "89f1e650e549417d0cce7e62857020bc59fde47b15d2f5f9e972bf3bab8c9a3d"
+hash = "04a6f1c1cab65a2d4cec4ed33ad7eee1d7a08b562c5115a735ba66d5729ea084"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/tower_defense.snbt"
-hash = "41ce6ebed1e5a59c9ff147eff6a3d5543e8bb1e4ac20ed0cfc8a69b755d0b644"
+hash = "b046543aa4401af06327cae2419c258bb056483e7bde831998013a3b8f81fa68"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/vahta.snbt"
@@ -110,7 +114,7 @@ hash = "13e59b7c3500cadb8a000a3d8b443a51201b759f685658968b0e8ee418b8c9ac"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/weapons.snbt"
-hash = "2aac29356faa898002491390abccfb2faf698191a7c7efb5c5b2b3859a2396e6"
+hash = "44e2957f37805dd4602828bd4d98bd71cc4e77c9afbe907323f24227c4c3aa8f"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -118,11 +122,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "d75a7c656cdbc78cc3ca2d847d3da738fa72b8013f3735c04f0f90a8b9c8d6c8"
+hash = "ab237176019991a18636e05edf25ddef43bbb0a1e408c7ff5e21f03179f572a4"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "d75a7c656cdbc78cc3ca2d847d3da738fa72b8013f3735c04f0f90a8b9c8d6c8"
+hash = "ab237176019991a18636e05edf25ddef43bbb0a1e408c7ff5e21f03179f572a4"
 
 [[files]]
 file = "config/iris.properties"
@@ -254,11 +258,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "aca1277240820a547ef912da9827f03b0f181a9d0c5b94f2a2b62f496c3569df"
+hash = "6439f3b97c17eb908307984fc514ee4492efc04352a36fda0f9e4d7ebb1392ea"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "f6eff1b1f8958dc439d87ae43f7f47bd49152b9e1dc4ec2ea06be3be0c47993d"
+hash = "9443e03a92efae7de627436372edd0a6084f5ce9ce9f616495332ca5eb2b3145"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -411,6 +415,14 @@ hash = "b0be1cb264c2e6a5db13f4ae65be0e81f69f75962d0a187dbd859b9297ae57ec"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/activated_carbon.png"
 hash = "8c1de7a7f1b201246cc9e6985e66bebe641d8898d273f51cbc492e6a275d4890"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/aerial_camera.png"
+hash = "1a880fb85f471bc8c55ba7df897eaceb9bbf1bf4687f7133ddc82a6cf10e7e01"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/aerial_film.png"
+hash = "ecf6d2dfd6033464513ea68046172cecdd5cf7174f20c802980db8d389046d55"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/afterburner_blueprint.png"
@@ -825,6 +837,10 @@ file = "kubejs/assets/nightshift/textures/item/incomplete_armor_module.png"
 hash = "e2d8129684b3cc41da77c21aee562eabea438279dcc890e9de25417cf82901db"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/incomplete_avionics.png"
+hash = "11839e920a3a9f52d45fdba630217620e3fcdf7a7757abebfb215e100ae337da"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/incomplete_awakening.png"
 hash = "6ae4eea2f3318f66ab2390b0077dbd5f006913fe08c1af7da8f44e0520a12c50"
 
@@ -903,6 +919,18 @@ hash = "92061a11e2cac67e1bfe02625a27295c17dd9359f38ea96ae523b761a4cc7f89"
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/peat.png"
 hash = "6ef25db94ee06d54137ab39b95758a414d654a7dc71a1233646cbca288b6b649"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/pilot_license_1.png"
+hash = "5cc3afedddc8849a53f2dd02e0e5c4507e45e225f755e7eb81e43fd499c84fd3"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/pilot_license_2.png"
+hash = "f34bec4aadf2c293c8d0b6b1e9567b15efbe21f6f4831b31198263816100d2d8"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/item/pilot_license_3.png"
+hash = "b5af7222f2f6f7b988b194d284bc68767a8a789107c58764340ecca79d16f43f"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/item/prism_lens.png"
@@ -1123,6 +1151,10 @@ hash = "8103fa1d3ae22aae468c03496c1cdda82c5bfc50353807e92157d2f98f041455"
 [[files]]
 file = "kubejs/client_scripts/armor_modules_tooltips.js"
 hash = "d83b56129f3946c595492d7b1c46c326b68399756249dec452c848bee3d144f5"
+
+[[files]]
+file = "kubejs/client_scripts/aviation_tooltips.js"
+hash = "87877eddc4585f3d94e3e14d1ffa5b036429de7fc0406c7fa30a4930fa9a5e64"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_heat_jei.js"
@@ -1953,6 +1985,18 @@ file = "kubejs/server_scripts/00_ingredients.js"
 hash = "fa0db621b2fbbd4485445108910aaa4f56c05664f9b2e83031eaef0c640c277d"
 
 [[files]]
+file = "kubejs/server_scripts/aviation/10_recipes.js"
+hash = "c326858a7d44a19bb16cbdaa3cbe60adc19c1b844ad8e6df8d9b3eda2711054e"
+
+[[files]]
+file = "kubejs/server_scripts/aviation/20_aeroclub.js"
+hash = "c118ecccd2c00d1101945cb5304fc86f3061b6c3f845373195daccae818165f2"
+
+[[files]]
+file = "kubejs/server_scripts/aviation/30_aerial_camera.js"
+hash = "17f2e2f48520854358468b1a4335914486dcca92bba378c69f1c4f5113de9d83"
+
+[[files]]
 file = "kubejs/server_scripts/economy/10_probes.js"
 hash = "4cc1dcc56436c35c5a298d3375c3575cc0a93c3597923a95e5e5538bde6bd329"
 
@@ -1979,6 +2023,10 @@ hash = "64a0372222a01ab5204b3cd4e3c8ff1f623aa929eacab587e8a7a771b9a1ad42"
 [[files]]
 file = "kubejs/server_scripts/economy/75_lava.js"
 hash = "51a736b3e913ed680e4499dfd6224a45b6da2ae1c4dcbf2c23a7bfc3c725af30"
+
+[[files]]
+file = "kubejs/server_scripts/factory/10_factories.js"
+hash = "b1c1fb3f1033b6e790f38c33d19188f8159f88b74ed9940fe9964e345600e98e"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
@@ -2090,7 +2138,7 @@ hash = "45fac2acb21034bba22b360d8b8a6bdfb5d72de6c1537e8da945a954350f5a13"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "3d8ac2360217211f057c21b081479e55521c47808358fe5c1bd823a49f815cb8"
+hash = "dc1abe91680a3f1e3339ce81899eaee4571325ec43f85be87e895eba3bb42588"
 
 [[files]]
 file = "kubejs/server_scripts/raids/45_special_stages.js"
@@ -2130,7 +2178,7 @@ hash = "a89901ac7cc6436453d6b8c9ad35c7e1755865877fa85ff1b2091d5d8e04819e"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "c5ca5e1d653faffdba38fcc4d9d3548601d7b47f8291cd5bf7e297bebd6ae9f9"
+hash = "940979fbbeaad50def215412a30b676a6023f7dc786e59e4ab077948d5fb6259"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -2257,6 +2305,10 @@ file = "kubejs/startup_scripts/vahta/27_phase2_materials.js"
 hash = "aacd690b5a8b691acd6ed2b80588fce2d5f29fa0f0ee916f1ac62a36f7674493"
 
 [[files]]
+file = "kubejs/startup_scripts/vahta/28_aviation.js"
+hash = "e77e2047e7dca994e7c53b3393c12a374308c76548c60240f572b11e3a488a65"
+
+[[files]]
 file = "kubejs/startup_scripts/vahta/30_ns_artifacts.js"
 hash = "2b845a936ddfde35e3ea7badaec06476377dd475fcec841eecfaa8cc5a976ef7"
 
@@ -2334,7 +2386,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.6.0.jar"
-hash = "78f8e409d04612b9d622e3889755382fa8d40d4298d37a627dfe4d9c9a641a54"
+hash = "7b432fe4338ba82cf330bcf05c10ba9f5ccb3d8a258cdc37bc64da781ebae0f5"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

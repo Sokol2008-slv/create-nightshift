@@ -6,7 +6,7 @@
 	icon: { id: "farmersdelight:cooking_pot" }
 	id: "69AE1E921A2F8E70"
 	images: [ ]
-	order_index: 7
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{

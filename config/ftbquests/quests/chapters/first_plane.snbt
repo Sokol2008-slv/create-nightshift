@@ -6,7 +6,7 @@
 	icon: { id: "simulated:physics_assembler" }
 	id: "5431D93E250BCB8C"
 	images: [ ]
-	order_index: 16
+	order_index: 17
 	quest_links: [ ]
 	quests: [
 		{
@@ -16,7 +16,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7DF55F9416055A23", item: { count: 1, id: "immersive_aircraft:hull" }, type: "item" }]
-			x: 0.00d
+			x: 1.92d
 			y: 0.00d
 		}
 		{
@@ -27,7 +27,7 @@
 			shape: "hexagon"
 			size: 1.6d
 			tasks: [{ id: "57232A7905A4285C", type: "checkmark" }]
-			x: 1.92d
+			x: 0.00d
 			y: 0.00d
 		}
 		{
@@ -358,6 +358,96 @@
 			tasks: [{ id: "5263023C493D037C", type: "checkmark" }]
 			x: 13.12d
 			y: 8.64d
+		}
+		{
+			dependencies: ["135091C07022C9A1"]
+			id: "1A33CB476C1A29D4"
+			rewards: [{ id: "3B1C6A83302ED769", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "57D21D3C1A716E6C", item: { count: 1, id: "nightshift:pilot_license_3" }, type: "item" }]
+			x: -1.76d
+			y: 0.00d
+		}
+		{
+			dependencies: ["1A33CB476C1A29D4"]
+			id: "029373F06668223C"
+			rewards: [{ id: "0B76D8B57E7D3A76", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "10F8584525A8405E", item: { count: 1, id: "nightshift:pilot_license_2" }, type: "item" }]
+			x: -3.52d
+			y: 0.00d
+		}
+		{
+			dependencies: ["029373F06668223C"]
+			id: "70B5C892A8456D7E"
+			rewards: [{ id: "28838955D64BD78B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "707C5058EB311127", item: { count: 1, id: "nightshift:pilot_license_1" }, type: "item" }]
+			x: -5.28d
+			y: 0.00d
+		}
+		{
+			dependencies: ["135091C07022C9A1"]
+			id: "74C61454ED9F7075"
+			rewards: [{ id: "4166CF18EE46ED83", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "15E2A625F51C6A73", item: { count: 1, id: "axiomativ:hangar_dock" }, type: "item" }]
+			x: 0.00d
+			y: -1.76d
+		}
+		{
+			dependencies: ["1A33CB476C1A29D4"]
+			id: "71DC388F3C61DB8C"
+			rewards: [{ id: "245C7ED80D74CA57", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "21EAD02D7FA9F8E3", item: { count: 1, id: "axiomativ:afterburner_1" }, type: "item" }]
+			x: -1.76d
+			y: -1.76d
+		}
+		{
+			dependencies: ["029373F06668223C"]
+			id: "5595A4942C76A170"
+			rewards: [{ id: "629784BBE783426A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6F5EF7AC6CB79E1E", item: { count: 1, id: "axiomativ:afterburner_2" }, type: "item" }]
+			x: -3.52d
+			y: -1.76d
+		}
+		{
+			dependencies: ["70B5C892A8456D7E"]
+			id: "76E6188D5A1B5F5E"
+			rewards: [{ id: "070B5DBBB8649BE5", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "17358FEC71380BB3", item: { count: 1, id: "axiomativ:afterburner_3" }, type: "item" }]
+			x: -5.28d
+			y: -1.76d
+		}
+		{
+			dependencies: ["1A33CB476C1A29D4"]
+			id: "673A7292B8F58775"
+			rewards: [{ id: "3EFFD635766513D5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "52403834248896A4", item: { count: 1, id: "nightshift:aerial_camera" }, type: "item" }]
+			x: -1.76d
+			y: 1.76d
+		}
+		{
+			dependencies: ["1A33CB476C1A29D4"]
+			id: "5E0607B3F18523E3"
+			rewards: [{ id: "35148355874DF3D2", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3310E98BD10314A3", item: { count: 1, id: "axiomativ:armored_hull" }, type: "item" }]
+			x: -3.52d
+			y: 1.76d
 		}
 	]
 }

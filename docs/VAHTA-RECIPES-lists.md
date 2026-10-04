@@ -3544,7 +3544,7 @@
 - `interiors:seatwood_planks_arr_two` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
 - `interiors:wall_table` (interiors-1.21.1-neoforge-0.6.1.jar) — битый формат 1.21.1: результат в старом формате (1.20: item/nbt) — в 1.21.1 не грузится
 
-## create:mechanical_crafting и родственные — механические крафтеры (218)
+## create:mechanical_crafting и родственные — механические крафтеры (216)
 
 - `aeroworks:joystick` (create:mechanical_crafting)
 - `cgs:mechanical_crafting/auto_fire` (create:mechanical_crafting)
@@ -3575,8 +3575,6 @@
 - `create_mechanical_spawner:mechanical_spawner` (create:mechanical_crafting)
 - `create_new_age:mechanical_crafting/advanced_motor_extension` (create:mechanical_crafting)
 - `create_power_loader:empty_brass_chunk_loader` (create:mechanical_crafting)
-- `create_recipes:mechanical_crafting/economy_plane` (create:mechanical_crafting)
-- `create_recipes:mechanical_crafting/scarlet_biplane` (create:mechanical_crafting)
 - `create_sa:andesite_exoskeleton_recipe` (create:mechanical_crafting)
 - `create_sa:andesite_jetpack_recipe` (create:mechanical_crafting)
 - `create_sa:brass_drone_recipe` (create:mechanical_crafting)

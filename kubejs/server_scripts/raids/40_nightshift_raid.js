@@ -1253,6 +1253,8 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut) {
 	// «Условия смены»: бросков ×(1 + бонус/2), артефакт смены — лишние броски (12_mutators.js)
 	var mutBonus = typeof nsMutBonus === 'function' ? nsMutBonus(mut) : 0
 	if (mutBonus > 0) rolls = Math.round(rolls * (1 + mutBonus / 2))
+	// «Премия смены» из лавки факторий (factory/10_factories.js): бросков больше, пока премия не истрачена
+	if (typeof nsFactoryRaidBoost === 'function') rolls = nsFactoryRaidBoost(rolls, d)
 	var tier = nsWaveTier(d)
 	var k = nsWaveLate(d) // «поздняя» волна: с 70-й
 	var artChance = Math.min(1, (L.artifactChance[tier] || 0) + 0.01 * k)

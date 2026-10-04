@@ -35,7 +35,7 @@ VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/P
 
 # Порядок глав в книге — по фазам Ночной смены
 ORDER = ["vahta", "night_shift", "altar", "artifacts",
-         "create_basics", "electricity", "brass_logistics_trains", "food",
+         "create_basics", "electricity", "brass_logistics_trains", "factories", "food",
          "weapons", "magic", "tower_defense", "golems",
          "automation_extras", "economy", "steel_oil", "outposts",
          "first_plane", "space"]

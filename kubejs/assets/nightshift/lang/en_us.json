@@ -210,5 +210,11 @@
   "item.nightshift.shift_token": "Shift Token",
   "item.nightshift.prism_lens": "Prism Lens",
   "item.nightshift.bastion_core": "Bastion Core",
-  "item.nightshift.convoy_seal": "Convoy Seal"
+  "item.nightshift.convoy_seal": "Convoy Seal",
+  "item.nightshift.pilot_license_3": "Pilot License III",
+  "item.nightshift.pilot_license_2": "Pilot License II",
+  "item.nightshift.pilot_license_1": "Pilot License I",
+  "item.nightshift.aerial_camera": "Aerial Camera",
+  "item.nightshift.aerial_film": "Aerial Film",
+  "item.nightshift.incomplete_avionics": "Incomplete Avionics"
 }

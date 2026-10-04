@@ -41919,6 +41919,55 @@
   },
   {
    "id": "nightshift:convoy_seal",
+   "id": "axiomativ:afterburner_1",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:afterburner_2",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:afterburner_3",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:armored_hull",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:fuel_economizer",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_aircraft_upgrade",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:hangar_dock",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:pilot_license_3",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:pilot_license_2",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:pilot_license_1",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:aerial_camera",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:aerial_film",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_avionics",
    "emc": 0
   }
  ]

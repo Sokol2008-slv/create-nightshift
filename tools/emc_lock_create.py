@@ -53,6 +53,9 @@ if OUTPOSTS_JS.is_file():
                     if i.split(':')[1] not in ('liquid_sulfur', 'electrolyte', 'helium', 'coolant')]
 MANUAL_ZERO += ['nightshift:liquid_sulfur_bucket', 'nightshift:electrolyte_bucket', 'nightshift:helium_bucket', 'nightshift:coolant_bucket',
                 'tfmg:aluminum_ingot', 'tfmg:aluminum_nugget', 'tfmg:aluminum_block', 'tfmg:sulfur_dust', 'cgs:sulfur', 'northstar:salt']
+# 04.10: авиация (поток D) — улучшения самолётов и ангар-док (аддон 0.6.0), удостоверения пилота (только аэроклуб),
+# аэрофотоаппарат и плёнка — только машинами
+MANUAL_ZERO += ['axiomativ:afterburner_1', 'axiomativ:afterburner_2', 'axiomativ:afterburner_3', 'axiomativ:armored_hull', 'axiomativ:fuel_economizer', 'axiomativ:incomplete_aircraft_upgrade', 'axiomativ:hangar_dock', 'nightshift:pilot_license_3', 'nightshift:pilot_license_2', 'nightshift:pilot_license_1', 'nightshift:aerial_camera', 'nightshift:aerial_film', 'nightshift:incomplete_avionics']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'
