@@ -1985,6 +1985,10 @@ file = "kubejs/server_scripts/hud/10_recipe_pins.js"
 hash = "d257243fd240a863051f715aba2674a9768d45e4b0e7236e1c231e16efcd3891"
 
 [[files]]
+file = "kubejs/server_scripts/hud/20_ideas.js"
+hash = "f9e93f5eff92d5dbc0da40e1465de5f37d1d773f5c50f3e4179a399bc5fbba33"
+
+[[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
 hash = "d83e62725f89645fff569caa9a717cf4f3a466775d408eb894d036cbef29ddc6"
 
