@@ -39,7 +39,7 @@ MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist
                 'nightshift:incomplete_armor_module', 'axiomativ:energy_shield_mk1', 'axiomativ:energy_shield_mk2']
 # 04.10: тесла-башня (аддон 0.4.0) — оборона, только машинами
 MANUAL_ZERO += ['axiomativ:tesla_tower', 'axiomativ:tesla_tower_coil', 'axiomativ:incomplete_tesla_tower_coil']
-MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nightshift:otk_armor_plate', 'nightshift:runner_badge', 'nightshift:spirit_essence', 'nightshift:queen_heart']  # 04.10: ключи особых стадий — только из набегов
+MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nightshift:otk_armor_plate', 'nightshift:runner_badge', 'nightshift:spirit_essence', 'nightshift:queen_heart', 'nightshift:prism_lens']  # 04.10: ключи особых стадий — только из набегов
 MANUAL_ZERO += ['nightshift:meteor_iron', 'nightshift:meteor_iron_ingot', 'nightshift:sky_crystal', 'nightshift:shift_token']  # 04.10: материалы второй фазы — только из событий и факторий
 # 04.10: котельная и прожектор (аддон 0.5.0) — техника, только машинами
 MANUAL_ZERO += ['axiomativ:heat_exchanger', 'axiomativ:heat_valve', 'axiomativ:heating_element', 'axiomativ:searchlight']

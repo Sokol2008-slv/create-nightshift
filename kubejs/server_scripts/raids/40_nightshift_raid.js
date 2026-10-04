@@ -814,6 +814,8 @@ function nsBoostRaidMobs(buff, scale) {
 	}
 	// неуязвимость особой стадии (45_special_stages.js)
 	if (NSG.nsCurImmunity) NSG.nsServer.runCommandSilent('tag ' + sel + ' add ns_imm_' + NSG.nsCurImmunity)
+	// невидимая орда: бесконечная невидимость — луч прожектора (аддон) снимает её и подсвечивает моба
+	if (NSG.nsCurInvis) NSG.nsServer.runCommandSilent('effect give ' + sel + ' minecraft:invisibility infinite 0 true')
 	// тема арены (70_nightshift_arena.js): Пекло — горящая злая орда, Мерзлота — медленная и закалённая, Край — прыгучая…
 	var afx = NSG.nsArenaMobFx
 	if (afx) {
@@ -847,6 +849,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 		return true
 	}
 	NSG.nsCurImmunity = hordeCfg.immunity || null // неуязвимость особой стадии — метка мобам в nsBoostRaidMobs
+	NSG.nsCurInvis = !!hordeCfg.invis // «Невидимки»/«Блэкаут» — орда невидима (снимает только прожектор)
 	var wave = nsWaveList(state, hordeCfg)[state.raid.waveIndex]
 	if (typeof nsDossierOnSpawn === 'function') nsDossierOnSpawn(state, hordeCfg, wave) // поток C: строка досье в чат + бестиарий (16_dossier.js)
 

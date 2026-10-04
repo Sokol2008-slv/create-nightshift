@@ -9,4 +9,5 @@ StartupEvents.registry('item', event => {
 	event.create('nightshift:runner_badge').texture('nightshift:item/runner_badge').maxStackSize(16).rarity('epic').glow(true) // Побег
 	event.create('nightshift:spirit_essence').texture('nightshift:item/spirit_essence').maxStackSize(16).rarity('epic').glow(true) // Духи
 	event.create('nightshift:queen_heart').texture('nightshift:item/queen_heart').maxStackSize(16).rarity('epic').glow(true) // Штурм гнезда
+	event.create('nightshift:prism_lens').texture('nightshift:item/prism_lens').maxStackSize(16).rarity('epic').glow(true) // Невидимки, Блэкаут
 })

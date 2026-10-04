@@ -7,6 +7,8 @@
 //  1) Волна с НЕУЯЗВИМОСТЬЮ — обычный набег, но орда берёт урон только от одного: «Механоиды» — только ток (тесла,
 //     молния), «Бронеколонна» — только машины (турели, пушки, тесла, големы, деплоеры, взрывы), «Духи» — только магия
 //     (посохи, заклинания Iron's Spells, зелья). Урон «не тем» гасится, бьющему — подсказка над хотбаром.
+//  1б) НЕВИДИМКИ — обычный набег, но вся орда невидима: «Невидимки» (34), «Блэкаут» (56, у защитников ещё и «Тьма»).
+//     Видно только в луче прожектора аддона — он снимает невидимость и подсвечивает.
 //  2) СЦЕНАРИЙ вместо подволн (только у алтаря базы под открытым небом, не на арене):
 //     «Воздушный бой» — над базой висят ульи-матки (гасты без ИИ), из них летят стрекозы и шершни; ульи ранит только тот, кто в
 //       воздухе (самолёт, элитры, дракон). Сбить все ульи до конца таймера.
@@ -28,6 +30,7 @@ NSG.NS_SPECIAL_STAGES = {
 	26: nsSs('immune', 'turrets', 'Бронеколонна', 'Ручное оружие не берёт броню: только турели, пушки, тесла, големы, деплоеры и взрывы.'),
 	28: nsSs('scenario', 'escape', 'Побег', 'Пожиратель неубиваем. Вся команда — к точке эвакуации до конца таймера: машина, самолёт, поезд.'),
 	32: nsSs('immune', 'magic', 'Духи', 'Духов ранит только магия: посохи, заклинания, зелья вреда.'),
+	34: nsSs('invis', 'invis', 'Невидимки', 'Вся орда невидима. Видно только в луче прожектора — ставьте их на подходах.'),
 	36: nsSs('scenario', 'nest', 'Штурм гнезда', 'Вдали выросло гнездо. Долететь, пробиться через стражу и убить матку до конца таймера.'),
 	42: nsSs('scenario', 'air', 'Воздушный бой II', 'Ульев больше, и они злее. Нужна авиация.'),
 	44: nsSs('immune', 'tesla', 'Механоиды II', 'Только ток. Нужна сеть, которая держит залпы тесла-башен.'),
@@ -35,13 +38,14 @@ NSG.NS_SPECIAL_STAGES = {
 	48: nsSs('immune', 'turrets', 'Бронеколонна II', 'Только машины. Ручное оружие не берёт.'),
 	52: nsSs('immune', 'magic', 'Духи II', 'Только магия.'),
 	54: nsSs('scenario', 'nest', 'Штурм гнезда II', 'Матка толще, стражи больше.'),
+	56: nsSs('invis', 'invis', 'Блэкаут', 'Орда невидима, а у защитников «Тьма» весь набег. Свет и цель даёт только прожектор.'),
 	58: nsSs('scenario', 'air', 'Воздушный бой III', 'Небо чёрное от крыльев.'),
 	62: nsSs('scenario', 'escape', 'Побег III', 'Самая дальняя эвакуация.'),
 	64: nsSs('immune', 'tesla', 'Механоиды III', 'Только ток.'),
 	66: nsSs('scenario', 'nest', 'Штурм гнезда III', 'Гнездо-крепость.'),
 	68: nsSs('immune', 'turrets', 'Бронеколонна III', 'Только машины.'),
 }
-NSG.NS_SPECIAL_KEYS = { tesla: 'nightshift:coil_core', air: 'nightshift:afterburner_blueprint', turrets: 'nightshift:otk_armor_plate', escape: 'nightshift:runner_badge', magic: 'nightshift:spirit_essence', nest: 'nightshift:queen_heart' }
+NSG.NS_SPECIAL_KEYS = { tesla: 'nightshift:coil_core', air: 'nightshift:afterburner_blueprint', turrets: 'nightshift:otk_armor_plate', escape: 'nightshift:runner_badge', magic: 'nightshift:spirit_essence', nest: 'nightshift:queen_heart', invis: 'nightshift:prism_lens' }
 NSG.NS_SPECIAL_KEY_TEXT = {
 	tesla: 'Сердечник катушки — для тесла-техники следующего уровня',
 	air: 'Чертёж форсажа — открывает сверхбыстрые улучшения самолётов',
@@ -49,6 +53,7 @@ NSG.NS_SPECIAL_KEY_TEXT = {
 	escape: 'Значок беглеца — для лицензий пилота и машин',
 	magic: 'Эссенция духа — для сильной магии',
 	nest: 'Сердце матки — для живой брони и трофеев',
+	invis: 'Призменная линза — для оптики: прожекторы и прицелы следующего уровня',
 }
 // вехи первого прохождения: ключевой предмет каждой особой стадии
 for (var nsSw in NSG.NS_SPECIAL_STAGES) {
@@ -65,7 +70,10 @@ NSG.nsSpecialFor = function (d, cfg) {
 	out.special = sp
 	out.name = sp.name
 	if (sp.kind === 'immune') out.immunity = sp.key
-	else {
+	else if (sp.kind === 'invis') {
+		out.invis = true // подволны те же, мобы невидимы (nsBoostRaidMobs)
+		out.blackout = sp.name === 'Блэкаут' // у защитников «Тьма» весь набег (тик ниже)
+	} else {
 		out.scenario = sp.key
 		out.waves = []
 		out.boss = null
@@ -80,6 +88,7 @@ NSG.nsSpecialFor = function (d, cfg) {
 function nsSpecialForecast(horde, d) {
 	var sp = horde.special
 	var lines = ['ОСОБАЯ СТАДИЯ: ' + sp.name, sp.need]
+	if (sp.kind === 'invis') lines.push('Нужен прожектор (аддон Axiomativ): в луче мобы видны и светятся ещё 5 с.')
 	if (sp.kind === 'scenario') {
 		var p = nsScenarioParams(sp.key, d)
 		lines.push('Таймер: ' + Math.round(p.time / 60) + ' мин. Только у алтаря базы под открытым небом.')
@@ -580,3 +589,17 @@ function nsScenarioFail(state, level, altar) {
 	state.raid.sc = null
 	nsRaidFail(state, [])
 }
+
+// «Блэкаут»: «Тьма» защитникам в измерении алтаря весь набег (раз в 5 с на 7 с), как условие «Без света»
+var nsSsDarkTick = 0
+ServerEvents.tick(event => {
+	try {
+		if (++nsSsDarkTick % 100 !== 0) return
+		var st = nsGetState()
+		if (!st || !st.raid || st.raid.state !== 'active' || st.raid.kind === 'minor') return
+		var sp = NSG.NS_SPECIAL_STAGES[st.raid.difficulty]
+		if (!sp || sp.kind !== 'invis' || sp.name !== 'Блэкаут') return
+		var altar = nsFindAltar(st, st.raid.altarId)
+		if (altar) NSG.nsServer.runCommandSilent('execute in ' + altar.dim + ' run effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:darkness 7 0 true')
+	} catch (e) {}
+})

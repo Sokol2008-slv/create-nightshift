@@ -41700,6 +41700,10 @@
   {
    "id": "nightshift:shift_token",
    "emc": 0
+  },
+  {
+   "id": "nightshift:prism_lens",
+   "emc": 0
   }
  ]
 }

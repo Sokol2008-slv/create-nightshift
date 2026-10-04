@@ -424,6 +424,18 @@
 		}
 		{
 			dependencies: ["363F2895D397D822"]
+			icon: { id: "nightshift:prism_lens" }
+			id: "60435D2A4499BA6F"
+			optional: true
+			rewards: [{ id: "69F1A8FB4932ADCB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "247D33982F2F4FF1", stage: "nightshift_p34", team_stage: false, type: "gamestage" }]
+			x: 23.12d
+			y: -4.00d
+		}
+		{
+			dependencies: ["60435D2A4499BA6F"]
 			icon: { id: "nightshift:queen_heart" }
 			id: "4DADC2F0709A2873"
 			optional: true
@@ -431,7 +443,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "39403AC5AE222609", stage: "nightshift_p36", team_stage: false, type: "gamestage" }]
-			x: 23.12d
+			x: 24.72d
 			y: -4.00d
 		}
 	]
