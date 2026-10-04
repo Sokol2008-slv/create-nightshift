@@ -386,5 +386,47 @@
 			x: 9.40d
 			y: 9.00d
 		}
+		{
+			dependencies: ["43FE6A7416401283"]
+			id: "48443F5795D4DD05"
+			rewards: [{ id: "4DB72AC520649601", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0F24E6335494D8AA", item: { count: 1, id: "axiomativ:heat_exchanger" }, type: "item" }]
+			x: 12.40d
+			y: 1.20d
+		}
+		{
+			dependencies: ["48443F5795D4DD05"]
+			id: "7FDAFA4F8A44DEA3"
+			rewards: [{ id: "4A67EE46037435FD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "289F81F302C96F1F", item: { count: 1, id: "axiomativ:heat_valve" }, type: "item" }]
+			x: 14.20d
+			y: 1.20d
+		}
+		{
+			dependencies: ["43FE6A7416401283"]
+			id: "3EB3DCC9CCA7B9A5"
+			rewards: [{ id: "571C596C5420E15A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "596C1B784D13878B", item: { count: 1, id: "axiomativ:heating_element" }, type: "item" }]
+			x: 12.40d
+			y: -0.60d
+		}
+		{
+			dependencies: ["7FDAFA4F8A44DEA3"]
+			icon: { id: "create_new_age:heat_pipe" }
+			id: "1D77D26E368A22F5"
+			optional: true
+			rewards: [{ id: "1160E7CC8396B48A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "4CCBDEFF4D9F5000", type: "checkmark" }]
+			x: 14.20d
+			y: -0.60d
+		}
 	]
 }

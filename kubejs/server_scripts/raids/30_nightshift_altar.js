@@ -1,6 +1,7 @@
 // ==========================================================================
-// Ночная смена — Алтарь: ПКМ по алтарю или блоку базы открывает меню выбора сложности набега (кнопки в чате,
-// при наведении — состав орды и добыча), искупление проклятия стопкой руками или конвейером.
+// Ночная смена — Алтарь: ПКМ по алтарю или блоку базы открывает «Пульт алтаря» — окно аддона Axiomativ Industries
+// (16_dossier.js); у игрока без аддона и по /nightshift menu — меню в чате (кнопки, при наведении — состав орды и
+// добыча). Искупление проклятия стопкой руками или конвейером.
 // ==========================================================================
 //
 // ПРОВЕРЕНО ПО JAR:
@@ -179,7 +180,14 @@ function nsArenaButton(player) {
 	return Text.aqua('[⇨ Арена]').clickRunCommand('/arena').hover(Text.gray('Отдельное измерение: коридор 128 блоков с алтарём. После набега всё сломанное восстанавливается'))
 }
 
+// Меню алтаря: «Пульт алтаря» — окно аддона Axiomativ Industries (16_dossier.js); нет аддона у игрока — меню в чате
 function nsShowAltarMenu(player, state, from) {
+	if (typeof nsAltarScreenOpen === 'function' && nsAltarScreenOpen(player, state, from)) return
+	nsShowAltarMenuChat(player, state, from)
+}
+
+// Меню в чате — запасное: /nightshift menu и игроки без аддона
+function nsShowAltarMenuChat(player, state, from) {
 	var best = state.phase || 0
 	if ((state.curse || 0) > 0) {
 		player.tell(nsCurseLine(state))
@@ -196,6 +204,8 @@ function nsShowAltarMenu(player, state, from) {
 	}
 	player.tell(row)
 	if (top > 10) player.tell(nsWavePager(from, top))
+	// досье следующей волны текстом (16_dossier.js): подволны, метки угроз, чем бить
+	if (typeof nsDosChatLines === 'function') player.tell(Text.gray('Досье: ').append(Text.yellow('[волна ' + nsWaveLabel(top) + ']').clickRunCommand('/nightshift dossier ' + top).hover(Text.gray('Состав по подволнам, метки угроз (летуны, невидимые, подрывники…) и чем бить. Любая волна — /nightshift dossier <N>'))))
 	var next = null
 	for (var m in NSG.NS_WAVE_MILESTONES) if (Number(m) > best && (next === null || Number(m) < next)) next = Number(m)
 	if (next !== null) player.tell(Text.lightPurple('Ближайшая веха — волна ' + next + ': ').append(Text.white(NSG.NS_WAVE_MILESTONES[next].text)))
@@ -268,7 +278,7 @@ function nsAltarUse(player, altarBlock, stack) {
 	nsSaveState(state)
 
 	if (nsRaidActive(state)) {
-		player.tell(Text.red('[Ночная смена] Идёт набег — алтарь занят до его завершения. ').append(nsArenaButton(player)))
+		player.tell(Text.red('[Ночная смена] Идёт набег — алтарь занят до его завершения. ').append(nsArenaButton(player)).append(typeof nsDosRaidButton === 'function' ? nsDosRaidButton(player) : Text.of('')))
 		return
 	}
 	if ((state.curse || 0) > 0 && nsTryTribute(state, player, stack)) return

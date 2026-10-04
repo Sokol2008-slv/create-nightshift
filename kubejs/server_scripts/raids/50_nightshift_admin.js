@@ -50,7 +50,7 @@ function nsMenuCmd(ctx, from) {
 		nsAdminReply(ctx, 'идёт набег — алтарь занят до его завершения')
 		return 0
 	}
-	nsShowAltarMenu(player, st, from)
+	nsShowAltarMenuChat(player, st, from) // меню в чате — запасное; окно «Пульт алтаря» — ПКМ по алтарю
 	return 1
 }
 

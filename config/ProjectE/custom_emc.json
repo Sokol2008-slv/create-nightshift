@@ -32342,6 +32342,22 @@
    "emc": 0
   },
   {
+   "id": "projecte:condenser_mk1",
+   "emc": 0
+  },
+  {
+   "id": "projecte:condenser_mk2",
+   "emc": 0
+  },
+  {
+   "id": "projectexpansion:condenser_mk3",
+   "emc": 0
+  },
+  {
+   "id": "projectexpansion:transmutation_interface",
+   "emc": 0
+  },
+  {
    "id": "railways:benchcart",
    "emc": 0
   },
@@ -41279,6 +41295,22 @@
   },
   {
    "id": "axiomativ:incomplete_tesla_tower_coil",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:heat_exchanger",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:heat_valve",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:heating_element",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:searchlight",
    "emc": 0
   },
   {

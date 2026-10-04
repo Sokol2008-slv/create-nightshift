@@ -24,6 +24,10 @@ FAMILY_MODS = {'tfmg', 'railways', 'northstar', 'cbc_at', 'aeronautics', 'simula
 RAW_RE = re.compile(r'(_ore$|^raw_|_raw_|:raw_)')
 # ручные нули вне семейства Create (генератор пересоздаёт все нулевые записи — эти добавляет всегда)
 MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart', 'nightshift:electric_copper']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
+# 04.10: конденсаторы убраны (рецептов нет, поставленные не работают — аддон 0.5.0), интерфейс трансмутации —
+# тоже (его рецепт из конденсаторов mk2): ни купить, ни продать
+MANUAL_ZERO += ['projecte:condenser_mk1', 'projecte:condenser_mk2', 'projectexpansion:condenser_mk3',
+                'projectexpansion:transmutation_interface']
 # 30.09 (Георгий: «нельзя, чтобы наши слитки можно было покупать — тогда заряд слишком читерный»): металлы наших
 # планет, Стабилитовая кирка и ядерный заряд — только добычей и крафтом
 MANUAL_ZERO += ['kubejs:axiomite_ingot', 'kubejs:stabilite_ingot', 'kubejs:raw_axiomite', 'kubejs:raw_light_stabilite',
@@ -36,6 +40,8 @@ MANUAL_ZERO += ['nightshift:module_spring_boots', 'nightshift:module_step_assist
 # 04.10: тесла-башня (аддон 0.4.0) — оборона, только машинами
 MANUAL_ZERO += ['axiomativ:tesla_tower', 'axiomativ:tesla_tower_coil', 'axiomativ:incomplete_tesla_tower_coil']
 MANUAL_ZERO += ['nightshift:coil_core', 'nightshift:afterburner_blueprint', 'nightshift:otk_armor_plate', 'nightshift:runner_badge', 'nightshift:spirit_essence', 'nightshift:queen_heart']  # 04.10: ключи особых стадий — только из набегов
+# 04.10: котельная и прожектор (аддон 0.5.0) — техника, только машинами
+MANUAL_ZERO += ['axiomativ:heat_exchanger', 'axiomativ:heat_valve', 'axiomativ:heating_element', 'axiomativ:searchlight']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'

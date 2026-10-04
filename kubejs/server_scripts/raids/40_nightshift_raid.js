@@ -668,7 +668,9 @@ function nsStartRaid(kind, altarId, difficulty) {
 	// условия смены — на весь набег такими, какими были на старте (малый набег — без условий)
 	if (kind !== 'minor' && state.mutators) {
 		var mut = {}
-		for (var mk in state.mutators) if (state.mutators[mk]) mut[mk] = true
+		// сценарий особой стадии (45_) идёт без условий: подволн нет — нет и риска, и бонуса к добыче
+		var spx = NSG.NS_SPECIAL_STAGES ? NSG.NS_SPECIAL_STAGES[d] : null
+		if (!spx || spx.kind !== 'scenario') for (var mk in state.mutators) if (state.mutators[mk]) mut[mk] = true
 		state.raid.mut = mut
 	}
 	nsSaveState(state)
@@ -846,6 +848,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 	}
 	NSG.nsCurImmunity = hordeCfg.immunity || null // неуязвимость особой стадии — метка мобам в nsBoostRaidMobs
 	var wave = nsWaveList(state, hordeCfg)[state.raid.waveIndex]
+	if (typeof nsDossierOnSpawn === 'function') nsDossierOnSpawn(state, hordeCfg, wave) // поток C: строка досье в чат + бестиарий (16_dossier.js)
 
 	if (!wave) {
 		if (hordeCfg.boss && !state.raid.bossSpawned) {

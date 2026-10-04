@@ -379,5 +379,15 @@
 			x: 9.68d
 			y: 4.60d
 		}
+		{
+			dependencies: ["3E607BBDA9DA7D25"]
+			id: "1FD83CEEED53B59F"
+			rewards: [{ id: "63017ED99CEE3019", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5CAAA9BED43F77D0", item: { count: 1, id: "axiomativ:searchlight" }, type: "item" }]
+			x: 7.36d
+			y: 0.00d
+		}
 	]
 }

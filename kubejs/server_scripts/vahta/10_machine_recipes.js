@@ -2049,7 +2049,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/pipeorgans/crafting/vox_celeste', 'pipeorgans:vox_celeste', ['2x create:weathered_iron_block', 'pipeorgans:base']],
 	['nightshift:vahta/mix/pipeorgans/crafting/windchest', '6x pipeorgans:windchest', ['create:fluid_pipe', 'minecraft:oak_planks', 'minecraft:redstone', 'minecraft:spruce_slab']],
 	['nightshift:vahta/mix/pipeorgans/crafting/windchest_master', 'pipeorgans:windchest_master', ['3x #c:ingots/zinc', '2x minecraft:oak_planks', 'minecraft:redstone', 'minecraft:spruce_slab']],
-	// --- projecte (54) ---
+	// --- projecte (53) ---
 	['nightshift:vahta/mix/projecte/arcana_ring', 'projecte:arcana_ring', ['projecte:harvest_goddess_band', 'projecte:ignition_ring', '5x projecte:red_matter', 'projecte:swiftwolf_rending_gale', 'projecte:zero_ring']],
 	['nightshift:vahta/mix/projecte/black_alchemical_bag', 'projecte:black_alchemical_bag', ['5x minecraft:black_wool', 'projecte:alchemical_chest', '3x projecte:high_covalence_dust']],
 	['nightshift:vahta/mix/projecte/black_hole_band', 'projecte:black_hole_band', ['6x #c:strings', '2x projecte:dark_matter', 'projecte:iron_band']],
@@ -2058,7 +2058,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/projecte/catalytic_lens', 'projecte:catalytic_lens', ['7x projecte:dark_matter', 'projecte:destruction_catalyst', 'projecte:hyperkinetic_lens']],
 	['nightshift:vahta/mix/projecte/collector_mk2', 'projecte:collector_mk2', ['7x minecraft:glowstone', 'projecte:collector_mk1', 'projecte:dark_matter']],
 	['nightshift:vahta/mix/projecte/collector_mk3', 'projecte:collector_mk3', ['7x minecraft:glowstone', 'projecte:collector_mk2', 'projecte:red_matter']],
-	['nightshift:vahta/mix/projecte/condenser_mk2', 'projecte:condenser_mk2', ['projecte:condenser_mk1', '4x projecte:dark_matter_block', '4x projecte:red_matter_block']],
 	['nightshift:vahta/mix/projecte/cyan_alchemical_bag', 'projecte:cyan_alchemical_bag', ['5x minecraft:cyan_wool', 'projecte:alchemical_chest', '3x projecte:high_covalence_dust']],
 	['nightshift:vahta/mix/projecte/destruction_catalyst', 'projecte:destruction_catalyst', ['minecraft:flint_and_steel', '4x projecte:mobius_fuel', '4x projecte:nova_catalyst']],
 	['nightshift:vahta/mix/projecte/divining_rod_2', 'projecte:divining_rod_2', ['projecte:divining_rod_1', '8x projecte:medium_covalence_dust']],
@@ -2104,7 +2103,7 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/projecte/white_alchemical_bag', 'projecte:white_alchemical_bag', ['5x minecraft:white_wool', 'projecte:alchemical_chest', '3x projecte:high_covalence_dust']],
 	['nightshift:vahta/mix/projecte/yellow_alchemical_bag', 'projecte:yellow_alchemical_bag', ['5x minecraft:yellow_wool', 'projecte:alchemical_chest', '3x projecte:high_covalence_dust']],
 	['nightshift:vahta/mix/projecte/zero_ring', 'projecte:zero_ring', ['4x minecraft:snow_block', '2x minecraft:snowball', '2x projecte:dark_matter', 'projecte:iron_band']],
-	// --- projectexpansion (91) ---
+	// --- projectexpansion (88) ---
 	['nightshift:vahta/mix/nightshift/projecte/arcane_transmutation_tablet', 'projectexpansion:arcane_transmutation_tablet', ['northstar:martian_steel_ingot', 'northstar:titanium_ingot', '4x projecte:transmutation_tablet', '2x projectexpansion:magenta_matter', 'projectexpansion:magnum_star_ein']],
 	['nightshift:vahta/mix/nightshift/vahta/projecte/basic_alchemical_book', 'projectexpansion:basic_alchemical_book', ['minecraft:book', 'minecraft:ender_pearl', 'projecte:dark_matter', '4x projecte:high_covalence_dust', '2x projecte:red_matter']],
 	['nightshift:vahta/mix/projectexpansion/advanced_alchemical_book', 'projectexpansion:advanced_alchemical_book', ['projectexpansion:basic_alchemical_book', '4x projectexpansion:magnum_star_ein', '4x projectexpansion:magnum_star_omega']],
@@ -2127,8 +2126,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/projectexpansion/arcane_alchemical_book', 'projectexpansion:arcane_alchemical_book', ['4x projectexpansion:final_star', '4x projectexpansion:final_star_shard', 'projectexpansion:master_alchemical_book']],
 	['nightshift:vahta/mix/projectexpansion/collector/basic', 'projectexpansion:basic_collector', ['#c:glass_blocks', 'minecraft:furnace', '6x minecraft:glowstone', 'projecte:aeternalis_fuel_block']],
 	['nightshift:vahta/mix/projectexpansion/compact_sun_1', 'projectexpansion:compact_sun', ['4x projectexpansion:final_star', '4x projectexpansion:final_star_shard', 'projectexpansion:yellow_matter']],
-	['nightshift:vahta/mix/projectexpansion/condenser_mk3', 'projectexpansion:condenser_mk3', ['5x projecte:condenser_mk2', '4x projectexpansion:magenta_matter_block']],
-	['nightshift:vahta/mix/projectexpansion/emc_link/basic', 'projectexpansion:basic_emc_link', ['projecte:condenser_mk1', '2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust', '2x projecte:transmutation_tablet']],
 	['nightshift:vahta/mix/projectexpansion/emc_link/blue', 'projectexpansion:blue_emc_link', ['2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust', '2x projectexpansion:blue_matter', 'projectexpansion:violet_emc_link']],
 	['nightshift:vahta/mix/projectexpansion/emc_link/cyan', 'projectexpansion:cyan_emc_link', ['2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust', 'projectexpansion:blue_emc_link', '2x projectexpansion:cyan_matter']],
 	['nightshift:vahta/mix/projectexpansion/emc_link/dark', 'projectexpansion:dark_emc_link', ['2x projecte:dark_matter', '2x projecte:high_covalence_dust', '2x projecte:low_covalence_dust', '2x projecte:medium_covalence_dust', 'projectexpansion:basic_emc_link']],
@@ -2195,7 +2192,6 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/projectexpansion/power_flower/yellow_upgrade', 'projectexpansion:yellow_power_flower', ['projectexpansion:lime_power_flower', '2x projectexpansion:yellow_compressed_collector', 'projectexpansion:yellow_emc_link', '5x projectexpansion:yellow_relay']],
 	['nightshift:vahta/mix/projectexpansion/star/final_star', 'projectexpansion:final_star', ['minecraft:dragon_egg', '8x projectexpansion:final_power_flower']],
 	['nightshift:vahta/mix/projectexpansion/star/final_star_shard', 'projectexpansion:final_star_shard', ['minecraft:nether_star', '8x projectexpansion:colossal_star_omega']],
-	['nightshift:vahta/mix/projectexpansion/transmutation_interface', 'projectexpansion:transmutation_interface', ['4x projecte:condenser_mk2', '4x projectexpansion:final_emc_link', 'projectexpansion:final_star_shard']],
 	// --- railways (177) ---
 	['nightshift:vahta/mix/railways/crafting/big_buffer', '4x railways:big_buffer', ['#c:plates/iron', 'create:industrial_iron_block', 'railways:small_buffer']],
 	['nightshift:vahta/mix/railways/crafting/buffer', 'railways:buffer', ['3x #railways:wooden_headstocks', '2x create:industrial_iron_block', '3x create:metal_girder']],

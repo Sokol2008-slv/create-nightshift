@@ -53,6 +53,7 @@ function nsApplyMutators(cfg, state, d) {
 	var any = false
 	for (var k in set) if (set[k]) any = true
 	if (!any || !cfg) return cfg
+	if (cfg.scenario) return cfg // сценарий особой стадии (45_) — без подволн и босса, условия к нему не применяются
 	var out = {}
 	for (var f in cfg) out[f] = cfg[f]
 	if (set.double) out.mult = (cfg.mult || 1) * 2
