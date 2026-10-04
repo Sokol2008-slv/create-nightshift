@@ -216,5 +216,8 @@
   "item.nightshift.pilot_license_1": "Pilot License I",
   "item.nightshift.aerial_camera": "Aerial Camera",
   "item.nightshift.aerial_film": "Aerial Film",
-  "item.nightshift.incomplete_avionics": "Incomplete Avionics"
+  "item.nightshift.incomplete_avionics": "Incomplete Avionics",
+  "block.nightshift.meteor_ore": "Meteoric Ore",
+  "block.nightshift.sky_crystal_cluster": "Sky Crystal Cluster",
+  "item.nightshift.crushed_meteor_iron": "Crushed Meteoric Iron"
 }

@@ -38,7 +38,7 @@ ORDER = ["vahta", "night_shift", "altar", "artifacts",
          "create_basics", "electricity", "brass_logistics_trains", "factories", "food",
          "weapons", "magic", "tower_defense", "golems",
          "automation_extras", "economy", "steel_oil", "outposts",
-         "first_plane", "space"]
+         "first_plane", "sky", "space"]
 # 30.09: главы слиты (welcome → vahta, ore_processing → create_basics/vahta, logistics_food → brass,
 # fuel_engines → steel_oil, big_cannons → tower_defense, dragons → golems, airships_cars → first_plane);
 # энергия стоит рано — её первые стадии (колёса, пар) нужны с начала игры

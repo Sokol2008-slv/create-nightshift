@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "nightshift:sky_island", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 16,
+    "salt": 470410041
+  }
+}

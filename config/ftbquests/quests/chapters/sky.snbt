@@ -1,0 +1,109 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "sky"
+	group: ""
+	icon: { id: "nightshift:sky_crystal" }
+	id: "67B00CFE4470EDCE"
+	images: [ ]
+	order_index: 18
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "minecraft:spyglass" }
+			id: "4DB3DC69131F3EBB"
+			rewards: [{ id: "7C2AF14B03DD464F", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "7BFDFAF75EF2568A", type: "checkmark" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["4DB3DC69131F3EBB"]
+			icon: { id: "nightshift:meteor_ore" }
+			id: "1F7106947E9DF5CB"
+			rewards: [{ id: "60C878CE7039098C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "46ABF2F1157DA0A1", type: "checkmark" }]
+			x: 2.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["1F7106947E9DF5CB"]
+			icon: { id: "minecraft:clock" }
+			id: "3C2F126B4119545E"
+			optional: true
+			rewards: [{ id: "64B9EB43D4AF07FA", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5AD24B684B1C877C", type: "checkmark" }]
+			x: 2.20d
+			y: -1.90d
+		}
+		{
+			dependencies: ["1F7106947E9DF5CB"]
+			id: "7867EFE5FD87DD23"
+			rewards: [{ id: "082E9987C8272F9E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "25D0340D5AE016D6", item: { count: 1, id: "nightshift:meteor_iron" }, type: "item" }]
+			x: 4.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["7867EFE5FD87DD23"]
+			id: "4AF40550EC00F64C"
+			rewards: [{ id: "579FC34C64240B3C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "107504C0B68687CB", item: { count: 1, id: "nightshift:crushed_meteor_iron" }, type: "item" }]
+			x: 6.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["4AF40550EC00F64C"]
+			id: "1C38E72D15B444D8"
+			rewards: [{ id: "76EFC75EFE0FBFDD", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "1D23807637C181A1", item: { count: 1, id: "nightshift:meteor_iron_ingot" }, type: "item" }]
+			x: 8.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["4DB3DC69131F3EBB"]
+			icon: { id: "nightshift:sky_crystal_cluster" }
+			id: "23487472DFC8E464"
+			rewards: [{ id: "415DB6E2FEA66AFE", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7CD036D58E43A1E8", type: "checkmark" }]
+			x: 2.20d
+			y: 2.20d
+		}
+		{
+			dependencies: ["23487472DFC8E464"]
+			id: "539B7C6618ED6FA2"
+			rewards: [{ id: "337B101AD3603C12", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "29111E29E9F229BA", item: { count: 1, id: "nightshift:sky_crystal" }, type: "item" }]
+			x: 4.40d
+			y: 2.20d
+		}
+		{
+			dependencies: ["539B7C6618ED6FA2"]
+			icon: { id: "minecraft:chest" }
+			id: "48F9B65B2F5D7203"
+			optional: true
+			rewards: [{ id: "5CF7DC426014C287", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "15E24B893EC2E3BB", type: "checkmark" }]
+			x: 6.60d
+			y: 2.20d
+		}
+	]
+}

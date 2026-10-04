@@ -41968,6 +41968,15 @@
   },
   {
    "id": "nightshift:incomplete_avionics",
+   "id": "nightshift:crushed_meteor_iron",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:meteor_ore",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sky_crystal_cluster",
    "emc": 0
   }
  ]

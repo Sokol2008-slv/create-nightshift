@@ -1,0 +1,282 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:sky_crystal",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:enhanced_propeller",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:eco_engine",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:nether_engine",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:steel_boiler",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:industrial_gears",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:sturdy_pipes",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:gyroscope",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:hull_reinforcement",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:improved_landing_gear",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:rotary_cannon",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:heavy_crossbow",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:bomb_bay",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:telescope",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_beef",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_rocket",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersive_aircraft:sail",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 94
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_patch",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_badge",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_thermos",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_buckle",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_qc_stripe",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_watch_charm",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_fang",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_pauldron",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nightshift:art_collar",
+          "weight": 0
+        }
+      ]
+    }
+  ],
+  "random_sequence": "nightshift:chests/sky_airship"
+}
