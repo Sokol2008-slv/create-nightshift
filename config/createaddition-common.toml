@@ -86,15 +86,15 @@
 	#Small Connector max input in FE/t (Energy transfer).
 	# Default: 1000
 	# Range: > 0
-	small_connector_max_input = 1000
+	small_connector_max_input = 1000000000
 	#Small Connector max output in FE/t (Energy transfer).
 	# Default: 1000
 	# Range: > 0
-	small_connector_max_output = 1000
+	small_connector_max_output = 1000000000
 	#Small Connector max wire length in blocks.
 	# Default: 16
 	# Range: 0 ~ 256
-	small_connector_wire_length = 16
+	small_connector_wire_length = 32
 	#Small Connector With Light energy consumption in FE/t.
 	# Default: 1
 	# Range: > 0

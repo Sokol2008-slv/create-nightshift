@@ -11,6 +11,8 @@ var NS_VAHTA_SMITHING = [
 	// Sophisticated Backpacks (05.10, Георгий: «не выходит скрафтить незеритовый рюкзак»): свой тип рецепта стола
 	// smithing_backpack_upgrade в список не попал; компоненты (содержимое рюкзака) переносятся, как у остальных
 	['sophisticatedbackpacks:netherite_backpack', 'minecraft:netherite_upgrade_smithing_template', 'sophisticatedbackpacks:diamond_backpack', 'minecraft:netherite_ingot', 'sophisticatedbackpacks:netherite_backpack'],
+	// Create Enchantment Industry (05.10, аудит: «кузня закрыта, а рецепт не перенесён — предмет не получить»)
+	['create_enchantment_industry:smithing/classic_blaze_enchanter', 'create_dragons_plus:blaze_upgrade_smithing_template', 'create:blaze_burner', 'create_enchantment_industry:blazes_enchanting_handbook', 'create_enchantment_industry:classic_blaze_enchanter'],
 	// броня из межпланетного сплава (01.10): сплав | незеритовая вещь | сплав
 	['nightshift:alloy_armor/helmet', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_helmet', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_helmet'],
 	['nightshift:alloy_armor/chestplate', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_chestplate', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_chestplate'],

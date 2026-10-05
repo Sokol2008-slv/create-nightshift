@@ -708,6 +708,9 @@ GROUPS1 = components(EDGES1, POOL)   # все коллизии (для отчё�
 GROUPS2 = components(EDGES2, POOL2)  # после ухода форм на пилу
 
 MIX_GEN, CRAFTER, CUT_GEN, CUT_COVERED, ALREADY_MIX, DUP_SAME = [], [], [], [], [], []
+HOMO_CRAFTER = []  # однородные и перехватчики — только механическим крафтерам (см. ниже)
+# «2 андезита + 2 самородка → 1 сплав» перебивал create:mixing «1 + 1 → 1» (сплав вдвое дороже)
+MIX_SKIP_IDS = {'create:crafting/materials/andesite_alloy', 'create:crafting/materials/andesite_alloy_from_zinc'}
 UNIQUE_FORM_ON_SAW = []  # уникальная форма, но пила уже режет её через stonecutting — mixing не нужен
 _gen_sig = set()
 
@@ -736,8 +739,17 @@ for r in SHAPED:
         if sc and base and all(not sc.isdisjoint(x) for x in base):
             UNIQUE_FORM_ON_SAW.append(r)
             continue
+    if r.out.endswith(':deleted_mod_element'):  # заглушка удалённого предмета мода — рецепт не создать (ошибка KubeJS)
+        continue
     if sig(r) in _gen_sig:
         DUP_SAME.append(r)
+        continue
+    # 05.10 (аудит): «однородные» рецепты (один вид ингредиента: 8 камня → печь, 3 меди → громоотвод, 2 сплава →
+    # валы) в миксер НЕ переносим. Чаша Create берёт подходящий рецепт с наибольшим числом ингредиентов, и со
+    # стаками в чаше такие рецепты перехватывали базовые (андезит → печи вместо сплава, медь+цинк → кираса вместо
+    # латуни, булыжник → печь вместо лавы). Их по-прежнему делают механические крафтеры.
+    if len({sid(x) for x in r.slots}) == 1 or r.id in MIX_SKIP_IDS:
+        HOMO_CRAFTER.append(r)
         continue
     _gen_sig.add(sig(r))
     MIX_GEN.append(r)

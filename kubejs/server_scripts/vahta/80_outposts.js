@@ -25,7 +25,9 @@ var NS_OP_TAP_HEIGHT = 6
 var NS_OP_REMOVE = [
 	// 1. резина: синтетическая из нефти убрана — только латекс плантации
 	'tfmg:vat_machine_recipe/rubber',
-	'createaddition:crafting/copper_spool', 'createaddition:crafting/gold_spool', 'createaddition:crafting/electrum_spool',
+	// 05.10, Георгий: медная катушка — БЕЗ резины (исходный рецепт C&A: 4 медных провода вокруг катушки); резина — для
+	// золотой/электрумовой катушки и большого соединителя
+	'createaddition:crafting/gold_spool', 'createaddition:crafting/electrum_spool',
 	'createaddition:crafting/large_connector',
 	'create_new_age:cutting/copper_wire', 'create_new_age:cutting/overcharged_iron_wire', 'create_new_age:cutting/overcharged_golden_wire',
 	'create_new_age:sequenced_assembly/overcharged_diamond_wire',
@@ -137,7 +139,7 @@ ServerEvents.recipes(function (event) {
 	// вулканизация: латекс + сера, нагрев → резина (лист TFMG)
 	event.recipes.create.mixing('3x ' + rubber, ['2x nightshift:latex', nsIng('#c:dusts/sulfur')]).heated().id('nightshift:outposts/rubber')
 	// изоляция катушек C&A: 4 провода + 4 резины вокруг катушки
-	;[['copper', 'createaddition:copper_spool'], ['gold', 'createaddition:gold_spool'], ['electrum', 'createaddition:electrum_spool']].forEach(function (w) {
+	;[['gold', 'createaddition:gold_spool'], ['electrum', 'createaddition:electrum_spool']].forEach(function (w) {
 		mc(w[1], ['RWR', 'WSW', 'RWR'], { R: rubber, W: nsIng('#c:wires/' + w[0]), S: 'createaddition:spool' }, w[0] + '_spool')
 	})
 	// толстый кабель: большой соединитель C&A — резина вместо слизи

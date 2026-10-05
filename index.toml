@@ -22,7 +22,7 @@ hash = "ef379731b3265ede2c6eff356a8aadb0e0d100b2218e75595938fd94b8eb9e84"
 
 [[files]]
 file = "config/createaddition-common.toml"
-hash = "e9d794bc6316cf72512d57479f5260c8539524a20743aab0bad5858157c25a7b"
+hash = "274b50ecbd6887d4d5b78394d984b99a96f76bd37802c2b3f011ea1c44831e3e"
 
 [[files]]
 file = "config/createdieselgenerators-server.toml"
@@ -150,7 +150,7 @@ hash = "7c7592f082b1c30ea3f91ae464a8af18e81d084979ea8da9722c70ed4d858460"
 
 [[files]]
 file = "config/simplebackups-common.toml"
-hash = "285090d57ebde50ac24abf3d62fafe6560a6b7768a2f9587c3a3aa98212c91c4"
+hash = "aa43bd1fa24ca98430de6ce531d1c6e4862ec455a86dc663182dd6c2e480db58"
 
 [[files]]
 file = "kubejs/assets/arphex/lang/ru_ru.json"
@@ -1217,6 +1217,10 @@ file = "kubejs/client_scripts/special_stage_tooltips.js"
 hash = "a2d50b52e71083ec83da5a2c6288ffcbf2e1f6ce978733b9c2d01e9d209f9108"
 
 [[files]]
+file = "kubejs/client_scripts/vahta_basin_jei.js"
+hash = "574480e71b9ca259b9c498ccd2854b7605ee678c884672011b5ada261918d321"
+
+[[files]]
 file = "kubejs/client_scripts/vahta_jei.js"
 hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
 
@@ -2274,7 +2278,7 @@ hash = "78d9518eeba7d991e02bd8d1bd0e91fc22a2dc7ffc081e92640e92a9bef04aac"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "5b564d7abcedcda8204f034e35b485177120b3e8a656902bb99863e2a889f03a"
+hash = "ad5cdc7b13ae17a1c33441f71e23a50a8e918e0b829d28ca507f4e591b525827"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
@@ -2290,7 +2294,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/25_smithing.js"
-hash = "80ade8300992f445948d2ab96208f3f5eb776c4d71e73b8680d9d28528229ed6"
+hash = "3c0f2e1d7fb861924c6993de37ac2c80e175318fc002de8aa14430d43b13019e"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
@@ -2334,7 +2338,7 @@ hash = "3431a3b2e4a21400958c3074da2bd24e4f42627928d8f229db56e71a7415e717"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/55_star_gate.js"
-hash = "05d9480c3e23f2e473cb66dbfdc162683fdefdb9bbac720c8053f32bd41900bd"
+hash = "e45dbf2e5b0c54d9b067d39b471f13c339ff7c86a8fff831a5889d20ba77a507"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/55_tactical_nuke.js"
@@ -2346,7 +2350,7 @@ hash = "c3b1fc699988b943ad4af2e1a00addf5bb9eb04a5b374619a53138fe23ec56d7"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/60_staffs.js"
-hash = "4f5a970a7bacbee377ce7311b0aa5cedae2c794df2cda43c9ed8e517e1b6827e"
+hash = "82010903e47dddff6fab9f937e2789fc2695db515d3da54081e85f5ee788526f"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/70_armor_modules.js"
@@ -2362,7 +2366,11 @@ hash = "5b3f7e4c8c7276ccdcd250a03169826addd82043c4950ec75d9adca7a0057617"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/80_outposts.js"
-hash = "46e28757ff43f45488fdbdecdf8bbc383b6cdbf38d0fa04d9edc4452708c752a"
+hash = "d40b245c31becebd5665d35f2426341a2cbc78e05e32108491aa0835416c4117"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/85_audit_fixes.js"
+hash = "9e48a8c33201c65f36c3fb9e14959b2d8f69c0a2fe2ad1bcc15c0281207f670f"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_economy_items.js"

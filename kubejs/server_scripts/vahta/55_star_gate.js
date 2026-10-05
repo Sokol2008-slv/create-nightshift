@@ -69,18 +69,20 @@ var NS_STAR_ORES = {
 }
 var NS_STAR_HINT_COOLDOWN = 60 // тиков между подсказками одному игроку (клиент повторяет попытки ломать)
 var NS_BREAK_EVENT = Java.loadClass('net.neoforged.neoforge.event.level.BlockEvent$BreakEvent')
+var NS_STAR_FAKE = Java.loadClass('net.neoforged.neoforge.common.util.FakePlayer')
 
 NativeEvents.onEvent(NS_BREAK_EVENT, function (event) {
 	try {
 		var p = event.getPlayer()
 		if (!p || p.isCreative()) return
 		var block = event.getState().getBlock()
-		if (!NS_STAR_ORES[String(block.kjs$getKey().location())]) return
+		// 05.10: kjs$getKey() в скриптах не виден (KubeJS снимает префикс) — падало на КАЖДОМ сломанном блоке, защита не работала
+		if (!NS_STAR_ORES[String(block.id)]) return
 		if (p.getMainHandItem().hasTag('nightshift:star_tools')) return
 		event.setCanceled(true)
 		// подсказку не шлём фейковым игрокам (деплоер Create) и не чаще раза в NS_STAR_HINT_COOLDOWN тиков
-		if (String(p.getClass().getName()).indexOf('FakePlayer') >= 0) return
-		var now = p.level.getGameTime()
+		if (p instanceof NS_STAR_FAKE) return // getClass() в KubeJS закрыт — только instanceof
+		var now = p.level.getTime() // KubeJS: getGameTime → getTime
 		var last = p.persistentData.getLong('ns_star_hint_t')
 		if (now - last < NS_STAR_HINT_COOLDOWN && now >= last) return
 		p.persistentData.putLong('ns_star_hint_t', now)

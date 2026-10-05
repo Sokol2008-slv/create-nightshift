@@ -35,7 +35,7 @@ timer = 120
 # Range: -1 ~ 9
 compressionLevel = -1
 #Should message be sent when backup is in the making?
-sendMessages = true
+sendMessages = false
 #The max size of storage the backup folder. If it takes more storage, old files will be deleted.
 #Needs to be written as <number><space><storage type>
 #Valid storage types: B, KB, MB, GB, TB

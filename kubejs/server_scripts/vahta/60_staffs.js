@@ -46,14 +46,15 @@ try {
 }
 
 ServerEvents.recipes(function (event) {
-	// Посох молнии: 2 электрической меди, заряд молнии, 2 эссенции волшебства, 2 медных стержня C&A
+	// Посох молнии: 2 электрической меди, громоотвод, 2 эссенции волшебства, 2 медных стержня C&A
+	// (05.10, аудит: раньше брал заряд молнии — единственный ключ к электромеди: собрал посох — потерял ключ)
 	event.recipes.create.mechanical_crafting('nightshift:lightning_staff', [
 		'ECE',
 		'ARA',
 		' R '
 	], {
 		E: 'nightshift:electric_copper',
-		C: 'nightshift:lightning_charge',
+		C: 'minecraft:lightning_rod',
 		A: 'irons_spellbooks:arcane_essence',
 		R: 'createaddition:copper_rod'
 	}).id('nightshift:vahta/staffs/lightning_staff')
