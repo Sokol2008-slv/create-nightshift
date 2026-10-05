@@ -42048,6 +42048,18 @@
   {
    "id": "axiomativ:incomplete_supply_pack",
    "emc": 0
+  },
+  {
+   "id": "axiomativ:dispatch_monitor",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:dispatch_sensor",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:repair_rack",
+   "emc": 0
   }
  ]
 }

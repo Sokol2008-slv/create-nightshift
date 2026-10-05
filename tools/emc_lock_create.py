@@ -61,6 +61,8 @@ MANUAL_ZERO += ['nightshift:liquid_sulfur_bucket', 'nightshift:electrolyte_bucke
 MANUAL_ZERO += ['axiomativ:afterburner_1', 'axiomativ:afterburner_2', 'axiomativ:afterburner_3', 'axiomativ:armored_hull', 'axiomativ:fuel_economizer', 'axiomativ:incomplete_aircraft_upgrade', 'axiomativ:hangar_dock', 'nightshift:pilot_license_3', 'nightshift:pilot_license_2', 'nightshift:pilot_license_1', 'nightshift:aerial_camera', 'nightshift:aerial_film', 'nightshift:incomplete_avionics']
 # 05.10: врата перехода и антиграв (аддон 0.7.0, поток G) — техника, только машинами
 MANUAL_ZERO += ['axiomativ:gate_controller', 'axiomativ:gate_frame', 'axiomativ:incomplete_gate_frame', 'axiomativ:antigrav_module']
+# 05.10: диспетчерская и ремонтная стойка (аддон 0.7.0) — техника, только машинами
+MANUAL_ZERO += ['axiomativ:dispatch_monitor', 'axiomativ:dispatch_sensor', 'axiomativ:repair_rack']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'

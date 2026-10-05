@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "68f59deae8f43f0a82a7777955694ee98d008346013e8bb301b5a5815b0ea7c8"
+hash = "49582f8ea45ad1ca53bec00b1c449bb623f3d5a772b5a87a91ee63bc2c5b2feb"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -70,7 +70,7 @@ hash = "ef31c56aafd06557a297b88b1ba8330e48b95e41c1057c8760cdb834abe84d78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity.snbt"
-hash = "bdb5c8a01608865fb666a0cddd502450fc8a9184e67811e71cc3105636718830"
+hash = "8ce2fe0b0b2d1f0b2035cfe94067000f51f71ff4a3bdf574a570150f4de4c332"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/factories.snbt"
@@ -138,11 +138,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "7df1ece42ad4d655c3573cc6b737c1143936330fdb0edb726d682adb993d2c1a"
+hash = "01077820bc44e5d2e13b16755adb74a8482fc537cc90eaec38925c328b4a1863"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "7df1ece42ad4d655c3573cc6b737c1143936330fdb0edb726d682adb993d2c1a"
+hash = "01077820bc44e5d2e13b16755adb74a8482fc537cc90eaec38925c328b4a1863"
 
 [[files]]
 file = "config/iris.properties"
@@ -1215,6 +1215,10 @@ hash = "c32f7903cd668ede6493ea12403a40a5bb999fd67234218a2099384c7ca0efe2"
 [[files]]
 file = "kubejs/client_scripts/aviation_tooltips.js"
 hash = "87877eddc4585f3d94e3e14d1ffa5b036429de7fc0406c7fa30a4930fa9a5e64"
+
+[[files]]
+file = "kubejs/client_scripts/axiomativ_dispatch_jei.js"
+hash = "a58cb9949852b3c1c7f3f65ddd046300679d9a56199211135320578741e4389d"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_gate_jei.js"
@@ -2333,6 +2337,10 @@ file = "kubejs/server_scripts/shift/20_atlas.js"
 hash = "dfc8bc9c78dd12be4d587d50079e1ea4f56dfc5af28dd2f2cedc0d2ff96f6997"
 
 [[files]]
+file = "kubejs/server_scripts/shift/30_dispatch.js"
+hash = "5b7246ab3afe1a5db18280349e5440bf68c04a92ed8ce948ac587b1d027788f3"
+
+[[files]]
 file = "kubejs/server_scripts/shift/30_salute.js"
 hash = "3b4cd5ba0345bcd44ea390ef352b2eaef7242b07ee01892bff67a681490e5f9f"
 
@@ -2350,7 +2358,7 @@ hash = "78d9518eeba7d991e02bd8d1bd0e91fc22a2dc7ffc081e92640e92a9bef04aac"
 
 [[files]]
 file = "kubejs/server_scripts/sky/40_night_sky.js"
-hash = "b0a5a65492ceac4cde9a015c8422887b2626b01f0891845f29e0f563ab5cc0af"
+hash = "5f86366529069d31bdf595f6c2b76029de3892f776c06791d1cfcb7b9e34c336"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
@@ -2407,6 +2415,10 @@ hash = "b4f2ebcbe75c69dbbaa240f94cffba1f2025c3ebfab949e54159acf239e9933f"
 [[files]]
 file = "kubejs/server_scripts/vahta/48_axiomativ_power.js"
 hash = "7d6958b57e583715a54ec3e142bf908997b6e7e77618fb5def3f0c5217e1dae9"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/49_axiomativ_dispatch.js"
+hash = "6c8c7b43e7217c80976fd5efc9b70fa5f9e0b7665d83f7c1efd74c79a15a3c9a"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/49_axiomativ_gate.js"
@@ -2586,7 +2598,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "bdb525f8fe221e5ff6d8eec3067370f9d8a9ee9d479ba7368247b731edf329ac"
+hash = "fe9caf8f4d0b530755315e1955aab4b125a82dbcb2e4cb020fbb5dd3e01f4070"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

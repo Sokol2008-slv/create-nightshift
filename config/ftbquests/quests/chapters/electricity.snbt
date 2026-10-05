@@ -440,5 +440,47 @@
 			x: 20.20d
 			y: 5.70d
 		}
+		{
+			dependencies: ["51F5B4A18F78FE96"]
+			id: "6B16D539F4FAB0E8"
+			rewards: [{ id: "5507473D5E120A47", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "50403CC65F4358C0", item: { count: 1, id: "axiomativ:dispatch_monitor" }, type: "item" }]
+			x: 18.40d
+			y: 7.60d
+		}
+		{
+			dependencies: ["6B16D539F4FAB0E8"]
+			id: "77C6703FDB6111D1"
+			rewards: [{ id: "07A8B61B0D54B850", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "60994344C0F04A81", item: { count: 1, id: "axiomativ:dispatch_sensor" }, type: "item" }]
+			x: 20.20d
+			y: 7.60d
+		}
+		{
+			dependencies: ["3EB3DCC9CCA7B9A5"]
+			id: "77C243DA55D090E6"
+			rewards: [{ id: "068186D0DCEE7FB8", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6EFFDF2C54C68F3B", item: { count: 1, id: "axiomativ:repair_rack" }, type: "item" }]
+			x: 14.80d
+			y: 7.60d
+		}
+		{
+			dependencies: ["77C243DA55D090E6"]
+			icon: { id: "axiomativ:repair_rack" }
+			id: "0F14A05DE96A2802"
+			optional: true
+			rewards: [{ id: "11E1AD04DB5BCED9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5BEF11D74799817D", type: "checkmark" }]
+			x: 13.00d
+			y: 7.60d
+		}
 	]
 }
