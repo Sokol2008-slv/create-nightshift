@@ -220,5 +220,8 @@
   "block.nightshift.meteor_ore": "Meteoric Ore",
   "block.nightshift.sky_crystal_cluster": "Sky Crystal Cluster",
   "item.nightshift.crushed_meteor_iron": "Crushed Meteoric Iron",
-  "item.nightshift.herbal_tea": "Herbal Tea"
+  "item.nightshift.herbal_tea": "Herbal Tea",
+  "block.nightshift.fallen_star": "Fallen Star",
+  "block.nightshift.star_lamp": "Star Lamp",
+  "item.nightshift.star_shard": "Star Shard"
 }

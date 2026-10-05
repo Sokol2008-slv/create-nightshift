@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "98e9f572f0b2ad039bbd282df0a3579e7efa1490f57e83f2c3124dbb226e5dfb"
+hash = "1e10f63eca40d359e79bff1252e6d9de42e36068f6823fac2102275db0b1ebe0"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -30,7 +30,7 @@ hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
 
 [[files]]
 file = "config/defaultoptions/keybindings.txt"
-hash = "6fbd93087bfb66714ee3cf7a6759aa7080e46bd596e353f12d4aade3452bf57d"
+hash = "2a556a1ed16dbea59cc5c1714a13152981fcd3608360fe74bd8b0f26168ba026"
 
 [[files]]
 file = "config/dmr-server.toml"
@@ -110,7 +110,7 @@ hash = "34e41bd7ac867505ef2612a868b30c08d3cd77cb1068ec1cd77962f9b23c4dc2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/sky.snbt"
-hash = "34590671917aee1ead373f8ee96d90311a3280bbc8ead5a39c84ebaf608d2534"
+hash = "cc6cbb714b68d481981040c771ac0071f8cacadae7ecd249b9778a076214f9ce"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/space.snbt"
@@ -138,11 +138,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "ef076818c8c234dced2b2db01fe09f5422734d942cb75a07bf1b31afefcabe4c"
+hash = "3c713401b61861bb13faa2d11611e7b08b2c139e6ae6df83a33b0c44ee4e6d7a"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "ef076818c8c234dced2b2db01fe09f5422734d942cb75a07bf1b31afefcabe4c"
+hash = "3c713401b61861bb13faa2d11611e7b08b2c139e6ae6df83a33b0c44ee4e6d7a"
 
 [[files]]
 file = "config/iris.properties"
@@ -274,11 +274,11 @@ hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/en_us.json"
-hash = "1df4628a721e04e72da42cd78945e3d425950a2f87d08557fc61beda30c7658f"
+hash = "f1696e317918758cb474a5711c43d719b11f2ef293a4bd87ca7bf8c828690468"
 
 [[files]]
 file = "kubejs/assets/nightshift/lang/ru_ru.json"
-hash = "628928b8b6306c42fbb81087c69784109ff8ad6f63d14a1d435ecff7566558b6"
+hash = "c6d3b69d9b570b4b3ee4174ae8ef5ec1be7c4b4bf963914edd308b7aca6d994e"
 
 [[files]]
 file = "kubejs/assets/nightshift/models/block/eye_glow.json"
@@ -287,6 +287,10 @@ hash = "f7f02e4f527adf429cb725202b76f48f9e3d54769346e1397f4f6e8757f56a5c"
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/bauxite_deposit.png"
 hash = "8ac0a96cbd151df0dd5a11b6a4d547260b4aef00fc93926eabb7181ab4dbe07b"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/fallen_star.png"
+hash = "a9f9ac3736520b2b6d6c9c8f0eac12f88a1dd070a8b2b57f59d2499045b451a1"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/helium_ice.png"
@@ -331,6 +335,10 @@ hash = "90c329794ec816e43cc3c6089ff04b7d4928a67ceb2af3381077522098bc6527"
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/sky_crystal_cluster.png"
 hash = "cfd4eec05a9b5ca94a3e6ccf3f54a2300e3fa72574360887de81da1331bbe9b5"
+
+[[files]]
+file = "kubejs/assets/nightshift/textures/block/star_lamp.png"
+hash = "66df9db74e1b076e18ada04e2217ada47c0e6c5de47a058c7934525deaeff2ea"
 
 [[files]]
 file = "kubejs/assets/nightshift/textures/block/star_stone.png"
@@ -853,6 +861,10 @@ file = "kubejs/assets/nightshift/textures/item/helium_frost.png"
 hash = "c6ed7408cd2f9763f7e41c6992447b460c6afcb17bca8eeb1b85458ca1a1863e"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/herbal_tea.png"
+hash = "5bf20c89218ac3f549efb109629cb7d5c05a19a66bcdcc3e9c7d65a1c0e75abc"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/horde_dust.png"
 hash = "502da24c2d83eeaf33a0e592bbbd9fafdca2de07229a9a499646d2306b839c1a"
 
@@ -1037,6 +1049,10 @@ file = "kubejs/assets/nightshift/textures/item/star_pickaxe.png"
 hash = "0c8789049b78772d7604bf5157b07e4d4ac951e9806ef956c25f10b96bba1a10"
 
 [[files]]
+file = "kubejs/assets/nightshift/textures/item/star_shard.png"
+hash = "d9a69d0bf1434d09ee80a444d8a732f252af952ca07cd264b97719f76d41f25b"
+
+[[files]]
 file = "kubejs/assets/nightshift/textures/item/stardust.png"
 hash = "b43edfb56ab15d8b94ee429ddd2e66d251f87609cc92e16fcddef2286641aaed"
 
@@ -1211,6 +1227,10 @@ hash = "49499ed1de7be005116f449560b26216cee8b4eaeb7f21a8407fca309e3ee153"
 [[files]]
 file = "kubejs/client_scripts/magic_tooltips.js"
 hash = "1dcda2e8c88ab0c33e0ea860b97eb2324acbb974dae93508200e51b38bc8238c"
+
+[[files]]
+file = "kubejs/client_scripts/night_sky_jei.js"
+hash = "e08f8cc98eaa7322452d621618a01d2d740fbe7e45ade6d6d9690cf59d0dd839"
 
 [[files]]
 file = "kubejs/client_scripts/nightshift_pin_key.js"
@@ -2262,7 +2282,7 @@ hash = "ff600ef67f064597e8cc68f6c58dc05d0ee8938cf017ecf61d5d6b48a0570834"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/10_sedative.js"
-hash = "d3edde0fa0e72752ed9fd35407a3cd731f834314761e0d5140ea9ad50522cce6"
+hash = "fdb2d390398ccc64d11b0db2f1c4fd130cfe5c738d173e439a7b98b403a95744"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/20_darkness.js"
@@ -2274,7 +2294,7 @@ hash = "9b67d9b4aeac01683e4e512f8627a623a9049616f4f3a34cc487bd964756311a"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/40_death.js"
-hash = "a89901ac7cc6436453d6b8c9ad35c7e1755865877fa85ff1b2091d5d8e04819e"
+hash = "99ba0d86d6a8abbdca7323f0aa9190d0f18e17f255d1c4c36d467af31bd4ac3b"
 
 [[files]]
 file = "kubejs/server_scripts/sanity/50_hurt_fix.js"
@@ -2291,6 +2311,10 @@ hash = "cae20380a031c17ca4bfefd5092574881396c638529ae8d7f363167fbe7d8812"
 [[files]]
 file = "kubejs/server_scripts/sky/30_sky_recipes.js"
 hash = "78d9518eeba7d991e02bd8d1bd0e91fc22a2dc7ffc081e92640e92a9bef04aac"
+
+[[files]]
+file = "kubejs/server_scripts/sky/40_night_sky.js"
+hash = "55a41fbe3d526557bccddf7c01d2181fd3aa3592ffe96453b7f058da04bd3de1"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
@@ -2398,7 +2422,7 @@ hash = "3f54eab9eae7752565e0d0b63766e404ee9ddf3e2a6cc9839a8d4aa8a3129727"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_sanity_items.js"
-hash = "b506d905f2574a29cf4cc529e81e70d3a66e553b47101d30e8aebc001be418dd"
+hash = "40fa144a09b4a8accc9dc3605ffa4e03520c56a05da6ebedac5d1d3f37114d3b"
 
 [[files]]
 file = "kubejs/startup_scripts/nightshift_scare_blocks.js"
@@ -2411,6 +2435,10 @@ hash = "619f48c33c54660a995ea7d6d54a0a4c3ab0bdd38930adbcfc22d3206ee831ce"
 [[files]]
 file = "kubejs/startup_scripts/sky/10_sky_blocks.js"
 hash = "70996ad928a2cd097f46c66a82962a6b203e21f1dd7324e37b85983fe8157ef4"
+
+[[files]]
+file = "kubejs/startup_scripts/sky/20_night_sky_blocks.js"
+hash = "93e065bf151454ea0123deab4957037c7c0a63ef55c64d87a13266a854bf563d"
 
 [[files]]
 file = "kubejs/startup_scripts/vahta/20_wave_items.js"

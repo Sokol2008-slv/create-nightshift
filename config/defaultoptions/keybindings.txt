@@ -16,8 +16,6 @@ key_key.corpse.death_history:key.keyboard.u:ALT
 key_key.advancements:key.keyboard.unknown
 key_key.ftbquests.quests:key.keyboard.l
 key_key.ftbquests.cycle_pinned_tracker:key.keyboard.l:ALT
-key_key.jade.show_uses:key.keyboard.j
-key_key.jade.show_recipes:key.keyboard.j:ALT
 key_placebo.toggleWings:key.keyboard.unknown
 key_placebo.toggleTrails:key.keyboard.unknown
 key_key.socialInteractions:key.keyboard.unknown

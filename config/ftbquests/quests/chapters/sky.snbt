@@ -103,5 +103,60 @@
 			x: 6.60d
 			y: 2.20d
 		}
+		{
+			dependencies: ["4DB3DC69131F3EBB"]
+			id: "4B1FB1644E359A75"
+			rewards: [{ id: "74BCA06EBA07970A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3F9D001141AA1B4E", item: { count: 1, id: "nightshift:star_shard" }, type: "item" }]
+			x: 0.00d
+			y: 4.40d
+		}
+		{
+			dependencies: ["4B1FB1644E359A75"]
+			id: "17A40DFC177EEC99"
+			optional: true
+			rewards: [{ id: "7F66A67D3C5DCAEE", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "11D5B64D349662BF", item: { count: 1, id: "nightshift:sky_crystal" }, type: "item" }]
+			x: 2.20d
+			y: 4.40d
+		}
+		{
+			dependencies: ["17A40DFC177EEC99"]
+			id: "07E1779D7F156A53"
+			optional: true
+			rewards: [{ id: "5ECCF90D7A3D5EBF", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3296FBE09B288EB2", item: { count: 1, id: "nightshift:night_heart" }, type: "item" }]
+			x: 4.40d
+			y: 4.40d
+		}
+		{
+			dependencies: ["4B1FB1644E359A75"]
+			id: "6F4F9C4D098CF5DC"
+			optional: true
+			rewards: [{ id: "13FB10E6DF1FF9C7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "35E6173B9ADD0390", item: { count: 1, id: "nightshift:star_lamp" }, type: "item" }]
+			x: 0.00d
+			y: 6.40d
+		}
+		{
+			dependencies: ["4DB3DC69131F3EBB"]
+			icon: { id: "minecraft:glow_ink_sac" }
+			id: "2DF88FD3F54BC3BE"
+			optional: true
+			rewards: [{ id: "5B907A46578DA329", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "13BF3F7519DBBB47", type: "checkmark" }]
+			x: -2.20d
+			y: 2.20d
+		}
 	]
 }
