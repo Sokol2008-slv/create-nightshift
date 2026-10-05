@@ -269,7 +269,7 @@
 - `sophisticatedstorage:white_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
 - `sophisticatedstorage:yellow_shulker_box_to_sophisticated` (sophisticatedstorage-1.21.1-1.5.91.2127.jar) — свой serializer: sophisticatedstorage:shulker_box_from_vanilla_shapeless
 
-## Фигурные с совпадающим набором — остаются механическим крафтерам (168)
+## Фигурные с совпадающим набором — остаются механическим крафтерам (180)
 
 - `create:crafting/kinetics/fluid_tank` → create:fluid_tank ← #c:barrels/wooden, 2×#c:plates/copper
 - `create:crafting/kinetics/gearbox` → create:gearbox ← create:andesite_casing, 4×create:cogwheel
@@ -291,11 +291,18 @@
 - `create_factory_logistics:barrel_packager` → create_factory_logistics:barrel_packager ← create:copper_casing, 3×minecraft:copper_ingot, minecraft:iron_ingot, 2×minecraft:redstone
 - `create_factory_logistics:jar_packager` → create_factory_logistics:jar_packager ← create:copper_casing, 3×minecraft:copper_ingot, minecraft:iron_ingot, 2×minecraft:redstone
 - `create_new_age:shaped/lamp_post` → 8× create_new_age:lamp_post ← #c:plates/iron, 2×create:andesite_alloy
+- `create_sa:brass_axe_recipe` → create_sa:brass_axe ← 3×#c:ingots/brass, 2×#c:rods/wooden
 - `create_sa:brass_boots_recipe` → create_sa:brass_boots ← 4×#c:ingots/brass
+- `create_sa:brass_pickaxe_recipe` → create_sa:brass_pickaxe ← 3×#c:ingots/brass, 2×#c:rods/wooden
+- `create_sa:copper_axe_recipe` → create_sa:copper_axe ← 3×#c:ingots/copper, 2×#c:rods/wooden
 - `create_sa:copper_boots_recipe` → create_sa:copper_boots ← 4×#c:ingots/copper
+- `create_sa:copper_pickaxe_recipe` → create_sa:copper_pickaxe ← 3×#c:ingots/copper, 2×#c:rods/wooden
+- `create_sa:copper_shovel_recipe` → create_sa:copper_shovel ← #c:ingots/copper, 2×#c:rods/wooden
 - `create_sa:experience_axe_recipe` → create_sa:experience_axe ← 3×create_sa:heap_of_experience, 2×create_sa:zinc_handle
 - `create_sa:experience_pickaxe_recipe` → create_sa:experience_pickaxe ← 3×create_sa:heap_of_experience, 2×create_sa:zinc_handle
+- `create_sa:zinc_axe_recipe` → create_sa:zinc_axe ← 3×#c:ingots/zinc, 2×#c:rods/wooden
 - `create_sa:zinc_boots_recipe` → create_sa:zinc_boots ← 4×#c:ingots/zinc
+- `create_sa:zinc_pickaxe_recipe` → create_sa:zinc_pickaxe ← 3×#c:ingots/zinc, 2×#c:rods/wooden
 - `create_submarine:submarine_propeller` → create_submarine:submarine_propeller ← create:industrial_iron_block, create:propeller, create:shaft
 - `createbigcannons:basin_foundry_lid` → createbigcannons:basin_foundry_lid ← 4×create:andesite_alloy
 - `createcasing:crafting/encased_fan/industrial_iron` → createcasing:industrial_iron_encased_fan ← create:industrial_iron_block, create:propeller, create:shaft
@@ -337,6 +344,7 @@
 - `createframed:window/andesite_alloy_window` → 2× createframed:andesite_alloy_window ← #c:glass_blocks/colorless, 3×create:andesite_alloy
 - `createpropulsion:crafting/platinum_fluid_tank` → createpropulsion:platinum_fluid_tank ← create:fluid_tank, 2×createpropulsion:platinum_sheet
 - `createpropulsion:crafting/platinum_fluid_vessel` → createpropulsion:platinum_fluid_vessel ← create:fluid_tank, 2×createpropulsion:platinum_sheet
+- `farmersdelight:iron_knife` → farmersdelight:iron_knife ← #c:ingots/iron, minecraft:stick
 - `garnished:stone/abyssal_stone/chiseled` → garnished:chiseled_abyssal_stone_bricks ← 2×garnished:polished_abyssal_stone_slab
 - `garnished:stone/abyssal_stone/polished` → garnished:polished_abyssal_stone ← 2×garnished:polished_abyssal_stone_slab
 - `garnished:stone/carnotite/chiseled` → garnished:chiseled_carnotite_bricks ← 2×garnished:polished_carnotite_slab
@@ -419,10 +427,13 @@
 - `pipeorgans:crafting/gamba` → pipeorgans:gamba ← #c:ingots/iron, #c:plates/iron, pipeorgans:base
 - `pipeorgans:crafting/iron_boot` → 6× pipeorgans:iron_boot ← 3×#c:plates/iron
 - `pipeorgans:crafting/rohrflote` → pipeorgans:rohrflote ← #c:ingots/iron, #c:plates/iron, pipeorgans:base
+- `projecte:dm_axe` → projecte:dm_axe ← 2×#c:gems/diamond, 3×projecte:dark_matter
+- `projecte:dm_pick` → projecte:dm_pick ← 2×#c:gems/diamond, 3×projecte:dark_matter
 - `railways:crafting/palettes/hazard_stripes_a/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
 - `railways:crafting/palettes/hazard_stripes_a/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
 - `railways:crafting/palettes/hazard_stripes_b/black_hazard_stripes_diagonal_on_white` → 4× railways:black_hazard_stripes_diagonal_on_white ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
 - `railways:crafting/palettes/hazard_stripes_b/white_hazard_stripes_diagonal_on_black` → 4× railways:white_hazard_stripes_diagonal_on_black ← 2×railways:black_slashed_locometal, 2×railways:white_slashed_locometal
+- `rechiseled:chisel` → rechiseled:chisel ← #c:ingots/iron, #c:rods/wooden
 - `tfmg:crafting/materials/aluminum_axe` → tfmg:aluminum_axe ← 3×#c:ingots/aluminum, 2×minecraft:stick
 - `tfmg:crafting/materials/aluminum_pickaxe` → tfmg:aluminum_pickaxe ← 3×#c:ingots/aluminum, 2×minecraft:stick
 - `tfmg:crafting/materials/brass_pipe` → 4× tfmg:brass_pipe ← #c:ingots/brass, 2×#c:plates/brass
@@ -435,6 +446,7 @@
 - `tfmg:crafting/materials/pumpjack_hammer_head` → tfmg:pumpjack_hammer_head ← #c:plates/steel, #c:storage_blocks/steel
 - `tfmg:crafting/materials/steel_axe` → tfmg:steel_axe ← 3×#c:ingots/steel, 2×minecraft:stick
 - `tfmg:crafting/materials/steel_pickaxe` → tfmg:steel_pickaxe ← 3×#c:ingots/steel, 2×minecraft:stick
+- `wands:copper_wand` → wands:copper_wand ← minecraft:copper_ingot, 2×minecraft:stick
 - `wands:diamond_wand` → wands:diamond_wand ← minecraft:diamond, 2×minecraft:stick
 - `wands:iron_wand` → wands:iron_wand ← minecraft:iron_ingot, 2×minecraft:stick
 - `wands:stone_wand` → wands:stone_wand ← minecraft:cobblestone, 2×minecraft:stick
@@ -2079,7 +2091,7 @@
 - `createfood:crafting/shaped/raw_chicken_calzone_from_shaped` → createfood:raw_chicken_calzone ← #c:cooked_chicken, #c:raw_cheese_calzone ≈ `createfood:minecraft/crafting/raw_chicken_calzone_from_crafting`
 - `createfood:crafting/shaped/raw_chocolate_pie_from_shaped` → createfood:raw_chocolate_pie ← #c:chocolate_bottle, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_from_crafting`
 - `createfood:crafting/shaped/raw_chocolate_pie_graham_cracker_from_shaped` → createfood:raw_chocolate_pie_graham_cracker ← #c:chocolate_bottle, #c:raw_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_chocolate_pie_graham_cracker_from_crafting`
-- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:minecraft/crafting/raw_chocolate_sweet_roll_base_from_crafting`
+- `createfood:crafting/shaped/raw_chocolate_sweet_roll_base_from_shaped` → createfood:raw_chocolate_sweet_roll_base ← #c:chocolate_sweet_dough, #c:sugar ≈ `createfood:create/mixing/raw_chocolate_sweet_roll_base_from_mixing`
 - `createfood:crafting/shaped/raw_chorus_fruit_cheesecake_from_shaped` → createfood:raw_chorus_fruit_cheesecake ← #c:chorus_fruit, #c:raw_cheesecake ≈ `createfood:minecraft/crafting/raw_chorus_fruit_cheesecake_from_crafting`
 - `createfood:crafting/shaped/raw_chorus_fruit_pie_from_shaped` → createfood:raw_chorus_fruit_pie ← #c:chorus_fruit_pie_filling_bucket, #c:raw_pie_crust ≈ `createfood:minecraft/crafting/raw_chorus_fruit_pie_from_crafting`
 - `createfood:crafting/shaped/raw_cream_pie_chocolate_graham_cracker_from_shaped` → createfood:raw_cream_pie_chocolate_graham_cracker ← #c:cream_pie_filling_bucket, #c:raw_chocolate_graham_cracker_pie_crust ≈ `createfood:minecraft/crafting/raw_cream_pie_chocolate_graham_cracker_from_crafting`
@@ -3241,7 +3253,7 @@
 - `tfmg:crafting/materials/steel_block_from_compacting` → tfmg:steel_block ← 9×#c:ingots/steel
 - `tfmg:crafting/materials/steel_ingot_from_compacting` → tfmg:steel_ingot ← 9×#c:nuggets/steel
 
-## Рецепты с тарой (вёдра, бутылки) — бесформенные (220)
+## Рецепты с тарой (вёдра, бутылки) — бесформенные (230)
 
 - `create:crafting/appliances/dough` → create:dough ← #c:flours/wheat, minecraft:water_bucket
 - `create_compressed:dough_block_from_flour` → create_compressed:dough_block ← #create_compressed:water, create_compressed:wheat_flour_pile
@@ -3258,6 +3270,7 @@
 - `createfood:minecraft/crafting/apple_juice_bottle_from_crafting_alt` → createfood:apple_juice_bottle ← 4×#c:apple, #c:sugar, minecraft:potion
 - `createfood:minecraft/crafting/apple_milkshake_bottle_from_crafting` → 2× createfood:apple_milkshake_bottle ← #c:apple_milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/apple_milkshake_bucket_from_crafting_alt` → createfood:apple_milkshake_bucket ← #c:apple, #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/apple_milkshake_bucket_from_crafting_alt_2` → createfood:apple_milkshake_bucket ← #c:apple_ice_cream_bucket, #c:buckets/milk, #c:ice_blocks, minecraft:bucket
 - `createfood:minecraft/crafting/berry_cream_frosting_bottle_from_crafting` → 4× createfood:berry_cream_frosting_bottle ← #c:berry_cream_frosting_bucket, 4×minecraft:glass_bottle
 - `createfood:minecraft/crafting/berry_cream_frosting_bucket_from_crafting` → createfood:berry_cream_frosting_bucket ← 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket, minecraft:sweet_berries
 - `createfood:minecraft/crafting/berry_cream_frosting_bucket_from_crafting_alt_2` → createfood:berry_cream_frosting_bucket ← #c:cream_frosting_bucket, minecraft:bucket, minecraft:sweet_berries
@@ -3270,6 +3283,7 @@
 - `createfood:minecraft/crafting/berry_juice_bottle_from_crafting_alt` → createfood:berry_juice_bottle ← #c:sugar, minecraft:potion, 4×minecraft:sweet_berries
 - `createfood:minecraft/crafting/berry_milkshake_bottle_from_crafting` → 2× createfood:berry_milkshake_bottle ← #c:berry_milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/berry_milkshake_bucket_from_crafting_alt` → createfood:berry_milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket, minecraft:sweet_berries
+- `createfood:minecraft/crafting/berry_milkshake_bucket_from_crafting_alt_2` → createfood:berry_milkshake_bucket ← #c:berry_ice_cream_bucket, #c:buckets/milk, #c:ice_blocks, minecraft:bucket
 - `createfood:minecraft/crafting/black_gelatin_dessert_block_from_crafting` → createfood:black_gelatin_dessert_block ← #c:black_gelatin_mix_bucket, 2×minecraft:ice
 - `createfood:minecraft/crafting/black_gelatin_mix_bucket_from_crafting` → createfood:black_gelatin_mix_bucket ← #c:dyes/black, #c:gelatin_mix_bucket, minecraft:bucket
 - `createfood:minecraft/crafting/blackstrap_molasses_bottle_from_crafting` → 2× createfood:blackstrap_molasses_bottle ← #c:blackstrap_molasses_bucket, 2×minecraft:glass_bottle
@@ -3296,6 +3310,7 @@
 - `createfood:minecraft/crafting/chocolate_ice_cream_bucket_from_crafting_alt_2` → createfood:chocolate_ice_cream_bucket ← #c:cocoa_powder, #c:ice_cream_bucket, minecraft:bucket
 - `createfood:minecraft/crafting/chocolate_milkshake_bottle_from_crafting` → 2× createfood:chocolate_milkshake_bottle ← #c:chocolate_milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/chocolate_milkshake_bucket_from_crafting_alt` → createfood:chocolate_milkshake_bucket ← #c:cocoa_powder, #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/chocolate_milkshake_bucket_from_crafting_alt_2` → createfood:chocolate_milkshake_bucket ← #c:buckets/milk, #c:chocolate_ice_cream_bucket, #c:ice_blocks, minecraft:bucket
 - `createfood:minecraft/crafting/chocolate_sugar_dough_from_wheat_crafting` → 3× createfood:chocolate_sugar_dough ← #c:cocoa_powder, #c:sugar, minecraft:water_bucket, 3×minecraft:wheat
 - `createfood:minecraft/crafting/chorus_fruit_cream_frosting_bottle_from_crafting` → 4× createfood:chorus_fruit_cream_frosting_bottle ← #c:chorus_fruit_cream_frosting_bucket, 4×minecraft:glass_bottle
 - `createfood:minecraft/crafting/chorus_fruit_cream_frosting_bucket_from_crafting` → createfood:chorus_fruit_cream_frosting_bucket ← #c:chorus_fruit, 2×#c:frosting_ingredients, #c:heavy_cream_bucket, 2×#c:sugar, minecraft:bucket
@@ -3309,6 +3324,7 @@
 - `createfood:minecraft/crafting/chorus_fruit_juice_bottle_from_crafting_alt` → createfood:chorus_fruit_juice_bottle ← 4×#c:chorus_fruit, #c:sugar, minecraft:potion
 - `createfood:minecraft/crafting/chorus_fruit_milkshake_bottle_from_crafting` → 2× createfood:chorus_fruit_milkshake_bottle ← #c:chorus_fruit_milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/chorus_fruit_milkshake_bucket_from_crafting_alt` → createfood:chorus_fruit_milkshake_bucket ← #c:chorus_fruit, #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/chorus_fruit_milkshake_bucket_from_crafting_alt_2` → createfood:chorus_fruit_milkshake_bucket ← #c:buckets/milk, #c:chorus_fruit_ice_cream_bucket, #c:ice_blocks, minecraft:bucket
 - `createfood:minecraft/crafting/cloth_filter_cacao_mass_from_crafting` → createfood:cloth_filter_cacao_mass ← #c:cacao_mass_bucket, #c:cloth_filter
 - `createfood:minecraft/crafting/cloth_filter_egg_from_crafting` → 4× createfood:cloth_filter_egg ← 4×#c:cloth_filter, #c:egg_bucket
 - `createfood:minecraft/crafting/condensed_milk_bottle_from_crafting` → 4× createfood:condensed_milk_bottle ← #c:condensed_milk_bucket, 4×minecraft:glass_bottle
@@ -3337,6 +3353,7 @@
 - `createfood:minecraft/crafting/glow_berry_juice_bottle_from_crafting_alt` → createfood:glow_berry_juice_bottle ← #c:sugar, 4×minecraft:glow_berries, minecraft:potion
 - `createfood:minecraft/crafting/glow_berry_milkshake_bottle_from_crafting` → 2× createfood:glow_berry_milkshake_bottle ← #c:glow_berry_milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/glow_berry_milkshake_bucket_from_crafting_alt` → createfood:glow_berry_milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket, minecraft:glow_berries
+- `createfood:minecraft/crafting/glow_berry_milkshake_bucket_from_crafting_alt_2` → createfood:glow_berry_milkshake_bucket ← #c:buckets/milk, #c:glow_berry_ice_cream_bucket, #c:ice_blocks, minecraft:bucket
 - `createfood:minecraft/crafting/gray_gelatin_dessert_block_from_crafting` → createfood:gray_gelatin_dessert_block ← #c:gray_gelatin_mix_bucket, 2×minecraft:ice
 - `createfood:minecraft/crafting/gray_gelatin_mix_bucket_from_crafting` → createfood:gray_gelatin_mix_bucket ← #c:dyes/gray, #c:gelatin_mix_bucket, minecraft:bucket
 - `createfood:minecraft/crafting/green_gelatin_dessert_block_from_crafting` → createfood:green_gelatin_dessert_block ← #c:green_gelatin_mix_bucket, 2×minecraft:ice
@@ -3383,6 +3400,7 @@
 - `createfood:minecraft/crafting/melon_jam_bottle_from_crafting` → 2× createfood:melon_jam_bottle ← #c:melon_jam_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/melon_milkshake_bottle_from_crafting` → 2× createfood:melon_milkshake_bottle ← #c:melon_milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/melon_milkshake_bucket_from_crafting_alt` → createfood:melon_milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:melon, #c:milk_bottle, minecraft:bucket
+- `createfood:minecraft/crafting/melon_milkshake_bucket_from_crafting_alt_2` → createfood:melon_milkshake_bucket ← #c:buckets/milk, #c:ice_blocks, #c:melon_ice_cream_bucket, minecraft:bucket
 - `createfood:minecraft/crafting/milkshake_bottle_from_crafting` → 2× createfood:milkshake_bottle ← #c:milkshake_bucket, 2×minecraft:glass_bottle
 - `createfood:minecraft/crafting/milkshake_bucket_from_crafting_alt` → createfood:milkshake_bucket ← #c:ice_blocks, #c:ice_cream_bucket, #c:milk_bottle, minecraft:bucket
 - `createfood:minecraft/crafting/molasses_bottle_from_crafting` → 2× createfood:molasses_bottle ← #c:molasses_bucket, 2×minecraft:glass_bottle
@@ -3457,14 +3475,18 @@
 - `createfood:minecraft/crafting/yogurt_bottle_from_crafting` → 4× createfood:yogurt_bottle ← #c:yogurt_bucket, 4×minecraft:glass_bottle
 - `createfood:minecraft/crafting/yogurt_bowl_from_crafting` → 3× createfood:yogurt_bowl ← #c:yogurt_bucket, 3×minecraft:bowl
 - `createfood:minecraft/crafting/yogurt_bowl_honey_from_crafting` → createfood:yogurt_bowl_honey ← #c:yogurt_bowl, minecraft:honey_bottle
+- `farmersdelight:gleaming_salad_block` → farmersdelight:gleaming_salad_block ← #c:crops/beetroot, #c:crops/tomato, 2×farmersdelight:cabbage, minecraft:bowl, 2×minecraft:glow_berries, minecraft:golden_carrot, minecraft:honey_bottle
+- `farmersdelight:honey_cookie` → 8× farmersdelight:honey_cookie ← 2×#c:crops/wheat, minecraft:honey_bottle
 - `farmersdelight:honey_glazed_ham_block` → farmersdelight:honey_glazed_ham_block ← 2×farmersdelight:cooked_rice, farmersdelight:smoked_ham, minecraft:bowl, minecraft:honey_bottle, 4×minecraft:sweet_berries
 - `farmersdelight:milk_bottle` → 4× farmersdelight:milk_bottle ← 4×minecraft:glass_bottle, minecraft:milk_bucket
+- `farmersdelight:shepherds_pie_block` → farmersdelight:shepherds_pie_block ← 2×#c:crops/onion, #c:drinks/milk, 3×#c:foods/cooked_mutton, 2×minecraft:baked_potato, minecraft:bowl
+- `farmersdelight:stuffed_potato` → farmersdelight:stuffed_potato ← #c:drinks/milk, #c:foods/cooked_beef, minecraft:baked_potato
 - `garnished:farseer_brew` → garnished:farseer_brew ← garnished:aureate_shrub, garnished:preliminary_nucleus, garnished:vex_wing, minecraft:bowl, minecraft:dragon_breath
 - `garnished:rosy_cocktail` → garnished:rosy_cocktail ← create:polished_rose_quartz, 2×garnished:shattered_amber_remnant, minecraft:honey_bottle
 - `projecte:conversions/water_to_ice` → minecraft:ice ← [minecraft:water_bucket|projecte:evertide_amulet], [projecte:arcana_ring|projecte:zero_ring]
 - `tfmg:crafting/materials/rusted_blast_furnace_reinforcement` → 8× tfmg:rusted_blast_furnace_reinforcement ← minecraft:water_bucket, 8×tfmg:blast_furnace_reinforcement
 
-## Рецепты с тарой (вёдра, бутылки) — сгенерированный mixing (17)
+## Рецепты с тарой (вёдра, бутылки) — сгенерированный mixing (23)
 
 - `arphex:elixir_splintered` → arphex:elixir_of_splintered_sanity ← arphex:core_of_eternal_suffering, 3×arphex:mantle_of_vitality, minecraft:water_bucket
 - `create:crafting/curiosities/cake` → minecraft:cake ← #c:eggs, #c:foods/dough, minecraft:milk_bucket, 2×minecraft:sugar
@@ -3473,10 +3495,16 @@
 - `dndesires:crafting/fan_catalyst/blasting_sail` → 4× dndesires:blasting_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:lava_bucket
 - `dndesires:crafting/fan_catalyst/freezing_sail` → 4× dndesires:freezing_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:powder_snow_bucket
 - `dndesires:crafting/fan_catalyst/splashing_sail` → 4× dndesires:splashing_sail ← #c:storage_blocks/cardboard, 4×create:sail_frame, 4×minecraft:water_bucket
+- `farmersdelight:cake_from_milk_bottle` → minecraft:cake ← 3×#c:crops/wheat, 3×#c:drinks/milk, #c:eggs, 2×minecraft:sugar
+- `farmersdelight:chocolate_pie` → farmersdelight:chocolate_pie ← 3×#c:drinks/milk, farmersdelight:pie_crust, 3×minecraft:cocoa_beans, 2×minecraft:sugar
+- `farmersdelight:cooking_pot` → farmersdelight:cooking_pot ← #c:buckets/water, 5×#c:ingots/iron, 2×minecraft:brick, minecraft:wooden_shovel
+- `farmersdelight:pie_crust` → farmersdelight:pie_crust ← 3×#c:crops/wheat, #c:drinks/milk
+- `farmersdelight:sweet_berry_cheesecake` → farmersdelight:sweet_berry_cheesecake ← 2×#c:drinks/milk, farmersdelight:pie_crust, 6×minecraft:sweet_berries
 - `minecraft:cake` → minecraft:cake ← minecraft:egg, 3×minecraft:milk_bucket, 2×minecraft:sugar, 3×minecraft:wheat
 - `projecte:evertide_amulet` → projecte:evertide_amulet ← 6×minecraft:water_bucket, 3×projecte:dark_matter
 - `projecte:iron_band` → projecte:iron_band ← 8×#c:ingots/iron, [minecraft:lava_bucket|projecte:volcanite_amulet]
 - `projecte:volcanite_amulet` → projecte:volcanite_amulet ← 6×minecraft:lava_bucket, 3×projecte:dark_matter
+- `sophisticatedbackpacks:xp_pump_upgrade` → sophisticatedbackpacks:xp_pump_upgrade ← 4×#c:dusts/redstone, 2×minecraft:ender_eye, 2×minecraft:experience_bottle, sophisticatedbackpacks:advanced_pump_upgrade
 - `tfmg:crafting/materials/accumulator` → tfmg:accumulator ← 4×#c:plates/lead, #c:storage_blocks/lead, #c:wires/copper, tfmg:industrial_aluminum_casing, 2×tfmg:sulfuric_acid_bucket
 - `tfmg:crafting/materials/cinder_block` → 8× tfmg:cinder_block ← 6×tfmg:cinderblock, tfmg:liquid_concrete_bucket, 2×tfmg:rebar
 - `tfmg:crafting/materials/fire_extinguisher` → tfmg:fire_extinguisher ← #c:ingots/steel, #c:nuggets/steel, 5×#c:plates/aluminum, minecraft:red_dye, tfmg:carbon_dioxide_bucket

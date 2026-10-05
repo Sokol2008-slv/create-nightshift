@@ -60,6 +60,33 @@ def log(*a):
 RECIPES = json.load(gzip.open(os.path.join(DATA, 'recipes-dump.json.gz')))
 TAGS_RAW = json.load(gzip.open(os.path.join(DATA, 'item-tags-dump.json.gz')))
 
+
+def _merge_neoforge_tags():
+    """05.10: в выгрузке нет общих тегов самого NeoForge (c:storage_blocks/copper и ещё ~240 — лежат в его jar,
+    а не в модах). Без них рецепты на «любой медный блок» считались незагружаемыми и не попадали в миксер
+    (Переполнение 0 Sophisticated Backpacks). Добавляем теги из jar NeoForge сервера."""
+    import glob, re, zipfile
+    jars = sorted(glob.glob(os.path.expanduser('~/mc-nightshift-server/libraries/net/neoforged/neoforge/*/neoforge-*-universal.jar')))
+    if not jars:
+        return 0
+    n = 0
+    with zipfile.ZipFile(jars[-1]) as z:
+        for name in z.namelist():
+            m = re.match(r'data/([^/]+)/tags/item/(.+)\.json$', name)
+            if not m:
+                continue
+            tag = m.group(1) + ':' + m.group(2)
+            vals = json.loads(z.read(name)).get('values', [])
+            have = TAGS_RAW.setdefault(tag, [])
+            for v in vals:
+                if v not in have:
+                    have.append(v)
+                    n += 1
+    return n
+
+
+NEOFORGE_TAG_VALUES = _merge_neoforge_tags()
+
 # Моды, которые реально загружены: пространства имён id рецептов из выгрузки (у каждого мода с контентом
 # есть хоть один свой рецепт) + ядро.
 LOADED = {k.split(':')[0] for k in RECIPES} | {'minecraft', 'c', 'neoforge', 'kubejs'}

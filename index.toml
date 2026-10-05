@@ -2266,7 +2266,7 @@ hash = "78d9518eeba7d991e02bd8d1bd0e91fc22a2dc7ffc081e92640e92a9bef04aac"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
-hash = "940979fbbeaad50def215412a30b676a6023f7dc786e59e4ab077948d5fb6259"
+hash = "5b564d7abcedcda8204f034e35b485177120b3e8a656902bb99863e2a889f03a"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_no_hand_crafting.js"
