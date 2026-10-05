@@ -5,11 +5,13 @@
 	#For balancing purposes: the effectiveness of all positive sanity sources will be multiplied by this number
 	# Default: 1.0
 	# Range: 1.401298464324817E-45 ~ 3.4028234663852886E38
-	positive_multiplier = 1.3
+	# 05.10 (Георгий: «рассудок сверхпрочный, про него забыли»): было 1.3
+	positive_multiplier = 1.0
 	#For balancing purposes: the effectiveness of all negative sanity sources will be multiplied by this number
 	# Default: 1.0
 	# Range: 1.401298464324817E-45 ~ 3.4028234663852886E38
-	negative_multiplier = 0.5
+	# 05.10: было 0.5 — темнота съедала рассудок за 20 мин; теперь ~7 мин (как ночь)
+	negative_multiplier = 0.8
 
 	#Configuration for passive sanity sources
 	[sanity.passive]
@@ -80,7 +82,8 @@
 		#Players will gain this amount of sanity per second while being in the light
 		# Default: 0.0
 		# Range: -100.0 ~ 100.0
-		lightness = 0.3
+		# 05.10: было 0.3 (×1.3) — на свету рассудок восполнялся за 4 мин; теперь ~9 мин
+		lightness = 0.18
 		#Minimum light level considered to be lightness (inclusive)
 		# Default: 4
 		# Range: 0 ~ 15
@@ -133,7 +136,8 @@
 		#Earning an advancement gives this amount of sanity
 		# Default: 20.0
 		# Range: -100.0 ~ 100.0
-		advancement = 20.0
+		# 05.10: было 20 — в паке ~190 модов, достижения сыплются и держали рассудок полным
+		advancement = 3.0
 		#Breeding two animals together gives this amount of sanity
 		# Default: 9.0
 		# Range: -100.0 ~ 100.0
@@ -154,7 +158,8 @@
 		#Players gain this amount of sanity upon successfully trading with a villager
 		# Default: 20.0
 		# Range: -100.0 ~ 100.0
-		villager_trade = 20.0
+		# 05.10: было 20
+		villager_trade = 8.0
 		#Villager trade cooldown (see notes above), real time in seconds
 		# Default: 600.0
 		# Range: 0.0 ~ 3.4028234663852886E38
