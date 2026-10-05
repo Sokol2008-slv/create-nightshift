@@ -93,6 +93,16 @@ function nsSkyCompass(dx, dz) {
 	if (ang < 0) ang += 360
 	return ['север', 'северо-восток', 'восток', 'юго-восток', 'юг', 'юго-запад', 'запад', 'северо-запад'][Math.round(ang / 45) % 8]
 }
+// Стрелка к цели относительно взгляда игрока (yaw Minecraft: 0 — юг, растёт по часовой)
+function nsSkyArrow(p, dx, dz) {
+	try {
+		var want = (Math.atan2(-dx, dz) * 180) / Math.PI
+		var rel = (((want - Number(p.getYRot())) % 360) + 540) % 360 - 180 // −180…180, плюс — вправо
+		return ['↓', '↙', '←', '↖', '↑', '↗', '→', '↘', '↓'][Math.round((rel + 180) / 45)]
+	} catch (e) {
+		return '•'
+	}
+}
 function nsSkyClock(sec) {
 	sec = Math.max(0, Math.round(sec))
 	var m = Math.floor(sec / 60),
@@ -768,16 +778,15 @@ function nsSkyHotTick(level, m, rs) {
 	nsBossbarCreate('nightshift:meteor', 'Метеорит' + (busy ? ' (пауза: набег)' : '') + ': остынет через ' + nsSkyClock(m.left) + (shield ? ' · стража ' + (m.guards - m.killed) + ' из ' + m.guards : ' · щит снят'), 'yellow')
 	nsBossbarMax('nightshift:meteor', Math.max(1, m.total || NS_SKY.coolSec))
 	nsBossbarValue('nightshift:meteor', Math.max(0, m.left))
-	if (m.since % 2 === 0) {
-		for (var q = 0; q < ps.length; q++) {
-			var p = ps[q]
-			var px = m.x - p.getX(),
-				pz = m.z - p.getZ()
-			var pd = Math.round(Math.sqrt(px * px + pz * pz))
-			if (pd < 24) continue
-			if (m.since > 60 && !nsSkyAirborne(p) && pd > 300) continue
-			NSG.nsServer.runCommandSilent('title ' + nsSkyName(p) + ' actionbar ' + JSON.stringify({ text: 'Метеорит: ' + pd + ' бл., ' + nsSkyCompass(px, pz) + ' · остынет через ' + nsSkyClock(m.left), color: 'gold' }))
-		}
+	// навигатор: каждую секунду всем, пешком и в воздухе (05.10, Георгий: «навигатор сломался» — раньше пешим дальше
+	// 300 блоков подсказка пропадала через минуту); стрелка — куда повернуть относительно взгляда
+	for (var q = 0; q < ps.length; q++) {
+		var p = ps[q]
+		var px = m.x - p.getX(),
+			pz = m.z - p.getZ()
+		var pd = Math.round(Math.sqrt(px * px + pz * pz))
+		if (pd < 24) continue
+		NSG.nsServer.runCommandSilent('title ' + nsSkyName(p) + ' actionbar ' + JSON.stringify({ text: nsSkyArrow(p, px, pz) + ' Метеорит: ' + pd + ' бл., ' + nsSkyCompass(px, pz) + ' · остынет через ' + nsSkyClock(m.left), color: 'gold' }))
 	}
 	if (m.left <= 0) return nsSkyCool(level, m, 'остыл')
 	if (m.ore.length && m.mined >= m.ore.length) return nsSkyCool(level, m, 'выработан')
