@@ -42,6 +42,25 @@ RecipeViewerEvents.addInformation('item', function (event) {
 	event.add('nightshift:star_chart', ['Контроллер ракеты, звёздный навигатор, межпланетный навигатор и компьютер наведения Northstar.'])
 })
 
+// Сырьё форпостов (аудит 05.10, раздел Д): раньше путь был только R → рецепт экструдера → месторождение
+RecipeViewerEvents.addInformation('item', function (event) {
+	var raw = [
+		['nightshift:rock_salt', 'Солеварня (пляж)', 'экструдер сверху, вода с двух сторон'],
+		['nightshift:raw_magnetite', 'Магнитная аномалия (горы выше 120)', 'экструдер сверху, сбоку лава и блок железа'],
+		['nightshift:sulfur_crust', 'Серный источник (бесплодные земли, глубокие пещеры)', 'экструдер, сбоку жидкая сера и вода'],
+		['nightshift:quartz_sand', 'Кварцевый карьер (пустыня)', 'экструдер сверху, сбоку песчаник и вода'],
+		['nightshift:helium_frost', 'Высотный конденсатор (горы выше 180)', 'экструдер сверху, по бокам воздух'],
+		['nightshift:cryo_crystal', 'Ледник (ледяные биомы)', 'экструдер сверху, сбоку плотный лёд и вода'],
+		['nightshift:peat', 'Торфяник (болото)', 'экструдер сверху, сбоку вода и грязь'],
+		['nightshift:glowcap', 'Грибные пещеры (грибные поля, пышные пещеры)', 'экструдер сверху, сбоку вода и блок мха'],
+		['nightshift:stardust', 'Обсерватория (пики выше 200)', 'экструдер сверху, по бокам воздух. Ещё — со звездопада'],
+	]
+	raw.forEach(function (r) {
+		event.add(r[0], ['Сырьё форпоста «' + r[1] + '»: ' + r[2] + '.', 'Где искать месторождение — глава «Сеть форпостов» и подсказка JEI на самом месторождении.'])
+	})
+	event.add('minecraft:gunpowder', ['Ванильный порох — только для ТНТ, фейерверков и гранат.', 'Патроны, гильзы и заряды пушек едят оружейный порох: сера + порох + древесный уголь, миксер → 3.'])
+})
+
 ItemEvents.modifyTooltips(function (event) {
 	event.add(['nightshift:hevea_soil', 'nightshift:salt_deposit', 'nightshift:magnetic_anomaly', 'nightshift:sulfur_spring',
 		'nightshift:quartz_vein', 'nightshift:bauxite_deposit', 'nightshift:helium_ice', 'nightshift:permafrost', 'nightshift:peat_bog',

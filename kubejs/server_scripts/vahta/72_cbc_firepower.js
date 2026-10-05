@@ -108,6 +108,6 @@ ServerEvents.recipes(function (event) {
 		'createbigcannons:ap_autocannon_round', 'createbigcannons:filled_autocannon_cartridge', '#c:ingots/steel'
 	]).id('nightshift:vahta/cbc_firepower/large_autocannon_round')
 	event.shapeless('2x cbc_firepower_components:large_autocannon_he_round', [
-		'createbigcannons:flak_autocannon_round', 'createbigcannons:filled_autocannon_cartridge', '#c:ingots/steel', 'minecraft:gunpowder'
+		'createbigcannons:flak_autocannon_round', 'createbigcannons:filled_autocannon_cartridge', '#c:ingots/steel', '#c:gunpowders'
 	]).id('nightshift:vahta/cbc_firepower/large_autocannon_he_round')
 })

@@ -35,15 +35,15 @@ ServerEvents.recipes(event => {
 	]).id('nightshift:projecte/transmutation_table')
 	event.shaped('projecte:collector_mk1', ['GEG', 'GSG', 'GMG'], {
 		G: 'minecraft:glowstone',
-		E: 'tfmg:electric_motor',
+		E: 'createaddition:electric_motor',
 		S: '#c:storage_blocks/diamond',
-		M: 'tfmg:steel_ingot',
+		M: '#c:ingots/steel',
 	}).id('nightshift:projecte/collector_mk1')
 	event.shaped('projecte:relay_mk1', ['OEO', 'OSO', 'OMO'], {
 		O: '#c:obsidians/normal',
-		E: 'tfmg:electric_motor',
+		E: 'createaddition:electric_motor',
 		S: '#c:storage_blocks/diamond',
-		M: 'tfmg:steel_ingot',
+		M: '#c:ingots/steel',
 	}).id('nightshift:projecte/relay_mk1')
 	// базовое звено EMC: как у Project Expansion (пыль ковалентности ×6, 2 планшета), но реле mk1 вместо
 	// конденсатора mk1. Миксер, как остальные фигурные рецепты на вахте (vahta/10_machine_recipes.js)

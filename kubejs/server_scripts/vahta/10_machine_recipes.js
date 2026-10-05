@@ -1644,8 +1644,8 @@ var vahtaMixRecipes = [
 	['nightshift:vahta/mix/pipeorgans/crafting/windchest', '6x pipeorgans:windchest', ['create:fluid_pipe', 'minecraft:oak_planks', 'minecraft:redstone', 'minecraft:spruce_slab']],
 	['nightshift:vahta/mix/pipeorgans/crafting/windchest_master', 'pipeorgans:windchest_master', ['3x #c:ingots/zinc', '2x minecraft:oak_planks', 'minecraft:redstone', 'minecraft:spruce_slab']],
 	// --- projecte (72) ---
-	['nightshift:vahta/mix/nightshift/projecte/collector_mk1', 'projecte:collector_mk1', ['#c:storage_blocks/diamond', '6x minecraft:glowstone', 'tfmg:electric_motor', 'tfmg:steel_ingot']],
-	['nightshift:vahta/mix/nightshift/projecte/relay_mk1', 'projecte:relay_mk1', ['6x #c:obsidians/normal', '#c:storage_blocks/diamond', 'tfmg:electric_motor', 'tfmg:steel_ingot']],
+	['nightshift:vahta/mix/nightshift/projecte/collector_mk1', 'projecte:collector_mk1', ['#c:storage_blocks/diamond', '6x minecraft:glowstone', 'createaddition:electric_motor', '#c:ingots/steel']],
+	['nightshift:vahta/mix/nightshift/projecte/relay_mk1', 'projecte:relay_mk1', ['6x #c:obsidians/normal', '#c:storage_blocks/diamond', 'createaddition:electric_motor', '#c:ingots/steel']],
 	['nightshift:vahta/mix/nightshift/vahta/projecte/interdiction_torch', 'projecte:interdiction_torch', ['3x #c:dusts/glowstone', '3x #c:gems/diamond', 'create:precision_mechanism', '2x minecraft:redstone_torch']],
 	['nightshift:vahta/mix/projecte/alchemical_chest', 'projecte:alchemical_chest', ['#c:chests/wooden', '#c:gems/diamond', '2x #c:ingots/iron', '2x #c:stones', 'projecte:high_covalence_dust', 'projecte:low_covalence_dust', 'projecte:medium_covalence_dust']],
 	['nightshift:vahta/mix/projecte/arcana_ring', 'projecte:arcana_ring', ['projecte:harvest_goddess_band', 'projecte:ignition_ring', '5x projecte:red_matter', 'projecte:swiftwolf_rending_gale', 'projecte:zero_ring']],
