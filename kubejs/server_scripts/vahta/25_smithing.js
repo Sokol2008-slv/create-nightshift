@@ -8,6 +8,9 @@
 // [id рецепта стола, шаблон | null, вещь, добавка, результат]
 // ==========================================================================
 var NS_VAHTA_SMITHING = [
+	// Sophisticated Backpacks (05.10, Георгий: «не выходит скрафтить незеритовый рюкзак»): свой тип рецепта стола
+	// smithing_backpack_upgrade в список не попал; компоненты (содержимое рюкзака) переносятся, как у остальных
+	['sophisticatedbackpacks:netherite_backpack', 'minecraft:netherite_upgrade_smithing_template', 'sophisticatedbackpacks:diamond_backpack', 'minecraft:netherite_ingot', 'sophisticatedbackpacks:netherite_backpack'],
 	// броня из межпланетного сплава (01.10): сплав | незеритовая вещь | сплав
 	['nightshift:alloy_armor/helmet', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_helmet', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_helmet'],
 	['nightshift:alloy_armor/chestplate', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_chestplate', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_chestplate'],
@@ -152,14 +155,23 @@ var NS_ARMOR_TRIM = Java.loadClass('net.minecraft.world.item.armortrim.ArmorTrim
 var NS_DATA_COMPONENTS = Java.loadClass('net.minecraft.core.component.DataComponents')
 var NS_LIFECYCLE = Java.loadClass('net.neoforged.neoforge.server.ServerLifecycleHooks')
 
-// e.exit() бросает служебное исключение KubeJS — вызывать его ВНЕ try, иначе catch его съест
+// e.exit() бросает служебное исключение KubeJS — вызывать его ВНЕ try, иначе catch его съест.
+// Ряд крафтеры принимают и зеркально («материал | броня | шаблон»), поэтому шаблон и материал ищем по обоим краям
+// (05.10: у Георгия узор не лёг — шаблон стоял справа).
 ServerEvents.modifyRecipeResult(NS_VAHTA_TRIM_KEY, e => {
 	var out = e.grid.getItem(1).copyWithCount(1)
 	try {
 		var reg = NS_LIFECYCLE.getCurrentServer().registryAccess()
-		var pat = NS_TRIM_PATTERNS.getFromTemplate(reg, e.grid.getItem(0))
-		var mat = NS_TRIM_MATERIALS.getFromIngredient(reg, e.grid.getItem(2))
+		var a = e.grid.getItem(0),
+			c = e.grid.getItem(2)
+		var pat = NS_TRIM_PATTERNS.getFromTemplate(reg, a)
+		var mat = NS_TRIM_MATERIALS.getFromIngredient(reg, c)
+		if (!pat.isPresent() || !mat.isPresent()) {
+			pat = NS_TRIM_PATTERNS.getFromTemplate(reg, c)
+			mat = NS_TRIM_MATERIALS.getFromIngredient(reg, a)
+		}
 		if (pat.isPresent() && mat.isPresent()) out.set(NS_DATA_COMPONENTS.TRIM, new NS_ARMOR_TRIM(mat.get(), pat.get()))
+		else console.warn('[vahta] отделка брони: не распознаны шаблон/материал: ' + a.getId() + ', ' + c.getId())
 	} catch (x) {
 		console.error('[vahta] отделка брони: ' + x)
 	}

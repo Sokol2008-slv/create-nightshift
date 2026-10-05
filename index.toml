@@ -2290,7 +2290,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/25_smithing.js"
-hash = "3d3d961af13edc648ff2610c82715540c963fd206e8be8cba13745507f9ef9a3"
+hash = "80ade8300992f445948d2ab96208f3f5eb776c4d71e73b8680d9d28528229ed6"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
