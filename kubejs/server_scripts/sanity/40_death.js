@@ -1,6 +1,7 @@
 // ==========================================================================
 // Ночная смена — цена смерти. Вещи остаются (keepInventory), но:
 //  - каждая смерть — рана: −1 сердце максимального здоровья (до woundMax), лечит «Настойка жизни»;
+//    без раны — смерть от своей техники и союзников (nsFairDeathReason);
 //  - рассудок при возрождении не сбрасывается: какой был в момент смерти, такой и остаётся,
 //    но не ниже deathSanityFloor (40%) — иначе ночью умирали бы по кругу.
 //    Если убила тьма (рассудок около нуля, урон из 20_darkness.js) — даём немного сверху,
@@ -10,13 +11,46 @@
 
 var NS_TONIC_RESTORE = 1 // ран за одну настойку
 
+// «Честная смерть» (3.4.0, аудит 05.10: из 49 смертей 8 — от своих машин, 5 — от союзников):
+// свои машины Create и аддонов, турели и пушки базы, союзник (игрок, приручённый питомец, дракон) — смерть без раны.
+var NS_FAIR_DEATH_TYPES = /^(create|createaddition|create_new_age|tfmg|createbigcannons|create_sa|axiomativ|immersive_aircraft):/
+var NS_OWNABLE = Java.loadClass('net.minecraft.world.entity.OwnableEntity')
+
+function nsFairDeathReason(src) {
+	if (!src) return null
+	try {
+		var type = String(src.typeHolder().getRegisteredName())
+		if (NS_FAIR_DEATH_TYPES.test(type)) return 'своя техника'
+	} catch (e) {}
+	try {
+		// KubeJS 2101 переименовывает getEntity → getActual: перебор имён (как nsNfAttacker в raids/07)
+		var killer = null
+		var names = ['getActual', 'getEntity']
+		for (var i = 0; i < names.length && killer == null; i++) {
+			try {
+				var f = src[names[i]]
+				if (typeof f === 'function') killer = f.call(src)
+			} catch (x) {}
+		}
+		if (!killer) return null
+		if (killer.isPlayer()) return 'союзник'
+		// мобы набега не бывают приручены, а питомцы и драконы — да
+		if (killer.getTags().contains('nightshift_raid')) return null
+		if (killer instanceof NS_OWNABLE && killer.getOwnerUUID() != null) return 'союзник'
+	} catch (e) {}
+	return null
+}
+
 EntityEvents.death('minecraft:player', event => {
 	var player = event.getEntity()
 	var name = String(player.getUsername())
 	var st = nsGetState()
 	st.wounds = st.wounds || {}
 	st.deathSanity = st.deathSanity || {}
-	st.wounds[name] = Math.min(NSG.NIGHTSHIFT_TUNABLES.woundMax, (st.wounds[name] || 0) + 1)
+	st.fairDeath = st.fairDeath || {}
+	var fair = nsFairDeathReason(event.getSource())
+	if (fair) st.fairDeath[name] = fair
+	else st.wounds[name] = Math.min(NSG.NIGHTSHIFT_TUNABLES.woundMax, (st.wounds[name] || 0) + 1)
 	var dark = false
 	try {
 		var pd = player.persistentData
@@ -46,7 +80,12 @@ PlayerEvents.respawned(event => {
 		nsSaveState(st)
 	}
 	var w = (st.wounds || {})[name] || 0
-	if (w > 0) {
+	var fair = st.fairDeath ? st.fairDeath[name] : null
+	if (fair) {
+		delete st.fairDeath[name]
+		nsSaveState(st)
+		player.tell(Text.green('[Ночная смена] Смерть без раны: ' + fair + '.').append(Text.gray(w > 0 ? ' Старых ран: ' + w + '.' : '')))
+	} else if (w > 0) {
 		player.tell(
 			Text.red('[Ночная смена] Рана: −' + w + ' серд. максимального здоровья. ')
 				.append(Text.gray('Лечит «Настойка жизни» (одна рана за настойку). Рассудок после смерти не восстанавливается.'))
