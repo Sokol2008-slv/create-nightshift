@@ -119,6 +119,7 @@ function nsNskyStart(st, ev, why) {
 		nsNskyTitle('Северное сияние', 'green', 'Под открытым небом спокойнее')
 		NSG.nsServer.runCommandSilent('execute in minecraft:overworld as @a[distance=0..] at @s run playsound minecraft:block.beacon.ambient ambient @s ~ ~ ~ 1 1.4')
 	}
+	if (typeof nsJournal === 'function') nsJournal('sky', ev === 'starfall' ? 'Ночь звездопада' : 'Северное сияние', ev === 'starfall' ? 'aqua' : 'green')
 	console.info('[night-sky] событие ' + ev + ' (' + why + ')')
 }
 function nsNskyEnd(st, why) {

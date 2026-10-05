@@ -138,11 +138,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "7f8fc6f2d4c01ca2ae3b991722bbd9e72226409826fea22159b48e23c152f547"
+hash = "1f7538e6e2940bc3cf2e143ccab69f8e51c93406590bea8b3a30e48b56cec5f9"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "7f8fc6f2d4c01ca2ae3b991722bbd9e72226409826fea22159b48e23c152f547"
+hash = "1f7538e6e2940bc3cf2e143ccab69f8e51c93406590bea8b3a30e48b56cec5f9"
 
 [[files]]
 file = "config/iris.properties"
@@ -2305,6 +2305,10 @@ file = "kubejs/server_scripts/sanity/50_hurt_fix.js"
 hash = "59b4a2a191de6f4ae614592435d4b05451f31fd83eefbe7fa0c34f54e8dcf911"
 
 [[files]]
+file = "kubejs/server_scripts/shift/10_journal.js"
+hash = "9e243f7718d3fcadf9de666750bbfe1beded182dfe00e542fb83cd76c3fe3c59"
+
+[[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
 hash = "6b216bad66d1ab682842eaa87cf64a21ca5414c3b8a65e82cda6c1b73b9bcfd2"
 
@@ -2318,7 +2322,7 @@ hash = "78d9518eeba7d991e02bd8d1bd0e91fc22a2dc7ffc081e92640e92a9bef04aac"
 
 [[files]]
 file = "kubejs/server_scripts/sky/40_night_sky.js"
-hash = "55a41fbe3d526557bccddf7c01d2181fd3aa3592ffe96453b7f058da04bd3de1"
+hash = "41d00b5604bdeb80d8fa9852e20451fc1342db76813a42da10f501765a60541f"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/10_machine_recipes.js"
