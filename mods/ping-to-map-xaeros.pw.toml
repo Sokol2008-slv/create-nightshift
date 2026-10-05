@@ -1,0 +1,13 @@
+name = "Ping to Map: Xaero's Minimap"
+filename = "pingtomapxaeros-1.1.1-neoforge-1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/8YgFuv6f/versions/atdjqfn3/pingtomapxaeros-1.1.1-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "56e4a6a3123ef67d497221840f4df5b391dd96fa694d1bd4c07b8832592ad422308e65f93e7d0c2179c9252fbbfa695616c50f1dbea1bd15f4fd5cb37de04bc4"
+
+[update]
+[update.modrinth]
+mod-id = "8YgFuv6f"
+version = "atdjqfn3"

@@ -190,5 +190,16 @@
 			x: 2.40d
 			y: 11.95d
 		}
+		{
+			dependencies: ["1DC2DCB789843948"]
+			id: "19D4BB73C55E6276"
+			optional: true
+			rewards: [{ id: "042A1D1596FB5A3F", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "42DDA60647946476", item: { count: 1, id: "nightshift:deposit_atlas" }, type: "item" }]
+			x: -1.80d
+			y: 1.60d
+		}
 	]
 }

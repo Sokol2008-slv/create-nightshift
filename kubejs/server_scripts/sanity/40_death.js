@@ -6,9 +6,66 @@
 //    Если убила тьма (рассудок около нуля, урон из 20_darkness.js) — даём немного сверху,
 //    чтобы не умирать по кругу.
 // Раны и проклятие алтаря применяет nsApplyPenalty (raids/10_nightshift_state.js).
+//
+// 05.10 (поток W, аудит: «из 49 смертей на Вахте 16 — падения, 8 — свои машины, 5 — союзники»; сердца просили вернуть
+// 4 раза): рана — только за смерть от монстра (враждебный моб или моб набега, в том числе его стрела). Падение, лава,
+// утопление, тьма, свои машины (пила, вентилятор, FakePlayer деплоера и турелей), союзники (игроки, дракон, големы,
+// питомцы и призванные игроком) — без раны. Каждая победа в набеге затягивает одну рану (raids/40_, nsHealWoundsOnWin).
 // ==========================================================================
 
 var NS_TONIC_RESTORE = 1 // ран за одну настойку
+var NS_DEATH_ENEMY = Java.loadClass('net.minecraft.world.entity.monster.Enemy')
+
+// Смерть «от монстра»: враждебный моб (или его снаряд), не призванный игроком; моб набега — всегда
+function nsDeathByMonster(src) {
+	var by = null
+	try {
+		by = typeof nsNfAttacker === 'function' ? nsNfAttacker(src) : null
+	} catch (e) {}
+	if (by == null) return false
+	try {
+		if (by.isPlayer()) return false // другой игрок или FakePlayer машины
+	} catch (e) {}
+	try {
+		if (by.getTags().contains('nightshift_raid')) return true
+	} catch (e) {}
+	if (!(by instanceof NS_DEATH_ENEMY)) return false
+	try {
+		var owner = by.getOwner ? by.getOwner() : null
+		if (owner != null && owner.isPlayer()) return false // призван игроком
+	} catch (e) {}
+	return true
+}
+
+// «Честная смерть» (3.4.0, аудит 05.10: из 49 смертей 8 — от своих машин, 5 — от союзников):
+// свои машины Create и аддонов, турели и пушки базы, союзник (игрок, приручённый питомец, дракон) — смерть без раны.
+var NS_FAIR_DEATH_TYPES = /^(create|createaddition|create_new_age|tfmg|createbigcannons|create_sa|axiomativ|immersive_aircraft):/
+var NS_OWNABLE = Java.loadClass('net.minecraft.world.entity.OwnableEntity')
+
+function nsFairDeathReason(src) {
+	if (!src) return null
+	try {
+		var type = String(src.typeHolder().getRegisteredName())
+		if (NS_FAIR_DEATH_TYPES.test(type)) return 'своя техника'
+	} catch (e) {}
+	try {
+		// KubeJS 2101 переименовывает getEntity → getActual: перебор имён (как nsNfAttacker в raids/07)
+		var killer = null
+		var names = ['getActual', 'getEntity']
+		for (var i = 0; i < names.length && killer == null; i++) {
+			try {
+				var f = src[names[i]]
+				if (typeof f === 'function') killer = f.call(src)
+			} catch (x) {}
+		}
+		if (!killer) return null
+		if (killer.isPlayer()) return 'союзник'
+		// мобы набега не бывают приручены, а питомцы и драконы — да
+		if (killer.getTags().contains('nightshift_raid')) return null
+		if (killer instanceof NS_OWNABLE && killer.getOwnerUUID() != null) return 'союзник'
+	} catch (e) {}
+	return null
+}
 
 EntityEvents.death('minecraft:player', event => {
 	var player = event.getEntity()
@@ -16,7 +73,21 @@ EntityEvents.death('minecraft:player', event => {
 	var st = nsGetState()
 	st.wounds = st.wounds || {}
 	st.deathSanity = st.deathSanity || {}
-	st.wounds[name] = Math.min(NSG.NIGHTSHIFT_TUNABLES.woundMax, (st.wounds[name] || 0) + 1)
+	st.fairDeath = st.fairDeath || {}
+	// рана — только за смерть от монстра (поток W); причина без раны — для строки после возрождения
+	var wound = true
+	try {
+		wound = nsDeathByMonster(event.getSource())
+	} catch (e) {}
+	var fair = null
+	try {
+		fair = nsFairDeathReason(event.getSource())
+	} catch (e) {}
+	if (fair) wound = false
+	if (wound) {
+		st.wounds[name] = Math.min(NSG.NIGHTSHIFT_TUNABLES.woundMax, (st.wounds[name] || 0) + 1)
+		delete st.fairDeath[name]
+	} else st.fairDeath[name] = fair || 'не от монстра'
 	var dark = false
 	try {
 		var pd = player.persistentData
@@ -46,10 +117,15 @@ PlayerEvents.respawned(event => {
 		nsSaveState(st)
 	}
 	var w = (st.wounds || {})[name] || 0
-	if (w > 0) {
+	var fair = st.fairDeath ? st.fairDeath[name] : null
+	if (fair) {
+		delete st.fairDeath[name]
+		nsSaveState(st)
+		player.tell(Text.green('[Ночная смена] Смерть без раны: ' + fair + '.').append(Text.gray(w > 0 ? ' Старых ран: ' + w + '.' : '')))
+	} else if (w > 0) {
 		player.tell(
 			Text.red('[Ночная смена] Рана: −' + w + ' серд. максимального здоровья. ')
-				.append(Text.gray('Лечит «Настойка жизни» (одна рана за настойку). Рассудок после смерти не восстанавливается.'))
+				.append(Text.gray('Лечит «Настойка жизни» или победа в набеге (рана за победу). Рассудок после смерти не восстанавливается.'))
 		)
 	}
 })

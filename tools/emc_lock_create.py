@@ -23,7 +23,9 @@ FAMILY_MODS = {'tfmg', 'railways', 'northstar', 'cbc_at', 'aeronautics', 'simula
                'cbc_firepower_components'}  # 01.10: CBC Firepower Components — лафеты, подача, магазины
 RAW_RE = re.compile(r'(_ore$|^raw_|_raw_|:raw_)')
 # ручные нули вне семейства Create (генератор пересоздаёт все нулевые записи — эти добавляет всегда)
-MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart', 'nightshift:electric_copper']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
+MANUAL_ZERO = ['minecraft:nether_star', 'nightshift:life_tonic', 'nightshift:night_heart', 'nightshift:electric_copper',
+               'nightshift:herbal_tea', 'nightshift:fallen_star', 'nightshift:star_shard', 'nightshift:star_lamp',
+               'nightshift:deposit_atlas']  # 29.09: звезду, настойку жизни и сердце ночи — не продать и не купить
 # 04.10: конденсаторы убраны (рецептов нет, поставленные не работают — аддон 0.5.0), интерфейс трансмутации —
 # тоже (его рецепт из конденсаторов mk2): ни купить, ни продать
 MANUAL_ZERO += ['projecte:condenser_mk1', 'projecte:condenser_mk2', 'projectexpansion:condenser_mk3',

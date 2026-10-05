@@ -15,6 +15,12 @@
 //     «Побег» — появляется неубиваемый Пожиратель; вся команда должна добраться до точки эвакуации в 350–600 блоках
 //       (машина, самолёт, поезд — что угодно) до конца таймера.
 //     «Штурм гнезда» — вдали появляется гнездо ArPhEx с маткой и стражей; долететь и убить матку до конца таймера.
+//  3) НОВЫЕ (05.10, поток W; логика — 47_special_stages_2.js), все с обычными подволнами, идут и на арене:
+//     «Ритуал» (21, 51) — зарядить алтарь: кто-то стоит в круге у алтаря, пока рядом нет мобов; орда идёт по кругу;
+//     «Охота на вожаков» (29, 53) — вожаки стоят у кольца выхода орды и усиливают её; орда идёт, пока вожаки живы;
+//     «Гидра» (33, 59) — убитый моб делится на двоих поменьше;
+//     «Поединок» (39, 61) — каждому защитнику свой чемпион, ранить его может только он сам; орда — вполсилы;
+//     «Удержание рубежей» (47, 67) — три рубежа у алтаря: орда идёт на них, а не на алтарь; все три пали — провал.
 // За первое прохождение каждой особой стадии — ключевой предмет (NS_WAVE_MILESTONES) и гарантированный артефакт.
 // Хуки: nsChallengeHorde → NSG.nsSpecialFor (40_), старт/тик сценария — nsScenarioStart / nsScenarioTick (40_),
 // запрет сценария на арене — nsStartChallenge (50_), прогноз — nsSpecialForecast (30_).
@@ -48,6 +54,17 @@ NSG.NS_SPECIAL_STAGES = {
 	64: nsSs('immune', 'tesla', 'Механоиды III', 'Только ток.'),
 	66: nsSs('scenario', 'nest', 'Штурм гнезда III', 'Гнездо-крепость.'),
 	68: nsSs('immune', 'turrets', 'Бронеколонна III', 'Только машины.'),
+	// новые (05.10, поток W) — 47_special_stages_2.js
+	21: nsSs('ritual', 'ritual', 'Ритуал', 'Зарядить алтарь: кто-то стоит в круге у алтаря (4 блока), пока рядом нет мобов. Орда идёт по кругу, пока ритуал не кончится.'),
+	29: nsSs('leaders', 'leaders', 'Охота на вожаков', 'У кольца выхода орды стоят вожаки и злят её. Пока вожаки живы, орда идёт по кругу — нужна вылазка за стены.'),
+	33: nsSs('split', 'split', 'Гидра', 'Убитый моб делится на двоих поменьше. Бей по площади: огнемёт, взрывы, размашистый меч.'),
+	39: nsSs('duel', 'duel', 'Поединок', 'Каждому защитнику — свой чемпион: ранить его может только он сам, турели и друзья не помогут. Орда тем временем идёт вполсилы.'),
+	47: nsSs('hold', 'hold', 'Удержание рубежей', 'У алтаря три рубежа: орда идёт на них, а не на алтарь. Стоит моб на рубеже без защитника — рубеж падает. Пали все три — провал.'),
+	51: nsSs('ritual', 'ritual', 'Ритуал II', 'Заряд медленнее, орда злее.'),
+	53: nsSs('leaders', 'leaders', 'Охота на вожаков II', 'Вожаков больше, они толще.'),
+	59: nsSs('split', 'split', 'Гидра II', 'Половинки крепче.'),
+	61: nsSs('duel', 'duel', 'Поединок II', 'Чемпионы сильнее.'),
+	67: nsSs('hold', 'hold', 'Удержание рубежей II', 'Держать дольше.'),
 }
 NSG.NS_SPECIAL_KEYS = { tesla: 'nightshift:coil_core', air: 'nightshift:afterburner_blueprint', turrets: 'nightshift:otk_armor_plate', escape: 'nightshift:runner_badge', magic: 'nightshift:spirit_essence', nest: 'nightshift:queen_heart', invis: 'nightshift:prism_lens', siege: 'nightshift:bastion_core', convoy: 'nightshift:convoy_seal' }
 NSG.NS_SPECIAL_KEY_TEXT = {
@@ -60,11 +77,24 @@ NSG.NS_SPECIAL_KEY_TEXT = {
 	invis: 'Призменная линза — для оптики: прожекторы и прицелы следующего уровня',
 	siege: 'Ядро бастиона — для обороны форпостов',
 	convoy: 'Пломба конвоя — для грузовой логистики следующего уровня',
+	ritual: 'две Настойки жизни и осколки орды',
+	leaders: 'осколки орды и тотем бессмертия',
+	split: 'осколки орды и бутыльки опыта',
+	duel: 'тотем бессмертия — за честный поединок',
+	hold: 'осколки орды и зонд жилы',
+}
+// Награда новых стадий — готовые предметы (свои ключевые предметы им не нужны)
+NSG.NS_SPECIAL_REWARD = {
+	ritual: [['nightshift:life_tonic', 2], ['nightshift:horde_shard', 8]],
+	leaders: [['nightshift:horde_shard', 12], ['minecraft:totem_of_undying', 1]],
+	split: [['nightshift:horde_shard', 12], ['minecraft:experience_bottle', 32]],
+	duel: [['minecraft:totem_of_undying', 1]],
+	hold: [['nightshift:horde_shard', 12], ['nightshift:vein_seed_gold', 1]],
 }
 // вехи первого прохождения: ключевой предмет каждой особой стадии
 for (var nsSw in NSG.NS_SPECIAL_STAGES) {
 	var nsSd = NSG.NS_SPECIAL_STAGES[nsSw]
-	if (!NSG.NS_WAVE_MILESTONES[nsSw]) NSG.NS_WAVE_MILESTONES[nsSw] = { items: [[NSG.NS_SPECIAL_KEYS[nsSd.key], 1]], text: NSG.NS_SPECIAL_KEY_TEXT[nsSd.key] + ' (особая стадия «' + nsSd.name + '»)' }
+	if (!NSG.NS_WAVE_MILESTONES[nsSw]) NSG.NS_WAVE_MILESTONES[nsSw] = { items: NSG.NS_SPECIAL_REWARD[nsSd.key] || [[NSG.NS_SPECIAL_KEYS[nsSd.key], 1]], text: NSG.NS_SPECIAL_KEY_TEXT[nsSd.key] + ' (особая стадия «' + nsSd.name + '»)' }
 }
 
 // Особая стадия поверх состава волны d. Сценарий — без подволн (своя логика), неуязвимость — те же подволны с меткой.
@@ -76,7 +106,19 @@ NSG.nsSpecialFor = function (d, cfg) {
 	out.special = sp
 	out.name = sp.name
 	if (sp.kind === 'immune') out.immunity = sp.key
-	else if (sp.kind === 'siege') {
+	else if (sp.kind === 'ritual' || sp.kind === 'leaders' || sp.kind === 'hold') {
+		// по кругу, без босса: исход решает стадия (47_special_stages_2.js)
+		out.loop = true
+		out.loopEvery = sp.kind === 'leaders' ? 0 : 45
+		out.boss = null
+		out.bossExtra = []
+	} else if (sp.kind === 'split') {
+		out.split = true
+		out.mult = (cfg.mult || 1) * 0.7 // половинки (+80 % здоровья убитого) доберут своё — орда на треть меньше
+	} else if (sp.kind === 'duel') {
+		out.holdVictory = true // подволны кончились — ждём, пока все выиграют свои поединки
+		out.mult = (cfg.mult || 1) * 0.5
+	} else if (sp.kind === 'siege') {
 		out.siege = true // состав обычный, цель — форпост (46_outpost_siege.js, nsStartChallenge)
 	} else if (sp.kind === 'invis') {
 		out.invis = true // подволны те же, мобы невидимы (nsBoostRaidMobs)
@@ -104,6 +146,7 @@ function nsSpecialForecast(horde, d) {
 		lines.push(no > 0 ? 'Форпостов в сети: ' + no + ' — орда выберет один. Список — /outposts.' : 'В сети форпостов пусто — стадию не начать: поставьте механический экструдер на месторождение.')
 	}
 	if (sp.kind === 'invis') lines.push('Нужен прожектор (аддон Axiomativ): в луче мобы видны и светятся ещё 5 с.')
+	if (typeof nsSp2Forecast === 'function') lines = lines.concat(nsSp2Forecast(sp, d))
 	if (sp.kind === 'scenario') {
 		var p = nsScenarioParams(sp.key, d)
 		lines.push('Таймер: ' + Math.round(p.time / 60) + ' мин. Только у алтаря базы под открытым небом.')
@@ -783,7 +826,7 @@ ServerEvents.tick(event => {
 })
 
 // Сироты сценариев: обоз, ульи, стража, Пожиратель от прошлого набега всплывают при загрузке чанка — убираем
-var NS_SS_ORPHAN_TAGS = ['ns_convoy', 'ns_hive', 'ns_queen', 'ns_guard', 'ns_chaser', 'ns_marker', 'ns_ambush', 'ns_hivespawn']
+var NS_SS_ORPHAN_TAGS = ['ns_convoy', 'ns_hive', 'ns_queen', 'ns_guard', 'ns_chaser', 'ns_marker', 'ns_ambush', 'ns_hivespawn', 'ns_hold_pt', 'ns_leader', 'ns_duel']
 EntityEvents.spawned(event => {
 	try {
 		var e = event.entity

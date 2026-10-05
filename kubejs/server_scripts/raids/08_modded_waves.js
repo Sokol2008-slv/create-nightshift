@@ -19,12 +19,26 @@
 // ломают, паутину не ставят. Мирные мобы Northstar (улитка, черепаха, тихоход, жаба, угорь, мимик, бык) не берём —
 // стоят на месте. HP — из атрибутов модов (javap createAttributes) и /data get … Health.
 // Мобы ArPhEx исчезают сами, если в 75 блоках нет игрока (их тик-процедура) — у алтаря защитники рядом всегда.
+//
+// 05.10 (поток W; 16-ю провалили 02.10 — паучий выводок заполз на алтарь, после 4,5 минуты боя, «найти пауков анрил»,
+// «лагает — пауки спавнят мелких»; с тех пор новых волн не было):
+//  - вход плавный: 16–19 — переходные (модовые 2 → 5 подволн из 6, остальные — ванильные подволны якоря), бюджет
+//    модовой подволны 0,7 → 0,95 до 21-й (NS_MOD_ENTRY, nsMwMixVanilla);
+//  - «цена угрозы» (cost) у мелких опасных мобов: шныря на 16-й было 37 в одной подволне, стало ~11 (на троих);
+//  - выводок — с 23-й, подрывники на премьере 18-й — 5 на игрока (было 8), в подволнах — с 19-й;
+//  - строка «Готовьтесь» у премьер 16–20 (prep), премьеры, съеденные сценариями, выходят на следующей волне;
+//  - гастроли (NS_MOD_GUESTS): маги и древняя стража Iron's Spells, глубоководные Cataclysm, крылатые термиты;
+//  - варианты боссов для фарма (alt): на повторах волны — Магистры цитадели, Мёртвый король, Эхо Тироса.
 // ==========================================================================
 
-// Моб модов: ключ, id, базовое HP, русское имя, совет на премьеру; opt — nbt, tags, flyer, kamikaze
+// Моб модов: ключ, id, базовое HP, русское имя, совет на премьеру; opt — nbt, tags, flyer, heavy, cost, caster.
+// cost — «цена угрозы» для бюджета подволны (05.10, поток W): у мелких, но опасных (лезут по стенам, плодят детёнышей,
+// бегут быстрее игрока) здоровье не отражает угрозу — 16-ю провалили 37 паучьих шнырей + 16 выводков в первой же
+// подволне (бюджет 420 HP / 15 HP шныря). Число моба в подволне считается по max(hp, cost).
+// caster — колдун (гастроли «Шабаш» и др.): метка досье «Колдуны», в «стаю» не берётся.
 function nsMm(key, id, hp, name, tip, opt) {
 	opt = opt || {}
-	NSG.NS_MOD_MOBS[key] = { key: key, id: id, hp: hp, name: name, tip: tip || '', nbt: opt.nbt || '', tags: opt.tags || null, flyer: !!opt.flyer, heavy: !!opt.heavy }
+	NSG.NS_MOD_MOBS[key] = { key: key, id: id, hp: hp, name: name, tip: tip || '', nbt: opt.nbt || '', tags: opt.tags || null, flyer: !!opt.flyer, heavy: !!opt.heavy, cost: opt.cost || 0, caster: !!opt.caster }
 }
 NSG.NS_MOD_MOBS = {}
 // Летуны: долетев до алтаря, не «проваливают» набег (как фантомы) — пикируют на защитников; стены не грызут
@@ -107,20 +121,43 @@ nsMmVariant('reaper_ghost', 'reaper', 275, 'Невидимый жнец', 'Жн�
 nsMmVariant('goliath_titan', 'goliath', 600, 'Голиаф-титан', 'Голиаф вдвое больше и втрое крепче. Пушки по готовности.', '', { scale: 2 })
 nsMmVariant('mantis_rage', 'mantis', 240, 'Бешеный богомол', 'Богомол со скоростью II и силой. Не подпускай.', NS_MM_RAGE)
 nsMmVariant('crab_king', 'crab', 700, 'Краб-владыка', 'Краб-душитель величиной с дом. Всё оружие — по нему.', '', { scale: 1.8 })
+// --- гастроли (05.10, поток W): мобы других модов, которых раньше в набегах не было. Проверено на тестовом сервере
+// 05.10 без игрока: призываются /summon с NBT, 15 с не исчезают сами, по пути к цели идут (moveTo, ровная площадка),
+// враждебны (Enemy). Пиромант, криомант и аптекарь Iron's Spells НЕ взяты — нейтральные, сами не нападают;
+// глубинник-удильщик и Коралссус не идут к цели (стоят в засаде); ледяной паук — броня 20. Заклинания Iron's Spells
+// блоки не ломают и не жгут (spellGriefing = false в irons_spellbooks-server.toml).
+nsMm('necromancer', 'irons_spellbooks:necromancer', 25, 'Некромант', 'Поднимает мертвецов и прячется за ними. Его — первым: стрелы, турели, тесла.', { cost: 70, caster: true })
+nsMm('cultist', 'irons_spellbooks:cultist', 60, 'Культист', 'Колдует кровью из-за спин орды. Стрелки и турели — по нему первым.', { cost: 75, caster: true })
+nsMm('archevoker', 'irons_spellbooks:archevoker', 60, 'Архизаклинатель', 'Клыки из-под земли и рой вредин. Убей, пока он не начал колдовать.', { cost: 90, caster: true })
+nsMm('catacombs_zombie', 'irons_spellbooks:catacombs_zombie', 20, 'Мертвец катакомб', 'Пехота некромантов в броне. Толпой — к стене.', { cost: 25 })
+nsMm('citadel_keeper', 'irons_spellbooks:citadel_keeper', 60, 'Древний рыцарь', 'Медленный, но меч бьёт на 10. Бей и отходи, не стой под ударом.', { cost: 80 })
+nsMm('magehunter', 'irons_spellbooks:magehunter_vindicator', 24, 'Охотник на магов', 'Быстрый поборник с топором: бежит к тем, кто колдует. Встречай клинком.', { cost: 40 })
+nsMm('ice_spider', 'irons_spellbooks:ice_spider', 50, 'Ледяной паук', 'Броня 20: стрелы и слабые удары почти не берут. Огонь, тяжёлое оружие, пушки.', { cost: 110 })
+nsMm('hippocamtus', 'cataclysm:hippocamtus', 85, 'Гиппокамт', 'Морской рыцарь: броня 15, удар на 10. Пушки и тяжёлое оружие.', { cost: 130 })
+nsMm('cindaria', 'cataclysm:cindaria', 60, 'Синдария', 'Тварь затонувшего акрополя, удар на 7. Держи строй.')
+nsMm('urchinkin', 'cataclysm:urchinkin', 12, 'Ежовник', 'Колючий и быстрый шарик. Бей по площади.', { cost: 25 })
+nsMm('drowned_host', 'cataclysm:drowned_host', 20, 'Утопленник акрополя', 'Пехота глубин в броне. Толпой опасен.', { cost: 25 })
+nsMm('termite_alate', 'arphex:termite_tunneler_alate', 25, 'Крылатый термит', 'Перелетает стены. Зенитки, тесла, луки.', { flyer: true, cost: 40 })
+
+// Цена угрозы прежних мобов (см. nsMm): шнырь и выводок — стаи по стенам, выводок ещё и лопается на паучат
+var NS_MM_COST = { lurker: 35, brood: 45, frozen_zombie: 25, venus_scorpion: 30, termite_worker: 30, jumper: 55, bulwark: 45, raptor: 45, recluse: 60, centipede: 60, mantis: 150, locust: 18, funnel: 70, flat: 70 }
+for (var nsMc in NS_MM_COST) if (NSG.NS_MOD_MOBS[nsMc]) NSG.NS_MOD_MOBS[nsMc].cost = NS_MM_COST[nsMc]
+
 for (var nsMf in NSG.NS_MOD_MOBS) if (NSG.NS_MOD_MOBS[nsMf].flyer) NSG.NS_MOD_FLYERS[NSG.NS_MOD_MOBS[nsMf].id] = true
 NSG.NS_MOD_FLYERS['arphex:scorpioid_bloodluster'] = true
 NSG.NS_MOD_FLYERS['arphex:draconic_voidlasher'] = true
 
 // Премьеры: волна → { star: ключ моба-премьеры, join: кто ещё входит в пул без титра, name: праздник }
 NSG.NS_MOD_DEBUTS = {
-	16: { star: 'lurker', join: ['brood', 'frozen_zombie'], name: 'Ночь шнырей' },
-	17: { star: 'centipede', join: ['millipede'], name: 'День ста ног' },
-	18: { star: 'kamikaze', join: ['venus_scorpion'], name: 'День открытых дверей' },
-	19: { star: 'striker', join: ['termite_worker'], name: 'Скорпионий карнавал' },
-	20: { star: 'jumper', name: 'Олимпиада по прыжкам' },
+	// выводок (лопается на паучат) — не с 16-й, а с 23-й: 16-ю провалили 02.10 из-за выводка на алтаре
+	16: { star: 'lurker', join: ['frozen_zombie'], name: 'Ночь шнырей', prep: 'Шныри лезут по стенам: козырёк наружу или крыша над алтарём. Модовые мобы приходят постепенно: на 16-й — 2 подволны из 6, к 20-й — все.' },
+	17: { star: 'centipede', join: ['millipede'], name: 'День ста ног', prep: 'Сколопендры догоняют бегущих — встречай оружием, не убегай.' },
+	18: { star: 'kamikaze', join: ['venus_scorpion'], name: 'День открытых дверей', prep: 'Подрывники выбивают дыру в стене: луки и турели на подходе, обсидиан там, где орда упирается.' },
+	19: { star: 'striker', join: ['termite_worker'], name: 'Скорпионий карнавал', prep: 'Яд скорпионов: молоко в карман.' },
+	20: { star: 'jumper', name: 'Олимпиада по прыжкам', prep: 'Прыгуны перескакивают стены в 3 блока — крыша над алтарём. Босс — Паучиха-матриарх, плодит паучат.' },
 	21: { star: 'ant_soldier', name: 'Ночь костров' },
 	22: { star: 'dragonfly', name: 'Авиашоу' },
-	23: { star: 'recluse', name: 'День затворника' },
+	23: { star: 'recluse', join: ['brood'], name: 'День затворника' },
 	24: { star: 'bulwark', name: 'День щита' },
 	25: { star: 'funnel', name: 'Субботник у алтаря' },
 	26: { star: 'raptor', name: 'Юрский период' },
@@ -180,7 +217,18 @@ function nsMwRng(seed) {
 	}
 }
 
-// Пул мобов, доступных на волне d (премьеры и «join» с волн ≤ d); вес новых — выше
+// Гастроли (05.10, поток W): на волне-премьере гостей одна средняя подволна целиком из «труппы» — мобов других модов
+// (маги Iron's Spells, древняя стража, глубоководные Cataclysm, крылатые термиты). Объявление в чат, дальше мобы
+// труппы входят в общий пул. Волны — без новых особых стадий и не кратные 5 (там боссы).
+NSG.NS_MOD_GUESTS = {
+	27: { key: 'sabbath', name: 'Шабаш', mobs: [['necromancer', 0.35], ['cultist', 0.35], ['catacombs_zombie', 0.3]], tip: 'маги Iron\'s Spells: некроманты поднимают мертвецов, культисты колдуют из-за спин орды. Колдунов — первыми: стрелки, турели, тесла' },
+	31: { key: 'ice', name: 'Ледяной поход', mobs: [['ice_spider', 0.6], ['frozen_zombie', 0.4]], tip: 'ледяные пауки в броне 20 — стрелы почти не берут: огонь, тяжёлое оружие, пушки' },
+	37: { key: 'termites', name: 'Термитник', mobs: [['termite_alate', 0.4], ['termite_soldier', 0.35], ['termite_worker', 0.25]], tip: 'крылатые термиты перелетают стены — зенитки и тесла; солдаты в броне 4' },
+	41: { key: 'guard', name: 'Древняя стража', mobs: [['citadel_keeper', 0.45], ['magehunter', 0.3], ['archevoker', 0.25]], tip: 'древние рыцари бьют мечом на 10, охотники на магов бегут к тем, кто колдует, архизаклинатель — клыки и вредины' },
+	49: { key: 'acropolis', name: 'Глубоководная ночь', mobs: [['hippocamtus', 0.45], ['cindaria', 0.25], ['urchinkin', 0.15], ['drowned_host', 0.15]], tip: 'гиппокамты в броне 15 бьют на 10 — пушки и тяжёлое оружие; ежовники быстрые, бей по площади' },
+}
+
+// Пул мобов, доступных на волне d (премьеры, «join» и труппы гастролей с волн ≤ d); вес новых — выше
 function nsMwPool(d) {
 	var out = []
 	for (var w in NSG.NS_MOD_DEBUTS) {
@@ -189,6 +237,53 @@ function nsMwPool(d) {
 		var e = NSG.NS_MOD_DEBUTS[w]
 		var keys = (e.star ? [e.star] : []).concat(e.join || [])
 		for (var i = 0; i < keys.length; i++) out.push({ m: NSG.NS_MOD_MOBS[keys[i]], since: wn })
+	}
+	var seen = {}
+	for (var k = 0; k < out.length; k++) seen[out[k].m.key] = true
+	for (var g in NSG.NS_MOD_GUESTS) {
+		var gn = Number(g)
+		if (gn > d) continue
+		var gm = NSG.NS_MOD_GUESTS[g].mobs
+		for (var j = 0; j < gm.length; j++) {
+			if (seen[gm[j][0]]) continue
+			seen[gm[j][0]] = true
+			out.push({ m: NSG.NS_MOD_MOBS[gm[j][0]], since: gn })
+		}
+	}
+	return out
+}
+
+// Премьеры, «съеденные» сценарием (Воздушный бой, Побег… — без подволн): звезда выходит на первой следующей волне с
+// подволнами вместе со своей (раньше премьеры 24, 28, 36, 42, 43, 46, 54, 58, 62, 63 не показывались вовсе)
+function nsMwDeferred(d) {
+	var S = NSG.NS_SPECIAL_STAGES || {}
+	function scen(w) {
+		return !!(S[w] && S[w].kind === 'scenario')
+	}
+	if (scen(d)) return []
+	var out = []
+	for (var w = d - 1; w >= NSG.NS_MOD_WAVES_FROM && scen(w); w--) {
+		var e = NSG.NS_MOD_DEBUTS[w]
+		if (e && e.star) out.unshift(e.star)
+	}
+	return out
+}
+
+// Вход в модовые волны (05.10, поток W): на 16–20 бюджет здоровья модовой подволны меньше (0,7 → 0,95), полностью — с 21-й
+NSG.NS_MOD_ENTRY = { 16: 0.7, 17: 0.75, 18: 0.8, 19: 0.9, 20: 0.95 }
+// Сколько подволн из модовых на переходных волнах (остальные — ванильные подволны якоря, как на 14–15): 16 → 2, 17 → 3,
+// 18 → 4, 19 → 5, с 20-й — все. Модовые: премьера (первая), финал (последняя) и вторая, третья… по порядку
+NSG.nsMwModCount = function (d, n) {
+	return d >= 20 ? n : Math.max(2, Math.min(n, d - 14))
+}
+NSG.nsMwMixVanilla = function (d, modWaves, vanillaWaves) {
+	var n = modWaves.length
+	var mc = NSG.nsMwModCount(d, n)
+	if (mc >= n) return modWaves
+	var out = []
+	for (var s = 0; s < n; s++) {
+		var modded = s === 0 || s === n - 1 || s <= mc - 2
+		out.push(modded ? modWaves[s] : vanillaWaves[s % vanillaWaves.length])
 	}
 	return out
 }
@@ -216,7 +311,7 @@ function nsMwPick(pool, rnd, filter, d) {
 // Строка состава: моб, доля бюджета подволны → { id, count (на игрока), label, nbt, tags, hp }
 function nsMwEntry(m, share, budget, minCount) {
 	// не больше 24 на игрока (рой мельче 10 HP — 16): сотня саранчи — это лаг, а не сложность
-	var n = Math.max(minCount || 0.5, Math.min(m.hp < 10 ? 16 : 24, Math.round((budget * share) / m.hp * 10) / 10))
+	var n = Math.max(minCount || 0.5, Math.min(m.hp < 10 ? 16 : 24, Math.round((budget * share) / Math.max(m.hp, m.cost || 0) * 10) / 10))
 	return { id: m.id, count: n, label: m.name, nbt: m.nbt, tags: m.tags, hp: m.hp, key: m.key }
 }
 
@@ -279,11 +374,14 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 	var deb = late ? null : NSG.NS_MOD_DEBUTS[Math.min(d, 69)]
 	var pool = nsMwPool(Math.min(d, 69))
 	var M = NSG.NS_MOD_MOBS
+	if (!late && NSG.NS_MOD_ENTRY[d]) budget = budget * NSG.NS_MOD_ENTRY[d]
+	var costars = late ? [] : nsMwDeferred(d)
+	var guest = late ? null : NSG.NS_MOD_GUESTS[d] || null
 	var notKami = function (m) {
 		return !nsMwIsKamikaze(m)
 	}
 	var light = function (m) {
-		return m.hp <= 65 && !m.flyer && !nsMwIsKamikaze(m)
+		return m.hp <= 65 && !m.flyer && !m.caster && !nsMwIsKamikaze(m)
 	}
 	var ground = function (m) {
 		return !m.flyer && !nsMwIsKamikaze(m)
@@ -292,6 +390,12 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 		return m.heavy && !nsMwIsKamikaze(m)
 	}
 	var star = deb && deb.star ? M[deb.star] : null
+	// звезда, «съеденная» сценарием прошлой волны, без своей премьеры на этой (кратные 5 и т.п.) — главная звезда
+	var deferredStar = false
+	if (!star && costars.length) {
+		star = M[costars.shift()]
+		deferredStar = true
+	}
 	var name = deb ? deb.name : NSG.NS_MOD_LATE_NAMES[(d - 70 + NSG.NS_MOD_LATE_NAMES.length * 10) % NSG.NS_MOD_LATE_NAMES.length]
 	// без премьеры (64–69, Кошмар) — «звезда вечера» по теме
 	var theme = deb && deb.theme ? deb.theme : late ? ['stars', 'heavy', 'flyers'][d % 3] : null
@@ -308,14 +412,27 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 	for (var s = 0; s < nSub; s++) {
 		var sub = []
 		if (s === 0) {
-			// премьера: звезда занимает 70 % подволны (подрывники — числом, их здоровье бюджет не мерит)
+			// премьера: звезда занимает 70 % подволны (подрывники — числом, их здоровье бюджет не мерит); со звёздами
+			// прошлых сценариев — делят подволну
+			var starShare = costars.length ? 0.45 : 0.7
 			if (nsMwIsKamikaze(star)) {
 				var ks = nsMwEntry(star, 0, budget, 1)
-				ks.count = star.key === 'kamikaze' ? 8 : 2
+				ks.count = star.key === 'kamikaze' ? 5 : 2 // 05.10: 8 на игрока на первом знакомстве — слишком много дыр сразу
 				sub.push(ks)
-			} else sub.push(nsMwEntry(star, 0.7, budget, star.hp >= 200 ? 1 : 2))
+			} else sub.push(nsMwEntry(star, starShare, budget, star.hp >= 200 ? 1 : 2))
+			for (var cs = 0; cs < costars.length; cs++) {
+				var cm = M[costars[cs]]
+				if (nsMwIsKamikaze(cm)) {
+					var kc = nsMwEntry(cm, 0, budget, 1)
+					kc.count = cm.key === 'kamikaze' ? 3 : 1
+					sub.push(kc)
+				} else sub.push(nsMwEntry(cm, 0.25, budget, 1))
+			}
 			var sup = nsMwPick(pool, rnd, light, d)
 			if (sup && sup.key !== star.key) sub.push(nsMwEntry(sup, nsMwIsKamikaze(star) ? 0.9 : 0.3, budget, 2))
+		} else if (guest && s === (nSub >= 4 ? 2 : 1)) {
+			// гастроли: подволна целиком из труппы
+			for (var gi = 0; gi < guest.mobs.length; gi++) sub.push(nsMwEntry(M[guest.mobs[gi][0]], guest.mobs[gi][1], budget, 1))
 		} else if (s === nSub - 1) {
 			// финал волны: звезда ещё раз + самый тяжёлый из пула + стая
 			if (nsMwIsKamikaze(star)) {
@@ -334,7 +451,10 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 			var main = flyRow ? nsMwPick(pool, rnd, function (m) {
 				return m.flyer
 			}, d) : null
-			if (!main) main = nsMwPick(pool, rnd, theme === 'heavy' ? big : ground, d) || star
+			// колдуны — не основной строкой (4 некроманта на подволну — это каша из призванной нежити), только второй
+			if (!main) main = nsMwPick(pool, rnd, theme === 'heavy' ? big : function (m) {
+				return ground(m) && !m.caster
+			}, d) || star
 			sub.push(nsMwEntry(main, 0.55, budget, 1))
 			var second = nsMwPick(pool, rnd, function (m) {
 				return ground(m) && m.key !== main.key
@@ -345,9 +465,9 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 			}, d)
 			if (third) sub.push(nsMwEntry(third, 0.15, budget, 2))
 		}
-		// подрывники — в каждой второй подволне с 18-й, больше с ростом волны
-		if (d >= kamiFrom && s % 2 === 1) {
-			var kn = Math.round(Math.min(6, 2 + (d - kamiFrom) / 10) * 10) / 10
+		// подрывники — в каждой второй подволне с 19-й (на 18-й — только премьера), больше с ростом волны
+		if (d > kamiFrom && s % 2 === 1) {
+			var kn = Math.round(Math.min(6, 1.5 + (d - kamiFrom) / 8) * 10) / 10
 			var ke = nsMwEntry(M.kamikaze, 0, budget, kn)
 			ke.count = kn
 			sub.push(ke)
@@ -359,7 +479,9 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 		}
 		waves.push(nsMwMerge(sub))
 	}
-	return { name: name, star: star, premiere: !!(deb && deb.star), waves: waves }
+	var cos = []
+	for (var cn = 0; cn < costars.length; cn++) cos.push(M[costars[cn]])
+	return { name: name, star: star, premiere: !!(deb && deb.star) || deferredStar, costars: cos, guest: guest, waves: waves }
 }
 
 // --------------------------------------------------------------------------
@@ -369,28 +491,75 @@ NSG.nsModWave = function (d, budget, nSub, late) {
 // --------------------------------------------------------------------------
 function nsMb(id, hp, label, opt) {
 	opt = opt || {}
-	return { id: id, hpLabel: hp, label: label, nbt: "CustomName:'\"" + label + "\"'" + (opt.nbt ? ',' + opt.nbt : '') + (opt.scale ? ',attributes:[{id:"minecraft:generic.scale",base:' + opt.scale + 'd}]' : '') }
+	var attrs = []
+	// opt.hp — своё базовое здоровье (Древний рыцарь как босс: 60 HP мода мало); hp — подпись для прогноза
+	if (opt.hp) attrs.push('{id:"minecraft:generic.max_health",base:' + opt.hp + '.0d}')
+	if (opt.scale) attrs.push('{id:"minecraft:generic.scale",base:' + opt.scale + 'd}')
+	return { id: id, hpLabel: opt.hp || hp, label: label, nbt: "CustomName:'\"" + label + "\"'" + (opt.nbt ? ',' + opt.nbt : '') + (attrs.length ? ',attributes:[' + attrs.join(',') + ']' : '') + (opt.hp ? ',Health:' + opt.hp + '.0f' : '') }
 }
+// Боссы Iron's Spells (05.10, поток W; проверено на тестовом сервере: идут к цели, враждебны, не исчезают сами):
+// Мёртвый король — 500 HP, броня 15, удар 10; Эхо Тироса (fire_boss) — 1000 HP, броня 15, удар 10. Заклинания блоки не
+// ломают (spellGriefing = false). Своё базовое здоровье — как у главного босса волны (иначе Тирос на 35-й вдвое толще
+// скорпиоида), дальше его, как всех боссов, раздувает живучесть волны.
+function nsMbKing(hp) {
+	return nsMb('irons_spellbooks:dead_king', 500, 'Мёртвый король', { hp: hp, scale: 1.15 })
+}
+function nsMbTyros(hp) {
+	return nsMb('irons_spellbooks:fire_boss', 1000, 'Эхо Тироса', { hp: hp })
+}
+function nsMbKeeper(hp) {
+	return nsMb('irons_spellbooks:citadel_keeper', 60, 'Магистр цитадели', { hp: hp, scale: 1.5 })
+}
+// alt — варианты для ПОВТОРОВ волны (фарм): первое прохождение — всегда главный босс (его описывает книга), дальше по
+// кругу: главный → вариант 1 → вариант 2… Счётчик повторов — state.bossRot[волна] (растёт с каждой победой на ней)
 NSG.NS_MOD_BOSSES = {
 	15: { boss: nsMb('arphex:spider_goliath', 200, 'Голиаф', { scale: 1.8 }) },
-	20: { boss: nsMb('arphex:spider_matriarch', 350, 'Паучиха-матриарх') },
-	25: { boss: nsMb('arphex:termite_tunneler_king', 250, 'Термитный король', { scale: 1.3 }) },
-	30: { boss: nsMb('arphex:arthropleura_abomination', 300, 'Артроплевра-мерзость') },
-	35: { boss: nsMb('arphex:scorpioid_bloodluster', 450, 'Скорпиоид-кровопийца') },
-	40: { boss: nsMb('arphex:draconic_voidlasher', 500, 'Пустотный драконохвост') },
-	45: { boss: nsMb('arphex:arachnoid_trisector', 650, 'Арахноид-трисектор') },
-	50: { boss: nsMb('arphex:diabolos_decimator', 750, 'Диаболос-истребитель') },
-	55: { boss: nsMb('arphex:spider_matriarch', 350, 'Паучиха-матриарх'), extra: [{ boss: nsMb('arphex:arthropleura_abomination', 300, 'Артроплевра-мерзость'), count: 1 }] },
-	60: { boss: nsMb('arphex:arachnoid_trisector', 650, 'Арахноид-трисектор'), extra: [{ boss: nsMb('arphex:scorpioid_bloodluster', 450, 'Скорпиоид-кровопийца'), count: 1 }] },
-	65: { boss: nsMb('arphex:diabolos_decimator', 750, 'Диаболос-истребитель'), extra: [{ boss: nsMb('arphex:draconic_voidlasher', 500, 'Пустотный драконохвост'), count: 1 }] },
+	20: { boss: nsMb('arphex:spider_matriarch', 350, 'Паучиха-матриарх'), alt: [{ boss: nsMbKeeper(220), extra: [{ boss: nsMbKeeper(220), count: 1 }] }] },
+	25: { boss: nsMb('arphex:termite_tunneler_king', 250, 'Термитный король', { scale: 1.3 }), alt: [{ boss: nsMbKing(260) }] },
+	30: { boss: nsMb('arphex:arthropleura_abomination', 300, 'Артроплевра-мерзость'), alt: [{ boss: nsMbKing(300), extra: [{ boss: nsMbKeeper(200), count: 1 }] }] },
+	35: { boss: nsMb('arphex:scorpioid_bloodluster', 450, 'Скорпиоид-кровопийца'), alt: [{ boss: nsMbTyros(480) }] },
+	40: { boss: nsMb('arphex:draconic_voidlasher', 500, 'Пустотный драконохвост'), alt: [{ boss: nsMbTyros(520) }, { boss: nsMbKing(420), extra: [{ boss: nsMbKeeper(260), count: 2 }] }] },
+	45: { boss: nsMb('arphex:arachnoid_trisector', 650, 'Арахноид-трисектор'), alt: [{ boss: nsMbTyros(650), extra: [{ boss: nsMbKeeper(260), count: 1 }] }] },
+	50: { boss: nsMb('arphex:diabolos_decimator', 750, 'Диаболос-истребитель'), alt: [{ boss: nsMbTyros(750), extra: [{ boss: nsMbKing(400), count: 1 }] }] },
+	55: { boss: nsMb('arphex:spider_matriarch', 350, 'Паучиха-матриарх'), extra: [{ boss: nsMb('arphex:arthropleura_abomination', 300, 'Артроплевра-мерзость'), count: 1 }], alt: [{ boss: nsMbKing(450), extra: [{ boss: nsMb('arphex:arachnoid_trisector', 650, 'Арахноид-трисектор'), count: 1 }] }] },
+	60: { boss: nsMb('arphex:arachnoid_trisector', 650, 'Арахноид-трисектор'), extra: [{ boss: nsMb('arphex:scorpioid_bloodluster', 450, 'Скорпиоид-кровопийца'), count: 1 }], alt: [{ boss: nsMbTyros(700), extra: [{ boss: nsMb('arphex:draconic_voidlasher', 500, 'Пустотный драконохвост'), count: 1 }] }] },
+	65: { boss: nsMb('arphex:diabolos_decimator', 750, 'Диаболос-истребитель'), extra: [{ boss: nsMb('arphex:draconic_voidlasher', 500, 'Пустотный драконохвост'), count: 1 }], alt: [{ boss: nsMbTyros(800), extra: [{ boss: nsMbKing(500), count: 1 }, { boss: nsMbKeeper(300), count: 2 }] }] },
+}
+// Вариант босса волны d: 0 — главный; на повторах (d ≤ лучшей пройденной) — по счётчику state.bossRot[d]
+NSG.nsModBossVariant = function (d) {
+	var b = NSG.NS_MOD_BOSSES[d]
+	if (!b || !b.alt || !b.alt.length) return 0
+	try {
+		var st = typeof nsGetStateRO === 'function' ? nsGetStateRO() : null
+		if (!st || d > (st.phase || 0)) return 0
+		return ((st.bossRot && st.bossRot[d]) || 0) % (b.alt.length + 1)
+	} catch (e) {
+		return 0
+	}
+}
+// Все варианты боссов (для бестиария и контрактов): [{d, boss}]
+NSG.nsModBossAll = function () {
+	var out = []
+	for (var w in NSG.NS_MOD_BOSSES) {
+		var b = NSG.NS_MOD_BOSSES[w]
+		var vs = [{ boss: b.boss, extra: b.extra || [] }].concat(b.alt || [])
+		for (var v = 0; v < vs.length; v++) {
+			out.push({ d: Number(w), boss: vs[v].boss })
+			for (var x = 0; vs[v].extra && x < vs[v].extra.length; x++) out.push({ d: Number(w), boss: vs[v].extra[x].boss })
+		}
+	}
+	return out
 }
 // Модовый босс волны d (15–69, кратные 5) или null; scale — множители (доли к базе), применяются к боссу и его паре
 NSG.nsModBossFor = function (d, toughHp) {
 	var b = NSG.NS_MOD_BOSSES[d]
 	if (!b) return null
+	var v = NSG.nsModBossVariant(d)
+	var pick = v > 0 ? b.alt[v - 1] : b
 	return {
-		boss: b.boss,
-		extra: b.extra || [],
+		boss: pick.boss,
+		extra: pick.extra || [],
+		variant: v,
 		scale: { hp: toughHp + d / 12, damage: d <= 30 ? -0.3 : d <= 45 ? -0.15 : 0, speed: 0.2, size: 1 },
 	}
 }

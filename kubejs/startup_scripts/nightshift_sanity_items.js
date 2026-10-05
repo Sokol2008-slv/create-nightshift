@@ -8,6 +8,11 @@ StartupEvents.registry('item', event => {
 		.texture('nightshift:item/sedative')
 		.maxStackSize(16)
 		.food(food => food.nutrition(1).saturation(0.1).alwaysEdible().fastToEat())
+	// Травяной чай (3.4.0): ранний слабый рассудок без спор форпоста — server_scripts/sanity/10_sedative.js
+	event.create('nightshift:herbal_tea')
+		.texture('nightshift:item/herbal_tea')
+		.maxStackSize(16)
+		.food(food => food.nutrition(2).saturation(0.3).alwaysEdible())
 	// Настойка жизни: лечит одну рану (−1 сердце за смерть), см. server_scripts/sanity/40_death.js
 	event.create('nightshift:life_tonic')
 		.texture('nightshift:item/life_tonic')

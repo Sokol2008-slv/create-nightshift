@@ -470,5 +470,77 @@
 			x: 19.92d
 			y: -5.60d
 		}
+		{
+			dependencies: ["3657C1A4FAB03885"]
+			icon: { id: "minecraft:clock" }
+			id: "39D69EF54E4A1273"
+			optional: true
+			rewards: [{ id: "56299FABEE2260EB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "22805CD7EC44E263", type: "checkmark" }]
+			x: 2.00d
+			y: 8.00d
+		}
+		{
+			dependencies: ["7A0F0FB1F4DD3514"]
+			icon: { id: "minecraft:enchanting_table" }
+			id: "16428C3D5C32A327"
+			optional: true
+			rewards: [{ id: "391343850614DEF7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2647648EAFFAFB35", stage: "nightshift_p21", team_stage: false, type: "gamestage" }]
+			x: 13.36d
+			y: -7.20d
+		}
+		{
+			dependencies: ["16428C3D5C32A327"]
+			icon: { id: "minecraft:golden_sword" }
+			id: "5B8F62B271946896"
+			optional: true
+			rewards: [{ id: "5A7C4054CF3C95F1", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "57F8BB4B167FEBDE", stage: "nightshift_p29", team_stage: false, type: "gamestage" }]
+			x: 14.96d
+			y: -7.20d
+		}
+		{
+			dependencies: ["5B8F62B271946896"]
+			icon: { id: "minecraft:slime_ball" }
+			id: "0ACD559F06214A80"
+			optional: true
+			rewards: [{ id: "7341A7B520F1FC0A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2873D1CC68899D78", stage: "nightshift_p33", team_stage: false, type: "gamestage" }]
+			x: 16.56d
+			y: -7.20d
+		}
+		{
+			dependencies: ["0ACD559F06214A80"]
+			icon: { id: "minecraft:iron_sword" }
+			id: "26D5627881A1FE2F"
+			optional: true
+			rewards: [{ id: "39627E46781B2E49", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3B1E517945323C60", stage: "nightshift_p39", team_stage: false, type: "gamestage" }]
+			x: 18.16d
+			y: -7.20d
+		}
+		{
+			dependencies: ["26D5627881A1FE2F"]
+			icon: { id: "minecraft:white_banner" }
+			id: "53705BB5018506EE"
+			optional: true
+			rewards: [{ id: "5FADDA7D7A528674", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "206B8DCFE28D1B74", stage: "nightshift_p47", team_stage: false, type: "gamestage" }]
+			x: 19.76d
+			y: -7.20d
+		}
 	]
 }

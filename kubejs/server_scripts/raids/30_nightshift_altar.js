@@ -86,7 +86,9 @@ function nsForecastLines(d) {
 	if (horde.scale && (horde.scale.hp > 0 || horde.scale.damage > 0)) lines.push('Мобы крепче: здоровье +' + Math.round(horde.scale.hp * 100) + '%, урон +' + Math.round(horde.scale.damage * 100) + '%' + (horde.scale.speed > 0 ? ', скорость +' + Math.round(horde.scale.speed * 100) + '%' : '') + (horde.scale.size > 1 ? ', крупнее ×' + horde.scale.size.toFixed(2) : ''))
 	if (horde.scale) total = Math.round(total * (1 + horde.scale.hp))
 	var mn = typeof nsMutNames === 'function' ? nsMutNames(nsMutSet(st0)) : []
-	if (mn.length) lines.push('Условия смены: ' + mn.join(', ') + ' (добыча +' + Math.round(nsMutBonus(nsMutSet(st0)) * 100) + ' %)')
+	if (mn.length) lines.push('Условия смены: ' + mn.join(', ') + ' (добыча +' + Math.round(nsMutBonus(nsMutSet(st0), d) * 100) + ' %)')
+	if (horde.prep) lines.push('Готовьтесь: ' + horde.prep)
+	if (horde.guest) lines.push('Гастроли «' + horde.guest.name + '»: ' + horde.guest.tip)
 	if (horde.special && typeof nsSpecialForecast === 'function') lines = nsSpecialForecast(horde, d).concat(lines)
 	var players = Math.round((nsPartyScale() - 1) / 0.5) + 1
 	lines.push('Итого ' + nsPlural(horde.waves.length, 'подволна', 'подволны', 'подволн') + ', ~' + total + ' HP — расчёт на игроков: ' + players)
@@ -135,7 +137,7 @@ function nsDifficultyHover(state, d) {
 		if (bonus.length) t = t.append(Text.lightPurple('\nПервое прохождение: ' + bonus.join(', ')))
 	}
 	t = t.append(Text.gray('\nДобыча — тем, кто у алтаря хотя бы половину волн'))
-	t = t.append(Text.red('\nПровал: −' + nsPlural(nsFailHearts(d), 'сердце', 'сердца', 'сердец') + ' у всех, добычи нет'))
+	t = t.append(Text.red('\nАлтарь выдержит ' + nsPlural(NSG.NIGHTSHIFT_TUNABLES.altarHp || 1, 'моба', 'моба', 'мобов') + '; дальше провал: −' + nsPlural(nsFailHearts(d), 'сердце', 'сердца', 'сердец') + ' у всех (снимают победы), добычи нет'))
 	return t
 }
 
@@ -189,11 +191,11 @@ function nsShowAltarMenu(player, state, from) {
 // Меню в чате — запасное: /nightshift menu и игроки без аддона
 function nsShowAltarMenuChat(player, state, from) {
 	var best = state.phase || 0
-	if ((state.curse || 0) > 0) {
-		player.tell(nsCurseLine(state))
-		player.tell(nsArenaButton(player))
-		return
-	}
+	// проклятие больше не запирает алтарь (05.10): напоминание и дальше обычное меню
+	if ((state.curse || 0) > 0) player.tell(nsCurseLine(state))
+	// ночной вызов этой ночи (48_night_call.js)
+	var co = typeof nsCallOffer === 'function' ? nsCallOffer(state) : null
+	if (co) player.tell(Text.gold('[Ночная смена] ').append(Text.white(nsCallText(co) + ' ')).append(nsCallButtons()))
 	player.tell(Text.gold('[Ночная смена] Алтарь: выбери волну набега (наведи — состав и добыча, нажми — старт):'))
 	var top = best + 1
 	var last = Math.max(1, top - 9)
@@ -211,6 +213,11 @@ function nsShowAltarMenuChat(player, state, from) {
 	if (next !== null) player.tell(Text.lightPurple('Ближайшая веха — волна ' + next + ': ').append(Text.white(NSG.NS_WAVE_MILESTONES[next].text)))
 	player.tell(Text.gray('Пройдено волн: ' + (best > NSG.NS_WAVES_MAX ? NSG.NS_WAVES_MAX + ' + Бесконечность ' + (best - NSG.NS_WAVES_MAX) : best) + '. Жёлтая — следующая, зелёные — для фарма.'))
 	player.tell(Text.gray('Арена для боёв без риска для базы: ').append(nsArenaButton(player)))
+	// выживание на арене (48_night_call.js) — кнопка только на арене
+	if (String(player.getLevel().getDimension()) === 'nightshift:arena' && best >= 5) {
+		var rec = state.arenaRecord
+		player.tell(Text.gray('Арена: ').append(Text.gold('[Выживание]').clickRunCommand('/arena endless').hover(Text.gray('Подволны лучшей волны по кругу, каждый круг злее. Добыча за каждую подволну, артефакт за каждые 5. Без проклятия.'))).append(Text.gray(rec ? ' рекорд — ' + nsPlural(rec.subs, 'подволна', 'подволны', 'подволн') + ' (' + rec.names.join(', ') + ')' : ' рекорда ещё нет')))
+	}
 	// «Условия смены» (12_mutators.js) и переплавка артефактов (09_ns_artifacts.js)
 	if (typeof nsMutatorsRow === 'function') player.tell(nsMutatorsRow(state))
 	if (typeof nsContractsRows === 'function') player.tell(nsContractsRows(state))
@@ -264,7 +271,8 @@ function nsLiftCurse(state, who) {
 
 function nsCurseLine(state) {
 	var t = nsTributeFor(state.phase || 0)
-	return Text.red('[Ночная смена] Проклятие алтаря: −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + ' у всех. Искупление: ' + t.count + ' ' + t.label + ' за сердце — ПКМ стопкой по алтарю или конвейером в алтарь. Пока не искуплено, новый набег не начать.')
+	var w = Math.max(1, (state.phase || 0) - (NSG.NIGHTSHIFT_TUNABLES.curseLiftWindow || 5))
+	return Text.red('[Ночная смена] Проклятие алтаря: −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + ' у всех. Снимает победа на волне ' + w + '+ (сердце за победу) или сразу — ' + t.count + ' ' + t.label + ' за сердце: ПКМ стопкой по алтарю или конвейером.')
 }
 
 function nsAltarClick(event) {
