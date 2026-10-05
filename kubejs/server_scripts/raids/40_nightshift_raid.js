@@ -1653,6 +1653,15 @@ function nsHomeAltar(state) {
 
 function nsCheckMinorRaidSchedule(state) {
 	if (!nsHomeAltar(state)) return // алтаря на базе ещё нет — нечего охранять
+	if (!NSG.NIGHTSHIFT_TUNABLES.minorRaidsEnabled) {
+		// малые набеги выключены (00_nightshift_config.js): взведённый — снять, счётчик ночей не крутим
+		if (state.minorPending || state.dayCounter) {
+			state.minorPending = false
+			state.dayCounter = 0
+			nsSaveState(state)
+		}
+		return
+	}
 
 	var dayTime
 	try {
