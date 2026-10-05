@@ -74,6 +74,8 @@ if NS_ART_JS.is_file():
 # 06.10: ранец снабжения (аддон 0.7.0) — техника, только машинами
 MANUAL_ZERO += ['axiomativ:supply_node', 'axiomativ:supply_relay', 'axiomativ:dimensional_relay', 'axiomativ:supply_pack',
                 'axiomativ:supply_pack_mk2', 'axiomativ:quantum_supply_pack', 'axiomativ:incomplete_supply_pack']
+# 05.10: буровая установка (аддон 0.7.0) — высокая ступень форпоста, только машинами
+MANUAL_ZERO += ['axiomativ:drilling_rig']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')

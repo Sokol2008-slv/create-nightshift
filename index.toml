@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "2d03aebeb73bad9027ae81c7d06cfc9bcffd36d798d593b0db626bdb3db4b5f7"
+hash = "d74ff85452dca09d36eb148b8c995e167e22208558bbf540d17551af939ce752"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -106,7 +106,7 @@ hash = "f8300faf2ec99ecadadddbda519c5ccbad7322929866e915c82f5c0a5abea4e1"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/outposts.snbt"
-hash = "5cefca330b1b12be3dfaa2fe7b9b7d2ea70e669bdd38b6f059b9412c345215f9"
+hash = "cff79f4a7077be26858567cf8eccbf46a02866d11b1adda95c00e4cd3460cfc2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/path.snbt"
@@ -142,11 +142,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "d69ac229db0ad5523dc6732e19a7a365a4c3d9f3b8c917f699cf1557888d2bf4"
+hash = "592a944f4d6c76c7d2d42484672b6f49499c3f09c1407ea9a6f8c8fe00b3b146"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "d69ac229db0ad5523dc6732e19a7a365a4c3d9f3b8c917f699cf1557888d2bf4"
+hash = "592a944f4d6c76c7d2d42484672b6f49499c3f09c1407ea9a6f8c8fe00b3b146"
 
 [[files]]
 file = "config/iris.properties"
@@ -1231,6 +1231,10 @@ hash = "87877eddc4585f3d94e3e14d1ffa5b036429de7fc0406c7fa30a4930fa9a5e64"
 [[files]]
 file = "kubejs/client_scripts/axiomativ_dispatch_jei.js"
 hash = "a58cb9949852b3c1c7f3f65ddd046300679d9a56199211135320578741e4389d"
+
+[[files]]
+file = "kubejs/client_scripts/axiomativ_drill_jei.js"
+hash = "95b0087b255b983be19f59db50e51a31a958e019b72fb733c9f88b3bf7df6208"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_gate_jei.js"
@@ -2449,6 +2453,10 @@ file = "kubejs/server_scripts/vahta/49_axiomativ_dispatch.js"
 hash = "6c8c7b43e7217c80976fd5efc9b70fa5f9e0b7665d83f7c1efd74c79a15a3c9a"
 
 [[files]]
+file = "kubejs/server_scripts/vahta/49_axiomativ_drill.js"
+hash = "712cea681c0cbe28be1b6b6cca193003786d4dbceae9ac793d89212149a56ab2"
+
+[[files]]
 file = "kubejs/server_scripts/vahta/49_axiomativ_gate.js"
 hash = "49001e6bee2dedf0bf76a787241726f2e9d22e3de72abf69ccd37c2437fe5f30"
 
@@ -2650,7 +2658,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "fe9caf8f4d0b530755315e1955aab4b125a82dbcb2e4cb020fbb5dd3e01f4070"
+hash = "e304df605b0034e8914a7222bba1761f2c625bbc5f8c1ded9ef01e28c1c3868b"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

@@ -201,5 +201,15 @@
 			x: -1.80d
 			y: 1.60d
 		}
+		{
+			dependencies: ["275FE568C2DBF365", "479F0A6AA26C07A3", "2941F343D52B2027", "798ACE3CE5DB69E8"]
+			id: "78A29090A2EF60E9"
+			rewards: [{ id: "7D7F36557BEB26BE", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "10F4FC26EAD3F5D9", item: { count: 1, id: "axiomativ:drilling_rig" }, type: "item" }]
+			x: 6.90d
+			y: 5.70d
+		}
 	]
 }
