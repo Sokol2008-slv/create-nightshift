@@ -6,10 +6,11 @@
 	icon: { id: "modulargolems:metal_golem_holder" }
 	id: "13F67E96F778A421"
 	images: [ ]
-	order_index: 12
+	order_index: 20
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["1CA73A2F9FA9AB14"]
 			icon: { id: "modulargolems:humanoid_golem_holder" }
 			id: "1CDF7057BD782920"
 			optional: true
@@ -21,7 +22,6 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["1CDF7057BD782920"]
 			id: "1CA73A2F9FA9AB14"
 			rewards: [{ id: "16A1952FDDC60049", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -42,12 +42,11 @@
 		}
 		{
 			dependencies: ["160E154A7BFCDF86"]
-			icon: { id: "modulargolems:metal_golem_legs" }
 			id: "2314D43D50466F2B"
 			rewards: [{ id: "6F0A2EF0AB7ADCC4", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "3A1490645AC1756E", type: "checkmark" }]
+			tasks: [{ id: "3A1490645AC1756E", item: { count: 1, id: "modulargolems:metal_golem_legs" }, type: "item" }]
 			x: 3.68d
 			y: 0.00d
 		}
@@ -115,12 +114,11 @@
 		}
 		{
 			dependencies: ["0A221ACB167F5182"]
-			icon: { id: "northstar:titanium_ingot" }
 			id: "7F8A5BCF1F2BC876"
 			rewards: [{ id: "7545820EA48E2358", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "3F23CCA53C915726", type: "checkmark" }]
+			tasks: [{ id: "3F23CCA53C915726", item: { count: 1, id: "northstar:titanium_ingot" }, type: "item" }]
 			x: 7.36d
 			y: 0.00d
 		}
@@ -136,7 +134,7 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["1CDF7057BD782920"]
+			dependencies: ["3A7FEC2616BCC8B5", "1CDF7057BD782920"]
 			icon: { id: "minecraft:dragon_egg" }
 			id: "7A5BB064B668F255"
 			optional: true
@@ -148,13 +146,11 @@
 			y: 4.80d
 		}
 		{
-			dependencies: ["7A5BB064B668F255"]
-			icon: { id: "dmr:dragon_egg" }
 			id: "3A7FEC2616BCC8B5"
 			rewards: [{ id: "6C9BA58EE5EC8221", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "1D57993D7AC97B47", type: "checkmark" }]
+			tasks: [{ id: "1D57993D7AC97B47", item: { count: 1, id: "dmr:dragon_egg" }, type: "item" }]
 			x: 0.00d
 			y: 4.80d
 		}
@@ -174,21 +170,21 @@
 			dependencies: ["3A7FEC2616BCC8B5"]
 			icon: { id: "minecraft:clock" }
 			id: "5E7E779ADCC9DF09"
+			optional: true
 			rewards: [{ id: "519AA20884B7C6A3", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "1A62055FCAD5D903", type: "checkmark" }]
 			x: 1.84d
-			y: 4.80d
+			y: 6.56d
 		}
 		{
-			dependencies: ["5E7E779ADCC9DF09"]
-			icon: { id: "minecraft:cod" }
+			dependencies: ["3A7FEC2616BCC8B5"]
 			id: "081BCC72EBCBE493"
 			rewards: [{ id: "0E1581CBAF4CA5D2", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "4F39E5B06FDC4027", type: "checkmark" }]
+			tasks: [{ id: "4F39E5B06FDC4027", item: { count: 1, id: "minecraft:cod" }, type: "item" }]
 			x: 3.68d
 			y: 4.80d
 		}
@@ -204,12 +200,11 @@
 		}
 		{
 			dependencies: ["081BCC72EBCBE493"]
-			icon: { id: "dmr:dragon_armor" }
 			id: "6093A92FF80FA235"
 			rewards: [{ id: "1D9C583DE232D047", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "39242BA0A9AEB367", type: "checkmark" }]
+			tasks: [{ id: "39242BA0A9AEB367", item: { count: 1, id: "dmr:dragon_armor" }, type: "item" }]
 			x: 5.52d
 			y: 3.04d
 		}
@@ -226,12 +221,11 @@
 		}
 		{
 			dependencies: ["081BCC72EBCBE493"]
-			icon: { id: "dmr:dragon_whistle.red" }
 			id: "29FF03022EEE798D"
 			rewards: [{ id: "5BEDC3D7BCC1FA33", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "71C868F17225B7F3", type: "checkmark" }]
+			tasks: [{ id: "71C868F17225B7F3", item: { count: 1, id: "dmr:dragon_whistle.red" }, type: "item" }]
 			x: 5.52d
 			y: 6.56d
 		}
@@ -251,8 +245,9 @@
 			dependencies: ["5CD1EC681729A76D"]
 			icon: { id: "minecraft:egg" }
 			id: "312E6921C891CC59"
+			optional: true
 			rewards: [{ id: "582DED7A743B7505", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "136CF19A4FAC8A98", type: "checkmark" }]
 			x: 9.52d

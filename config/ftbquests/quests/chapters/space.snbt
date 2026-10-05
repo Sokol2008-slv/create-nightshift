@@ -6,7 +6,7 @@
 	icon: { id: "northstar:space_atlas" }
 	id: "0096249BA19EA3EF"
 	images: [ ]
-	order_index: 19
+	order_index: 14
 	quest_links: [ ]
 	quests: [
 		{
@@ -98,23 +98,21 @@
 			y: 1.68d
 		}
 		{
-			icon: { id: "northstar:hydrocarbon_bucket" }
 			id: "1172882304DE25C3"
 			rewards: [{ id: "4C5953792E129C1D", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "3D6586B99D327B0D", type: "checkmark" }]
+			tasks: [{ id: "3D6586B99D327B0D", item: { count: 1, id: "northstar:biofuel_bucket" }, type: "item" }]
 			x: 5.52d
 			y: 3.36d
 		}
 		{
 			dependencies: ["2022B22D15FA1B25", "5419BEC0D04A20F0", "63D73C7D0A577B48", "200EF6B4A3B73B4B", "1172882304DE25C3"]
-			icon: { id: "northstar:rocket_thruster" }
 			id: "2BB90C762D8DE0FB"
 			rewards: [{ id: "3C1E734A267AFA86", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "14C1E2B3BC9EABF7", type: "checkmark" }]
+			tasks: [{ id: "14C1E2B3BC9EABF7", item: { count: 1, id: "northstar:rocket_controls" }, type: "item" }]
 			x: 7.52d
 			y: 0.00d
 		}
@@ -158,12 +156,11 @@
 		}
 		{
 			dependencies: ["2BB90C762D8DE0FB", "6CA219A30AA20749", "48E881DFD6B3194F"]
-			icon: { id: "northstar:rocket_controls" }
 			id: "369117D4B69EA320"
 			rewards: [{ id: "222EC3A2EEE11ABB", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "737064C1274CF65D", type: "checkmark" }]
+			tasks: [{ id: "737064C1274CF65D", count: 8L, item: { count: 1, id: "northstar:glowstone_torch" }, type: "item" }]
 			x: 11.52d
 			y: 0.00d
 		}
@@ -317,7 +314,7 @@
 			rewards: [{ id: "656C87225A6A24DD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "22045A6BEF05B1E2", type: "checkmark" }]
+			tasks: [{ id: "22045A6BEF05B1E2", item: { count: 1, id: "kubejs:axiomite_ingot" }, type: "item" }, { id: "0BD4BD4383B94DD4", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
 			x: -4.48d
 			y: 6.40d
 		}

@@ -6,17 +6,15 @@
 	icon: { id: "farmersdelight:cooking_pot" }
 	id: "69AE1E921A2F8E70"
 	images: [ ]
-	order_index: 8
+	order_index: 18
 	quest_links: [ ]
 	quests: [
 		{
-			icon: { id: "minecraft:bread" }
 			id: "21172F3016C5CB6F"
-			optional: true
 			rewards: [{ id: "47B41F732C0C804F", type: "xp", xp: 10 }]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ id: "6D73256340520B21", type: "checkmark" }]
+			tasks: [{ id: "6D73256340520B21", item: { count: 1, id: "minecraft:bread" }, type: "item" }]
 			x: -2.08d
 			y: 0.00d
 		}
@@ -96,12 +94,11 @@
 		}
 		{
 			dependencies: ["6436250ACE0D60A8"]
-			icon: { id: "farmersdelight:wild_cabbages" }
 			id: "11B7267B7F280CBD"
 			rewards: [{ id: "63DCFE61A16CC37F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "45B0B7544379015A", type: "checkmark" }]
+			tasks: [{ id: "45B0B7544379015A", item: { count: 1, id: "farmersdelight:cabbage_seeds" }, type: "item" }]
 			x: 1.84d
 			y: -1.92d
 		}

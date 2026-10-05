@@ -5,8 +5,12 @@
 Для каждой главы: одиночки и отдельные куски (глава должна быть одним деревом — Георгий: «ветки не зависимы
 друг от друга»), карточки внахлёст, линии сквозь чужие карточки, пересечения линий.
 Координаты — как в gen_quests.py ("pos" или авто-раскладка); размер карточки 1.0, цель 1.6, "size" — свой.
-Код выхода 1, если есть одиночки, куски, налезания или линии сквозь карточки.
+С 05.10 ещё и текст: каждую строку заголовка и описания (после авто-экранирования генератора) прогоняем через
+копию разборщика FTB Library (TextComponentParser): неизвестный код после &, пробел после &, «{…}» в обычной
+строке (FTB съест скобки), битый JSON — FTB показал бы вместо строки красную ошибку или пустоту.
+Код выхода 1, если есть одиночки, куски, налезания, линии сквозь карточки или сломанный текст.
 """
+import json
 import pathlib
 import sys
 
@@ -31,6 +35,71 @@ def cross(a, b, c, d):
     if a in (c, d) or b in (c, d):
         return False
     return o(a, b, c) * o(a, b, d) < 0 and o(c, d, a) * o(c, d, b) < 0
+
+
+FTB_CODES = set("0123456789abcdefklmnorz")
+
+
+def ftb_parse_error(s):
+    """Копия цикла TextComponentParser.parse (FTB Library 2101): None — строка разберётся, иначе причина."""
+    if not any(c in s for c in "{&§"):
+        return None
+    sub, i, n = False, 0, len(s)
+    while i < n:
+        escape = i > 0 and s[i - 1] == "\\"
+        end = i == n - 1
+        c = s[i]
+        if sub and (end or c in "{}"):
+            if c == "{":
+                return "вложенная «{»"
+            sub = False
+            i += 1
+            continue
+        if not escape:
+            if c in "&§":
+                if end:
+                    return "«&» в конце строки"
+                i += 1
+                if s[i] == "#":
+                    i += 7
+                    continue
+                if s[i] == " ":
+                    return "пробел после «&»"
+                if s[i] not in FTB_CODES:
+                    return f"неизвестный код «&{s[i]}»"
+                i += 1
+                continue
+            if c == "{":
+                if end:
+                    return "«{» в конце строки"
+                sub = True
+        i += 1
+    return None
+
+
+def text_problems(ch):
+    out = []
+    for q in ch["quests"]:
+        lines = [("заголовок", q["title"])] + [("описание", x) for x in q.get("desc", [])] + \
+                [("задача", t["title"]) for t in q.get("tasks", []) if t.get("title")]
+        for kind, raw in lines:
+            if kind == "описание" and G.REF_RE.match(raw):
+                continue  # @ref — генератор сам превратит в JSON и проверит цель
+            s = G.ftb_text(raw)
+            if s == "{@pagebreak}":
+                continue
+            if s.startswith("{") and s.endswith("}"):
+                try:
+                    json.loads(s)
+                except ValueError as e:
+                    out.append(f"{q['key']}: битый JSON в описании ({e})")
+                continue
+            err = ftb_parse_error(s)
+            if not err and "{" in s:
+                err = "«{…}» в тексте — FTB примет это за подстановку"
+            if err:
+                out.append(f"{q['key']}: {kind}: {err}: {raw[:60]}")
+    return out
 
 
 def lint(ch):
@@ -70,6 +139,7 @@ def lint(ch):
             if seg_dist(pos[k], pos[a], pos[b]) < size[k] / 2 + 0.12:
                 problems.append(f"линия {a}→{b} через {k}")
     crosses = sum(1 for i, e in enumerate(edges) for g in edges[i + 1:] if cross(pos[e[0]], pos[e[1]], pos[g[0]], pos[g[1]]))
+    problems += text_problems(ch)
     return problems, crosses
 
 

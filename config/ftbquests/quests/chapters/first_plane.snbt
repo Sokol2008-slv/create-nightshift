@@ -6,7 +6,7 @@
 	icon: { id: "simulated:physics_assembler" }
 	id: "5431D93E250BCB8C"
 	images: [ ]
-	order_index: 17
+	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{
@@ -21,12 +21,11 @@
 		}
 		{
 			dependencies: ["58CDE5A8D0227B98"]
-			icon: { id: "immersive_aircraft:biplane" }
 			id: "135091C07022C9A1"
 			rewards: [{ id: "338BB725C35F90A2", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "57232A7905A4285C", type: "checkmark" }]
+			tasks: [{ id: "57232A7905A4285C", item: { count: 1, id: "immersive_aircraft:biplane" }, type: "item" }]
 			x: 0.00d
 			y: 0.00d
 		}
@@ -41,12 +40,11 @@
 		}
 		{
 			dependencies: ["7A39018E4BE93584"]
-			icon: { id: "create:super_glue" }
 			id: "5E4F935500884B5E"
 			rewards: [{ id: "0133BE3E244A7140", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "5CA398BCF564CF9E", type: "checkmark" }]
+			tasks: [{ id: "5CA398BCF564CF9E", item: { count: 1, id: "create:super_glue" }, type: "item" }]
 			x: 1.92d
 			y: 2.88d
 		}
@@ -102,12 +100,11 @@
 		}
 		{
 			dependencies: ["44FB9161122A88F5"]
-			icon: { id: "simulated:steering_wheel" }
 			id: "40BC59080DC10129"
 			rewards: [{ id: "51FC1E1C4AC6E95F", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "35E643D7CDFD280D", type: "checkmark" }]
+			tasks: [{ id: "35E643D7CDFD280D", item: { count: 1, id: "simulated:steering_wheel" }, type: "item" }]
 			x: 11.28d
 			y: 0.00d
 		}
@@ -205,12 +202,11 @@
 		}
 		{
 			dependencies: ["6FD1D61B190A391F"]
-			icon: { id: "aeronautics:white_envelope" }
 			id: "6B33460399FB68BA"
 			rewards: [{ id: "5C5477515F90B079", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "753C9F0AA36D7318", type: "checkmark" }]
+			tasks: [{ id: "753C9F0AA36D7318", count: 16L, item: { count: 1, id: "aeronautics:white_envelope" }, type: "item" }]
 			x: 7.60d
 			y: 2.88d
 		}
@@ -246,12 +242,11 @@
 		}
 		{
 			dependencies: ["6F0ED9E8085BFCE5"]
-			icon: { id: "offroad:large_tire" }
 			id: "64B2071B71444A15"
 			rewards: [{ id: "0120ACFEFD652B8F", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "340481058A3FBB37", type: "checkmark" }]
+			tasks: [{ id: "340481058A3FBB37", count: 4L, item: { count: 1, id: "offroad:tire" }, type: "item" }]
 			x: 7.60d
 			y: 5.76d
 		}
@@ -287,12 +282,11 @@
 		}
 		{
 			dependencies: ["5CC2972B8E23DC31"]
-			icon: { id: "create_submarine:ballast_vent" }
 			id: "0A3DAD1655477A4B"
 			rewards: [{ id: "3EA807AD5C2AB090", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "5E4E0B551474ABE6", type: "checkmark" }]
+			tasks: [{ id: "5E4E0B551474ABE6", count: 2L, item: { count: 1, id: "create_submarine:ballast_tank" }, type: "item" }]
 			x: 7.52d
 			y: 8.64d
 		}
@@ -350,12 +344,11 @@
 		}
 		{
 			dependencies: ["2B93C5ECE763DE47", "3683F15199866889"]
-			icon: { id: "create_submarine:water_thruster" }
 			id: "5050456F7CF14F06"
 			rewards: [{ id: "1891C8C99562C3DC", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "5263023C493D037C", type: "checkmark" }]
+			tasks: [{ id: "5263023C493D037C", item: { count: 1, id: "create_submarine:barometer" }, type: "item" }]
 			x: 13.12d
 			y: 8.64d
 		}

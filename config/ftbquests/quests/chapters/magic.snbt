@@ -6,10 +6,11 @@
 	icon: { id: "irons_spellbooks:gold_spell_book" }
 	id: "4677C21EABBA261F"
 	images: [ ]
-	order_index: 10
+	order_index: 19
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["3AFD165303DC1F36"]
 			icon: { id: "minecraft:enchanted_book" }
 			id: "26D4945737F6CCB3"
 			optional: true
@@ -18,7 +19,7 @@
 			size: 1.0d
 			tasks: [{ id: "6DA77A24E178156D", type: "checkmark" }]
 			x: 0.00d
-			y: 0.00d
+			y: -1.80d
 		}
 		{
 			dependencies: ["26D4945737F6CCB3"]
@@ -30,16 +31,15 @@
 			size: 1.0d
 			tasks: [{ id: "01165A3B50E6CD7D", type: "checkmark" }]
 			x: 0.00d
-			y: -1.80d
+			y: -3.60d
 		}
 		{
-			dependencies: ["26D4945737F6CCB3"]
 			id: "3AFD165303DC1F36"
 			rewards: [{ id: "1C55998CF95F6B3D", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "481761526FD02A50", count: 4L, item: { count: 1, id: "irons_spellbooks:arcane_essence" }, type: "item" }]
-			x: 2.20d
+			x: 0.00d
 			y: 0.00d
 		}
 		{
