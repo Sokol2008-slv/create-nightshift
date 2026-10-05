@@ -4,6 +4,8 @@
 //   /nightshift menu [с волны]    — меню сложностей (как ПКМ по алтарю), рядом с алтарём; число — листание
 //   /nightshift start <N>         — набег сложности N у ближайшего алтаря (кнопки меню алтаря)
 //   /nightshift altar             — телепорт к алтарю во время набега, после — обратно
+//   /nightshift call [no]         — принять / отклонить ночной вызов (48_night_call.js); оператор: call offer
+//   /arena endless [stop]         — выживание на арене (48_night_call.js)
 //   /nightshift spawn add|remove|list|clear — точки спавна орды у ближайшего алтаря (там, где стоишь)
 // Оператор (уровень 2):
 //   /nightshift status            — прогресс, набег, проклятие, алтари
@@ -131,10 +133,10 @@ function nsStartChallenge(ctx, d, check) {
 			nsAdminReply(ctx, 'набег уже идёт')
 			return 0
 		}
-		if ((st.curse || 0) > 0) {
-			ctx.source.sendSystemMessage(nsCurseLine(st))
-			return 0
-		}
+		// проклятие больше не запирает алтарь (05.10, поток W): оно снимается победами — напоминаем и пускаем
+		if ((st.curse || 0) > 0) ctx.source.sendSystemMessage(nsCurseLine(st))
+		// «Старт» на волне ночного вызова = принять вызов (48_night_call.js)
+		if (typeof nsCallMaybeStart === 'function' && nsCallMaybeStart(ctx, d)) return 1
 		if (d < 1 || d > (st.phase || 0) + 1) {
 			nsAdminReply(ctx, 'эта сложность ещё закрыта — сначала пройдите: ' + nsDifficultyName((st.phase || 0) + 1))
 			return 0
@@ -214,7 +216,8 @@ ServerEvents.commandRegistry(event => {
 					var st = nsGetState()
 					nsAdminReply(ctx, 'пройдено: ' + st.phase + ', набег: ' + st.raid.state + (st.raid.kind ? ' (' + st.raid.kind + ' ' + (st.raid.difficulty || '') + ', волна ' + (st.raid.waveIndex + 1) + ')' : ''))
 					for (var a = 0; a < st.altars.length; a++) nsAdminReply(ctx, 'алтарь ' + st.altars[a].dim + ' ' + st.altars[a].x + ' ' + st.altars[a].y + ' ' + st.altars[a].z)
-					nsAdminReply(ctx, 'проклятие: ' + (st.curse || 0) + ', алтарей: ' + st.altars.length + ', зон: ' + st.zones.length + ', ночей до малого: ' + (NSG.NIGHTSHIFT_TUNABLES.minorRaidEveryNights - st.dayCounter))
+					nsAdminReply(ctx, 'проклятие: ' + (st.curse || 0) + ', алтарей: ' + st.altars.length + ', зон: ' + st.zones.length + ', прочность алтаря: ' + (st.raid.altarHp === undefined ? '-' : st.raid.altarHp))
+					nsAdminReply(ctx, 'ночной вызов: ' + (st.call ? JSON.stringify(st.call) : 'не было') + ', рекорд арены: ' + (st.arenaRecord ? st.arenaRecord.subs + ' (' + st.arenaRecord.names.join(', ') + ')' : 'нет') + ', особая стадия: ' + (st.raid.sp ? JSON.stringify(st.raid.sp).substring(0, 200) : '-'))
 					return 1
 				})
 			)
