@@ -1016,7 +1016,7 @@ ServerEvents.commandRegistry(event => {
 						EB.post(new NS_TR_TRADE_EV(fp, offer, tr))
 						var res = offer.getResult()
 						var cost = offer.getCostA().getCount() + (offer.getCostB().isEmpty() ? 0 : offer.getCostB().getCount())
-						return say(ctx, 'куплено: ' + res.getCount() + '× ' + res.getHoverName().getString() + ' за ' + cost + ' жетонов (' + nsFunId(offer.getCostA()) + '), продано ' + before + '→' + offer.getUses() + ' из ' + offer.getMaxUses())
+						return say(ctx, 'куплено: ' + res.getCount() + '× ' + res.getHoverName().getString() + ' за ' + nsFunPlural(cost, 'жетон', 'жетона', 'жетонов') + ' (' + nsFunId(offer.getCostA()) + '), продано ' + before + '→' + offer.getUses() + ' из ' + offer.getMaxUses())
 					})
 				)
 			)
