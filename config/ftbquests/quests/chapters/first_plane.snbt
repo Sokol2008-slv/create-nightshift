@@ -443,6 +443,16 @@
 			y: 1.76d
 		}
 		{
+			dependencies: ["1A33CB476C1A29D4", "68AEF2EB9277660D"]
+			id: "21DC2FC0ABF8CFF7"
+			rewards: [{ id: "7E0B71D5E7775FDE", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4C8682DF55AE2355", item: { count: 1, id: "axiomativ:energy_cannon" }, type: "item" }]
+			x: 0.00d
+			y: -3.52d
+		}
+		{
 			dependencies: ["798ACE3CE5DB69E8"]
 			id: "0EB8F93F165A1C11"
 			rewards: [{ id: "54BB65EC302EA180", type: "xp", xp: 10 }]

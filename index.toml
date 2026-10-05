@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "d74ff85452dca09d36eb148b8c995e167e22208558bbf540d17551af939ce752"
+hash = "db9ac4c947b410ec49c16d2f1ca9ecdd1c08e417334b83461dd6b70f3a495ed3"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -54,7 +54,7 @@ hash = "461718278a858ca048909e790d3ac0a1a63ce97d70922bc818b5e8ce64720d87"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/automation_extras.snbt"
-hash = "75c7c639979a1b6a222120904e320f4ba933ba89e822648d12c40d1961ec7242"
+hash = "e5ecb314ceef520e3a7b5d2670e342bf071f41e7f33a7ce1acfbf3c8d2142d8b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_logistics_trains.snbt"
@@ -82,7 +82,7 @@ hash = "41fea399a94da284a02db8a29298704adf19de34c5db15123ffa36133623d94d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_plane.snbt"
-hash = "b0d5186925419d41d37218db592534b172f674d5a34355151f20ca095de1276b"
+hash = "cd999adc2963476336182e1d408568e056c303ae3a86d3346791e93a09b9dc2f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/food.snbt"
@@ -142,11 +142,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "592a944f4d6c76c7d2d42484672b6f49499c3f09c1407ea9a6f8c8fe00b3b146"
+hash = "638e9ac8437fe16c0c6e397da107ec868cfa6cdb1f8c2acb590f1b134b37a16e"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "592a944f4d6c76c7d2d42484672b6f49499c3f09c1407ea9a6f8c8fe00b3b146"
+hash = "638e9ac8437fe16c0c6e397da107ec868cfa6cdb1f8c2acb590f1b134b37a16e"
 
 [[files]]
 file = "config/iris.properties"
@@ -1237,6 +1237,10 @@ file = "kubejs/client_scripts/axiomativ_drill_jei.js"
 hash = "95b0087b255b983be19f59db50e51a31a958e019b72fb733c9f88b3bf7df6208"
 
 [[files]]
+file = "kubejs/client_scripts/axiomativ_drones_jei.js"
+hash = "8274203331f08e8179f85666dca8075c3edb35a14ab01db705e9e310fb5296c6"
+
+[[files]]
 file = "kubejs/client_scripts/axiomativ_gate_jei.js"
 hash = "45803ba27c3ec5409c5b13d3c3dc57f1bc54c1a7f0e6d175820c644b6d661ec0"
 
@@ -2161,6 +2165,10 @@ file = "kubejs/server_scripts/aviation/10_recipes.js"
 hash = "c326858a7d44a19bb16cbdaa3cbe60adc19c1b844ad8e6df8d9b3eda2711054e"
 
 [[files]]
+file = "kubejs/server_scripts/aviation/15_energy_cannon.js"
+hash = "1eacf2f0160768284619474ceea2b74312bab89b02de05a88b6bf54f884821d0"
+
+[[files]]
 file = "kubejs/server_scripts/aviation/20_aeroclub.js"
 hash = "c118ecccd2c00d1101945cb5304fc86f3061b6c3f845373195daccae818165f2"
 
@@ -2369,6 +2377,10 @@ file = "kubejs/server_scripts/shift/20_atlas.js"
 hash = "dfc8bc9c78dd12be4d587d50079e1ea4f56dfc5af28dd2f2cedc0d2ff96f6997"
 
 [[files]]
+file = "kubejs/server_scripts/shift/25_atlas_drones.js"
+hash = "66fd4fc9f3431b22fc4cc8ed47b759e052aaebd02f289260d255534555cfbc19"
+
+[[files]]
 file = "kubejs/server_scripts/shift/30_dispatch.js"
 hash = "5b7246ab3afe1a5db18280349e5440bf68c04a92ed8ce948ac587b1d027788f3"
 
@@ -2455,6 +2467,10 @@ hash = "6c8c7b43e7217c80976fd5efc9b70fa5f9e0b7665d83f7c1efd74c79a15a3c9a"
 [[files]]
 file = "kubejs/server_scripts/vahta/49_axiomativ_drill.js"
 hash = "712cea681c0cbe28be1b6b6cca193003786d4dbceae9ac793d89212149a56ab2"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/49_axiomativ_drones.js"
+hash = "f7ee2496e849fc9b9c1acb01ab24698607665fd1d2d11d15ba793b79991c7c1f"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/49_axiomativ_gate.js"
@@ -2658,7 +2674,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "e304df605b0034e8914a7222bba1761f2c625bbc5f8c1ded9ef01e28c1c3868b"
+hash = "058597bf2c8fb3cbf4445cad7319c3b86ee8b881c324765fbc20a87f53cd8297"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

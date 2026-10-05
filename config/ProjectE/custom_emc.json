@@ -42076,6 +42076,46 @@
   {
    "id": "axiomativ:repair_rack",
    "emc": 0
+  },
+  {
+   "id": "axiomativ:helper_drone",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_helper_drone",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_remote",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_nest",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_upgrade_speed",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_upgrade_cargo",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_upgrade_battery",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_drone_upgrade",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_cannon",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_energy_cannon",
+   "emc": 0
   }
  ]
 }
