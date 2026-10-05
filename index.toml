@@ -2262,7 +2262,7 @@ hash = "59b4a2a191de6f4ae614592435d4b05451f31fd83eefbe7fa0c34f54e8dcf911"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
-hash = "d47032906bec905d8bf65714fb827924c40d2933d915fc74eed795705853e177"
+hash = "6b216bad66d1ab682842eaa87cf64a21ca5414c3b8a65e82cda6c1b73b9bcfd2"
 
 [[files]]
 file = "kubejs/server_scripts/sky/20_sky_islands.js"

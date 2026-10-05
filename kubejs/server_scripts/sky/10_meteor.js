@@ -644,7 +644,9 @@ function nsSkySummonGuard(m, mm, x, y, z, star, flyer) {
 	var nbt = '{Tags:' + tags + ',PersistenceRequired:1b'
 	if (mm.nbt && mm.nbt.indexOf('active_effects') < 0) nbt += ',' + mm.nbt
 	if (!mm.nbt || mm.nbt.indexOf('active_effects') < 0) nbt += ',' + NS_SKY_FIRE_RES
-	if (star) nbt += ',Glowing:1b,CustomName:\'"Страж метеорита"\',CustomNameVisible:1b'
+	// 05.10, Георгий: «не можем найти последнего монстра» — подсвечены все стражи, не только звезда
+	nbt += ',Glowing:1b'
+	if (star) nbt += ',CustomName:\'"Страж метеорита"\',CustomNameVisible:1b'
 	nbt += '}'
 	nsSkyCmd('summon ' + mm.id + ' ' + x + ' ' + y + ' ' + z + ' ' + nbt)
 }
@@ -745,6 +747,15 @@ function nsSkyHotTick(level, m, rs) {
 					nsSkyCmd('playsound minecraft:entity.wither.ambient hostile @a ' + m.x + ' ' + m.y + ' ' + m.z + ' 4 0.6')
 				}
 			}
+		}
+		// застрявших в блоке (обломки кратера, склон) — наверх, на поверхность над ними
+		for (var gi = 0; gi < alive.length; gi++) {
+			try {
+				if (!alive[gi].isInWall()) continue
+				var gx = Math.floor(alive[gi].getX()),
+					gz = Math.floor(alive[gi].getZ())
+				alive[gi].teleportTo(gx + 0.5, level.getHeight(NS_SKY_HM.MOTION_BLOCKING_NO_LEAVES, gx, gz), gz + 0.5)
+			} catch (e) {}
 		}
 		// поводок: далеко ушедших — назад к кратеру
 		for (var g = 0; g < alive.length; g++) {
