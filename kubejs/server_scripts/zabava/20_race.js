@@ -73,8 +73,8 @@ function nsRacePos(p) {
 }
 // единичный вектор взгляда из yaw/pitch (Minecraft: yaw 0 — юг, +z)
 function nsRaceLook(p) {
-	var yaw = (Number(p.getYRot()) * Math.PI) / 180
-	var pitch = Number(p.getXRot())
+	var yaw = (nsFunYaw(p) * Math.PI) / 180
+	var pitch = nsFunPitch(p)
 	if (Math.abs(pitch) < 12) pitch = 0 // почти горизонтально — кольцо ставим ровно вертикально
 	pitch = (pitch * Math.PI) / 180
 	return { x: -Math.sin(yaw) * Math.cos(pitch), y: -Math.sin(pitch), z: Math.cos(yaw) * Math.cos(pitch) }
@@ -176,13 +176,13 @@ function nsRaceBoardPos(t) {
 	return { x: r0.x, y: r0.y + r0.r + 2.2, z: r0.z }
 }
 function nsRaceBoardText(t) {
-	var ex = [{ text: 'Трасса «' + t.name + '»\n', color: 'gold', bold: true }, { text: t.rings.length + ' колец · ' + nsRaceLen(t) + ' бл. · автор ' + t.owner + '\n', color: 'gray' }]
+	var ex = [{ text: 'Трасса «' + t.name + '»\n', color: 'gold', bold: true }, { text: nsFunPlural(t.rings.length, 'кольцо', 'кольца', 'колец') + ' · ' + nsRaceLen(t) + ' бл. · автор ' + t.owner + '\n', color: 'gray' }]
 	if (!t.best || !t.best.length) ex.push({ text: 'рекордов пока нет — будь первым\n', color: 'white' })
 	for (var i = 0; i < (t.best || []).length && i < 5; i++) ex.push({ text: i + 1 + '. ' + t.best[i].n + ' — ' + nsFunClock(t.best[i].t) + '\n', color: i === 0 ? 'yellow' : 'white' })
 	ex.push({ text: '/race start ' + t.name, color: 'aqua' })
 	return { text: '', extra: ex }
 }
-function nsRaceBoardTick() {
+function nsRaceBoardTick(forceId) {
 	var st = nsRaceState()
 	for (var id in st.tracks) {
 		var t = st.tracks[id]
@@ -196,7 +196,8 @@ function nsRaceBoardTick() {
 				dz = ps[i].getZ() - bp.z
 			if (dx * dx + dz * dz < NS_RACE.boardR * NS_RACE.boardR) near = true
 		}
-		if (!near) continue
+		if (forceId && id !== forceId) continue
+		if (!near && !forceId) continue
 		var have = nsFunFind(level, bp.x, bp.y, bp.z, 3, 'ns_rb_' + id)
 		var ver = (t.ver || 0) + ':' + t.rings.length
 		var text = JSON.stringify(JSON.stringify(nsRaceBoardText(t)))
@@ -333,7 +334,7 @@ function nsRaceFinish(p, name, run, t, time) {
 	var speed = len / Math.max(0.05, time / 20)
 	if (run.fake) {
 		run.fake.report('финиш за ' + nsFunClock(time) + ' (' + Math.round(time * 100) / 100 + ' тиков), колец ' + t.rings.length + ', ' + Math.round(speed) + ' бл./с, отсечки: ' + run.splits.map(nsFunClock).join(' | '))
-		return
+		if (!run.fake.rec) return // /race selftestrec — дальше как у игрока: рекорды, награда, табло
 	}
 	if (speed > NS_RACE.maxSpeed) {
 		p.setStatusMessage(Text.red('Финиш ' + nsFunClock(time) + ' — быстрее ' + NS_RACE.maxSpeed + ' бл./с не бывает, заезд не засчитан'))
@@ -369,6 +370,7 @@ function nsRaceFinish(p, name, run, t, time) {
 		}
 	}
 	nsRaceSave()
+	if (run.fake) run.fake.report('рекорд трассы: ' + record + (prev ? ' (прежний ' + nsFunClock(prev.t) + ', ' + prev.n + ')' : ' (эталон)') + ', личный лучший: ' + pb + ', жетонов: ' + paid + ', таблица: ' + t.best.map(function (b) { return b.n + ' ' + nsFunClock(b.t) }).join('; '))
 	NSG.nsServer.runCommandSilent('title ' + name + ' times 5 50 15')
 	if (record) {
 		NSG.nsServer.runCommandSilent('title ' + name + ' subtitle ' + JSON.stringify({ text: nsFunClock(time) + (prev ? ' (было ' + nsFunClock(prev.t) + ', ' + prev.n + ')' : ' — первый рекорд трассы'), color: 'yellow' }))
@@ -379,6 +381,7 @@ function nsRaceFinish(p, name, run, t, time) {
 			var line = Text.gold('[Гонки] ').append(Text.white(name + ' — рекорд трассы «' + t.name + '»: ')).append(Text.yellow(nsFunClock(time))).append(Text.gray(' (было ' + nsFunClock(prev.t) + ', ' + prev.n + ')'))
 			if (paid > 0) line = line.append(Text.green(' +' + nsFunPlural(paid, 'жетон', 'жетона', 'жетонов') + ' смены'))
 			nsTellAll(line)
+			if (typeof nsJournal === 'function') nsJournal('race', name + ' — рекорд трассы «' + t.name + '»: ' + nsFunClock(time) + ' (было ' + nsFunClock(prev.t) + ', ' + prev.n + ')', 'gold')
 		} else p.tell(Text.gold('[Гонки] ').append(Text.white('Первый заезд трассы «' + t.name + '» — ' + nsFunClock(time) + '. Это эталон: награда — тому, кто его побьёт.')))
 	} else {
 		NSG.nsServer.runCommandSilent('title ' + name + ' subtitle ' + JSON.stringify({ text: nsFunClock(time) + ' · рекорд ' + nsFunClock(prev.t) + ' (' + prev.n + ')' + (pb ? ' · личный лучший!' : ''), color: pb ? 'green' : 'gray' }))
@@ -514,13 +517,43 @@ PlayerEvents.loggedOut(event => {
 // --------------------------------------------------------------------------
 // Самопроверка без клиента: бот пролетает кольца (2,5 блока за тик), тот же код подсчёта
 // --------------------------------------------------------------------------
-function nsRaceSelftest(src, t) {
-	if (t.rings.length < NS_RACE.minRings) return 'в трассе меньше ' + NS_RACE.minRings + ' колец'
-	var level = NSG.nsServer.getLevel(t.dim)
+function nsRaceBot(level) {
 	var Factory = Java.loadClass('net.neoforged.neoforge.common.util.FakePlayerFactory')
 	var Profile = Java.loadClass('com.mojang.authlib.GameProfile')
-	var UUID = Java.loadClass('java.util.UUID')
-	var bot = Factory.get(level, new Profile(UUID.fromString('6e737261-6365-4000-8000-000000000001'), 'Испытатель'))
+	return Factory.get(level, new Profile(NS_TR_UUID.fromString('6e737261-6365-4000-8000-000000000001'), 'Испытатель'))
+}
+// Трассы нет — бот ставит её сам тем же кодом, что игрок с «Маяком трассы»: 4 кольца от точки команды на 30 блоков
+// выше, с поворотом и подъёмом (последнее кольцо наклонено), ~370 блоков — длиннее порога награды
+function nsRaceSelftestBuild(src, name) {
+	var level = src.getLevel()
+	var pos = src.getPosition()
+	var bot = nsRaceBot(level)
+	var st = nsRaceState()
+	st.seq++
+	var id = String(st.seq)
+	st.tracks[id] = { id: id, name: name, owner: 'Испытатель', dim: String(level.getDimension()), rings: [], best: [], made: nsFunDay(), ver: 0 }
+	st.edit['Испытатель'] = id
+	var x0 = Number(pos.x()),
+		y0 = Number(pos.y()) + 30,
+		z0 = Number(pos.z())
+	// [dx, dy, dz, yaw, pitch]: yaw −90 — на восток (+x), pitch −20 — вверх
+	var plan = [[0, 0, 0, -90, 0], [120, 0, 0, -90, 0], [240, 0, 60, -60, 0], [330, 20, 140, -45, -20]]
+	var errs = []
+	for (var i = 0; i < plan.length; i++) {
+		var P = plan[i]
+		bot.setPositionAndRotation(x0 + P[0], y0 + P[1] - Number(bot.getBbHeight()) * 0.5, z0 + P[2], P[3], P[4])
+		var err = nsRaceAddRing(bot)
+		if (err) errs.push(err)
+	}
+	delete st.edit['Испытатель']
+	nsRaceSave()
+	var t = st.tracks[id]
+	return { t: t, msg: 'бот поставил трассу «' + name + '»: колец ' + t.rings.length + ', ' + nsRaceLen(t) + ' бл.' + (errs.length ? ', ошибки: ' + errs.join('; ') : '') + ', кольцо 4: нормаль ' + [t.rings[3].nx, t.rings[3].ny, t.rings[3].nz].join(' ') }
+}
+function nsRaceSelftest(src, t, rec) {
+	if (t.rings.length < NS_RACE.minRings) return 'в трассе меньше ' + NS_RACE.minRings + ' колец'
+	var level = NSG.nsServer.getLevel(t.dim)
+	var bot = nsRaceBot(level)
 	// путь: перед каждым кольцом и за ним по нормали (с той стороны, откуда смотрели при постановке)
 	var path = []
 	for (var i = 0; i < t.rings.length; i++) {
@@ -533,14 +566,18 @@ function nsRaceSelftest(src, t) {
 	var seg = 0,
 		cur = { x: path[0].x, y: path[0].y, z: path[0].z }
 	bot.setPos(cur.x, cur.y - h, cur.z)
+	// 2,5 блока за тик (50 бл./с); каждый следующий selftestrec на 15 % быстрее — чтобы проверить оплату рекорда
+	if (rec) NSG.nsRaceTestN = (NSG.nsRaceTestN || 0) + 1
+	var speed = 2.5 * (1 + 0.15 * (rec ? NSG.nsRaceTestN - 1 : 0))
 	var mover = {
 		player: bot,
+		rec: !!rec,
 		report: function (msg) {
 			src.sendSystemMessage(Text.gold('[Гонки · самопроверка] ').append(Text.white('«' + t.name + '»: ' + msg)))
 			console.info('[гонки] самопроверка «' + t.name + '»: ' + msg)
 		},
 		move: function () {
-			var step = 2.5
+			var step = speed
 			while (step > 0 && seg + 1 < path.length) {
 				var nx = path[seg + 1]
 				var dx = nx.x - cur.x,
@@ -560,21 +597,30 @@ function nsRaceSelftest(src, t) {
 		},
 	}
 	var err = nsRaceStart(bot, t, mover)
-	return err || 'бот стартовал: ' + t.rings.length + ' колец, ' + nsRaceLen(t) + ' бл. по прямым'
+	return err || 'бот стартовал: ' + nsFunPlural(t.rings.length, 'кольцо', 'кольца', 'колец') + ', ' + nsRaceLen(t) + ' бл. по прямым'
+}
+function nsRaceSelftestCmd(ctx, nm, rec) {
+	nm = nm.trim()
+	var t = nsRaceFind(nm)
+	if (!t || String(t.name).toLowerCase() !== nm.toLowerCase()) {
+		var b = nsRaceSelftestBuild(ctx.source, nm)
+		ctx.source.sendSystemMessage(Text.gold('[Гонки · самопроверка] ').append(Text.white(b.msg)))
+		t = b.t
+	}
+	ctx.source.sendSystemMessage(Text.gold('[Гонки · самопроверка] ').append(Text.white(nsRaceSelftest(ctx.source, t, rec))))
+	return 1
 }
 
 // --------------------------------------------------------------------------
 // Команды
 // --------------------------------------------------------------------------
 function nsRaceHelp(src) {
-	var g = Text.gray,
-		y = Text.yellow
 	src.sendSystemMessage(Text.gold('[Гонки по кольцам] ').append(Text.white('трассы в небе для самолётов, драконов и элитр.')))
-	src.sendSystemMessage(y('/race list').clickRunCommand('/race list').append(g(' — трассы, рекорды, кнопки «Старт»')))
-	src.sendSystemMessage(y('/race new <название>').clickSuggestCommand('/race new ').append(g(' — новая трасса; кольца — ПКМ «Маяком трассы» в полёте (или /race ring), Shift+ПКМ — убрать; /race radius <3–16>; /race done')))
-	src.sendSystemMessage(y('/race start <название>').clickSuggestCommand('/race start ').append(g(' — старт с хода: таймер — от золотого кольца до красного; /race stop — сойти')))
-	src.sendSystemMessage(y('/race top <название>').clickSuggestCommand('/race top ').append(g(' · /race show <название> — подсветить кольца · /race edit, /race remove — автор')))
-	src.sendSystemMessage(g('Награда — жетоны смены за рекорд трассы (от 3 колец и 300 блоков, лучше прежнего на 2 %, до 10 жетонов в день).'))
+	src.sendSystemMessage(Text.yellow('/race list').clickRunCommand('/race list').append(Text.gray(' — трассы, рекорды, кнопки «Старт»')))
+	src.sendSystemMessage(Text.yellow('/race new <название>').clickSuggestCommand('/race new ').append(Text.gray(' — новая трасса; кольца — ПКМ «Маяком трассы» в полёте (или /race ring), Shift+ПКМ — убрать; /race radius <3–16>; /race done')))
+	src.sendSystemMessage(Text.yellow('/race start <название>').clickSuggestCommand('/race start ').append(Text.gray(' — старт с хода: таймер — от золотого кольца до красного; /race stop — сойти')))
+	src.sendSystemMessage(Text.yellow('/race top <название>').clickSuggestCommand('/race top ').append(Text.gray(' · /race show <название> — подсветить кольца · /race edit, /race remove — автор')))
+	src.sendSystemMessage(Text.gray('Награда — жетоны смены за рекорд трассы (от 3 колец и 300 блоков, лучше прежнего на 2 %, до 10 жетонов в день).'))
 	return 1
 }
 function nsRaceList(src) {
@@ -589,7 +635,7 @@ function nsRaceList(src) {
 	for (var i = 0; i < ids.length; i++) {
 		var t = st.tracks[ids[i]]
 		var rec = t.best && t.best.length ? t.best[0] : null
-		var line = Text.white(' ' + t.id + '. «' + t.name + '» ').append(Text.gray(t.rings.length + ' колец, ' + nsRaceLen(t) + ' бл., ' + t.owner))
+		var line = Text.white(' ' + t.id + '. «' + t.name + '» ').append(Text.gray(nsFunPlural(t.rings.length, 'кольцо', 'кольца', 'колец') + ', ' + nsRaceLen(t) + ' бл., ' + t.owner))
 		if (rec) line = line.append(Text.yellow(' · ' + nsFunClock(rec.t) + ' ' + rec.n))
 		if (p && t.rings.length && nsFunDim(p) === t.dim) {
 			var dx = t.rings[0].x - p.getX(),
@@ -603,7 +649,7 @@ function nsRaceList(src) {
 	return 1
 }
 function nsRaceTop(src, t) {
-	src.sendSystemMessage(Text.gold('[Гонки] «' + t.name + '»: ').append(Text.gray(t.rings.length + ' колец, ' + nsRaceLen(t) + ' бл., автор ' + t.owner)))
+	src.sendSystemMessage(Text.gold('[Гонки] «' + t.name + '»: ').append(Text.gray(nsFunPlural(t.rings.length, 'кольцо', 'кольца', 'колец') + ', ' + nsRaceLen(t) + ' бл., автор ' + t.owner)))
 	if (!t.best || !t.best.length) src.sendSystemMessage(Text.white(' рекордов пока нет'))
 	for (var i = 0; i < (t.best || []).length; i++) {
 		var row = ' ' + (i + 1) + '. ' + t.best[i].n + ' — ' + nsFunClock(t.best[i].t)
@@ -724,7 +770,7 @@ ServerEvents.commandRegistry(event => {
 						nsRaceSave()
 						if (!t) return say(ctx, 'Трассы в работе не было.')
 						if (t.rings.length < NS_RACE.minRings) return say(ctx, '«' + t.name + '» отложена: колец ' + t.rings.length + ', для заездов нужно от ' + NS_RACE.minRings + ' (/race edit ' + t.name + ').')
-						return say(ctx, '«' + t.name + '» готова: ' + t.rings.length + ' колец, ' + nsRaceLen(t) + ' бл. Заезд — /race start ' + t.name + '.')
+						return say(ctx, '«' + t.name + '» готова: ' + nsFunPlural(t.rings.length, 'кольцо', 'кольца', 'колец') + ', ' + nsRaceLen(t) + ' бл. Заезд — /race start ' + t.name + '.')
 					})
 				)
 			)
@@ -779,18 +825,26 @@ ServerEvents.commandRegistry(event => {
 					return say(ctx, 'Трасса «' + t.name + '» удалена.')
 				})
 			)
+			// табло трассы заново (оператор): если пропало или не обновилось — без игроков рядом тоже
 			.then(
-				C.literal('selftest')
+				C.literal('board')
 					.requires(s => s.hasPermission(2))
 					.then(
 						C.argument('name', A.GREEDY_STRING.create(event)).executes(
 							wrap(ctx => {
 								var t = track(ctx)
-								if (!t) return say(ctx, 'Нет такой трассы.', true)
-								return say(ctx, nsRaceSelftest(ctx.source, t))
+								if (!t || !t.rings.length) return say(ctx, 'Нет такой трассы (или в ней нет колец).', true)
+								NSG.nsRaceBoardVer[t.id] = null
+								nsRaceBoardTick(t.id)
+								var bp = nsRaceBoardPos(t)
+								return say(ctx, 'Табло «' + t.name + '» — ' + bp.x.toFixed(1) + ' ' + bp.y.toFixed(1) + ' ' + bp.z.toFixed(1) + '.')
 							})
 						)
 					)
 			)
+			// проверка без клиента (оператор): selftest — бот пролетает трассу (нет такой — ставит её сам от точки
+			// команды), selftestrec — то же, но результат бота идёт в рекорды и награду, как у игрока
+			.then(C.literal('selftest').requires(s => s.hasPermission(2)).then(C.argument('name', A.GREEDY_STRING.create(event)).executes(wrap(ctx => nsRaceSelftestCmd(ctx, String(A.GREEDY_STRING.getResult(ctx, 'name')), false)))))
+			.then(C.literal('selftestrec').requires(s => s.hasPermission(2)).then(C.argument('name', A.GREEDY_STRING.create(event)).executes(wrap(ctx => nsRaceSelftestCmd(ctx, String(A.GREEDY_STRING.getResult(ctx, 'name')), true)))))
 	)
 })

@@ -234,7 +234,7 @@ function nsTirEnd(why) {
 	var report = M.name + ': ' + result + ' · попаданий ' + s.hits + (clsKeys.length ? ' · ' + NS_TIR.cls[cls] : '')
 	if (s.bot) {
 		s.bot.report((done ? 'серия окончена (' + why + ')' : 'серия прервана (' + why + ')') + ' — ' + report)
-		return
+		if (!s.bot.rec) return // /tir selftest <режим> rec — дальше как у игрока: рекорды, награда, табло
 	}
 	if (!p) return
 	if (!done || (s.mode === 'sprint' && value === null) || (s.mode !== 'sprint' && value <= 0)) {
@@ -265,6 +265,7 @@ function nsTirEnd(why) {
 		var gainOk = s.mode === 'sprint' ? prev.v - value >= Math.max(prev.v * NS_TIR.minGain, 10) : value - prev.v >= Math.max(prev.v * NS_TIR.minGain, 2)
 		if (gainOk) paid = nsFunReward(p, 'tir', NS_TIR.reward[s.mode])
 	}
+	if (s.bot) s.bot.report('рекорд «' + key + '»: ' + record + (prev ? ' (прежний ' + nsTirFmt(s.mode, prev.v) + ', ' + prev.n + ')' : ' (эталон)') + ', жетонов: ' + paid + ', таблица: ' + list.map(function (r) { return r.n + ' ' + r.v }).join('; '))
 	NSG.nsServer.runCommandSilent('title ' + s.name + ' times 5 60 15')
 	if (record) {
 		NSG.nsServer.runCommandSilent('title ' + s.name + ' subtitle ' + JSON.stringify({ text: report + (prev ? ' (было ' + nsTirFmt(s.mode, prev.v) + ', ' + prev.n + ')' : ''), color: 'yellow' }))
@@ -274,6 +275,7 @@ function nsTirEnd(why) {
 			var line = Text.gold('[Тир] ').append(Text.white(s.name + ' — рекорд «' + M.name + '» (' + NS_TIR.cls[cls] + '): ')).append(Text.yellow(s.mode === 'sprint' ? nsFunClock(value) + ' с' : nsTirFmt(s.mode, value))).append(Text.gray(' (было ' + nsTirFmt(s.mode, prev.v) + ', ' + prev.n + ')'))
 			if (paid > 0) line = line.append(Text.green(' +' + nsFunPlural(paid, 'жетон', 'жетона', 'жетонов') + ' смены'))
 			nsTellAll(line)
+			if (typeof nsJournal === 'function') nsJournal('tir', s.name + ' — рекорд тира «' + M.name + '» (' + NS_TIR.cls[cls] + '): ' + nsTirFmt(s.mode, value) + ' (было ' + nsTirFmt(s.mode, prev.v) + ', ' + prev.n + ')', 'gold')
 		} else p.tell(Text.gold('[Тир] ').append(Text.white('Первый результат «' + M.name + '» (' + NS_TIR.cls[cls] + ') — эталон. Награда — тому, кто его побьёт.')))
 	} else {
 		NSG.nsServer.runCommandSilent('title ' + s.name + ' subtitle ' + JSON.stringify({ text: report + ' · рекорд ' + nsTirFmt(s.mode, prev.v) + ' (' + prev.n + ')', color: 'gray' }))
@@ -565,7 +567,20 @@ EntityEvents.spawned(event => {
 // --------------------------------------------------------------------------
 // Самопроверка без клиента: бот на рубеже бьёт мишени уроном «от игрока» (тот же обработчик попаданий)
 // --------------------------------------------------------------------------
-function nsTirSelftest(src, mode) {
+function nsTirSelftest(src, mode, rec) {
+	// арены нет (её строит /arena, а он — только для игрока) — построить так же: чанки, потом пол и алтарь
+	var ast = nsGetState()
+	if ((!ast.arena || !ast.arena.built) && typeof nsArenaBuild === 'function') {
+		nsArenaForceload()
+		NSG.nsServer.scheduleInTicks(60, function () {
+			try {
+				nsArenaBuild(nsGetState())
+			} catch (e) {
+				console.error('[тир] постройка арены: ' + e)
+			}
+		})
+		return 'арены не было — строю её, как /arena; повторите через минуту'
+	}
 	var level = nsTirLevel()
 	var Factory = Java.loadClass('net.neoforged.neoforge.common.util.FakePlayerFactory')
 	var Profile = Java.loadClass('com.mojang.authlib.GameProfile')
@@ -577,6 +592,7 @@ function nsTirSelftest(src, mode) {
 	var shots = 0
 	var helper = {
 		player: bot,
+		rec: !!rec,
 		report: function (msg) {
 			src.sendSystemMessage(Text.gold('[Тир · самопроверка] ').append(Text.white(msg + '; выстрелов бота ' + shots)))
 			console.info('[тир] самопроверка: ' + msg + '; выстрелов бота ' + shots)
@@ -607,15 +623,24 @@ function nsTirSelftest(src, mode) {
 // --------------------------------------------------------------------------
 // Команды
 // --------------------------------------------------------------------------
+function nsTirSelftestCmd(ctx, mode, rec) {
+	try {
+		ctx.source.sendSystemMessage(Text.gold('[Тир] ').append(Text.white(nsTirSelftest(ctx.source, mode, rec))))
+		return 1
+	} catch (e) {
+		console.error('[тир] самопроверка: ' + e)
+		ctx.source.sendSystemMessage(Text.red('[Тир] ошибка: ' + e))
+		return 0
+	}
+}
 function nsTirMenu(src) {
-	var g = Text.gray
 	src.sendSystemMessage(Text.gold('[Тир] ').append(Text.white('Стрельбище в коридоре арены, когда нет набега. Огневой рубеж — белая линия за алтарём.')))
 	var row = Text.white(' ')
 	var keys = ['time', 'moving', 'sprint']
 	var hints = ['60 с, мишени по 5 с; золотая ×3', '60 с, тарелки через коридор ×2; динамит −3', '10 мишеней на время']
 	for (var i = 0; i < keys.length; i++) row = row.append(Text.green('[' + NS_TIR.modes[keys[i]].name + ']').clickRunCommand('/tir start ' + keys[i]).hover(Text.gray(hints[i]))).append(Text.of('  '))
 	src.sendSystemMessage(row)
-	src.sendSystemMessage(g('Оружие любое дальнобойное: огнестрел, лук, арбалет, посохи, заклинания. Рекорды — по режиму и классу оружия: ').append(Text.yellow('/tir top').clickRunCommand('/tir top')).append(g('. Награда — жетоны за рекорд (лучше прежнего на 5 %, до 8 в день).')))
+	src.sendSystemMessage(Text.gray('Оружие любое дальнобойное: огнестрел, лук, арбалет, посохи, заклинания. Рекорды — по режиму и классу оружия: ').append(Text.yellow('/tir top').clickRunCommand('/tir top')).append(Text.gray('. Награда — жетоны за рекорд (лучше прежнего на 5 %, до 8 в день).')))
 	var why = nsTirBlocked()
 	if (why) src.sendSystemMessage(Text.red('Сейчас: ' + why + '.'))
 	else {
@@ -683,14 +708,10 @@ ServerEvents.commandRegistry(event => {
 				C.literal('selftest')
 					.requires(s => s.hasPermission(2))
 					.then(
-						C.argument('mode', A.STRING.create(event)).executes(ctx => {
-							try {
-								return say(ctx, nsTirSelftest(ctx.source, String(A.STRING.getResult(ctx, 'mode'))))
-							} catch (e) {
-								console.error('[тир] самопроверка: ' + e)
-								return say(ctx, 'ошибка: ' + e, true)
-							}
-						})
+						C.argument('mode', A.STRING.create(event))
+							.executes(ctx => nsTirSelftestCmd(ctx, String(A.STRING.getResult(ctx, 'mode')), false))
+							// rec — результат бота идёт в рекорды и награду, как у игрока
+							.then(C.literal('rec').executes(ctx => nsTirSelftestCmd(ctx, String(A.STRING.getResult(ctx, 'mode')), true)))
 					)
 			)
 			.then(

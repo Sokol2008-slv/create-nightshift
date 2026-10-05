@@ -109,11 +109,25 @@ function nsFunRaidBusy() {
 		return false
 	}
 }
+// Поворот сущности. Имена в Rhino (KubeJS 2101): getYaw/getPitch, setPositionAndRotation — ванильные
+// getYRot/setYRot/moveTo(5 чисел) не находятся (scares/10_scares.js, проверено и здесь 05.10)
+function nsFunYaw(e) {
+	try {
+		return Number(e.getYaw())
+	} catch (x) {}
+	return Number(e.getYRot())
+}
+function nsFunPitch(e) {
+	try {
+		return Number(e.getPitch())
+	} catch (x) {}
+	return Number(e.getXRot())
+}
 // стрелка к цели относительно взгляда (yaw Minecraft: 0 — юг, растёт по часовой) и сторона света
 function nsFunArrow(p, dx, dz) {
 	try {
 		var want = (Math.atan2(-dx, dz) * 180) / Math.PI
-		var rel = ((((want - Number(p.getYRot())) % 360) + 540) % 360) - 180
+		var rel = ((((want - nsFunYaw(p)) % 360) + 540) % 360) - 180
 		return ['↓', '↙', '←', '↖', '↑', '↗', '→', '↘', '↓'][Math.round((rel + 180) / 45)]
 	} catch (e) {
 		return '•'

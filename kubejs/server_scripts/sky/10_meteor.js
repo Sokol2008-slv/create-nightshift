@@ -97,7 +97,7 @@ function nsSkyCompass(dx, dz) {
 function nsSkyArrow(p, dx, dz) {
 	try {
 		var want = (Math.atan2(-dx, dz) * 180) / Math.PI
-		var rel = (((want - Number(p.getYRot())) % 360) + 540) % 360 - 180 // −180…180, плюс — вправо
+		var rel = (((want - Number(p.getYaw())) % 360) + 540) % 360 - 180 // −180…180, плюс — вправо (getYaw: getYRot из Rhino не виден, стрелка была «•»)
 		return ['↓', '↙', '←', '↖', '↑', '↗', '→', '↘', '↓'][Math.round((rel + 180) / 45)]
 	} catch (e) {
 		return '•'

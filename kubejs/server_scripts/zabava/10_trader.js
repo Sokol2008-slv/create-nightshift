@@ -630,6 +630,7 @@ function nsTrArrive(at) {
 		}
 	}
 	nsTrSave()
+	if (typeof nsJournal === 'function') nsJournal('trader', name + ' пришёл к базе (' + spot.x + ' ' + spot.y + ' ' + spot.z + '): ' + lots.length + ' лотов за жетоны смены, до утра дня ' + (nsFunDay() + 1) + ' — /trader', 'gold')
 	nsTrRun(home.dim, 'particle minecraft:cloud ' + (spot.x + 0.5) + ' ' + (spot.y + 1) + ' ' + (spot.z + 0.5) + ' 1.2 0.8 1.2 0.02 40 normal')
 	nsTrRun(home.dim, 'particle minecraft:happy_villager ' + (spot.x + 0.5) + ' ' + (spot.y + 1.5) + ' ' + (spot.z + 0.5) + ' 1 1 1 0 20 normal')
 	return name + ' у ' + spot.x + ' ' + spot.y + ' ' + spot.z + ', лотов ' + lots.length
