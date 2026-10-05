@@ -41951,6 +41951,9 @@
   },
   {
    "id": "nightshift:convoy_seal",
+   "emc": 0
+  },
+  {
    "id": "axiomativ:afterburner_1",
    "emc": 0
   },
@@ -42000,6 +42003,9 @@
   },
   {
    "id": "nightshift:incomplete_avionics",
+   "emc": 0
+  },
+  {
    "id": "nightshift:crushed_meteor_iron",
    "emc": 0
   },
@@ -42009,6 +42015,50 @@
   },
   {
    "id": "nightshift:sky_crystal_cluster",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:gate_controller",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:gate_frame",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_gate_frame",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:antigrav_module",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_node",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_relay",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:dimensional_relay",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_pack",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_pack_mk2",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:quantum_supply_pack",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_supply_pack",
    "emc": 0
   }
  ]

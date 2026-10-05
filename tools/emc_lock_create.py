@@ -62,11 +62,16 @@ MANUAL_ZERO += ['axiomativ:afterburner_1', 'axiomativ:afterburner_2', 'axiomativ
 # 05.10: «Развлечения смены» (поток T) — Маяк трассы (деплоером) и Ящик снабжения (только у снабженца за жетоны);
 # яйцо дракона — только из сундуков, ящика и у снабженца: выученное в столе печатало бы драконов за EMC
 MANUAL_ZERO += ['nightshift:race_beacon', 'nightshift:supply_crate', 'dmr:dragon_egg']
+# 05.10: врата перехода и антиграв (аддон 0.7.0, поток G) — техника, только машинами
+MANUAL_ZERO += ['axiomativ:gate_controller', 'axiomativ:gate_frame', 'axiomativ:incomplete_gate_frame', 'axiomativ:antigrav_module']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'
 if NS_ART_JS.is_file():
     MANUAL_ZERO += re.findall(r"create\('(nightshift:[a-z0-9_]+)'", NS_ART_JS.read_text())  # и материалы пробуждения
+# 06.10: ранец снабжения (аддон 0.7.0) — техника, только машинами
+MANUAL_ZERO += ['axiomativ:supply_node', 'axiomativ:supply_relay', 'axiomativ:dimensional_relay', 'axiomativ:supply_pack',
+                'axiomativ:supply_pack_mk2', 'axiomativ:quantum_supply_pack', 'axiomativ:incomplete_supply_pack']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')
