@@ -531,14 +531,15 @@ function nsAurRibbonsTick(level, tick) {
 	for (var n in NSG.nsAur) if (!seen[n]) nsAurClear(n)
 }
 
-// ленты прошлых запусков (чанк загрузился) — убрать
-EntityEvents.spawned('minecraft:text_display', event => {
+// ленты прошлых запусков и «потерянные» (чанк выгрузился и загрузился, сервер перезапустился): раз в 5 с убираем
+// все ленты без метки этого запуска, а без сияния — все вообще (EntityEvents.spawned загрузку из чанка не ловит)
+function nsAurSweep(active) {
 	try {
-		var e = event.getEntity()
-		var tags = e.getTags()
-		if (tags.contains('ns_aurora') && !tags.contains(NS_AUR_GEN)) event.cancel()
-	} catch (x) {}
-})
+		NSG.nsServer.runCommandSilent(
+			'execute in minecraft:overworld run kill @e[type=minecraft:text_display,tag=ns_aurora' + (active ? ',tag=!' + NS_AUR_GEN : '') + ']'
+		)
+	} catch (e) {}
+}
 
 function nsNskyAuroraSanity(level) {
 	var ps = nsSkyOverworldPlayers()
@@ -568,8 +569,10 @@ ServerEvents.tick(event => {
 		if (st.ev === 'starfall') nsNskyStarTick(st, rs, level, sec)
 		if (st.stars.length) nsNskyBeacons(st, level, sec)
 		if (st.ev === 'aurora' && sec % NS_NSKY.auroraSanityEvery === 0 && !nsNskyBusy(rs)) nsNskyAuroraSanity(level)
-		if (st.ev === 'aurora' && !nsNskyBusy(rs)) nsAurRibbonsTick(level, tick)
+		var aurOn = st.ev === 'aurora' && !nsNskyBusy(rs)
+		if (aurOn) nsAurRibbonsTick(level, tick)
 		else if (Object.keys(NSG.nsAur).length) nsAurClearAll()
+		if (sec % 5 === 0) nsAurSweep(aurOn)
 		if (sec % 10 === 0 && (st.fade.length || st.stars.length)) nsNskyFadeTick(st, level)
 	} catch (e) {
 		console.error('[night-sky] тик: ' + e)
