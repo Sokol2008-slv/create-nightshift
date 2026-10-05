@@ -41910,6 +41910,18 @@
    "emc": 0
   },
   {
+   "id": "nightshift:race_beacon",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:supply_crate",
+   "emc": 0
+  },
+  {
+   "id": "dmr:dragon_egg",
+   "emc": 0
+  },
+  {
    "id": "nightshift:prism_lens",
    "emc": 0
   },
