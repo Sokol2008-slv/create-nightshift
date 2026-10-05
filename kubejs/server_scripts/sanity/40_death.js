@@ -1,15 +1,41 @@
 // ==========================================================================
 // Ночная смена — цена смерти. Вещи остаются (keepInventory), но:
 //  - каждая смерть — рана: −1 сердце максимального здоровья (до woundMax), лечит «Настойка жизни»;
-//    без раны — смерть от своей техники и союзников (nsFairDeathReason);
 //  - рассудок при возрождении не сбрасывается: какой был в момент смерти, такой и остаётся,
 //    но не ниже deathSanityFloor (40%) — иначе ночью умирали бы по кругу.
 //    Если убила тьма (рассудок около нуля, урон из 20_darkness.js) — даём немного сверху,
 //    чтобы не умирать по кругу.
 // Раны и проклятие алтаря применяет nsApplyPenalty (raids/10_nightshift_state.js).
+//
+// 05.10 (поток W, аудит: «из 49 смертей на Вахте 16 — падения, 8 — свои машины, 5 — союзники»; сердца просили вернуть
+// 4 раза): рана — только за смерть от монстра (враждебный моб или моб набега, в том числе его стрела). Падение, лава,
+// утопление, тьма, свои машины (пила, вентилятор, FakePlayer деплоера и турелей), союзники (игроки, дракон, големы,
+// питомцы и призванные игроком) — без раны. Каждая победа в набеге затягивает одну рану (raids/40_, nsHealWoundsOnWin).
 // ==========================================================================
 
 var NS_TONIC_RESTORE = 1 // ран за одну настойку
+var NS_DEATH_ENEMY = Java.loadClass('net.minecraft.world.entity.monster.Enemy')
+
+// Смерть «от монстра»: враждебный моб (или его снаряд), не призванный игроком; моб набега — всегда
+function nsDeathByMonster(src) {
+	var by = null
+	try {
+		by = typeof nsNfAttacker === 'function' ? nsNfAttacker(src) : null
+	} catch (e) {}
+	if (by == null) return false
+	try {
+		if (by.isPlayer()) return false // другой игрок или FakePlayer машины
+	} catch (e) {}
+	try {
+		if (by.getTags().contains('nightshift_raid')) return true
+	} catch (e) {}
+	if (!(by instanceof NS_DEATH_ENEMY)) return false
+	try {
+		var owner = by.getOwner ? by.getOwner() : null
+		if (owner != null && owner.isPlayer()) return false // призван игроком
+	} catch (e) {}
+	return true
+}
 
 // «Честная смерть» (3.4.0, аудит 05.10: из 49 смертей 8 — от своих машин, 5 — от союзников):
 // свои машины Create и аддонов, турели и пушки базы, союзник (игрок, приручённый питомец, дракон) — смерть без раны.
@@ -48,9 +74,20 @@ EntityEvents.death('minecraft:player', event => {
 	st.wounds = st.wounds || {}
 	st.deathSanity = st.deathSanity || {}
 	st.fairDeath = st.fairDeath || {}
-	var fair = nsFairDeathReason(event.getSource())
-	if (fair) st.fairDeath[name] = fair
-	else st.wounds[name] = Math.min(NSG.NIGHTSHIFT_TUNABLES.woundMax, (st.wounds[name] || 0) + 1)
+	// рана — только за смерть от монстра (поток W); причина без раны — для строки после возрождения
+	var wound = true
+	try {
+		wound = nsDeathByMonster(event.getSource())
+	} catch (e) {}
+	var fair = null
+	try {
+		fair = nsFairDeathReason(event.getSource())
+	} catch (e) {}
+	if (fair) wound = false
+	if (wound) {
+		st.wounds[name] = Math.min(NSG.NIGHTSHIFT_TUNABLES.woundMax, (st.wounds[name] || 0) + 1)
+		delete st.fairDeath[name]
+	} else st.fairDeath[name] = fair || 'не от монстра'
 	var dark = false
 	try {
 		var pd = player.persistentData
@@ -88,7 +125,7 @@ PlayerEvents.respawned(event => {
 	} else if (w > 0) {
 		player.tell(
 			Text.red('[Ночная смена] Рана: −' + w + ' серд. максимального здоровья. ')
-				.append(Text.gray('Лечит «Настойка жизни» (одна рана за настойку). Рассудок после смерти не восстанавливается.'))
+				.append(Text.gray('Лечит «Настойка жизни» или победа в набеге (рана за победу). Рассудок после смерти не восстанавливается.'))
 		)
 	}
 })

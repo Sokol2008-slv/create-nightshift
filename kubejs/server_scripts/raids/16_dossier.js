@@ -43,6 +43,9 @@ NSG.NS_DOS_THREATS = [
 	{ key: 'climb', name: 'Лезут по стенам', short: 'лезут по стенам — нужен козырёк', tip: 'стену без козырька переползают — козырёк наружу в 2–3 блока или крыша над алтарём', icon: 'minecraft:ladder' },
 	{ key: 'armor', name: 'Бронированные', short: 'броня — тяжёлое оружие', tip: 'стрелы и слабые удары отскакивают — тяжёлое оружие, «Острота», пушки', icon: 'minecraft:iron_chestplate' },
 	{ key: 'fast', name: 'Быстрые', short: 'быстрые — ловушки на подходе', tip: 'добегают за секунды — ловушки и турели на подходе, от них не убежать', icon: 'minecraft:sugar' },
+	{ key: 'caster', name: 'Колдуны', short: 'колдуны — снимать первыми', tip: 'колдуют из-за спин орды: клыки, огонь, призыв мертвецов. Стены от заклинаний не спасают — стрелки, турели и тесла по колдунам первыми', icon: 'minecraft:enchanted_book' },
+	{ key: 'split', name: 'Делятся', short: 'делятся при гибели — бей по площади', tip: 'особая стадия «Гидра»: убитый моб делится на двоих поменьше — огнемёт, взрывы, размашистый меч', icon: 'minecraft:slime_ball' },
+	{ key: 'champion', name: 'Чемпионы', short: 'чемпионы ×4 — пушки по ним', tip: 'условие «Чемпионы»: светящийся моб ×4 здоровья в каждой подволне — тяжёлое оружие и пушки по нему', icon: 'minecraft:golden_helmet' },
 	{ key: 'boss', name: 'Босс', short: 'босс в конце — пушки и турели по готовности', tip: 'в конце волны — пушки и турели по готовности, держите дистанцию; пока жив, волна не кончится', icon: 'minecraft:wither_skeleton_skull' },
 ]
 var NS_DOS_TH = {}
@@ -93,7 +96,12 @@ var NS_DOS_NAMED_TIPS = {
 	'Вожак орды': 'Босс 5-й и 10-й волн: зомби в железе, «Скорость I» и «Сила I», здоровье растёт с волной.',
 	'Всадник Кошмара': 'Визер-скелет верхом на опустошителе. Сначала скакуна — пушки.',
 	'Рыцарь Кошмара': 'Визер-скелет в незерите с мечом. Тяжёлое оружие.',
+	'Мёртвый король': 'Босс Iron\'s Spells: броня 15, удар 10, колдует. Пушки и тяжёлое оружие; держитесь вместе.',
+	'Эхо Тироса': 'Босс Iron\'s Spells: огненные заклинания и броня 15. Огнестойкость и пушки; блоки его огонь не жжёт.',
+	'Магистр цитадели': 'Древний рыцарь-босс: медленный, меч бьёт больно. Бей и отходи.',
 }
+// Колдуны (метка «Колдуны»): модовые — флаг caster в NS_MOD_MOBS (08_), здесь — остальные
+var NS_DOS_CASTERS = { 'cataclysm:deepling_priest': 1, 'cataclysm:deepling_warlock': 1, 'minecraft:evoker': 1, 'irons_spellbooks:necromancer': 1, 'irons_spellbooks:cultist': 1, 'irons_spellbooks:archevoker': 1 }
 
 // --------------------------------------------------------------------------
 // Справочники: базовые атрибуты (аддон), модовые мобы по id, ключи бестиария
@@ -201,6 +209,8 @@ function nsDosThreatSet(e, isBoss, buff) {
 	if (nsDosHasTag(e, 'ns_shield_breaker')) out.breaker = true
 	if (nsDosHasTag(e, 'ns_shield_drain')) out.drain = true
 	if (NS_DOS_BROOD[id]) out.brood = true
+	if (NS_DOS_CASTERS[id] || (e.key && NSG.NS_MOD_MOBS && NSG.NS_MOD_MOBS[e.key] && NSG.NS_MOD_MOBS[e.key].caster)) out.caster = true
+	if (nsDosHasTag(e, 'ns_champion')) out.champion = true
 	if (id.indexOf('spider') >= 0 && !out.fly) out.climb = true
 	var armored = /ArmorItems:\[[^\]]*(iron|diamond|netherite)_(helmet|chestplate|leggings|boots)/.test(nbt)
 	if (st && st.armor >= NS_DOS_ARMOR_MIN) armored = true
@@ -268,6 +278,9 @@ function nsDosCatalog() {
 		var br = nsDosBossRows(cfg)
 		for (var b = 0; b < br.length; b++) add(br[b].e, true, d)
 	}
+	// варианты боссов для фарма (08_: alt) — первое прохождение их не показывает, но в бестиарии им место
+	var alts = typeof NSG.nsModBossAll === 'function' ? NSG.nsModBossAll() : []
+	for (var a = 0; a < alts.length; a++) add(alts[a].boss, true, alts[a].d)
 	NSG.nsDosCat = cat
 	console.info('[nightshift] бестиарий: ' + cat.list.length + ' мобов в каталоге (' + (Date.now() - t0) + ' мс)')
 	return cat
@@ -358,6 +371,7 @@ function nsDosDossier(d, opts) {
 		total += subHp
 		subs.push({ hp: subHp, th: nsDosThreatList(subTh), mobs: mobs })
 	}
+	if (cfg.split) all.split = true
 	var bosses = []
 	var br = nsDosBossRows(cfg)
 	for (var b = 0; b < br.length; b++) {
@@ -399,11 +413,24 @@ function nsDosDossier(d, opts) {
 		for (var si = 0; si < sl.length; si++) if (sl[si]) spl.push(String(sl[si]))
 		dos.special = { name: String(raw.special.name), kind: String(raw.special.kind || ''), lines: spl }
 	}
+	// ночной вызов этой ночи (48_night_call.js) — блоком особой стадии
+	var co = typeof nsCallOffer === 'function' ? nsCallOffer(state) : null
+	if (co && co.wave === d && !dos.special) dos.special = { name: 'Ночной вызов', kind: 'call', lines: [nsCallText(co), '«Старт» на этой волне до рассвета — принять вызов: 3 подволны, условие «' + nsCallMutName(co.mut) + '».'] }
 	// премьера / звезда вечера (08_modded_waves.js)
 	if (raw.star) {
 		var sk = nsDosKey(raw.star, false)
 		var sKnown = reveal || nsDosSeen(state, sk) > 0
-		dos.star = { id: sKnown ? String(raw.star.id) : '', name: sKnown ? String(raw.star.name) : '???', tip: sKnown ? String(raw.star.tip || '') : 'узнаете, когда волна откроется', prem: !!raw.premiere }
+		var stip = sKnown ? String(raw.star.tip || '') : 'узнаете, когда волна откроется'
+		var cos = raw.costars || []
+		var sname = sKnown ? String(raw.star.name) : '???'
+		for (var ci = 0; ci < cos.length; ci++) {
+			var cKnown = reveal || nsDosSeen(state, nsDosKey(cos[ci], false)) > 0
+			sname += ' и ' + (cKnown ? cos[ci].name : '???')
+			if (cKnown) stip += ' ' + cos[ci].name + ': ' + cos[ci].tip
+		}
+		if (reveal && raw.prep) stip += ' Готовьтесь: ' + raw.prep
+		if (reveal && raw.guest) stip += ' Гастроли «' + raw.guest.name + '»: ' + raw.guest.tip + '.'
+		dos.star = { id: sKnown ? String(raw.star.id) : '', name: sname, tip: stip, prem: !!raw.premiere }
 	}
 	// условия смены
 	var set = typeof nsMutSet === 'function' && !raw.scenario ? nsMutSet(state) : {} // сценарий — без условий смены
@@ -415,20 +442,23 @@ function nsDosDossier(d, opts) {
 		mn.push(mu.name)
 		me.push(mu.desc)
 	}
-	if (mn.length) dos.mut = { names: mn, effects: me, bonus: nsDosPct(nsMutBonus(set)) }
+	if (mn.length) dos.mut = { names: mn, effects: me, bonus: nsDosPct(nsMutBonus(set, d)) }
 	// арена
 	if (NSG.nsArenaThemeFor) {
 		var th = NSG.nsArenaThemeFor(d)
 		dos.arena = { name: th.name, note: th.note || '', color: th.color || 'aqua' }
 	}
 	dos.loot = nsDosLoot(d, raw, cfg, state, opts)
-	var fh = typeof nsFailHearts === 'function' ? nsFailHearts(d) : 2
-	dos.fail = '−' + nsPlural(fh, 'сердце', 'сердца', 'сердец') + ' у всех, добычи нет' + (set.iron ? '; «Железная воля»: смерть любого защитника — провал' : '')
-	// можно ли начать
+	var fh = typeof nsFailHearts === 'function' ? nsFailHearts(d, !!opts.inArena) : 1
+	var ahp = set.fragile ? 1 : NSG.NIGHTSHIFT_TUNABLES.altarHp || 1
+	var fl = 'Алтарь выдержит ' + nsPlural(ahp, 'моба', 'моба', 'мобов') + ' (босс — за двоих); дальше провал: −' + nsPlural(fh, 'сердце', 'сердца', 'сердец') + ' у всех, добычи нет. Проклятие снимают победы.'
+	if (co && co.wave === d) fl = 'Ночной вызов: провал без последствий. ' + fl
+	if (raw.special && raw.special.kind === 'hold') fl = 'Пали все три рубежа или кончилась прочность алтаря — провал: −' + nsPlural(fh, 'сердце', 'сердца', 'сердец') + ' у всех.'
+	dos.fail = fl + (set.iron ? ' «Железная воля»: смерть любого защитника — провал' : '')
+	// можно ли начать (проклятие больше не запирает алтарь — 05.10)
 	var why = ''
 	if (st === 'locked') why = 'Закрыта — сначала пройдите волну ' + (best + 1)
 	else if (opts.raidActive) why = 'Идёт набег — алтарь занят'
-	else if ((state.curse || 0) > 0) why = 'Проклятие алтаря — сначала искупление (вкладка «Волны»)'
 	dos.canStart = !why
 	if (why) dos.why = why
 	return dos
@@ -441,7 +471,7 @@ function nsDosLoot(d, raw, cfg, state, opts) {
 	var k = nsWaveLate(d)
 	// бросков — как у набега (nsRaidRolls, 40_: там же сценарии особых стадий), с бонусом условий смены
 	var rolls = typeof nsRaidRolls === 'function' ? nsRaidRolls(d) : raw.waves.length + (raw.boss ? 2 * (raw.bossCount || 1) : 0) + k
-	var bonus = typeof nsMutBonus === 'function' ? nsMutBonus(nsMutSet(state)) : 0
+	var bonus = typeof nsMutBonus === 'function' ? nsMutBonus(nsMutSet(state), d) : 0
 	if (bonus > 0) rolls = Math.round(rolls * (1 + bonus / 2))
 	var items = []
 	var common = L.common[tier] || []
@@ -506,11 +536,14 @@ function nsDosMenuData(player, state, view) {
 	data.curse = { hearts: state.curse || 0, text: '' }
 	if ((state.curse || 0) > 0) {
 		var tr = nsTributeFor(best)
-		data.curse.text = 'Проклятие алтаря: −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + ' у всех. Искупление: ' + tr.count + ' ' + tr.label + ' за сердце — ПКМ стопкой по алтарю или конвейером в алтарь. Пока не искуплено, новый набег не начать.'
+		data.curse.text = 'Проклятие алтаря: −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + ' у всех. Снимает победа на волне ' + Math.max(1, best - (NSG.NIGHTSHIFT_TUNABLES.curseLiftWindow || 5)) + '+ (сердце за победу) или сразу — ' + tr.count + ' ' + tr.label + ' за сердце: ПКМ стопкой по алтарю или конвейером.'
 	}
 	var msn = null
 	for (var m in NSG.NS_WAVE_MILESTONES) if (Number(m) > best && (msn === null || Number(m) < msn)) msn = Number(m)
 	if (msn !== null) data.milestone = { n: msn, text: NSG.NS_WAVE_MILESTONES[msn].text }
+	// ночной вызов этой ночи — вместо вехи в верхней строке «Волн»
+	var callOffer = typeof nsCallOffer === 'function' ? nsCallOffer(state) : null
+	if (callOffer) data.milestone = { n: callOffer.wave, text: 'НОЧНОЙ ВЫЗОВ до рассвета — «Старт» на этой волне: 3 подволны, условие «' + nsCallMutName(callOffer.mut) + '», премия — артефакт смены. Отказ и провал без штрафа.' }
 	data.spawns = 0
 	try {
 		var altar = player ? nsNearestAltar(state, player.createCommandSourceStack()) : null
@@ -545,9 +578,11 @@ function nsDosMenuData(player, state, view) {
 	}
 	// условия смены
 	var mset = state.mutators || {}
-	data.mut = { list: [], bonus: nsDosPct(typeof nsMutBonus === 'function' ? nsMutBonus(mset) : 0), locked: raidOn }
-	for (var mi = 0; NSG.NS_MUTATORS && mi < NSG.NS_MUTATORS.length; mi++) {
-		var mu = NSG.NS_MUTATORS[mi]
+	data.mut = { list: [], bonus: nsDosPct(typeof nsMutBonus === 'function' ? nsMutBonus(mset, next) : 0), locked: raidOn }
+	// афиша дня (12_mutators.js): в окне 7 строк, условий 12
+	var poster = typeof nsMutPoster === 'function' ? nsMutPoster(state) : NSG.NS_MUTATORS || []
+	for (var mi = 0; mi < poster.length; mi++) {
+		var mu = poster[mi]
 		data.mut.list.push({ key: mu.key, name: mu.name, desc: mu.desc, bonus: nsDosPct(mu.bonus), on: !!mset[mu.key] })
 	}
 	// контракты бригадира

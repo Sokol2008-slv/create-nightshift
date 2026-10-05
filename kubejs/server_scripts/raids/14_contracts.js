@@ -6,6 +6,9 @@
 // дольше 3 игровых дней — тоже. Цели — по лучшей пройденной волне (state.phase).
 // Хуки: победа — nsContractsOnVictory (40_nightshift_raid.js), меню алтаря — nsContractsRows (30_), убийства и
 // смерти — здесь. Команда: /nscontracts.
+// 05.10 (поток W) — новые виды: «Чистая оборона» (волна без единого удара по алтарю), «Блиц» (волна быстрее срока),
+// «Оборона работает сама» (турели и ловушки убили больше всех бойцов вместе), «Особая стадия» (пройти любую особую),
+// «Ночной вызов» (принять и выиграть). Босс-цели — и варианты боссов для фарма (Мёртвый король, Эхо Тироса…).
 // ==========================================================================
 var NS_CT_SLOTS = 3
 var NS_CT_EXPIRE_DAYS = 3
@@ -48,7 +51,15 @@ function nsCtKillTarget(best) {
 // Босс для «завали босса»: ArPhEx (15–65) или Cataclysm (70+) из уже открытых волн
 function nsCtBossTarget(best) {
 	var opts = []
-	for (var w in NSG.NS_MOD_BOSSES || {}) if (Number(w) <= best + 1) opts.push(NSG.NS_MOD_BOSSES[w].boss)
+	var seen = {}
+	var all = typeof NSG.nsModBossAll === 'function' ? NSG.nsModBossAll() : []
+	for (var a = 0; a < all.length; a++) {
+		// варианты — только для пройденных волн (на первом прохождении всегда главный босс)
+		if (all[a].d > best + 1 || seen[all[a].boss.id]) continue
+		if (all[a].d === best + 1 && NSG.NS_MOD_BOSSES[all[a].d].boss.id !== all[a].boss.id) continue
+		seen[all[a].boss.id] = true
+		opts.push(all[a].boss)
+	}
 	if (best + 1 >= 70) {
 		var C = NSG.NS_CATACLYSM_BOSSES || []
 		for (var c = 0; c < C.length; c++) if (C[c].from <= best + 1) opts.push({ id: C[c].id, label: C[c].label })
@@ -63,6 +74,9 @@ function nsCtNew(best, have) {
 	var kinds = ['kill', 'wave', 'clean']
 	if (best >= 15) kinds.push('mutator', 'boss')
 	if (best >= 1) kinds.push('arena')
+	if (best >= 5) kinds.push('intact', 'speed', 'machines')
+	if (best >= 21) kinds.push('special')
+	if (best >= (NSG.NIGHTSHIFT_TUNABLES.nightCallFrom || 3) && NSG.NIGHTSHIFT_TUNABLES.nightCall) kinds.push('call')
 	var free = []
 	for (var k = 0; k < kinds.length; k++) if (have.indexOf(kinds[k]) < 0) free.push(kinds[k])
 	var kind = nsCtRand(free.length ? free : kinds)
@@ -80,8 +94,26 @@ function nsCtNew(best, have) {
 	} else if (kind === 'clean') {
 		c.wave = Math.max(1, best - 10)
 		c.text = 'Пройти волну ' + c.wave + '+ без единой смерти'
+	} else if (kind === 'intact') {
+		c.wave = Math.max(1, best - 3)
+		c.text = 'Чистая оборона: волна ' + c.wave + '+, орда ни разу не тронула алтарь'
+	} else if (kind === 'speed') {
+		c.wave = Math.max(1, best - 5)
+		var subs = typeof nsChallengeHorde === 'function' ? nsChallengeHorde(c.wave).waves.length : 6
+		c.mins = Math.round((2 + subs * 0.75) * 2) / 2
+		c.text = 'Блиц: волна ' + c.wave + '+ быстрее ' + String(c.mins).replace('.', ',') + ' мин'
+	} else if (kind === 'machines') {
+		c.wave = Math.max(1, best - 5)
+		c.text = 'Оборона работает сама: волна ' + c.wave + '+, турели и ловушки убили больше всех бойцов вместе'
+	} else if (kind === 'special') {
+		c.wave = Math.max(21, best - 12)
+		c.text = 'Пройти любую особую стадию с волны ' + c.wave
+	} else if (kind === 'call') {
+		c.text = 'Принять ночной вызов и выиграть его'
 	} else if (kind === 'mutator') {
-		var m = nsCtRand(NSG.NS_MUTATORS || [{ key: 'double', name: 'Двойная смена' }])
+		// условие — из постоянных (Двойная смена, Ночь боссов, Железная воля) или афиши дня: его будет видно в пульте
+		var pool = typeof nsMutPoster === 'function' ? nsMutPoster({ mutators: {}, contracts: { list: [] } }) : NSG.NS_MUTATORS
+		var m = nsCtRand(pool && pool.length ? pool : [{ key: 'double', name: 'Двойная смена' }])
 		c.wave = Math.max(1, best - 8)
 		c.mut = m.key
 		c.text = 'Пройти волну ' + c.wave + '+ с условием «' + m.name + '»'
@@ -107,13 +139,15 @@ function nsCtNew(best, have) {
 
 // Награда: волна, с которой гарантированно бросается артефакт смены, ресурсы и редкое
 function nsCtReward(best, kind) {
-	var bonus = kind === 'clean' || kind === 'mutator' || kind === 'boss' ? 10 : 5
+	var bonus = kind === 'clean' || kind === 'mutator' || kind === 'boss' || kind === 'intact' || kind === 'speed' || kind === 'special' ? 10 : 5
 	var r = { artWave: Math.max(1, best + bonus), items: [] }
 	var tier = typeof nsWaveTier === 'function' ? nsWaveTier(Math.max(1, best)) : 1
 	if (tier >= 9) r.items.push(['minecraft:netherite_ingot', 1])
 	else if (tier >= 6) r.items.push(['minecraft:diamond', 4])
 	else r.items.push(['minecraft:iron_ingot', 32])
-	if ((kind === 'clean' || kind === 'boss') && best >= 30) r.items.push(['nightshift:night_heart', 1])
+	if ((kind === 'clean' || kind === 'boss' || kind === 'intact') && best >= 30) r.items.push(['nightshift:night_heart', 1])
+	if (kind === 'call') r.items.push(['nightshift:life_tonic', 1])
+	if (kind === 'machines') r.items.push(['nightshift:horde_shard', 6])
 	if (kind === 'mutator' && best >= 70) r.items.push(['nightshift:star_fragment', 1])
 	return r
 }
@@ -242,6 +276,9 @@ function nsContractsOnVictory(d, raid, altar) {
 	var list = nsCtBoard(st)
 	var arena = !!(st.arena && altar && st.arena.altarId === altar.id)
 	var theme = arena && NSG.nsArenaThemeFor ? NSG.nsArenaThemeFor(d).key : null
+	var players = 0
+	for (var pn in K) if (pn !== 'турели и ловушки') players += K[pn]
+	var mins = raid.t0 ? (Date.now() - raid.t0) / 60000 : 999
 	for (var i = 0; i < list.length; i++) {
 		var c = list[i]
 		if (c.done) continue
@@ -250,8 +287,19 @@ function nsContractsOnVictory(d, raid, altar) {
 		else if (c.kind === 'clean') ok = d >= c.wave && !(raid.deaths > 0)
 		else if (c.kind === 'mutator') ok = d >= c.wave && raid.mut && raid.mut[c.mut]
 		else if (c.kind === 'arena') ok = arena && theme === c.theme
+		else if (c.kind === 'intact') ok = d >= c.wave && !(raid.altarHits > 0)
+		else if (c.kind === 'speed') ok = d >= c.wave && mins <= c.mins
+		else if (c.kind === 'machines') ok = d >= c.wave && (K['турели и ловушки'] || 0) > players
+		else if (c.kind === 'special') ok = d >= c.wave && !!(NSG.NS_SPECIAL_STAGES && NSG.NS_SPECIAL_STAGES[d])
 		if (ok) nsCtComplete(st, c)
 	}
+}
+
+// Ночной вызов выигран (48_night_call.js)
+function nsContractsOnCall() {
+	var st = nsGetState()
+	var list = nsCtBoard(st)
+	for (var i = 0; i < list.length; i++) if (!list[i].done && list[i].kind === 'call') nsCtComplete(st, list[i])
 }
 
 // Строки для меню алтаря
