@@ -6,18 +6,17 @@
 	icon: { id: "nightshift:sulfur_crust" }
 	id: "274E7329A14BDF5C"
 	images: [ ]
-	order_index: 16
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
-			icon: { id: "create:track_station" }
 			id: "1DC2DCB789843948"
 			rewards: [{ id: "64961644D84142C3", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "5BFC833BA6F4FD90", type: "checkmark" }]
+			tasks: [{ id: "5BFC833BA6F4FD90", item: { count: 1, id: "create_mechanical_extruder:mechanical_extruder" }, type: "item" }]
 			x: 0.00d
-			y: 5.85d
+			y: 3.20d
 		}
 		{
 			dependencies: ["1DC2DCB789843948"]
@@ -28,28 +27,27 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "2A64C4851494E2AC", type: "checkmark" }]
-			x: 0.00d
-			y: 7.60d
+			x: -1.80d
+			y: 3.20d
+		}
+		{
+			dependencies: ["394B0D9B5D293247"]
+			id: "2BC1B58A4F6EE6D5"
+			rewards: [{ id: "26D25A551E2EBC4D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3546ABDBF17560B6", count: 8L, item: { count: 1, id: "nightshift:smokeless_powder" }, type: "item" }]
+			x: 4.60d
+			y: -0.70d
 		}
 		{
 			dependencies: ["1DC2DCB789843948"]
-			icon: { id: "nightshift:smokeless_powder" }
-			id: "2BC1B58A4F6EE6D5"
-			rewards: [{ id: "26D25A551E2EBC4D", type: "xp", xp: 10 }]
-			shape: "diamond"
-			size: 1.0d
-			tasks: [{ id: "3546ABDBF17560B6", type: "checkmark" }]
-			x: 2.40d
-			y: 0.00d
-		}
-		{
-			dependencies: ["2BC1B58A4F6EE6D5"]
 			id: "394B0D9B5D293247"
 			rewards: [{ id: "34E6CAF10D33B0D6", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7CFAAD8B331FB155", count: 16L, item: { count: 1, id: "tfmg:sulfur_dust" }, type: "item" }]
-			x: 4.60d
+			x: 2.40d
 			y: 0.00d
 		}
 		{
@@ -59,91 +57,88 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "613EB5E31F19FB3F", count: 16L, item: { count: 1, id: "tfmg:rubber_sheet" }, type: "item" }]
-			x: 6.80d
-			y: 0.00d
+			x: 4.60d
+			y: 0.70d
 		}
 		{
-			dependencies: ["1DC2DCB789843948"]
-			icon: { id: "createaddition:capacitor" }
+			dependencies: ["5B383EC023412952"]
 			id: "7D067AFBD3DC3961"
 			rewards: [{ id: "5EC1A3201233F23A", type: "xp", xp: 10 }]
-			shape: "diamond"
+			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "0BCA4F130BFB0FA8", type: "checkmark" }]
-			x: 2.40d
+			tasks: [{ id: "0BCA4F130BFB0FA8", count: 2L, item: { count: 1, id: "createaddition:capacitor" }, type: "item" }]
+			x: 4.60d
 			y: 1.95d
 		}
 		{
-			dependencies: ["7D067AFBD3DC3961"]
+			dependencies: ["1DC2DCB789843948"]
 			id: "5B383EC023412952"
 			rewards: [{ id: "6D11CB40B37C0F82", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3E35E41C4B0AA238", count: 16L, item: { count: 1, id: "nightshift:rock_salt" }, type: "item" }]
-			x: 4.60d
-			y: 1.30d
+			x: 2.40d
+			y: 1.95d
 		}
 		{
-			dependencies: ["7D067AFBD3DC3961"]
+			dependencies: ["1DC2DCB789843948"]
 			id: "25FE55697EDE4ECC"
 			rewards: [{ id: "56AD57C1482B0A88", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2C1F8005A38BA914", count: 16L, item: { count: 1, id: "nightshift:magnetite_dust" }, type: "item" }]
+			x: 2.40d
+			y: 3.20d
+		}
+		{
+			dependencies: ["75E4613658460314"]
+			id: "275FE568C2DBF365"
+			rewards: [{ id: "4CB93F170860E5C3", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1813677FA71AC5AD", count: 2L, item: { count: 1, id: "nightshift:lens" }, type: "item" }]
 			x: 4.60d
-			y: 2.60d
+			y: 4.45d
 		}
 		{
 			dependencies: ["1DC2DCB789843948"]
-			icon: { id: "immersive_aircraft:biplane" }
-			id: "275FE568C2DBF365"
-			rewards: [{ id: "4CB93F170860E5C3", type: "xp", xp: 10 }]
-			shape: "diamond"
-			size: 1.0d
-			tasks: [{ id: "1813677FA71AC5AD", type: "checkmark" }]
-			x: 2.40d
-			y: 5.20d
-		}
-		{
-			dependencies: ["275FE568C2DBF365"]
 			id: "75E4613658460314"
 			rewards: [{ id: "63C23AA1FA04E4E4", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "229E852EBEF80733", count: 16L, item: { count: 1, id: "nightshift:quartz_glass" }, type: "item" }]
-			x: 4.60d
-			y: 3.90d
+			x: 2.40d
+			y: 4.45d
 		}
 		{
-			dependencies: ["275FE568C2DBF365"]
+			dependencies: ["1DC2DCB789843948"]
 			id: "479F0A6AA26C07A3"
 			rewards: [{ id: "0127FC29DF59924D", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5C52FC5409A0DB25", count: 16L, item: { count: 1, id: "tfmg:aluminum_ingot" }, type: "item" }]
-			x: 4.60d
-			y: 5.20d
+			x: 2.40d
+			y: 5.70d
 		}
 		{
-			dependencies: ["275FE568C2DBF365"]
+			dependencies: ["491272F16FC2DDA7"]
 			id: "2318D7EFDBE50618"
 			rewards: [{ id: "313A66F9BCB97BD1", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "10B35FF1125086A5", count: 8L, item: { count: 1, id: "nightshift:helium_canister" }, type: "item" }]
-			x: 4.60d
-			y: 6.50d
+			x: 2.40d
+			y: 6.95d
 		}
 		{
 			dependencies: ["1DC2DCB789843948"]
-			icon: { id: "nightshift:radiator" }
 			id: "491272F16FC2DDA7"
 			rewards: [{ id: "4A451AC5D430504D", type: "xp", xp: 10 }]
-			shape: "diamond"
+			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "59C26B2D9BA59E3C", type: "checkmark" }]
-			x: 2.40d
-			y: 8.45d
+			tasks: [{ id: "59C26B2D9BA59E3C", item: { count: 1, id: "create_power_loader:andesite_chunk_loader" }, type: "item" }]
+			x: 0.00d
+			y: 9.45d
 		}
 		{
 			dependencies: ["491272F16FC2DDA7"]
@@ -152,8 +147,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "419EFDDC28CE8295", count: 4L, item: { count: 1, id: "nightshift:radiator" }, type: "item" }]
-			x: 4.60d
-			y: 7.80d
+			x: 2.40d
+			y: 8.20d
 		}
 		{
 			dependencies: ["491272F16FC2DDA7"]
@@ -162,39 +157,38 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2AC41CC827EB181B", count: 4L, item: { count: 1, id: "nightshift:air_filter" }, type: "item" }]
-			x: 4.60d
-			y: 9.10d
+			x: 2.40d
+			y: 9.45d
 		}
 		{
-			dependencies: ["1DC2DCB789843948"]
-			icon: { id: "nightshift:star_chart" }
+			dependencies: ["1C0B7950C978D6EB"]
 			id: "65643FB540C724EF"
 			rewards: [{ id: "343D6A8876FDCEB4", type: "xp", xp: 10 }]
-			shape: "diamond"
+			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "055504BCB417AFDA", type: "checkmark" }]
-			x: 2.40d
-			y: 11.05d
+			tasks: [{ id: "055504BCB417AFDA", count: 6L, item: { count: 1, id: "nightshift:sedative" }, type: "item" }]
+			x: 4.60d
+			y: 11.95d
 		}
 		{
-			dependencies: ["65643FB540C724EF"]
+			dependencies: ["491272F16FC2DDA7"]
 			id: "443ADCBE0E31176B"
 			rewards: [{ id: "19CD59C9FFAB43F5", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "5FBA6D40C3BD7340", count: 4L, item: { count: 1, id: "nightshift:star_chart" }, type: "item" }]
-			x: 4.60d
-			y: 10.40d
+			x: 2.40d
+			y: 10.70d
 		}
 		{
-			dependencies: ["65643FB540C724EF"]
+			dependencies: ["491272F16FC2DDA7"]
 			id: "1C0B7950C978D6EB"
 			rewards: [{ id: "6B1F37EB99378EFD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7A4EE241D5E19E9C", count: 16L, item: { count: 1, id: "nightshift:spores" }, type: "item" }]
-			x: 4.60d
-			y: 11.70d
+			x: 2.40d
+			y: 11.95d
 		}
 	]
 }

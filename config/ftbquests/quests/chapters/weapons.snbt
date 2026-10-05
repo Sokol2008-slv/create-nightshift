@@ -6,7 +6,7 @@
 	icon: { id: "cgs:gatling" }
 	id: "337BD701D154F1B7"
 	images: [ ]
-	order_index: 9
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
@@ -70,12 +70,11 @@
 		}
 		{
 			dependencies: ["521CD648E130FD9F"]
-			icon: { id: "cataclysm:the_incinerator" }
 			id: "4D8732FCCCBD523B"
 			rewards: [{ id: "1F1963E34CD3BDFD", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "6CDA005270C544D3", type: "checkmark" }]
+			tasks: [{ id: "6CDA005270C544D3", item: { count: 1, id: "cataclysm:black_steel_ingot" }, type: "item" }]
 			x: 11.52d
 			y: 0.00d
 		}
@@ -173,12 +172,11 @@
 		}
 		{
 			dependencies: ["3BCE829443992885"]
-			icon: { id: "cgs:steel_sheet" }
 			id: "710081270063F8BA"
 			rewards: [{ id: "393AA4DCA0F4076C", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "450FC92C80186FCF", type: "checkmark" }]
+			tasks: [{ id: "450FC92C80186FCF", count: 2L, item: { count: 1, id: "cgs:steel_sheet" }, type: "item" }]
 			x: 3.68d
 			y: 3.68d
 		}

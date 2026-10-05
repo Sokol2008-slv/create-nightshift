@@ -6,7 +6,7 @@
 	icon: { id: "nightshift:sky_crystal" }
 	id: "67B00CFE4470EDCE"
 	images: [ ]
-	order_index: 18
+	order_index: 12
 	quest_links: [ ]
 	quests: [
 		{
@@ -15,18 +15,17 @@
 			rewards: [{ id: "7C2AF14B03DD464F", type: "xp", xp: 10 }]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ id: "7BFDFAF75EF2568A", type: "checkmark" }]
+			tasks: [{ id: "7BFDFAF75EF2568A", stage: "nightshift_p10", team_stage: false, type: "gamestage" }]
 			x: 0.00d
 			y: 0.00d
 		}
 		{
 			dependencies: ["4DB3DC69131F3EBB"]
-			icon: { id: "nightshift:meteor_ore" }
 			id: "1F7106947E9DF5CB"
 			rewards: [{ id: "60C878CE7039098C", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "46ABF2F1157DA0A1", type: "checkmark" }]
+			tasks: [{ id: "46ABF2F1157DA0A1", item: { count: 1, id: "nightshift:meteor_iron" }, type: "item" }]
 			x: 2.20d
 			y: 0.00d
 		}
@@ -48,7 +47,7 @@
 			rewards: [{ id: "082E9987C8272F9E", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "25D0340D5AE016D6", item: { count: 1, id: "nightshift:meteor_iron" }, type: "item" }]
+			tasks: [{ id: "25D0340D5AE016D6", count: 8L, item: { count: 1, id: "nightshift:meteor_iron" }, type: "item" }]
 			x: 4.40d
 			y: 0.00d
 		}
@@ -74,12 +73,11 @@
 		}
 		{
 			dependencies: ["4DB3DC69131F3EBB"]
-			icon: { id: "nightshift:sky_crystal_cluster" }
 			id: "23487472DFC8E464"
 			rewards: [{ id: "415DB6E2FEA66AFE", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "7CD036D58E43A1E8", type: "checkmark" }]
+			tasks: [{ id: "7CD036D58E43A1E8", item: { count: 1, id: "nightshift:sky_crystal" }, type: "item" }]
 			x: 2.20d
 			y: 2.20d
 		}
@@ -89,7 +87,7 @@
 			rewards: [{ id: "337B101AD3603C12", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "29111E29E9F229BA", item: { count: 1, id: "nightshift:sky_crystal" }, type: "item" }]
+			tasks: [{ id: "29111E29E9F229BA", count: 4L, item: { count: 1, id: "nightshift:sky_crystal" }, type: "item" }]
 			x: 4.40d
 			y: 2.20d
 		}

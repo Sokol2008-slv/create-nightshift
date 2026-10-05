@@ -101,12 +101,11 @@
 		}
 		{
 			dependencies: ["507306DCDCF2C239", "218DDF47E1508988", "625E481953585276"]
-			icon: { id: "create:track_station" }
 			id: "0A1DAFEE8419EA9C"
 			rewards: [{ id: "686F25E0EC9A8084", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "54541DC33ED4EFE3", type: "checkmark" }]
+			tasks: [{ id: "54541DC33ED4EFE3", item: { count: 1, id: "create:schedule" }, type: "item" }]
 			x: 7.04d
 			y: 0.00d
 		}

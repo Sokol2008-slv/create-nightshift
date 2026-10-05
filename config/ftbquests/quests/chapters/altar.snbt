@@ -6,7 +6,7 @@
 	icon: { id: "nightshift:altar" }
 	id: "340142421C84EF21"
 	images: [ ]
-	order_index: 2
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -37,7 +37,7 @@
 			size: 1.0d
 			tasks: [{ id: "756FABB8E0AE4A3D", type: "checkmark" }]
 			x: 4.00d
-			y: 0.00d
+			y: -1.60d
 		}
 		{
 			dependencies: ["56635B3491872F7C"]
@@ -105,7 +105,7 @@
 			y: 6.00d
 		}
 		{
-			dependencies: ["515EB053AE51DC78"]
+			dependencies: ["4647E91516588EFE"]
 			icon: { id: "nightshift:altar" }
 			id: "12BE751E2935630C"
 			rewards: [{ id: "7BC997D9E06E6F10", type: "xp", xp: 10 }]
@@ -191,7 +191,7 @@
 			size: 1.0d
 			tasks: [{ id: "59A7D450D039C3AD", type: "checkmark" }]
 			x: 4.00d
-			y: 3.04d
+			y: -3.40d
 		}
 		{
 			dependencies: ["3F32929BF605AE5F"]

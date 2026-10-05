@@ -10,6 +10,15 @@
   "hide_lines": true — не рисовать линии зависимостей; "shape" ("circle", "diamond", "gear", "heart", …) и
   "size" — форма и размер карточки; "optional": true — справочный квест, не считается в прогрессе главы.
   Главы: "hide_lines": true — линии скрыты по умолчанию.
+  С 05.10:
+  "tasks": [{"item","count"} | {"stage","title"}, …] — несколько задач в одном квесте (этапы «Пути смены»:
+  прикрепил квест — весь список на экране). "item" квеста тогда только иконка. id первой задачи — как у квеста
+  с одной задачей, остальных — с номером (порядок задач не менять, иначе съедет прогресс).
+  Строка описания "@ref глава:ключ Текст" (или "@ref глава Текст") — кликабельная ссылка «▶ Текст»:
+  открывает квест (главу) в книге. Цель проверяется, id_as учитывается.
+  Знак & без кода цвета после него (C&A, R&D) экранируется сам (\\&): иначе FTB показывает строку как ошибку
+  «Unknown formatting symbol after &». «& » с пробелом FTB тоже не принимает — экранируется так же.
+  --check — собрать во временную папку, config/ftbquests не трогать (только проверка).
 Выход: config/ftbquests/quests/ — data.snbt, chapter_groups.snbt, chapters/*.snbt,
 lang/ru_ru.snbt и lang/en_us.snbt (тексты русские в обоих, чтобы язык клиента не мешал).
 
@@ -33,15 +42,16 @@ MODS = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/Pris
 STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
-# Порядок глав в книге — по фазам Ночной смены
-ORDER = ["vahta", "night_shift", "altar", "artifacts",
-         "create_basics", "electricity", "brass_logistics_trains", "factories", "food",
-         "weapons", "magic", "tower_defense", "golems",
-         "automation_extras", "economy", "steel_oil", "outposts",
-         "first_plane", "sky", "space"]
+# Порядок глав в книге (05.10): «Путь смены» и «Частые вопросы» первыми, дальше — по этапам пути,
+# тематические главы (еда, магия, големы, артефакты) — в конце
+ORDER = ["path", "faq",
+         "vahta", "night_shift", "altar", "create_basics", "brass_logistics_trains",
+         "electricity", "outposts", "tower_defense", "weapons",
+         "first_plane", "sky", "steel_oil", "space",
+         "factories", "economy", "automation_extras",
+         "food", "magic", "golems", "artifacts"]
 # 30.09: главы слиты (welcome → vahta, ore_processing → create_basics/vahta, logistics_food → brass,
-# fuel_engines → steel_oil, big_cannons → tower_defense, dragons → golems, airships_cars → first_plane);
-# энергия стоит рано — её первые стадии (колёса, пар) нужны с начала игры
+# fuel_engines → steel_oil, big_cannons → tower_defense, dragons → golems, airships_cars → first_plane)
 
 # Открытый мир (с 2.0.7): главы не запираются, набеги — выбор сложности у алтаря.
 # False вернёт старую схему: фаза главы → префикс «Фаза N ·» и запирание до altar:phase_N.
@@ -128,6 +138,26 @@ def qid(*parts):
 
 def snbt_str(s):
     return '"' + str(s).replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+# FTB Library (TextComponentParser): после & — только код 0-9 a-f k-o r, z (радуга) или # (цвет RRGGBB).
+# Иначе вся строка заменяется красной ошибкой. Экранированный \& печатается как есть.
+AMP_RE = re.compile(r"(?<!\\)&(?![0-9a-fk-orz#])")
+REF_RE = re.compile(r"^@ref\s+(\S+)\s+(.+)$")
+
+
+def ftb_text(s):
+    """Строка описания или заголовок → безопасная для FTB: одиночный & экранируется (JSON-строки не трогаем)."""
+    t = str(s)
+    if t.startswith("{") and t.endswith("}") and t != "{@pagebreak}":
+        return t
+    return AMP_RE.sub(r"\\&", t)
+
+
+def ref_json(text, target_id):
+    """Кликабельная ссылка в описании: открывает квест или главу по id (clickEvent change_page → OPEN_QUEST)."""
+    return json.dumps({"text": "▶ " + text, "color": "aqua", "underlined": True,
+                       "clickEvent": {"action": "change_page", "value": target_id}}, ensure_ascii=False)
 
 
 def load_specs():
@@ -285,6 +315,12 @@ def raise_phases(specs):
 
 
 def main():
+    global OUT
+    if "--check" in sys.argv:
+        # проверка без записи в config/ftbquests (параллельная работа нескольких агентов над спеками)
+        import tempfile
+        OUT = pathlib.Path(tempfile.mkdtemp(prefix="ftbq_check_"))
+        print("проверка: книга собирается в", OUT)
     items = known_items()
     specs = load_specs()
     if not OPEN_WORLD:
@@ -309,15 +345,34 @@ def main():
 
     def dep_id(dch, dk):
         return qid(*base_of.get((dch, dk), (dch, dk)))
+
+    def render_desc(where, desc):
+        out = []
+        for line in desc:
+            m = REF_RE.match(line)
+            if not m:
+                out.append(ftb_text(line))
+                continue
+            target, text = m.group(1), m.group(2)
+            if ":" in target:
+                tch, tk = target.split(":", 1)
+                if tk not in all_keys.get(tch, set()):
+                    errors.append(f"{where}: ссылка @ref {target} — нет такого квеста")
+                out.append(ref_json(text, dep_id(tch, tk)))
+            else:
+                if target not in all_keys:
+                    errors.append(f"{where}: ссылка @ref {target} — нет такой главы")
+                out.append(ref_json(text, qid("chapter", target)))
+        return out
     ext_checks = []
     for order, ch in enumerate(specs):
         ck = ch["key"]
         cid = qid("chapter", ck)
         if ch["icon"] not in items:
             errors.append(f"{ck}: иконка главы {ch['icon']} не найдена")
-        lang[f"chapter.{cid}.title"] = ch["title"]
+        lang[f"chapter.{cid}.title"] = ftb_text(ch["title"])
         if ch.get("subtitle"):
-            lang[f"chapter.{cid}.chapter_subtitle"] = [ch["subtitle"]]
+            lang[f"chapter.{cid}.chapter_subtitle"] = [ftb_text(ch["subtitle"])]
         keys = {q["key"] for q in ch["quests"]}
         phase = PHASE.get(ck, 0)
         if phase:
@@ -352,7 +407,7 @@ def main():
                 lines.append("\t\t\tdependencies: [" + ", ".join(snbt_str(x) for x in deps) + "]")
             if q.get("hide_lines"):
                 lines.append("\t\t\thide_dependency_lines: true")
-            if q["type"] in ("checkmark", "stage", "dimension"):
+            if q["type"] in ("checkmark", "stage", "dimension") or q.get("tasks"):
                 lines.append("\t\t\ticon: { id: " + snbt_str(q["item"]) + " }")
             lines.append(f"\t\t\tid: {snbt_str(quest_id)}")
             if q.get("optional"):
@@ -361,7 +416,25 @@ def main():
                          f", type: \"xp\", xp: {50 if goal else 10} }}]")
             lines.append("\t\t\tshape: " + snbt_str(q.get("shape") or ("hexagon" if goal else "rsquare")))
             lines.append(f"\t\t\tsize: {float(q.get('size', 1.6 if goal else 1.0))}d")
-            if q["type"] == "checkmark":
+            if q.get("tasks"):
+                # несколько задач (этапы «Пути смены»): предметы и стадии-волны вперемешку
+                parts = []
+                for i, t in enumerate(q["tasks"]):
+                    tid = task_id if i == 0 else qid(*base, "task", str(i))
+                    if "stage" in t:
+                        parts.append("{ id: " + snbt_str(tid) + ", stage: " + snbt_str(t["stage"]) +
+                                     ', team_stage: false, type: "gamestage" }')
+                    else:
+                        if t["item"] not in items:
+                            errors.append(f"{ck}/{k}: предмет задачи {t['item']} не найден")
+                        cnt = int(t.get("count", 1))
+                        extra = f", count: {cnt}L" if cnt > 1 else ""
+                        parts.append("{ id: " + snbt_str(tid) + extra + ", item: { count: 1, id: " +
+                                     snbt_str(t["item"]) + ' }, type: "item" }')
+                    if t.get("title"):
+                        lang[f"task.{tid}.title"] = ftb_text(t["title"])
+                lines.append("\t\t\ttasks: [" + ", ".join(parts) + "]")
+            elif q["type"] == "checkmark":
                 lines.append("\t\t\ttasks: [{ id: " + snbt_str(task_id) + ', type: "checkmark" }]')
             elif q["type"] == "dimension":
                 # «побывать в измерении» (FTB Quests DimensionTask), item — только иконка квеста
@@ -380,9 +453,9 @@ def main():
             lines.append(f"\t\t\ty: {y:.2f}d")
             lines.append("\t\t}")
             out_quests.append("\n".join(lines))
-            lang[f"quest.{quest_id}.title"] = q["title"]
+            lang[f"quest.{quest_id}.title"] = ftb_text(q["title"])
             if q.get("desc"):
-                lang[f"quest.{quest_id}.quest_desc"] = q["desc"]
+                lang[f"quest.{quest_id}.quest_desc"] = render_desc(f"{ck}/{k}", q["desc"])
             total += 1
         body = "\n".join([
             "{",

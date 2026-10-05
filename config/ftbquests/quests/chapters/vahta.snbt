@@ -6,50 +6,42 @@
 	icon: { id: "create:mechanical_crafter" }
 	id: "3F304B4E3C0B8143"
 	images: [ ]
-	order_index: 0
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
-			icon: { id: "minecraft:written_book" }
-			id: "65323940C7E98B08"
-			rewards: [{ id: "40FCF04CEDA6BB25", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "78E25C3B5587E1EB", type: "checkmark" }]
-			x: 0.00d
-			y: -3.04d
-		}
-		{
-			dependencies: ["65323940C7E98B08"]
+			dependencies: ["4F2010ED01E72F75"]
 			icon: { id: "minecraft:crafting_table" }
 			id: "2DDBA2AB73BF01A6"
+			optional: true
 			rewards: [{ id: "08D56781DA3EAADB", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "481E56D5FBCE9322", type: "checkmark" }]
-			x: 1.76d
-			y: -3.04d
+			x: 3.52d
+			y: -1.76d
 		}
 		{
 			dependencies: ["2DDBA2AB73BF01A6"]
 			icon: { id: "create:cogwheel" }
 			id: "2F27FD3FABF74065"
+			optional: true
 			rewards: [{ id: "1723AB8F50AF514A", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "7EAEC97356ABAA08", type: "checkmark" }]
-			x: 3.52d
-			y: -3.04d
+			x: 5.28d
+			y: -1.76d
 		}
 		{
-			dependencies: ["2F27FD3FABF74065"]
+			dependencies: ["0AFB1385552891D0"]
 			id: "4C3550A20ABDE71C"
 			rewards: [{ id: "37F79FD518483961", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "7721713BA337ACFC", item: { count: 1, id: "create:goggles" }, type: "item" }]
-			x: 5.28d
-			y: -3.04d
+			x: 0.00d
+			y: -1.76d
 		}
 		{
 			dependencies: ["4C3550A20ABDE71C"]
@@ -58,39 +50,37 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3C2BDC214C4FAA0D", item: { count: 1, id: "create:wrench" }, type: "item" }]
-			x: 7.04d
-			y: -3.04d
+			x: 1.76d
+			y: -1.76d
 		}
 		{
-			dependencies: ["4F2010ED01E72F75"]
+			dependencies: ["2F27FD3FABF74065"]
 			icon: { id: "minecraft:white_banner" }
 			id: "144751B87537B6D6"
+			optional: true
 			rewards: [{ id: "01CB31268991FC05", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "310CC532D4BE9E56", type: "checkmark" }]
-			x: 8.80d
-			y: -3.04d
+			x: 7.04d
+			y: -1.76d
 		}
 		{
-			dependencies: ["65323940C7E98B08"]
-			icon: { id: "minecraft:chest" }
 			id: "0AFB1385552891D0"
 			rewards: [{ id: "740EF4B70BD6C2EA", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "35E3C01678A4068A", type: "checkmark" }]
+			tasks: [{ id: "35E3C01678A4068A", item: { count: 1, id: "minecraft:written_book" }, type: "item" }]
 			x: 0.00d
 			y: 0.00d
 		}
 		{
 			dependencies: ["0AFB1385552891D0"]
-			icon: { id: "create:mechanical_crafter" }
 			id: "7AA1D2EC840C70E1"
 			rewards: [{ id: "357E3CF27448324F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "16155967E3F6A91C", type: "checkmark" }]
+			tasks: [{ id: "16155967E3F6A91C", count: 9L, item: { count: 1, id: "create:mechanical_crafter" }, type: "item" }]
 			x: 1.76d
 			y: 0.00d
 		}
@@ -225,18 +215,19 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["773E29288CF753D6"]
+			dependencies: ["2DC6D6DFEA84D5FC"]
 			icon: { id: "create:andesite_casing" }
 			id: "6880D921FDA3F837"
+			optional: true
 			rewards: [{ id: "2AED2473F4D3E4EE", type: "xp", xp: 10 }]
-			shape: "diamond"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "56C2C204BFDC72B5", type: "checkmark" }]
-			x: 16.16d
-			y: 3.36d
+			x: 17.92d
+			y: 5.12d
 		}
 		{
-			dependencies: ["6880D921FDA3F837"]
+			dependencies: ["773E29288CF753D6"]
 			id: "2DC6D6DFEA84D5FC"
 			rewards: [{ id: "2D43E507179DE258", type: "xp", xp: 10 }]
 			shape: "rsquare"
@@ -267,12 +258,11 @@
 		}
 		{
 			dependencies: ["26B7189575B37E49"]
-			icon: { id: "create:brass_casing" }
 			id: "5720C739A6A1590D"
 			rewards: [{ id: "3969B21B090D9DB5", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "0282820C94504FE1", type: "checkmark" }]
+			tasks: [{ id: "0282820C94504FE1", item: { count: 1, id: "create_mechanical_extruder:mechanical_brass_extruder" }, type: "item" }]
 			x: 23.52d
 			y: 3.36d
 		}

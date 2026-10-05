@@ -6,7 +6,7 @@
 	icon: { id: "tfmg:steel_ingot" }
 	id: "6B800B0BDBD97B68"
 	images: [ ]
-	order_index: 15
+	order_index: 13
 	quest_links: [ ]
 	quests: [
 		{
@@ -60,12 +60,11 @@
 		}
 		{
 			dependencies: ["7D1C2E958E9CA27B", "2E084D0D4BD44A58"]
-			icon: { id: "tfmg:blast_furnace_output" }
 			id: "61FD7D8079AA53C1"
 			rewards: [{ id: "34052632607B967E", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "4D57CB77280AC546", type: "checkmark" }]
+			tasks: [{ id: "4D57CB77280AC546", item: { count: 1, id: "tfmg:blast_furnace_output" }, type: "item" }]
 			x: 6.00d
 			y: 0.00d
 		}
@@ -110,12 +109,11 @@
 		}
 		{
 			dependencies: ["59DE800C3269A551"]
-			icon: { id: "tfmg:pumpjack_base" }
 			id: "5C6DE81149094BAE"
 			rewards: [{ id: "5BE4030F0438E1C2", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "2BA3E4454BD5ED5F", type: "checkmark" }]
+			tasks: [{ id: "2BA3E4454BD5ED5F", item: { count: 1, id: "tfmg:pumpjack_base" }, type: "item" }]
 			x: 10.00d
 			y: 3.20d
 		}
@@ -171,12 +169,11 @@
 		}
 		{
 			dependencies: ["413A163084692EA3"]
-			icon: { id: "tfmg:engine_gearbox" }
 			id: "40C50273936EC3A2"
 			rewards: [{ id: "71F82D0A07452120", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "455F9761F7362FA0", type: "checkmark" }]
+			tasks: [{ id: "455F9761F7362FA0", item: { count: 1, id: "tfmg:gasoline_bucket" }, type: "item" }]
 			x: 20.00d
 			y: 2.40d
 		}

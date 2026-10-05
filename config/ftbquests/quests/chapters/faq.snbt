@@ -1,0 +1,312 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "faq"
+	group: ""
+	icon: { id: "minecraft:book" }
+	id: "6877B89BC5EFFB89"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "minecraft:book" }
+			id: "005E934BAF69625A"
+			optional: true
+			rewards: [{ id: "474087D8E627E65D", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.3d
+			tasks: [{ id: "29E0C2EC70785B43", type: "checkmark" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["005E934BAF69625A"]
+			icon: { id: "minecraft:crafting_table" }
+			id: "2ED4F972C8004BDD"
+			optional: true
+			rewards: [{ id: "144B8A56BBB5C3ED", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5E94D85BB4D9444D", type: "checkmark" }]
+			x: 2.00d
+			y: -3.00d
+		}
+		{
+			dependencies: ["2ED4F972C8004BDD"]
+			icon: { id: "create:basin" }
+			id: "436EF826D8B38892"
+			optional: true
+			rewards: [{ id: "1171C5211147EEE9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5FF2BE56F36382A0", type: "checkmark" }]
+			x: 3.90d
+			y: -3.00d
+		}
+		{
+			dependencies: ["436EF826D8B38892"]
+			icon: { id: "create:mechanical_saw" }
+			id: "234C5426FCAE3ECD"
+			optional: true
+			rewards: [{ id: "337DD73E22665407", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "6FE92E2F8E344C8F", type: "checkmark" }]
+			x: 5.80d
+			y: -3.00d
+		}
+		{
+			dependencies: ["234C5426FCAE3ECD"]
+			icon: { id: "create:crafter_slot_cover" }
+			id: "34C1EC83C942AAFD"
+			optional: true
+			rewards: [{ id: "4D81BF3630943BF5", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "743B36A6845558BA", type: "checkmark" }]
+			x: 7.70d
+			y: -3.00d
+		}
+		{
+			dependencies: ["34C1EC83C942AAFD"]
+			icon: { id: "create:mechanical_crafter" }
+			id: "157DCCB30AA9320E"
+			optional: true
+			rewards: [{ id: "19861F9AAD9DB672", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "53BC1CF64AD21244", type: "checkmark" }]
+			x: 9.60d
+			y: -3.00d
+		}
+		{
+			dependencies: ["157DCCB30AA9320E"]
+			icon: { id: "minecraft:writable_book" }
+			id: "575E2449004F7BBA"
+			optional: true
+			rewards: [{ id: "10FEABD5C73ECD21", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "58929818799DA00C", type: "checkmark" }]
+			x: 11.50d
+			y: -3.00d
+		}
+		{
+			dependencies: ["005E934BAF69625A"]
+			icon: { id: "minecraft:netherite_chestplate" }
+			id: "1A6D438D9F2B62A4"
+			optional: true
+			rewards: [{ id: "2607B2B0736DF3B0", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "10CCFDFD8CD48202", type: "checkmark" }]
+			x: 2.00d
+			y: -1.50d
+		}
+		{
+			dependencies: ["1A6D438D9F2B62A4"]
+			icon: { id: "sophisticatedbackpacks:netherite_backpack" }
+			id: "5091595E3D8BFEBF"
+			optional: true
+			rewards: [{ id: "2686EF01FFE76C0D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2BD399CB8E0C2AA2", type: "checkmark" }]
+			x: 3.90d
+			y: -1.50d
+		}
+		{
+			dependencies: ["5091595E3D8BFEBF"]
+			icon: { id: "sophisticatedbackpacks:stack_upgrade_tier_1" }
+			id: "31F29F77CF74F6C3"
+			optional: true
+			rewards: [{ id: "5C9B9790049D4A23", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "42684447AEB3F4B5", type: "checkmark" }]
+			x: 5.80d
+			y: -1.50d
+		}
+		{
+			dependencies: ["31F29F77CF74F6C3"]
+			icon: { id: "minecraft:obsidian" }
+			id: "0B0207618EA078D0"
+			optional: true
+			rewards: [{ id: "252779BD84F25B62", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1114895CD1A0C53E", type: "checkmark" }]
+			x: 7.70d
+			y: -1.50d
+		}
+		{
+			dependencies: ["0B0207618EA078D0"]
+			icon: { id: "create:empty_blaze_burner" }
+			id: "4D1ACF24FA3CCAE6"
+			optional: true
+			rewards: [{ id: "6C24545F7A6655A4", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1ECA60EA9539DD08", type: "checkmark" }]
+			x: 9.60d
+			y: -1.50d
+		}
+		{
+			dependencies: ["4D1ACF24FA3CCAE6"]
+			icon: { id: "create:schematic_and_quill" }
+			id: "736E1771B8D1AFBE"
+			optional: true
+			rewards: [{ id: "73C45A6AC8C2AA77", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "72913B520634CB0D", type: "checkmark" }]
+			x: 11.50d
+			y: -1.50d
+		}
+		{
+			dependencies: ["005E934BAF69625A"]
+			icon: { id: "nightshift:sedative" }
+			id: "3ABA8B0AC43708FC"
+			optional: true
+			rewards: [{ id: "2E6F51C89B4A5656", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "46117337611B85B6", type: "checkmark" }]
+			x: 2.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["3ABA8B0AC43708FC"]
+			icon: { id: "nightshift:life_tonic" }
+			id: "1DE1569914F57358"
+			optional: true
+			rewards: [{ id: "125CFCF4D171E66C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "374621309FBB80AA", type: "checkmark" }]
+			x: 3.90d
+			y: 0.00d
+		}
+		{
+			dependencies: ["1DE1569914F57358"]
+			icon: { id: "minecraft:spyglass" }
+			id: "205D19F566F48380"
+			optional: true
+			rewards: [{ id: "0EE95D08E70E88AE", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0C83D64179E79A5D", type: "checkmark" }]
+			x: 5.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["205D19F566F48380"]
+			icon: { id: "minecraft:bell" }
+			id: "135A722392CB4AA6"
+			optional: true
+			rewards: [{ id: "377A01B81F1B5394", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "13D42A82C0CF0332", type: "checkmark" }]
+			x: 7.70d
+			y: 0.00d
+		}
+		{
+			dependencies: ["005E934BAF69625A"]
+			icon: { id: "nightshift:lightning_charge" }
+			id: "1244253591F26CD8"
+			optional: true
+			rewards: [{ id: "78C1ACECD8DE83B2", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "739B20FE4BE5B817", type: "checkmark" }]
+			x: 2.00d
+			y: 1.50d
+		}
+		{
+			dependencies: ["1244253591F26CD8"]
+			icon: { id: "create_mechanical_extruder:mechanical_extruder" }
+			id: "3DB74392F6E9D921"
+			optional: true
+			rewards: [{ id: "2370DC298E919C6B", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "309FD3998148C7BB", type: "checkmark" }]
+			x: 3.90d
+			y: 1.50d
+		}
+		{
+			dependencies: ["3DB74392F6E9D921"]
+			icon: { id: "nightshift:latex" }
+			id: "2B212A82A987C8EE"
+			optional: true
+			rewards: [{ id: "603CD26FD3CF88AB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7E5ABBE2DFFF16E2", type: "checkmark" }]
+			x: 5.80d
+			y: 1.50d
+		}
+		{
+			dependencies: ["2B212A82A987C8EE"]
+			icon: { id: "nightshift:meteor_ore" }
+			id: "1D9CA855CB4EFF83"
+			optional: true
+			rewards: [{ id: "395266857DA81BE6", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7733F62730963E31", type: "checkmark" }]
+			x: 7.70d
+			y: 1.50d
+		}
+		{
+			dependencies: ["1D9CA855CB4EFF83"]
+			icon: { id: "dmr:dragon_whistle.red" }
+			id: "6F8E8FF64145C30B"
+			optional: true
+			rewards: [{ id: "3EBA2180D10F6AE9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7079E6288EA39D1D", type: "checkmark" }]
+			x: 9.60d
+			y: 1.50d
+		}
+		{
+			dependencies: ["005E934BAF69625A"]
+			icon: { id: "minecraft:oak_sign" }
+			id: "042CEC92D46AE312"
+			optional: true
+			rewards: [{ id: "16524C1043E65693", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "59BE196754F74586", type: "checkmark" }]
+			x: 2.00d
+			y: 3.00d
+		}
+		{
+			dependencies: ["042CEC92D46AE312"]
+			icon: { id: "minecraft:chest" }
+			id: "1B6D166467CBC5C1"
+			optional: true
+			rewards: [{ id: "54A07CB8BD3AE513", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3F5072E9E1944D14", type: "checkmark" }]
+			x: 3.90d
+			y: 3.00d
+		}
+		{
+			dependencies: ["1B6D166467CBC5C1"]
+			icon: { id: "minecraft:barrier" }
+			id: "00D2DE459F4AEC0C"
+			optional: true
+			rewards: [{ id: "233BC6CCC0579644", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "367EADFF55F3AAA3", type: "checkmark" }]
+			x: 5.80d
+			y: 3.00d
+		}
+	]
+}

@@ -6,7 +6,7 @@
 	icon: { id: "projecte:transmutation_table" }
 	id: "776B79B076735E90"
 	images: [ ]
-	order_index: 14
+	order_index: 16
 	quest_links: [ ]
 	quests: [
 		{
@@ -82,32 +82,33 @@
 			dependencies: ["01617CC30A73058B"]
 			icon: { id: "nightshift:vein_seed_iron" }
 			id: "52B663403D95C5AC"
+			optional: true
 			rewards: [{ id: "5E38573BD8EC2DFF", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "61A170DB7D7DF9BD", type: "checkmark" }]
 			x: 4.00d
 			y: 2.80d
 		}
 		{
-			dependencies: ["52B663403D95C5AC"]
+			dependencies: ["01617CC30A73058B"]
 			id: "5AF0534F6432C4D1"
 			rewards: [{ id: "504E83AE7385574F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "37866BD580841908", item: { count: 1, id: "nightshift:vein_cleaner" }, type: "item" }]
-			x: 6.00d
-			y: 2.08d
+			x: 2.00d
+			y: 4.40d
 		}
 		{
-			dependencies: ["52B663403D95C5AC"]
+			dependencies: ["6FBB17163563987D"]
 			id: "6ED7257BB0C28FE8"
 			rewards: [{ id: "1F9C555D748E6C77", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "6181050E3050C826", item: { count: 1, id: "createendertransmission:item_transmitter" }, type: "item" }]
-			x: 6.00d
-			y: 3.68d
+			x: 8.00d
+			y: 0.00d
 		}
 	]
 }

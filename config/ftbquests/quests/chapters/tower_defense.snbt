@@ -6,16 +6,15 @@
 	icon: { id: "creategbd:advanced_laser_turret" }
 	id: "7B1A7BF00B1F7A99"
 	images: [ ]
-	order_index: 11
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
-			icon: { id: "nightshift:base_marker" }
 			id: "5D0BB0FB363BCF9C"
 			rewards: [{ id: "57A8794F558ABD6B", type: "xp", xp: 10 }]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ id: "70DF84B2AC2DD087", type: "checkmark" }]
+			tasks: [{ id: "70DF84B2AC2DD087", item: { count: 1, id: "nightshift:base_marker" }, type: "item" }]
 			x: 0.00d
 			y: 0.00d
 		}
@@ -31,23 +30,21 @@
 		}
 		{
 			dependencies: ["5A02A7B022B6C246"]
-			icon: { id: "minecraft:iron_bars" }
 			id: "27B3F98DBEED2A10"
 			rewards: [{ id: "1CB6317F1696822F", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "2C60918977082E0B", type: "checkmark" }]
+			tasks: [{ id: "2C60918977082E0B", count: 16L, item: { count: 1, id: "minecraft:iron_bars" }, type: "item" }]
 			x: 3.68d
 			y: 0.00d
 		}
 		{
 			dependencies: ["27B3F98DBEED2A10"]
-			icon: { id: "minecraft:cobblestone_wall" }
 			id: "3E607BBDA9DA7D25"
 			rewards: [{ id: "032296E6ECC45552", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "518D6F7C27828A97", type: "checkmark" }]
+			tasks: [{ id: "518D6F7C27828A97", count: 16L, item: { count: 1, id: "minecraft:cobblestone_slab" }, type: "item" }]
 			x: 5.52d
 			y: 0.00d
 		}
@@ -83,12 +80,11 @@
 		}
 		{
 			dependencies: ["5E512EAAD7AD8E46"]
-			icon: { id: "create:brass_hand" }
 			id: "78A694FC4AC929DC"
 			rewards: [{ id: "7B2E7175FBB56ED0", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "7E35F7C8AB97A533", type: "checkmark" }]
+			tasks: [{ id: "7E35F7C8AB97A533", count: 4L, item: { count: 1, id: "create:mechanical_saw" }, type: "item" }]
 			x: 5.76d
 			y: 1.98d
 		}
@@ -296,12 +292,11 @@
 		}
 		{
 			dependencies: ["0842BE7A53F7464B"]
-			icon: { id: "minecraft:phantom_membrane" }
 			id: "784C7BEA8FE085AA"
 			rewards: [{ id: "0CCF553D8B358256", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "754F2AC0A54503D1", type: "checkmark" }]
+			tasks: [{ id: "754F2AC0A54503D1", count: 4L, item: { count: 1, id: "minecraft:phantom_membrane" }, type: "item" }]
 			x: 0.00d
 			y: 12.24d
 		}
@@ -309,8 +304,9 @@
 			dependencies: ["784C7BEA8FE085AA"]
 			icon: { id: "minecraft:brewing_stand" }
 			id: "721226B028FF97C7"
+			optional: true
 			rewards: [{ id: "773C3F88289D0B15", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "618DBE488ADF9010", type: "checkmark" }]
 			x: 1.84d
@@ -329,13 +325,13 @@
 			y: 12.24d
 		}
 		{
-			dependencies: ["1DB8105E4DA61380", "27494CDCCB4DCF99"]
+			dependencies: ["1DB8105E4DA61380"]
 			icon: { id: "nightshift:altar" }
 			id: "27F7FB8A91EB946D"
 			rewards: [{ id: "5A0391ADD902FDEB", type: "xp", xp: 50 }]
 			shape: "hexagon"
 			size: 1.6d
-			tasks: [{ id: "15C077B8923DEC60", type: "checkmark" }]
+			tasks: [{ id: "15C077B8923DEC60", stage: "nightshift_p50", team_stage: false, type: "gamestage" }]
 			x: 7.60d
 			y: 12.24d
 		}

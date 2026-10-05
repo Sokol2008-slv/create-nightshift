@@ -6,12 +6,13 @@
 	icon: { id: "nightshift:art_hourglass" }
 	id: "693229FDEF1E72F0"
 	images: [ ]
-	order_index: 3
+	order_index: 21
 	quest_links: [ ]
 	quests: [
 		{
 			icon: { id: "nightshift:art_badge" }
 			id: "33EB747527C6AAA4"
+			optional: true
 			rewards: [{ id: "39E4E9B6D96E7C64", type: "xp", xp: 10 }]
 			shape: "diamond"
 			size: 1.3d
@@ -128,7 +129,7 @@
 			y: 0.00d
 		}
 		{
-			dependencies: ["4258DA3E82C76B90"]
+			dependencies: ["4258DA3E82C76B90", "6C0ECF8DB46B242F"]
 			icon: { id: "minecraft:blast_furnace" }
 			id: "741AD72C451408C4"
 			optional: true
@@ -176,7 +177,6 @@
 			y: 2.20d
 		}
 		{
-			dependencies: ["741AD72C451408C4"]
 			id: "6C0ECF8DB46B242F"
 			rewards: [{ id: "6CE8D065DA2738E7", type: "xp", xp: 10 }]
 			shape: "rsquare"
