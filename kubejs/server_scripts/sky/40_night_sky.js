@@ -396,7 +396,6 @@ function nsNskyUnderSky(level, p) {
 }
 function nsNskyAuroraTick(level, tick) {
 	var ps = nsSkyOverworldPlayers()
-	var opts = nsNskyAuroraOpts()
 	var t = tick / 20
 	for (var i = 0; i < ps.length; i++) {
 		var p = ps[i]
@@ -418,9 +417,11 @@ function nsNskyAuroraTick(level, tick) {
 				var x = px + lx * Math.cos(ang) - lz * Math.sin(ang),
 					z = pz + lx * Math.sin(ang) + lz * Math.cos(ang)
 				var y = base + band * 6 + wy
-				nsNskyFar(level, p, opts[band], x, y, z, 14, 1.2, 3.5, 0.4, 0)
-				nsNskyFar(level, p, opts[2], x, y + 6, z, 6, 1.2, 1.5, 0.4, 0)
-				if ((s + band + Math.floor(t)) % 5 === 0) nsNskyFar(level, p, NS_NSKY_PT.GLOW, x, y - 2, z, 3, 1, 2, 0.4, 0)
+				// светящиеся частицы (пыль ночью тёмная — её освещает мир): свечение кальмара — зелёное полотно,
+				// обратный портал — фиолетовая кромка сверху, редкие искры end_rod — белые прожилки
+				nsNskyFar(level, p, NS_NSKY_PT.GLOW, x, y, z, 26, 1.4, 3.8, 0.5, 0)
+				nsNskyFar(level, p, NS_NSKY_PT.REVERSE_PORTAL, x, y + 6, z, 10, 1.4, 1.2, 0.5, 0)
+				if ((s + band + Math.floor(t)) % 4 === 0) nsNskyFar(level, p, NS_NSKY_PT.END_ROD, x, y + 2, z, 2, 1, 3, 0.3, 0)
 			}
 		}
 	}
