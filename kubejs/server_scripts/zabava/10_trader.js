@@ -352,11 +352,13 @@ function nsTrStashTick() {
 			continue
 		}
 		// открыт? (сундук сломан или добыча уже выдана)
-		var be = level.getBlockEntity(new NS_TR_BLOCKPOS(S.x, S.y, S.z))
+		// NBT сундука: пока не открыт, в нём LootTable (getLootTable() из Rhino не сработал; == null у ResourceKey ещё и
+		// роняет «особое равенство» Rhino NPE мимо try — проверено 05.10)
+		var be = level.getBlock(S.x, S.y, S.z).getEntity()
 		var opened = !be
 		if (!opened) {
 			try {
-				opened = String(be.getLootTable()) === 'null' // == null у ResourceKey роняет «особое равенство» Rhino (NPE мимо try)
+				opened = !be.saveWithoutMetadata(level.registryAccess()).contains('LootTable')
 			} catch (e) {}
 		}
 		if (opened) {
@@ -971,24 +973,27 @@ ServerEvents.commandRegistry(event => {
 						return 1
 					})
 					.then(
-						// проверка без клиента: первый клад визита — «купить» и поставить сразу (чанк грузится/генерируется)
-						C.literal('test').executes(ctx => {
-							var list = nsTrState().stashes || []
-							var S = null
-							for (var i = 0; i < list.length && !S; i++) if (!list[i].placed) S = list[i]
-							if (!S) return say(ctx, 'нет непоставленных кладов (вызовите снабженца с картой: /trader reroll)')
-							S.bought = S.bought || 'проверка'
-							var level = NSG.nsServer.getOverworld()
-							level.getChunk(S.x >> 4, S.z >> 4)
-							nsTrStashPlace(level, S)
-							nsTrSave()
-							var be = level.getBlockEntity(new NS_TR_BLOCKPOS(S.x, S.y, S.z))
-							var lt = null
-							try {
-								lt = be ? be.getLootTable() : null
-							} catch (e) {}
-							return say(ctx, 'клад ' + S.id + ' (' + S.kind + '): сундук ' + S.x + ' ' + S.y + ' ' + S.z + ', блок-сущность ' + (be ? be.getType() : 'НЕТ') + ', таблица ' + lt)
-						})
+						// проверка без клиента: клад вида treasure|camp рядом с точкой команды — «купить» и поставить сразу
+						// (чанк грузится/генерируется); сундук и охрану видно через тик — команды внутри команды в очереди
+						C.literal('test').then(
+							C.argument('kind', A.STRING.create(event)).executes(ctx => {
+								var kind = String(A.STRING.getResult(ctx, 'kind'))
+								if (!NS_TR_STASH[kind]) return say(ctx, 'виды: treasure, camp')
+								var level = NSG.nsServer.getOverworld()
+								var pos = ctx.source.getPosition()
+								var st = nsTrState()
+								var visit = st.v ? st.v.seq : -1
+								var map = nsTrStashMap(level, kind, Math.floor(pos.x()), Math.floor(pos.z()))
+								if (!map) return say(ctx, 'место для клада не нашлось')
+								var S = st.stashes[st.stashes.length - 1]
+								S.bought = 'проверка'
+								S.visit = visit
+								level.getChunk(S.x >> 4, S.z >> 4)
+								nsTrStashPlace(level, S)
+								nsTrSave()
+								return say(ctx, 'клад ' + S.id + ' (' + kind + '): сундук ' + S.x + ' ' + S.y + ' ' + S.z + ' — проверка: /execute in minecraft:overworld run data get block ' + S.x + ' ' + S.y + ' ' + S.z + ' LootTable')
+							})
+						)
 					)
 			)
 			.then(

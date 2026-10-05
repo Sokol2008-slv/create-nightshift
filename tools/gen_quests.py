@@ -49,7 +49,7 @@ ORDER = ["path", "faq",
          "electricity", "outposts", "tower_defense", "weapons",
          "first_plane", "sky", "steel_oil", "space",
          "factories", "economy", "automation_extras",
-         "food", "magic", "golems", "artifacts"]
+         "food", "magic", "golems", "artifacts", "fun"]
 # 30.09: главы слиты (welcome → vahta, ore_processing → create_basics/vahta, logistics_food → brass,
 # fuel_engines → steel_oil, big_cannons → tower_defense, dragons → golems, airships_cars → first_plane)
 

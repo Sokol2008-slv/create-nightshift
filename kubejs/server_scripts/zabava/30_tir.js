@@ -174,10 +174,11 @@ function nsTirSweep(keepSid) {
 	return n
 }
 
-// «+3» всплывает над мишенью и тает
+// «+3» всплывает над мишенью и тает. alignment обязателен: text_display без него пишет в лог «Display entityNot a string»
+// (1.21.1, проверено 06.10)
 function nsTirFloat(x, y, z, text, color) {
 	var uuid = nsTrNewUuid()
-	nsTirRun('summon minecraft:text_display ' + x.toFixed(2) + ' ' + (y + 1).toFixed(2) + ' ' + z.toFixed(2) + ' {UUID:' + uuid.nbt + ',Tags:["ns_fun_npc","ns_tir_fx"],billboard:"center",shadow:1b,background:0,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2f,2f,2f]},text:' + JSON.stringify(JSON.stringify({ text: text, color: color, bold: true })) + '}')
+	nsTirRun('summon minecraft:text_display ' + x.toFixed(2) + ' ' + (y + 1).toFixed(2) + ' ' + z.toFixed(2) + ' {UUID:' + uuid.nbt + ',Tags:["ns_fun_npc","ns_tir_fx"],billboard:"center",alignment:"center",shadow:1b,background:0,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2f,2f,2f]},text:' + JSON.stringify(JSON.stringify({ text: text, color: color, bold: true })) + '}')
 	NSG.nsServer.scheduleInTicks(2, function () {
 		nsTirRun('data merge entity ' + uuid.str + ' {start_interpolation:0,interpolation_duration:16,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,1.4f,0f],scale:[0.6f,0.6f,0.6f]}}')
 	})
