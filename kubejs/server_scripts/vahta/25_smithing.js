@@ -3,7 +3,7 @@
 // в ряд «шаблон | вещь | добавка» (без шаблона — «вещь | добавка»). Как и стол, результат получает
 // компоненты исходной вещи: зачарования, прочность, имя (modifyResult копирует их с «вещи»).
 // Список — все живые рецепты smithing_transform сборки (70 шт., из tools/data/recipes-dump.json.gz
-// по слепку витрины 28.09). Украшения брони (smithing_trim) на вахте не делаются.
+// по слепку витрины 28.09). Отделка брони (smithing_trim) — с 05.10 тоже крафтерами, см. внизу.
 // Сами рецепты стола удаляются — иначе JEI показывает кузню как рабочую станцию.
 // [id рецепта стола, шаблон | null, вещь, добавка, результат]
 // ==========================================================================
@@ -120,6 +120,12 @@ ServerEvents.recipes(event => {
 		event.shaped(r[4], [row], keys).modifyResult(NS_VAHTA_SMITH_KEY).id('nightshift:vahta/smithing/' + r[0].replace(':', '/'))
 	}
 	event.remove({ type: 'minecraft:smithing_trim' })
+	// отделка брони (05.10, Георгий: «как гравировку наносить на незеритовую броню?»): один рецепт на все шаблоны,
+	// брони и материалы — крафтеры в ряд «шаблон | броня | материал»; выход считает modifyRecipeResult ниже,
+	// в JEI вместо выхода показана незеритовая кираса (подсказка JEI на шаблонах — client_scripts/vahta_trim_jei.js)
+	event.shaped('minecraft:netherite_chestplate', ['TBA'], { T: '#minecraft:trim_templates', B: '#minecraft:trimmable_armor', A: '#minecraft:trim_materials' })
+		.modifyResult(NS_VAHTA_TRIM_KEY)
+		.id('nightshift:vahta/smithing/armor_trim')
 })
 
 // «вещь» — в середине ряда из трёх (шаблон | вещь | добавка) или первая в ряду из двух.
@@ -134,4 +140,28 @@ ServerEvents.modifyRecipeResult(NS_VAHTA_SMITH_KEY, e => {
 		e.exit(st.transmuteCopy(e.item.getItem(), e.item.getCount()))
 	}
 	e.exit(e.item)
+})
+
+// Отделка брони: узор — из шаблона, материал — из слитка/камня, как у кузнечного стола (TrimPatterns/TrimMaterials
+// ванили, поэтому подходят и шаблоны модов). Броня копируется со всеми чарами и износом. Если узор или материал не
+// распознаны — броня выходит как была (без подарка «незеритовой кирасы» из рецепта).
+var NS_VAHTA_TRIM_KEY = 'nightshift:vahta_trim'
+var NS_TRIM_PATTERNS = Java.loadClass('net.minecraft.world.item.armortrim.TrimPatterns')
+var NS_TRIM_MATERIALS = Java.loadClass('net.minecraft.world.item.armortrim.TrimMaterials')
+var NS_ARMOR_TRIM = Java.loadClass('net.minecraft.world.item.armortrim.ArmorTrim')
+var NS_DATA_COMPONENTS = Java.loadClass('net.minecraft.core.component.DataComponents')
+var NS_LIFECYCLE = Java.loadClass('net.neoforged.neoforge.server.ServerLifecycleHooks')
+
+// e.exit() бросает служебное исключение KubeJS — вызывать его ВНЕ try, иначе catch его съест
+ServerEvents.modifyRecipeResult(NS_VAHTA_TRIM_KEY, e => {
+	var out = e.grid.getItem(1).copyWithCount(1)
+	try {
+		var reg = NS_LIFECYCLE.getCurrentServer().registryAccess()
+		var pat = NS_TRIM_PATTERNS.getFromTemplate(reg, e.grid.getItem(0))
+		var mat = NS_TRIM_MATERIALS.getFromIngredient(reg, e.grid.getItem(2))
+		if (pat.isPresent() && mat.isPresent()) out.set(NS_DATA_COMPONENTS.TRIM, new NS_ARMOR_TRIM(mat.get(), pat.get()))
+	} catch (x) {
+		console.error('[vahta] отделка брони: ' + x)
+	}
+	e.exit(out)
 })

@@ -119,7 +119,9 @@
 		#Players will gain sanity based on the damage they take from any sources with the ratio of 1 to this number
 		# Default: -1.0
 		# Range: -100.0 ~ 100.0
-		hurt_ratio = -0.5
+		# 05.10: 0 — мод списывал рассудок на каждый вызов урона (лава 20 раз/с); курс −0,5 за урон перенесён в
+		# kubejs/server_scripts/sanity/50_hurt_fix.js (только за реально прошедший урон)
+		hurt_ratio = 0.0
 		#Spawning a baby chicken by throwing an egg restores this amount of sanity
 		# Default: 5.0
 		# Range: -100.0 ~ 100.0

@@ -146,7 +146,7 @@ hash = "5c057418878ccb2c6ec66b9140955b5570b0d727d2d029615dff0ce06632f1bb"
 
 [[files]]
 file = "config/sanity_renewed/default.toml"
-hash = "82c1807e2874f82d7b04b256e7e6995cd2b6b48268d9ae445da02f7bc0f0acc2"
+hash = "7c7592f082b1c30ea3f91ae464a8af18e81d084979ea8da9722c70ed4d858460"
 
 [[files]]
 file = "config/simplebackups-common.toml"
@@ -1221,6 +1221,10 @@ file = "kubejs/client_scripts/vahta_jei.js"
 hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
 
 [[files]]
+file = "kubejs/client_scripts/vahta_trim_jei.js"
+hash = "b17427e6011e4376dad58d32ffaf9d4a9de7d121b09d1759b64d23148c268768"
+
+[[files]]
 file = "kubejs/client_scripts/wave_items_tooltips.js"
 hash = "18df7331c52b7bafd97eff3baea0f69cf4df6ee9ae762086b8fbcaf433909db6"
 
@@ -2253,6 +2257,10 @@ file = "kubejs/server_scripts/sanity/40_death.js"
 hash = "a89901ac7cc6436453d6b8c9ad35c7e1755865877fa85ff1b2091d5d8e04819e"
 
 [[files]]
+file = "kubejs/server_scripts/sanity/50_hurt_fix.js"
+hash = "59b4a2a191de6f4ae614592435d4b05451f31fd83eefbe7fa0c34f54e8dcf911"
+
+[[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
 hash = "d47032906bec905d8bf65714fb827924c40d2933d915fc74eed795705853e177"
 
@@ -2282,7 +2290,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/25_smithing.js"
-hash = "30a8406a2c758791fe891780e03a6bbe72b607f4030cc1b54738d67b7e24ec43"
+hash = "3d3d961af13edc648ff2610c82715540c963fd206e8be8cba13745507f9ef9a3"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
