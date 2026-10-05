@@ -426,6 +426,120 @@ function nsNskyAuroraTick(level, tick) {
 		}
 	}
 }
+// --------------------------------------------------------------------------
+// Ленты сияния: полупрозрачные светящиеся панели (text_display с цветным фоном и полной яркостью) над каждым,
+// кто под открытым небом. Раз в секунду переезжают за игроком с плавной интерполяцией (teleport_duration)
+// и колышутся волной. Частицы выше — искры поверх лент.
+// Метка поколения (ns_aur_g<время загрузки>): ленты прошлых запусков сервера, найденные при загрузке чанка, удаляются.
+// --------------------------------------------------------------------------
+var NS_AUR_GEN = 'ns_aur_g' + Date.now()
+// фон text_display: пробел ≈ 0,15 × 0,275 блока при масштабе 1 (6 × 11 пикселей текста по 0,025)
+var NS_AUR_PX = { w: 0.15, h: 0.275 }
+// полотно = ряд узких вертикальных лучей разной высоты: низ — яркий зелёный, верх — бирюза и фиолет
+var NS_AUR_BANDS = [
+	{ dist: 40, ang: 0, n: 26, w: 2.4, step: 2.0, h: 13, lift: 0, low: 0x7a3dff9a, mid: 0x4a2ee0d0, high: 0x34a05cff },
+	{ dist: 58, ang: 0.55, n: 20, w: 3.0, step: 2.6, h: 12, lift: 9, low: 0x6a36f0b0, mid: 0x3a30c8e0, high: 0x2cb070ff },
+]
+NSG.nsAur = NSG.nsAur || {}
+
+function nsAurSigned(argb) {
+	return argb > 0x7fffffff ? argb - 0x100000000 : argb
+}
+function nsAurSpawn(level, name, x, y, z, yaw, w, h, color) {
+	var nbt =
+		'{Tags:["ns_aurora","' + NS_AUR_GEN + '","ns_aur_' + name + '"],text:\'" "\',background:' + nsAurSigned(color) +
+		',billboard:"fixed",shadow:0b,see_through:0b,view_range:4f,teleport_duration:20,brightness:{sky:15,block:15},Rotation:[' + yaw.toFixed(1) +
+		'f,0f],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[' +
+		(w / NS_AUR_PX.w).toFixed(1) + 'f,' + (h / NS_AUR_PX.h).toFixed(1) + 'f,1f]}}'
+	NSG.nsServer.runCommandSilent('execute in minecraft:overworld run summon minecraft:text_display ' + x.toFixed(2) + ' ' + y.toFixed(2) + ' ' + z.toFixed(2) + ' ' + nbt)
+}
+// позиции лучей игрока: [{x,y,z,yaw,w,h,color}]; высота луча — постоянная для номера (псевдослучайно), колышется волной
+function nsAurLayout(p, t) {
+	var px = Number(p.getX()),
+		py = Number(p.getY()),
+		pz = Number(p.getZ())
+	var base = Math.min(290, Math.max(py + 24, 110))
+	var out = []
+	for (var b = 0; b < NS_AUR_BANDS.length; b++) {
+		var B = NS_AUR_BANDS[b]
+		var yaw = (B.ang * 180) / Math.PI
+		for (var s = 0; s < B.n; s++) {
+			var along = (s - (B.n - 1) / 2) * B.step
+			var rnd = Math.abs(Math.sin(s * 12.9898 + b * 78.233) * 43758.5453) % 1 // постоянный «шум» луча
+			var h = B.h * (0.65 + 0.6 * rnd) * (0.85 + 0.15 * Math.sin(t * 0.7 + s * 0.9))
+			var wz = Math.sin(along / 15 + t * 0.22 + b) * 7
+			var wy = Math.sin(along / 11 - t * 0.35 + b * 2) * 2.5 + rnd * 3
+			var lx = along,
+				lz = -B.dist + wz
+			var x = px + lx * Math.cos(B.ang) - lz * Math.sin(B.ang),
+				z = pz + lx * Math.sin(B.ang) + lz * Math.cos(B.ang)
+			var y = base + B.lift + wy
+			out.push({ x: x, y: y, z: z, yaw: yaw, w: B.w, h: h * 0.55, color: B.low })
+			out.push({ x: x, y: y + h * 0.5, z: z, yaw: yaw, w: B.w, h: h * 0.4, color: B.mid })
+			out.push({ x: x, y: y + h * 0.85, z: z, yaw: yaw, w: B.w, h: h * 0.45, color: B.high })
+		}
+	}
+	return out
+}
+function nsAurFind(level, name) {
+	var out = []
+	try {
+		var it = level.getAllEntities().iterator()
+		while (it.hasNext()) {
+			var e = it.next()
+			if (String(e.getType()) !== 'minecraft:text_display') continue
+			var tags = e.getTags()
+			if (tags.contains('ns_aur_' + name) && tags.contains(NS_AUR_GEN)) out.push(e)
+		}
+	} catch (x) {}
+	return out
+}
+function nsAurClear(name) {
+	var list = NSG.nsAur[name]
+	if (list) for (var i = 0; i < list.length; i++) try { list[i].discard() } catch (e) {}
+	delete NSG.nsAur[name]
+}
+function nsAurClearAll() {
+	for (var n in NSG.nsAur) nsAurClear(n)
+	NSG.nsAur = {}
+	try {
+		NSG.nsServer.runCommandSilent('execute in minecraft:overworld run kill @e[type=minecraft:text_display,tag=ns_aurora]')
+	} catch (e) {}
+}
+// раз в секунду: ленты есть у всех под открытым небом и едут за ними; у остальных — убраны
+function nsAurRibbonsTick(level, tick) {
+	var t = tick / 20
+	var ps = nsSkyOverworldPlayers()
+	var seen = {}
+	for (var i = 0; i < ps.length; i++) {
+		var p = ps[i]
+		var name = nsSkyName(p)
+		if (!nsNskyUnderSky(level, p)) continue
+		seen[name] = true
+		var lay = nsAurLayout(p, t)
+		var list = NSG.nsAur[name]
+		var alive = !!list && list.length === lay.length
+		if (alive) for (var k = 0; k < list.length && alive; k++) if (list[k].isRemoved()) alive = false
+		if (!alive) {
+			nsAurClear(name)
+			for (var q = 0; q < lay.length; q++) nsAurSpawn(level, name, lay[q].x, lay[q].y, lay[q].z, lay[q].yaw, lay[q].w, lay[q].h, lay[q].color)
+			NSG.nsAur[name] = nsAurFind(level, name)
+			continue
+		}
+		for (var j = 0; j < list.length; j++) list[j].teleportTo(lay[j].x, lay[j].y, lay[j].z)
+	}
+	for (var n in NSG.nsAur) if (!seen[n]) nsAurClear(n)
+}
+
+// ленты прошлых запусков (чанк загрузился) — убрать
+EntityEvents.spawned('minecraft:text_display', event => {
+	try {
+		var e = event.getEntity()
+		var tags = e.getTags()
+		if (tags.contains('ns_aurora') && !tags.contains(NS_AUR_GEN)) event.cancel()
+	} catch (x) {}
+})
+
 function nsNskyAuroraSanity(level) {
 	var ps = nsSkyOverworldPlayers()
 	for (var i = 0; i < ps.length; i++) if (nsNskyUnderSky(level, ps[i])) NSG.nsServer.runCommandSilent('sanity add ' + nsSkyName(ps[i]) + ' ' + NS_NSKY.auroraSanity)
@@ -454,6 +568,8 @@ ServerEvents.tick(event => {
 		if (st.ev === 'starfall') nsNskyStarTick(st, rs, level, sec)
 		if (st.stars.length) nsNskyBeacons(st, level, sec)
 		if (st.ev === 'aurora' && sec % NS_NSKY.auroraSanityEvery === 0 && !nsNskyBusy(rs)) nsNskyAuroraSanity(level)
+		if (st.ev === 'aurora' && !nsNskyBusy(rs)) nsAurRibbonsTick(level, tick)
+		else if (Object.keys(NSG.nsAur).length) nsAurClearAll()
 		if (sec % 10 === 0 && (st.fade.length || st.stars.length)) nsNskyFadeTick(st, level)
 	} catch (e) {
 		console.error('[night-sky] тик: ' + e)
