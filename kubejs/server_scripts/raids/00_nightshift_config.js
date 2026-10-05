@@ -564,7 +564,7 @@ NSG.NIGHTSHIFT_TUNABLES = {
 	// раны от смертей — у каждого свои; вместе не больше penaltyMaxHearts (минимум 3 сердца остаётся).
 	curseHeartsMinor: 2, // прорыв к алтарю в малом набеге
 	curseMaxHearts: 5,
-	woundMax: 5, // −1 сердце за смерть от монстра, до 5 (падение, свои машины и союзники — без раны; sanity/40_death.js)
+	woundMax: 5, // −1 сердце за смерть, до 5 (свои машины и союзники — без раны; sanity/40_death.js)
 	penaltyMaxHearts: 7,
 	bonusHeartsMax: 5, // «Сердце ночи»: +1 сердце максимума навсегда, до 5
 	darknessDeathSanityBump: 0.15, // убила тьма — при возрождении +15% рассудка, чтобы не умирать по кругу
