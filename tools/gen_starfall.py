@@ -7,6 +7,7 @@
   kubejs/assets/nightshift/textures/block/fallen_star.png — упавшая звезда (светится, бьётся рукой до рассвета)
   kubejs/assets/nightshift/textures/block/star_lamp.png   — звёздный фонарь (латунная рамка, звёздная пыль)
   kubejs/assets/nightshift/textures/item/star_shard.png   — звёздный осколок
+  kubejs/assets/nightshift/textures/item/deposit_atlas.png — атлас месторождений (shift/20_atlas.js)
 Логика — kubejs/server_scripts/sky/40_night_sky.js, блоки — kubejs/startup_scripts/sky/20_night_sky_blocks.js.
 """
 import math
@@ -75,6 +76,20 @@ def star_lamp(van):
     img.save(TEX_BLOCK / "star_lamp.png")
 
 
+def deposit_atlas(van):
+    # ванильная заполненная карта: рамка — в латунь вахты, на поле — цветные метки месторождений
+    src = load_png(van, "assets/minecraft/textures/item/filled_map.png")
+    img = src.copy()
+    for y in range(16):
+        for x in range(16):
+            r, g, b, a = src.getpixel((x, y))
+            if a and max(r, g, b) < 120:  # тёмная рамка и линии
+                img.putpixel((x, y), ramp([hexrgb("#4a2f12"), hexrgb("#b4883c")], (r + g + b) / 360) + (a,))
+    for (x, y, c) in [(5, 6, "#e0342a"), (10, 5, "#e0342a"), (8, 9, "#2aa4e0"), (6, 11, "#36c25a"), (11, 10, "#e0c32a")]:
+        img.putpixel((x, y), hexrgb(c) + (255,))
+    img.save(TEX_ITEM / "deposit_atlas.png")
+
+
 def main():
     van = jar("minecraft")
     TEX_BLOCK.mkdir(parents=True, exist_ok=True)
@@ -82,6 +97,7 @@ def main():
     fallen_star(van)
     star_shard(van)
     star_lamp(van)
+    deposit_atlas(van)
     print("текстуры звездопада готовы")
 
 
