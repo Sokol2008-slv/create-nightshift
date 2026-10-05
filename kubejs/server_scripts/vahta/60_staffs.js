@@ -116,6 +116,7 @@ function nsStaffAlly(ent) {
 // моб набега или монстр, не подопечный игрока
 function nsStaffEnemy(ent) {
 	if (ent == null || !ent.isAlive() || !(ent instanceof NS_STAFF_MOB)) return false
+	if (ent.getTags().contains('ns_tir_t')) return true // мишень тира (zabava/30_tir.js) — посохом по ней можно
 	var raid = false
 	try {
 		raid = ent.getTags().contains('nightshift_raid')

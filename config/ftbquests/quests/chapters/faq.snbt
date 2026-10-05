@@ -308,5 +308,17 @@
 			x: 5.80d
 			y: 3.00d
 		}
+		{
+			dependencies: ["00D2DE459F4AEC0C"]
+			icon: { id: "nightshift:supply_crate" }
+			id: "2BEF641D30F7ADE6"
+			optional: true
+			rewards: [{ id: "0D3CAFF11C9CB375", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1113BE37EA221EA9", type: "checkmark" }]
+			x: 7.70d
+			y: 3.00d
+		}
 	]
 }

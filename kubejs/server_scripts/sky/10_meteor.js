@@ -97,7 +97,7 @@ function nsSkyCompass(dx, dz) {
 function nsSkyArrow(p, dx, dz) {
 	try {
 		var want = (Math.atan2(-dx, dz) * 180) / Math.PI
-		var rel = (((want - Number(p.getYRot())) % 360) + 540) % 360 - 180 // −180…180, плюс — вправо
+		var rel = (((want - Number(p.getYaw())) % 360) + 540) % 360 - 180 // −180…180, плюс — вправо (getYaw: getYRot из Rhino не виден, стрелка была «•»)
 		return ['↓', '↙', '←', '↖', '↑', '↗', '→', '↘', '↓'][Math.round((rel + 180) / 45)]
 	} catch (e) {
 		return '•'
@@ -797,6 +797,7 @@ function nsSkyHotTick(level, m, rs) {
 			pz = m.z - p.getZ()
 		var pd = Math.round(Math.sqrt(px * px + pz * pz))
 		if (pd < 24) continue
+		if (typeof nsFunHudBusy === 'function' && nsFunHudBusy(p)) continue // гонка или тир держат строку (zabava/00_common.js)
 		NSG.nsServer.runCommandSilent('title ' + nsSkyName(p) + ' actionbar ' + JSON.stringify({ text: nsSkyArrow(p, px, pz) + ' Метеорит: ' + pd + ' бл., ' + nsSkyCompass(px, pz) + ' · остынет через ' + nsSkyClock(m.left), color: 'gold' }))
 	}
 	if (m.left <= 0) return nsSkyCool(level, m, 'остыл')
