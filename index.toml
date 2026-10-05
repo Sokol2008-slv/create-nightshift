@@ -1233,10 +1233,6 @@ file = "kubejs/client_scripts/night_sky_jei.js"
 hash = "e08f8cc98eaa7322452d621618a01d2d740fbe7e45ade6d6d9690cf59d0dd839"
 
 [[files]]
-file = "kubejs/client_scripts/nightshift_pin_key.js"
-hash = "46fd3d0e26b09598d76dbc879ba6349d01289275499f5e563ccbdd0cad49010f"
-
-[[files]]
 file = "kubejs/client_scripts/nightshift_rerender.js"
 hash = "317fe970a8f0b1a077ec77ef2a1ade45343230bdbc0cc40e742bcd338bdbffd2"
 
@@ -2150,7 +2146,7 @@ hash = "b1c1fb3f1033b6e790f38c33d19188f8159f88b74ed9940fe9964e345600e98e"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
-hash = "d257243fd240a863051f715aba2674a9768d45e4b0e7236e1c231e16efcd3891"
+hash = "2429042fd45700c9be676dcf9f7835472a95910f8e043f54b6ca7f9b4f12632c"
 
 [[files]]
 file = "kubejs/server_scripts/hud/20_ideas.js"
@@ -2537,8 +2533,8 @@ hash = "f0edb6932d0c3f97338cf660763ff43bc5febdf0eb5edeca3a1927c20f14e296"
 metafile = true
 
 [[files]]
-file = "mods/axiomativ-0.6.0.jar"
-hash = "7b432fe4338ba82cf330bcf05c10ba9f5ccb3d8a258cdc37bc64da781ebae0f5"
+file = "mods/axiomativ-0.7.0.jar"
+hash = "6fc5c494591a657ec797bbe37b9407729218fb0f8e611bf5107e87bfd2061dd4"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
