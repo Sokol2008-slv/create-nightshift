@@ -59,11 +59,16 @@ MANUAL_ZERO += ['nightshift:liquid_sulfur_bucket', 'nightshift:electrolyte_bucke
 # 04.10: авиация (поток D) — улучшения самолётов и ангар-док (аддон 0.6.0), удостоверения пилота (только аэроклуб),
 # аэрофотоаппарат и плёнка — только машинами
 MANUAL_ZERO += ['axiomativ:afterburner_1', 'axiomativ:afterburner_2', 'axiomativ:afterburner_3', 'axiomativ:armored_hull', 'axiomativ:fuel_economizer', 'axiomativ:incomplete_aircraft_upgrade', 'axiomativ:hangar_dock', 'nightshift:pilot_license_3', 'nightshift:pilot_license_2', 'nightshift:pilot_license_1', 'nightshift:aerial_camera', 'nightshift:aerial_film', 'nightshift:incomplete_avionics']
+# 05.10: врата перехода и антиграв (аддон 0.7.0, поток G) — техника, только машинами
+MANUAL_ZERO += ['axiomativ:gate_controller', 'axiomativ:gate_frame', 'axiomativ:incomplete_gate_frame', 'axiomativ:antigrav_module']
 # 01.10: артефакты смены и материалы пробуждения (tools/gen_ns_artifacts.py) — ни купить, ни продать.
 # id — из стартового скрипта, который пишет генератор (новые артефакты попадают сюда сами)
 NS_ART_JS = PACK / 'kubejs' / 'startup_scripts' / 'vahta' / '30_ns_artifacts.js'
 if NS_ART_JS.is_file():
     MANUAL_ZERO += re.findall(r"create\('(nightshift:[a-z0-9_]+)'", NS_ART_JS.read_text())  # и материалы пробуждения
+# 06.10: ранец снабжения (аддон 0.7.0) — техника, только машинами
+MANUAL_ZERO += ['axiomativ:supply_node', 'axiomativ:supply_relay', 'axiomativ:dimensional_relay', 'axiomativ:supply_pack',
+                'axiomativ:supply_pack_mk2', 'axiomativ:quantum_supply_pack', 'axiomativ:incomplete_supply_pack']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')

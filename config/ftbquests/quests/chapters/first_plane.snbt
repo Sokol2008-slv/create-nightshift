@@ -442,5 +442,48 @@
 			x: -3.52d
 			y: 1.76d
 		}
+		{
+			dependencies: ["798ACE3CE5DB69E8"]
+			id: "0EB8F93F165A1C11"
+			rewards: [{ id: "54BB65EC302EA180", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "64E95D43B8BF3AC5", count: 15L, item: { count: 1, id: "axiomativ:gate_frame" }, type: "item" }]
+			x: 13.20d
+			y: 2.88d
+		}
+		{
+			dependencies: ["40BC59080DC10129", "0EB8F93F165A1C11"]
+			id: "282ECE65F61813C1"
+			rewards: [{ id: "6220568F8D3A0F61", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1F2AF546230FAA56", item: { count: 1, id: "axiomativ:gate_controller" }, type: "item" }]
+			x: 11.28d
+			y: 2.88d
+		}
+		{
+			dependencies: ["282ECE65F61813C1"]
+			icon: { id: "minecraft:ender_pearl" }
+			id: "24EE72BE8BD6F220"
+			rewards: [{ id: "7D9F7CBBD482CF1E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "579CDE1AEBABF7AD", type: "checkmark" }]
+			x: 11.28d
+			y: 4.64d
+		}
+		{
+			dependencies: ["24EE72BE8BD6F220"]
+			icon: { id: "axiomativ:gate_frame" }
+			id: "55D9A07AF1C76AFC"
+			optional: true
+			rewards: [{ id: "562C84590E6C7889", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "65BB600CA93CC74A", type: "checkmark" }]
+			x: 13.20d
+			y: 4.64d
+		}
 	]
 }

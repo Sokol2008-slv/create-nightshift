@@ -366,5 +366,15 @@
 			x: 11.52d
 			y: 7.20d
 		}
+		{
+			dependencies: ["29FD0B60775645E1"]
+			id: "036E90188F8EA76D"
+			rewards: [{ id: "09533BBE4470F746", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "404DFF905EAA73BD", item: { count: 1, id: "axiomativ:antigrav_module" }, type: "item" }]
+			x: 3.68d
+			y: 9.00d
+		}
 	]
 }

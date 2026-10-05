@@ -149,5 +149,77 @@
 			x: 3.52d
 			y: 3.36d
 		}
+		{
+			dependencies: ["36276A9BB7F78AA3", "18984F35EFC9F4EC"]
+			id: "5A91E4F3C341DE2D"
+			rewards: [{ id: "5ADBC80817C3C7C3", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4420E855E4AC1609", item: { count: 1, id: "axiomativ:supply_node" }, type: "item" }]
+			x: 3.52d
+			y: 5.04d
+		}
+		{
+			dependencies: ["5A91E4F3C341DE2D"]
+			icon: { id: "axiomativ:supply_pack" }
+			id: "705B3EAB1D7AFA9A"
+			optional: true
+			rewards: [{ id: "6574865C180733C5", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3D1EAB2D4822A5F0", type: "checkmark" }]
+			x: 1.76d
+			y: 5.04d
+		}
+		{
+			dependencies: ["5A91E4F3C341DE2D"]
+			id: "50FDC1FFF6CE7CA4"
+			rewards: [{ id: "2A269D88AF372F6E", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "4216FD16BBDD7976", item: { count: 1, id: "axiomativ:supply_pack" }, type: "item" }]
+			x: 5.40d
+			y: 5.04d
+		}
+		{
+			dependencies: ["50FDC1FFF6CE7CA4"]
+			id: "53F82D88C3C56553"
+			rewards: [{ id: "38B01E1C7337B8B9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4D5C7B9BB816CBB8", item: { count: 1, id: "axiomativ:supply_relay" }, type: "item" }]
+			x: 5.40d
+			y: 6.80d
+		}
+		{
+			dependencies: ["50FDC1FFF6CE7CA4"]
+			id: "1E12E32E31299787"
+			rewards: [{ id: "6054F1FFD3CB8067", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "739E4EDC37BD7D52", item: { count: 1, id: "axiomativ:supply_pack_mk2" }, type: "item" }]
+			x: 7.28d
+			y: 5.04d
+		}
+		{
+			dependencies: ["1E12E32E31299787"]
+			id: "6B1E8CF16AA099E5"
+			rewards: [{ id: "4A4665E4E0B0FFA9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "256347CCB544E9AD", item: { count: 1, id: "axiomativ:dimensional_relay" }, type: "item" }]
+			x: 7.28d
+			y: 6.80d
+		}
+		{
+			dependencies: ["1E12E32E31299787"]
+			id: "6A8067E1681759B9"
+			rewards: [{ id: "574096103C4088E4", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "744892BCBB97253D", item: { count: 1, id: "axiomativ:quantum_supply_pack" }, type: "item" }]
+			x: 9.16d
+			y: 5.04d
+		}
 	]
 }
