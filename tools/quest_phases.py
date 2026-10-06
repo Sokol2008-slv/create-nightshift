@@ -66,6 +66,7 @@ SOURCES = {
     "nightshift:supply_crate": (1, "снабженец"),
     "dmr:dragon_egg": (1, "снабженец или ящик снабжения: с волны 5"),
     "nightshift:horde_shard": (1, "добыча набегов"),
+    "nightshift:night_heart": (1, "награда набегов (волны 5+)"),
     "tfmg:fireclay_ball": (0, "добыча: огнеупорная глина"),
     "create_new_age:thorium": (0, "добыча: ториевая руда"),
     "creategbd:guardian_beam_capacitor": (1, "стражи океанских монументов"),
@@ -304,6 +305,11 @@ class Phases:
             g = GATES.get(it)
             if g and it in self.val and self.val[it][0] < g[0]:
                 self.val[it] = g
+        # особый источник у предмета с рецептом (Сердце ночи — и из набегов, и из звёзд): берём меньшую фазу
+        for it, v in SOURCES.items():
+            if it in self.ways:
+                self.val[it] = v
+                self.best[it] = "src"
         for _ in range(200):
             changed = False
             for it, ws in self.ways.items():
