@@ -1262,7 +1262,7 @@ hash = "8274203331f08e8179f85666dca8075c3edb35a14ab01db705e9e310fb5296c6"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_gate_jei.js"
-hash = "45803ba27c3ec5409c5b13d3c3dc57f1bc54c1a7f0e6d175820c644b6d661ec0"
+hash = "13eda81d80c6b4023c490ffcb954e11c793d2217366ca363ef3933683e1976b1"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_heat_jei.js"
@@ -2243,6 +2243,10 @@ hash = "896c5f72ed6ba332b26a47c9a0fafc31bef6e9ab47c3557ad7d442700b817919"
 [[files]]
 file = "kubejs/server_scripts/hud/30_help.js"
 hash = "c8ea45e258f9a258136bca01a9095bc5b7c36599e39d21d7417e2f1def953cda"
+
+[[files]]
+file = "kubejs/server_scripts/hud/40_first_hints.js"
+hash = "2e444bfb82279ff1e5ea8505bb2a1e62af9e04c9cb194801281ea25ea725193e"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
