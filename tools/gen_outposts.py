@@ -154,7 +154,7 @@ def state(name, props=None):
     return {"type": "minecraft:simple_state_provider", "state": s}
 
 
-# 06.10 (Георгий: «залежи — чтобы точно помещалось хотя бы 2 бура»): радиус не меньше 4 — пятно от 9 блоков в поперечнике.
+# 06.10: радиус 6–8 (предел диска Minecraft — 8) + россыпь пятен (cluster) — поле ~40 блоков, на нём десяток буровых.
 # Места появления от радиуса не зависят (его выбирает сама фича после размещения) — координаты атласа верны.
 def disk(block, rmin, rmax, half):
     return {"type": "minecraft:disk", "config": {
@@ -164,8 +164,20 @@ def disk(block, rmin, rmax, half):
         "half_height": half}}
 
 
+# 06.10 (Георгий: «огромное пятно, чтобы 1 форпост закрывал ресурс до конца игры»): вокруг выбранной точки — россыпь
+# пятен, они сливаются в поле ~40 блоков. Редкость и in_square идут первыми — центр месторождения тот же, что раньше
+# (координаты атласа верны с точностью ±10 блоков).
+CLUSTER_N, CLUSTER_SPREAD = 8, 12
+
+
+def cluster(n=CLUSTER_N, spread=CLUSTER_SPREAD):
+    return [{"type": "minecraft:count", "count": n},
+            {"type": "minecraft:random_offset",
+             "xz_spread": {"type": "minecraft:uniform", "min_inclusive": -spread, "max_inclusive": spread}, "y_spread": 0}]
+
+
 def surface(chance, min_y=None, heightmap="WORLD_SURFACE_WG"):
-    p = [{"type": "minecraft:rarity_filter", "chance": chance}, {"type": "minecraft:in_square"}]
+    p = [{"type": "minecraft:rarity_filter", "chance": chance}, {"type": "minecraft:in_square"}] + cluster()
     if min_y is not None:
         # «только если поверхность не ниже min_y»: ставим y = min_y и сверяем с картой высот, потом — на поверхность
         p += [{"type": "minecraft:height_range", "height": {"type": "minecraft:constant", "value": {"absolute": min_y}}},
@@ -176,13 +188,13 @@ def surface(chance, min_y=None, heightmap="WORLD_SURFACE_WG"):
 
 def cave(chance, ymin, ymax, max_steps=16, count=1):
     # окружение ищется только из воздуха пещеры: попыток count, из них в пустоту попадает малая часть
-    return [{"type": "minecraft:count", "count": count}, {"type": "minecraft:rarity_filter", "chance": chance}, {"type": "minecraft:in_square"},
-            {"type": "minecraft:height_range", "height": {"type": "minecraft:uniform",
+    return ([{"type": "minecraft:count", "count": count}, {"type": "minecraft:rarity_filter", "chance": chance}, {"type": "minecraft:in_square"}]
+            + cluster(4, 8) + [{"type": "minecraft:height_range", "height": {"type": "minecraft:uniform",
                                                            "min_inclusive": {"absolute": ymin}, "max_inclusive": {"absolute": ymax}}},
             {"type": "minecraft:environment_scan", "direction_of_search": "down", "max_steps": max_steps,
              "target_condition": {"type": "minecraft:solid"},
              "allowed_search_condition": {"type": "minecraft:matching_blocks", "blocks": ["minecraft:air", "minecraft:cave_air"]}},
-            {"type": "minecraft:biome"}]
+            {"type": "minecraft:biome"}])
 
 
 # [имя, configured_feature, placement, биомы, шаг генерации]
@@ -206,24 +218,24 @@ def features():
                       {"type": "minecraft:matching_blocks", "blocks": ["minecraft:air", "minecraft:short_grass", "minecraft:fern"]}]}},
                   {"type": "minecraft:biome"}]
     return [
-        ("hevea_soil", disk("nightshift:hevea_soil", 4, 6, 2), surface(10), "#c:is_jungle", "underground_ores"),
+        ("hevea_soil", disk("nightshift:hevea_soil", 6, 8, 2), surface(10), "#c:is_jungle", "underground_ores"),
         ("hevea_tree", hevea_tree, tree_place, "#c:is_jungle", "underground_decoration"),
-        ("salt", disk("nightshift:salt_deposit", 4, 6, 2), surface(4), "#c:is_beach", "underground_ores"),
-        ("magnetic_anomaly", disk("nightshift:magnetic_anomaly", 4, 6, 2), surface(18, 120), "#c:is_mountain", "underground_ores"),
-        ("sulfur_surface", sulfur_lake, [{"type": "minecraft:rarity_filter", "chance": 5}, {"type": "minecraft:in_square"},
+        ("salt", disk("nightshift:salt_deposit", 6, 8, 2), surface(4), "#c:is_beach", "underground_ores"),
+        ("magnetic_anomaly", disk("nightshift:magnetic_anomaly", 6, 8, 2), surface(18, 120), "#c:is_mountain", "underground_ores"),
+        ("sulfur_surface", sulfur_lake, [{"type": "minecraft:rarity_filter", "chance": 5}, {"type": "minecraft:in_square"}] + cluster(3, 10) + [
                                          {"type": "minecraft:heightmap", "heightmap": "WORLD_SURFACE_WG"}, {"type": "minecraft:biome"}],
          "#c:is_badlands", "lakes"),
         ("sulfur_deep", sulfur_lake, cave(8, -56, -12, 32)[:-1] + [
             {"type": "minecraft:surface_relative_threshold_filter", "heightmap": "OCEAN_FLOOR_WG", "max_inclusive": -16},
             {"type": "minecraft:biome"}], "#minecraft:is_overworld", "lakes"),
-        ("quartz", disk("nightshift:quartz_vein", 4, 6, 2), surface(12), "#c:is_desert", "underground_ores"),
-        ("bauxite", disk("nightshift:bauxite_deposit", 4, 6, 2), surface(5), "#nightshift:outpost_bauxite", "underground_ores"),
-        ("helium", disk("nightshift:helium_ice", 4, 6, 2), surface(14, 180), "#c:is_mountain", "underground_ores"),
-        ("permafrost", disk("nightshift:permafrost", 4, 6, 2), surface(8), "#c:is_icy", "underground_ores"),
-        ("peat", disk("nightshift:peat_bog", 4, 6, 2), surface(7, None, "OCEAN_FLOOR_WG"), "#c:is_swamp", "underground_ores"),
-        ("mycelium_surface", disk("nightshift:mycelium_vein", 4, 6, 2), surface(4), "#c:is_mushroom", "underground_ores"),
-        ("mycelium_caves", disk("nightshift:mycelium_vein", 4, 5, 1), cave(3, -50, 40, 16, 6), "#nightshift:outpost_spore_caves", "underground_ores"),
-        ("star_stone", disk("nightshift:star_stone", 4, 5, 2), surface(10, 200), "#c:is_mountain/peak", "underground_ores"),
+        ("quartz", disk("nightshift:quartz_vein", 6, 8, 2), surface(12), "#c:is_desert", "underground_ores"),
+        ("bauxite", disk("nightshift:bauxite_deposit", 6, 8, 2), surface(5), "#nightshift:outpost_bauxite", "underground_ores"),
+        ("helium", disk("nightshift:helium_ice", 6, 8, 2), surface(14, 180), "#c:is_mountain", "underground_ores"),
+        ("permafrost", disk("nightshift:permafrost", 6, 8, 2), surface(8), "#c:is_icy", "underground_ores"),
+        ("peat", disk("nightshift:peat_bog", 6, 8, 2), surface(7, None, "OCEAN_FLOOR_WG"), "#c:is_swamp", "underground_ores"),
+        ("mycelium_surface", disk("nightshift:mycelium_vein", 6, 8, 2), surface(4), "#c:is_mushroom", "underground_ores"),
+        ("mycelium_caves", disk("nightshift:mycelium_vein", 6, 8, 1), cave(3, -50, 40, 16, 6), "#nightshift:outpost_spore_caves", "underground_ores"),
+        ("star_stone", disk("nightshift:star_stone", 6, 8, 2), surface(10, 200), "#c:is_mountain/peak", "underground_ores"),
     ]
 
 
