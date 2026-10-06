@@ -158,7 +158,7 @@ function nsAtlasShow(p) {
 		srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify(line))
 	}
 	NSG.nsAtlasLast[name] = picks
-	srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: 'Известно видов: ' + known + ' из ' + NS_ATLAS_TYPES.length + '. Новые месторождения атлас записывает сам, когда на них встаёшь.', color: 'dark_gray' }))
+	srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: 'Известно видов: ' + known + ' из ' + NS_ATLAS_TYPES.length + '. Новые месторождения атлас записывает сам, когда на них встаёшь. Жилы руды с аэрофотоаппарата — /veins [тип].', color: 'dark_gray' }))
 }
 
 ItemEvents.rightClicked('nightshift:deposit_atlas', event => {

@@ -10,6 +10,8 @@ ServerEvents.recipes(function (event) {
 		P: 'create_new_age:heat_pipe',
 		S: 'create:iron_sheet'
 	}).id('nightshift:vahta/audit/heater_early')
+	// финальный аудит 06.10: ранний рецепт — и в миксере (книга пишет «миксер», а там был только старый, с заряженным железом)
+	event.recipes.create.mixing('create_new_age:heater', ['4x #c:nuggets/iron', 'create:empty_blaze_burner', '2x create_new_age:heat_pipe', 'create:iron_sheet']).id('nightshift:vahta/audit/heater_early_mix')
 
 	// Загрузчик чанков для форпоста без живого гаста (Create Power Loader ловит гаста пустым загрузчиком —
 	// поход в Незер на каждый форпост). Миксер: пустой загрузчик + 2 жемчуга Края + светопыль.

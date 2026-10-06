@@ -388,7 +388,8 @@ function nsSkyReject(st, s, x, z, why) {
 	if (s.who && s.tries === 1 && s.prefer) nsSkyTellOps('точка ' + x + ' ' + z + ' отклонена: ' + why + ' — ищу другую')
 	if (s.tries >= NS_SKY.tries) {
 		console.warn('[sky] метеорит: места не нашлось за ' + s.tries + ' попыток')
-		nsSkyTellOps('метеорит: места без построек не нашлось за ' + s.tries + ' попыток — попробую завтра')
+		// финальный аудит 06.10: все игроки — операторы, служебное шло всем в чат; вслух — только при ручном /nsmeteor
+		if (s.who) nsSkyTellOps('метеорит: места без построек не нашлось за ' + s.tries + ' попыток — попробую завтра')
 		st.search = null
 		st.nextDay = nsSkyDay() + 1
 	}
@@ -538,7 +539,16 @@ function nsSkyImpact() {
 			NSG.nsServer.runCommandSilent('execute as ' + e.getStringUuid() + ' run damage @s 8 minecraft:explosion')
 		}
 	} catch (e2) {}
-	nsTellAllSky(Text.gold('[Метеорит] ').append(Text.white('Упал! ')).append(Text.yellow(m.x + ' ' + m.y + ' ' + m.z)).append(Text.gray(' — столб дыма над кратером видно издалека.')))
+	// финальный аудит 06.10: координаты уже были в объявлении и метке Xaero — «Упал!» над хотбаром, не в чат
+	var fell = Text.gold('[Метеорит] ').append(Text.white('Упал! ')).append(Text.yellow(m.x + ' ' + m.y + ' ' + m.z)).append(Text.gray(' — столб дыма видно издалека'))
+	var fps = NSG.nsServer.getPlayers()
+	for (var fi = 0; fi < fps.length; fi++) {
+		try {
+			fps[fi].setStatusMessage(fell)
+		} catch (e3) {
+			fps[fi].tell(fell)
+		}
+	}
 }
 
 function nsTellAllSky(t) {

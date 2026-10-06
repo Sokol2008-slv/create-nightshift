@@ -78,6 +78,24 @@ MANUAL_ZERO += ['axiomativ:supply_node', 'axiomativ:supply_relay', 'axiomativ:di
                 'axiomativ:supply_pack_mk2', 'axiomativ:quantum_supply_pack', 'axiomativ:incomplete_supply_pack']
 # 05.10: буровая установка (аддон 0.7.0) — высокая ступень форпоста, только машинами
 MANUAL_ZERO += ['axiomativ:drilling_rig']
+# 06.10 (финальный аудит): металлы планет Northstar — по правилу 30.09 «металлы наших планет — только добычей». Их руды
+# и слитки носили тег c:ores / c:ingots и остались в продаже по цене тега: титан 256 (дешевле железа), вольфрам 356,
+# марсианская руда 256 → дробилка → 1,75 сырой марсианской по 10 240. Ни купить, ни продать — только с планет.
+# Обычные руды планет (железо Луны, медь Венеры…) дают обычные металлы — они в продаже, как земные.
+MANUAL_ZERO += ['northstar:%s_%s%s_ore' % (pl, deep, m) for deep in ('', 'deep_') for pl, metals in (
+    ('moon', ('titanium', 'glowstone')), ('mars', ('titanium',)), ('venus', ('titanium', 'glowstone')),
+    ('mercury', ('titanium', 'tungsten', 'glowstone'))) for m in metals]  # только существующие руды Northstar 0.4
+MANUAL_ZERO += ['northstar:mars_iron_ore', 'northstar:mars_deep_iron_ore', 'northstar:raw_martian_iron_ore',
+                'northstar:raw_titanium_ore', 'northstar:titanium_ingot', 'northstar:titanium_nugget', 'northstar:titanium_block',
+                'northstar:titanium_sheet', 'northstar:incomplete_titanium_ingot', 'northstar:rutile_concentrate',
+                'northstar:raw_tungsten_ore', 'northstar:tungsten_ingot', 'northstar:tungsten_nugget', 'northstar:tungsten_block',
+                'northstar:tungsten_sheet', 'northstar:raw_glowstone_ore', 'northstar:enriched_glowstone_ore',
+                'northstar:lunar_sapphire_shard', 'northstar:lunar_sapphire_crystal', 'northstar:polished_lunar_sapphire',
+                'northstar:lunar_sapphire_block', 'axiomativ:interplanetary_alloy', 'axiomativ:planetary_grindstone',
+                'axiomativ:shield_generator']  # последние три — EMC 0 и так (входы без цены), теперь и явно
+# 06.10 (финальный аудит): сердце моря — редкость снабженца (как тотем и элитры, у которых EMC нет); с ценой 32 768 его
+# печатала дробилка по живому кораллу (1 %, create_ultimate_factory): купил коралл за 16 → продал сердце, ×20
+MANUAL_ZERO += ['minecraft:heart_of_the_sea']
 # 06.10 (Георгий: «нельзя, чтобы такую крутую еду можно было покупать»): дорогие блюда — модовая еда с рецептом из 3+
 # ингредиентов (выгрузка /emc_dump_food → tools/data/food_complex.json). Простая и ванильная еда — в продаже (29.09)
 MANUAL_ZERO += json.load(open(PACK / 'tools' / 'data' / 'food_complex.json', encoding='utf-8'))['items']
@@ -104,6 +122,10 @@ def main():
             continue  # руда и сырьё без тегов (руда тория и т.п.)
         lock.append(iid)
     data = json.load(open(CUSTOM))
+    # 06.10: нули предметов, которых нет в выгрузке (моды добавлены после неё, например CBC Firepower 01.10), не теряем —
+    # иначе перегенерация по старой выгрузке молча открывала их в продажу
+    dump_ids = {it['id'] for it in dump}
+    lock += [e['id'] for e in data['entries'] if e.get('emc') == 0 and e.get('id') and e['id'] not in dump_ids and e['id'] not in lock]
     locked = set(lock)
     # ручные цены на то, что теперь блокируется (сплавы), — убрать, иначе перебьют ноль
     kept = [e for e in data['entries'] if e.get('emc') != 0 and e.get('id') not in locked

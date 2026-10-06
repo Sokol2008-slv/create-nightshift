@@ -1,5 +1,6 @@
 {
   "block.axiomativ.tesla_tower_coil": "Секция тесла-башни",
   "item.axiomativ.incomplete_tesla_tower_coil": "Недомотанная секция тесла-башни",
-  "block.axiomativ.tesla_tower_coil.tooltip.summary": "Ставится на _тесла-башню_ или на другую секцию, _до 4 в высоту_. Каждая: _+4 к дальности_, _+1 перескок_, _+2 урона_."
+  "block.axiomativ.tesla_tower_coil.tooltip.summary": "Ставится на _тесла-башню_ или на другую секцию, _до 4 в высоту_. Каждая: _+4 к дальности_, _+1 перескок_, _+2 урона_.",
+  "key.categories.axiomativ": "Ранец снабжения (Axiomativ)"
 }

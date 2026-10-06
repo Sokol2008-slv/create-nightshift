@@ -2,182 +2,6 @@
  "comment": "«Вахта»: цены EMC. Техника модов Create (кроме ресурсов и стройблоков) — EMC 0, ни купить, ни продать (tools/emc_lock_create.py). Руда и сырые металлы — половина цены слитка (чёрные списки руды ProjectE выключены в mapping.toml). Продажа по полной цене (covalenceLoss 1.0 в server.toml). Наросты незера 8, грибосвет 32 (было 216/400 — фарм без заводов). Обоснование — docs/VAHTA-RULES.md.",
  "entries": [
   {
-   "id": "nightshift:hevea_soil",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:hevea_log",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:salt_deposit",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:magnetic_anomaly",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:sulfur_spring",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:quartz_vein",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:bauxite_deposit",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:helium_ice",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:permafrost",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:peat_bog",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:mycelium_vein",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:star_stone",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:latex",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:tapping_knife",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:rock_salt",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:raw_magnetite",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:magnetite_dust",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:sulfur_crust",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:smokeless_powder",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:quartz_sand",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:quartz_glass",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:lens",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:helium_frost",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:helium_canister",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:cryo_crystal",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:radiator",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:peat",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:activated_carbon",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:air_filter",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:glowcap",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:spores",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:stardust",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:incomplete_star_chart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:star_chart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:liquid_sulfur_bucket",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:electrolyte_bucket",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:helium_bucket",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:coolant_bucket",
-   "emc": 0
-  },
-  {
-   "id": "tfmg:aluminum_ingot",
-   "emc": 0
-  },
-  {
-   "id": "tfmg:aluminum_nugget",
-   "emc": 0
-  },
-  {
-   "id": "tfmg:aluminum_block",
-   "emc": 0
-  },
-  {
-   "id": "tfmg:sulfur_dust",
-   "emc": 0
-  },
-  {
-   "id": "cgs:sulfur",
-   "emc": 0
-  },
-  {
-   "id": "northstar:salt",
-   "emc": 0
-  },
-  {
    "id": "minecraft:iron_ingot",
    "emc": 1024
   },
@@ -634,6 +458,26 @@
    "emc": 32
   },
   {
+   "id": "nightshift:lightning_charge",
+   "emc": 8192
+  },
+  {
+   "id": "nightshift:navigation_core",
+   "emc": 65536
+  },
+  {
+   "id": "nightshift:star_pickaxe",
+   "emc": 262144
+  },
+  {
+   "id": "nightshift:star_fragment",
+   "emc": 131072
+  },
+  {
+   "id": "nightshift:star_navigator",
+   "emc": 131072
+  },
+  {
    "id": "aeronautics:adjustable_burner",
    "emc": 0
   },
@@ -815,6 +659,250 @@
   },
   {
    "id": "aeronautics:yellow_envelope_encased_shaft",
+   "emc": 0
+  },
+  {
+   "id": "arphex:abyssal_stew",
+   "emc": 0
+  },
+  {
+   "id": "arphex:crawling_cake",
+   "emc": 0
+  },
+  {
+   "id": "arphex:elixir_of_splintered_sanity",
+   "emc": 0
+  },
+  {
+   "id": "arphex:entropy_serum",
+   "emc": 0
+  },
+  {
+   "id": "arphex:hemoplasm",
+   "emc": 0
+  },
+  {
+   "id": "arphex:scorched_soup",
+   "emc": 0
+  },
+  {
+   "id": "arphex:spider_supplement",
+   "emc": 0
+  },
+  {
+   "id": "arphex:time_syrup",
+   "emc": 0
+  },
+  {
+   "id": "arphex:void_sherbet",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:afterburner_1",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:afterburner_2",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:afterburner_3",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:antigrav_module",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:armored_hull",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:charging_station",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:dimensional_relay",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:discharging_station",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:dispatch_monitor",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:dispatch_sensor",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drilling_rig",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_nest",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_remote",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_upgrade_battery",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_upgrade_cargo",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:drone_upgrade_speed",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_cannon",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_cell",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_shield_mk1",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:energy_shield_mk2",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:fuel_economizer",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:gate_controller",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:gate_frame",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:geothermal_generator",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:geothermal_source",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:hangar_dock",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:heat_exchanger",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:heat_valve",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:heating_element",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:helper_drone",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:hydro_generator",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_aircraft_upgrade",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_drone_upgrade",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_energy_cannon",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_energy_cell",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_gate_frame",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_helper_drone",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_supply_pack",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:incomplete_tesla_tower_coil",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:interplanetary_alloy",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:planetary_grindstone",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:quantum_supply_pack",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:repair_rack",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:river_rapids",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:searchlight",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:shield_generator",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_node",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_pack",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_pack_mk2",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:supply_relay",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:tesla_tower",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:tesla_tower_coil",
    "emc": 0
   },
   {
@@ -1714,6 +1802,86 @@
    "emc": 0
   },
   {
+   "id": "cbc_firepower_components:autocannon_ammo_feed",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:automatic_cannon_controller",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:cannon_limiter",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:cannon_magazine_loader",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:carousel_ammunition_rack",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:compact_autocannon_mount",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:compact_cannon_mount",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_ammo_box",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_breech",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_he_round",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:large_autocannon_round",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:ready_ammunition_compartment",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:spent_casing_collector",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_large_autocannon_barrel",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_large_autocannon_muzzle_brake",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_thick_large_autocannon_barrel",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_twin_large_autocannon_barrel",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:steel_twin_large_autocannon_muzzle_brake",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:twin_large_autocannon_breech",
+   "emc": 0
+  },
+  {
+   "id": "cbc_firepower_components:vertical_compact_cannon_mount",
+   "emc": 0
+  },
+  {
    "id": "cgs:steel_block",
    "emc": 0
   },
@@ -1723,6 +1891,10 @@
   },
   {
    "id": "cgs:steel_nugget",
+   "emc": 0
+  },
+  {
+   "id": "cgs:sulfur",
    "emc": 0
   },
   {
@@ -24386,6 +24558,10 @@
    "emc": 0
   },
   {
+   "id": "dmr:dragon_egg",
+   "emc": 0
+  },
+  {
    "id": "dndecor:amethyst_crushing_wheel",
    "emc": 0
   },
@@ -27175,6 +27351,178 @@
   },
   {
    "id": "dndesires:yellow_bore_block",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:apple_cider",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:bacon_and_eggs",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:bacon_sandwich",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:baked_cod_stew",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:barbecue_stick",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:beef_stew",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:bone_broth",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:chicken_sandwich",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:chicken_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:cod_roll",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:dog_food",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:dumplings",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:egg_sandwich",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:fish_stew",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:fried_rice",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:fruit_salad",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:glow_berry_custard",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:grilled_salmon",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:hamburger",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:honey_cookie",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:kelp_roll",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:melon_popsicle",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:mixed_salad",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:mushroom_rice",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:mutton_wrap",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:nether_salad",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:noodle_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:onion_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pasta_with_meatballs",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pasta_with_mutton_chop",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pie_crust",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pumpkin_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:ratatouille",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:roasted_mutton_chops",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:salmon_roll",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:squid_ink_pasta",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:steak_and_potatoes",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:stuffed_potato",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:sweet_berry_cookie",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:tomato_sauce",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:vegetable_noodles",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:vegetable_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:wheat_dough",
    "emc": 0
   },
   {
@@ -31442,7 +31790,435 @@
    "emc": 0
   },
   {
+   "id": "kubejs:axiomite_ingot",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:axiomite_ore",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:crushed_raw_axiomite",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:dark_stabilite_ore",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:deepslate_axiomite_ore",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:light_stabilite_ore",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:raw_axiomite",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:raw_dark_stabilite",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:raw_light_stabilite",
+   "emc": 0
+  },
+  {
+   "id": "kubejs:stabilite_ingot",
+   "emc": 0
+  },
+  {
+   "id": "minecraft:heart_of_the_sea",
+   "emc": 0
+  },
+  {
    "id": "minecraft:nether_star",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:activated_carbon",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:aerial_camera",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:aerial_film",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:afterburner_blueprint",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:air_filter",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_abyss_star",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_abyss_star_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_badge",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_buckle",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_butcher_glove",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_butcher_glove_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_canyon_gland",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_canyon_gland_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_canyon_silk",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_canyon_silk_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_collar",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_ender_feather",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_ender_feather_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_ender_void",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_ender_void_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_fang",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_frost_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_frost_heart_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_frost_shard",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_frost_shard_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_halo",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_halo_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_horde_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_horde_heart_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_hourglass",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_hourglass_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_inferno_ash",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_inferno_ash_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_inferno_crown",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_inferno_crown_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_nightmare_claw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_nightmare_claw_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_nightmare_lantern",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_nightmare_lantern_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_patch",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_pauldron",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_qc_stripe",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_rosary",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_rosary_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_second_wind",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_second_wind_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_shaft_helmet",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_shaft_helmet_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_shaft_mace",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_shaft_mace_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_stone_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_stone_heart_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_thermos",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_titan_blood",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_titan_blood_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_amethyst",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_amethyst_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_diabolos",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_diabolos_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_gladiator",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_gladiator_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_golem",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_golem_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_guardian",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_guardian_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_ignis",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_ignis_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_maledictus",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_maledictus_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_matriarch",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_matriarch_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_monstrosity",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_monstrosity_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_remnant",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_remnant_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_scorpioid",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_scorpioid_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_termite",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_termite_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_trisector",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_trisector_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_voidlasher",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_tr_voidlasher_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_vakhta_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_vakhta_heart_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_visor",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_visor_aw",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:art_watch_charm",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:awakening_essence",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:bastion_core",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:bauxite_deposit",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:coil_core",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:convoy_seal",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:coolant_bucket",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:crushed_meteor_iron",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:cryo_crystal",
    "emc": 0
   },
   {
@@ -31450,7 +32226,255 @@
    "emc": 0
   },
   {
+   "id": "nightshift:electric_copper",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:electrolyte_bucket",
+   "emc": 0
+  },
+  {
    "id": "nightshift:fallen_star",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:glowcap",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_bucket",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_canister",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_frost",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:helium_ice",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:herbal_tea",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:hevea_log",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:hevea_soil",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:horde_dust",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:horde_shard",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_armor_module",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_avionics",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_awakening",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:incomplete_star_chart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:latex",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:lens",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:life_tonic",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:life_tonic",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:liquid_sulfur_bucket",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:magnetic_anomaly",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:magnetite_dust",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:meteor_iron",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:meteor_iron_ingot",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:meteor_ore",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_armor_plate",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_jump_springs",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_night_vision",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_spring_boots",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_sprint",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:module_step_assist",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:mycelium_vein",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:night_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:night_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:otk_armor_plate",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:peat",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:peat_bog",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:permafrost",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:pilot_license_1",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:pilot_license_2",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:pilot_license_3",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:prism_lens",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:quartz_glass",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:quartz_sand",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:quartz_vein",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:queen_heart",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:race_beacon",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:radiator",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:raw_magnetite",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:rock_salt",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:runner_badge",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:salt_deposit",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sedative",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:shift_token",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sky_crystal",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sky_crystal_cluster",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:smokeless_powder",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:spirit_essence",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:spores",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:stabilite_pickaxe",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:star_chart",
    "emc": 0
   },
   {
@@ -31462,15 +32486,31 @@
    "emc": 0
   },
   {
-   "id": "nightshift:herbal_tea",
+   "id": "nightshift:star_stone",
    "emc": 0
   },
   {
-   "id": "nightshift:life_tonic",
+   "id": "nightshift:stardust",
    "emc": 0
   },
   {
-   "id": "nightshift:night_heart",
+   "id": "nightshift:sulfur_crust",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sulfur_spring",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:supply_crate",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:tactical_nuke",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:tapping_knife",
    "emc": 0
   },
   {
@@ -31674,6 +32714,10 @@
    "emc": 0
   },
   {
+   "id": "northstar:enriched_glowstone_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:extinguished_lantern",
    "emc": 0
   },
@@ -31806,7 +32850,19 @@
    "emc": 0
   },
   {
+   "id": "northstar:lunar_sapphire_shard",
+   "emc": 0
+  },
+  {
    "id": "northstar:mars_cobra_spawn_egg",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mars_deep_iron_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mars_deep_titanium_ore",
    "emc": 0
   },
   {
@@ -31815,6 +32871,10 @@
   },
   {
    "id": "northstar:mars_gravel",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mars_iron_ore",
    "emc": 0
   },
   {
@@ -31887,6 +32947,10 @@
   },
   {
    "id": "northstar:mars_stone_pillar",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mars_titanium_ore",
    "emc": 0
   },
   {
@@ -32050,6 +33114,22 @@
    "emc": 0
   },
   {
+   "id": "northstar:mercury_deep_glowstone_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mercury_deep_titanium_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mercury_deep_tungsten_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mercury_glowstone_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:mercury_raptor_spawn_egg",
    "emc": 0
   },
@@ -32094,7 +33174,15 @@
    "emc": 0
   },
   {
+   "id": "northstar:mercury_titanium_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:mercury_tortoise_spawn_egg",
+   "emc": 0
+  },
+  {
+   "id": "northstar:mercury_tungsten_ore",
    "emc": 0
   },
   {
@@ -32110,7 +33198,19 @@
    "emc": 0
   },
   {
+   "id": "northstar:moon_deep_glowstone_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:moon_deep_titanium_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:moon_eel_spawn_egg",
+   "emc": 0
+  },
+  {
+   "id": "northstar:moon_glowstone_ore",
    "emc": 0
   },
   {
@@ -32155,6 +33255,10 @@
   },
   {
    "id": "northstar:moon_stone_pillar",
+   "emc": 0
+  },
+  {
+   "id": "northstar:moon_titanium_ore",
    "emc": 0
   },
   {
@@ -32222,6 +33326,22 @@
    "emc": 0
   },
   {
+   "id": "northstar:raw_glowstone_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:raw_martian_iron_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:raw_titanium_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:raw_tungsten_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:return_ticket",
    "emc": 0
   },
@@ -32247,6 +33367,10 @@
   },
   {
    "id": "northstar:rutile_concentrate",
+   "emc": 0
+  },
+  {
+   "id": "northstar:salt",
    "emc": 0
   },
   {
@@ -32326,6 +33450,14 @@
    "emc": 0
   },
   {
+   "id": "northstar:titanium_ingot",
+   "emc": 0
+  },
+  {
+   "id": "northstar:titanium_nugget",
+   "emc": 0
+  },
+  {
    "id": "northstar:titanium_pillar",
    "emc": 0
   },
@@ -32394,6 +33526,14 @@
    "emc": 0
   },
   {
+   "id": "northstar:tungsten_ingot",
+   "emc": 0
+  },
+  {
+   "id": "northstar:tungsten_nugget",
+   "emc": 0
+  },
+  {
    "id": "northstar:tungsten_pillar",
    "emc": 0
   },
@@ -32454,6 +33594,18 @@
    "emc": 0
   },
   {
+   "id": "northstar:venus_deep_glowstone_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:venus_deep_titanium_ore",
+   "emc": 0
+  },
+  {
+   "id": "northstar:venus_glowstone_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:venus_gravel",
    "emc": 0
   },
@@ -32502,6 +33654,10 @@
    "emc": 0
   },
   {
+   "id": "northstar:venus_titanium_ore",
+   "emc": 0
+  },
+  {
    "id": "northstar:venus_vines",
    "emc": 0
   },
@@ -32547,6 +33703,10 @@
   },
   {
    "id": "projectexpansion:condenser_mk3",
+   "emc": 0
+  },
+  {
+   "id": "projectexpansion:infinite_steak",
    "emc": 0
   },
   {
@@ -39130,6 +40290,10 @@
    "emc": 0
   },
   {
+   "id": "tfmg:aluminum_block",
+   "emc": 0
+  },
+  {
    "id": "tfmg:aluminum_cable_hub",
    "emc": 0
   },
@@ -39162,6 +40326,10 @@
    "emc": 0
   },
   {
+   "id": "tfmg:aluminum_ingot",
+   "emc": 0
+  },
+  {
    "id": "tfmg:aluminum_ladder",
    "emc": 0
   },
@@ -39171,6 +40339,10 @@
   },
   {
    "id": "tfmg:aluminum_mechanical_pump",
+   "emc": 0
+  },
+  {
+   "id": "tfmg:aluminum_nugget",
    "emc": 0
   },
   {
@@ -41086,6 +42258,10 @@
    "emc": 0
   },
   {
+   "id": "tfmg:sulfur_dust",
+   "emc": 0
+  },
+  {
    "id": "tfmg:sulfuric_acid_bucket",
    "emc": 0
   },
@@ -41291,1046 +42467,6 @@
   },
   {
    "id": "tfmg:zinc_truss",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:lightning_charge",
-   "emc": 8192
-  },
-  {
-   "id": "nightshift:navigation_core",
-   "emc": 65536
-  },
-  {
-   "id": "nightshift:star_pickaxe",
-   "emc": 262144
-  },
-  {
-   "id": "nightshift:tactical_nuke",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:star_fragment",
-   "emc": 131072
-  },
-  {
-   "id": "nightshift:stabilite_pickaxe",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:electric_copper",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:star_navigator",
-   "emc": 131072
-  },
-  {
-   "id": "kubejs:axiomite_ingot",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:stabilite_ingot",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:raw_axiomite",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:raw_light_stabilite",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:raw_dark_stabilite",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:crushed_raw_axiomite",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:axiomite_ore",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:deepslate_axiomite_ore",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:light_stabilite_ore",
-   "emc": 0
-  },
-  {
-   "id": "kubejs:dark_stabilite_ore",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:autocannon_ammo_feed",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:automatic_cannon_controller",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:cannon_limiter",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:cannon_magazine_loader",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:carousel_ammunition_rack",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:compact_autocannon_mount",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:compact_cannon_mount",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:large_autocannon_ammo_box",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:large_autocannon_breech",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:large_autocannon_he_round",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:large_autocannon_round",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:ready_ammunition_compartment",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:spent_casing_collector",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:steel_large_autocannon_barrel",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:steel_large_autocannon_muzzle_brake",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:steel_thick_large_autocannon_barrel",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:steel_twin_large_autocannon_barrel",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:steel_twin_large_autocannon_muzzle_brake",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:twin_large_autocannon_breech",
-   "emc": 0
-  },
-  {
-   "id": "cbc_firepower_components:vertical_compact_cannon_mount",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:module_spring_boots",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:module_step_assist",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:module_sprint",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:module_jump_springs",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:module_armor_plate",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:module_night_vision",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:incomplete_armor_module",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:energy_shield_mk1",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:energy_shield_mk2",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:tesla_tower",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:tesla_tower_coil",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_tesla_tower_coil",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:heat_exchanger",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:heat_valve",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:heating_element",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:searchlight",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:energy_cell",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_energy_cell",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:charging_station",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:discharging_station",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:geothermal_generator",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:hydro_generator",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:geothermal_source",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:river_rapids",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_patch",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_badge",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_thermos",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_buckle",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_qc_stripe",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_watch_charm",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_fang",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_pauldron",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_collar",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_stone_heart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_rosary",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_butcher_glove",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_titan_blood",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_visor",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_second_wind",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_hourglass",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_horde_heart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_vakhta_heart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_halo",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_shaft_helmet",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_shaft_mace",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_canyon_silk",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_canyon_gland",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_frost_shard",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_frost_heart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_inferno_ash",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_inferno_crown",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_ender_feather",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_ender_void",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_nightmare_lantern",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_nightmare_claw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_abyss_star",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_matriarch",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_termite",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_scorpioid",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_voidlasher",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_trisector",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_diabolos",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_amethyst",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_gladiator",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_golem",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_guardian",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_ignis",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_maledictus",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_remnant",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_monstrosity",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_stone_heart_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_rosary_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_butcher_glove_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_titan_blood_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_visor_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_second_wind_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_hourglass_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_horde_heart_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_vakhta_heart_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_halo_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_shaft_helmet_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_shaft_mace_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_canyon_silk_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_canyon_gland_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_frost_shard_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_frost_heart_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_inferno_ash_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_inferno_crown_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_ender_feather_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_ender_void_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_nightmare_lantern_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_nightmare_claw_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_abyss_star_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_matriarch_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_termite_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_scorpioid_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_voidlasher_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_trisector_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_diabolos_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_amethyst_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_gladiator_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_golem_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_guardian_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_ignis_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_maledictus_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_remnant_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:art_tr_monstrosity_aw",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:horde_shard",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:horde_dust",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:awakening_essence",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:incomplete_awakening",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:coil_core",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:afterburner_blueprint",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:otk_armor_plate",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:runner_badge",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:spirit_essence",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:queen_heart",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:meteor_iron",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:meteor_iron_ingot",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:sky_crystal",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:shift_token",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:race_beacon",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:supply_crate",
-   "emc": 0
-  },
-  {
-   "id": "dmr:dragon_egg",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:prism_lens",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:bastion_core",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:convoy_seal",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:afterburner_1",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:afterburner_2",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:afterburner_3",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:armored_hull",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:fuel_economizer",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_aircraft_upgrade",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:hangar_dock",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:drilling_rig",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:pilot_license_3",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:pilot_license_2",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:pilot_license_1",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:aerial_camera",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:aerial_film",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:incomplete_avionics",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:crushed_meteor_iron",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:meteor_ore",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:sky_crystal_cluster",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:gate_controller",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:gate_frame",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_gate_frame",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:antigrav_module",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:supply_node",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:supply_relay",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:dimensional_relay",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:supply_pack",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:supply_pack_mk2",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:quantum_supply_pack",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_supply_pack",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:dispatch_monitor",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:dispatch_sensor",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:repair_rack",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:helper_drone",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_helper_drone",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:drone_remote",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:drone_nest",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:drone_upgrade_speed",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:drone_upgrade_cargo",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:drone_upgrade_battery",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_drone_upgrade",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:energy_cannon",
-   "emc": 0
-  },
-  {
-   "id": "axiomativ:incomplete_energy_cannon",
-   "emc": 0
-  },
-  {
-   "id": "arphex:abyssal_stew",
-   "emc": 0
-  },
-  {
-   "id": "arphex:crawling_cake",
-   "emc": 0
-  },
-  {
-   "id": "arphex:elixir_of_splintered_sanity",
-   "emc": 0
-  },
-  {
-   "id": "arphex:entropy_serum",
-   "emc": 0
-  },
-  {
-   "id": "arphex:hemoplasm",
-   "emc": 0
-  },
-  {
-   "id": "arphex:scorched_soup",
-   "emc": 0
-  },
-  {
-   "id": "arphex:spider_supplement",
-   "emc": 0
-  },
-  {
-   "id": "arphex:time_syrup",
-   "emc": 0
-  },
-  {
-   "id": "arphex:void_sherbet",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:apple_cider",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:bacon_and_eggs",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:bacon_sandwich",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:baked_cod_stew",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:barbecue_stick",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:beef_stew",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:bone_broth",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:chicken_sandwich",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:chicken_soup",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:cod_roll",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:dog_food",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:dumplings",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:egg_sandwich",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:fish_stew",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:fried_rice",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:fruit_salad",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:glow_berry_custard",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:grilled_salmon",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:hamburger",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:honey_cookie",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:kelp_roll",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:melon_popsicle",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:mixed_salad",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:mushroom_rice",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:mutton_wrap",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:nether_salad",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:noodle_soup",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:onion_soup",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:pasta_with_meatballs",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:pasta_with_mutton_chop",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:pie_crust",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:pumpkin_soup",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:ratatouille",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:roasted_mutton_chops",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:salmon_roll",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:squid_ink_pasta",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:steak_and_potatoes",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:stuffed_potato",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:sweet_berry_cookie",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:tomato_sauce",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:vegetable_noodles",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:vegetable_soup",
-   "emc": 0
-  },
-  {
-   "id": "farmersdelight:wheat_dough",
-   "emc": 0
-  },
-  {
-   "id": "nightshift:sedative",
-   "emc": 0
-  },
-  {
-   "id": "projectexpansion:infinite_steak",
    "emc": 0
   }
  ]

@@ -832,9 +832,13 @@ ItemEvents.rightClicked('nightshift:supply_crate', event => {
 		var name = nsFunName(p)
 		var got = nsFunLoot(event.level, 'nightshift:trader/supply_crate', p.getX(), p.getY(), p.getZ(), p)
 		event.item.shrink(1)
-		var parts = []
+		// Сообщение — из компонентов (финальный аудит 06.10): getHoverName().getString() на сервере давал английские
+		// имена («Iron Ingot»), а компонент переводится у игрока. Имя берём ДО give — give опустошает стопку.
+		var msg = Text.gold('[Ящик снабжения] ')
+		var cnt = 0
 		for (var i = 0; i < got.length; i++) {
-			parts.push(got[i].getCount() + '× ' + String(got[i].getHoverName().getString()))
+			if (cnt++) msg = msg.append(Text.gray(', '))
+			msg = msg.append(Text.white(got[i].getCount() + '× ')).append(got[i].getHoverName().copy())
 			p.give(got[i])
 		}
 		// артефакт смены — 4 % (как с волны на 2 выше лучшей пройденной)
@@ -843,7 +847,8 @@ ItemEvents.rightClicked('nightshift:supply_crate', event => {
 				var art = nsCtArtifact(Math.max(1, (nsGetStateRO().phase || 0) + 2))
 				if (art.length) {
 					nsGiveLoot(p, art)
-					parts.push('артефакт смены')
+					if (cnt++) msg = msg.append(Text.gray(', '))
+					msg = msg.append(Text.lightPurple('артефакт смены'))
 				}
 			} catch (x) {}
 		}
@@ -852,7 +857,7 @@ ItemEvents.rightClicked('nightshift:supply_crate', event => {
 		NSG.nsServer.runCommandSilent('execute as ' + name + ' at @s run particle minecraft:firework ~ ~1.2 ~ 0.3 0.3 0.3 0.08 20 normal')
 		nsFunSound(name, 'minecraft:block.barrel.open', 1, 1.1)
 		nsFunSound(name, 'minecraft:entity.player.levelup', 0.6, 1.5)
-		p.tell(Text.gold('[Ящик снабжения] ').append(Text.white(parts.length ? parts.join(', ') : 'пусто — бывает и такое. Бухгалтерия извиняется.')))
+		p.tell(cnt ? msg : Text.gold('[Ящик снабжения] ').append(Text.white('пусто — бывает и такое. Бухгалтерия извиняется.')))
 		opened = true
 	} catch (e) {
 		console.error('[снабженец] ящик: ' + e)

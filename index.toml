@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "1e97fd176feff2d450530c60c2277f6863492420af26a3c92ef2083526f5f9b3"
+hash = "28fb2af6cd8250ed854529b42c3545011a6ed52e2dfd17b75f261091abceccd5"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -174,15 +174,23 @@ hash = "e06365900f1670f79de50f9a7907ecaa71a3cae37f284884593920136fb491f0"
 
 [[files]]
 file = "kubejs/assets/axiomativ/lang/ru_ru.json"
-hash = "eb78a97e8444c2c74b5da487bdb227adafc082ef5f10f41a969f650811006342"
+hash = "43fad6ee0157874a23c4ae67240a7ed06253ce670f68feccde5aad16afef8b2b"
 
 [[files]]
 file = "kubejs/assets/cave_dweller/lang/ru_ru.json"
 hash = "6035af34313b340b3fea54bc32af26d5a2d63a1c8c5bc3b02f99a208f1c5278f"
 
 [[files]]
+file = "kubejs/assets/create_new_age/lang/ru_ru.json"
+hash = "613d83096fe671cfa0045be57a9bf7b79b628eb2c0ae178c4c305f73562cef21"
+
+[[files]]
 file = "kubejs/assets/createaddition/lang/ru_ru.json"
 hash = "29b215c0a61248ec57a41ed24c1fa7de5b860d80618e582e1c2dec353da6a25d"
+
+[[files]]
+file = "kubejs/assets/createoreexcavation/lang/ru_ru.json"
+hash = "46f5867450ba09f9836776d91ab7ccd92a898cc3c10a960dd92158063cb77a4e"
 
 [[files]]
 file = "kubejs/assets/dmr/lang/ru_ru.json"
@@ -1221,12 +1229,24 @@ file = "kubejs/assets/pingwheel/lang/ru_ru.json"
 hash = "04b67d6b7f0497e994bf458cd7b03f3e470eacb8bc731253b9d3c11e5a9b630c"
 
 [[files]]
+file = "kubejs/assets/sanity_renewed/lang/ru_ru.json"
+hash = "e13884cc0dfa04b3cf9fd015ab2be810cc84569677f7bad437990001416380a1"
+
+[[files]]
+file = "kubejs/assets/tfmg/lang/ru_ru.json"
+hash = "c14b3e4230f159a122ce9a6bde05d423341abcb06a8aaf214fa24c6466c27692"
+
+[[files]]
+file = "kubejs/assets/xaerominimap/lang/ru_ru.json"
+hash = "4a588283c84fc1c6cf372deb3595a1e7eca659a306949e65da33fb29d36f8b8b"
+
+[[files]]
 file = "kubejs/client_scripts/armor_modules_tooltips.js"
-hash = "c32f7903cd668ede6493ea12403a40a5bb999fd67234218a2099384c7ca0efe2"
+hash = "4a52c7a79447825fbfad0281cb51340903002d09d4bdd8634928e3f1618e8e37"
 
 [[files]]
 file = "kubejs/client_scripts/aviation_tooltips.js"
-hash = "87877eddc4585f3d94e3e14d1ffa5b036429de7fc0406c7fa30a4930fa9a5e64"
+hash = "5fb431a08f3228c57a3fb5252616e07af207b0a5b7712763af91520b3a5f4a9e"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_dispatch_jei.js"
@@ -1234,7 +1254,7 @@ hash = "a58cb9949852b3c1c7f3f65ddd046300679d9a56199211135320578741e4389d"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_drill_jei.js"
-hash = "95b0087b255b983be19f59db50e51a31a958e019b72fb733c9f88b3bf7df6208"
+hash = "17df088c9daa94503166e841aa129fa8ac012e14495375b4b79c33c86b7f1827"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_drones_jei.js"
@@ -1254,7 +1274,7 @@ hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_supply_jei.js"
-hash = "d72f7dbbd9cc3e9c3e60688bee96b86f23c0b245bc2a32036e90dd80c1b4e074"
+hash = "bf55bc967f008272cf284564554d3a93fde22581afd7fa78bd8c5353797f6557"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_tesla_jei.js"
@@ -1290,7 +1310,11 @@ hash = "f5476f4651e9bf3aa05546f85ee8a851005cfe3976a250c9546ed6eb8e1472a9"
 
 [[files]]
 file = "kubejs/client_scripts/outposts_jei.js"
-hash = "284a129520df99c6a7dfe2e0837f4f215b1ab9c8e1ec8a00c462a71ef45fb409"
+hash = "6e3ae34b67de1bdb13c81cd2808ffb94c14dec14aae7c0793d521321db75e4a4"
+
+[[files]]
+file = "kubejs/client_scripts/sanity_items_jei.js"
+hash = "5bed5b3797e131e0328c772519047cfeea107f4c5062108768e8c3d652e1d6e0"
 
 [[files]]
 file = "kubejs/client_scripts/special_stage_tooltips.js"
@@ -1298,11 +1322,11 @@ hash = "a2d50b52e71083ec83da5a2c6288ffcbf2e1f6ce978733b9c2d01e9d209f9108"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_basin_jei.js"
-hash = "574480e71b9ca259b9c498ccd2854b7605ee678c884672011b5ada261918d321"
+hash = "959df19a24fe0297874d82be40a983535c279b75dda07bae6d9e45a778a3dfe3"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_jei.js"
-hash = "bc6d1462e7571b7c36779f6f1bdfb96dc5e8e3f9f871fd79f31879600ff7f370"
+hash = "1028b581af4e59db68a2278a2deddd3d3178a83b2d089df37eebc55329f8539b"
 
 [[files]]
 file = "kubejs/client_scripts/vahta_trim_jei.js"
@@ -2174,7 +2198,7 @@ hash = "c118ecccd2c00d1101945cb5304fc86f3061b6c3f845373195daccae818165f2"
 
 [[files]]
 file = "kubejs/server_scripts/aviation/30_aerial_camera.js"
-hash = "17f2e2f48520854358468b1a4335914486dcca92bba378c69f1c4f5113de9d83"
+hash = "cc33990e6cf812898162ffc71f02db508d6b2d4afa8c4d8cd8c00a6dacecba38"
 
 [[files]]
 file = "kubejs/server_scripts/economy/10_probes.js"
@@ -2214,7 +2238,11 @@ hash = "2429042fd45700c9be676dcf9f7835472a95910f8e043f54b6ca7f9b4f12632c"
 
 [[files]]
 file = "kubejs/server_scripts/hud/20_ideas.js"
-hash = "f9e93f5eff92d5dbc0da40e1465de5f37d1d773f5c50f3e4179a399bc5fbba33"
+hash = "896c5f72ed6ba332b26a47c9a0fafc31bef6e9ab47c3557ad7d442700b817919"
+
+[[files]]
+file = "kubejs/server_scripts/hud/30_help.js"
+hash = "c8ea45e258f9a258136bca01a9095bc5b7c36599e39d21d7417e2f1def953cda"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
@@ -2370,11 +2398,11 @@ hash = "59b4a2a191de6f4ae614592435d4b05451f31fd83eefbe7fa0c34f54e8dcf911"
 
 [[files]]
 file = "kubejs/server_scripts/shift/10_journal.js"
-hash = "9e243f7718d3fcadf9de666750bbfe1beded182dfe00e542fb83cd76c3fe3c59"
+hash = "c7c83bbb21959f6c9e56950472441bbc49c3e172d9b34e161be1405d3fa7e310"
 
 [[files]]
 file = "kubejs/server_scripts/shift/20_atlas.js"
-hash = "dfc8bc9c78dd12be4d587d50079e1ea4f56dfc5af28dd2f2cedc0d2ff96f6997"
+hash = "26b8615250354dd4b9d3dba68f05975ae6eeeede0f1ef0761cd21e76a17f247f"
 
 [[files]]
 file = "kubejs/server_scripts/shift/25_atlas_drones.js"
@@ -2382,7 +2410,7 @@ hash = "66fd4fc9f3431b22fc4cc8ed47b759e052aaebd02f289260d255534555cfbc19"
 
 [[files]]
 file = "kubejs/server_scripts/shift/30_dispatch.js"
-hash = "5b7246ab3afe1a5db18280349e5440bf68c04a92ed8ce948ac587b1d027788f3"
+hash = "2c91d1896ee596f476e1354c42729f7ad41551c2987ce14ee2b828edf0317456"
 
 [[files]]
 file = "kubejs/server_scripts/shift/30_salute.js"
@@ -2390,7 +2418,7 @@ hash = "3b4cd5ba0345bcd44ea390ef352b2eaef7242b07ee01892bff67a681490e5f9f"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
-hash = "78bd89af95f54d9a1f6dea083fe100a466a1cbe48ddf1c33f2ef60bb562c05bc"
+hash = "ced94e323d92dd0b28c33842415c2032e6b7654b35e93d1572f4d5af484e18d9"
 
 [[files]]
 file = "kubejs/server_scripts/sky/20_sky_islands.js"
@@ -2422,7 +2450,7 @@ hash = "2db94f1d0f1789537d37cc1b616e69a8b690829c0159a07c6fa7909b2cfbda16"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/25_smithing.js"
-hash = "3c0f2e1d7fb861924c6993de37ac2c80e175318fc002de8aa14430d43b13019e"
+hash = "8fe16fdeb4548171aadb576fb4c8c74bf5512cbc34d1b7141200fa462057bded"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/30_arrival.js"
@@ -2522,7 +2550,7 @@ hash = "db5bd70baa03a432291e5ab17d6e542c8fe9dbf6760d4b9cccdc45c903bc70a8"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/85_audit_fixes.js"
-hash = "a895a5dc66f09cb8e4e52df050a82ccd5db5c198b7492c9e49f683a5c688fe28"
+hash = "064f1cb53bd66aa892c970153ff25cf6cd96be736ebfab08f06890482f10285d"
 
 [[files]]
 file = "kubejs/server_scripts/zabava/00_common.js"
@@ -2530,7 +2558,7 @@ hash = "af715f0d8a7e933750bd072a4664e4fc271083931652c7a6e4e836af93fc78c0"
 
 [[files]]
 file = "kubejs/server_scripts/zabava/10_trader.js"
-hash = "3a3aad02a78a970afc6773ef644457241dd53eccc48479da2361a57eff480ba7"
+hash = "0f2e64a075f4e32cac9d8e58ed0630e4469df6c3c2c34d86c4c3927c699b23a9"
 
 [[files]]
 file = "kubejs/server_scripts/zabava/20_race.js"

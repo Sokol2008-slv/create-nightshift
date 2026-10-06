@@ -9,7 +9,7 @@
 //  - Расход: 1 аэрофотоплёнка за снимок (из инвентаря игрока, потом из багажника). В творческом режиме — даром.
 //  - Охват: 7×7 чанков на высоте 150+, 9×9 на 200+, 11×11 на 250+. Только загруженные чанки (под самолётом они есть).
 //  - Новые жилы: путевые точки Xaero — строка «xaero-waypoint:…» в чате, мод показывает её как «[Добавить]»;
-//    и запись в общий атлас сервера (команда /atlas — ближайшие известные жилы и точки к ним).
+//    и запись в общий атлас сервера (команда /veins [тип] — ближайшие известные жилы и точки к ним).
 // Правило Rhino: только var. Состояние атласа — server.persistentData 'ns_vein_atlas' (JSON).
 // ==========================================================================
 
@@ -261,7 +261,7 @@ function nsCamShot(p, v, manual) {
 		var info = nsCamVeinInfo(fv.k)
 		p.tell(Text.gray(nsCamWaypoint('Жила ' + info[0].toLowerCase(), info[1], fv.x, fv.y, fv.z, info[2], dim)))
 	}
-	if (fresh.length > NS_CAM_SHOW) p.tell(Text.gray('[Аэрофото] Ещё новых: ' + (fresh.length - NS_CAM_SHOW) + ' — все известные жилы: /atlas'))
+	if (fresh.length > NS_CAM_SHOW) p.tell(Text.gray('[Аэрофото] Ещё новых: ' + (fresh.length - NS_CAM_SHOW) + ' — все известные жилы: /veins'))
 	return true
 }
 
@@ -300,7 +300,7 @@ ItemEvents.rightClicked(NS_CAM_ITEM, function (event) {
 	}
 })
 
-// ---------- /atlas ----------
+// ---------- /veins (атлас жил) ----------
 function nsCamAtlasCmd(ctx, filter) {
 	var p = ctx.source.getPlayer()
 	if (!p) return 0
@@ -345,11 +345,13 @@ function nsCamAtlasCmd(ctx, filter) {
 	return 1
 }
 
+// Финальный аудит 06.10: /atlas без слов с 3.4.0 — «Атлас месторождений» (shift/20_atlas.js, он регистрируется позже
+// и перебивал этот корень). Атлас жил — своя команда /veins [тип]; /atlas <тип> по-прежнему ищет жилы (старые квесты).
 ServerEvents.commandRegistry(function (event) {
 	var C = event.commands
 	var A = event.arguments
 	event.register(
-		C.literal('atlas')
+		C.literal('veins')
 			.executes(function (ctx) {
 				return nsCamAtlasCmd(ctx, '')
 			})
@@ -358,5 +360,12 @@ ServerEvents.commandRegistry(function (event) {
 					return nsCamAtlasCmd(ctx, String(A.GREEDY_STRING.getResult(ctx, 'type')).toLowerCase())
 				})
 			)
+	)
+	event.register(
+		C.literal('atlas').then(
+			C.argument('type', A.GREEDY_STRING.create(event)).executes(function (ctx) {
+				return nsCamAtlasCmd(ctx, String(A.GREEDY_STRING.getResult(ctx, 'type')).toLowerCase())
+			})
+		)
 	)
 })

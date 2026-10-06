@@ -32,7 +32,7 @@ var NS_OP_INFO = [
 
 RecipeViewerEvents.addInformation('item', function (event) {
 	NS_OP_INFO.forEach(function (row) {
-		event.add(row[0], row.slice(1).concat(['Месторождение не ломается и не двигается: продукт делается только на месте. Форпост работает, пока чанк загружен (загрузчик чанков Create Power Loader).']))
+		event.add(row[0], row.slice(1).concat(['Месторождение не ломается и не двигается: продукт делается только на месте. Форпост работает, пока чанк загружен (загрузчик чанков Create Power Loader).', 'Высокая ступень — буровая установка (вышка 3×3×7, после 15-й волны): то же сырьё, как 10 экструдеров.']))
 	})
 	event.add('nightshift:latex', ['Подсочка гевеи на Каучуковой плантации. Латекс ×2 + серная пыль, миксер с нагревом → 3 резины.'])
 	event.add('nightshift:smokeless_powder', ['Сера + порох + древесный уголь, миксер → 3 оружейного пороха.',
@@ -57,7 +57,7 @@ RecipeViewerEvents.addInformation('item', function (event) {
 		['nightshift:stardust', 'Обсерватория (пики выше 200)', 'экструдер сверху, по бокам воздух. Ещё — со звездопада'],
 	]
 	raw.forEach(function (r) {
-		event.add(r[0], ['Сырьё форпоста «' + r[1] + '»: ' + r[2] + '.', 'Где искать месторождение — глава «Сеть форпостов» и подсказка JEI на самом месторождении.'])
+		event.add(r[0], ['Сырьё форпоста «' + r[1] + '»: ' + r[2] + '.', 'Где искать — «Атлас месторождений» (ПКМ, выдают при входе) или /atlas: ближайшее каждого вида, клик — метка. Подробно — глава «Сеть форпостов».'])
 	})
 	event.add('minecraft:gunpowder', ['Ванильный порох — только для ТНТ, фейерверков и гранат.', 'Патроны, гильзы и заряды пушек едят оружейный порох: сера + порох + древесный уголь, миксер → 3.'])
 })
@@ -66,6 +66,6 @@ ItemEvents.modifyTooltips(function (event) {
 	event.add(['nightshift:hevea_soil', 'nightshift:salt_deposit', 'nightshift:magnetic_anomaly', 'nightshift:sulfur_spring',
 		'nightshift:quartz_vein', 'nightshift:bauxite_deposit', 'nightshift:helium_ice', 'nightshift:permafrost', 'nightshift:peat_bog',
 		'nightshift:mycelium_vein', 'nightshift:star_stone'], [Text.gold('Месторождение форпоста — не добыть, не унести.'),
-		Text.gray('Ставь машину сверху. Подробности — JEI (U) и глава «Сеть форпостов».')])
+		Text.gray('Ставь экструдер или буровую сверху. Подробности — JEI (U), где найти — атлас (/atlas).')])
 	event.add('nightshift:tapping_knife', [Text.gray('ПКМ по стволу гевеи на латеритной почве → латекс. Работает и в деплоере.')])
 })

@@ -167,11 +167,19 @@ PlayerEvents.loggedIn(event => {
 			return e.ts > since
 		})
 		if (!fresh.length) return
-		var show = fresh.slice(-8)
+		// финальный аудит 06.10: при входе — 5 свежих (свёрнутый чат ~10 строк, а ещё реклама модов и подсказки),
+		// остальное — кликабельным «[ещё N]»
+		var show = fresh.slice(-5)
 		event.server.scheduleInTicks(100, function () {
 			try {
 				nsJrnShow(name, show, 'Журнал смены — пока тебя не было (' + fresh.length + '):')
-				if (fresh.length > show.length) NSG.nsServer.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: ' …ещё ' + (fresh.length - show.length) + ' — /journal 30', color: 'dark_gray' }))
+				if (fresh.length > show.length)
+					NSG.nsServer.runCommandSilent(
+						'tellraw ' + name + ' ' + JSON.stringify([
+							{ text: ' ', color: 'dark_gray' },
+							{ text: '[ещё ' + (fresh.length - show.length) + ']', color: 'yellow', clickEvent: { action: 'run_command', value: '/journal ' + Math.min(30, fresh.length) }, hoverEvent: { action: 'show_text', contents: 'Показать весь журнал с твоего выхода' } },
+						])
+					)
 			} catch (e) {}
 		})
 	} catch (e) {

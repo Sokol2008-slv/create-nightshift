@@ -13,6 +13,21 @@ var NS_VAHTA_SMITHING = [
 	['sophisticatedbackpacks:netherite_backpack', 'minecraft:netherite_upgrade_smithing_template', 'sophisticatedbackpacks:diamond_backpack', 'minecraft:netherite_ingot', 'sophisticatedbackpacks:netherite_backpack'],
 	// Create Enchantment Industry (05.10, аудит: «кузня закрыта, а рецепт не перенесён — предмет не получить»)
 	['create_enchantment_industry:smithing/classic_blaze_enchanter', 'create_dragons_plus:blaze_upgrade_smithing_template', 'create:blaze_burner', 'create_enchantment_industry:blazes_enchanting_handbook', 'create_enchantment_industry:classic_blaze_enchanter'],
+	// Финальный аудит 06.10: броня големов Cataclysm (Modular Golems) и незеритовый пробоотборник Caged Mobs — только
+	// кузня, в список 28.09 не попали (рецепты с условием «мод загружен»): без переноса их было не получить
+	['modulargolems:harbinger_chestplate', 'modulargolems:harbinger_upgrade_template', 'modulargolems:barbaric_vanguard_chestplate', 'cataclysm:witherite_block', 'modulargolems:harbinger_chestplate'],
+	['modulargolems:harbinger_helmet', 'modulargolems:harbinger_upgrade_template', 'modulargolems:barbaric_vanguard_helmet', 'cataclysm:witherite_block', 'modulargolems:harbinger_helmet'],
+	['modulargolems:harbinger_shinguard', 'modulargolems:harbinger_upgrade_template', 'modulargolems:barbaric_vanguard_shinguard', 'cataclysm:witherite_ingot', 'modulargolems:harbinger_shinguard'],
+	['modulargolems:ignis_chestplate', 'cataclysm:ignitium_upgrade_smithing_template', 'modulargolems:barbaric_vanguard_chestplate', 'cataclysm:ignitium_block', 'modulargolems:ignis_chestplate'],
+	['modulargolems:ignis_helmet', 'cataclysm:ignitium_upgrade_smithing_template', 'modulargolems:barbaric_vanguard_helmet', 'cataclysm:ignitium_block', 'modulargolems:ignis_helmet'],
+	['modulargolems:ignis_shinguard', 'cataclysm:ignitium_upgrade_smithing_template', 'modulargolems:barbaric_vanguard_shinguard', 'cataclysm:ignitium_block', 'modulargolems:ignis_shinguard'],
+	['modulargolems:maledictus_chestplate', 'cataclysm:cursium_upgrade_smithing_template', 'modulargolems:barbaric_vanguard_chestplate', 'cataclysm:cursium_block', 'modulargolems:maledictus_chestplate'],
+	['modulargolems:maledictus_helmet', 'cataclysm:cursium_upgrade_smithing_template', 'modulargolems:barbaric_vanguard_helmet', 'cataclysm:cursium_block', 'modulargolems:maledictus_helmet'],
+	['modulargolems:maledictus_shinguard', 'cataclysm:cursium_upgrade_smithing_template', 'modulargolems:barbaric_vanguard_shinguard', 'cataclysm:cursium_block', 'modulargolems:maledictus_shinguard'],
+	['modulargolems:monstrosity_chestplate', 'modulargolems:monstrosity_upgrade_template', 'modulargolems:barbaric_vanguard_chestplate', 'cataclysm:monstrous_horn', 'modulargolems:monstrosity_chestplate'],
+	['modulargolems:monstrosity_helmet', 'modulargolems:monstrosity_upgrade_template', 'modulargolems:barbaric_vanguard_helmet', 'cataclysm:monstrous_horn', 'modulargolems:monstrosity_helmet'],
+	['modulargolems:monstrosity_shinguard', 'modulargolems:monstrosity_upgrade_template', 'modulargolems:barbaric_vanguard_shinguard', 'cataclysm:monstrous_horn', 'modulargolems:monstrosity_shinguard'],
+	['cagedmobs:crafting/netherite_dna_sampler', 'minecraft:netherite_upgrade_smithing_template', 'cagedmobs:diamond_dna_sampler', '#cagedmobs:ingots/star_infused_netherite', 'cagedmobs:netherite_dna_sampler'],
 	// броня из межпланетного сплава (01.10): сплав | незеритовая вещь | сплав
 	['nightshift:alloy_armor/helmet', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_helmet', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_helmet'],
 	['nightshift:alloy_armor/chestplate', 'axiomativ:interplanetary_alloy', 'minecraft:netherite_chestplate', 'axiomativ:interplanetary_alloy', 'nightshift:alloy_chestplate'],

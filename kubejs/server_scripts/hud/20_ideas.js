@@ -7,6 +7,11 @@
 var NS_IDEA_KEY = 'nightshift_ideas'
 var NS_IDEA_MAX_LEN = 500
 var NS_IDEA_LAST = {} // hud/ грузится раньше raids/ — NSG здесь ещё нет
+// Что из идей уже сделано (финальный аудит 06.10: игроки должны видеть, что их слышат). Номер → в какой версии и что.
+var NS_IDEA_DONE = {
+	1: '3.3 — «Пульт алтаря»: ПКМ по алтарю открывает окно',
+	2: '3.4.0 — «Атлас месторождений» (/atlas) и дрон-разведчик',
+}
 
 function nsIdeasLoad(server) {
 	try {
@@ -84,7 +89,9 @@ ServerEvents.commandRegistry(event => {
 			ctx.source.sendSystemMessage(Text.gold('[Идеи] Всего ' + list.length + ', последние:'))
 			for (var i = Math.max(0, list.length - 10); i < list.length; i++) {
 				var e = list[i]
-				ctx.source.sendSystemMessage(Text.white('№' + e.n + ' ').append(Text.gray(e.t + ' · ' + e.who + ': ')).append(Text.white(e.text)))
+				var line = Text.white('№' + e.n + ' ').append(Text.gray(e.t + ' · ' + e.who + ': ')).append(Text.white(e.text))
+				if (NS_IDEA_DONE[e.n]) line = line.append(Text.green(' ✔ сделано: ' + NS_IDEA_DONE[e.n]))
+				ctx.source.sendSystemMessage(line)
 			}
 			return 1
 		})
