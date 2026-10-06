@@ -131,6 +131,17 @@ ServerEvents.recipes(function (event) {
 			requiredBonks: NS_OP_BONKS
 		}).id('nightshift:outposts/extruding/' + r[0])
 	})
+	// 06.10 (Георгий: «для резины не хватает похожей станции»): буровая на латеритной почве Каучуковой плантации — насос
+	// подсочки, даёт латекс. Буровая читает рецепт экструдера только по катализатору; боковые блоки — барьеры, которых в
+	// выживании нет, поэтому обычный экструдер этот рецепт не выполнит (латекс по-прежнему — подсочкой ствола гевеи).
+	// Втрое больше ударов, чем у других месторождений: на 64 об/мин ~40 латекса в минуту, на 256 — ~150.
+	event.custom({
+		type: 'create_mechanical_extruder:extruding',
+		blockIngredients: { first: { blocks: 'minecraft:barrier' }, second: { blocks: 'minecraft:barrier' } },
+		catalyst: { blocks: 'nightshift:hevea_soil' },
+		result: { id: 'nightshift:latex' },
+		requiredBonks: NS_OP_BONKS * 3
+	}).id('nightshift:outposts/drilling_only/latex')
 
 	// ---------------- 1. Каучуковая плантация ----------------
 	// нож для подсочки: деплоер кладёт железный лист на палку

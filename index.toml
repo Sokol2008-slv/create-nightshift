@@ -142,11 +142,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "3baaef14db46d15493f3ef9fca148f7b9697c133a1fcd02818ffa7928243bd22"
+hash = "ce912543301e37bc4867c21faef6ce3a9d0195fd98eb3ec0295aaed9151b8f32"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "3baaef14db46d15493f3ef9fca148f7b9697c133a1fcd02818ffa7928243bd22"
+hash = "ce912543301e37bc4867c21faef6ce3a9d0195fd98eb3ec0295aaed9151b8f32"
 
 [[files]]
 file = "config/iris.properties"
@@ -1290,7 +1290,7 @@ hash = "f5476f4651e9bf3aa05546f85ee8a851005cfe3976a250c9546ed6eb8e1472a9"
 
 [[files]]
 file = "kubejs/client_scripts/outposts_jei.js"
-hash = "25c0b7662b83cac6fdb25967bd5b07eafae9cef7137164f97443818d43cb6767"
+hash = "284a129520df99c6a7dfe2e0837f4f215b1ab9c8e1ec8a00c462a71ef45fb409"
 
 [[files]]
 file = "kubejs/client_scripts/special_stage_tooltips.js"
@@ -2514,7 +2514,7 @@ hash = "5b3f7e4c8c7276ccdcd250a03169826addd82043c4950ec75d9adca7a0057617"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/80_outposts.js"
-hash = "d40b245c31becebd5665d35f2426341a2cbc78e05e32108491aa0835416c4117"
+hash = "fd5fd7bee225215a2af867c64e2e86ac82c9c8e04e2660f27e5f2c12df314a23"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/85_audit_fixes.js"
