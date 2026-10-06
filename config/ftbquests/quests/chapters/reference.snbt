@@ -1,0 +1,1008 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "reference"
+	group: ""
+	icon: { id: "minecraft:knowledge_book" }
+	id: "78E33C40BC557B74"
+	images: [ ]
+	order_index: 12
+	quest_links: [ ]
+	quests: [
+		{
+			icon: { id: "create:goggles" }
+			id: "32B7B81DD798CAD8"
+			optional: true
+			rewards: [{ id: "0C967C45FD38BBCD", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0C14B76A8DBEEC6A", type: "checkmark" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["32B7B81DD798CAD8"]
+			icon: { id: "create:steam_whistle" }
+			id: "6F174BDE59A5B3BF"
+			optional: true
+			rewards: [{ id: "5EFC001019B94C63", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7ADE8E1F5FBAC2D1", type: "checkmark" }]
+			x: 0.00d
+			y: -1.50d
+		}
+		{
+			dependencies: ["6F174BDE59A5B3BF"]
+			icon: { id: "create_new_age:heat_pipe" }
+			id: "1D77D26E368A22F5"
+			optional: true
+			rewards: [{ id: "1160E7CC8396B48A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "4CCBDEFF4D9F5000", type: "checkmark" }]
+			x: 0.00d
+			y: -3.00d
+		}
+		{
+			dependencies: ["1D77D26E368A22F5"]
+			icon: { id: "create_new_age:netherite_magnet" }
+			id: "2EA5301A0872E5B3"
+			optional: true
+			rewards: [{ id: "5FFBE9B16DE610DD", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "26594F51FE370BDD", type: "checkmark" }]
+			x: 0.00d
+			y: -4.50d
+		}
+		{
+			dependencies: ["2EA5301A0872E5B3"]
+			icon: { id: "createaddition:gold_spool" }
+			id: "0F09FFA3A4ED3DAF"
+			optional: true
+			rewards: [{ id: "19AB74A266F30208", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "60FDF679EACA0DB1", type: "checkmark" }]
+			x: 0.00d
+			y: -6.00d
+		}
+		{
+			dependencies: ["32B7B81DD798CAD8"]
+			icon: { id: "axiomativ:energy_cell" }
+			id: "06A9EE3F9100586B"
+			optional: true
+			rewards: [{ id: "3A97D7B41B2A995E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3446F02B895F6B17", type: "checkmark" }]
+			x: 0.00d
+			y: 1.50d
+		}
+		{
+			dependencies: ["06A9EE3F9100586B"]
+			icon: { id: "axiomativ:repair_rack" }
+			id: "0F14A05DE96A2802"
+			optional: true
+			rewards: [{ id: "11E1AD04DB5BCED9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5BEF11D74799817D", type: "checkmark" }]
+			x: 0.00d
+			y: 3.00d
+		}
+		{
+			dependencies: ["0F14A05DE96A2802"]
+			icon: { id: "axiomativ:supply_pack" }
+			id: "705B3EAB1D7AFA9A"
+			optional: true
+			rewards: [{ id: "6574865C180733C5", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3D1EAB2D4822A5F0", type: "checkmark" }]
+			x: 0.00d
+			y: 4.50d
+		}
+		{
+			dependencies: ["32B7B81DD798CAD8"]
+			icon: { id: "naturescompass:naturescompass" }
+			id: "09AAC059978BF8D7"
+			optional: true
+			rewards: [{ id: "35F54E8D20756E17", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2A64C4851494E2AC", type: "checkmark" }]
+			x: 2.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["09AAC059978BF8D7"]
+			icon: { id: "create:andesite_casing" }
+			id: "6880D921FDA3F837"
+			optional: true
+			rewards: [{ id: "2AED2473F4D3E4EE", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "56C2C204BFDC72B5", type: "checkmark" }]
+			x: 2.60d
+			y: -1.50d
+		}
+		{
+			dependencies: ["6880D921FDA3F837"]
+			icon: { id: "nightshift:vein_seed_iron" }
+			id: "52B663403D95C5AC"
+			optional: true
+			rewards: [{ id: "5E38573BD8EC2DFF", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "61A170DB7D7DF9BD", type: "checkmark" }]
+			x: 2.60d
+			y: -3.00d
+		}
+		{
+			dependencies: ["52B663403D95C5AC"]
+			icon: { id: "projecte:transmutation_table" }
+			id: "62D949F92F5E380D"
+			optional: true
+			rewards: [{ id: "579DD7F62CE011CB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "25FEFAB7B623B62A", type: "checkmark" }]
+			x: 2.60d
+			y: -4.50d
+		}
+		{
+			dependencies: ["09AAC059978BF8D7"]
+			icon: { id: "create:andesite_funnel" }
+			id: "6FB0F8636A241397"
+			optional: true
+			rewards: [{ id: "777F06B023A476AE", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "527DE8B1FE974B9E", type: "checkmark" }]
+			x: 2.60d
+			y: 1.50d
+		}
+		{
+			dependencies: ["6FB0F8636A241397"]
+			icon: { id: "nightshift:vein_seed_copper" }
+			id: "2DF0FDCB1FF00495"
+			optional: true
+			rewards: [{ id: "7D43CB279F7D604E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7FFBAD0F3F05B71F", type: "checkmark" }]
+			x: 2.60d
+			y: 3.00d
+		}
+		{
+			dependencies: ["2DF0FDCB1FF00495"]
+			icon: { id: "minecraft:clock" }
+			id: "63BAEF061288EE28"
+			optional: true
+			rewards: [{ id: "1D3EE3B7329B2F6F", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "674CA9A36473B144", type: "checkmark" }]
+			x: 2.60d
+			y: 4.50d
+		}
+		{
+			dependencies: ["63BAEF061288EE28"]
+			icon: { id: "northstar:iron_space_suit_helmet" }
+			id: "0D4CABC9D4E7AE3A"
+			optional: true
+			rewards: [{ id: "42D0E73FDE3CC1FF", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "36FA3AD3DCA919D4", type: "checkmark" }]
+			x: 2.60d
+			y: 6.00d
+		}
+		{
+			dependencies: ["09AAC059978BF8D7"]
+			icon: { id: "create:rotation_speed_controller" }
+			id: "33949459D93D20CF"
+			optional: true
+			rewards: [{ id: "7A4C16DEE478C5F7", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "592C81AB473779B5", type: "checkmark" }]
+			x: 5.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["33949459D93D20CF"]
+			icon: { id: "createbigcannons:cast_iron_cannon_chamber" }
+			id: "2A1A1E144D91C595"
+			optional: true
+			rewards: [{ id: "4ADAED459C673065", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1EE1F02F4C165353", type: "checkmark" }]
+			x: 5.20d
+			y: -1.50d
+		}
+		{
+			dependencies: ["33949459D93D20CF"]
+			icon: { id: "cgs:round_revolver" }
+			id: "539FB1F056F8E82A"
+			optional: true
+			rewards: [{ id: "5C2CA8E6EE14DB34", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2D12D8A16B2F3F48", type: "checkmark" }]
+			x: 5.20d
+			y: 1.50d
+		}
+		{
+			dependencies: ["539FB1F056F8E82A"]
+			icon: { id: "create_sa:brass_chestplate" }
+			id: "11807A46F6FD8F33"
+			optional: true
+			rewards: [{ id: "37DBDFE9608A60A3", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "23006D9766C41C04", type: "checkmark" }]
+			x: 5.20d
+			y: 3.00d
+		}
+		{
+			dependencies: ["11807A46F6FD8F33"]
+			icon: { id: "nightshift:module_sprint" }
+			id: "6BE2AB1CA7A7B150"
+			optional: true
+			rewards: [{ id: "00DF7A328A69957D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7C19CE0B2D3EF9D8", type: "checkmark" }]
+			x: 5.20d
+			y: 4.50d
+		}
+		{
+			dependencies: ["6BE2AB1CA7A7B150"]
+			icon: { id: "axiomativ:shield_generator" }
+			id: "336E7B754D05AD3C"
+			optional: true
+			rewards: [{ id: "595FE5C7ABB9AFDB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "702D3A4BB519E057", type: "checkmark" }]
+			x: 5.20d
+			y: 6.00d
+		}
+		{
+			dependencies: ["33949459D93D20CF"]
+			icon: { id: "simulated:iron_handle" }
+			id: "63884CBF99FC1C65"
+			optional: true
+			rewards: [{ id: "709E1384A973C54F", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7DC2612002B3C848", type: "checkmark" }]
+			x: 7.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["63884CBF99FC1C65"]
+			icon: { id: "create_submarine:barometer" }
+			id: "07393EA56E1D767B"
+			optional: true
+			rewards: [{ id: "0571295DCE04ACCD", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "33FD4AFA67704FA1", type: "checkmark" }]
+			x: 7.80d
+			y: -1.50d
+		}
+		{
+			dependencies: ["07393EA56E1D767B"]
+			icon: { id: "axiomativ:gate_frame" }
+			id: "55D9A07AF1C76AFC"
+			optional: true
+			rewards: [{ id: "562C84590E6C7889", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "65BB600CA93CC74A", type: "checkmark" }]
+			x: 7.80d
+			y: -3.00d
+		}
+		{
+			dependencies: ["55D9A07AF1C76AFC"]
+			icon: { id: "createdieselgenerators:huge_diesel_engine" }
+			id: "575231C024676318"
+			optional: true
+			rewards: [{ id: "52292BBB59285E41", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "6A23EA84F4B2487F", type: "checkmark" }]
+			x: 7.80d
+			y: -4.50d
+		}
+		{
+			dependencies: ["63884CBF99FC1C65"]
+			icon: { id: "minecraft:clock" }
+			id: "3C2F126B4119545E"
+			optional: true
+			rewards: [{ id: "64B9EB43D4AF07FA", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5AD24B684B1C877C", type: "checkmark" }]
+			x: 7.80d
+			y: 1.50d
+		}
+		{
+			dependencies: ["3C2F126B4119545E"]
+			icon: { id: "minecraft:chest" }
+			id: "48F9B65B2F5D7203"
+			optional: true
+			rewards: [{ id: "5CF7DC426014C287", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "15E24B893EC2E3BB", type: "checkmark" }]
+			x: 7.80d
+			y: 3.00d
+		}
+		{
+			dependencies: ["48F9B65B2F5D7203"]
+			icon: { id: "minecraft:glow_ink_sac" }
+			id: "2DF88FD3F54BC3BE"
+			optional: true
+			rewards: [{ id: "5B907A46578DA329", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "13BF3F7519DBBB47", type: "checkmark" }]
+			x: 7.80d
+			y: 4.50d
+		}
+		{
+			dependencies: ["63884CBF99FC1C65"]
+			icon: { id: "northstar:lunar_sapphire_shard" }
+			id: "582913C503B5526D"
+			optional: true
+			rewards: [{ id: "75D327206C19084C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3D4496423D811925", type: "checkmark" }]
+			x: 10.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["582913C503B5526D"]
+			icon: { id: "northstar:raw_martian_iron_ore" }
+			id: "799CA552C9730DC4"
+			optional: true
+			rewards: [{ id: "5B1DB6D1D97C5866", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "6194F2498D51F25D", type: "checkmark" }]
+			x: 10.40d
+			y: 1.50d
+		}
+		{
+			dependencies: ["799CA552C9730DC4"]
+			icon: { id: "northstar:mercury_stone" }
+			id: "72B123024288763B"
+			optional: true
+			rewards: [{ id: "5A9DD03DB879EF10", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7910CE197F4B0237", type: "checkmark" }]
+			x: 10.40d
+			y: 3.00d
+		}
+		{
+			dependencies: ["72B123024288763B"]
+			icon: { id: "northstar:venus_stone" }
+			id: "737798268A331D1C"
+			optional: true
+			rewards: [{ id: "49223D63D3FC5D9E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "70D8CF1504E3AE07", type: "checkmark" }]
+			x: 10.40d
+			y: 4.50d
+		}
+		{
+			dependencies: ["582913C503B5526D"]
+			icon: { id: "minecraft:skeleton_skull" }
+			id: "359D349B31911454"
+			optional: true
+			rewards: [{ id: "09FD1E79563075B6", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2C331B15FEDCA8D3", type: "checkmark" }]
+			x: 13.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["359D349B31911454"]
+			icon: { id: "minecraft:black_candle" }
+			id: "40A90820DDCB08CC"
+			optional: true
+			rewards: [{ id: "57F87A39B6A91CCA", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "5DAC8753EF922E92", type: "checkmark" }]
+			x: 13.00d
+			y: -1.50d
+		}
+		{
+			dependencies: ["40A90820DDCB08CC"]
+			icon: { id: "minecraft:bone" }
+			id: "529610133ACB2780"
+			optional: true
+			rewards: [{ id: "7C1A48C03CDFF85C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2791597DB577460A", type: "checkmark" }]
+			x: 13.00d
+			y: -3.00d
+		}
+		{
+			dependencies: ["529610133ACB2780"]
+			icon: { id: "minecraft:sculk_sensor" }
+			id: "3E5CB0645B9A0F13"
+			optional: true
+			rewards: [{ id: "739989431AE9C5FB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3D2C019E55016E49", type: "checkmark" }]
+			x: 13.00d
+			y: -4.50d
+		}
+		{
+			dependencies: ["3E5CB0645B9A0F13"]
+			icon: { id: "minecraft:deepslate" }
+			id: "6C3AD885DB6C2F69"
+			optional: true
+			rewards: [{ id: "6DD0F643C8FFF19E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0917CDE21094128C", type: "checkmark" }]
+			x: 13.00d
+			y: -6.00d
+		}
+		{
+			dependencies: ["6C3AD885DB6C2F69"]
+			icon: { id: "minecraft:sculk" }
+			id: "0FF3009B62FC3F73"
+			optional: true
+			rewards: [{ id: "2192BEB81BE76110", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "65158812BF555FD4", type: "checkmark" }]
+			x: 14.30d
+			y: -6.00d
+		}
+		{
+			dependencies: ["359D349B31911454"]
+			icon: { id: "minecraft:golden_carrot" }
+			id: "2521B5D333C76592"
+			optional: true
+			rewards: [{ id: "3312EACB34200E31", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2C9EFE697A0D1C04", type: "checkmark" }]
+			x: 13.00d
+			y: 1.50d
+		}
+		{
+			dependencies: ["2521B5D333C76592"]
+			icon: { id: "create_confectionery:bar_of_black_chocolate" }
+			id: "4AE3A069B2294E37"
+			optional: true
+			rewards: [{ id: "744EEB9ED3995F5A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "269E41615DBF4C6E", type: "checkmark" }]
+			x: 13.00d
+			y: 3.00d
+		}
+		{
+			dependencies: ["4AE3A069B2294E37"]
+			icon: { id: "minecraft:enchanted_book" }
+			id: "26D4945737F6CCB3"
+			optional: true
+			rewards: [{ id: "34D8ADA2F501AAFE", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "6DA77A24E178156D", type: "checkmark" }]
+			x: 13.00d
+			y: 4.50d
+		}
+		{
+			dependencies: ["26D4945737F6CCB3"]
+			icon: { id: "irons_spellbooks:mana_upgrade_orb" }
+			id: "3D93F7DA49468431"
+			optional: true
+			rewards: [{ id: "0B2351A86394AEC8", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "01165A3B50E6CD7D", type: "checkmark" }]
+			x: 13.00d
+			y: 6.00d
+		}
+		{
+			dependencies: ["359D349B31911454"]
+			icon: { id: "modulargolems:humanoid_golem_holder" }
+			id: "1CDF7057BD782920"
+			optional: true
+			rewards: [{ id: "4D06C13E54E5E418", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "78B334F87A883E82", type: "checkmark" }]
+			x: 15.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["1CDF7057BD782920"]
+			icon: { id: "minecraft:iron_ingot" }
+			id: "56666CC5F6622986"
+			optional: true
+			rewards: [{ id: "6A779D43DEDB1CDB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "59DB4B0AD337F4DC", type: "checkmark" }]
+			x: 15.60d
+			y: -1.50d
+		}
+		{
+			dependencies: ["1CDF7057BD782920"]
+			icon: { id: "axiomativ:helper_drone" }
+			id: "1DC6DE2B5041E481"
+			optional: true
+			rewards: [{ id: "4B9EAD5AA1098E77", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2933EBE8F510C855", type: "checkmark" }]
+			x: 16.90d
+			y: -1.50d
+		}
+		{
+			dependencies: ["1CDF7057BD782920"]
+			icon: { id: "minecraft:dragon_egg" }
+			id: "7A5BB064B668F255"
+			optional: true
+			rewards: [{ id: "05CEE057D0406C54", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "4411906C75570E3B", type: "checkmark" }]
+			x: 15.60d
+			y: 1.50d
+		}
+		{
+			dependencies: ["7A5BB064B668F255"]
+			icon: { id: "minecraft:filled_map" }
+			id: "5257CFCF4554E0AE"
+			optional: true
+			rewards: [{ id: "0BF54F2357232AF7", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "707AAF7DB02554FC", type: "checkmark" }]
+			x: 15.60d
+			y: 3.00d
+		}
+		{
+			dependencies: ["5257CFCF4554E0AE"]
+			icon: { id: "dmr:dragon_whistle.white" }
+			id: "7FE7DE0EC8DCE5AE"
+			optional: true
+			rewards: [{ id: "3949A9DAB76328EB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "70BB736467236013", type: "checkmark" }]
+			x: 15.60d
+			y: 4.50d
+		}
+		{
+			dependencies: ["7FE7DE0EC8DCE5AE"]
+			icon: { id: "minecraft:egg" }
+			id: "312E6921C891CC59"
+			optional: true
+			rewards: [{ id: "582DED7A743B7505", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "136CF19A4FAC8A98", type: "checkmark" }]
+			x: 15.60d
+			y: 6.00d
+		}
+		{
+			dependencies: ["1CDF7057BD782920"]
+			icon: { id: "nightshift:art_badge" }
+			id: "33EB747527C6AAA4"
+			optional: true
+			rewards: [{ id: "39E4E9B6D96E7C64", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "367C45625A68C4EC", type: "checkmark" }]
+			x: 18.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["33EB747527C6AAA4"]
+			icon: { id: "minecraft:clock" }
+			id: "3A41ED9C7325801D"
+			optional: true
+			rewards: [{ id: "7BE10FD7A53E449A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2E18862F2A30F76C", type: "checkmark" }]
+			x: 18.20d
+			y: -1.50d
+		}
+		{
+			dependencies: ["3A41ED9C7325801D"]
+			icon: { id: "minecraft:armor_stand" }
+			id: "00C1E5D9F1E192B0"
+			optional: true
+			rewards: [{ id: "228C6E761070C0B6", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "667666454D94FC2E", type: "checkmark" }]
+			x: 18.20d
+			y: -3.00d
+		}
+		{
+			dependencies: ["00C1E5D9F1E192B0"]
+			icon: { id: "minecraft:blast_furnace" }
+			id: "741AD72C451408C4"
+			optional: true
+			rewards: [{ id: "662FC557645CE213", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "74B7DDB06DAFE309", type: "checkmark" }]
+			x: 18.20d
+			y: -4.50d
+		}
+		{
+			dependencies: ["741AD72C451408C4"]
+			icon: { id: "nightshift:art_frost_shard" }
+			id: "7A54A188DFC80DA9"
+			optional: true
+			rewards: [{ id: "1F03C64522602669", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3008FF5CDDA3CC61", type: "checkmark" }]
+			x: 18.20d
+			y: -6.00d
+		}
+		{
+			dependencies: ["7A54A188DFC80DA9"]
+			icon: { id: "nightshift:art_tr_matriarch" }
+			id: "3F54E637A97857D1"
+			optional: true
+			rewards: [{ id: "15762D5833746B7D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "02743379F0E181E4", type: "checkmark" }]
+			x: 19.50d
+			y: -6.00d
+		}
+		{
+			dependencies: ["3F54E637A97857D1"]
+			icon: { id: "nightshift:art_tr_ignis" }
+			id: "6FE93BB8113FA436"
+			optional: true
+			rewards: [{ id: "4BA045036A10DDC9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "452C86894DDF6DA0", type: "checkmark" }]
+			x: 20.80d
+			y: -6.00d
+		}
+		{
+			dependencies: ["33EB747527C6AAA4"]
+			icon: { id: "nightshift:art_patch" }
+			id: "4258DA3E82C76B90"
+			optional: true
+			rewards: [{ id: "3EBDD6DC7616109C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "78EB4726C01067C0", type: "checkmark" }]
+			x: 18.20d
+			y: 1.50d
+		}
+		{
+			dependencies: ["4258DA3E82C76B90"]
+			icon: { id: "nightshift:art_qc_stripe" }
+			id: "2D977C8542ABDF12"
+			optional: true
+			rewards: [{ id: "0CC09A3551E8C418", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0550AA4820F0A0DD", type: "checkmark" }]
+			x: 18.20d
+			y: 3.00d
+		}
+		{
+			dependencies: ["2D977C8542ABDF12"]
+			icon: { id: "nightshift:art_fang" }
+			id: "0A1E924D269679FA"
+			optional: true
+			rewards: [{ id: "4C73ACF58084EA26", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1A2BE8A0F51BCE84", type: "checkmark" }]
+			x: 18.20d
+			y: 4.50d
+		}
+		{
+			dependencies: ["0A1E924D269679FA"]
+			icon: { id: "nightshift:art_rosary" }
+			id: "2888590EA4BC7883"
+			optional: true
+			rewards: [{ id: "2BB98021B057216E", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "56D1B07B4E16CAB5", type: "checkmark" }]
+			x: 18.20d
+			y: 6.00d
+		}
+		{
+			dependencies: ["2888590EA4BC7883"]
+			icon: { id: "nightshift:art_second_wind" }
+			id: "6A79D752E0C6BF84"
+			optional: true
+			rewards: [{ id: "0D53A3E640BCEB1D", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3B0FA6D224F2AD23", type: "checkmark" }]
+			x: 19.50d
+			y: 6.00d
+		}
+		{
+			dependencies: ["6A79D752E0C6BF84"]
+			icon: { id: "nightshift:art_hourglass" }
+			id: "6C614AF71546A618"
+			optional: true
+			rewards: [{ id: "3B81E27DD9CCF416", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "66F85AA3DE112808", type: "checkmark" }]
+			x: 20.80d
+			y: 6.00d
+		}
+		{
+			dependencies: ["6C614AF71546A618"]
+			icon: { id: "nightshift:art_vakhta_heart" }
+			id: "3143F5CDAE9CD77D"
+			optional: true
+			rewards: [{ id: "3666AF41D0A796D5", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7F69887591117A96", type: "checkmark" }]
+			x: 22.10d
+			y: 6.00d
+		}
+		{
+			dependencies: ["33EB747527C6AAA4"]
+			icon: { id: "minecraft:chest" }
+			id: "694F131770861161"
+			optional: true
+			rewards: [{ id: "7EAE0CD694C5877A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7BDC759F3B050222", type: "checkmark" }]
+			x: 20.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["694F131770861161"]
+			icon: { id: "minecraft:firework_rocket" }
+			id: "10B140C481EE1381"
+			optional: true
+			rewards: [{ id: "173B306AC0B34F71", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0A0CB080932F55DB", type: "checkmark" }]
+			x: 20.80d
+			y: -1.50d
+		}
+		{
+			dependencies: ["10B140C481EE1381"]
+			icon: { id: "minecraft:arrow" }
+			id: "1DD412AA9B181472"
+			optional: true
+			rewards: [{ id: "1B99F08DC5B74C38", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "279F81EF6DF62814", type: "checkmark" }]
+			x: 20.80d
+			y: -3.00d
+		}
+		{
+			dependencies: ["32B7B81DD798CAD8"]
+			icon: { id: "axiomativ:drilling_rig" }
+			id: "17062A15EAE5F865"
+			optional: true
+			rewards: [{ id: "2520C3E08BBABE4C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "13E6CD9ACBBA6758", type: "checkmark" }]
+			x: 1.30d
+			y: -1.50d
+		}
+		{
+			dependencies: ["17062A15EAE5F865"]
+			icon: { id: "axiomativ:dispatch_monitor" }
+			id: "3B419B07852C0175"
+			optional: true
+			rewards: [{ id: "205F7C1A1709D288", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1D55B34101757C2A", type: "checkmark" }]
+			x: 1.30d
+			y: -3.00d
+		}
+		{
+			dependencies: ["3B419B07852C0175"]
+			icon: { id: "axiomativ:repair_rack" }
+			id: "0EB9D8843A5D91AE"
+			optional: true
+			rewards: [{ id: "3F6C9B80B5A31D65", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "0697D6629CA277E7", type: "checkmark" }]
+			x: 1.30d
+			y: -4.50d
+		}
+		{
+			dependencies: ["0EB9D8843A5D91AE"]
+			icon: { id: "axiomativ:tesla_tower" }
+			id: "4AEE1B5A69218240"
+			optional: true
+			rewards: [{ id: "15B9D4D04D0A38A9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1B00B063F48AEB1A", type: "checkmark" }]
+			x: 1.30d
+			y: -6.00d
+		}
+		{
+			dependencies: ["32B7B81DD798CAD8"]
+			icon: { id: "axiomativ:tesla_tower_coil" }
+			id: "71413F3977B7A2C8"
+			optional: true
+			rewards: [{ id: "000B814C3C59F74A", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "31C083DF3603A411", type: "checkmark" }]
+			x: 1.30d
+			y: 1.50d
+		}
+		{
+			dependencies: ["71413F3977B7A2C8"]
+			icon: { id: "create_new_age:basic_energiser" }
+			id: "091D9186DC3C2678"
+			optional: true
+			rewards: [{ id: "0E5041A0D3A8A6E9", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "146075593054D8FF", type: "checkmark" }]
+			x: 1.30d
+			y: 3.00d
+		}
+		{
+			dependencies: ["091D9186DC3C2678"]
+			icon: { id: "createaddition:electric_motor" }
+			id: "6CF720FFF31F0A93"
+			optional: true
+			rewards: [{ id: "0877546A090D2E87", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "6D5C98765830CFFB", type: "checkmark" }]
+			x: 1.30d
+			y: 4.50d
+		}
+		{
+			dependencies: ["6CF720FFF31F0A93"]
+			icon: { id: "create_new_age:reactor_rod" }
+			id: "1A2416EB612B2CB6"
+			optional: true
+			rewards: [{ id: "3735D0075D00A184", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "781202DC8507EA93", type: "checkmark" }]
+			x: 1.30d
+			y: 6.00d
+		}
+		{
+			dependencies: ["705B3EAB1D7AFA9A"]
+			icon: { id: "create_new_age:basic_solar_heating_plate" }
+			id: "3114B3D6382618B3"
+			optional: true
+			rewards: [{ id: "07CFF6BF23A55F80", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "38CF2A8F604D9E3A", type: "checkmark" }]
+			x: 0.00d
+			y: 6.00d
+		}
+		{
+			dependencies: ["2A1A1E144D91C595"]
+			icon: { id: "axiomativ:shield_generator" }
+			id: "60C06C791A38AA52"
+			optional: true
+			rewards: [{ id: "2C89D891BF0A6B10", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "30CC4DB1F78F4159", type: "checkmark" }]
+			x: 5.20d
+			y: -3.00d
+		}
+		{
+			dependencies: ["60C06C791A38AA52"]
+			icon: { id: "axiomativ:energy_cannon" }
+			id: "3C78DF0E013774C9"
+			optional: true
+			rewards: [{ id: "1BA00D60643EE788", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "13D9AC0681B6620F", type: "checkmark" }]
+			x: 5.20d
+			y: -4.50d
+		}
+		{
+			dependencies: ["3C78DF0E013774C9"]
+			icon: { id: "axiomativ:antigrav_module" }
+			id: "70353AF33FB57F91"
+			optional: true
+			rewards: [{ id: "607135727DDD3011", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7AF9B546510F2B4D", type: "checkmark" }]
+			x: 5.20d
+			y: -6.00d
+		}
+		{
+			dependencies: ["575231C024676318"]
+			icon: { id: "axiomativ:gate_controller" }
+			id: "05906A2DDFCE0C1F"
+			optional: true
+			rewards: [{ id: "60FDF60474BE2D0C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "327A6754B5BF0568", type: "checkmark" }]
+			x: 7.80d
+			y: -6.00d
+		}
+		{
+			dependencies: ["2DF88FD3F54BC3BE"]
+			icon: { id: "minecraft:ender_pearl" }
+			id: "2B7D35F4E04F986E"
+			optional: true
+			rewards: [{ id: "37299656F9E816BB", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "2CAF2740F9FEE752", type: "checkmark" }]
+			x: 7.80d
+			y: 6.00d
+		}
+		{
+			dependencies: ["582913C503B5526D"]
+			icon: { id: "northstar:biofuel_bucket" }
+			id: "46D8C9531A8C7B9E"
+			optional: true
+			rewards: [{ id: "3DF47EABFD08CBB6", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "52D9CC31CFEC1604", type: "checkmark" }]
+			x: 10.40d
+			y: -1.50d
+		}
+		{
+			dependencies: ["46D8C9531A8C7B9E"]
+			icon: { id: "northstar:titanium_ingot" }
+			id: "51F16E5458A6F467"
+			optional: true
+			rewards: [{ id: "72A5788CE68A5863", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1832462C5EA6FA7A", type: "checkmark" }]
+			x: 10.40d
+			y: -3.00d
+		}
+	]
+}

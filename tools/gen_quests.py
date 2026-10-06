@@ -42,14 +42,13 @@ MODS = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/Pris
 STARTUP = PACK / "kubejs" / "startup_scripts"
 VANILLA = pathlib.Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 
-# Порядок глав в книге (05.10): «Путь смены» и «Частые вопросы» первыми, дальше — по этапам пути,
-# тематические главы (еда, магия, големы, артефакты) — в конце
+# Порядок глав в книге (06.10, «по фазам»): «Путь смены» (карта фаз и волн) и «Частые вопросы» первыми,
+# дальше фазы 0–8 — каждая своя глава-ветка, потом «Набеги» и «Справочник» (цифры и таблицы).
+# Тематических глав (энергия, транспорт, оружие, еда…) больше нет: их квесты разложены по фазам
+# (tools/quest_phases.py сверяет: фаза главы ≥ фазы предмета по настоящим рецептам).
 ORDER = ["path", "faq",
-         "vahta", "night_shift", "altar", "create_basics", "brass_logistics_trains",
-         "electricity", "outposts", "tower_defense", "weapons",
-         "first_plane", "sky", "steel_oil", "space",
-         "factories", "economy", "automation_extras",
-         "food", "magic", "golems", "artifacts", "fun"]
+         "phase0", "phase1", "phase2", "phase3", "phase4", "phase5", "phase6", "phase7", "phase8",
+         "altar", "reference"]
 # 30.09: главы слиты (welcome → vahta, ore_processing → create_basics/vahta, logistics_food → brass,
 # fuel_engines → steel_oil, big_cannons → tower_defense, dragons → golems, airships_cars → first_plane)
 

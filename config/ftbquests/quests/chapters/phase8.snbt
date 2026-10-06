@@ -1,0 +1,438 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "phase8"
+	group: ""
+	icon: { id: "northstar:rocket_controls" }
+	id: "72F323DA1DEA7370"
+	images: [ ]
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["5A4B58E3D3636EAA"]
+			id: "70D7CC025ABCB528"
+			rewards: [{ id: "0AA023EAD9D69AF8", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "3D62F38C666A7BFE", item: { count: 1, id: "nightshift:navigation_core" }, type: "item" }]
+			x: 0.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["70D7CC025ABCB528"]
+			id: "773E1E8AE9F7B7CF"
+			rewards: [{ id: "77A9851A75BC121B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2BFF29109A6D0C45", item: { count: 1, id: "northstar:titanium_ingot" }, type: "item" }]
+			x: 2.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "5374E61F4F20603E"
+			rewards: [{ id: "5866F06F39F27A8F", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0BD6B1DEFE71D224", item: { count: 1, id: "northstar:hardened_precision_mechanism" }, type: "item" }]
+			x: 2.60d
+			y: -1.50d
+		}
+		{
+			dependencies: ["5374E61F4F20603E"]
+			id: "200EF6B4A3B73B4B"
+			rewards: [{ id: "623E7FBC76189636", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4E213AC91640BDB6", item: { count: 1, id: "northstar:rocket_thruster" }, type: "item" }]
+			x: 2.60d
+			y: -3.00d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "2022B22D15FA1B25"
+			rewards: [{ id: "0AE5758E249B26E9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "14EE9C763D4B1F5A", count: 48L, item: { count: 1, id: "create:industrial_iron_block" }, type: "item" }]
+			x: 2.60d
+			y: 1.50d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "1172882304DE25C3"
+			rewards: [{ id: "4C5953792E129C1D", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3D6586B99D327B0D", item: { count: 1, id: "northstar:biofuel_bucket" }, type: "item" }]
+			x: 3.90d
+			y: 1.50d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "7F8A5BCF1F2BC876"
+			rewards: [{ id: "7545820EA48E2358", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3F23CCA53C915726", item: { count: 1, id: "northstar:titanium_ingot" }, type: "item" }]
+			x: 1.30d
+			y: 1.50d
+		}
+		{
+			dependencies: ["7F8A5BCF1F2BC876"]
+			icon: { id: "axiomativ:interplanetary_alloy" }
+			id: "55BEB26DF436B36E"
+			rewards: [{ id: "264FF74763E46CC5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "37AE362077A0C3A5", type: "checkmark" }]
+			x: 1.30d
+			y: 3.00d
+		}
+		{
+			dependencies: ["773E1E8AE9F7B7CF"]
+			id: "33444D6CF34F28A8"
+			rewards: [{ id: "3F65F7D496A33C0C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "398B3DD2807B1822", item: { count: 1, id: "northstar:circuit" }, type: "item" }]
+			x: 5.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["33444D6CF34F28A8"]
+			id: "2B29212FBD9DC938"
+			rewards: [{ id: "6F32CA53420EFA3A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "27E62AF318CF4AA9", item: { count: 1, id: "northstar:targeting_computer" }, type: "item" }]
+			x: 7.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["2B29212FBD9DC938"]
+			id: "63D73C7D0A577B48"
+			rewards: [{ id: "427D59FF11831500", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "678EE2CB4163A4B9", item: { count: 1, id: "northstar:rocket_station" }, type: "item" }]
+			x: 7.80d
+			y: -1.50d
+		}
+		{
+			dependencies: ["2B29212FBD9DC938"]
+			id: "5419BEC0D04A20F0"
+			rewards: [{ id: "00D3954FD4283D18", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "29E01CFB1B8B1AC6", item: { count: 1, id: "northstar:rocket_controls" }, type: "item" }]
+			x: 10.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["5419BEC0D04A20F0"]
+			id: "577D5A25C2A53FC5"
+			rewards: [{ id: "27094BF110D8E9F9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2B281E591AA31FAF", item: { count: 1, id: "northstar:astronomical_reading" }, type: "item" }]
+			x: 10.40d
+			y: -1.50d
+		}
+		{
+			dependencies: ["577D5A25C2A53FC5"]
+			id: "6CA219A30AA20749"
+			rewards: [{ id: "400858E8EAE2CD0B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "146DAE8D76BA1B69", item: { count: 1, id: "northstar:space_atlas" }, type: "item" }]
+			x: 10.40d
+			y: -3.00d
+		}
+		{
+			dependencies: ["5419BEC0D04A20F0"]
+			id: "206F6135673F26E9"
+			rewards: [{ id: "2BA272A29F8CBCAD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "12F4781CEC34DB97", item: { count: 1, id: "northstar:iron_space_suit_chestpiece" }, type: "item" }]
+			x: 10.40d
+			y: 1.50d
+		}
+		{
+			dependencies: ["206F6135673F26E9"]
+			id: "48E881DFD6B3194F"
+			rewards: [{ id: "4B401B1CED7BEC97", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "43F1755C03BCE9AD", item: { count: 1, id: "northstar:oxygen_filler" }, type: "item" }]
+			x: 10.40d
+			y: 3.00d
+		}
+		{
+			dependencies: ["5419BEC0D04A20F0"]
+			id: "2BB90C762D8DE0FB"
+			rewards: [{ id: "3C1E734A267AFA86", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "14C1E2B3BC9EABF7", item: { count: 1, id: "northstar:rocket_controls" }, type: "item" }]
+			x: 13.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["2BB90C762D8DE0FB"]
+			id: "369117D4B69EA320"
+			rewards: [{ id: "222EC3A2EEE11ABB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "737064C1274CF65D", count: 8L, item: { count: 1, id: "northstar:glowstone_torch" }, type: "item" }]
+			x: 15.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["369117D4B69EA320", "03D58C0D28130D2F"]
+			id: "6C6C1196E042B5E3"
+			rewards: [{ id: "38E32EFB5B8A1F70", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0D6C9F346B121489", item: { count: 1, id: "nightshift:star_pickaxe" }, type: "item" }]
+			x: 15.60d
+			y: 1.50d
+		}
+		{
+			dependencies: ["369117D4B69EA320"]
+			icon: { id: "northstar:moon_stone" }
+			id: "08F1549241E129A6"
+			rewards: [{ id: "194D25A78AA30810", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ dimension: "northstar:moon", id: "58E253F42321264F", type: "dimension" }]
+			x: 18.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["08F1549241E129A6"]
+			id: "7D06BCB9E657D0AA"
+			rewards: [{ id: "7D9A7133CF40B338", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5273CA80C867EF9E", item: { count: 1, id: "northstar:auto_lander" }, type: "item" }]
+			x: 18.20d
+			y: -1.50d
+		}
+		{
+			dependencies: ["08F1549241E129A6"]
+			id: "6ED7257BB0C28FE8"
+			rewards: [{ id: "1F9C555D748E6C77", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6181050E3050C826", item: { count: 1, id: "createendertransmission:item_transmitter" }, type: "item" }]
+			x: 18.20d
+			y: 1.50d
+		}
+		{
+			dependencies: ["08F1549241E129A6"]
+			id: "0811D15A56819E96"
+			rewards: [{ id: "7E7C7F27FD1410B3", type: "xp", xp: 50 }]
+			shape: "hexagon"
+			size: 1.6d
+			tasks: [{ id: "315AD4B641EE139B", item: { count: 1, id: "northstar:interplanetary_navigator" }, type: "item" }]
+			x: 20.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["0811D15A56819E96"]
+			id: "54836B2556E2C657"
+			rewards: [{ id: "522996F232689689", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4144527FABDD32E1", item: { count: 1, id: "northstar:martian_steel_ingot" }, type: "item" }]
+			x: 20.80d
+			y: 1.50d
+		}
+		{
+			dependencies: ["54836B2556E2C657"]
+			id: "1F93228FE232CC76"
+			rewards: [{ id: "20E89B866C537040", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6019F987211AF294", item: { count: 1, id: "northstar:tungsten_ingot" }, type: "item" }]
+			x: 20.80d
+			y: 3.00d
+		}
+		{
+			dependencies: ["1F93228FE232CC76"]
+			id: "60055E81B084F741"
+			rewards: [{ id: "5739E08034434C9A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6660EEECE4F82E3E", item: { count: 1, id: "axiomativ:planetary_grindstone" }, type: "item" }]
+			x: 19.50d
+			y: 3.00d
+		}
+		{
+			dependencies: ["60055E81B084F741"]
+			id: "539485CE657AFD69"
+			rewards: [{ id: "1F0ED78C64162413", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2BDCDCBCCC994B87", count: 4L, item: { count: 1, id: "axiomativ:interplanetary_alloy" }, type: "item" }]
+			x: 18.20d
+			y: 3.00d
+		}
+		{
+			dependencies: ["539485CE657AFD69"]
+			id: "69C0C60E738BFA33"
+			rewards: [{ id: "44B4EBFFE33C22AA", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5A8A677F1A1909F1", item: { count: 1, id: "nightshift:star_navigator" }, type: "item" }]
+			x: 16.90d
+			y: 3.00d
+		}
+		{
+			dependencies: ["69C0C60E738BFA33"]
+			icon: { id: "kubejs:axiomite_ore" }
+			id: "10AB8BC67127FF0D"
+			rewards: [{ id: "4EECBB83DA120119", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ dimension: "nightshift:axiomativ", id: "2FD8D3F87F74D410", type: "dimension" }]
+			x: 15.60d
+			y: 3.00d
+		}
+		{
+			dependencies: ["10AB8BC67127FF0D"]
+			id: "798AC21976DE3822"
+			rewards: [{ id: "521A1EA751061C30", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "63EF4A988E202A39", item: { count: 1, id: "kubejs:axiomite_ingot" }, type: "item" }]
+			x: 14.30d
+			y: 3.00d
+		}
+		{
+			dependencies: ["798AC21976DE3822", "4653E9EEEA38CD03"]
+			icon: { id: "kubejs:stabilite_ingot" }
+			id: "629E15D96732EB91"
+			rewards: [{ id: "656C87225A6A24DD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "22045A6BEF05B1E2", item: { count: 1, id: "kubejs:axiomite_ingot" }, type: "item" }, { id: "0BD4BD4383B94DD4", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
+			x: 13.00d
+			y: 3.00d
+		}
+		{
+			dependencies: ["629E15D96732EB91"]
+			id: "7D71F73C8A9DE129"
+			rewards: [{ id: "68F4ABC3C6B15984", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5AE65648192ED425", item: { count: 1, id: "nightshift:tactical_nuke" }, type: "item" }]
+			x: 11.70d
+			y: 3.00d
+		}
+		{
+			dependencies: ["69C0C60E738BFA33"]
+			icon: { id: "kubejs:light_stabilite_ore" }
+			id: "6830526159D51413"
+			rewards: [{ id: "15C023510481C4C1", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ dimension: "nightshift:yin_yang", id: "3F57C00E4D2EDED8", type: "dimension" }]
+			x: 15.60d
+			y: 4.50d
+		}
+		{
+			dependencies: ["6830526159D51413"]
+			id: "7740332F1426A7C8"
+			rewards: [{ id: "3270D71D248A5383", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "089CA2C139D7B3FF", item: { count: 1, id: "kubejs:raw_light_stabilite" }, type: "item" }]
+			x: 14.30d
+			y: 4.50d
+		}
+		{
+			dependencies: ["7740332F1426A7C8"]
+			id: "4653E9EEEA38CD03"
+			rewards: [{ id: "6936A05421A65A67", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "3942488F1D1E8491", item: { count: 1, id: "kubejs:stabilite_ingot" }, type: "item" }]
+			x: 13.00d
+			y: 4.50d
+		}
+		{
+			dependencies: ["4653E9EEEA38CD03"]
+			id: "0E9B75BD4A8ACA52"
+			rewards: [{ id: "2A821576415006CA", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "60F5BA49C349B499", item: { count: 1, id: "nightshift:stabilite_pickaxe" }, type: "item" }]
+			x: 11.70d
+			y: 4.50d
+		}
+		{
+			dependencies: ["539485CE657AFD69"]
+			id: "6A8067E1681759B9"
+			rewards: [{ id: "574096103C4088E4", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "744892BCBB97253D", item: { count: 1, id: "axiomativ:quantum_supply_pack" }, type: "item" }]
+			x: 16.90d
+			y: 4.50d
+		}
+		{
+			dependencies: ["539485CE657AFD69"]
+			id: "5E9F40AEAEB40403"
+			rewards: [{ id: "291857FA35FD5889", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7E49CE2C2ACF0CA9", item: { count: 1, id: "nightshift:alloy_chestplate" }, type: "item" }]
+			x: 18.20d
+			y: 4.50d
+		}
+		{
+			dependencies: ["5E9F40AEAEB40403"]
+			id: "73867618D704282A"
+			rewards: [{ id: "5EC4117757072995", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "79F56B5B3C1F530F", item: { count: 1, id: "axiomativ:energy_shield_mk2" }, type: "item" }]
+			x: 18.20d
+			y: 6.00d
+		}
+		{
+			dependencies: ["73867618D704282A", "5A4B58E3D3636EAA"]
+			id: "7FFAED499CB00CC3"
+			rewards: [{ id: "54B887A2506C969C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1A9C866A7A42ACE9", item: { count: 1, id: "axiomativ:shield_generator" }, type: "item" }]
+			x: 16.90d
+			y: 6.00d
+		}
+		{
+			dependencies: ["539485CE657AFD69"]
+			id: "39E1B145A85F9274"
+			rewards: [{ id: "5340D958F27AC225", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0E7CE44E9D12AB61", item: { count: 1, id: "nightshift:alloy_staff" }, type: "item" }]
+			x: 19.50d
+			y: 4.50d
+		}
+		{
+			dependencies: ["39E1B145A85F9274", "03D58C0D28130D2F"]
+			id: "642C38A2F7823EF0"
+			rewards: [{ id: "2DCD2694B3ACDEA5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "40CC53E54A34000D", item: { count: 1, id: "nightshift:balance_staff" }, type: "item" }]
+			x: 19.50d
+			y: 6.00d
+		}
+	]
+}
