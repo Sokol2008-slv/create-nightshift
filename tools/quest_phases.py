@@ -369,6 +369,9 @@ def main():
     rows = []
     for ch, q, it in quest_items(specs):
         p, why = P.get(it)
+        if (it in KIT or it == "create:mechanical_crafter") and p > 0:
+            # в ящике вахтовика уже есть (9 крафтеров и машины первого дня): квест на сам предмет — фаза 0
+            p, why = 0, "ящик вахтовика"
         cp = q.get("phase", ch.get("phase"))
         rows.append((ch, q, it, p, why, cp))
         if cp is not None and p > cp and p < INF:
