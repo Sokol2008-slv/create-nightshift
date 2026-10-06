@@ -6,104 +6,9 @@
 	icon: { id: "nightshift:altar" }
 	id: "340142421C84EF21"
 	images: [ ]
-	order_index: 4
+	order_index: 11
 	quest_links: [ ]
 	quests: [
-		{
-			id: "56635B3491872F7C"
-			rewards: [{ id: "0627B327BA856D9B", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "35A9F221964B5D5F", item: { count: 1, id: "nightshift:base_marker" }, type: "item" }]
-			x: 0.00d
-			y: 0.00d
-		}
-		{
-			dependencies: ["56635B3491872F7C"]
-			id: "4647E91516588EFE"
-			rewards: [{ id: "5E4DDE6EE329D18D", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4C55491B0B830E42", item: { count: 1, id: "nightshift:base_core" }, type: "item" }]
-			x: 2.00d
-			y: 0.00d
-		}
-		{
-			dependencies: ["4647E91516588EFE"]
-			icon: { id: "nightshift:altar" }
-			id: "515EB053AE51DC78"
-			rewards: [{ id: "2E8CA0FD7E8CA734", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "756FABB8E0AE4A3D", type: "checkmark" }]
-			x: 4.00d
-			y: -1.60d
-		}
-		{
-			dependencies: ["56635B3491872F7C"]
-			icon: { id: "minecraft:stone_bricks" }
-			id: "05BFAC295E23C671"
-			rewards: [{ id: "7720508899DA8CA1", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "465F8D1D1EADA62A", type: "checkmark" }]
-			x: 0.00d
-			y: 2.00d
-		}
-		{
-			dependencies: ["4647E91516588EFE"]
-			icon: { id: "minecraft:bell" }
-			id: "2FC167169892DA63"
-			rewards: [{ id: "50093EA8B0DBB78B", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "003EEE33EB1E91C2", type: "checkmark" }]
-			x: 2.00d
-			y: 2.00d
-		}
-		{
-			dependencies: ["05BFAC295E23C671"]
-			icon: { id: "minecraft:wither_rose" }
-			id: "724C7100B630DF65"
-			rewards: [{ id: "6929CD0F39C00D2A", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "51BE27D074A9C49D", type: "checkmark" }]
-			x: 0.00d
-			y: 4.00d
-		}
-		{
-			dependencies: ["2FC167169892DA63"]
-			icon: { id: "minecraft:chest" }
-			id: "084D8406F225C967"
-			rewards: [{ id: "210FA28DCDA7EAF4", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "7C53997FFDA8DEBE", type: "checkmark" }]
-			x: 2.00d
-			y: 4.00d
-		}
-		{
-			dependencies: ["084D8406F225C967"]
-			id: "5F66150BE3C4D321"
-			rewards: [{ id: "66EC1924672FDBAD", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "5AF75553E3A1ABA8", item: { count: 1, id: "nightshift:night_heart" }, type: "item" }]
-			x: 2.00d
-			y: 6.00d
-		}
-		{
-			dependencies: ["724C7100B630DF65"]
-			icon: { id: "minecraft:crying_obsidian" }
-			id: "3657C1A4FAB03885"
-			rewards: [{ id: "628F1972ED88CBBE", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4C41FD60A661F9B4", type: "checkmark" }]
-			x: 0.00d
-			y: 6.00d
-		}
 		{
 			dependencies: ["4647E91516588EFE"]
 			icon: { id: "nightshift:altar" }
@@ -112,74 +17,19 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "600DAC6A479D5543", stage: "nightshift_p1", team_stage: false, type: "gamestage" }]
-			x: 6.00d
+			x: 0.00d
 			y: 0.00d
 		}
 		{
 			dependencies: ["12BE751E2935630C"]
-			icon: { id: "minecraft:zombie_head" }
-			id: "4EEA6A53FCBBE2D0"
-			rewards: [{ id: "236903FEE813DB44", type: "xp", xp: 10 }]
+			icon: { id: "nightshift:altar" }
+			id: "515EB053AE51DC78"
+			rewards: [{ id: "2E8CA0FD7E8CA734", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "72765AF9EBD89E56", stage: "nightshift_p5", team_stage: false, type: "gamestage" }]
-			x: 7.76d
-			y: 0.00d
-		}
-		{
-			dependencies: ["4EEA6A53FCBBE2D0"]
-			icon: { id: "minecraft:diamond_sword" }
-			id: "20E4E214449B4273"
-			rewards: [{ id: "2144B068A2776CD7", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "044468B9043D2A5D", stage: "nightshift_p10", team_stage: false, type: "gamestage" }]
-			x: 9.52d
-			y: 0.00d
-		}
-		{
-			dependencies: ["20E4E214449B4273"]
-			icon: { id: "nightshift:lightning_charge" }
-			id: "798ACE3CE5DB69E8"
-			rewards: [{ id: "1199E53F7F139EFB", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "7AEF671335F21E86", stage: "nightshift_p15", team_stage: false, type: "gamestage" }]
-			x: 11.44d
-			y: 0.00d
-		}
-		{
-			dependencies: ["798ACE3CE5DB69E8"]
-			icon: { id: "minecraft:crossbow" }
-			id: "2FBF34DA191F4F4E"
-			rewards: [{ id: "0C1E7CF59B52DDBB", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "43AF9B71DA189B22", stage: "nightshift_p20", team_stage: false, type: "gamestage" }]
-			x: 13.36d
-			y: 0.00d
-		}
-		{
-			dependencies: ["2FBF34DA191F4F4E"]
-			icon: { id: "minecraft:diamond_chestplate" }
-			id: "05989202445BDA9F"
-			rewards: [{ id: "3B866FD8D0E008C9", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "5E59511EAD34BBEE", stage: "nightshift_p30", team_stage: false, type: "gamestage" }]
-			x: 15.12d
-			y: 0.00d
-		}
-		{
-			dependencies: ["05989202445BDA9F"]
-			icon: { id: "minecraft:blaze_rod" }
-			id: "3F32929BF605AE5F"
-			rewards: [{ id: "21A53F8115AAD574", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "2621DA0981FE1B33", stage: "nightshift_p40", team_stage: false, type: "gamestage" }]
-			x: 16.88d
-			y: 0.00d
+			tasks: [{ id: "756FABB8E0AE4A3D", type: "checkmark" }]
+			x: 0.00d
+			y: -1.50d
 		}
 		{
 			dependencies: ["515EB053AE51DC78"]
@@ -190,141 +40,30 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "59A7D450D039C3AD", type: "checkmark" }]
-			x: 4.00d
-			y: -3.40d
-		}
-		{
-			dependencies: ["3F32929BF605AE5F"]
-			icon: { id: "nightshift:navigation_core" }
-			id: "5A4B58E3D3636EAA"
-			rewards: [{ id: "5A5A4FE5B8227742", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "701740C09F98626E", stage: "nightshift_p50", team_stage: false, type: "gamestage" }]
-			x: 17.52d
-			y: 3.04d
-		}
-		{
-			dependencies: ["5A4B58E3D3636EAA"]
-			icon: { id: "minecraft:netherite_sword" }
-			id: "6C9D773A2FC527F8"
-			rewards: [{ id: "20A6267D5747E309", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "496F017692F7B7B9", stage: "nightshift_p60", team_stage: false, type: "gamestage" }]
-			x: 15.60d
-			y: 3.04d
-		}
-		{
-			dependencies: ["6C9D773A2FC527F8"]
-			icon: { id: "nightshift:star_fragment" }
-			id: "03D58C0D28130D2F"
-			rewards: [{ id: "76FA43D9D6607225", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "268EED80C8A52945", stage: "nightshift_p70", team_stage: false, type: "gamestage" }]
-			x: 13.68d
-			y: 3.04d
-		}
-		{
-			dependencies: ["03D58C0D28130D2F"]
-			icon: { id: "minecraft:netherite_ingot" }
-			id: "7FE6CF4D0290C173"
-			rewards: [{ id: "2D4975FFB144D076", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "2D3CE806B2A3B5B7", stage: "nightshift_p80", team_stage: false, type: "gamestage" }]
-			x: 11.76d
-			y: 3.04d
-		}
-		{
-			dependencies: ["7FE6CF4D0290C173"]
-			icon: { id: "minecraft:beacon" }
-			id: "2CE5CDB303BB7864"
-			rewards: [{ id: "096469DA217986DB", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "08B4B1BEBDEE96A0", stage: "nightshift_p90", team_stage: false, type: "gamestage" }]
-			x: 10.00d
-			y: 3.04d
-		}
-		{
-			dependencies: ["2CE5CDB303BB7864"]
-			icon: { id: "minecraft:nether_star" }
-			id: "4423BC3944555606"
-			rewards: [{ id: "16D7E0F6FAA0FA4A", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "00B974734AFC9A23", stage: "nightshift_p100", team_stage: false, type: "gamestage" }]
-			x: 8.08d
-			y: 3.04d
-		}
-		{
-			dependencies: ["4423BC3944555606"]
-			icon: { id: "minecraft:wither_skeleton_skull" }
-			id: "092F3AC53112DA4F"
-			rewards: [{ id: "08E129EA315D1A32", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "144469FEED58985A", type: "checkmark" }]
-			x: 6.00d
-			y: 3.04d
-		}
-		{
-			dependencies: ["5A4B58E3D3636EAA", "539485CE657AFD69"]
-			id: "7FFAED499CB00CC3"
-			rewards: [{ id: "54B887A2506C969C", type: "xp", xp: 50 }]
-			shape: "hexagon"
-			size: 1.6d
-			tasks: [{ id: "1A9C866A7A42ACE9", item: { count: 1, id: "axiomativ:shield_generator" }, type: "item" }]
-			x: 17.52d
-			y: 5.12d
-		}
-		{
-			dependencies: ["03D58C0D28130D2F"]
-			id: "7D71F73C8A9DE129"
-			rewards: [{ id: "68F4ABC3C6B15984", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "5AE65648192ED425", item: { count: 1, id: "nightshift:tactical_nuke" }, type: "item" }]
-			x: 13.68d
-			y: 4.96d
-		}
-		{
-			dependencies: ["798ACE3CE5DB69E8"]
-			icon: { id: "minecraft:firework_rocket" }
-			id: "5132CCC7A875B401"
-			optional: true
-			rewards: [{ id: "5079426445D8CF19", type: "xp", xp: 10 }]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{ id: "3E7B73CB3FFC0140", type: "checkmark" }]
-			x: 11.44d
-			y: -2.00d
-		}
-		{
-			dependencies: ["5132CCC7A875B401"]
-			icon: { id: "minecraft:tnt" }
-			id: "0DBAB77BAE915A5D"
-			optional: true
-			rewards: [{ id: "5D7663EA52EA2B96", type: "xp", xp: 10 }]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{ id: "7052EB1EE98717F4", type: "checkmark" }]
-			x: 13.36d
-			y: -2.00d
-		}
-		{
-			dependencies: ["3657C1A4FAB03885"]
-			icon: { id: "minecraft:blue_ice" }
-			id: "3DCA31B7087B87A2"
-			optional: true
-			rewards: [{ id: "46F43427A83DEB89", type: "xp", xp: 10 }]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{ id: "1ED619CF3E1CD2EC", type: "checkmark" }]
 			x: 0.00d
-			y: 8.00d
+			y: -3.00d
+		}
+		{
+			dependencies: ["515EB053AE51DC78"]
+			icon: { id: "minecraft:bell" }
+			id: "2FC167169892DA63"
+			rewards: [{ id: "50093EA8B0DBB78B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "003EEE33EB1E91C2", type: "checkmark" }]
+			x: 1.30d
+			y: -3.00d
+		}
+		{
+			dependencies: ["2FC167169892DA63"]
+			icon: { id: "minecraft:chest" }
+			id: "084D8406F225C967"
+			rewards: [{ id: "210FA28DCDA7EAF4", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7C53997FFDA8DEBE", type: "checkmark" }]
+			x: 1.30d
+			y: -4.50d
 		}
 		{
 			dependencies: ["084D8406F225C967"]
@@ -335,8 +74,8 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "15A87EDCE7FA4506", type: "checkmark" }]
-			x: 4.00d
-			y: 6.00d
+			x: 2.60d
+			y: -4.50d
 		}
 		{
 			dependencies: ["65CB6AE9800DF7D3"]
@@ -347,128 +86,53 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "648109E4AA4BDEBB", type: "checkmark" }]
-			x: 6.00d
-			y: 6.00d
+			x: 2.60d
+			y: -6.00d
 		}
 		{
-			dependencies: ["2FBF34DA191F4F4E"]
-			icon: { id: "minecraft:ender_eye" }
-			id: "7A0F0FB1F4DD3514"
-			optional: true
-			rewards: [{ id: "7DE6938B28EFDB8E", type: "xp", xp: 10 }]
-			shape: "diamond"
-			size: 1.0d
-			tasks: [{ id: "4036E91A5398F96B", type: "checkmark" }]
-			x: 15.12d
-			y: -2.00d
-		}
-		{
-			dependencies: ["7A0F0FB1F4DD3514"]
-			icon: { id: "nightshift:coil_core" }
-			id: "6396C3E683386BB8"
-			optional: true
-			rewards: [{ id: "2774398289157432", type: "xp", xp: 10 }]
+			dependencies: ["12BE751E2935630C"]
+			icon: { id: "minecraft:stone_bricks" }
+			id: "05BFAC295E23C671"
+			rewards: [{ id: "7720508899DA8CA1", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "6511B3806C3C8C5C", stage: "nightshift_p22", team_stage: false, type: "gamestage" }]
-			x: 15.12d
-			y: -4.00d
+			tasks: [{ id: "465F8D1D1EADA62A", type: "checkmark" }]
+			x: 0.00d
+			y: 1.50d
 		}
 		{
-			dependencies: ["6396C3E683386BB8"]
-			icon: { id: "nightshift:afterburner_blueprint" }
-			id: "2FCFABA930668036"
-			optional: true
-			rewards: [{ id: "57EA7CEDB418BCA1", type: "xp", xp: 10 }]
+			dependencies: ["05BFAC295E23C671"]
+			icon: { id: "minecraft:wither_rose" }
+			id: "724C7100B630DF65"
+			rewards: [{ id: "6929CD0F39C00D2A", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "63DD1C50331E90CD", stage: "nightshift_p24", team_stage: false, type: "gamestage" }]
-			x: 16.72d
-			y: -4.00d
+			tasks: [{ id: "51BE27D074A9C49D", type: "checkmark" }]
+			x: 0.00d
+			y: 3.00d
 		}
 		{
-			dependencies: ["2FCFABA930668036"]
-			icon: { id: "nightshift:otk_armor_plate" }
-			id: "16915B107FB94D45"
-			optional: true
-			rewards: [{ id: "71AC12278C093627", type: "xp", xp: 10 }]
+			dependencies: ["724C7100B630DF65"]
+			icon: { id: "minecraft:crying_obsidian" }
+			id: "3657C1A4FAB03885"
+			rewards: [{ id: "628F1972ED88CBBE", type: "xp", xp: 10 }]
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ id: "7127BBADED718ECD", stage: "nightshift_p26", team_stage: false, type: "gamestage" }]
-			x: 18.32d
-			y: -4.00d
+			tasks: [{ id: "4C41FD60A661F9B4", type: "checkmark" }]
+			x: 0.00d
+			y: 4.50d
 		}
 		{
-			dependencies: ["16915B107FB94D45"]
-			icon: { id: "nightshift:runner_badge" }
-			id: "0201C86BA400031C"
+			dependencies: ["3657C1A4FAB03885"]
+			icon: { id: "minecraft:blue_ice" }
+			id: "3DCA31B7087B87A2"
 			optional: true
-			rewards: [{ id: "0582917BF58B5C81", type: "xp", xp: 10 }]
-			shape: "rsquare"
+			rewards: [{ id: "46F43427A83DEB89", type: "xp", xp: 10 }]
+			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "655CAA0666FC575A", stage: "nightshift_p28", team_stage: false, type: "gamestage" }]
-			x: 19.92d
-			y: -4.00d
-		}
-		{
-			dependencies: ["0201C86BA400031C"]
-			icon: { id: "nightshift:spirit_essence" }
-			id: "363F2895D397D822"
-			optional: true
-			rewards: [{ id: "6406417FAA444FDA", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "4EA4B1AE8F96E84E", stage: "nightshift_p32", team_stage: false, type: "gamestage" }]
-			x: 21.52d
-			y: -4.00d
-		}
-		{
-			dependencies: ["363F2895D397D822"]
-			icon: { id: "nightshift:prism_lens" }
-			id: "60435D2A4499BA6F"
-			optional: true
-			rewards: [{ id: "69F1A8FB4932ADCB", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "247D33982F2F4FF1", stage: "nightshift_p34", team_stage: false, type: "gamestage" }]
-			x: 23.12d
-			y: -4.00d
-		}
-		{
-			dependencies: ["60435D2A4499BA6F"]
-			icon: { id: "nightshift:queen_heart" }
-			id: "4DADC2F0709A2873"
-			optional: true
-			rewards: [{ id: "41A2FB73EBF5C5A8", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "39403AC5AE222609", stage: "nightshift_p36", team_stage: false, type: "gamestage" }]
-			x: 23.12d
-			y: -5.60d
-		}
-		{
-			dependencies: ["4DADC2F0709A2873"]
-			icon: { id: "nightshift:bastion_core" }
-			id: "350402D904DEB977"
-			optional: true
-			rewards: [{ id: "06719BF9F211AC87", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "1A44F221D12E134C", stage: "nightshift_p38", team_stage: false, type: "gamestage" }]
-			x: 21.52d
-			y: -5.60d
-		}
-		{
-			dependencies: ["350402D904DEB977"]
-			icon: { id: "nightshift:convoy_seal" }
-			id: "4E80ABFD6CFAE6FF"
-			optional: true
-			rewards: [{ id: "07AE9746F541F855", type: "xp", xp: 10 }]
-			shape: "rsquare"
-			size: 1.0d
-			tasks: [{ id: "14E5EAD32DF1ACC2", stage: "nightshift_p43", team_stage: false, type: "gamestage" }]
-			x: 19.92d
-			y: -5.60d
+			tasks: [{ id: "1ED619CF3E1CD2EC", type: "checkmark" }]
+			x: 1.30d
+			y: 4.50d
 		}
 		{
 			dependencies: ["3657C1A4FAB03885"]
@@ -479,11 +143,338 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "22805CD7EC44E263", type: "checkmark" }]
-			x: 2.00d
-			y: 8.00d
+			x: 0.00d
+			y: 6.00d
 		}
 		{
-			dependencies: ["7A0F0FB1F4DD3514"]
+			dependencies: ["12BE751E2935630C"]
+			icon: { id: "minecraft:target" }
+			id: "7BBB4E8FDBB83821"
+			rewards: [{ id: "79742620D2CDC49C", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "052817AD381C8C0F", stage: "ns_fun_tir", team_stage: false, type: "gamestage" }]
+			x: 1.30d
+			y: 1.50d
+		}
+		{
+			dependencies: ["7BBB4E8FDBB83821"]
+			icon: { id: "minecraft:bow" }
+			id: "6E192BEA8931C4CD"
+			rewards: [{ id: "1985D17727055665", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7C9765D4EFF71698", stage: "ns_fun_tir_rec", team_stage: false, type: "gamestage" }]
+			x: 1.30d
+			y: 3.00d
+		}
+		{
+			dependencies: ["12BE751E2935630C"]
+			icon: { id: "minecraft:zombie_head" }
+			id: "4EEA6A53FCBBE2D0"
+			rewards: [{ id: "236903FEE813DB44", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "72765AF9EBD89E56", stage: "nightshift_p5", team_stage: false, type: "gamestage" }]
+			x: 2.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["4EEA6A53FCBBE2D0"]
+			id: "5D0BB0FB363BCF9C"
+			rewards: [{ id: "57A8794F558ABD6B", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "70DF84B2AC2DD087", item: { count: 1, id: "nightshift:base_marker" }, type: "item" }]
+			x: 2.60d
+			y: -1.50d
+		}
+		{
+			dependencies: ["5D0BB0FB363BCF9C"]
+			icon: { id: "minecraft:brewing_stand" }
+			id: "721226B028FF97C7"
+			optional: true
+			rewards: [{ id: "773C3F88289D0B15", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "618DBE488ADF9010", type: "checkmark" }]
+			x: 2.60d
+			y: -3.00d
+		}
+		{
+			dependencies: ["721226B028FF97C7"]
+			icon: { id: "minecraft:wither_skeleton_skull" }
+			id: "27494CDCCB4DCF99"
+			optional: true
+			rewards: [{ id: "009CF6FADB6799D5", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "09C773171C3D95FB", type: "checkmark" }]
+			x: 3.90d
+			y: -3.00d
+		}
+		{
+			dependencies: ["4EEA6A53FCBBE2D0"]
+			icon: { id: "nightshift:shift_token" }
+			id: "40348BF0E706ABFC"
+			rewards: [{ id: "245A5DA41F3A5EEC", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7C472265CC7F1370", stage: "ns_fun_trader", team_stage: false, type: "gamestage" }]
+			x: 2.60d
+			y: 1.50d
+		}
+		{
+			dependencies: ["40348BF0E706ABFC"]
+			id: "7140196463FAE2AE"
+			rewards: [{ id: "6E524DB72F482A6B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "667146DDC8503DBC", item: { count: 1, id: "nightshift:supply_crate" }, type: "item" }]
+			x: 2.60d
+			y: 3.00d
+		}
+		{
+			dependencies: ["40348BF0E706ABFC"]
+			icon: { id: "minecraft:filled_map" }
+			id: "085A792FBA7E3B63"
+			rewards: [{ id: "5144D15F1B710E3E", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0923D4EFC2BB637B", stage: "ns_fun_stash", team_stage: false, type: "gamestage" }]
+			x: 3.90d
+			y: 3.00d
+		}
+		{
+			dependencies: ["4EEA6A53FCBBE2D0"]
+			icon: { id: "minecraft:diamond_sword" }
+			id: "20E4E214449B4273"
+			rewards: [{ id: "2144B068A2776CD7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "044468B9043D2A5D", stage: "nightshift_p10", team_stage: false, type: "gamestage" }]
+			x: 5.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["20E4E214449B4273"]
+			id: "6C0ECF8DB46B242F"
+			rewards: [{ id: "6CE8D065DA2738E7", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "785C4AA6BBF9506C", item: { count: 1, id: "nightshift:horde_shard" }, type: "item" }]
+			x: 5.20d
+			y: 1.50d
+		}
+		{
+			dependencies: ["6C0ECF8DB46B242F"]
+			id: "4AAC4C0B6EC1E5CE"
+			rewards: [{ id: "25B0824028046EA5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "296267137AAD93E1", item: { count: 1, id: "nightshift:horde_dust" }, type: "item" }]
+			x: 5.20d
+			y: 3.00d
+		}
+		{
+			dependencies: ["4AAC4C0B6EC1E5CE"]
+			id: "7F274304A2B7CC90"
+			rewards: [{ id: "3E843CFFF8CB7302", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2C656758D1EBC357", item: { count: 1, id: "nightshift:awakening_essence" }, type: "item" }]
+			x: 5.20d
+			y: 4.50d
+		}
+		{
+			dependencies: ["7F274304A2B7CC90"]
+			icon: { id: "nightshift:art_horde_heart_aw" }
+			id: "4F818187E549D44C"
+			rewards: [{ id: "3BF50AD4E5F24763", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4EEA8181D6DC02ED", type: "checkmark" }]
+			x: 5.20d
+			y: 6.00d
+		}
+		{
+			dependencies: ["20E4E214449B4273"]
+			id: "5F66150BE3C4D321"
+			rewards: [{ id: "66EC1924672FDBAD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5AF75553E3A1ABA8", item: { count: 1, id: "nightshift:night_heart" }, type: "item" }]
+			x: 6.50d
+			y: 1.50d
+		}
+		{
+			dependencies: ["20E4E214449B4273"]
+			icon: { id: "nightshift:lightning_charge" }
+			id: "798ACE3CE5DB69E8"
+			rewards: [{ id: "1199E53F7F139EFB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7AEF671335F21E86", stage: "nightshift_p15", team_stage: false, type: "gamestage" }]
+			x: 7.80d
+			y: 0.00d
+		}
+		{
+			dependencies: ["798ACE3CE5DB69E8"]
+			icon: { id: "minecraft:firework_rocket" }
+			id: "5132CCC7A875B401"
+			optional: true
+			rewards: [{ id: "5079426445D8CF19", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "3E7B73CB3FFC0140", type: "checkmark" }]
+			x: 7.80d
+			y: -1.50d
+		}
+		{
+			dependencies: ["5132CCC7A875B401"]
+			icon: { id: "minecraft:tnt" }
+			id: "0DBAB77BAE915A5D"
+			optional: true
+			rewards: [{ id: "5D7663EA52EA2B96", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "7052EB1EE98717F4", type: "checkmark" }]
+			x: 7.80d
+			y: -3.00d
+		}
+		{
+			dependencies: ["798ACE3CE5DB69E8"]
+			icon: { id: "minecraft:crossbow" }
+			id: "2FBF34DA191F4F4E"
+			rewards: [{ id: "0C1E7CF59B52DDBB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "43AF9B71DA189B22", stage: "nightshift_p20", team_stage: false, type: "gamestage" }]
+			x: 10.40d
+			y: 0.00d
+		}
+		{
+			dependencies: ["2FBF34DA191F4F4E"]
+			icon: { id: "nightshift:coil_core" }
+			id: "6396C3E683386BB8"
+			optional: true
+			rewards: [{ id: "2774398289157432", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6511B3806C3C8C5C", stage: "nightshift_p22", team_stage: false, type: "gamestage" }]
+			x: 10.40d
+			y: -1.50d
+		}
+		{
+			dependencies: ["6396C3E683386BB8"]
+			icon: { id: "nightshift:afterburner_blueprint" }
+			id: "2FCFABA930668036"
+			optional: true
+			rewards: [{ id: "57EA7CEDB418BCA1", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "63DD1C50331E90CD", stage: "nightshift_p24", team_stage: false, type: "gamestage" }]
+			x: 11.70d
+			y: -1.50d
+		}
+		{
+			dependencies: ["2FCFABA930668036"]
+			icon: { id: "nightshift:otk_armor_plate" }
+			id: "16915B107FB94D45"
+			optional: true
+			rewards: [{ id: "71AC12278C093627", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "7127BBADED718ECD", stage: "nightshift_p26", team_stage: false, type: "gamestage" }]
+			x: 13.00d
+			y: -1.50d
+		}
+		{
+			dependencies: ["16915B107FB94D45"]
+			icon: { id: "nightshift:runner_badge" }
+			id: "0201C86BA400031C"
+			optional: true
+			rewards: [{ id: "0582917BF58B5C81", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "655CAA0666FC575A", stage: "nightshift_p28", team_stage: false, type: "gamestage" }]
+			x: 14.30d
+			y: -1.50d
+		}
+		{
+			dependencies: ["0201C86BA400031C"]
+			icon: { id: "nightshift:spirit_essence" }
+			id: "363F2895D397D822"
+			optional: true
+			rewards: [{ id: "6406417FAA444FDA", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4EA4B1AE8F96E84E", stage: "nightshift_p32", team_stage: false, type: "gamestage" }]
+			x: 15.60d
+			y: -1.50d
+		}
+		{
+			dependencies: ["363F2895D397D822"]
+			icon: { id: "nightshift:prism_lens" }
+			id: "60435D2A4499BA6F"
+			optional: true
+			rewards: [{ id: "69F1A8FB4932ADCB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "247D33982F2F4FF1", stage: "nightshift_p34", team_stage: false, type: "gamestage" }]
+			x: 16.90d
+			y: -1.50d
+		}
+		{
+			dependencies: ["60435D2A4499BA6F"]
+			icon: { id: "minecraft:ender_eye" }
+			id: "7A0F0FB1F4DD3514"
+			optional: true
+			rewards: [{ id: "7DE6938B28EFDB8E", type: "xp", xp: 10 }]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "4036E91A5398F96B", type: "checkmark" }]
+			x: 18.20d
+			y: -1.50d
+		}
+		{
+			dependencies: ["60435D2A4499BA6F"]
+			icon: { id: "nightshift:queen_heart" }
+			id: "4DADC2F0709A2873"
+			optional: true
+			rewards: [{ id: "41A2FB73EBF5C5A8", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "39403AC5AE222609", stage: "nightshift_p36", team_stage: false, type: "gamestage" }]
+			x: 16.90d
+			y: -3.00d
+		}
+		{
+			dependencies: ["4DADC2F0709A2873"]
+			icon: { id: "nightshift:bastion_core" }
+			id: "350402D904DEB977"
+			optional: true
+			rewards: [{ id: "06719BF9F211AC87", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "1A44F221D12E134C", stage: "nightshift_p38", team_stage: false, type: "gamestage" }]
+			x: 15.60d
+			y: -3.00d
+		}
+		{
+			dependencies: ["350402D904DEB977"]
+			icon: { id: "nightshift:convoy_seal" }
+			id: "4E80ABFD6CFAE6FF"
+			optional: true
+			rewards: [{ id: "07AE9746F541F855", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "14E5EAD32DF1ACC2", stage: "nightshift_p43", team_stage: false, type: "gamestage" }]
+			x: 14.30d
+			y: -3.00d
+		}
+		{
+			dependencies: ["2FBF34DA191F4F4E"]
 			icon: { id: "minecraft:enchanting_table" }
 			id: "16428C3D5C32A327"
 			optional: true
@@ -491,8 +482,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2647648EAFFAFB35", stage: "nightshift_p21", team_stage: false, type: "gamestage" }]
-			x: 13.36d
-			y: -7.20d
+			x: 9.10d
+			y: -1.50d
 		}
 		{
 			dependencies: ["16428C3D5C32A327"]
@@ -503,8 +494,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "57F8BB4B167FEBDE", stage: "nightshift_p29", team_stage: false, type: "gamestage" }]
-			x: 14.96d
-			y: -7.20d
+			x: 9.10d
+			y: -3.00d
 		}
 		{
 			dependencies: ["5B8F62B271946896"]
@@ -515,8 +506,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "2873D1CC68899D78", stage: "nightshift_p33", team_stage: false, type: "gamestage" }]
-			x: 16.56d
-			y: -7.20d
+			x: 10.40d
+			y: -3.00d
 		}
 		{
 			dependencies: ["0ACD559F06214A80"]
@@ -527,8 +518,8 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "3B1E517945323C60", stage: "nightshift_p39", team_stage: false, type: "gamestage" }]
-			x: 18.16d
-			y: -7.20d
+			x: 11.70d
+			y: -3.00d
 		}
 		{
 			dependencies: ["26D5627881A1FE2F"]
@@ -539,8 +530,117 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ id: "206B8DCFE28D1B74", stage: "nightshift_p47", team_stage: false, type: "gamestage" }]
-			x: 19.76d
-			y: -7.20d
+			x: 13.00d
+			y: -3.00d
+		}
+		{
+			dependencies: ["2FBF34DA191F4F4E"]
+			icon: { id: "minecraft:diamond_chestplate" }
+			id: "05989202445BDA9F"
+			rewards: [{ id: "3B866FD8D0E008C9", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "5E59511EAD34BBEE", stage: "nightshift_p30", team_stage: false, type: "gamestage" }]
+			x: 13.00d
+			y: 0.00d
+		}
+		{
+			dependencies: ["05989202445BDA9F"]
+			icon: { id: "minecraft:blaze_rod" }
+			id: "3F32929BF605AE5F"
+			rewards: [{ id: "21A53F8115AAD574", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2621DA0981FE1B33", stage: "nightshift_p40", team_stage: false, type: "gamestage" }]
+			x: 15.60d
+			y: 0.00d
+		}
+		{
+			dependencies: ["3F32929BF605AE5F"]
+			icon: { id: "nightshift:navigation_core" }
+			id: "5A4B58E3D3636EAA"
+			rewards: [{ id: "5A5A4FE5B8227742", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "701740C09F98626E", stage: "nightshift_p50", team_stage: false, type: "gamestage" }]
+			x: 18.20d
+			y: 0.00d
+		}
+		{
+			dependencies: ["5A4B58E3D3636EAA"]
+			icon: { id: "minecraft:netherite_sword" }
+			id: "6C9D773A2FC527F8"
+			rewards: [{ id: "20A6267D5747E309", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "496F017692F7B7B9", stage: "nightshift_p60", team_stage: false, type: "gamestage" }]
+			x: 18.20d
+			y: 1.50d
+		}
+		{
+			dependencies: ["6C9D773A2FC527F8"]
+			icon: { id: "nightshift:star_fragment" }
+			id: "03D58C0D28130D2F"
+			rewards: [{ id: "76FA43D9D6607225", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "268EED80C8A52945", stage: "nightshift_p70", team_stage: false, type: "gamestage" }]
+			x: 18.20d
+			y: 3.00d
+		}
+		{
+			dependencies: ["03D58C0D28130D2F"]
+			id: "4D8732FCCCBD523B"
+			rewards: [{ id: "1F1963E34CD3BDFD", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6CDA005270C544D3", item: { count: 1, id: "cataclysm:black_steel_ingot" }, type: "item" }]
+			x: 16.90d
+			y: 4.50d
+		}
+		{
+			dependencies: ["03D58C0D28130D2F"]
+			icon: { id: "minecraft:netherite_ingot" }
+			id: "7FE6CF4D0290C173"
+			rewards: [{ id: "2D4975FFB144D076", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "2D3CE806B2A3B5B7", stage: "nightshift_p80", team_stage: false, type: "gamestage" }]
+			x: 18.20d
+			y: 4.50d
+		}
+		{
+			dependencies: ["7FE6CF4D0290C173"]
+			icon: { id: "minecraft:beacon" }
+			id: "2CE5CDB303BB7864"
+			rewards: [{ id: "096469DA217986DB", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "08B4B1BEBDEE96A0", stage: "nightshift_p90", team_stage: false, type: "gamestage" }]
+			x: 18.20d
+			y: 6.00d
+		}
+		{
+			dependencies: ["2CE5CDB303BB7864"]
+			icon: { id: "minecraft:nether_star" }
+			id: "4423BC3944555606"
+			rewards: [{ id: "16D7E0F6FAA0FA4A", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "00B974734AFC9A23", stage: "nightshift_p100", team_stage: false, type: "gamestage" }]
+			x: 16.90d
+			y: 6.00d
+		}
+		{
+			dependencies: ["4423BC3944555606"]
+			icon: { id: "minecraft:wither_skeleton_skull" }
+			id: "092F3AC53112DA4F"
+			rewards: [{ id: "08E129EA315D1A32", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "144469FEED58985A", type: "checkmark" }]
+			x: 15.60d
+			y: 6.00d
 		}
 	]
 }
