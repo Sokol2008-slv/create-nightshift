@@ -40,3 +40,37 @@ ServerEvents.commandRegistry(event => {
 			})
 	)
 })
+
+// 06.10 (Георгий: «нельзя, чтобы такую крутую еду можно было покупать»): дорогие блюда — EMC 0, только готовить.
+// «Дорогое блюдо» — модовая еда, у которой есть рецепт из 3+ ингредиентов (бутерброды, рагу, торты, сборка по шагам).
+// Простое (сырое, нарезанное, жареное из одного продукта) и ванильная еда остаются в продаже (решение 29.09).
+// /emc_dump_food → kubejs/food_complex.json → tools/emc_lock_create.py (FOOD_ZERO).
+ServerEvents.commandRegistry(event => {
+	event.register(
+		event.commands.literal('emc_dump_food')
+			.requires(s => s.hasPermission(2))
+			.executes(ctx => {
+				var DC = Java.loadClass('net.minecraft.core.component.DataComponents')
+				var found = {}
+				var it = ctx.source.server.getRecipeManager().getRecipes().iterator()
+				while (it.hasNext()) {
+					try {
+						var holder = it.next()
+						var r = holder.value()
+						var out = r.getResultItem(ctx.source.server.registryAccess())
+						if (!out || out.isEmpty() || !out.has(DC.FOOD)) continue
+						var id = String(out.getItem().builtInRegistryHolder().key().location())
+						if (id.indexOf('minecraft:') === 0) continue
+						var ings = r.getIngredients()
+						var n = 0
+						for (var i = 0; i < ings.size(); i++) if (!ings.get(i).isEmpty()) n++
+						if (n >= 3 && !found[id]) found[id] = String(holder.id())
+					} catch (e) {}
+				}
+				var list = Object.keys(found).sort()
+				JsonIO.write('kubejs/food_complex.json', { items: list, by: found })
+				ctx.source.sendSystemMessage(Text.gold('[emc] дорогих блюд: ' + list.length + ' → kubejs/food_complex.json'))
+				return 1
+			})
+	)
+})

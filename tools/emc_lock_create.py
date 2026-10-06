@@ -78,6 +78,9 @@ MANUAL_ZERO += ['axiomativ:supply_node', 'axiomativ:supply_relay', 'axiomativ:di
                 'axiomativ:supply_pack_mk2', 'axiomativ:quantum_supply_pack', 'axiomativ:incomplete_supply_pack']
 # 05.10: буровая установка (аддон 0.7.0) — высокая ступень форпоста, только машинами
 MANUAL_ZERO += ['axiomativ:drilling_rig']
+# 06.10 (Георгий: «нельзя, чтобы такую крутую еду можно было покупать»): дорогие блюда — модовая еда с рецептом из 3+
+# ингредиентов (выгрузка /emc_dump_food → tools/data/food_complex.json). Простая и ванильная еда — в продаже (29.09)
+MANUAL_ZERO += json.load(open(PACK / 'tools' / 'data' / 'food_complex.json', encoding='utf-8'))['items']
 # сплавы и полуфабрикаты — продукция завода, хоть и с тегом слитка/руды: блокируем в любом моде
 # (иначе купил чужую сталь по тегу c:ingots/steel — и линия стали не нужна)
 FACTORY_RE = re.compile(r'(brass|steel|bronze|cast_iron|andesite_alloy|crushed_)')

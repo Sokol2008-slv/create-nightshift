@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "db9ac4c947b410ec49c16d2f1ca9ecdd1c08e417334b83461dd6b70f3a495ed3"
+hash = "1e97fd176feff2d450530c60c2277f6863492420af26a3c92ef2083526f5f9b3"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -142,11 +142,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "638e9ac8437fe16c0c6e397da107ec868cfa6cdb1f8c2acb590f1b134b37a16e"
+hash = "3baaef14db46d15493f3ef9fca148f7b9697c133a1fcd02818ffa7928243bd22"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "638e9ac8437fe16c0c6e397da107ec868cfa6cdb1f8c2acb590f1b134b37a16e"
+hash = "3baaef14db46d15493f3ef9fca148f7b9697c133a1fcd02818ffa7928243bd22"
 
 [[files]]
 file = "config/iris.properties"
@@ -1962,15 +1962,15 @@ hash = "26bd66cd5542c05a3c7204f869d044212af4c6aa324433318491eee59d5b90bc"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_bauxite.json"
-hash = "2ce65b93a2fbad13f78293dfcb1bf11863bfbcbbfc970bbfd28f03f91aced3e1"
+hash = "a09401bc402d84651cd1a4034a30ee41e5ff8a9619db166f3f625adc53b5f263"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_helium.json"
-hash = "691d9d91bbff20b8e2473ed2a5c196278cb9ae9b56e4bbcbda0b32511f05da4b"
+hash = "fcfcc8d36541f3a259d9c866d60132a3c1ca15e6cd9ea4a2156248b28885b32c"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_hevea_soil.json"
-hash = "a13a558f5ebc27dea106ca50f0233976ee297e09e0a8ba11d72799380f8c2e0a"
+hash = "c489580f11ceb9fd6d4a07927f7bac32212e57ca24b061c2b6354414ff6bb3a8"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_hevea_tree.json"
@@ -1978,35 +1978,35 @@ hash = "db5de83a98766fb70023b8ad1a25267796235e78d843e4f9dd6edb03d0a3a17b"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_magnetic_anomaly.json"
-hash = "41b58e4b9d1bc99d1b9caaf214ed980384c0bfe6197ab4d1dc311a793072ac9f"
+hash = "eb5b566d17785260f9494b6c86dbb7532b6354ed5a26116de73d0d1721f63d8d"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_mycelium_caves.json"
-hash = "69b442d8415c60011458a1e20733be92c03986ecd714182be190a9866e1ae326"
+hash = "6c4733354c8ef5656acc8b854d70adb9581b234f18ec9e76130a1e545dfde651"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_mycelium_surface.json"
-hash = "198c0bba7b53376d980476283a50e3febd1c47972461a9be4b150fa316a66ccb"
+hash = "303f2425e7560682aa5637d6866ed8eba1ee7af9fbf977a635e77625a1086ffa"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_peat.json"
-hash = "b551c71e43ccda0414433b5700acd6ea0e2c2635c0218268063199c847bab14d"
+hash = "9ca16ac1d73d1f07ab4842fec06bd9131608d4cc1c24c42bdb04e29a57f59ce6"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_permafrost.json"
-hash = "bf92d55452675d4894870ef65357ee5b16aa1e8acab63811b26d543200500973"
+hash = "b32e541c77d3010c522b294d4e41a4c268f74b1b209bc40948773e4913b9142b"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_quartz.json"
-hash = "75082a0480fb7c5972b7ef6d670d466bc7419ae9ad888a6c0dac90d3d26b31bb"
+hash = "c9fd49626a2200a53ebc3541ca7772ec7b40fecaa929b596cf3ecee58cb350f5"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_salt.json"
-hash = "287459c4faf5b75b9fcfbbd4329ccabb50fe18654821a1f4a2dffcca1fb6ae7a"
+hash = "605be0d5fd496d020a0ba9b8105fccaf283bc69466fb4f99065feeab5c1c45c2"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_star_stone.json"
-hash = "c01f804ab69d358e12e04cc3c2a3281f6a70502ce0e8eb39fcde251b364e2dc7"
+hash = "c65a727252855301d8c46587daced3f3617325b0c9c3bbb79e29e3fa652b1c2e"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_sulfur_deep.json"
@@ -2194,7 +2194,7 @@ hash = "fcf1524e252dc4d711945b37a326eca5b8a1ec0766d3b4ecbcd8b4ae58261360"
 
 [[files]]
 file = "kubejs/server_scripts/economy/60_emc_dump.js"
-hash = "cafe1430d311abb8d8e776a88040c583caa11729b6876547ba424df55b04ecbf"
+hash = "045569a6db77dd734743af51f39f3e53eb24212ff4ad5d633d2430656b9a7e93"
 
 [[files]]
 file = "kubejs/server_scripts/economy/70_nether_star.js"
@@ -2674,7 +2674,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "058597bf2c8fb3cbf4445cad7319c3b86ee8b881c324765fbc20a87f53cd8297"
+hash = "180a10beeb94bec26d6e2fbf8e0c21e077ba4a4e1de0c756097c4a7bd93a36e4"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

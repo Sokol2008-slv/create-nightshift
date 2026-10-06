@@ -42116,6 +42116,222 @@
   {
    "id": "axiomativ:incomplete_energy_cannon",
    "emc": 0
+  },
+  {
+   "id": "arphex:abyssal_stew",
+   "emc": 0
+  },
+  {
+   "id": "arphex:crawling_cake",
+   "emc": 0
+  },
+  {
+   "id": "arphex:elixir_of_splintered_sanity",
+   "emc": 0
+  },
+  {
+   "id": "arphex:entropy_serum",
+   "emc": 0
+  },
+  {
+   "id": "arphex:hemoplasm",
+   "emc": 0
+  },
+  {
+   "id": "arphex:scorched_soup",
+   "emc": 0
+  },
+  {
+   "id": "arphex:spider_supplement",
+   "emc": 0
+  },
+  {
+   "id": "arphex:time_syrup",
+   "emc": 0
+  },
+  {
+   "id": "arphex:void_sherbet",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:apple_cider",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:bacon_and_eggs",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:bacon_sandwich",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:baked_cod_stew",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:barbecue_stick",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:beef_stew",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:bone_broth",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:chicken_sandwich",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:chicken_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:cod_roll",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:dog_food",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:dumplings",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:egg_sandwich",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:fish_stew",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:fried_rice",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:fruit_salad",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:glow_berry_custard",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:grilled_salmon",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:hamburger",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:honey_cookie",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:kelp_roll",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:melon_popsicle",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:mixed_salad",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:mushroom_rice",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:mutton_wrap",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:nether_salad",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:noodle_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:onion_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pasta_with_meatballs",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pasta_with_mutton_chop",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pie_crust",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:pumpkin_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:ratatouille",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:roasted_mutton_chops",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:salmon_roll",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:squid_ink_pasta",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:steak_and_potatoes",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:stuffed_potato",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:sweet_berry_cookie",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:tomato_sauce",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:vegetable_noodles",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:vegetable_soup",
+   "emc": 0
+  },
+  {
+   "id": "farmersdelight:wheat_dough",
+   "emc": 0
+  },
+  {
+   "id": "nightshift:sedative",
+   "emc": 0
+  },
+  {
+   "id": "projectexpansion:infinite_steak",
+   "emc": 0
   }
  ]
 }

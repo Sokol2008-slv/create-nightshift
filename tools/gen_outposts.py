@@ -154,6 +154,8 @@ def state(name, props=None):
     return {"type": "minecraft:simple_state_provider", "state": s}
 
 
+# 06.10 (Георгий: «залежи — чтобы точно помещалось хотя бы 2 бура»): радиус не меньше 4 — пятно от 9 блоков в поперечнике.
+# Места появления от радиуса не зависят (его выбирает сама фича после размещения) — координаты атласа верны.
 def disk(block, rmin, rmax, half):
     return {"type": "minecraft:disk", "config": {
         "state_provider": {"fallback": state(block), "rules": []},
@@ -204,24 +206,24 @@ def features():
                       {"type": "minecraft:matching_blocks", "blocks": ["minecraft:air", "minecraft:short_grass", "minecraft:fern"]}]}},
                   {"type": "minecraft:biome"}]
     return [
-        ("hevea_soil", disk("nightshift:hevea_soil", 3, 5, 2), surface(10), "#c:is_jungle", "underground_ores"),
+        ("hevea_soil", disk("nightshift:hevea_soil", 4, 6, 2), surface(10), "#c:is_jungle", "underground_ores"),
         ("hevea_tree", hevea_tree, tree_place, "#c:is_jungle", "underground_decoration"),
-        ("salt", disk("nightshift:salt_deposit", 2, 4, 2), surface(4), "#c:is_beach", "underground_ores"),
-        ("magnetic_anomaly", disk("nightshift:magnetic_anomaly", 3, 5, 2), surface(18, 120), "#c:is_mountain", "underground_ores"),
+        ("salt", disk("nightshift:salt_deposit", 4, 6, 2), surface(4), "#c:is_beach", "underground_ores"),
+        ("magnetic_anomaly", disk("nightshift:magnetic_anomaly", 4, 6, 2), surface(18, 120), "#c:is_mountain", "underground_ores"),
         ("sulfur_surface", sulfur_lake, [{"type": "minecraft:rarity_filter", "chance": 5}, {"type": "minecraft:in_square"},
                                          {"type": "minecraft:heightmap", "heightmap": "WORLD_SURFACE_WG"}, {"type": "minecraft:biome"}],
          "#c:is_badlands", "lakes"),
         ("sulfur_deep", sulfur_lake, cave(8, -56, -12, 32)[:-1] + [
             {"type": "minecraft:surface_relative_threshold_filter", "heightmap": "OCEAN_FLOOR_WG", "max_inclusive": -16},
             {"type": "minecraft:biome"}], "#minecraft:is_overworld", "lakes"),
-        ("quartz", disk("nightshift:quartz_vein", 3, 5, 2), surface(12), "#c:is_desert", "underground_ores"),
-        ("bauxite", disk("nightshift:bauxite_deposit", 3, 5, 2), surface(5), "#nightshift:outpost_bauxite", "underground_ores"),
-        ("helium", disk("nightshift:helium_ice", 2, 4, 2), surface(14, 180), "#c:is_mountain", "underground_ores"),
-        ("permafrost", disk("nightshift:permafrost", 3, 5, 2), surface(8), "#c:is_icy", "underground_ores"),
-        ("peat", disk("nightshift:peat_bog", 3, 5, 2), surface(7, None, "OCEAN_FLOOR_WG"), "#c:is_swamp", "underground_ores"),
-        ("mycelium_surface", disk("nightshift:mycelium_vein", 3, 5, 2), surface(4), "#c:is_mushroom", "underground_ores"),
-        ("mycelium_caves", disk("nightshift:mycelium_vein", 2, 4, 1), cave(3, -50, 40, 16, 6), "#nightshift:outpost_spore_caves", "underground_ores"),
-        ("star_stone", disk("nightshift:star_stone", 2, 3, 2), surface(10, 200), "#c:is_mountain/peak", "underground_ores"),
+        ("quartz", disk("nightshift:quartz_vein", 4, 6, 2), surface(12), "#c:is_desert", "underground_ores"),
+        ("bauxite", disk("nightshift:bauxite_deposit", 4, 6, 2), surface(5), "#nightshift:outpost_bauxite", "underground_ores"),
+        ("helium", disk("nightshift:helium_ice", 4, 6, 2), surface(14, 180), "#c:is_mountain", "underground_ores"),
+        ("permafrost", disk("nightshift:permafrost", 4, 6, 2), surface(8), "#c:is_icy", "underground_ores"),
+        ("peat", disk("nightshift:peat_bog", 4, 6, 2), surface(7, None, "OCEAN_FLOOR_WG"), "#c:is_swamp", "underground_ores"),
+        ("mycelium_surface", disk("nightshift:mycelium_vein", 4, 6, 2), surface(4), "#c:is_mushroom", "underground_ores"),
+        ("mycelium_caves", disk("nightshift:mycelium_vein", 4, 5, 1), cave(3, -50, 40, 16, 6), "#nightshift:outpost_spore_caves", "underground_ores"),
+        ("star_stone", disk("nightshift:star_stone", 4, 5, 2), surface(10, 200), "#c:is_mountain/peak", "underground_ores"),
     ]
 
 
