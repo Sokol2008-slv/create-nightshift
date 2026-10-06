@@ -439,5 +439,17 @@
 			x: 22.10d
 			y: 4.50d
 		}
+		{
+			dependencies: ["6B16D539F4FAB0E8"]
+			icon: { id: "createaddition:alternator" }
+			id: "4A02911F60C17C00"
+			optional: true
+			rewards: [{ id: "362D8E11FA467376", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1E5E9B1834963D66", type: "checkmark" }]
+			x: 23.60d
+			y: 3.00d
+		}
 	]
 }

@@ -105,7 +105,14 @@ ServerEvents.tick(event => {
 		var s2 = nsGetState()
 		s2.call = { day: now.day, wave: w, mut: nsCallTwistFor(now.day, w), status: 'offer' }
 		nsSaveState(s2)
-		nsTitleAll('Ночной вызов', { color: 'gold', bold: true, subtitle: 'Алтарь зовёт: ' + nsDifficultyName(w) + ' за премию', subColor: 'yellow' })
+		// 06.10 (финальный аудит): без титра на весь экран каждую ночь — строка над хотбаром и звук, кнопки — в чате
+		try {
+			var ps = NSG.nsServer.getPlayers()
+			for (var i = 0; i < ps.length; i++) {
+				ps[i].setStatusMessage(Text.gold('Ночной вызов: ').append(Text.yellow(nsDifficultyName(w) + ' за премию')).append(Text.gray(' — кнопки в чате')))
+				NSG.nsServer.runCommandSilent('execute as ' + ps[i].getUsername() + ' at @s run playsound minecraft:block.bell.use ambient @s ~ ~ ~ 0.6 0.8')
+			}
+		} catch (e2) {}
 		nsTellAll(Text.gold('[Ночная смена] ').append(Text.white(nsCallText(s2.call) + ' ')).append(nsCallButtons()))
 		console.info('[nightshift] ночной вызов: волна ' + w + ', условие ' + s2.call.mut)
 	} catch (e) {

@@ -152,7 +152,7 @@ function nsStartChallenge(ctx, d, check) {
 	if (spc && spc.kind === 'siege') {
 		var sa = typeof nsSiegeAltarFor === 'function' ? nsSiegeAltarFor(st) : null
 		if (!sa) {
-			nsAdminReply(ctx, '«' + spc.name + '» — орда идёт на форпост, а в сети форпостов пусто: поставьте механический экструдер на месторождение (глава «Сеть форпостов»)')
+			nsAdminReply(ctx, '«' + spc.name + '» — орда идёт на форпост, а в сети форпостов пусто: поставьте механический экструдер на месторождение (глава «Фаза 4 · Форпосты»)')
 			return 0
 		}
 		altar = sa

@@ -104,8 +104,8 @@ function vahtaArrive(server, player) {
 	server.runCommandSilent('title ' + name + ' title ' + JSON.stringify({ text: 'Вахта', color: 'gold', bold: true }))
 	server.runCommandSilent('playsound minecraft:block.bell.use master ' + name + ' ~ ~ ~ 1 0.6')
 	player.tell(Text.gold('[Вахта] ').append(Text.gray('Точка высадки. Связи с базой нет, верстак не отвечает — здешний мир признаёт только машины.')))
-	if (name === VAHTA_KIT_OWNER) player.tell(Text.gold('[Вахта] ').append(Text.gray('В ящике — первые механизмы. Собери сборочный пост из крафтеров, остальное расскажет инструктаж и книга квестов (глава «Вахта»).')))
-	else player.tell(Text.gold('[Вахта] ').append(Text.gray('Ящик с механизмами один на смену — он у бригадира ' + VAHTA_KIT_OWNER + '. У тебя ключ, очки и инструктаж; остальное — книга квестов (глава «Вахта»).')))
+	if (name === VAHTA_KIT_OWNER) player.tell(Text.gold('[Вахта] ').append(Text.gray('В ящике — первые механизмы. Собери сборочный пост из крафтеров, остальное расскажет инструктаж и книга квестов (глава «Фаза 0 · Прибытие»).')))
+	else player.tell(Text.gold('[Вахта] ').append(Text.gray('Ящик с механизмами один на смену — он у бригадира ' + VAHTA_KIT_OWNER + '. У тебя ключ, очки и инструктаж; остальное — книга квестов (глава «Фаза 0 · Прибытие»).')))
 	if (vahtaGiveKit(server, name)) player.persistentData.putBoolean(VAHTA_ARRIVE_FLAG, true)
 	else player.tell(Text.red('[Вахта] Ящик не выдался — сообщи админу (подробности в логе сервера).'))
 }
