@@ -1250,7 +1250,7 @@ hash = "5fb431a08f3228c57a3fb5252616e07af207b0a5b7712763af91520b3a5f4a9e"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_dispatch_jei.js"
-hash = "a58cb9949852b3c1c7f3f65ddd046300679d9a56199211135320578741e4389d"
+hash = "e25ffab70be32ec6458a3f12d03ee721711056b88b593f07ea777054c7071282"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_drill_jei.js"
@@ -2419,6 +2419,10 @@ hash = "2c91d1896ee596f476e1354c42729f7ad41551c2987ce14ee2b828edf0317456"
 [[files]]
 file = "kubejs/server_scripts/shift/30_salute.js"
 hash = "3b4cd5ba0345bcd44ea390ef352b2eaef7242b07ee01892bff67a681490e5f9f"
+
+[[files]]
+file = "kubejs/server_scripts/shift/35_electrify.js"
+hash = "68df423898beacb9ac5a630eced9ff319c21eca9bbbf5a9968b985e3cb415c04"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
