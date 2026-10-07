@@ -1,4 +1,5 @@
 {
+  "iris.shaders.debug.restartNoDebug": "Отладка шейдеров включена; отладка OpenGL в NeoForge не поддерживается.",
   "iris.load.failure.shader": "Шейдерпак не загрузился! Сообщи об ошибке автору шейдеров. ",
   "iris.load.failure.generic": "Iris не смог загрузить шейдер; сообщи об этом разработчикам Iris. ",
   "iris.keybind.wireframe": "Каркас (только одиночная игра)",
