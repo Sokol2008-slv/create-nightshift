@@ -195,6 +195,9 @@ function nsCtComplete(st, c) {
 	c.doneDay = nsCtDay()
 	nsSaveState(st)
 	nsTellAll(Text.gold('[Ночная смена] Контракт бригадира выполнен: ').append(Text.white(c.text)))
+	try {
+		if (typeof nsBoardOnContract === 'function') nsBoardOnContract() // доска почёта: всем в сети (shift/45_board.js)
+	} catch (e) {}
 	NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete master @a')
 	var players = NSG.nsServer.getPlayers()
 	for (var i = 0; i < players.length; i++) {

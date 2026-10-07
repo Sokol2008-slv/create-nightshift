@@ -365,6 +365,7 @@ BlockEvents.broken('nightshift:fallen_star', event => {
 		var p = event.getEntity()
 		if (!p || !p.isPlayer()) return
 		var name = nsSkyName(p)
+		if (typeof nsBoardAdd === 'function') nsBoardAdd(name, 'shards', n) // доска почёта (shift/45_board.js)
 		var w = NS_NSKY_WISHES[Math.floor(Math.random() * NS_NSKY_WISHES.length)]
 		NSG.nsServer.runCommandSilent('sanity add ' + name + ' ' + NS_NSKY.sanityStar)
 		NSG.nsServer.runCommandSilent('effect give ' + name + ' ' + w.eff + ' ' + w.sec + ' ' + w.lvl)

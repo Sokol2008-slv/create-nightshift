@@ -358,6 +358,7 @@ function nsRaceFinish(p, name, run, t, time) {
 	var paid = 0
 	if (record && prev) {
 		nsFunStage(name, 'ns_fun_race_rec')
+		if (typeof nsBoardAdd === 'function') nsBoardAdd(name, 'race', 1) // доска почёта (shift/45_board.js)
 		var gain = prev.t - time
 		var day = nsFunDay()
 		if (t.paidDay !== day) {

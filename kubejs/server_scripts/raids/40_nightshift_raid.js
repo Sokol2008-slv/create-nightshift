@@ -1125,6 +1125,10 @@ function nsRaidVictory(state) {
 		nsTry('ночной вызов', function () {
 			if (raid.call && typeof nsCallDone === 'function') nsCallDone(true)
 		})
+		// доска почёта (shift/45_board.js): победа — тем, кто получил добычу волны
+		nsTry('доска почёта', function () {
+			if (typeof nsBoardOnVictory === 'function') nsBoardOnVictory(d, raid, rewarded, first)
+		})
 	} else {
 		console.info('[nightshift] малый набег закончился, до алтаря дошли: ' + reached)
 		if (reached > 0) {
