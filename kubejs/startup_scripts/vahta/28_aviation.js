@@ -10,5 +10,7 @@ StartupEvents.registry('item', event => {
 	event.create('nightshift:pilot_license_1').texture('nightshift:item/pilot_license_1').maxStackSize(1).rarity('epic').glow(true)
 	event.create('nightshift:aerial_camera').texture('nightshift:item/aerial_camera').maxStackSize(1).rarity('rare')
 	event.create('nightshift:aerial_film').texture('nightshift:item/aerial_film')
+	// сброс снабжения (07.10, aviation/40_airdrop.js): только награда — удостоверения, контракты, сам сброс
+	event.create('nightshift:supply_flare').texture('nightshift:item/supply_flare').maxStackSize(16).rarity('rare')
 	event.create('nightshift:incomplete_avionics', 'create:sequenced_assembly').texture('nightshift:item/incomplete_avionics').maxStackSize(1)
 })

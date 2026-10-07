@@ -32406,6 +32406,10 @@
    "emc": 0
   },
   {
+   "id": "nightshift:supply_flare",
+   "emc": 0
+  },
+  {
    "id": "nightshift:prism_lens",
    "emc": 0
   },
