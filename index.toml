@@ -1265,6 +1265,10 @@ file = "kubejs/assets/tfmg/lang/ru_ru.json"
 hash = "c14b3e4230f159a122ce9a6bde05d423341abcb06a8aaf214fa24c6466c27692"
 
 [[files]]
+file = "kubejs/assets/travelerstitles/lang/ru_ru.json"
+hash = "1104d6a30d952d20c987ea18c1ed891d5fbca96aae128c923e60525e59669039"
+
+[[files]]
 file = "kubejs/assets/xaerominimap/lang/ru_ru.json"
 hash = "4a588283c84fc1c6cf372deb3595a1e7eca659a306949e65da33fb29d36f8b8b"
 
