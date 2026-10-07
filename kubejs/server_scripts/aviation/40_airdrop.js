@@ -4,9 +4,10 @@
 //
 // «Сигнальная ракета снабжения» (nightshift:supply_flare) — награда, не крафтится: удостоверения аэроклуба (III — 1,
 // II — 2, I — 3; 20_aeroclub.js), контракты смены с 15-й волны (14_contracts.js), редко — в самом сбросе.
-// ПКМ под открытым небом → над точкой столб красного дыма; через 30 с над ней пролетает грузовой дирижабль Immersive
-// Aircraft (только картинка: без гравитации, неуязвим, двигаем телепортом) и сбрасывает ящик на парашюте (две
-// block_display), ящик садится бочкой с добычей nightshift:airdrop/supply, вызвавшему — координаты и метка Xaero.
+// ПКМ под открытым небом → над точкой столб красного дыма; через 30 с над ней пролетает грузовой самолёт и сбрасывает
+// ящик на парашюте, ящик садится бочкой с добычей nightshift:airdrop/supply, вызвавшему — координаты и метка Xaero.
+// Самолёт — 10 block_display (фюзеляж, крылья, моторы, хвост, полоса изумруд/бордо): сущность Immersive Aircraft
+// без пилота клиент не рисует (проверено 07.10), а витрины видны всегда и с teleport_duration летят плавно.
 //
 // Сущности сброса помечены ns_airdrop + поколением запуска сервера (NS_AD_GEN): раз в 5 с всё с ns_airdrop без
 // текущего поколения убирается — дирижабль, застрявший в выгруженном чанке или переживший перезапуск, не останется
@@ -21,7 +22,6 @@ var NS_AD = {
 	speed: 0.9, // блоков за тик
 	height: 38, // над землёй
 	fall: 0.16, // скорость спуска ящика, блоков за тик
-	ship: 'immersive_aircraft:cargo_airship',
 	loot: 'nightshift:airdrop/supply',
 }
 var NS_AD_KEY = 'ns_airdrop_json'
@@ -89,6 +89,46 @@ function nsAdStart(p, free) {
 	return job
 }
 
+// Самолёт из витрин: [вдоль курса, вверх, вбок] — центр детали и размеры, блок. Курс — ось x модели.
+var NS_AD_PLANE = [
+	[0, 0, 0, 7, 1.4, 1.4, 'minecraft:light_gray_concrete'], // фюзеляж
+	[0, 0.25, 0, 7.04, 0.3, 1.44, 'minecraft:green_concrete'], // полоса — изумруд смены
+	[4, 0, 0, 1, 1.1, 1.1, 'minecraft:gray_concrete'], // нос
+	[3, 0.65, 0, 1.4, 0.4, 1.0, 'minecraft:light_blue_stained_glass'], // кабина
+	[0.5, 0.1, 0, 1.6, 0.25, 12, 'minecraft:white_concrete'], // крылья
+	[0.9, -0.45, 3, 1.7, 0.7, 0.7, 'minecraft:gray_concrete'], // мотор правый
+	[0.9, -0.45, -3, 1.7, 0.7, 0.7, 'minecraft:gray_concrete'], // мотор левый
+	[-3.3, 0.35, 0, 1, 0.2, 4.2, 'minecraft:white_concrete'], // стабилизатор
+	[-3.3, 1.2, 0, 1.1, 1.7, 0.25, 'minecraft:red_concrete'], // киль — бордо
+	[-1, -0.75, 0, 2, 0.15, 1, 'minecraft:gray_concrete'], // грузовой люк
+]
+
+function nsAdPlane(job, tag) {
+	var a = Math.atan2(-job.dz, job.dx) // поворот вокруг Y: ось x модели → курс
+	var ca = Math.cos(a),
+		sa = Math.sin(a)
+	var qy = Math.sin(a / 2),
+		qw = Math.cos(a / 2)
+	for (var i = 0; i < NS_AD_PLANE.length; i++) {
+		var P = NS_AD_PLANE[i]
+		// центр детали в мире: вдоль курса (dx, dz), вбок (sa, ca) — куда уходит ось z модели после поворота
+		var wx = job.sx + P[0] * job.dx + P[2] * sa,
+			wy = job.sy + P[1],
+			wz = job.sz + P[0] * job.dz + P[2] * ca
+		// сдвиг, чтобы блок крутился вокруг своего центра: -R·(размер/2)
+		var hx = P[3] / 2,
+			hy = P[4] / 2,
+			hz = P[5] / 2
+		var tx = -(hx * ca + hz * sa),
+			ty = -hy,
+			tz = -(-hx * sa + hz * ca)
+		nsAdRun(job.dim, 'summon minecraft:block_display ' + wx.toFixed(3) + ' ' + wy.toFixed(3) + ' ' + wz.toFixed(3) +
+			' {Tags:["ns_airdrop","' + NS_AD_GEN + '","' + tag + '"],teleport_duration:2,view_range:6f,block_state:{Name:"' + P[6] + '"},' +
+			'transformation:{left_rotation:[0f,' + qy.toFixed(5) + 'f,0f,' + qw.toFixed(5) + 'f],right_rotation:[0f,0f,0f,1f],' +
+			'translation:[' + tx.toFixed(3) + 'f,' + ty.toFixed(3) + 'f,' + tz.toFixed(3) + 'f],scale:[' + P[3] + 'f,' + P[4] + 'f,' + P[5] + 'f]}}')
+	}
+}
+
 function nsAdTick(job) {
 	var level = nsAdSrv().getLevel(job.dim)
 	if (!level) return true
@@ -98,14 +138,14 @@ function nsAdTick(job) {
 	if (job.phase === 'wait') {
 		if (job.t % 10 === 0) {
 			nsAdRun(job.dim, 'particle minecraft:campfire_signal_smoke ' + (job.x + 0.5) + ' ' + (job.gy + 1) + ' ' + (job.z + 0.5) + ' 0.15 0.5 0.15 0.02 4 force')
-			nsAdRun(job.dim, 'particle minecraft:dust{color:[1.0,0.15,0.1],scale:2.5} ' + (job.x + 0.5) + ' ' + (job.gy + 3) + ' ' + (job.z + 0.5) + ' 0.2 2.5 0.2 0 12 force')
+			nsAdRun(job.dim, 'particle minecraft:dust{color:[1.0,0.15,0.1],scale:1.2} ' + (job.x + 0.5) + ' ' + (job.gy + 4) + ' ' + (job.z + 0.5) + ' 0.15 3 0.15 0 10 force')
 		}
 		if (job.t >= NS_AD.delay) {
 			job.phase = 'fly'
 			job.t = 0
 			job.sy = job.gy + NS_AD.height
 			nsAdGround(level, Math.floor(job.sx), Math.floor(job.sz))
-			nsAdRun(job.dim, 'summon ' + NS_AD.ship + ' ' + job.sx + ' ' + job.sy + ' ' + job.sz + ' {Tags:["ns_airdrop","' + NS_AD_GEN + '","' + tagS + '"],NoGravity:1b,Invulnerable:1b,Silent:1b,Rotation:[' + job.yaw + 'f,0f]}')
+			nsAdPlane(job, tagS)
 			nsAdSave()
 		}
 		return false
@@ -114,8 +154,9 @@ function nsAdTick(job) {
 		var d = job.t * NS_AD.speed
 		var px = job.sx + job.dx * d,
 			pz = job.sz + job.dz * d
-		nsAdRun(job.dim, 'tp @e[tag=' + tagS + ',limit=1] ' + px.toFixed(2) + ' ' + job.sy + ' ' + pz.toFixed(2) + ' ' + job.yaw + ' 0')
+		nsAdRun(job.dim, 'execute as @e[tag=' + tagS + '] at @s run tp @s ~' + (job.dx * NS_AD.speed).toFixed(3) + ' ~ ~' + (job.dz * NS_AD.speed).toFixed(3))
 		if (job.t % 20 === 0) nsAdRun(job.dim, 'playsound minecraft:item.elytra.flying ambient @a ' + px.toFixed(1) + ' ' + job.sy + ' ' + pz.toFixed(1) + ' 3 0.6')
+		if (job.t % 3 === 0) nsAdRun(job.dim, 'particle minecraft:campfire_cosy_smoke ' + (px - job.dx * 4).toFixed(1) + ' ' + (job.sy + 0.3) + ' ' + (pz - job.dz * 4).toFixed(1) + ' 0.2 0.2 0.2 0.01 2 force')
 		// над точкой — сброс
 		if (job.phase === 'fly' && d >= NS_AD.arm) {
 			job.phase = 'drop'

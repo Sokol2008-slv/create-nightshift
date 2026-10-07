@@ -2786,7 +2786,7 @@ hash = "cc33990e6cf812898162ffc71f02db508d6b2d4afa8c4d8cd8c00a6dacecba38"
 
 [[files]]
 file = "kubejs/server_scripts/aviation/40_airdrop.js"
-hash = "6a5b7b4edf5590d492b71fb15977775a0ca17833d71745199a804a23c37a26ab"
+hash = "51b90192960f3892834c9065c151c28a467f9c9dc31f109ee0934892d7e3447e"
 
 [[files]]
 file = "kubejs/server_scripts/economy/10_probes.js"
