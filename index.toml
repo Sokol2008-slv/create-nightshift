@@ -1617,6 +1617,10 @@ file = "kubejs/assets/ntgl/lang/ru_ru.json"
 hash = "059b4c337550cfb2d32cf06c4ad79ce42265b6f9f5162559acc01990ee6ee385"
 
 [[files]]
+file = "kubejs/assets/offroad/lang/ru_ru.json"
+hash = "13d0996ab03a656665ea1f2856855e647ecc982669a7ce395d542303d20707e8"
+
+[[files]]
 file = "kubejs/assets/particlerain/lang/ru_ru.json"
 hash = "9be774f1257dcd715de201cb7716044e22f67fd93b25f9ca531180d467e62189"
 
