@@ -633,6 +633,10 @@ file = "kubejs/assets/modulargolems/lang/ru_ru.json"
 hash = "2885bad9c03fae8c59547c49dee373787d4929a8313fa4fa907ee6f7df69a297"
 
 [[files]]
+file = "kubejs/assets/moreculling/lang/ru_ru.json"
+hash = "519621ee11dbec4c93f0402b57ee58b8220d4ce23eb13053e3ca4062665e3d90"
+
+[[files]]
 file = "kubejs/assets/nightshift/font/scare.json"
 hash = "92b9fba61b4ddef7acc3b11b91b5533abcd5e624d11d95dcfc97a07023508e85"
 
