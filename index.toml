@@ -289,6 +289,10 @@ file = "kubejs/assets/dmr/lang/ru_ru.json"
 hash = "bcb6c6ece9efcd27d4439ca9f1342aa62548ec3b889b775c268358f7e3fe0f1a"
 
 [[files]]
+file = "kubejs/assets/dndecor/lang/ru_ru.json"
+hash = "ecfd166ee2a2d9d400a54ef94cf3e951a55454753adc2a5be93f5df4bd8ef574"
+
+[[files]]
 file = "kubejs/assets/dndesires/lang/ru_ru.json"
 hash = "3f1eed23d2ce8c5b5c02f862590613db32210c5503da5008b45485aa247b39b3"
 
