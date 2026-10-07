@@ -1,0 +1,5 @@
+{
+  "createultimine.server_settings": "Серверные настройки Create Ultimine",
+  "createultimine.server_settings.features.manual_application": "Ручное применение: ПКМ — применить предмет сразу к нескольким блокам",
+  "createultimine.server_settings.features.right_click_wrench": "Гаечный ключ: ПКМ — настроить сразу несколько блоков"
+}
