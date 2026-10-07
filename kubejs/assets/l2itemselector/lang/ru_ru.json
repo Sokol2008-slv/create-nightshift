@@ -7,5 +7,17 @@
   "key.l2mods.shift": "Удерживать выбор",
   "key.l2mods.swap": "Поменять",
   "key.l2mods.up": "Вверх",
-  "key.l2mods.wheel": "Колесо выбора"
+  "l2itemselector.configuration.infoAlpha": "Прозрачность фона подсказки",
+  "l2itemselector.configuration.infoAlpha.tooltip": "Прозрачность фона текстовой подсказки. 1 — непрозрачный.\nДиапазон: 0.0 ~ 1.0",
+  "l2itemselector.configuration.infoAnchor": "Выравнивание подсказки по вертикали",
+  "l2itemselector.configuration.infoAnchor.tooltip": "Допустимо: TOP, CENTER, BOTTOM",
+  "l2itemselector.configuration.infoMaxWidth": "Макс. ширина подсказки",
+  "l2itemselector.configuration.infoMaxWidth.tooltip": "Макс. ширина подсказки. 0.5 — половина экрана. По умолчанию 0.3\nДиапазон: 0.0 ~ 0.5",
+  "l2itemselector.configuration.section.l2configs.l2itemselector.client.toml": "Клиентские настройки L2ItemSelector",
+  "l2itemselector.configuration.section.l2configs.l2itemselector.client.toml.title": "Клиентские настройки L2ItemSelector",
+  "l2itemselector.configuration.selectionDisplayRequireShift": "Показывать выбор только при [Удерживать выбор]",
+  "l2itemselector.configuration.selectionScrollRequireShift": "Листать выбор только при [Удерживать выбор]",
+  "l2itemselector.configuration.title": "Настройки L2ItemSelector",
+  "key.l2mods.wheel": "Колесо выбора",
+  "l2itemselector.configuration.useFastSwitchWheel": "Другое колесо: клик клавиши колеса переключает предмет"
 }
