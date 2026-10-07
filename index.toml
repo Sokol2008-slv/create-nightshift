@@ -1445,6 +1445,10 @@ file = "kubejs/assets/ponder/lang/ru_ru.json"
 hash = "c9a0c6b447265d4fc8e66b4de6825bcc762d97363fd32eba810850575d19899a"
 
 [[files]]
+file = "kubejs/assets/projectexpansion/lang/ru_ru.json"
+hash = "bb8be680bb16e00eaa293784970f0e22ad80b1c4e4e9efcc2d39179d67c39fd6"
+
+[[files]]
 file = "kubejs/assets/railways/lang/ru_ru.json"
 hash = "8cb15453931fb6e339825aa1024d15aa89da21ddb5f2898eb39924db5f81d4e8"
 
