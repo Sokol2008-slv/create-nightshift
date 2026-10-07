@@ -1,0 +1,17 @@
+{
+  "sodium.option_impact.low": "Низкое",
+  "sodium.option_impact.medium": "Среднее",
+  "sodium.option_impact.high": "Высокое",
+  "sodium.option_impact.extreme": "Экстремальное",
+  "sodium.option_impact.varies": "Зависит",
+  "sodium.console.game_restart": "Чтобы применить некоторые настройки графики, нужно перезапустить игру!",
+  "sodium.console.broken_nvidia_driver": "Драйверы видеокарты NVIDIA устарели!\n  * С Sodium это вызовет сильные просадки и вылеты.\n  * Обнови драйверы до последней версии (536.23 или новее).",
+  "sodium.console.core_shaders_error": "Эти ресурспаки несовместимы с Sodium:",
+  "sodium.console.core_shaders_warn": "Эти ресурспаки могут быть несовместимы с Sodium:",
+  "sodium.console.core_shaders_info": "Подробности — в журнале игры.",
+  "sodium.console.config_not_loaded": "Файл настроек Sodium повреждён или не читается. Часть настроек временно сброшена. Открой «Настройки графики», чтобы это исправить.",
+  "sodium.console.corrupt_config.console.config_file_was_reset": "Файл настроек сброшен к проверенным значениям.",
+  "sodium.console.corrupt_config.console.title": "Sodium не смог загрузить файл настроек",
+  "sodium.console.corrupt_config.message.title": "Не удалось загрузить файл настроек",
+  "sodium.console.corrupt_config.message.body": "При загрузке файла настроек произошла ошибка.\nТак бывает, если файл повреждён на диске\nили его правили вручную.\n\nЕсли продолжить, настройки сбросятся к проверенным\nзначениям, и все изменения в «Настройках графики»\nпотеряются.\n\nПодробности об ошибке — в журнале игры."
+}

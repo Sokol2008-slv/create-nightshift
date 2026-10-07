@@ -1377,6 +1377,10 @@ file = "kubejs/assets/sodium-extra/lang/ru_ru.json"
 hash = "c3bdc29d93c45f8d4176369c76414469502fd3fe37af54ed6a66d3a976ac2a9e"
 
 [[files]]
+file = "kubejs/assets/sodium/lang/ru_ru.json"
+hash = "73e3b626c8da6a906d34e504d6909607c69db29ac30fcc486b05ee55845ca7ec"
+
+[[files]]
 file = "kubejs/assets/someassemblyrequired/lang/ru_ru.json"
 hash = "ce7e9a3521dbc6e2acc0a53b7ad9e33824023053d04abbf71d6c19b7a9c8e1a6"
 
