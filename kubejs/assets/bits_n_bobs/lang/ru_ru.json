@@ -1,0 +1,13 @@
+{
+  "block.bits_n_bobs.industrial_truss": "Металлическая ферма",
+  "block.bits_n_bobs.industrial_truss.tooltip.summary": "Ей можно _обшить трубы и валы_.",
+  "block.bits_n_bobs.industrial_truss_pipe": "Труба в металлической ферме",
+  "block.bits_n_bobs.industrial_truss_shaft": "Вал в промышленной ферме",
+  "create.gui.assembly.exception.bits_n_bobs.no_chain_to_attach_to": "Рядом нет цепи шестерён, к которой можно прикрепиться!",
+  "message.bits_n_bobs.cogwheel_chain.chain_addition_aborted.invalid_cogwheel_type.cogwheel_chain_type.bits_n_bobs.belt": "Ременную передачу можно ставить только на шестерню с фланцем!",
+  "message.bits_n_bobs.cogwheel_chain.chain_addition_aborted.invalid_cogwheel_type.cogwheel_chain_type.bits_n_bobs.chain": "Цепную передачу нельзя ставить на эту шестерню!",
+  "message.bits_n_bobs.cogwheel_chain.chain_addition_aborted.invalid_cogwheel_type.cogwheel_chain_type.bits_n_bobs.rope": "Канатную передачу можно ставить только на шестерню с фланцем!",
+  "message.bits_n_bobs.cogwheel_chain.chain_addition_aborted.not_enough_material": "Не хватает материалов, чтобы замкнуть цепь!",
+  "message.bits_n_bobs.cogwheel_chain.chain_addition_aborted.out_of_node_count": "В цепи шестерён слишком много узлов!",
+  "tooltip.bits_n_bobs.suppressed_cogwheel": "Эта деревянная шестерня скрыта настройками Bits 'n' Bobs"
+}

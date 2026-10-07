@@ -149,6 +149,10 @@ file = "kubejs/assets/azimuth/lang/ru_ru.json"
 hash = "3928485eada70c990598b94bf983f8bf1d1f2ddd3543e5b131250afca3e7c504"
 
 [[files]]
+file = "kubejs/assets/bits_n_bobs/lang/ru_ru.json"
+hash = "8b975d3cda0738fae531e3f71072ea3272a33a4abb003899cb70bc6876c8dee7"
+
+[[files]]
 file = "kubejs/assets/cave_dweller/lang/ru_ru.json"
 hash = "6035af34313b340b3fea54bc32af26d5a2d63a1c8c5bc3b02f99a208f1c5278f"
 
