@@ -5,6 +5,7 @@
   "ftbteams.kicked_no_lives": "Игрок %s исключён: он погиб, а жизней у группы не осталось!",
   "ftbteams.disbanded_no_lives": "Ваша группа распущена: закончились жизни и игроки!",
   "ftbteams.party_full": "Нельзя добавить игроков — группа заполнена! Максимум участников: %s",
+  "ftbteams.party_api_only": "В этом модпаке нельзя создавать команды вручную!\n%s",
   "ftbteams.gui.toggle_chat": "Нажмите, чтобы переключить",
   "ftbteams.message.limited_lives": "У вашей группы осталось жизней: %s / %s!",
   "ftbteams.message.limited_lives.warn": "Если погибнете — вас исключат из группы!",
