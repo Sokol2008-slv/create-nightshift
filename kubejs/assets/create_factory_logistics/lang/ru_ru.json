@@ -5,5 +5,9 @@
   "create_factory_logistics.ponder.ae_interface.text_4": "Поставь сверху квакопорт, чтобы отправлять и получать коробки",
   "create_factory_logistics.ponder.ae_interface.text_5": "Сеть может заказывать предметы, хранящиеся в AE",
   "create_factory_logistics.ponder.ae_interface.text_6": "Коробки, доставленные сюда, распаковываются в ME-сеть",
-  "item.create_factory_logistics.composite_package": "Составная коробка"
+  "entity.create_factory_logistics.composite_package": "Составная коробка",
+  "item.create_factory_logistics.composite_package": "Составная коробка",
+  "create.item_attributes.is_fluid.inverted": "не %1$s",
+  "create.item_attributes.is_fluid_no_nbt": "%1$s (без NBT)",
+  "create.item_attributes.is_fluid_no_nbt.inverted": "не %1$s (без NBT)"
 }
