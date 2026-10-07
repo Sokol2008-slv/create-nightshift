@@ -1,0 +1,19 @@
+{
+  "config.darkness.title": "Настройки True Darkness",
+  "config.darkness.only_affect_block_light": "Только свет от блоков",
+  "config.darkness.ignore_moon_phase": "Не учитывать фазу луны",
+  "config.darkness.gradual_moon_phase_darkness": "Плавная зависимость от фазы луны",
+  "config.darkness.dark_overworld": "Тёмный Верхний мир",
+  "config.darkness.dark_default": "Темнота по умолчанию",
+  "config.darkness.dark_nether": "Тёмный Незер",
+  "config.darkness.dark_nether_fog": "Тёмный туман Незера",
+  "config.darkness.dark_end": "Тёмный Энд",
+  "config.darkness.dark_end_fog": "Тёмный туман Энда",
+  "config.darkness.dark_skyless": "Тёмные измерения без неба",
+  "config.darkness.invert_biome_darkness": "Обратить темноту биомов",
+  "config.darkness.increase_overworld_brightness": "Ярче Верхний мир",
+  "config.darkness.increase_nether_brightness": "Ярче Незер",
+  "config.darkness.increase_end_brightness": "Ярче Энд",
+  "config.darkness.increase_skyless_brightness": "Ярче измерения без неба",
+  "config.darkness.increase_default_brightness": "Ярче по умолчанию"
+}
