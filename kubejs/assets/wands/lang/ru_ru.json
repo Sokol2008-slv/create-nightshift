@@ -27,6 +27,7 @@
   "text.cloth-config.enum.hudmode.off": "Выкл.",
   "text.cloth-config.enum.hudmode.minimal": "Минимум",
   "text.cloth-config.enum.hudmode.full": "Полный",
+  "option.wands.wand_mode_display_x_pos_tt": "Положение панели информации палочки по горизонтали",
   "screen.wands.action_prefix": "Действие",
   "screen.wands.state_mode_prefix": "Блок",
   "screen.wands.state_mode.clone": "Копия",
