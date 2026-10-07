@@ -1,0 +1,8 @@
+{
+  "particlerain.particleStyle": "Вид частиц",
+  "particlerain.ParticleStyle.CUSTOM": "Настраиваемый",
+  "particlerain.ParticleStyle.BLOCK_MODEL": "Модель блока",
+  "particlerain.blockId": "Модель блока",
+  "particlerain.ParticleStyle.REGISTERED": "Из ванили или других модов",
+  "particlerain.registeredParticleId": "Какие частицы"
+}
