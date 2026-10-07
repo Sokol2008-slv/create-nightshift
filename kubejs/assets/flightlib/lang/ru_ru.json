@@ -1,0 +1,13 @@
+{
+  "message.flightlib.control.toggle_active": "Двигатель джетпака: %s",
+  "message.flightlib.control.toggle_hover": "Режим зависания джетпака: %s",
+  "message.flightlib.control.on": "вкл.",
+  "message.flightlib.control.off": "выкл.",
+  "overlay.flightlib.control.toggle_hover": "Зависание",
+  "overlay.flightlib.control.toggle_active": "Двигатель",
+  "key.categories.movement.jetpack": "Джетпак",
+  "key.jetpack.toggle_hover.description": "Режим зависания: вкл/выкл",
+  "key.jetpack.toggle_active.description": "Двигатель джетпака: вкл/выкл",
+  "key.jetpack.activate_elytra.description": "Раскрыть элитры",
+  "flightlib.subtitle.whoosh": "Джетпак гудит"
+}

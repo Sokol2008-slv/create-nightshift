@@ -257,6 +257,10 @@ file = "kubejs/assets/fastbench/lang/ru_ru.json"
 hash = "45bc4b72768f5a6a4b18419e1830d9068e4a0a843ae660ffe560900587bdf773"
 
 [[files]]
+file = "kubejs/assets/flightlib/lang/ru_ru.json"
+hash = "c338348eeaafb74f9f38630a8fb09178d377fa421bc94cc1c80bd5ab6da3fdef"
+
+[[files]]
 file = "kubejs/assets/ftblibrary/lang/ru_ru.json"
 hash = "b81d3f41dbff796707f11c4d77740b561726588ae2d60dce66f79a70191fd7b5"
 
