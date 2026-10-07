@@ -1197,6 +1197,14 @@ file = "kubejs/assets/pingwheel/lang/ru_ru.json"
 hash = "04b67d6b7f0497e994bf458cd7b03f3e470eacb8bc731253b9d3c11e5a9b630c"
 
 [[files]]
+file = "kubejs/assets/rechiseled/lang/ru_ru.json"
+hash = "e5b1a109d47835ecffe1e435b8a30cd867bde2525506bc451ad5c0abdc8d19ab"
+
+[[files]]
+file = "kubejs/assets/rechiseledcreate/lang/ru_ru.json"
+hash = "052a9f0c40da15f880cf735c79066ceb04696154e920d3011f1d7e752b2509b6"
+
+[[files]]
 file = "kubejs/assets/sanity_renewed/lang/ru_ru.json"
 hash = "e13884cc0dfa04b3cf9fd015ab2be810cc84569677f7bad437990001416380a1"
 
