@@ -153,6 +153,10 @@ file = "kubejs/assets/bits_n_bobs/lang/ru_ru.json"
 hash = "8b975d3cda0738fae531e3f71072ea3272a33a4abb003899cb70bc6876c8dee7"
 
 [[files]]
+file = "kubejs/assets/cagedmobs/lang/ru_ru.json"
+hash = "e6e777dc74c33e55f0147dfc0099099524c5a3ca0498823c82e9e6a2fdd25e15"
+
+[[files]]
 file = "kubejs/assets/cave_dweller/lang/ru_ru.json"
 hash = "6035af34313b340b3fea54bc32af26d5a2d63a1c8c5bc3b02f99a208f1c5278f"
 
