@@ -361,6 +361,10 @@ file = "kubejs/assets/iris/lang/ru_ru.json"
 hash = "14c5ac4296b388b4f655c1a537e8b57ab6a5ebf8965b20961155febd3ad05878"
 
 [[files]]
+file = "kubejs/assets/irons_lib/lang/ru_ru.json"
+hash = "0c5f529845d3529c0c2cf03363f579e6c194c29042a9b7534276f9f4e65e9461"
+
+[[files]]
 file = "kubejs/assets/irons_patreon_lib/lang/ru_ru.json"
 hash = "c7b0c374db73667de991a9c51ee1c5fa30c43425579b98ff876f8a50161e0bfc"
 
