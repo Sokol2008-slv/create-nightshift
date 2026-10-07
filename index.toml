@@ -389,6 +389,10 @@ file = "kubejs/assets/creativecore/lang/ru_ru.json"
 hash = "c7720f4a71168c736dba690dffdd2eb1f86e5b70b0f5b22f8f1cd7c11557122b"
 
 [[files]]
+file = "kubejs/assets/cristellib/lang/ru_ru.json"
+hash = "e74acb9d091d78e2fbd7831072773371af3623c3b3db4685b613d746d875d15a"
+
+[[files]]
 file = "kubejs/assets/curios/lang/ru_ru.json"
 hash = "266945633b597784bdfe173d17ecb519f82899f8fedcb2e0e7396ff6cd6e2c1b"
 
