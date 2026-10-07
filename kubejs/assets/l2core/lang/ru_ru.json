@@ -1,0 +1,10 @@
+{
+  "l2core.configuration.addEnchantmentDescription": "Описания чар",
+  "l2core.configuration.addEnchantmentDescription.tooltip": "Допустимо: DISABLE, SHIFT_ONLY, ALWAYS",
+  "l2core.configuration.overlayZVal": "Высота надписей поверх предметов",
+  "l2core.configuration.overlayZVal.tooltip": " По умолчанию: 250\n Диапазон: -1000000 ~ 1000000",
+  "l2core.configuration.renderOverlayIcons": "Значки над существами",
+  "l2core.configuration.section.l2configs.l2core.client.toml": "Клиентские настройки L2Core",
+  "l2core.configuration.section.l2configs.l2core.client.toml.title": "Клиентские настройки L2Core",
+  "l2core.configuration.title": "Настройки L2Core"
+}

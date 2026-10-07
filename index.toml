@@ -537,6 +537,10 @@ file = "kubejs/assets/kubejs/textures/item/stabilite_ingot.png"
 hash = "65a59172db2d16e53375bac295fb646b6cfcfa6ef1d60614ebb75cf4b18a2b34"
 
 [[files]]
+file = "kubejs/assets/l2core/lang/ru_ru.json"
+hash = "8f0528263333d0de545f7f9b84d3406f9616e3de29912862e0c20aad1a222e39"
+
+[[files]]
 file = "kubejs/assets/l2damagetracker/lang/ru_ru.json"
 hash = "61ee409d280d99b12244b96396bfbf67d53899921fc8c55f90b6c340403503d3"
 
