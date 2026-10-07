@@ -137,6 +137,10 @@ file = "kubejs/assets/arphex/lang/ru_ru.json"
 hash = "e06365900f1670f79de50f9a7907ecaa71a3cae37f284884593920136fb491f0"
 
 [[files]]
+file = "kubejs/assets/artifacts/lang/ru_ru.json"
+hash = "2ce38fe9631ae0898aa4bb75afa8d4cc5e3762b399b93b901b30574511b6ea6d"
+
+[[files]]
 file = "kubejs/assets/axiomativ/lang/ru_ru.json"
 hash = "43fad6ee0157874a23c4ae67240a7ed06253ce670f68feccde5aad16afef8b2b"
 

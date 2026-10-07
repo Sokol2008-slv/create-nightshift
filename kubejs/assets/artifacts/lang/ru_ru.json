@@ -1,0 +1,11 @@
+{
+  "artifacts.key.charm_of_shrinking.toggle": "Амулет уменьшения: вкл/выкл",
+  "artifacts.key.charm_of_sinking.toggle": "Амулет погружения: вкл/выкл",
+  "artifacts.key.scarf_of_invisibility.toggle": "Шарф невидимости: вкл/выкл",
+  "artifacts.tooltip.ability.attribute_modifiers.generic.oxygen_bonus": "Дольше можно находиться под водой",
+  "artifacts.tooltip.ability.damage_absorption.chance": "Атаки в ближнем бою с шансом %s%% восполняют здоровье",
+  "artifacts.tooltip.ability.phantom_repellent": "Шипит на атакующих фантомов",
+  "artifacts.tooltip.missing_dependency": "Чтобы пользоваться этим предметом, установи Curios, Trinkets или Accessories",
+  "effect.artifacts.magnetism": "Магнетизм",
+  "tag.item.artifacts.slot.face": "Артефакты для слота лица"
+}
