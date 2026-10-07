@@ -1,0 +1,18 @@
+{
+  "block.dndesires.spud_sentry": "Картофельная турель",
+  "dndesires.keyinfo.drill_active": "Действие ручного бура",
+  "dndesires.keyinfo.saw_active": "Действие ручной пилы",
+  "dndesires.spud_sentry.filter_mode": "Режим фильтра",
+  "dndesires.spud_sentry.filter_mode.anything": "Все подряд",
+  "dndesires.spud_sentry.filter_mode.foes": "Враги",
+  "dndesires.spud_sentry.filter_mode.neutral": "Нейтральные",
+  "dndesires.spud_sentry.filter_mode.passive": "Мирные",
+  "dndesires.spud_sentry.filter_mode.players": "Игроки",
+  "dndesires.spud_sentry.target_mode": "Выбор цели",
+  "dndesires.spud_sentry.target_mode.closest": "Ближайшая",
+  "dndesires.spud_sentry.target_mode.farthest": "Самая дальняя",
+  "dndesires.spud_sentry.target_mode.least_health": "Меньше всего здоровья",
+  "dndesires.spud_sentry.target_mode.most_health": "Больше всего здоровья",
+  "dndesires.spud_sentry.target_mode.random": "Случайная",
+  "item.dndesires.handheld_drill": "Ручной бур"
+}
