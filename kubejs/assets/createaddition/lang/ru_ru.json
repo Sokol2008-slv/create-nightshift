@@ -1,4 +1,7 @@
 {
   "block.createaddition.tesla_coil": "Зарядная катушка Теслы",
-  "block.createaddition.alternator": "Генератор C&A (переменного тока)"
+  "block.createaddition.alternator": "Генератор C&A (переменного тока)",
+  "block.createaddition.electric_pump": "Электрическая помпа",
+  "block.createaddition.servo_motor": "Сервомотор",
+  "tag.fluid.c.ignites": "Горючие жидкости"
 }
