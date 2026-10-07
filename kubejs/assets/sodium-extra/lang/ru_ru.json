@@ -36,5 +36,8 @@
   "sodium-extra.option.protected_gameplay_fog.powder_snow.tooltip": "Дальность тумана в рыхлом снегу, если это разрешает локальная игра или сервер через Greenlight.\n0: как в ванилле\n1+: дальность в блоках; в ванилле около 2 блоков\nВыкл.: убрать этот туман",
   "sodium-extra.option.protected_gameplay_fog.water": "Туман под водой",
   "sodium-extra.option.protected_gameplay_fog.water.tooltip": "Дальность тумана под водой, если это разрешает локальная игра или сервер через Greenlight.\n0: как в ванилле\n1+: дальность в блоках; в ванилле зависит от биома и подводного зрения\nВыкл.: убрать этот туман",
+  "sodium-extra.overlay.coordinates_unavailable": "Координаты недоступны (включена сокращённая отладочная информация).",
+  "sodium-extra.suggestRSO.header": "Совет: установи Reese’s Sodium Options",
+  "sodium-extra.suggestRSO.message": "Вместе с Sodium Extra очень советуем установить Reese’s Sodium Options: настроек всё больше, и без него в экране графики Sodium трудно ориентироваться.",
   "sodium-extra.units.blocks": "%s бл."
 }
