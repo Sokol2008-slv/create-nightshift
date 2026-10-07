@@ -1,4 +1,10 @@
 {
+  "item.create_deep_dark.echo_upgrade_smithing_template.description_5": "§9 Слиток эха",
   "item.create_deep_dark.echo_upgrade_smithing_template.description_6": "§9 Слиток эха",
+  "item.create_deep_dark.echo_upgrade_smithing_template.description_3": "§9 Незеритовое снаряжение",
+  "item.create_deep_dark.echo_upgrade_smithing_template.description_4": "§7Ингредиенты:",
+  "item.create_deep_dark.echo_upgrade_smithing_template.description_1": "",
+  "item.create_deep_dark.echo_upgrade_smithing_template.description_2": "§7Применяется к:",
+  "item.create_deep_dark.echo_upgrade_smithing_template.description_0": "§7Улучшение эхом",
   "item.create_deep_dark.echo_upgrade_smithing_template.description_7": "§9 Слиток эха"
 }
