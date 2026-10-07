@@ -545,6 +545,10 @@ file = "kubejs/assets/l2itemselector/lang/ru_ru.json"
 hash = "74f32fc127a59aee8e84e586c068f52a4d03d15460483725b743b1c128435207"
 
 [[files]]
+file = "kubejs/assets/l2tabs/lang/ru_ru.json"
+hash = "79f1ec29c9a6c1d447fbfcc22436b27f6284f2b4d62fff7c3cafdd970388db64"
+
+[[files]]
 file = "kubejs/assets/lambdynlights/lang/ru_ru.json"
 hash = "db740acca0bc8c05807ef15bee6ed968f19eca6fb6129e9c99435be27b774c0f"
 

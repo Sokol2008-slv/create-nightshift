@@ -1,0 +1,23 @@
+{
+  "l2tabs.configuration.attributeLinePerPage": "Строк атрибутов на странице",
+  "l2tabs.configuration.attributeLinePerPage.tooltip": "Диапазон: 1 ~ 100",
+  "l2tabs.configuration.attributeSettings": "Показ атрибутов",
+  "l2tabs.configuration.attributeSettings.tooltip": "COMMON: только обычные атрибуты и атрибуты L2\nALL: все атрибуты, как в Apothic Attributes\nALL_EXCEPT_UNCHANGED: все, кроме неизменённых\nДопустимо: COMMON, ALL, ALL_EXCEPT_UNCHANGED",
+  "l2tabs.configuration.hiddenTabs": "Скрытые вкладки",
+  "l2tabs.configuration.hiddenTabs.tooltip": "Список вкладок, которые скрыть\nНапример, \"attribute\" — вкладка атрибутов\nНапример, \"curios\" — вкладка Curios\nНапример, \"pandora\" — вкладка Pandora",
+  "l2tabs.configuration.redirectInventoryTabToCuriosInventory": "Вкладка инвентаря ведёт в инвентарь Curios",
+  "l2tabs.configuration.section.l2configs.l2tabs.client.toml": "Клиентские настройки L2Tabs",
+  "l2tabs.configuration.section.l2configs.l2tabs.client.toml.title": "Клиентские настройки L2Tabs",
+  "l2tabs.configuration.showTabs": "Показывать вкладки инвентаря",
+  "l2tabs.configuration.showTabsOnlyCurio": "Вкладки только у Curios",
+  "l2tabs.configuration.showTabsOnlyCurio.tooltip": "Показывать вкладки инвентаря только на странице Curios.\nРаботает, только если включено showTabs и стоит Curios.\nДля тех, у кого вкладки конфликтуют с другими модами",
+  "l2tabs.configuration.title": "Настройки L2Tabs",
+  "menu.tabs.attribute": "Атрибуты",
+  "menu.tabs.attribute.add": "Прибавка: %s",
+  "menu.tabs.attribute.base": "Базовое значение: %s",
+  "menu.tabs.attribute.detail": "Нажми Shift — подробнее",
+  "menu.tabs.attribute.intrinsic": "Собственное значение: %s",
+  "menu.tabs.attribute.mult_all": "Множитель итога: %s",
+  "menu.tabs.attribute.mult_base": "Множитель базы: %s",
+  "menu.tabs.inventory": "Инвентарь"
+}
