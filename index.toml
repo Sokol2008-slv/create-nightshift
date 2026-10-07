@@ -205,6 +205,10 @@ file = "kubejs/assets/golemoverhaul/lang/ru_ru.json"
 hash = "560c515d9fc84af5045d632d144361bbf2a1bde43a51734feeacc2440c7d5a76"
 
 [[files]]
+file = "kubejs/assets/irons_patreon_lib/lang/ru_ru.json"
+hash = "c7b0c374db73667de991a9c51ee1c5fa30c43425579b98ff876f8a50161e0bfc"
+
+[[files]]
 file = "kubejs/assets/kubejs/lang/en_us.json"
 hash = "ce7a4e9166eec76a58de8234ded97328850976184727edcd7779dbfa49472a2c"
 
