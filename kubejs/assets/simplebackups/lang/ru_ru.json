@@ -1,0 +1,15 @@
+{
+  "simplebackups.backup_errors": "При резервном копировании ошибок: %s",
+  "simplebackups.backup_failed_delete": "Резервное копирование не удалось (незаконченный файл удаляется) — подробности в журнале",
+  "simplebackups.backup_failed_continue": "Резервное копирование оборвалось в начале, часть файлов может не попасть в копию — посмотри журнал, чтобы не потерять данные",
+  "simplebackups.not_enough_space": "Не хватает места на диске для резервной копии. Отменено!",
+  "simplebackups.configuration.section.simplebackups.common.experimental.toml": "Экспериментальные настройки",
+  "simplebackups.configuration.backupChainsToKeep": "Сколько цепочек копий хранить",
+  "simplebackups.configuration.noPlayerBackupCount": "Копий без игроков",
+  "simplebackups.configuration.noPlayerBackupTimer": "Таймер копий без игроков",
+  "simplebackups.configuration.captureLatestLog": "Сохранять журнал при копировании",
+  "simplebackups.configuration.error_handling": "Обработка ошибок",
+  "simplebackups.configuration.collectErrors": "Собирать ошибки ввода-вывода",
+  "simplebackups.configuration.deleteUnfinishedBackup": "Удалять незаконченные копии",
+  "simplebackups.configuration.onlyFavorites": "Избранные миры"
+}
