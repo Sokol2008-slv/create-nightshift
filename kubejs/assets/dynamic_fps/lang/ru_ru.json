@@ -14,6 +14,8 @@
   "config.dynamic_fps.ignore_initial_click_constant": "Всегда",
   "config.dynamic_fps.battery_critical_level": "Критический заряд",
   "config.dynamic_fps.battery_critical_level_tooltip": "Какой уровень заряда батареи считать критическим.",
+  "config.dynamic_fps.battery_indicator_debug": "Показывать на экране отладки (F3)",
+  "config.dynamic_fps.battery_indicator_debug_tooltip": "Виден ли индикатор батареи, когда открыт экран отладки.",
   "config.dynamic_fps.mock_battery_data": "Тестовые данные батареи",
   "toast.dynamic_fps.error": "Ошибка батареи Dynamic FPS",
   "toast.dynamic_fps.http_error": "Не удалось скачать библиотеку",
