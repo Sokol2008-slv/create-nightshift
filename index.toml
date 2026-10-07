@@ -565,6 +565,10 @@ file = "kubejs/assets/libipn/lang/ru_ru.json"
 hash = "3f934fa9498966db15509955785ea3199015ad3109aebdcfc7474bb7cc97d199"
 
 [[files]]
+file = "kubejs/assets/mezz_config/lang/ru_ru.json"
+hash = "6b71e3e8a25259c04dfd74cf3eacda1678e4843cad8b4279da0c449953b8a5a9"
+
+[[files]]
 file = "kubejs/assets/minecraft/lang/en_us.json"
 hash = "c57106d544580e39702afe97dc71bf10ebe3d87776e81be1f478028e4863da50"
 

@@ -1,0 +1,20 @@
+{
+  "mezz_config.config.name": "Название: %s",
+  "mezz_config.config.description": "Описание: %s",
+  "mezz_config.config.valueValues": "Допустимые значения: %s",
+  "mezz_config.config.defaultValue": "По умолчанию: %s",
+  "mezz_config.config.requiresWorldRestart": "Вступит в силу после перезахода в мир.",
+  "mezz_config.config.requiresGameRestart": "Вступит в силу после перезапуска игры.",
+  "mezz_config.config.fileWatcher": "Слежение за файлами",
+  "mezz_config.config.fileWatcher.description": "Автоматическое слежение за файлами настроек и время их перезагрузки.",
+  "mezz_config.config.fileWatcher.enabled": "Следить за файлами",
+  "mezz_config.config.fileWatcher.enabled.description": "Следить за файлами настроек и перезагружать их, когда они меняются вне игры.",
+  "mezz_config.config.fileWatcher.changeSettlingDelayMilliseconds": "Задержка после изменения",
+  "mezz_config.config.fileWatcher.changeSettlingDelayMilliseconds.description": "Сколько миллисекунд ждать после последнего изменения файлов, прежде чем перезагрузить настройки.",
+  "mezz_config.config.fileWatcher.missingDirectoryRetryIntervalMilliseconds": "Повтор для отсутствующей папки",
+  "mezz_config.config.fileWatcher.missingDirectoryRetryIntervalMilliseconds.description": "Через сколько миллисекунд снова пробовать следить за папками настроек, которых ещё нет.",
+  "mezz_config.config.logging": "Журнал",
+  "mezz_config.config.logging.description": "Дополнительный диагностический журнал MezzConfig.",
+  "mezz_config.config.logging.logUntranslatedKeys": "Писать непереведённые ключи",
+  "mezz_config.config.logging.logUntranslatedKeys.description": "Писать в журнал ключи категорий и значений, которых нет в текущем языке. В среде разработки включено по умолчанию."
+}
