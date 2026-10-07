@@ -116,6 +116,8 @@
   "configuration.projecte.common.crafting.tome": "Крафт тома знаний",
   "configuration.projecte.common.crafting.tome.tooltip": "Разрешить крафт тома знаний.",
   "configuration.projecte.common.crafting.tooltip": "Требования к отдельным рецептам ProjectE.",
+  "configuration.projecte.common.debug_logging": "Отладочный журнал",
+  "configuration.projecte.common.debug_logging.tooltip": "Писать в журнал больше отладочных подробностей.",
   "configuration.projecte.mapping.dump_to_file": "Выгрузить всё в файл",
   "configuration.projecte.mapping.dump_to_file.tooltip": "Хотите заглянуть во внутренности расчёта EMC? Включите, и все преобразования и команды setValue запишутся в config/ProjectE/mapping_dump.json",
   "configuration.projecte.mapping.log_exploits": "Логировать EMC-эксплойты",
