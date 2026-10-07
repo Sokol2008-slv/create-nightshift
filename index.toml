@@ -1585,6 +1585,10 @@ file = "kubejs/assets/struts/lang/ru_ru.json"
 hash = "8d503365ee777b922703e46e698aeb6a34f9d6d812cc90dc46093f3f8d87a752"
 
 [[files]]
+file = "kubejs/assets/supermartijn642corelib/lang/ru_ru.json"
+hash = "4391eae4639cb6cab6b79bcae1489fb971ef03c6e64318b9622008bc1e696a5b"
+
+[[files]]
 file = "kubejs/assets/tfmg/lang/ru_ru.json"
 hash = "f5393ceb5c794ecc994ad12d5424610bf1afd8396a199df6bf92c28871d9deb6"
 
