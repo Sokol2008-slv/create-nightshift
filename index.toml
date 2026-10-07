@@ -673,6 +673,10 @@ file = "kubejs/assets/minecraft/optifine/random/entity/zombie/husk3_e.png"
 hash = "328c3f23957957a4bb8ab8ace5f95a194898b38fbf615a38f7050363d33e0a5c"
 
 [[files]]
+file = "kubejs/assets/modernfix/lang/ru_ru.json"
+hash = "11e62d7d272399479fcdae17a863984070d2888a905ef969a3ee1fe40cb6842b"
+
+[[files]]
 file = "kubejs/assets/modulargolems/lang/en_us.json"
 hash = "016f4ac58fcb809d6adcb541f38d19e73b3dd51967d8518b92114e7dc1d0ee55"
 
