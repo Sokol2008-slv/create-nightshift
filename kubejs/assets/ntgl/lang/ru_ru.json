@@ -1,5 +1,23 @@
 {
+  "item.ntgl.round10mm": "Патрон 10 мм",
+  "item.ntgl.round45": "Патрон .45",
+  "item.ntgl.powdergun": "Дымноружейная винтовка",
+  "item.ntgl.round38": "Патрон .38",
+  "item.ntgl.round5mm": "Патрон 5 мм",
+  "item.ntgl.round44": "Патрон .44",
+  "item.ntgl.round50": "Патрон .50",
+  "item.ntgl.round380": "Патрон .380",
+  "item.ntgl.round556": "Патрон 5,56",
+  "ntgl.crosshair.tech": "Техно",
+  "slot.ntgl.attachment.incompatible": "Кажется, не подходит...",
   "slot.ntgl.attachment.melee": "Ближний бой",
   "info.ntgl.header.attachments": "[ ОБВЕСЫ ]",
-  "info.ntgl.none": "Нет"
+  "info.ntgl.none": "Нет",
+  "info.ntgl.shot": "Выстрел",
+  "info.ntgl.melee": "Ближний бой",
+  "info.ntgl.throw": "Бросок",
+  "info.ntgl.scope": "Прицел",
+  "info.ntgl.custom": "Свой",
+  "perk.ntgl.fire_modes": "Режимы огня: ",
+  "ntgl.chat.install_configured": "Установи %s, чтобы открыть настройки"
 }
