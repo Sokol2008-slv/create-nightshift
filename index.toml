@@ -165,6 +165,10 @@ file = "kubejs/assets/betterendisland/lang/ru_ru.json"
 hash = "f2f42c73b44895b3b54ccb2130c6ad94e1282fe81384514530631a6de28641d2"
 
 [[files]]
+file = "kubejs/assets/betterstrongholds/lang/ru_ru.json"
+hash = "7667deef55562fa891209300d5c0cc14868dff6a8c8a359c2691486e4d10af78"
+
+[[files]]
 file = "kubejs/assets/bits_n_bobs/lang/ru_ru.json"
 hash = "8b975d3cda0738fae531e3f71072ea3272a33a4abb003899cb70bc6876c8dee7"
 
