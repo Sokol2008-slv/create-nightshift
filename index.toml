@@ -233,6 +233,10 @@ file = "kubejs/assets/createaddition/lang/ru_ru.json"
 hash = "e3026c80239f9ff69563d48e202e1f38b00a9a6083dab823e23fd8b60f3e4b5e"
 
 [[files]]
+file = "kubejs/assets/createadditionallogistics/lang/ru_ru.json"
+hash = "2bffda061d51a1b895a1100e01ef62e46b557cf5956e195a4f8a2510eee83705"
+
+[[files]]
 file = "kubejs/assets/createbigcannons/lang/ru_ru.json"
 hash = "addb220049f88d30e12e1886b3fb3ea581da111bf1f1edb26fd0e7248bd4307d"
 
