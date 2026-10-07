@@ -1593,6 +1593,10 @@ file = "kubejs/assets/rechiseledcreate/lang/ru_ru.json"
 hash = "052a9f0c40da15f880cf735c79066ceb04696154e920d3011f1d7e752b2509b6"
 
 [[files]]
+file = "kubejs/assets/resourcefulconfig/lang/ru_ru.json"
+hash = "57f9aaaaa612c03372314642264d74d66a44514771812b79cb6bdefcea7551ea"
+
+[[files]]
 file = "kubejs/assets/sanity_renewed/lang/ru_ru.json"
 hash = "e13884cc0dfa04b3cf9fd015ab2be810cc84569677f7bad437990001416380a1"
 
