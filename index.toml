@@ -561,6 +561,10 @@ file = "kubejs/assets/lambdynlights/lang/ru_ru.json"
 hash = "db740acca0bc8c05807ef15bee6ed968f19eca6fb6129e9c99435be27b774c0f"
 
 [[files]]
+file = "kubejs/assets/libipn/lang/ru_ru.json"
+hash = "3f934fa9498966db15509955785ea3199015ad3109aebdcfc7474bb7cc97d199"
+
+[[files]]
 file = "kubejs/assets/minecraft/lang/en_us.json"
 hash = "c57106d544580e39702afe97dc71bf10ebe3d87776e81be1f478028e4863da50"
 
