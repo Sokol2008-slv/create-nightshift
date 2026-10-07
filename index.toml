@@ -181,6 +181,10 @@ file = "kubejs/assets/dmr/lang/ru_ru.json"
 hash = "bcb6c6ece9efcd27d4439ca9f1342aa62548ec3b889b775c268358f7e3fe0f1a"
 
 [[files]]
+file = "kubejs/assets/dragonlib/lang/ru_ru.json"
+hash = "d7e7daa9ab99201428ba90b3765aa288890bfd4e052340b55f837592d5b36f03"
+
+[[files]]
 file = "kubejs/assets/kubejs/lang/en_us.json"
 hash = "ce7a4e9166eec76a58de8234ded97328850976184727edcd7779dbfa49472a2c"
 
