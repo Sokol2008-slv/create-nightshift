@@ -33,5 +33,9 @@
   "genshinstrument.label.glorious_drum.don": "дон",
   "button.genshinstrument.label.don_ka": "Дон-Ка",
   "button.genshinstrument.label.genshin_notation": "Нотация Genshin",
-  "button.genshinstrument.label.genshin_notation.description": "Подписи нот как в Genshin Impact."
+  "button.genshinstrument.label.genshin_notation.description": "Подписи нот как в Genshin Impact.",
+  "genshinstrument.advancements.main.people_of_the_springs.title": "В погоне за волнами",
+  "genshinstrument.advancements.main.people_of_the_springs.description": "Сыграй на любом инструменте Народа источников",
+  "genshinstrument.advancements.main.master_of_the_springs.title": "Мастер источников",
+  "genshinstrument.advancements.main.master_of_the_springs.description": "Сыграй на всех инструментах Народа источников"
 }
