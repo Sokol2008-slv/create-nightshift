@@ -301,6 +301,10 @@ file = "kubejs/assets/golemoverhaul/lang/ru_ru.json"
 hash = "560c515d9fc84af5045d632d144361bbf2a1bde43a51734feeacc2440c7d5a76"
 
 [[files]]
+file = "kubejs/assets/goofy_horror_mod/lang/ru_ru.json"
+hash = "2a15bfd8d8aae8be14cb74ea51b2037552dc0f6e62c5a8b7633dc74c9ec410ca"
+
+[[files]]
 file = "kubejs/assets/iris/lang/ru_ru.json"
 hash = "14c5ac4296b388b4f655c1a537e8b57ab6a5ebf8965b20961155febd3ad05878"
 
