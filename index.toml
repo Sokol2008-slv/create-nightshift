@@ -173,6 +173,10 @@ file = "kubejs/assets/cbc_at/lang/ru_ru.json"
 hash = "21c89e64279853fe8c1ffee3aa29780672fb80ddfdfb7e63a997c39cc4eef486"
 
 [[files]]
+file = "kubejs/assets/cbc_firepower_components/lang/ru_ru.json"
+hash = "981e8281949b9da4a674a46ea0010e179a0f01dced71dfdd9d75fb61d51f49ee"
+
+[[files]]
 file = "kubejs/assets/climbable_ropes/lang/ru_ru.json"
 hash = "fc5df6d30e6a37d57ccef97198182bd5b699f39783b4628c8229c80a55dbc088"
 
