@@ -233,6 +233,10 @@ file = "kubejs/assets/create_submarine/lang/ru_ru.json"
 hash = "d18545767f24c22f267d1a6b3cdd86c1df95146abf258ec30b6a30e85c841a07"
 
 [[files]]
+file = "kubejs/assets/create_things_and_misc/lang/ru_ru.json"
+hash = "a98350fd4aab5acba729a6ea24b8ff5a39bba43cef9a00540dea1b703b148667"
+
+[[files]]
 file = "kubejs/assets/create_trimmed/lang/ru_ru.json"
 hash = "cc3e10f159e274f8a94713e550ec81c31a52ecb2c472bc5c5beea02b91740477"
 
