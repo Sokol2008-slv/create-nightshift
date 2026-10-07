@@ -1,0 +1,6 @@
+{
+  "ftblibrary.select_entity.all_entities": "Все живые существа",
+  "ftblibrary.read_only": "только чтение",
+  "ftblibrary.client_settings.tooltips.entity_modname": "Показывать мод в окне выбора существа",
+  "ftblibrary.server_settings": "Настройки сервера"
+}
