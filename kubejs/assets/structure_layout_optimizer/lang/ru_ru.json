@@ -1,0 +1,5 @@
+{
+  "config.structure_layout_optimizer.desc": "Попытка ускорить генерацию построек из частей",
+  "config.structure_layout_optimizer.link.bug_report": "Сообщить об ошибке",
+  "config.structure_layout_optimizer.link.license": "Лицензия"
+}

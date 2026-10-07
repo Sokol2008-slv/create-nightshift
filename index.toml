@@ -1685,6 +1685,10 @@ file = "kubejs/assets/ssrd/lang/ru_ru.json"
 hash = "668ee04d5ba4d5e0c1d204285d8fea6467fa51c08635abebb4d32c1783c558f2"
 
 [[files]]
+file = "kubejs/assets/structure_layout_optimizer/lang/ru_ru.json"
+hash = "f78789278fcb6459ea3af5f45992a4e1033dd292b830eabf9bd138ecfb0759e5"
+
+[[files]]
 file = "kubejs/assets/struts/lang/ru_ru.json"
 hash = "8d503365ee777b922703e46e698aeb6a34f9d6d812cc90dc46093f3f8d87a752"
 
