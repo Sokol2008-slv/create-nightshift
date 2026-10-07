@@ -173,6 +173,10 @@ file = "kubejs/assets/craftingtweaks/lang/ru_ru.json"
 hash = "c5128907e70fc7dff6fbf67af4b9ec03afe698d3b9633dc75bc7feab054f0f6e"
 
 [[files]]
+file = "kubejs/assets/create/lang/ru_ru.json"
+hash = "24a5070e7f31ff9713ceb3b5289a73d7cade0fc54f4421a8e02b37edf619abb3"
+
+[[files]]
 file = "kubejs/assets/create_aquatic_ambitions/lang/ru_ru.json"
 hash = "02abcd369f64acdddac18c0f219bce9be83d3d289af7322cbe14d970563cdc95"
 
