@@ -1,0 +1,7 @@
+{
+  "betteradvancedtooltips.configuration.remove_creative_tab_tooltip": "Убрать вкладку творческого режима из подсказки",
+  "betteradvancedtooltips.configuration.remove_component_count_tooltip": "Убрать число компонентов из подсказки",
+  "betteradvancedtooltips.configuration.fuel_tooltip": "Топливо в подсказке",
+  "betteradvancedtooltips.configuration.tag_tooltip": "Теги в подсказке",
+  "betteradvancedtooltips.configuration.component_tooltip": "Компоненты в подсказке"
+}

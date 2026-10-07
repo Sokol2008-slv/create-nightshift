@@ -161,6 +161,10 @@ file = "kubejs/assets/balm/lang/ru_ru.json"
 hash = "7f770d775db975f118991a540eeee2056354c6d2f8705084b1aadf229f6637b8"
 
 [[files]]
+file = "kubejs/assets/betteradvancedtooltips/lang/ru_ru.json"
+hash = "2ac57b1801f942b066ab9ce2e059071270a7a65220c91d9e4bae0332b263c54e"
+
+[[files]]
 file = "kubejs/assets/betterendisland/lang/ru_ru.json"
 hash = "f2f42c73b44895b3b54ccb2130c6ad94e1282fe81384514530631a6de28641d2"
 
