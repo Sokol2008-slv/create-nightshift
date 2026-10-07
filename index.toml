@@ -169,6 +169,10 @@ file = "kubejs/assets/cave_dweller/lang/ru_ru.json"
 hash = "6035af34313b340b3fea54bc32af26d5a2d63a1c8c5bc3b02f99a208f1c5278f"
 
 [[files]]
+file = "kubejs/assets/cbc_at/lang/ru_ru.json"
+hash = "21c89e64279853fe8c1ffee3aa29780672fb80ddfdfb7e63a997c39cc4eef486"
+
+[[files]]
 file = "kubejs/assets/climbable_ropes/lang/ru_ru.json"
 hash = "fc5df6d30e6a37d57ccef97198182bd5b699f39783b4628c8229c80a55dbc088"
 
