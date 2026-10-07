@@ -1,0 +1,6 @@
+{
+  "key.trashslot.toggle_lock": "Закрепить/открепить корзину",
+  "key.trashslot.delete_all": "Удалить все предметы этого типа",
+  "tooltip.trashslot.destroy_item": "Уничтожить предмет",
+  "tooltip.trashslot.trash_item": "В корзину"
+}
