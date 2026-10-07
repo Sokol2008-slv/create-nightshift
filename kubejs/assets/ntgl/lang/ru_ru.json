@@ -20,5 +20,6 @@
   "info.ntgl.custom": "Свой",
   "perk.ntgl.fire_modes": "Режимы огня: ",
   "gui.ntgl.assemble": "Собрать",
+  "ntgl.button.config.tooltip": "Настройки",
   "ntgl.chat.install_configured": "Установи %s, чтобы открыть настройки"
 }
