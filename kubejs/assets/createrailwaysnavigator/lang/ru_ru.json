@@ -1,0 +1,4 @@
+{
+  "gui.createrailwaysnavigator.advanced_display_settings.retain_scale_pos": "Сохранять масштаб и положение",
+  "gui.createrailwaysnavigator.advanced_display_settings.retain_scale_pos.description": "Обновлять ли масштаб и положение от подключённого передатчика информации."
+}
