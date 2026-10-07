@@ -1,0 +1,17 @@
+{
+  "create_bb.menu.title": "Настройка вагонной тележки",
+  "create_bb.tooltips.switch_to_bogey_menu": "Открыть меню Steam 'n' Rails",
+  "create_bb.tooltips.switch_to_bb_menu": "Открыть меню Blocks & Bogies",
+  "create_bb.menu.type": "Тележка: ",
+  "create_bb.valve_gear.gearless": "Без механизма",
+  "create_bb.valve_gear.rodless": "Без тяг",
+  "create_bb.valve_gear.pistonless": "Без поршней",
+  "create_bb.length.spaced": "Разнесённая",
+  "create_bb.bogies.style.single_axle_rodless": "0-2-0 без тяг",
+  "create_bb.bogies.style.double_axle_rodless": "0-4-0 без тяг",
+  "create_bb.bogies.style.triple_axle_extended_rodless": "0-6-0 удлинённая без тяг",
+  "create_bb.bogies.style.triple_axle_rodless": "0-6-0 без тяг",
+  "create_bb.bogies.style.quadruple_axle_rodless": "0-8-0 без тяг",
+  "create_bb.bogies.style.quintuple_axle_rodless": "0-10-0 без тяг",
+  "create_bb.bogies.style.sextuple_axle_rodless": "0-12-0 без тяг"
+}
