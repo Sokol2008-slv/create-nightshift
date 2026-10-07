@@ -1,0 +1,8 @@
+{
+  "ssrd.options.physics_render_distance.name": "Дальность прорисовки физики",
+  "ssrd.options.physics_render_distance.tooltip": "Макс. расстояние (в чанках), на котором видны подуровни (корабли). Предел ползунка — дальность LOD в Distant Horizons или Voxy, но не больше серверного ssrdMaxRenderDistance.",
+  "ssrd.config.physics_render_distance": "Дальность подуровней",
+  "ssrd.config.min_physics_render_distance": "Мин. дальность подуровней",
+  "ssrd.config.max_physics_render_distance": "Макс. дальность подуровней",
+  "ssrd.screen.config.title": "Настройки прорисовки SSRD"
+}
