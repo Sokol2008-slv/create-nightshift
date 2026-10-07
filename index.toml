@@ -1521,8 +1521,12 @@ file = "kubejs/assets/voicechat/lang/ru_ru.json"
 hash = "bf30e1015713f6f764a453b014f025c3099bbdad7144d5c091aa533733085d5e"
 
 [[files]]
+file = "kubejs/assets/xaerolib/lang/ru_ru.json"
+hash = "30aa2d2bad5b9284cf4dd14e32707cfe6c699d635ab19bab5bdedc76d43071be"
+
+[[files]]
 file = "kubejs/assets/xaerominimap/lang/ru_ru.json"
-hash = "4a588283c84fc1c6cf372deb3595a1e7eca659a306949e65da33fb29d36f8b8b"
+hash = "c8543e4604923202323ad28a9fbfc30852afc393592da5634d6ebee38929fcaa"
 
 [[files]]
 file = "kubejs/assets/xaeroworldmap/lang/ru_ru.json"
