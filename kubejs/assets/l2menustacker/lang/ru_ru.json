@@ -1,0 +1,8 @@
+{
+  "l2menustacker.configuration.section.l2configs.l2menustacker.server.toml": "Серверные настройки L2 Menu Stacker",
+  "l2menustacker.configuration.section.l2configs.l2menustacker.server.toml.title": "Серверные настройки L2 Menu Stacker",
+  "l2menustacker.configuration.tabSafeMode": "Безопасный режим стопки меню",
+  "l2menustacker.configuration.tabSafeMode.tooltip": "Если включено, при выходе некоторые контейнеры модов пропускаются",
+  "l2menustacker.configuration.title": "Настройки L2 Menu Stacker",
+  "l2menustacker.tooltip.quick_access": "ПКМ в интерфейсе — открыть"
+}
