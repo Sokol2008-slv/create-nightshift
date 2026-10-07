@@ -1245,6 +1245,10 @@ file = "kubejs/assets/sanity_renewed/lang/ru_ru.json"
 hash = "e13884cc0dfa04b3cf9fd015ab2be810cc84569677f7bad437990001416380a1"
 
 [[files]]
+file = "kubejs/assets/shulkerboxtooltip/lang/ru_ru.json"
+hash = "a1185fa68c683c46ff815d6cdc6deccbfe2a2d82b9f186f77a64be23145f304a"
+
+[[files]]
 file = "kubejs/assets/tfmg/lang/ru_ru.json"
 hash = "c14b3e4230f159a122ce9a6bde05d423341abcb06a8aaf214fa24c6466c27692"
 
