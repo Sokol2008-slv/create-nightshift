@@ -169,6 +169,10 @@ file = "kubejs/assets/betteradvancedtooltips/lang/ru_ru.json"
 hash = "2ac57b1801f942b066ab9ce2e059071270a7a65220c91d9e4bae0332b263c54e"
 
 [[files]]
+file = "kubejs/assets/betterdungeons/lang/ru_ru.json"
+hash = "3cc7b92875b38ea9a7ccaee5fbd6b3524af04e77a6f15faf634050c12a53e4b9"
+
+[[files]]
 file = "kubejs/assets/betterendisland/lang/ru_ru.json"
 hash = "f2f42c73b44895b3b54ccb2130c6ad94e1282fe81384514530631a6de28641d2"
 
