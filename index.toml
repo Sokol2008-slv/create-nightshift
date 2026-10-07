@@ -1525,6 +1525,10 @@ file = "kubejs/assets/xaerominimap/lang/ru_ru.json"
 hash = "4a588283c84fc1c6cf372deb3595a1e7eca659a306949e65da33fb29d36f8b8b"
 
 [[files]]
+file = "kubejs/assets/xaeroworldmap/lang/ru_ru.json"
+hash = "bfe7f0e0cefb9376b908c561f114dd0fcc180f708c802928d82d0889a5d7e47e"
+
+[[files]]
 file = "kubejs/client_scripts/armor_modules_tooltips.js"
 hash = "4a52c7a79447825fbfad0281cb51340903002d09d4bdd8634928e3f1618e8e37"
 
