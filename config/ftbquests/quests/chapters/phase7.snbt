@@ -221,6 +221,18 @@
 		}
 		{
 			dependencies: ["1A33CB476C1A29D4"]
+			icon: { id: "nightshift:supply_flare" }
+			id: "25915249FFCB2033"
+			optional: true
+			rewards: [{ id: "08A8EB2D52886D1C", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "6493B0DA87C6E2DE", type: "checkmark" }]
+			x: 3.90d
+			y: -1.20d
+		}
+		{
+			dependencies: ["1A33CB476C1A29D4"]
 			id: "029373F06668223C"
 			rewards: [{ id: "0B76D8B57E7D3A76", type: "xp", xp: 10 }]
 			shape: "rsquare"

@@ -149,6 +149,8 @@ function nsCtReward(best, kind) {
 	if (kind === 'call') r.items.push(['nightshift:life_tonic', 1])
 	if (kind === 'machines') r.items.push(['nightshift:horde_shard', 6])
 	if (kind === 'mutator' && best >= 70) r.items.push(['nightshift:star_fragment', 1])
+	// сброс снабжения (07.10): с 15-й волны — особые и скоростные контракты всегда, остальные через раз
+	if (best >= 15 && (kind === 'special' || kind === 'speed' || kind === 'boss' || Math.random() < 0.35)) r.items.push(['nightshift:supply_flare', 1])
 	return r
 }
 

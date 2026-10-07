@@ -231,6 +231,15 @@ function nsAcIssue(p, r, rankNo) {
 			console.warn('[аэроклуб] не выдал ' + r.item + ' игроку ' + name + ': ' + e)
 		}
 	}
+	// сброс снабжения (07.10): ракеты за удостоверение — III 1, II 2, I 3 (aviation/40_airdrop.js)
+	try {
+		var flares = rankNo
+		var gotF = server.runCommandSilent('give ' + name + ' nightshift:supply_flare ' + flares)
+		if (!gotF) p.give(Item.of('nightshift:supply_flare', flares))
+		p.tell(Text.gold('[Аэроклуб] ').append(Text.white('В придачу — ' + flares + ' сигн. ракет' + (flares === 1 ? 'а' : 'ы') + ' снабжения: ')).append(Text.gray('ПКМ под открытым небом — через 30 с борт сбросит ящик с грузом.')))
+	} catch (eF) {
+		console.warn('[аэроклуб] ракеты снабжения ' + name + ': ' + eF)
+	}
 	// значок в чате — всем
 	var msg = Text.of('[Аэроклуб] ').gold()
 		.append(Text.of(name).white())
