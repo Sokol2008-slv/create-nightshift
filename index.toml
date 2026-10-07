@@ -173,6 +173,10 @@ file = "kubejs/assets/create_easy_structures/lang/ru_ru.json"
 hash = "222c26fc0e72d1ab60ac789f1d7979f63bdf2768fb392b92a538846a7737fbb7"
 
 [[files]]
+file = "kubejs/assets/create_factory_logistics/lang/ru_ru.json"
+hash = "f2cde72b340d51ee189f790cc1dac489d5cdf571e8f9594aadf68a20455e8821"
+
+[[files]]
 file = "kubejs/assets/create_mechanical_spawner/lang/ru_ru.json"
 hash = "261dca3daf995e21d1afcb24d2a5f43651147224d000e276475250c4eeaa7e8d"
 
