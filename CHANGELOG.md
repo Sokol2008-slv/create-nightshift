@@ -23,6 +23,20 @@
   - рецепты механическими крафтерами (`vahta/49_axiomativ_raid.js`): датчик — латунный корпус, электронная лампа,
     компаратор, 2 редстоуна (фаза 2); сирена — 4 медных листа, пропеллер, нотный блок, 2 андезитовых сплава. EMC 0;
   - книга: «Датчик набега» → «Сирена» в «Фазе 2» над электронной лампой; подсказки JEI и при первом получении.
+### Changed
+- **Русификация модов — 15 845 строк, которые в игре оставались по-английски** (160 модов/пространств имён,
+  `kubejs/assets/<мод>/lang/ru_ru.json`, поверх переводов самих модов): Rechiseled + Rechiseled: Create 3 899 (все
+  блоки стамески), ArPhEx 847, ProjectExpansion 601, Design-n-Decor 556, Distant Horizons 485, FTB Quests 429,
+  ProjectE 425, Modular Golems 421, Xaero's World Map + мини-карта 426, JEI 394, Create: Enchantment Industry 329,
+  Create: Framed 308, Sodium + Sodium Extra 325, Northstar 255, CBC: Advanced Technologies + Firepower Components 471,
+  Dragon Mounts 229, Create: Dragons Plus 224, Building Wands 213, Additional Logistics 202, Inventory Profiles Next 198,
+  Create: Things and Misc 186, Iron's Spells + Iron's Lib 238, Vibrant Vaults 165, TFMG 151, Sophisticated 305,
+  Confectionery 137, Jade 126, Create Structures Arise 117, Radar 102, Create Goggles 93, Caged Mobs 84 и ещё ~120 модов
+  (Create-аддоны, настройки и клавиши клиентских модов, технические экраны EMF/ETF/Veil/Tectonic/Bookshelf). Заодно
+  исправлены сломанные строки в переводах самих модов: пропадавшие числа и лишние плейсхолдеры (ProjectE «триллион» без
+  числа, сообщения о смерти Iron's Spells, NTGL «Собрать %s», Radar, Enchantment Industry), сдвинутые строки шаблона
+  Deep Dark и ponder Enchantment Industry, английский текст в «переведённых» строках (Enchantment Industry, Framed,
+  Dragons Plus, Northstar, Sodium Extra и др.). Сборка и проверка — `~/projects/ns-patches/ru/` (check.py: 0 ошибок).
 
 ## [3.5.1] — 07.10.2026 — раскладка смены, снабженец без крафтового, соль на песке
 Решения Георгия по финальному аудиту (07.10): туф и латунь через нагреватели — оставить, ничего не резать; у снабженца —
