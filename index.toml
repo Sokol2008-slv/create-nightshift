@@ -1425,6 +1425,10 @@ file = "kubejs/assets/someassemblyrequired/lang/ru_ru.json"
 hash = "ce7e9a3521dbc6e2acc0a53b7ad9e33824023053d04abbf71d6c19b7a9c8e1a6"
 
 [[files]]
+file = "kubejs/assets/sophisticatedbackpacks/lang/ru_ru.json"
+hash = "48f997aaf824aaa58602a2e79816a0306351ff6dd83f78e97d6ce414f56a4eb8"
+
+[[files]]
 file = "kubejs/assets/sophisticatedcore/lang/ru_ru.json"
 hash = "e46e8693fff53db554db73596efb6440bf6638369b09bdf5079d4172bc82fe87"
 
