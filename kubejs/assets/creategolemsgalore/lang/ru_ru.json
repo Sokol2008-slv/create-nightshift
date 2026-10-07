@@ -1,0 +1,9 @@
+{
+  "block.creategolemsgalore.industrial_iron_hat": "Каска из промышленного железа",
+  "block.creategolemsgalore.industrial_brass_hat": "Латунная промышленная каска",
+  "block.creategolemsgalore.industrial_brass_block": "Блок промышленной латуни",
+  "item.creategolemsgalore.copper_calibrator": "Медный калибратор",
+  "item.creategolemsgalore.andesite_golem_spawn_egg": "Яйцо призыва андезитового голема",
+  "entity.creategolemsgalore.andesite_golem": "Андезитовый голем",
+  "entity.creategolemsgalore.brassed_andesite_golem": "Андезитовый голем в латуни"
+}
