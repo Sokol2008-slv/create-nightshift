@@ -1,6 +1,7 @@
 {
   "gui.xaero_open_map": "Открыть карту мира",
   "gui.xaero_open_settings": "Открыть настройки",
+  "gui.xaero_debug": "Отладка",
   "gui.xaero_lighting": "Освещение",
   "gui.xaero_block_colours": "Цвета блоков",
   "gui.xaero_accurate": "Точные",
