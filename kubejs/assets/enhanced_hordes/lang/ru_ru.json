@@ -1,0 +1,12 @@
+{
+  "gamerule.ironGolemRegenPower.description": "Уровень регенерации, которую получают железные големы, когда опасности нет.",
+  "effect.horde_hoard.thinking": "Раздумье",
+  "gamerule.hordeStacking.description": "Мобы орды взбираются друг на друга",
+  "gamerule.hordeMultiplying": "Размножение орды",
+  "gamerule.hordeSmashingPower": "Сила разрушения орды",
+  "gamerule.hordeSmashingPower.description": "Сила орды. Рекомендуется 3 или 4. Чем меньше число, тем сильнее орда",
+  "effect.enhanced_hordes.thinking": "Раздумье",
+  "gamerule.hordeMultiplying.description": "Мобы орды выкапывают новых мобов",
+  "gamerule.hordeStacking": "Пирамиды орды",
+  "gamerule.ironGolemRegenPower": "Уровень регенерации железных големов"
+}
