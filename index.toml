@@ -453,6 +453,10 @@ file = "kubejs/assets/enhanced_hordes/lang/ru_ru.json"
 hash = "544f1e3024938303572264d34e76790ff37aaee1faf5b16860c8f09c59811b64"
 
 [[files]]
+file = "kubejs/assets/entity_texture_features/lang/ru_ru.json"
+hash = "e249e1315fdb4d66c768b5240b60512f2f74e35353e2e10fc38102f0be9c4718"
+
+[[files]]
 file = "kubejs/assets/entityculling/lang/ru_ru.json"
 hash = "8c4bfaf12c8af79205a9c4d8fe90edb9babc07bddfe3b2615e4caf557e563ff9"
 
