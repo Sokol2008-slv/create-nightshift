@@ -1,0 +1,20 @@
+{
+  "item.sophisticatedstorage.stack_upgrade_tier_1_to_tier_1_plus_conversion": "Преобразование «Переполнения»: I → I+",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_to_tier_2_conversion": "Преобразование «Переполнения»: I → II",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_to_tier_3_conversion": "Преобразование «Переполнения»: I → III",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_to_tier_4_conversion": "Преобразование «Переполнения»: I → IV",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_to_tier_5_conversion": "Преобразование «Переполнения»: I → V",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_2_conversion": "Преобразование «Переполнения»: I+ → II",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_3_conversion": "Преобразование «Переполнения»: I+ → III",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_4_conversion": "Преобразование «Переполнения»: I+ → IV",
+  "item.sophisticatedstorage.stack_upgrade_tier_1_plus_to_tier_5_conversion": "Преобразование «Переполнения»: I+ → V",
+  "item.sophisticatedstorage.stack_upgrade_tier_2_to_tier_3_conversion": "Преобразование «Переполнения»: II → III",
+  "item.sophisticatedstorage.stack_upgrade_tier_2_to_tier_4_conversion": "Преобразование «Переполнения»: II → IV",
+  "item.sophisticatedstorage.stack_upgrade_tier_2_to_tier_5_conversion": "Преобразование «Переполнения»: II → V",
+  "item.sophisticatedstorage.stack_upgrade_tier_3_to_tier_4_conversion": "Преобразование «Переполнения»: III → IV",
+  "item.sophisticatedstorage.stack_upgrade_tier_3_to_tier_5_conversion": "Преобразование «Переполнения»: III → V",
+  "item.sophisticatedstorage.stack_upgrade_tier_4_to_tier_5_conversion": "Преобразование «Переполнения»: IV → V",
+  "gui.sophisticatedstorage.upgrades.buttons.refill_input": "Пополнять вход",
+  "gui.sophisticatedstorage.upgrades.buttons.do_not_refill_input": "Не пополнять вход",
+  "gui.sophisticatedstorage.material": "Материал"
+}
