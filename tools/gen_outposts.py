@@ -156,10 +156,10 @@ def state(name, props=None):
 
 # 06.10: радиус 6–8 (предел диска Minecraft — 8) + россыпь пятен (cluster) — поле ~40 блоков, на нём десяток буровых.
 # Места появления от радиуса не зависят (его выбирает сама фича после размещения) — координаты атласа верны.
-def disk(block, rmin, rmax, half):
+def disk(block, rmin, rmax, half, ground="nightshift:outpost_ground"):
     return {"type": "minecraft:disk", "config": {
         "state_provider": {"fallback": state(block), "rules": []},
-        "target": {"type": "minecraft:matching_block_tag", "tag": "nightshift:outpost_ground"},
+        "target": {"type": "minecraft:matching_block_tag", "tag": ground},
         "radius": {"type": "minecraft:uniform", "min_inclusive": rmin, "max_inclusive": rmax},
         "half_height": half}}
 
@@ -220,7 +220,8 @@ def features():
     return [
         ("hevea_soil", disk("nightshift:hevea_soil", 6, 8, 2), surface(10), "#c:is_jungle", "underground_ores"),
         ("hevea_tree", hevea_tree, tree_place, "#c:is_jungle", "underground_decoration"),
-        ("salt", disk("nightshift:salt_deposit", 6, 8, 2), surface(4), "#c:is_beach", "underground_ores"),
+        # 07.10 (Георгий: «соль — важно, чтобы была на песке»): диск соли заменяет только песок — на траве и камне пляжа её нет
+        ("salt", disk("nightshift:salt_deposit", 6, 8, 2, "minecraft:sand"), surface(4), "#c:is_beach", "underground_ores"),
         ("magnetic_anomaly", disk("nightshift:magnetic_anomaly", 6, 8, 2), surface(18, 120), "#c:is_mountain", "underground_ores"),
         ("sulfur_surface", sulfur_lake, [{"type": "minecraft:rarity_filter", "chance": 5}, {"type": "minecraft:in_square"}] + cluster(3, 10) + [
                                          {"type": "minecraft:heightmap", "heightmap": "WORLD_SURFACE_WG"}, {"type": "minecraft:biome"}],

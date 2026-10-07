@@ -3,7 +3,7 @@
 // справки нет»). Строки кликабельные: клик вставляет команду в чат (suggest_command) — Enter, и готово.
 //   /smena          — все разделы коротко: раздел строкой, наведи на команду — что делает
 //   /smena full     — подробно, каждая команда строкой
-//   /smena keys     — клавиши пака
+//   /smena keys [N] — раскладка смены: разделы строкой (наведи — что делает), N — раздел подробно
 // Подсказка «/smena — все команды» приходит один раз каждому (тег ns_help_hint), через минуту после входа,
 // чтобы не теряться в стене текста при входе.
 // KubeJS 2101 / Rhino: только var; тела обработчиков — в try.
@@ -46,18 +46,7 @@ var NS_HELP = [
 	]],
 ]
 
-var NS_HELP_KEYS = [
-	['J', 'планшет инженера; Shift + J — панель целей: подробно / кратко / скрыта'],
-	['P / Shift + P', 'над предметом — закрепить себе / цель смены'],
-	['Shift + ПКМ пустой рукой', 'по машине — что она делает'],
-	['L', 'книга квестов'],
-	["' (Э)", 'ранец снабжения'],
-	['Боковая кнопка мыши 5', 'метка команде; зажать — колесо меток'],
-	['Alt + V / Alt + M', 'голосовой чат: меню / микрофон'],
-	['Alt + B', 'новая метка Xaero'],
-	['Alt + U', 'история смертей'],
-	['Alt + K', 'шейдеры вкл/выкл'],
-]
+// Клавиши — раскладка смены: NS_KEYS_GROUPS в 31_keys.js (генерирует tools/keys_scheme.py, ставит всем аддон)
 
 function nsHelpLine(srv, name, cmd, show, what) {
 	var parts = [{ text: ' ▸ ', color: 'dark_gray' }]
@@ -117,15 +106,32 @@ function nsHelpFull(p) {
 	}
 }
 
-function nsHelpKeys(p) {
+// Раскладка смены (07.10): коротко — раздел строкой, клавиши «фишками» (наведи — что делает), клик по разделу —
+// подробно; /smena keys N — раздел N строками.
+function nsHelpKeys(p, gi) {
 	var name = String(p.getUsername())
 	var srv = p.getServer()
-	srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: '— Клавиши пака (переназначить: Настройки → Управление) —', color: 'gold' }))
-	for (var i = 0; i < NS_HELP_KEYS.length; i++) nsHelpLine(srv, name, '', NS_HELP_KEYS[i][0], NS_HELP_KEYS[i][1])
+	var G = NS_KEYS_GROUPS
+	if (gi !== null && gi >= 0 && gi < G.length) {
+		srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: '— ' + G[gi][0] + ' —', color: 'gold' }))
+		for (var r = 0; r < G[gi][1].length; r++) nsHelpLine(srv, name, '', G[gi][1][r][0], G[gi][1][r][1])
+		return
+	}
+	srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: '— Раскладка смены v' + NS_KEYS_VERSION + ': одна на всех (наведи — что делает, клик по разделу — подробно) —', color: 'gold' }))
+	for (var i = 0; i < G.length; i++) {
+		var parts = [{ text: G[i][0] + ': ', color: 'gold', clickEvent: { action: 'run_command', value: '/smena keys ' + (i + 1) }, hoverEvent: { action: 'show_text', contents: 'Подробно: /smena keys ' + (i + 1) } }]
+		for (var k = 0; k < G[i][1].length; k++) {
+			if (k) parts.push({ text: ' · ', color: 'dark_gray' })
+			parts.push({ text: G[i][1][k][0], color: 'aqua', hoverEvent: { action: 'show_text', contents: G[i][1][k][0] + ' — ' + G[i][1][k][1] } })
+		}
+		srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify(parts))
+	}
+	srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: 'Сбилась раскладка — /nskeys apply или «Сброс» в «Управлении». Таблица — docs/KEYS.md в репозитории пака.', color: 'gray' }))
 }
 
 ServerEvents.commandRegistry(event => {
 	var C = event.commands
+	var IA = event.arguments.INTEGER
 	var reg = function (lit) {
 		event.register(
 			C.literal(lit)
@@ -150,15 +156,27 @@ ServerEvents.commandRegistry(event => {
 					})
 				)
 				.then(
-					C.literal('keys').executes(ctx => {
-						try {
-							var p = ctx.source.getPlayer()
-							if (p) nsHelpKeys(p)
-						} catch (e) {
-							console.warn('[help] ' + e)
-						}
-						return 1
-					})
+					C.literal('keys')
+						.executes(ctx => {
+							try {
+								var p = ctx.source.getPlayer()
+								if (p) nsHelpKeys(p, null)
+							} catch (e) {
+								console.warn('[help] ' + e)
+							}
+							return 1
+						})
+						.then(
+							C.argument('n', IA.create(event)).executes(ctx => {
+								try {
+									var p = ctx.source.getPlayer()
+									if (p) nsHelpKeys(p, Number(IA.getResult(ctx, 'n')) - 1)
+								} catch (e) {
+									console.warn('[help] ' + e)
+								}
+								return 1
+							})
+						)
 				)
 		)
 	}

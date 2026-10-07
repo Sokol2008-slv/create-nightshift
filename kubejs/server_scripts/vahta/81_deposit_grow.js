@@ -3,6 +3,9 @@
 // больше, чтобы 1 форпост закрывал ресурс до конца игры»).
 //  /nsdeposit grow_known [радиус]       — все месторождения атласа (кроме энергетических), по одному в 2 с
 //  /nsdeposit grow <x> <y> <z> <радиус> — одно: тип берётся из ближайшего блока месторождения
+//  /nsdeposit salt_sand <x> <y> <z> <r>  — соль только на песке (07.10, Георгий: «соль — важно, чтобы была на песке»):
+//                                         соль не на песке → обратно в грунт (почва гевеи рядом с гевеей, иначе трава
+//                                         и земля), потом соль растёт по песку вокруг — поле больше, чем было
 //  /nsdeposit status                    — очередь
 // Месторождение ложится на природный грунт поверхности (2 слоя; на мелководье — на дно) в круге с неровным краем; постройки, лава, брёвна
 // не трогаются, обрывы дальше 14 блоков по высоте от центра — тоже. Подземные (сера в пещерах, грибница) растут по полу
@@ -11,6 +14,8 @@
 
 var NS_DG = { queue: [], busy: false }
 var NS_DG_HM = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types')
+var NS_DG_BT = Java.loadClass('net.minecraft.tags.BlockTags')
+var NS_DG_SALT = 'nightshift:salt_deposit'
 var NS_DG_DEEP = { 'nightshift:sulfur_spring': true, 'nightshift:mycelium_vein': true }
 var NS_DG_SKIP = { 'axiomativ:geothermal_source': true, 'axiomativ:river_rapids': true }
 var NS_DG_IDS = [
@@ -18,8 +23,17 @@ var NS_DG_IDS = [
 	'nightshift:bauxite_deposit', 'nightshift:helium_ice', 'nightshift:permafrost', 'nightshift:peat_bog', 'nightshift:mycelium_vein', 'nightshift:star_stone',
 ]
 
-function nsDgGround(blk) {
+// песок (и песчаник под ним) — единственная основа соли
+function nsDgSand(blk) {
+	try {
+		if (blk.getBlockState().is(NS_DG_BT.SAND)) return true
+	} catch (e) {}
+	return /(^|:)(sand|red_sand|sandstone|red_sandstone)$/.test(String(blk.getId()))
+}
+
+function nsDgGround(blk, kind) {
 	var id = String(blk.getId())
+	if (kind === NS_DG_SALT) return nsDgSand(blk) && !/sandstone/.test(id)
 	if (/water|lava|_log$|_wood$|stripped|planks|leaves/.test(id)) return false
 	if (NS_DG_IDS.indexOf(id) >= 0) return false
 	try {
@@ -70,10 +84,10 @@ function nsDgGrow(level, id, cx, cy, cz, r) {
 				if (dx % 5 === 0 && dz % 5 === 0) spots.push([x, top + 1, z])
 				continue
 			}
-			if (!nsDgGround(t)) continue
+			if (!nsDgGround(t, id)) continue
 			level.setBlockAndUpdate(new BP(x, top, z), block)
 			placed++
-			if (nsDgGround(level.getBlock(x, top - 1, z))) level.setBlockAndUpdate(new BP(x, top - 1, z), block)
+			if (nsDgGround(level.getBlock(x, top - 1, z), id)) level.setBlockAndUpdate(new BP(x, top - 1, z), block)
 			if (dx % 5 === 0 && dz % 5 === 0) spots.push([x, top + 1, z])
 		}
 	}
@@ -112,11 +126,48 @@ function nsDgFindKind(level, x, y, z) {
 	return null
 }
 
+// Соль не на песке → обратно в грунт. Столбец соли «на песке», если под ним песок/песчаник. Верхний слой
+// возвращается почвой гевеи, если рядом (8 соседей на той же высоте) её хотя бы 2, иначе травой; нижние — землёй.
+function nsDgSaltOffSand(level, cx, cy, cz, r) {
+	var BP = Java.loadClass('net.minecraft.core.BlockPos')
+	var grass = Block.getBlock('minecraft:grass_block').defaultBlockState()
+	var dirt = Block.getBlock('minecraft:dirt').defaultBlockState()
+	var hevea = Block.getBlock('nightshift:hevea_soil').defaultBlockState()
+	var fixed = 0
+	for (var dx = -r; dx <= r; dx++)
+		for (var dz = -r; dz <= r; dz++) {
+			if (dx * dx + dz * dz > r * r) continue
+			var x = cx + dx,
+				z = cz + dz
+			for (var y = cy + 14; y >= cy - 14; y--) {
+				if (String(level.getBlock(x, y, z).getId()) !== NS_DG_SALT) continue
+				// верх столбца соли — y; ищем низ
+				var y0 = y
+				while (y0 > cy - 20 && String(level.getBlock(x, y0 - 1, z).getId()) === NS_DG_SALT) y0--
+				if (!nsDgSand(level.getBlock(x, y0 - 1, z))) {
+					var hv = 0
+					for (var nx = -1; nx <= 1; nx++) for (var nz = -1; nz <= 1; nz++) if ((nx || nz) && String(level.getBlock(x + nx, y, z + nz).getId()) === 'nightshift:hevea_soil') hv++
+					level.setBlockAndUpdate(new BP(x, y, z), hv >= 2 ? hevea : grass)
+					for (var yy = y - 1; yy >= y0; yy--) level.setBlockAndUpdate(new BP(x, yy, z), hv >= 2 ? hevea : dirt)
+					fixed++
+				}
+				break
+			}
+		}
+	return fixed
+}
+
 ServerEvents.tick(event => {
 	if (!NS_DG.queue.length || event.server.getTickCount() % 40 !== 0) return
 	var job = NS_DG.queue.shift()
 	try {
 		var level = event.server.getOverworld()
+		if (job.fixSalt) {
+			for (var fcx = (job.x - job.r - 2) >> 4; fcx <= (job.x + job.r + 2) >> 4; fcx++) for (var fcz = (job.z - job.r - 2) >> 4; fcz <= (job.z + job.r + 2) >> 4; fcz++) level.getChunk(fcx, fcz)
+			var back = nsDgSaltOffSand(level, job.x, job.y, job.z, job.r)
+			console.info('[deposits] соль у ' + job.x + ' ' + job.y + ' ' + job.z + ': не на песке ' + back + ' столбцов — вернул в грунт')
+			return
+		}
 		for (var ccx = (job.x - 8) >> 4; ccx <= (job.x + 8) >> 4; ccx++) for (var ccz = (job.z - 8) >> 4; ccz <= (job.z + 8) >> 4; ccz++) level.getChunk(ccx, ccz)
 		var had = nsDgFindKind(level, job.x, job.y, job.z)
 		var n = nsDgGrow(level, job.id, job.x, job.y, job.z, job.r)
@@ -137,6 +188,17 @@ ServerEvents.commandRegistry(event => {
 				ctx.source.sendSystemMessage(Text.of('[deposits] в очереди: ' + NS_DG.queue.length))
 				return 1
 			}))
+			.then(
+				C.literal('salt_sand').then(C.argument('x', I.create(event)).then(C.argument('y', I.create(event)).then(C.argument('z', I.create(event)).then(
+					C.argument('r', I.create(event)).executes(ctx => {
+						var x = Number(I.getResult(ctx, 'x')), y = Number(I.getResult(ctx, 'y')), z = Number(I.getResult(ctx, 'z')), r = Number(I.getResult(ctx, 'r'))
+						NS_DG.queue.push({ fixSalt: true, x: x, y: y, z: z, r: r })
+						NS_DG.queue.push({ id: NS_DG_SALT, x: x, y: y, z: z, r: r })
+						ctx.source.sendSystemMessage(Text.of('[deposits] соль у ' + x + ' ' + z + ': сначала вернуть в грунт то, что не на песке, потом нарастить по песку (r=' + r + ')'))
+						return 1
+					})
+				))))
+			)
 			.then(
 				C.literal('grow_known')
 					.executes(ctx => nsDgQueueKnown(ctx, 20))

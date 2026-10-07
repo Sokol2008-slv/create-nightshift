@@ -1,9 +1,13 @@
 // ==========================================================================
 // «Странствующий снабженец» (05.10.2026, поток T). Раз в 2–3 игровых дня утром к алтарю базы приходит снабженец
 // (бродячий торговец с двумя ламами каравана) и стоит сутки. Товар каждый раз новый из пула: то, чего машинами не
-// сделать или долго — пластинки, редкие саженцы и цветы, шаблоны отделки, книги чар, свитки заклинаний, косметика,
-// карты к кладам и постройкам (купил — метка Xaero), ракеты, «Ящик снабжения» (сюрприз), иногда — яйцо дракона,
-// элитры, зачарованное золотое яблоко. Валюта — жетоны смены (EMC 0: торговля не печатает EMC из воздуха).
+// сделать — пластинки, редкие саженцы и цветы, живность, шаблоны отделки, книги чар, головы мобов, косметика,
+// карты к кладам и постройкам (купил — метка Xaero), «Ящик снабжения» (сюрприз), иногда — яйцо дракона, элитры,
+// тяжёлое ядро. Валюта — жетоны смены (EMC 0: торговля не печатает EMC из воздуха).
+// Правило Георгия (07.10): у снабженца — ТОЛЬКО то, что нельзя скрафтить (ни крафтерами, ни машинами, ни станциями
+// модов). Проверка — tools/data/tablet-ways.json.gz (все способы получения предмета на сервере): ракеты, бирка,
+// грибы незера, светящиеся ягоды, роза визера, хорус, зачарованное золотое яблоко, сердце моря, узоры «череп» и
+// «Mojang», пластинка 5 и свитки (кузница свитков) убраны 07.10. Добавляешь лот — сверься с этим файлом.
 //
 //  - Приход: только утром (время суток 0–6000), не во время набега, есть алтарь базы и кто-то в его измерении.
 //    Место — у алтаря (кольцо 4–10 блоков, на высоте алтаря ±16) или «лавка», которую игроки задали /trader post.
@@ -55,7 +59,7 @@ function nsTrBook(ench, lvl) {
 	return 'minecraft:enchanted_book[minecraft:stored_enchantments={levels:{"minecraft:' + ench + '":' + lvl + '}}]'
 }
 function nsTrDiscs() {
-	var ids = ['13', 'cat', 'blocks', 'chirp', 'far', 'mall', 'mellohi', 'stal', 'strad', 'ward', '11', 'wait', 'otherside', '5', 'pigstep', 'relic', 'creator', 'creator_music_box', 'precipice']
+	var ids = ['13', 'cat', 'blocks', 'chirp', 'far', 'mall', 'mellohi', 'stal', 'strad', 'ward', '11', 'wait', 'otherside', 'pigstep', 'relic', 'creator', 'creator_music_box', 'precipice']
 	var out = []
 	for (var i = 0; i < ids.length; i++) out.push(['minecraft:music_disc_' + ids[i], 1, ids[i] === 'pigstep' || ids[i] === 'otherside' || ids[i] === 'creator' ? 9 : 7, 1, 1, 0])
 	out.push(['aeronautics:music_disc_cloud_skipper', 1, 8, 1, 1, 0])
@@ -79,11 +83,15 @@ var NS_TR_GROUPS = [
 		pool: [['nightshift:supply_crate', 1, 8, 3, 1, 0]],
 	},
 	{
-		key: 'rockets', min: 1, max: 1, chance: 1,
+		// живность (07.10 вместо ракет — ракеты делает миксер)
+		key: 'critters', min: 1, max: 1, chance: 1,
 		pool: [
-			['minecraft:firework_rocket[minecraft:fireworks={flight_duration:3}]', 32, 4, 4, 3, 0, 'для элитр — полёт 3'],
-			['minecraft:firework_rocket[minecraft:fireworks={flight_duration:1,explosions:[{shape:"large_ball",colors:[I;' + nsTrRgb('3DAA88') + ',' + nsTrRgb('C53A47') + '],fade_colors:[I;' + nsTrRgb('F2C623') + '],has_trail:true,has_twinkle:true},{shape:"star",colors:[I;' + nsTrRgb('F2C623') + '],has_twinkle:true}]}]', 16, 4, 3, 2, 0, 'салют смены: изумруд и бордо'],
-			['minecraft:firework_rocket[minecraft:fireworks={flight_duration:2,explosions:[{shape:"creeper",colors:[I;' + nsTrRgb('4CAF50') + '],has_trail:true}]}]', 16, 4, 3, 1, 0, 'салют «Крипер»'],
+			['minecraft:turtle_egg', 2, 6, 2, 2, 0, 'вылупятся на песке'],
+			['minecraft:tadpole_bucket', 1, 4, 2, 2, 0, 'головастик — вырастет в лягушку'],
+			['minecraft:tropical_fish_bucket', 1, 3, 2, 1, 0],
+			['minecraft:pufferfish_bucket', 1, 3, 1, 1, 0],
+			['minecraft:axolotl_bucket[minecraft:bucket_entity_data={Variant:2}]', 1, 6, 1, 1, 0, 'золотой аксолотль'],
+			['minecraft:axolotl_bucket[minecraft:bucket_entity_data={Variant:3}]', 1, 6, 1, 1, 0, 'голубой аксолотль'],
 		],
 	},
 	{ key: 'disc', min: 1, max: 1, chance: 1, pool: nsTrDiscs() },
@@ -91,11 +99,11 @@ var NS_TR_GROUPS = [
 		key: 'flora', min: 1, max: 2, chance: 1,
 		pool: [
 			['minecraft:cherry_sapling', 2, 3, 2, 2, 0], ['minecraft:mangrove_propagule', 4, 3, 2, 1, 0], ['minecraft:pink_petals', 16, 3, 2, 2, 0],
-			['minecraft:torchflower', 4, 4, 2, 2, 0], ['minecraft:pitcher_plant', 2, 4, 2, 2, 0], ['minecraft:wither_rose', 2, 6, 1, 1, 10],
-			['minecraft:spore_blossom', 2, 5, 2, 2, 0], ['minecraft:flowering_azalea', 4, 3, 2, 1, 0], ['minecraft:chorus_flower', 2, 6, 1, 1, 20],
-			['minecraft:big_dripleaf', 4, 3, 2, 1, 0], ['minecraft:glow_berries', 16, 3, 2, 1, 0], ['minecraft:sea_pickle', 8, 3, 2, 1, 0],
+			['minecraft:torchflower', 4, 4, 2, 2, 0], ['minecraft:pitcher_plant', 2, 4, 2, 2, 0], ['minecraft:pitcher_pod', 2, 4, 2, 1, 0],
+			['minecraft:spore_blossom', 2, 5, 2, 2, 0], ['minecraft:flowering_azalea', 4, 3, 2, 1, 0], ['minecraft:torchflower_seeds', 4, 4, 2, 1, 0],
+			['minecraft:big_dripleaf', 4, 3, 2, 1, 0], ['minecraft:small_dripleaf', 4, 3, 2, 1, 0], ['minecraft:sea_pickle', 8, 3, 2, 1, 0],
 			['minecraft:lily_of_the_valley', 8, 2, 2, 1, 0], ['minecraft:blue_orchid', 8, 2, 2, 1, 0], ['minecraft:sunflower', 4, 2, 2, 1, 0],
-			['minecraft:crimson_fungus', 4, 4, 2, 1, 0], ['minecraft:warped_fungus', 4, 4, 2, 1, 0], ['minecraft:dark_oak_sapling', 4, 2, 2, 1, 0],
+			['minecraft:hanging_roots', 8, 2, 2, 1, 0], ['minecraft:glow_lichen', 16, 2, 2, 1, 0], ['minecraft:dark_oak_sapling', 4, 2, 2, 1, 0],
 			['minecraft:jungle_sapling', 4, 2, 2, 1, 0], ['minecraft:cocoa_beans', 8, 2, 2, 1, 0], ['minecraft:sweet_berries', 16, 2, 2, 1, 0],
 			['minecraft:azalea', 4, 2, 2, 1, 0], ['minecraft:moss_block', 16, 2, 2, 1, 0], ['minecraft:lily_pad', 8, 2, 2, 1, 0],
 		],
@@ -115,8 +123,12 @@ var NS_TR_GROUPS = [
 		],
 	},
 	{
-		key: 'scroll', min: 1, max: 1, chance: 0.6,
-		pool: [['loot:nightshift:magic/wave_scroll', 1, 10, 1, 3, 0, 'свиток заклинания'], ['loot:nightshift:magic/wave_scroll_strong', 1, 16, 1, 2, 27, 'сильный свиток заклинания']],
+		// головы мобов (07.10 вместо свитков — свитки делает кузница свитков); череп визера дробится из чернокамня
+		key: 'heads', min: 1, max: 1, chance: 0.6,
+		pool: [
+			['minecraft:creeper_head', 1, 8, 1, 2, 0], ['minecraft:zombie_head', 1, 6, 1, 2, 0], ['minecraft:skeleton_skull', 1, 6, 1, 2, 0],
+			['minecraft:piglin_head', 1, 8, 1, 2, 0], ['minecraft:dragon_head', 1, 30, 1, 1, 20, 'голова дракона Энда'],
+		],
 	},
 	{
 		key: 'cosmetic', min: 1, max: 2, chance: 1,
@@ -131,9 +143,10 @@ var NS_TR_GROUPS = [
 			['minecraft:goat_horn[minecraft:instrument="minecraft:dream_goat_horn"]', 1, 7, 1, 1, 0],
 			['minecraft:globe_banner_pattern', 1, 5, 1, 1, 0], ['minecraft:piglin_banner_pattern', 1, 5, 1, 1, 0],
 			['minecraft:flow_banner_pattern', 1, 5, 1, 1, 0], ['minecraft:guster_banner_pattern', 1, 5, 1, 1, 0],
-			['minecraft:skull_banner_pattern', 1, 6, 1, 1, 0], ['minecraft:mojang_banner_pattern', 1, 6, 1, 1, 0],
-			['minecraft:name_tag', 2, 5, 2, 2, 0], ['minecraft:saddle', 1, 5, 2, 1, 0],
+			['minecraft:saddle', 1, 5, 2, 1, 0],
 			['minecraft:angler_pottery_sherd', 1, 3, 1, 1, 0], ['minecraft:heart_pottery_sherd', 1, 3, 1, 1, 0], ['minecraft:skull_pottery_sherd', 1, 3, 1, 1, 0],
+			['minecraft:archer_pottery_sherd', 1, 3, 1, 1, 0], ['minecraft:prize_pottery_sherd', 1, 3, 1, 1, 0], ['minecraft:howl_pottery_sherd', 1, 3, 1, 1, 0],
+			['minecraft:friend_pottery_sherd', 1, 3, 1, 1, 0], ['minecraft:shelter_pottery_sherd', 1, 3, 1, 1, 0], ['minecraft:snort_pottery_sherd', 1, 3, 1, 1, 0],
 			['minecraft:axolotl_bucket[minecraft:bucket_entity_data={Variant:4}]', 1, 20, 1, 1, 0, 'синий аксолотль — один на тысячу'],
 			['minecraft:leather_helmet[minecraft:dyed_color={rgb:' + nsTrRgb('3DAA88') + '},minecraft:unbreakable={},minecraft:custom_name=\'{"text":"Кепка снабженца","color":"green","italic":false}\']', 1, 4, 2, 1, 0, 'неломаемая'],
 		],
@@ -152,9 +165,10 @@ var NS_TR_GROUPS = [
 		pool: [
 			['dragon_egg', 1, 112, 1, 3, 5, 'яйцо дракона'],
 			['minecraft:elytra', 1, 88, 1, 2, 15],
-			['minecraft:enchanted_golden_apple', 1, 30, 1, 3, 10],
+			['minecraft:heavy_core', 1, 36, 1, 2, 10, 'тяжёлое ядро — для булавы'],
 			['minecraft:totem_of_undying', 1, 22, 1, 2, 10],
-			['minecraft:heart_of_the_sea', 1, 24, 1, 2, 5],
+			['minecraft:budding_amethyst', 1, 28, 1, 2, 5, 'почкующийся аметист — не добыть даже шёлком'],
+			['minecraft:shulker_shell', 2, 18, 1, 2, 15],
 			['minecraft:sniffer_egg', 1, 12, 1, 2, 0],
 			['minecraft:netherite_upgrade_smithing_template', 1, 40, 1, 1, 20],
 			['minecraft:echo_shard', 4, 16, 1, 1, 20],
@@ -810,7 +824,7 @@ NativeEvents.onEvent(NS_TR_TRADE_EV, function (event) {
 			p.tell(Text.of('xaero-waypoint:' + (S.kind === 'camp' ? 'Схрон' : 'Клад') + ':' + (S.kind === 'camp' ? 'С' : 'К') + ':' + S.x + ':70:' + S.z + ':6:false:0:Internal-overworld-waypoints'))
 		}
 		var rid = nsFunId(res)
-		if (rid.indexOf('dragon_egg') >= 0 || rid.indexOf('elytra') >= 0 || rid.indexOf('enchanted_golden_apple') >= 0 || rid.indexOf('netherite_upgrade') >= 0) {
+		if (rid.indexOf('dragon_egg') >= 0 || rid.indexOf('elytra') >= 0 || rid.indexOf('heavy_core') >= 0 || rid.indexOf('budding_amethyst') >= 0 || rid.indexOf('netherite_upgrade') >= 0) {
 			nsTellAll(Text.gold('[Снабженец] ').append(Text.white(name + ' купил редкость: ')).append(res.getHoverName()))
 			NSG.nsServer.runCommandSilent('execute as ' + name + ' at @s run playsound minecraft:ui.toast.challenge_complete master @a ~ ~ ~ 0.6 1.2')
 		} else nsFunSound(name, 'minecraft:entity.experience_orb.pickup', 0.6, 1.4)

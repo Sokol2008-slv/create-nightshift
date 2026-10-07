@@ -17,6 +17,10 @@ file = "config/ProjectE/server.toml"
 hash = "5b4f9802c51836656497f3335c52ebee061178a170d74933526edf8eb251260f"
 
 [[files]]
+file = "config/axiomativ/keys.json"
+hash = "9e39898979260602b80a66509049a253e0fc6d80efaeae77dd76bc33c7f93359"
+
+[[files]]
 file = "config/cataclysm-common.toml"
 hash = "ef379731b3265ede2c6eff356a8aadb0e0d100b2218e75595938fd94b8eb9e84"
 
@@ -30,7 +34,7 @@ hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
 
 [[files]]
 file = "config/defaultoptions/keybindings.txt"
-hash = "2a556a1ed16dbea59cc5c1714a13152981fcd3608360fe74bd8b0f26168ba026"
+hash = "65515b125da904fc8bd3a24426f43edb153a66002b3e76de6994cc9dd154633a"
 
 [[files]]
 file = "config/dmr-server.toml"
@@ -102,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "7a5b8411bdcc3ae8f9af9360e43ce694d1caa88f2e3a76f157fe3994debac27e"
+hash = "0b63d5511b815272da77235c9a3545e7e1ebe7d8995ac0ef2657a39336004e0b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "7a5b8411bdcc3ae8f9af9360e43ce694d1caa88f2e3a76f157fe3994debac27e"
+hash = "0b63d5511b815272da77235c9a3545e7e1ebe7d8995ac0ef2657a39336004e0b"
 
 [[files]]
 file = "config/iris.properties"
@@ -1185,6 +1189,10 @@ file = "kubejs/assets/nightshift/textures/slot/relic.png"
 hash = "8103fa1d3ae22aae468c03496c1cdda82c5bfc50353807e92157d2f98f041455"
 
 [[files]]
+file = "kubejs/assets/nightshift_keys/lang/ru_ru.json"
+hash = "d809b42c6938122298b2af61e56d52f840b4e7d504c0834cde72d1fe6c4a24d9"
+
+[[files]]
 file = "kubejs/assets/pingwheel/lang/ru_ru.json"
 hash = "04b67d6b7f0497e994bf458cd7b03f3e470eacb8bc731253b9d3c11e5a9b630c"
 
@@ -1454,7 +1462,7 @@ hash = "3de2bc9beea51da82edfd2325c943ce04635676a80c1307af80c81d5289d3854"
 
 [[files]]
 file = "kubejs/data/nightshift/loot_table/trader/supply_crate.json"
-hash = "07ec3f5e9a960ab922d3efdf5537c3c165b616ca087a1d2c046575d12d4d9f39"
+hash = "055053f763022eba5edb683be1be1b6b0d0dbd6b2cc5fc768a08027b46a76ee2"
 
 [[files]]
 file = "kubejs/data/nightshift/neoforge/biome_modifier/outpost_bauxite.json"
@@ -1986,7 +1994,7 @@ hash = "2dfc748f013b8c42653b1694a124eff7421c900fddfbd5503e8435eb4c8e72a9"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_salt.json"
-hash = "b9c963ebfb49cc38e036ec7042ee5867a51121fddac3642a16c5461768e78b23"
+hash = "f3a97e2512740e10b1d7413cdd7f44dac52fc6a934115a69077653a33953408c"
 
 [[files]]
 file = "kubejs/data/nightshift/worldgen/configured_feature/outpost_star_stone.json"
@@ -2202,7 +2210,11 @@ hash = "896c5f72ed6ba332b26a47c9a0fafc31bef6e9ab47c3557ad7d442700b817919"
 
 [[files]]
 file = "kubejs/server_scripts/hud/30_help.js"
-hash = "c8ea45e258f9a258136bca01a9095bc5b7c36599e39d21d7417e2f1def953cda"
+hash = "64afbaf9d8d360c8ae5aa57ed5dd9792cbb5f4065f40e983a9fc096d02f4378d"
+
+[[files]]
+file = "kubejs/server_scripts/hud/31_keys.js"
+hash = "bce4d8d763c6e9e8b06d46c6206bd899fe12deabc3109aeab3f1bc3abce24e48"
 
 [[files]]
 file = "kubejs/server_scripts/hud/40_first_hints.js"
@@ -2514,7 +2526,7 @@ hash = "fd5fd7bee225215a2af867c64e2e86ac82c9c8e04e2660f27e5f2c12df314a23"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/81_deposit_grow.js"
-hash = "db5bd70baa03a432291e5ab17d6e542c8fe9dbf6760d4b9cccdc45c903bc70a8"
+hash = "0d0eaf40398313f0ddd869682d106c6fb95eadabe4d57da3caaa724c62f02ec0"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/85_audit_fixes.js"
@@ -2526,7 +2538,7 @@ hash = "af715f0d8a7e933750bd072a4664e4fc271083931652c7a6e4e836af93fc78c0"
 
 [[files]]
 file = "kubejs/server_scripts/zabava/10_trader.js"
-hash = "0f2e64a075f4e32cac9d8e58ed0630e4469df6c3c2c34d86c4c3927c699b23a9"
+hash = "7faac0871168ef1f483f2542afb502e2b3aae5d59b77657a48b85c52c7217089"
 
 [[files]]
 file = "kubejs/server_scripts/zabava/20_race.js"
@@ -2674,7 +2686,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "30668c24443f43f633f22f97512547a2004e3f27500fcbd7649c325e1e023965"
+hash = "aaeaa8f42db91f21164edb40b9c46b0b38247118a305c7b798815cd2409b03de"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
