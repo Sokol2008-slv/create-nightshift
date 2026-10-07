@@ -263,6 +263,7 @@ function nsTirEnd(why) {
 	var paid = 0
 	if (record && prev) {
 		nsFunStage(s.name, 'ns_fun_tir_rec')
+		if (typeof nsBoardAdd === 'function') nsBoardAdd(s.name, 'tir', 1) // доска почёта (shift/45_board.js)
 		var gainOk = s.mode === 'sprint' ? prev.v - value >= Math.max(prev.v * NS_TIR.minGain, 10) : value - prev.v >= Math.max(prev.v * NS_TIR.minGain, 2)
 		if (gainOk) paid = nsFunReward(p, 'tir', NS_TIR.reward[s.mode])
 	}

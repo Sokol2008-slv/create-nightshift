@@ -292,6 +292,9 @@ function nsEndlessFinish(state, mobs) {
 		NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete master @a')
 	}
 	console.info('[nightshift] выживание: волна ' + d + ', подволн ' + subs + (isRec ? ' (рекорд)' : ''))
+	nsTry('доска почёта', function () {
+		if (subs > 0 && typeof nsBoardOnEndless === 'function') nsBoardOnEndless(names, subs) // shift/45_board.js
+	})
 	if (subs > 0) {
 		nsTry('добыча выживания', function () {
 			var present = {}

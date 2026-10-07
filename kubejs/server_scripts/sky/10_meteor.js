@@ -871,6 +871,7 @@ function nsSkyShare(level, breakerName, m) {
 			NSG.nsServer.runCommandSilent('give ' + name + ' nightshift:meteor_iron ' + n)
 		}
 		m.shares[name] = (m.shares[name] || 0) + n
+		if (typeof nsBoardAdd === 'function') nsBoardAdd(name, 'meteor', n) // доска почёта (боты проверки не в счёт)
 		try {
 			q.setStatusMessage(Text.gold('+' + n + ' метеоритного железа').append(Text.gray(name === breakerName ? ' — ваша доля с руды' : ' — доля с руды (ломал ' + breakerName + ')')))
 		} catch (e2) {}
