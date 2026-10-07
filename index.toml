@@ -1537,6 +1537,10 @@ file = "kubejs/assets/voicechat/lang/ru_ru.json"
 hash = "bf30e1015713f6f764a453b014f025c3099bbdad7144d5c091aa533733085d5e"
 
 [[files]]
+file = "kubejs/assets/wands/lang/ru_ru.json"
+hash = "521da68ae7fd33ba503e7c3a416dbd270454d2fab674b3ba199d012c0da954ed"
+
+[[files]]
 file = "kubejs/assets/xaerolib/lang/ru_ru.json"
 hash = "30aa2d2bad5b9284cf4dd14e32707cfe6c699d635ab19bab5bdedc76d43071be"
 
