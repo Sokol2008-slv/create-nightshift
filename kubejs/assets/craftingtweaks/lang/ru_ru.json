@@ -1,3 +1,21 @@
 {
-  "key.craftingtweaks.transfer_stack": "Перенести в сетку крафта"
+  "key.craftingtweaks.transfer_stack": "Перенести в сетку крафта",
+  "craftingtweaks.configuration.common": "Общие",
+  "craftingtweaks.configuration.common.compressRequiresCraftingGrid": "Сжатие только в сетке крафта",
+  "craftingtweaks.configuration.common.compressRequiresCraftingGrid.tooltip": "Выключи, чтобы (рас)сжатие работало и вне окон крафта (только если мод стоит на сервере и ты в инвентаре игрока)",
+  "craftingtweaks.configuration.common.compressDenylist": "Запрет сжатия",
+  "craftingtweaks.configuration.common.compressDenylist.tooltip": "Список modid:name, которые не будут крафтиться клавишей сжатия.",
+  "craftingtweaks.configuration.client": "Клиент",
+  "craftingtweaks.configuration.client.rightClickCraftsStack": "ПКМ крафтит стопку",
+  "craftingtweaks.configuration.client.rightClickCraftsStack.tooltip": "Если включено, ПКМ по слоту результата в верстаке крафтит целую стопку.",
+  "craftingtweaks.configuration.client.hideVanillaCraftingGuide": "Скрыть книгу рецептов",
+  "craftingtweaks.configuration.client.hideVanillaCraftingGuide.tooltip": "Мы оба знаем, что JEI лучше. Прячет кнопку ванильной книги рецептов, а не переносит её.",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetX": "Сдвиг книги рецептов по X",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetX.tooltip": "Отступ справа при переносе кнопки книги рецептов.",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetY": "Сдвиг книги рецептов по Y",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetY.tooltip": "Отступ сверху при переносе кнопки книги рецептов.",
+  "craftingtweaks.configuration.client.mode": "Режим",
+  "craftingtweaks.configuration.client.mode.tooltip": "DEFAULT — и кнопки, и клавиши. BUTTONS — только кнопки. HOTKEYS — только клавиши. DISABLED — полностью выключить.",
+  "craftingtweaks.configuration.client.disabledAddons": "Отключённые дополнения",
+  "craftingtweaks.configuration.client.disabledAddons.tooltip": "ID модов, для которых отключить поддержку Crafting Tweaks."
 }
