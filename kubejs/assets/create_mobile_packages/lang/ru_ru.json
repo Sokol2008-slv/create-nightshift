@@ -1,0 +1,9 @@
+{
+  "tooltip.create_mobile_packages.network.owner_indicator": "Ты владелец этой сети",
+  "tooltip.create_mobile_packages.network.member_indicator": "Ты участник этой сети",
+  "tooltip.create_mobile_packages.bee_port.filter_mode.all": "Фильтр: все предметы",
+  "tooltip.create_mobile_packages.bee_port.filter_mode.packages": "Фильтр: только коробки",
+  "tooltip.create_mobile_packages.bee_port.filter_mode.bees": "Фильтр: только робопчёлы",
+  "tooltip.create_mobile_packages.bee_port.filter_mode.description": "Что можно класть и забирать воронками, желобами, шлюзами и т. п.",
+  "tooltip.create_mobile_packages.bee_port.return_mode.description": "Возвращается ли пчела в этот порт после доставки."
+}
