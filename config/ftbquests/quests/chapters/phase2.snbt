@@ -371,6 +371,26 @@
 		}
 		{
 			dependencies: ["7B2C996C9330FAFF"]
+			id: "775B71ACFBF270C3"
+			rewards: [{ id: "0E642439FBC12950", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "0DA6FB80B61C9870", item: { count: 1, id: "axiomativ:raid_sensor" }, type: "item" }]
+			x: 7.80d
+			y: -1.50d
+		}
+		{
+			dependencies: ["775B71ACFBF270C3"]
+			id: "22926F0A3833DD91"
+			rewards: [{ id: "7574F6466A48188B", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "4FBBAEACF38E256C", item: { count: 1, id: "axiomativ:raid_siren" }, type: "item" }]
+			x: 7.80d
+			y: -3.00d
+		}
+		{
+			dependencies: ["7B2C996C9330FAFF"]
 			id: "00FFADF948AC3736"
 			rewards: [{ id: "407509BBB5F5DE62", type: "xp", xp: 10 }]
 			shape: "rsquare"

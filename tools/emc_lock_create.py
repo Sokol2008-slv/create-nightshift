@@ -78,6 +78,8 @@ MANUAL_ZERO += ['axiomativ:supply_node', 'axiomativ:supply_relay', 'axiomativ:di
                 'axiomativ:supply_pack_mk2', 'axiomativ:quantum_supply_pack', 'axiomativ:incomplete_supply_pack']
 # 05.10: буровая установка (аддон 0.7.0) — высокая ступень форпоста, только машинами
 MANUAL_ZERO += ['axiomativ:drilling_rig']
+# 07.10: датчик набега и сирена (аддон 0.7.0) — оборона, только машинами
+MANUAL_ZERO += ['axiomativ:raid_sensor', 'axiomativ:raid_siren']
 # 06.10 (финальный аудит): металлы планет Northstar — по правилу 30.09 «металлы наших планет — только добычей». Их руды
 # и слитки носили тег c:ores / c:ingots и остались в продаже по цене тега: титан 256 (дешевле железа), вольфрам 356,
 # марсианская руда 256 → дробилка → 1,75 сырой марсианской по 10 240. Ни купить, ни продать — только с планет.

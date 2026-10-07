@@ -211,6 +211,8 @@
 | Жезл команды | `modulargolems:command_wand` | 0 | добыча / ящик |
 | Андезитовый голем | `creategolemsgalore:industrial_iron_hat` | 0 | добыча / ящик |
 | Электронная лампа | `create:electron_tube` | 1 | Незер |
+| Датчик набега | `axiomativ:raid_sensor` | 2 | горелка всполоха |
+| Сирена | `axiomativ:raid_siren` | 0 | добыча / ящик |
 | Уборка без рук | `create_integrated_farming:vacuum_harvester` | 2 | горелка всполоха |
 | Пар: котёл из баков | `create:fluid_tank` | 0 | добыча / ящик |
 | Горелка под котлом | `create:blaze_burner` | 2 | горелка всполоха |
@@ -261,7 +263,7 @@
 | Детектор рудных жил | `createoreexcavation:vein_finder` | 1 | Незер |
 | Пробоотборник | `createoreexcavation:sample_drill` | 3 | деплоер |
 | Атлас рудных жил | `createoreexcavation:vein_atlas` | 0 | добыча / ящик |
-| Буровая установка | `createoreexcavation:drilling_machine` | 3 | крафтеры сверх 9 из ящика |
+| Жильный бур | `createoreexcavation:drilling_machine` | 3 | крафтеры сверх 9 из ящика |
 | Сменный бур | `createoreexcavation:drill` | 0 | добыча / ящик |
 | Сканер жил | `nightshift:vein_scanner` | 2 | горелка всполоха |
 | Очиститель жилы | `nightshift:vein_cleaner` | 0 | добыча / ящик |

@@ -1078,6 +1078,7 @@ function nsRaidVictory(state) {
 		state.curse = Math.min(T.curseMaxHearts, (state.curse || 0) + T.curseHeartsMinor) // прорыв к алтарю
 	} else if ((state.curse || 0) > 0) state.curse--
 	nsSaveState(state)
+	if (typeof nsRsigVictory === 'function') nsRsigVictory(raid) // датчики набега: импульс «победа» (42_raid_signal.js)
 
 	nsTry('откат арены', function () {
 		if (typeof nsArenaHook === 'function') nsArenaHook('end', raid.altarId)
