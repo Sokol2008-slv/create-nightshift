@@ -1,0 +1,19 @@
+{
+  "message.voicechat.gain": "Усиление: %s",
+  "message.voicechat.gain.auto": "Авто",
+  "message.voicechat.gain.manual": "Вручную",
+  "message.voicechat.gain.manual.warning": "Оставьте автоматическое усиление микрофона включённым, чтобы все слышали вас с ровной громкостью.",
+  "message.voicechat.microphone_gain.warning": "Усиление больше %s дБ может давать искажения звука и другие проблемы!",
+  "message.voicechat.voice_activation_detection": "Голосовая активация: %s",
+  "message.voicechat.voice_activation_detection.auto": "Авто",
+  "message.voicechat.voice_activation_detection.manual": "Вручную",
+  "message.voicechat.default_microphone": "Системный по умолчанию",
+  "message.voicechat.default_speaker": "Системный по умолчанию",
+  "message.voicechat.test_speaker": "Нажмите, чтобы проиграть тестовый звук.",
+  "message.voicechat.ping_received_attempt": "Ответ получен за %s мс, попыток: %s",
+  "message.voicechat.native_error": "Некоторые модули не загрузились — возможно, ваша операционная система не поддерживается.",
+  "message.voicechat.onboarding.activation.voice": "%s сама включает микрофон, когда вы говорите.",
+  "message.voicechat.onboarding.voice.title": "Настройка голосовой активации",
+  "message.voicechat.onboarding.voice.description": "Включите проверку микрофона и убедитесь, что слышите свой голос, когда говорите. Если не работает — выберите ручную голосовую активацию и настройте порог срабатывания.",
+  "cloth_config.voicechat.category.group_chat_icons": "Значки группового чата"
+}
