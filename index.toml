@@ -317,6 +317,10 @@ file = "kubejs/assets/garnished/lang/ru_ru.json"
 hash = "f3ef4d9d967d39ea68ad4a7e01f0c2c730f6d747cecd0f429c6a9fb4a2505f75"
 
 [[files]]
+file = "kubejs/assets/genshinstrument/lang/ru_ru.json"
+hash = "95a49282c030ea9f9f0bc38f04105209f9836f53dff944ee305cabda4157921c"
+
+[[files]]
 file = "kubejs/assets/golemoverhaul/lang/ru_ru.json"
 hash = "560c515d9fc84af5045d632d144361bbf2a1bde43a51734feeacc2440c7d5a76"
 
