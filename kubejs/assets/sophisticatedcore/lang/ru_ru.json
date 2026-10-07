@@ -15,5 +15,16 @@
   "item.sophisticatedcore.stack_upgrade_conversion.tooltip": "ПКМ по установленному улучшению «Переполнение», чтобы преобразовать его",
   "gui.sophisticatedcore.buttons.browse_results": "Открыть полный список результатов с поиском",
   "gui.sophisticatedcore.settings.buttons.z_offset": "Глубина",
-  "gui.sophisticatedcore.settings.buttons.z_offset_detail": "Наружу — ЛКМ\nВнутрь — ПКМ"
+  "gui.sophisticatedcore.settings.buttons.z_offset_detail": "Наружу — ЛКМ\nВнутрь — ПКМ",
+  "sophisticatedcore.configuration.client": "Клиент",
+  "sophisticatedcore.configuration.common": "Общие",
+  "sophisticatedcore.configuration.sortButtonsPosition": "Где кнопки сортировки",
+  "sophisticatedcore.configuration.playButtonSound": "Звук кнопок",
+  "sophisticatedcore.configuration.mouseTweaksScrollEnabled": "Прокрутка через Mouse Tweaks",
+  "sophisticatedcore.configuration.enabledItems": "Включённые предметы мода",
+  "sophisticatedcore.configuration.enabledItems.tooltip": "Здесь уже перечислены все поддерживаемые предметы. Чтобы отключить предмет, замени |true на |false.\nФормат: item_id|true_or_false\nПример: sophisticatedbackpacks:smelting_upgrade|true",
+  "sophisticatedcore.configuration.sortButtonsPosition.title_line_right": "Справа от заголовка",
+  "sophisticatedcore.configuration.sortButtonsPosition.below_upgrades": "Под улучшениями",
+  "sophisticatedcore.configuration.sortButtonsPosition.below_upgrade_tabs": "Под вкладками улучшений",
+  "sophisticatedcore.configuration.sortButtonsPosition.hidden": "Скрыты"
 }
