@@ -1221,6 +1221,10 @@ file = "kubejs/assets/nightshift_keys/lang/ru_ru.json"
 hash = "d809b42c6938122298b2af61e56d52f840b4e7d504c0834cde72d1fe6c4a24d9"
 
 [[files]]
+file = "kubejs/assets/northstar/lang/ru_ru.json"
+hash = "81195961c2d00752b193bfeb7a5f2f53fc4f993116ebc3fc543224cc3b20844e"
+
+[[files]]
 file = "kubejs/assets/pingwheel/lang/ru_ru.json"
 hash = "04b67d6b7f0497e994bf458cd7b03f3e470eacb8bc731253b9d3c11e5a9b630c"
 
