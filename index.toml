@@ -293,6 +293,10 @@ file = "kubejs/assets/ftbteams/lang/ru_ru.json"
 hash = "ef375177e63aa626435acd163276aa86b2e1f2c5b8949bc8717f16e45bd9d466"
 
 [[files]]
+file = "kubejs/assets/ftbultimine/lang/ru_ru.json"
+hash = "a1d08d256cddc088cc63b77435c988c7bc80f802116610d00e3a1a7e5e6ec9f1"
+
+[[files]]
 file = "kubejs/assets/golemoverhaul/lang/ru_ru.json"
 hash = "560c515d9fc84af5045d632d144361bbf2a1bde43a51734feeacc2440c7d5a76"
 
