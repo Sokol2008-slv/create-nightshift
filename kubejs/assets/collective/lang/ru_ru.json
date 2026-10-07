@@ -1,0 +1,15 @@
+{
+  "collective.shared.message.adminusage": "%s — команды администратора:",
+  "collective.shared.message.commandsusage": "--- %s: команды ---",
+  "collective.shared.message.nopermission": "У тебя нет прав на эту команду.",
+  "collective.shared.message.playeronly": "Эту команду может выполнить только игрок.",
+  "collective.shared.message.reloadsconfigfile": "Перезагружает файл настроек.",
+  "collective.shared.message.showmessage": "Показать это сообщение.",
+  "collective.shared.message.successfullygeneratedhead": "Создано голов: %1$s × %2$s.",
+  "collective.shared.message.usage": "%s — использование:",
+  "collective.shared.message.wanderingtraderspawnfailed": "Не удалось призвать странствующего торговца, попробуй ещё раз.",
+  "collective.shared.message.wanderingtraderspawnsuccesful": "Странствующий торговец призван!",
+  "collective.collective.gui.reset": "Сбросить",
+  "collective.collective.message.headcachehelp": "Сбрасывает кэш голов игроков Collective — например, чтобы обновить скины.",
+  "collective.collective.message.headcachereset": "Кэш голов игроков сброшен."
+}
