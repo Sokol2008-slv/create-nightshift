@@ -46,5 +46,7 @@
   "tag.block.garnished.fan_processing_catalysts.dye.light_gray": "Массово красит предметы в светло-серый",
   "tag.block.garnished.fan_processing_catalysts.dye.white": "Массово красит предметы в белый",
   "tag.block.garnished.fan_processing_catalysts.dye.brown": "Массово красит предметы в коричневый",
-  "block.garnished.solidified_garnish_bricks": "Кирпичи из затвердевшей приправы"
+  "block.garnished.solidified_garnish_bricks": "Кирпичи из затвердевшей приправы",
+  "advancement.garnished.dejojotheawsome.title": "Офигенно",
+  "advancement.garnished.dejojotheawsome.description": "Зайди в мир под ником того, с кого всё началось — спасибо, Dejojo"
 }
