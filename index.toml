@@ -237,6 +237,10 @@ file = "kubejs/assets/createoreexcavation/lang/ru_ru.json"
 hash = "46f5867450ba09f9836776d91ab7ccd92a898cc3c10a960dd92158063cb77a4e"
 
 [[files]]
+file = "kubejs/assets/createpropulsion/lang/ru_ru.json"
+hash = "e5247ca5ec2bb287d15472678b997fc3313b28eacccd696e322d485629f87877"
+
+[[files]]
 file = "kubejs/assets/createrailwaysnavigator/lang/ru_ru.json"
 hash = "ef8673694cfd473529fb51de340bbbc228d8a89bc870111e57a7d880030d64b3"
 

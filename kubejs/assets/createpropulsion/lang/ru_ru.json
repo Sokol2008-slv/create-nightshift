@@ -1,0 +1,17 @@
+{
+  "block.createpropulsion.solid_fuel_thruster": "Твердотопливный двигатель",
+  "createpropulsion.solid_fuel_thruster.tooltip.summary": "Компактный двигатель: сжигает твёрдое топливо, которое подают сзади. Редстоун только включает и выключает. Гаечным ключом открывается люк — тогда двигатель сам тянет топливо из контейнеров позади.",
+  "createpropulsion.gui.goggles.solid_fuel_thruster.fuel_label": "Твёрдое топливо",
+  "createpropulsion.gui.goggles.solid_fuel_thruster.burn_time": " горения",
+  "createpropulsion.gui.goggles.solid_fuel_thruster.infinite": "Бесконечно",
+  "createpropulsion.gui.goggles.solid_fuel_thruster.superheated": "Перегрев",
+  "block.createpropulsion.advanced_tilt_adapter": "Продвинутый адаптер наклона",
+  "createpropulsion.advanced_tilt_adapter.left_angle": "Предел угла влево",
+  "createpropulsion.advanced_tilt_adapter.right_angle": "Предел угла вправо",
+  "createpropulsion.advanced_tilt_adapter.tooltip.summary": "Адаптер наклона, у которого предельный угол настраивается для каждой стороны. Удерживай Ctrl при настройке, чтобы сделать предел общим.",
+  "createpropulsion.advanced_tilt_adapter.tooltip.shared": "У обеих сторон один предел угла.",
+  "createpropulsion.advanced_tilt_adapter.tooltip.independent": "У каждой стороны свой предел угла.",
+  "block.createpropulsion.platinum_fluid_vessel": "Платиновый жидкостный резервуар",
+  "createpropulsion.platinum_fluid_vessel.tooltip.summary": "Хранит жидкости, как медный жидкостный резервуар, но вмещает вдвое больше на блок.",
+  "death.attack.createpropulsion.coral": "%1$s слился с кораллом навсегда"
+}
