@@ -221,6 +221,7 @@
   "create_enchantment_industry.gui.goggles.infuser.stats.eterna": "Этерна: %1$s ",
   "create_enchantment_industry.gui.goggles.infuser.stats.quanta": "Кванта: %1$s",
   "create_enchantment_industry.gui.goggles.no_captured_entity": "Пусто",
+  "create_enchantment_industry.gui.goggles.printing.copy": "Копирование:",
   "create_enchantment_industry.ponder.affix.header": "Усилителем аффиксов",
   "create_enchantment_industry.ponder.affix.text_1": "В Apotheosis игрок может улучшать аффиксы снаряжения на столе усиления",
   "create_enchantment_industry.ponder.affix.text_2": "Усилитель аффиксов улучшает аффиксы снаряжения автоматически",
