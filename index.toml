@@ -249,6 +249,10 @@ file = "kubejs/assets/createbigcannons/lang/ru_ru.json"
 hash = "addb220049f88d30e12e1886b3fb3ea581da111bf1f1edb26fd0e7248bd4307d"
 
 [[files]]
+file = "kubejs/assets/createdeco/lang/ru_ru.json"
+hash = "f1f24a0519cd0f05f3053cf92ad86404014825ba8ab6311d4a16ab29ead85769"
+
+[[files]]
 file = "kubejs/assets/createdieselgenerators/lang/ru_ru.json"
 hash = "9d2665117a63de2a6dc669c9bba38b05681f26a7a782b25c93117e125b1e2b51"
 
