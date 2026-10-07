@@ -1,0 +1,6 @@
+{
+  "emi.category.createsifter.sifting": "Просеивание",
+  "item.createsifter.raw_copper_piece": "Кусочек рудной меди",
+  "mechanicals.ui.recipe_requirement.advanced_sifter.tooltip.missing": "Нужно латунное сито",
+  "mechanicals.ui.recipe_requirement.waterlogged.tooltip.missing": "Не затоплено водой"
+}
