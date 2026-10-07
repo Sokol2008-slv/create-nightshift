@@ -261,6 +261,10 @@ file = "kubejs/assets/create_easy_structures/lang/ru_ru.json"
 hash = "222c26fc0e72d1ab60ac789f1d7979f63bdf2768fb392b92a538846a7737fbb7"
 
 [[files]]
+file = "kubejs/assets/create_enchantment_industry/lang/ru_ru.json"
+hash = "acffba950ceb150cca22b45b2888b19da2449967684c88995b7fda58bc7d618f"
+
+[[files]]
 file = "kubejs/assets/create_factory_logistics/lang/ru_ru.json"
 hash = "e7eeefea78b863cc2c679a7aa1fde6ac49a7c7860cec2c801550e489dd02f32d"
 
