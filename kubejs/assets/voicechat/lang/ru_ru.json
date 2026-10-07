@@ -15,5 +15,11 @@
   "message.voicechat.onboarding.activation.voice": "%s сама включает микрофон, когда вы говорите.",
   "message.voicechat.onboarding.voice.title": "Настройка голосовой активации",
   "message.voicechat.onboarding.voice.description": "Включите проверку микрофона и убедитесь, что слышите свой голос, когда говорите. Если не работает — выберите ручную голосовую активацию и настройте порог срабатывания.",
-  "cloth_config.voicechat.category.group_chat_icons": "Значки группового чата"
+  "cloth_config.voicechat.category.group_chat_icons": "Значки группового чата",
+  "cloth_config.voicechat.config.ptt_deactivation_delay": "Задержка отключения (рация)",
+  "cloth_config.voicechat.config.ptt_deactivation_delay.description": "Через сколько отключается микрофон в режиме «Нажми, чтобы говорить».\nЗначение 1 — 20 миллисекунд, 2 = 40 мс, 3 = 60 мс и т. д.",
+  "cloth_config.voicechat.config.show_nametag_icons": "Значки голосового чата у ников",
+  "cloth_config.voicechat.config.show_nametag_icons.description": "Показывать ли значки голосового чата рядом с именами игроков",
+  "cloth_config.voicechat.config.show_hud_icons": "Значки голосового чата на экране",
+  "cloth_config.voicechat.config.show_hud_icons.description": "Показывать ли значки голосового чата на экране"
 }
