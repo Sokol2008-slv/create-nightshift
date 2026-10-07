@@ -261,6 +261,10 @@ file = "kubejs/assets/createendertransmission/lang/ru_ru.json"
 hash = "b5546b26edc68ae425bef443a454d86f2df0ed42631fa0cd8fa02bcbee35bf87"
 
 [[files]]
+file = "kubejs/assets/createframed/lang/ru_ru.json"
+hash = "610dceec40315f4c95d29065031624c193e3ec882f8eb1ad06d8e874b251eabc"
+
+[[files]]
 file = "kubejs/assets/creategbd/lang/ru_ru.json"
 hash = "10642886efae5f4b439703307ccc1047f4c75915a7a2fc0c82263bc5e1d64e0c"
 
