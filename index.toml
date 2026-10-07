@@ -405,6 +405,10 @@ file = "kubejs/assets/evenmoreinstruments/lang/ru_ru.json"
 hash = "e3677ef92e82010c0d37cf722201b15a048e67fbcb9a996a862e6da1e2814aaf"
 
 [[files]]
+file = "kubejs/assets/fallingleaves/lang/ru_ru.json"
+hash = "27b8331cf86fa972076672f790b9ce000554fa23e6a47200ee84b54efcbd3753"
+
+[[files]]
 file = "kubejs/assets/fastbench/lang/ru_ru.json"
 hash = "45bc4b72768f5a6a4b18419e1830d9068e4a0a843ae660ffe560900587bdf773"
 
