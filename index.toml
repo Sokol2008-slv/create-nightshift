@@ -277,6 +277,10 @@ file = "kubejs/assets/create_sa/lang/ru_ru.json"
 hash = "2af439e51001d82988c01c57f2b5be5b9c820c118a5e8ced08963c99ab70ac89"
 
 [[files]]
+file = "kubejs/assets/create_structures_arise/lang/ru_ru.json"
+hash = "d796b4ef4c5f6ae34cc11ad02b26488429e81dafa695cca6a079e7fa49669639"
+
+[[files]]
 file = "kubejs/assets/create_submarine/lang/ru_ru.json"
 hash = "173c7916d86b407000aaaf55dc697e3d97bd76bc9abdc940423069a6b2b45860"
 
