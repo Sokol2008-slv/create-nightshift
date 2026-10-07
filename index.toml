@@ -213,6 +213,10 @@ file = "kubejs/assets/create_connected/lang/ru_ru.json"
 hash = "f7ce4255831d4199f00f465882369da7ff9cd826485ac619068155bc3da0343e"
 
 [[files]]
+file = "kubejs/assets/create_deep_dark/lang/ru_ru.json"
+hash = "68ca8f468545693a8ac25de341de9cb28eb6a54f15615cc6bad807204b4944fd"
+
+[[files]]
 file = "kubejs/assets/create_dragons_plus/lang/ru_ru.json"
 hash = "11545cccf86fc36977ee943340a6e34d144600d547bf863b5d155778e5062479"
 
