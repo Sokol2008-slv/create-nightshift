@@ -309,6 +309,10 @@ file = "kubejs/assets/creategbd/lang/ru_ru.json"
 hash = "10642886efae5f4b439703307ccc1047f4c75915a7a2fc0c82263bc5e1d64e0c"
 
 [[files]]
+file = "kubejs/assets/creategoggles/lang/ru_ru.json"
+hash = "d60e040494cdfc32cecbf46136fcfc65fc2a46c23505b51607f9b08d766134c7"
+
+[[files]]
 file = "kubejs/assets/creategolemsgalore/lang/ru_ru.json"
 hash = "11256ad18dd9b4d1ed41263299c63b5902ecf7c23f1ea15ad2368e565c6da467"
 
