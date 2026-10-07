@@ -80,6 +80,7 @@
   "key.jei.nextSearch.context": "поле поиска JEI активно",
   "key.jei.copy.recipe.id.description": "Скопировать ID текущего рецепта в буфер обмена.",
   "key.jei.copy.recipe.id.context": "открыт любой интерфейс",
+  "jei.config.client.search.creativeTabSearchMode": "Искать во вкладках творческого режима",
   "gui.jei.search": "Фильтр ингредиентов",
   "gui.jei.category.grindstone.experience": "Опыт: от %s до %s",
   "gui.jei.category.tagInformation": "Теги: %s",
