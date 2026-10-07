@@ -233,6 +233,10 @@ file = "kubejs/assets/create_trimmed/lang/ru_ru.json"
 hash = "cc3e10f159e274f8a94713e550ec81c31a52ecb2c472bc5c5beea02b91740477"
 
 [[files]]
+file = "kubejs/assets/create_tweaked_controllers/lang/ru_ru.json"
+hash = "df262bbf194da5d2ca2aeb85e9437eeb83db6ea8cb727cace7fff7238195fcff"
+
+[[files]]
 file = "kubejs/assets/create_vibrant_vaults/lang/ru_ru.json"
 hash = "832f86771143fbd89937e260b6a380e1e65a3b6410b97728cceac8f798b93874"
 
