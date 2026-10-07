@@ -10,5 +10,16 @@
   "entity.end_watchers.end_watcher_jumpscare": "Наблюдатель Энда (скример)",
   "subtitles.end_watcher_i_see_you": "Я тебя вижу",
   "item.end_watchers.end_watcher_jumpscare_spawn_egg": "Яйцо призыва наблюдателя Энда (скример)",
-  "subtitles.end_watcher_behind_you": "Я за тобой"
+  "subtitles.end_watcher_behind_you": "Я за тобой",
+  "end_watchers.configuration.spawning": "Появление",
+  "end_watchers.configuration.sounds": "Звуки",
+  "end_watchers.configuration.despawnjumpscarevariant": "Убирать вариант-скример",
+  "end_watchers.configuration.spawn_jumpscarevariant": "Появление варианта-скримера",
+  "end_watchers.configuration.playambientsound": "Фоновый звук",
+  "end_watchers.configuration.end_watcherdespawntimer": "Таймер исчезновения наблюдателя Энда",
+  "end_watchers.configuration.playspawnsounds": "Звуки появления",
+  "end_watchers.configuration.despawnnearbyendermen": "Убирать эндерменов поблизости",
+  "end_watchers.configuration.dimensions": "Измерения",
+  "end_watchers.configuration.ambientsoundgivesdarkness": "Фоновый звук насылает тьму",
+  "end_watchers.configuration.dimensionsendwatcherscanspawnin": "Измерения, где появляются наблюдатели Энда"
 }
