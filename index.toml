@@ -149,6 +149,10 @@ file = "kubejs/assets/cave_dweller/lang/ru_ru.json"
 hash = "6035af34313b340b3fea54bc32af26d5a2d63a1c8c5bc3b02f99a208f1c5278f"
 
 [[files]]
+file = "kubejs/assets/craftingtweaks/lang/ru_ru.json"
+hash = "c5128907e70fc7dff6fbf67af4b9ec03afe698d3b9633dc75bc7feab054f0f6e"
+
+[[files]]
 file = "kubejs/assets/create_new_age/lang/ru_ru.json"
 hash = "613d83096fe671cfa0045be57a9bf7b79b628eb2c0ae178c4c305f73562cef21"
 
