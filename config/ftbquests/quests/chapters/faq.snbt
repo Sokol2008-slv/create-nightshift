@@ -320,5 +320,17 @@
 			x: 7.70d
 			y: 3.00d
 		}
+		{
+			dependencies: ["6F8E8FF64145C30B"]
+			icon: { id: "minecraft:clock" }
+			id: "5CE5AF02B093407A"
+			optional: true
+			rewards: [{ id: "1DC62FD307390F93", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1CFA5740BEC911A7", type: "checkmark" }]
+			x: 11.50d
+			y: 1.50d
+		}
 	]
 }

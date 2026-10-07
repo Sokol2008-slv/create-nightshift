@@ -151,7 +151,7 @@ function nsSumMeteor(clk, rs) {
 		var dist = Math.round(Math.sqrt(dx * dx + dz * dz))
 		var alive = Math.max(0, (m.guards || 0) - (m.killed || 0))
 		var hot = m.stage === 'hot'
-		var text = hot ? 'Метеорит остывает · ' + Math.max(1, Math.round((m.left || 0) / 60)) + ' мин' : 'Метеорит падает!'
+		var text = hot ? 'Метеорит остывает (' + Math.max(1, Math.round((m.left || 0) / 60)) + ' мин)' : 'Метеорит падает!'
 		return {
 			text: text,
 			color: 'gold',
@@ -244,8 +244,8 @@ function nsSumCall(clk, rs) {
 }
 
 // Контракты бригадира: сколько открыто, список — при наведении
-function nsSumContracts() {
-	if (typeof nsCtBoard !== 'function') return null
+function nsSumContracts(rs) {
+	if (typeof nsCtBoard !== 'function' || !nsHomeAltar(rs)) return null // без алтаря набегов нет — и контракты ни к чему
 	var list = nsCtBoard(nsGetState()) // как пульт алтаря: выполненные с рассветом меняются на новые
 	if (!list || !list.length) return null
 	var open = 0
@@ -295,7 +295,7 @@ function nsSumBuild() {
 		return nsSumCall(clk, rs)
 	})
 	add('контракты', function () {
-		return nsSumContracts()
+		return nsSumContracts(rs)
 	})
 	add('почёт', function () {
 		return typeof nsBoardSummaryChip === 'function' ? nsBoardSummaryChip(clk.day) : null
