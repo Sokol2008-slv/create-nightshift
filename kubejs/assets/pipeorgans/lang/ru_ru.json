@@ -1,0 +1,12 @@
+{
+  "block.pipeorgans.roll_puncher": "Стол для перфоролей",
+  "gui.pipeorgans.roll_puncher.availableMidis": "Доступные MIDI-файлы",
+  "gui.pipeorgans.roll_puncher.finished": "Загрузка завершена!",
+  "gui.pipeorgans.roll_puncher.noMidis": "Нет сохранённых MIDI-файлов",
+  "gui.pipeorgans.roll_puncher.open_folder": "Открыть папку",
+  "gui.pipeorgans.roll_puncher.refresh": "Обновить список",
+  "gui.pipeorgans.roll_puncher.title": "Стол для перфоролей",
+  "gui.pipeorgans.roll_puncher.uploading": "Загрузка...",
+  "item.pipeorgans.music_roll.invalid": "[!] Неверный предмет — используй стол для перфоролей",
+  "sounds.pipeorgans.tracker_bar_change_roll": "Шуршит бумажный рулон"
+}

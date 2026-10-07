@@ -1489,6 +1489,10 @@ file = "kubejs/assets/pingwheel/lang/ru_ru.json"
 hash = "04b67d6b7f0497e994bf458cd7b03f3e470eacb8bc731253b9d3c11e5a9b630c"
 
 [[files]]
+file = "kubejs/assets/pipeorgans/lang/ru_ru.json"
+hash = "5ea4c55c7dd6a96a531f5fd4f5282a78b55e5dc124a534dae486b1641387f7e7"
+
+[[files]]
 file = "kubejs/assets/ponder/lang/ru_ru.json"
 hash = "c9a0c6b447265d4fc8e66b4de6825bcc762d97363fd32eba810850575d19899a"
 
