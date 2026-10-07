@@ -9,8 +9,9 @@
 //  - при загрузке сервера — сразу: после перезапуска посреди набега датчики знают, что он идёт;
 //  - победа — nsRsigVictory из nsRaidVictory (40_): импульс 5 с датчикам в режимах «победа» и «любой». Малый набег,
 //    до алтаря которого дошли мобы, — не победа.
-// Сводка: {s: idle|countdown|active|cooldown, kind: wave|minor|call|endless, where: base|arena|outpost, wave, cd,
-//   sub, subs, loop, boss, left, paused, best, call}. Аддона нет (старый jar) — скрипт молчит.
+// Сводка: {s: idle|countdown|active|cooldown, kind: wave|minor|call|endless, where: base|arena|outpost, dim, x, z,
+//   wave, cd, sub, subs, loop, boss, left, paused, best, call}; dim/x/z — где бой: датчик «рядом» (по умолчанию) ловит
+//   набег, только если бой в его измерении ближе 192 блоков, «везде» — любой. Аддона нет (старый jar) — скрипт молчит.
 // Правила Rhino: только var; тело обработчика — в try.
 // ==========================================================================
 var NS_RSIG_API = null
@@ -46,6 +47,15 @@ function nsRsigSnapshot(st) {
 		o.wave = r.kind === 'minor' ? (typeof nsMinorWave === 'function' ? nsMinorWave(st.phase || 0) : 0) : r.difficulty || 0
 		var arenaId = st.arena ? st.arena.altarId : null
 		o.where = st.siege && st.siege.id === r.altarId ? 'outpost' : arenaId && arenaId === r.altarId ? 'arena' : 'base'
+		// где бой: алтарь базы или арены, при осаде — экструдер форпоста (nsFindAltar). Датчик «рядом» ловит набег,
+		// только если бой в его измерении ближе 192 блоков (аддон, RaidSignal.NEAR_RADIUS)
+		var a = typeof nsFindAltar === 'function' ? nsFindAltar(st, r.altarId) : null
+		if (a && a.dim) {
+			o.dim = String(a.dim)
+			o.x = Math.floor(a.x)
+			o.z = Math.floor(a.z)
+			if (o.dim === 'nightshift:arena') o.where = 'arena'
+		}
 		if (r.paused) o.paused = true
 	}
 	if (s === 'countdown') o.cd = Math.max(0, Math.round(r.countdownRemaining || 0))
