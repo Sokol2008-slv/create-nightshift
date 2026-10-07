@@ -185,6 +185,10 @@ file = "kubejs/assets/dragonlib/lang/ru_ru.json"
 hash = "d7e7daa9ab99201428ba90b3765aa288890bfd4e052340b55f837592d5b36f03"
 
 [[files]]
+file = "kubejs/assets/golemoverhaul/lang/ru_ru.json"
+hash = "560c515d9fc84af5045d632d144361bbf2a1bde43a51734feeacc2440c7d5a76"
+
+[[files]]
 file = "kubejs/assets/kubejs/lang/en_us.json"
 hash = "ce7a4e9166eec76a58de8234ded97328850976184727edcd7779dbfa49472a2c"
 
