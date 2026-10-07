@@ -189,6 +189,10 @@ file = "kubejs/assets/create_aquatic_ambitions/lang/ru_ru.json"
 hash = "02abcd369f64acdddac18c0f219bce9be83d3d289af7322cbe14d970563cdc95"
 
 [[files]]
+file = "kubejs/assets/create_confectionery/lang/ru_ru.json"
+hash = "b05284ae7cb18c566fbea5e9aee52f75e59039756568dd356af7fdb547547f7f"
+
+[[files]]
 file = "kubejs/assets/create_connected/lang/ru_ru.json"
 hash = "f7ce4255831d4199f00f465882369da7ff9cd826485ac619068155bc3da0343e"
 
