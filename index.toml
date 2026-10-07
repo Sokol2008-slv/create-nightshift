@@ -513,6 +513,10 @@ file = "kubejs/assets/jade/lang/ru_ru.json"
 hash = "f415d2b70b8ad092d4e85f8a18df205ba66f43d5904e8093a50b5efb92770548"
 
 [[files]]
+file = "kubejs/assets/jamlib/lang/ru_ru.json"
+hash = "f53a495c9eb1a7a221c055b8c608f34b080644e62210f6bdc1e6717761bbe683"
+
+[[files]]
 file = "kubejs/assets/jei/lang/ru_ru.json"
 hash = "df2fe9e30432610d7e5c50a687532e98d370a8d25a3e1372d06b61eb0df90cd1"
 
