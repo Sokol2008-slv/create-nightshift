@@ -79,6 +79,8 @@
   "block.create.forest_seat": "Хвойное сиденье",
   "block.create.ginger_seat": "Рыжее сиденье",
   "block.create.tan_seat": "Песочное сиденье",
+  "advancement.createframed.pulp_block.title": "В кашу",
+  "advancement.createframed.pulp_block.description": "Сделай (возможно, случайно) блок древесной массы\n§7(Скрытое достижение)",
   "block.createframed.pulp_block": "Блок древесной массы",
   "block.createframed.maroon_stained_framed_glass": "Бордовое обрамлённое стекло",
   "block.createframed.rose_stained_framed_glass": "Малиновое обрамлённое стекло",
