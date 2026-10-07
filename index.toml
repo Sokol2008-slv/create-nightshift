@@ -213,6 +213,10 @@ file = "kubejs/assets/create_new_age/lang/ru_ru.json"
 hash = "58c136036ada69b38b6820d709b7cf475b10a031f88cb15e7ae8da22f69b40d7"
 
 [[files]]
+file = "kubejs/assets/create_submarine/lang/ru_ru.json"
+hash = "d18545767f24c22f267d1a6b3cdd86c1df95146abf258ec30b6a30e85c841a07"
+
+[[files]]
 file = "kubejs/assets/create_trimmed/lang/ru_ru.json"
 hash = "cc3e10f159e274f8a94713e550ec81c31a52ecb2c472bc5c5beea02b91740477"
 
