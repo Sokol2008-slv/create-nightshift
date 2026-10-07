@@ -1,3 +1,5 @@
 {
+  "config.golemoverhaul.client.title": "Golem Overhaul: клиент",
+  "config.golemoverhaul.description": "Golem Overhaul добавляет классных големов!",
   "item.golemoverhaul.coal_golem": "Угольный голем"
 }
