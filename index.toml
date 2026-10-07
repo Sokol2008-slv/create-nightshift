@@ -381,6 +381,10 @@ file = "kubejs/assets/darkness/lang/ru_ru.json"
 hash = "c904ca3ad0ea0d2d72ece47fc2c0622cae96a3e2de497b1438c1041a4539f5a1"
 
 [[files]]
+file = "kubejs/assets/defaultoptions/lang/ru_ru.json"
+hash = "1101f386abed5030b044cee9b09f6dad1ecc4ef20e7cfd7938cf340248747757"
+
+[[files]]
 file = "kubejs/assets/dmr/lang/ru_ru.json"
 hash = "bcb6c6ece9efcd27d4439ca9f1342aa62548ec3b889b775c268358f7e3fe0f1a"
 

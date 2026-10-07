@@ -1,0 +1,8 @@
+{
+  "defaultoptions.configuration.defaultDifficulty": "Сложность по умолчанию",
+  "defaultoptions.configuration.defaultDifficulty.tooltip": "Сложность, которая выбирается для новых миров.",
+  "defaultoptions.configuration.lockDifficulty": "Заблокировать сложность",
+  "defaultoptions.configuration.lockDifficulty.tooltip": "Если включено, сложность новых миров закрепляется на значении по умолчанию. Игроки не смогут её разблокировать без сторонних средств! Скорее всего, плохая идея. Не советую. Зачем я вообще это добавил?",
+  "defaultoptions.configuration.defaultResourcePacks": "Ресурспаки по умолчанию",
+  "defaultoptions.configuration.defaultResourcePacks.tooltip": "ID ресурспаков, включённых по умолчанию при первом запуске."
+}
