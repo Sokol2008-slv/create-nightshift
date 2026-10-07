@@ -1753,6 +1753,10 @@ file = "kubejs/assets/supermartijn642corelib/lang/ru_ru.json"
 hash = "4391eae4639cb6cab6b79bcae1489fb971ef03c6e64318b9622008bc1e696a5b"
 
 [[files]]
+file = "kubejs/assets/tectonic/lang/ru_ru.json"
+hash = "a29d5bf4f3b8792a4347561cb2eb12630385b8e13dd9a7d651c467628f05e11a"
+
+[[files]]
 file = "kubejs/assets/tfmg/lang/ru_ru.json"
 hash = "6ba144b66bcfc1fc5f62176fa2aae2a8747b165ef525a220ba445d5121edb94a"
 
