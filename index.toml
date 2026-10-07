@@ -233,6 +233,10 @@ file = "kubejs/assets/irons_patreon_lib/lang/ru_ru.json"
 hash = "c7b0c374db73667de991a9c51ee1c5fa30c43425579b98ff876f8a50161e0bfc"
 
 [[files]]
+file = "kubejs/assets/jeresources/lang/ru_ru.json"
+hash = "a2a0c908ada23d33ebcf3afe0a5b02d10231fa4d3a7eb2af7808690ccb4540ba"
+
+[[files]]
 file = "kubejs/assets/justzoom/lang/ru_ru.json"
 hash = "c40bb91821ba650ca6ebf98a2fa175e1c9d15283482ce00e50de2201e1d01ad6"
 
