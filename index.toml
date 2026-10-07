@@ -1533,6 +1533,10 @@ file = "kubejs/assets/northstar/lang/ru_ru.json"
 hash = "81195961c2d00752b193bfeb7a5f2f53fc4f993116ebc3fc543224cc3b20844e"
 
 [[files]]
+file = "kubejs/assets/notenoughanimations/lang/ru_ru.json"
+hash = "a099f61f614a6193246964c6a81ce8ed29687067bbf8f99a59175240fd411909"
+
+[[files]]
 file = "kubejs/assets/ntgl/lang/ru_ru.json"
 hash = "7e0dde0d3c0092758d248932011945e61f01a3564b67e038237d298627888530"
 
