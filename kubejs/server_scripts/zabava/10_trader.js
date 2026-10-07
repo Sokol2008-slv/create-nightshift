@@ -777,7 +777,7 @@ EntityEvents.spawned(event => {
 	event.cancel()
 })
 
-// Вход во время визита — напоминание над хотбаром
+// Вход во время визита — напоминание над хотбаром (утром его скажет сводка смены, shift/40_summary.js — не дублируем)
 PlayerEvents.loggedIn(event => {
 	try {
 		var p = event.player
@@ -787,6 +787,7 @@ PlayerEvents.loggedIn(event => {
 				var v = nsTrState().v
 				var q = nsFunPlayer(name)
 				if (!v || !q || nsFunHudBusy(q)) return
+				if (typeof nsSumLoginDue === 'function' && nsSumLoginDue(name)) return
 				var left = Math.max(0, Math.round((v.leaveAt - nsTrNow()) / 1000))
 				q.setStatusMessage(Text.gold(v.name + ' торгует у базы').append(Text.gray(' (' + v.x + ' ' + v.y + ' ' + v.z + ') ещё ' + left + ' ч — /trader')))
 			} catch (e) {}
