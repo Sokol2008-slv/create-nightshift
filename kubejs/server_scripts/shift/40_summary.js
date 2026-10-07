@@ -151,7 +151,7 @@ function nsSumMeteor(clk, rs) {
 		var dist = Math.round(Math.sqrt(dx * dx + dz * dz))
 		var alive = Math.max(0, (m.guards || 0) - (m.killed || 0))
 		var hot = m.stage === 'hot'
-		var text = hot ? 'Метеорит остывает (' + Math.max(1, Math.round((m.left || 0) / 60)) + ' мин)' : 'Метеорит падает!'
+		var text = hot ? 'Метеорит: ' + Math.max(1, Math.round((m.left || 0) / 60)) + ' мин' : 'Метеорит падает!'
 		return {
 			text: text,
 			color: 'gold',
@@ -165,7 +165,7 @@ function nsSumMeteor(clk, rs) {
 				nsSumT('Клик — координаты, стрелка и метка для карты', 'dark_gray'),
 			],
 			click: { action: 'run_command', value: '/svodka meteor' },
-			plain: text + ' (' + m.x + ' ' + m.y + ' ' + m.z + ')',
+			plain: text + ' (остывает, ' + m.x + ' ' + m.y + ' ' + m.z + ')',
 		}
 	}
 	var due = !!st.search || !!st.bonus || (st.nextDay >= 0 && clk.day >= st.nextDay && (rs.phase || 0) >= NS_SKY.minPhase)
@@ -256,8 +256,8 @@ function nsSumContracts(rs) {
 		var prog = c.need > 1 ? ' — ' + Math.min(c.have || 0, c.need) + '/' + c.need : ''
 		hover.push(nsSumT((c.done ? '✔ ' : '• ') + c.text + prog + '\n', c.done ? 'green' : 'white'))
 	}
-	hover.push(nsSumT('Награда каждому в сети: артефакт смены и ресурсы. Клик — /nscontracts', 'dark_gray'))
-	var text = open ? 'Контракты: ' + open + ' в работе' : 'Контракты сданы'
+	hover.push(nsSumT('В работе — ' + open + ' из ' + list.length + '. Награда каждому в сети: артефакт смены и ресурсы. Клик — /nscontracts', 'dark_gray'))
+	var text = open ? 'Контракты: ' + open : 'Контракты сданы'
 	return { text: text, color: 'aqua', hover: hover, click: { action: 'run_command', value: '/nscontracts' }, plain: text }
 }
 

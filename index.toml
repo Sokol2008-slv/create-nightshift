@@ -2406,7 +2406,7 @@ hash = "68df423898beacb9ac5a630eced9ff319c21eca9bbbf5a9968b985e3cb415c04"
 
 [[files]]
 file = "kubejs/server_scripts/shift/40_summary.js"
-hash = "dba1ff669cafbed03ac2ec970a235372bc1882376c3ef748eaa70ee633943a88"
+hash = "11ac655c0eb236f6a5460439d10ff0349178e5c9602c06724996dcbc2da920f5"
 
 [[files]]
 file = "kubejs/server_scripts/shift/45_board.js"
