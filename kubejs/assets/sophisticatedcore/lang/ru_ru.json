@@ -1,0 +1,19 @@
+{
+  "item.sophisticatedcore.ender_linker": "Эндер-связыватель",
+  "item.sophisticatedcore.ender_linker.tooltip.blank": "ПКМ по совместимому хранилищу или скрафти вместе с ним",
+  "item.sophisticatedcore.ender_linker.tooltip.bound": "ПКМ по несвязанному совместимому хранилищу или скрафти вместе с ним, чтобы добавить его",
+  "gui.sophisticatedcore.status.ender_linker.already_linked": "Хранилище уже связано",
+  "gui.sophisticatedcore.status.ender_linker.unsupported_endpoint": "Это хранилище нельзя связать",
+  "gui.sophisticatedcore.status.ender_linker.incompatible_endpoint": "Хранилище не подходит к этой группе связанных хранилищ",
+  "gui.sophisticatedcore.status.ender_linker.endpoint_has_contents": "В хранилище что-то лежит",
+  "item.sophisticatedcore.storage.tooltip.linked_storage_group": "Группа связанных хранилищ: %s",
+  "item.sophisticatedcore.storage.tooltip.linked_storage_endpoint": "Связанное хранилище: %s",
+  "tooltip.sophisticatedcore.linked_storage.primary": "Главное связанное",
+  "tooltip.sophisticatedcore.linked_storage.secondary": "Связано",
+  "item.sophisticatedcore.ender_linker.tooltip.linker_target": "Связан с: %s",
+  "item.sophisticatedcore.ender_linker.tooltip.linker_pending": "Свяжется при крафте",
+  "item.sophisticatedcore.stack_upgrade_conversion.tooltip": "ПКМ по установленному улучшению «Переполнение», чтобы преобразовать его",
+  "gui.sophisticatedcore.buttons.browse_results": "Открыть полный список результатов с поиском",
+  "gui.sophisticatedcore.settings.buttons.z_offset": "Глубина",
+  "gui.sophisticatedcore.settings.buttons.z_offset_detail": "Наружу — ЛКМ\nВнутрь — ПКМ"
+}
