@@ -1473,6 +1473,10 @@ file = "kubejs/assets/tfmg/lang/ru_ru.json"
 hash = "c14b3e4230f159a122ce9a6bde05d423341abcb06a8aaf214fa24c6466c27692"
 
 [[files]]
+file = "kubejs/assets/trainutilities/lang/ru_ru.json"
+hash = "74d856df7b360bc2261a974837d7279300331bde5d369e913b87403bc53cccc5"
+
+[[files]]
 file = "kubejs/assets/trashslot/lang/ru_ru.json"
 hash = "af5e4a02f2cc306ee7cbeb00d5c09f959bbc55a54b56d543ce7abbef006b8607"
 
