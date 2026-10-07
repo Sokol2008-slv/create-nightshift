@@ -169,6 +169,10 @@ file = "kubejs/assets/create_dragons_plus/lang/ru_ru.json"
 hash = "11545cccf86fc36977ee943340a6e34d144600d547bf863b5d155778e5062479"
 
 [[files]]
+file = "kubejs/assets/create_easy_structures/lang/ru_ru.json"
+hash = "222c26fc0e72d1ab60ac789f1d7979f63bdf2768fb392b92a538846a7737fbb7"
+
+[[files]]
 file = "kubejs/assets/create_mechanical_spawner/lang/ru_ru.json"
 hash = "261dca3daf995e21d1afcb24d2a5f43651147224d000e276475250c4eeaa7e8d"
 
