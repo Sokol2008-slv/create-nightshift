@@ -1,0 +1,8 @@
+{
+  "cloth_config.sound_physics_remastered.reverb_attenuation_distance": "Расстояние затухания реверберации",
+  "cloth_config.sound_physics_remastered.reverb_attenuation_distance.description": "Длина луча, с которой начинается реверберация.\n0.0 выключает затухание реверберации.",
+  "cloth_config.sound_physics_remastered.reverb_distance": "Дальность реверберации",
+  "cloth_config.sound_physics_remastered.reverb_distance.description": "Дальность реверберации относительно дальности звука.",
+  "cloth_config.sound_physics_remastered.evaluate_ambient_sounds": "Физика фоновых звуков",
+  "cloth_config.sound_physics_remastered.evaluate_ambient_sounds.description": "Применять ли физику звука к фоновым звукам пещер, Незера и подводного мира"
+}
