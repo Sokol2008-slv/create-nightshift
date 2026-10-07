@@ -469,6 +469,10 @@ file = "kubejs/assets/flightlib/lang/ru_ru.json"
 hash = "c338348eeaafb74f9f38630a8fb09178d377fa421bc94cc1c80bd5ab6da3fdef"
 
 [[files]]
+file = "kubejs/assets/flywheel/lang/ru_ru.json"
+hash = "bfe426395ae51da4f2f4bf83e49a24caf02dc7803c09628efc7e7081f8a6f499"
+
+[[files]]
 file = "kubejs/assets/ftblibrary/lang/ru_ru.json"
 hash = "b81d3f41dbff796707f11c4d77740b561726588ae2d60dce66f79a70191fd7b5"
 
