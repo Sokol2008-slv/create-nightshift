@@ -185,6 +185,10 @@ file = "kubejs/assets/collective/lang/ru_ru.json"
 hash = "aceebc30ec518b952085530540dbf9a526ed7f9525308b59d3ff51e323a7aafe"
 
 [[files]]
+file = "kubejs/assets/controlling/lang/ru_ru.json"
+hash = "3b14f4ec07652b66e905151c3b94101e3ca949370e74fe40317209df84fe2244"
+
+[[files]]
 file = "kubejs/assets/corpse/lang/ru_ru.json"
 hash = "78933ff5753683ec9e6a1cbae11fe287105432aad870660990246148e0384b00"
 
