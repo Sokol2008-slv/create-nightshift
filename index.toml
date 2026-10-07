@@ -1673,6 +1673,10 @@ file = "kubejs/assets/simplebackups/lang/ru_ru.json"
 hash = "40ba82e3e64e80753e6466bf19506d8f2aa47a56512a7f8cbb541efe291b37f3"
 
 [[files]]
+file = "kubejs/assets/simulated/lang/ru_ru.json"
+hash = "ecd496d77f14a38ac4b89f38aee1ee4c26426f511b0bb73b415f7811f36978b9"
+
+[[files]]
 file = "kubejs/assets/sodium-extra/lang/ru_ru.json"
 hash = "b7de32e3855f531bc38c8e53733607242fc3fa8293a60b7f8734d09df2b3c25e"
 
