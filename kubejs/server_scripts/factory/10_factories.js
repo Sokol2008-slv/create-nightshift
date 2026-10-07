@@ -220,6 +220,7 @@ var NSF_CONFIG = {
 	linesMin: 2,
 	linesMax: 4,
 	warnHours: 2,
+	quietPosts: true, // 07.10: обычный новый заказ — без строки в чат, его показывает утренняя сводка смены (shift/40_summary.js); срочный — в чат
 	seasonDays: 10,
 	items: nsfItems(NSF_ITEMS),
 	chains: NSF_CHAINS,

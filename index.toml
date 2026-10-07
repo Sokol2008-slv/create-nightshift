@@ -2818,7 +2818,7 @@ hash = "51a736b3e913ed680e4499dfd6224a45b6da2ae1c4dcbf2c23a7bfc3c725af30"
 
 [[files]]
 file = "kubejs/server_scripts/factory/10_factories.js"
-hash = "b1c1fb3f1033b6e790f38c33d19188f8159f88b74ed9940fe9964e345600e98e"
+hash = "62410819fb3c9646d5edcb317a8f563a71f50bf511a8d66d70e12ca2594944d2"
 
 [[files]]
 file = "kubejs/server_scripts/hud/10_recipe_pins.js"
@@ -3322,7 +3322,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "5c6a74281688b4738fea7950645397f34e08eccfc5cdd931d1bf08d6cafd5144"
+hash = "a7fcb7d1c03d04f796b95d5b125394cb1b7d0ad792e7ba7d1644fa236174664c"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
