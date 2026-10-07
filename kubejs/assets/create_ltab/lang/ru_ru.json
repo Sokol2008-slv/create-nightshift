@@ -1,0 +1,10 @@
+{
+  "enchantment.create_ltab.wanderer": "Странник",
+  "enchantment.create_ltab.wanderer.desc": "При ходьбе иногда даёт опыт.",
+  "item.create_ltab.potion_of_luck": "Зелье везения",
+  "item.create_ltab.potion_of_luck_lore": "Повышает шанс найти в сундуках добычу получше",
+  "item.create_ltab.grot_map": "Карта исследователя: грот",
+  "item.create_ltab.kings_castle_map": "Карта исследователя: королевский замок",
+  "item.create_ltab.explorer_map": "Карта исследователя",
+  "flat_world_preset.minecraft.create": "Классическая плоская (Create)"
+}
