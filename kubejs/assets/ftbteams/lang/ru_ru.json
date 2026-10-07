@@ -16,5 +16,9 @@
   "ftbteams.message.team_stages_header": "Этапов у этой команды: %s",
   "ftbteams.message.set_property": "Свойство %s теперь: %s",
   "ftbteams.message.parse_failed": "Не удалось разобрать значение: %s",
-  "ftbteams.message.property_not_editable": "Свойство %s менять нельзя!"
+  "ftbteams.message.property_not_editable": "Свойство %s менять нельзя!",
+  "ftbteams.config.server.limited_lives": "Ограниченные жизни команды",
+  "ftbteams.config.server.limited_lives.tooltip": "Если больше 0, у групп ограниченные жизни:\n• когда участник погибает, группа теряет жизнь\n• если участник погибает, а жизней не осталось, его исключают из группы\n• если погибает владелец, владельцем становится случайный участник (сначала офицеры)\n• группа без жизней не может приглашать новых участников.",
+  "ftbteams.config.server.max_party_size": "Макс. размер группы",
+  "ftbteams.config.server.max_party_size.tooltip": "Если больше 0 — не больше стольких игроков в группе.\nЕсли 0 — без ограничений.\nВажно: если уменьшить значение, а на сервере уже есть группы больше, они останутся как есть, но приглашать новых участников не смогут."
 }
