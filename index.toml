@@ -409,6 +409,10 @@ file = "kubejs/assets/goofy_horror_mod/lang/ru_ru.json"
 hash = "2a15bfd8d8aae8be14cb74ea51b2037552dc0f6e62c5a8b7633dc74c9ec410ca"
 
 [[files]]
+file = "kubejs/assets/inventoryprofilesnext/lang/ru_ru.json"
+hash = "3d41bcf0ff483710d784cdc0806bba13987d5196abcdbf484c7d0ffdb4ae5465"
+
+[[files]]
 file = "kubejs/assets/iris/lang/ru_ru.json"
 hash = "d9ac575fc449e305ddf6bfd215401fde4df3ffb07ccfad81fb61f1114f1fd0fb"
 

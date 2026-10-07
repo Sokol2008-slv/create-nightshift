@@ -1,0 +1,23 @@
+{
+  "inventoryprofiles.enum.auto_refill_nbt_match_type.can_have_extra": "Допускать лишние",
+  "inventoryprofiles.enum.auto_refill_nbt_match_type.exact": "Точно",
+  "inventoryprofiles.enum.creative_menu_sort_order.search_tab": "Вкладка поиска",
+  "inventoryprofiles.enum.creative_menu_sort_order.category_priority_list": "Список приоритетов",
+  "inventoryprofiles.tooltip.fast_rename": "Массовое переименование",
+  "inventoryprofiles.tooltip.settings_open": "Открывает общие настройки Inventory Profiles Next",
+  "inventoryprofiles.tooltip.do_global_trades_button": "Совершает все возможные сделки из глобальных закладок.\n\nТоргует по всем глобальным закладкам, пока не\nкончатся ресурсы или торговать станет нечем.\n\n",
+  "inventoryprofiles.tooltip.do_local_trades_button": "Совершает все возможные сделки из локальных закладок.\n\nТоргует по всем локальным закладкам, пока не\nкончатся ресурсы или торговать станет нечем.",
+  "inventoryprofiles.tooltip.do_global_trades_button1": "Совершает все возможные сделки из глобальных закладок группы 2.",
+  "inventoryprofiles.tooltip.do_local_trades_button1": "Совершает все возможные сделки из локальных закладок группы 2.",
+  "inventoryprofiles.tooltip.do_global_trades_button2": "Совершает все возможные сделки из глобальных закладок группы 3.",
+  "inventoryprofiles.tooltip.do_local_trades_button2": "Совершает все возможные сделки из локальных закладок группы 3.",
+  "inventoryprofiles.tooltip.set_local_bookmark": "Добавляет локальную закладку.\n\nЗапоминает эту сделку у конкретного жителя.",
+  "inventoryprofiles.tooltip.set_global_bookmark": "Добавляет глобальную закладку.\n\nЗапоминает этот тип сделки у всех жителей этой профессии\nили у всех странствующих торговцев.",
+  "inventoryprofiles.tooltip.set_local_bookmark1": "Добавляет локальную закладку в группу 2.",
+  "inventoryprofiles.tooltip.set_global_bookmark1": "Добавляет глобальную закладку в группу 2.",
+  "inventoryprofiles.tooltip.set_local_bookmark2": "Добавляет локальную закладку в группу 3",
+  "inventoryprofiles.tooltip.set_global_bookmark2": "Добавляет глобальную закладку в группу 3.",
+  "inventoryprofiles.gui.editor.name.screen.disable_fast_swipe": "Выключить быстрый свайп",
+  "inventoryprofiles.gui.editor.description.screen.disable_fast_swipe": "Если включено, перенос/выброс свайпом идёт более медленным, но надёжным способом.\nВАЖНО: если свайп сбоит в одном или нескольких интерфейсах (но не во всех), попробуй включить это.",
+  "inventoryprofiles.profiles.created_new_saved": "Создан новый профиль «Сохранённый»..."
+}
