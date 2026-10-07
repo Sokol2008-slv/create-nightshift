@@ -1257,6 +1257,10 @@ file = "kubejs/assets/northstar/lang/ru_ru.json"
 hash = "81195961c2d00752b193bfeb7a5f2f53fc4f993116ebc3fc543224cc3b20844e"
 
 [[files]]
+file = "kubejs/assets/ntgl/lang/ru_ru.json"
+hash = "27e6ac01e74af5f31d39725bff6c261b2b8b4a186e57e5b2e6cfae43cd94a579"
+
+[[files]]
 file = "kubejs/assets/pingwheel/lang/ru_ru.json"
 hash = "04b67d6b7f0497e994bf458cd7b03f3e470eacb8bc731253b9d3c11e5a9b630c"
 
