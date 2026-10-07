@@ -19,5 +19,6 @@
   "info.ntgl.scope": "Прицел",
   "info.ntgl.custom": "Свой",
   "perk.ntgl.fire_modes": "Режимы огня: ",
+  "gui.ntgl.assemble": "Собрать",
   "ntgl.chat.install_configured": "Установи %s, чтобы открыть настройки"
 }
