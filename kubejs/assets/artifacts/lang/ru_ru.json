@@ -49,7 +49,11 @@
   "artifacts.key.scarf_of_invisibility.toggle": "Шарф невидимости: вкл/выкл",
   "artifacts.tooltip.ability.attribute_modifiers.generic.oxygen_bonus": "Дольше можно находиться под водой",
   "artifacts.tooltip.ability.damage_absorption.chance": "Атаки в ближнем бою с шансом %s%% восполняют здоровье",
+  "artifacts.tooltip.ability.death_protection_teleport.chance": "С шансом %s%% смертельный удар вместо этого телепортирует тебя в другое место",
   "artifacts.tooltip.ability.phantom_repellent": "Шипит на атакующих фантомов",
+  "artifacts.tooltip.ability.retaliation_effects.fire.chance": "С шансом %s%% поджигает нападающих",
+  "artifacts.tooltip.ability.retaliation_effects.lightning.chance": "С шансом %s%% бьёт нападающих молнией",
+  "artifacts.tooltip.ability.retaliation_effects.thorns.chance": "С шансом %s%% ранит нападающих",
   "artifacts.tooltip.missing_dependency": "Чтобы пользоваться этим предметом, установи Curios, Trinkets или Accessories",
   "effect.artifacts.magnetism": "Магнетизм",
   "tag.item.artifacts.slot.face": "Артефакты для слота лица"
