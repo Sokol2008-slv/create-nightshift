@@ -866,6 +866,14 @@
    "emc": 0
   },
   {
+   "id": "axiomativ:raid_sensor",
+   "emc": 0
+  },
+  {
+   "id": "axiomativ:raid_siren",
+   "emc": 0
+  },
+  {
    "id": "axiomativ:repair_rack",
    "emc": 0
   },

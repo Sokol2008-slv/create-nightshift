@@ -137,6 +137,8 @@ function nsSaveState(state) {
 	var server = NSG.nsServer
 	if (!server) return
 	server.persistentData.putString('nightshift_json', JSON.stringify(state))
+	// датчики набега аддона (42_raid_signal.js): сводка уходит сразу, если набег поменялся
+	if (typeof nsRsigPush === 'function') nsRsigPush(state, false)
 }
 
 // --------------------------------------------------------------------------

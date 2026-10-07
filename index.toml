@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "28fb2af6cd8250ed854529b42c3545011a6ed52e2dfd17b75f261091abceccd5"
+hash = "7cdfc2c75e45ae9a294f605708efd79b492a9076acbbcefc23d44f4bd8ff1254"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"
@@ -70,7 +70,7 @@ hash = "7823b32fe03de4f06ff387221f643f6f35c63028b56844b699b85420d0eeb309"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/phase2.snbt"
-hash = "448355209a6008de8c2d7622caff9f04e0bc0728901d8d4e9b2c337f1a824032"
+hash = "d11a06a1801da72aea874759edb7628c9c6b1b85217c4049a3ad727b7bb9b2f3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/phase3.snbt"
@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "5cf3e6c872fe990732951b23057de9dd1d341136b487f119e8ca047edb275e0f"
+hash = "ba371b2dddd1817d866c261448677f7ae9c5f30de3a60d7339a84df2089a7112"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "5cf3e6c872fe990732951b23057de9dd1d341136b487f119e8ca047edb275e0f"
+hash = "ba371b2dddd1817d866c261448677f7ae9c5f30de3a60d7339a84df2089a7112"
 
 [[files]]
 file = "config/iris.properties"
@@ -1241,6 +1241,10 @@ file = "kubejs/client_scripts/axiomativ_jei.js"
 hash = "65a23306343aec04b27283a1410f0c25d826c949c13c6d2e3461e3599eebcd41"
 
 [[files]]
+file = "kubejs/client_scripts/axiomativ_raid_jei.js"
+hash = "c96c7b46794649bbc52d7dbd21ffafcf5e4cea0604399573b3d16e41da04b742"
+
+[[files]]
 file = "kubejs/client_scripts/axiomativ_supply_jei.js"
 hash = "2f7bfd5be7ce7719fcf3b921f94704acc958d361c7a97adc0d98c06e7a26207a"
 
@@ -2218,7 +2222,7 @@ hash = "bce4d8d763c6e9e8b06d46c6206bd899fe12deabc3109aeab3f1bc3abce24e48"
 
 [[files]]
 file = "kubejs/server_scripts/hud/40_first_hints.js"
-hash = "2e444bfb82279ff1e5ea8505bb2a1e62af9e04c9cb194801281ea25ea725193e"
+hash = "44258f133a2538119f14b21a75e82019d2f44d01491251adc3815a15e3572435"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
@@ -2298,7 +2302,7 @@ hash = "5b40f8bd59e018974020e225a13fa94485162175ea93ca558780d6b24c91afc2"
 
 [[files]]
 file = "kubejs/server_scripts/raids/10_nightshift_state.js"
-hash = "f218932903c5ac70c8173672649eaca541eeacfd1b626f3666adf267a8fa9140"
+hash = "6f7d8586edc8edbfba9bfd8a613a559e33d5fca534fa02e60306c034b1ce1357"
 
 [[files]]
 file = "kubejs/server_scripts/raids/12_mutators.js"
@@ -2322,7 +2326,11 @@ hash = "34898052c22033a4efe606953f3409cdb9d1add6e5d221aa8038a403275e6eb5"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "0c72ff67a0d78c3a5fb86e321404de796ef7f50b1a70f79568b4c551e43fbb0b"
+hash = "5137e7b24a84471388cadb34cd91342aa87a7237588683bd0908e7c6bb0c536e"
+
+[[files]]
+file = "kubejs/server_scripts/raids/42_raid_signal.js"
+hash = "6fedf183b26ff2b9f2f2faea6e4fa7b4bfe58274cdd0feac2945e220f485ea53"
 
 [[files]]
 file = "kubejs/server_scripts/raids/45_special_stages.js"
@@ -2483,6 +2491,10 @@ hash = "f7ee2496e849fc9b9c1acb01ab24698607665fd1d2d11d15ba793b79991c7c1f"
 [[files]]
 file = "kubejs/server_scripts/vahta/49_axiomativ_gate.js"
 hash = "49001e6bee2dedf0bf76a787241726f2e9d22e3de72abf69ccd37c2437fe5f30"
+
+[[files]]
+file = "kubejs/server_scripts/vahta/49_axiomativ_raid.js"
+hash = "f62741682bc520821dd9c6b8d5c68e022942e5ccfe09350d18fe2a5f8dfdfa4c"
 
 [[files]]
 file = "kubejs/server_scripts/vahta/49_axiomativ_supply.js"
