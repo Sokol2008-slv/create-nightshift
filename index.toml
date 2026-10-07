@@ -357,6 +357,10 @@ file = "kubejs/assets/ftblibrary/lang/ru_ru.json"
 hash = "b81d3f41dbff796707f11c4d77740b561726588ae2d60dce66f79a70191fd7b5"
 
 [[files]]
+file = "kubejs/assets/ftbquests/lang/ru_ru.json"
+hash = "30dce20c501f7e4b7acbc5f41af3abc87720638e8553cfd50de683d8235278eb"
+
+[[files]]
 file = "kubejs/assets/ftbteams/lang/ru_ru.json"
 hash = "ef375177e63aa626435acd163276aa86b2e1f2c5b8949bc8717f16e45bd9d466"
 
