@@ -65,6 +65,7 @@
   "create_structures_arise.configuration.spawn_rates.global_structure_multiplier": "Доп. общая частота появления",
   "create_structures_arise.configuration.structures": "Отдельные постройки",
   "create_structures_arise.configuration.compatibility": "Совместимость",
+  "create_structures_arise.configuration.debug": "Отладочный журнал",
   "create_structures_arise.configuration.enabled": "Включено",
   "create_structures_arise.configuration.weight": "Вес появления",
   "create_structures_arise.configuration.spacing": "Среднее расстояние",
