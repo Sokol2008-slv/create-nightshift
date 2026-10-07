@@ -39,6 +39,7 @@
   "create_radar.filter_isfoe": "Объект: враг",
   "create_radar.filter_isfriend": "Объект: союзник",
   "create_radar.filter_remove": "Убрать из фильтра",
+  "create_radar.guided_fuze.linked_monitor": "Привязанный контроллер сети: ",
   "create_radar.id_block.id_input": "Код",
   "create_radar.id_block.name_input": "Название",
   "create_radar.identification_filter.title": "Фильтр опознавания",
