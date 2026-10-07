@@ -233,6 +233,10 @@ file = "kubejs/assets/dragonlib/lang/ru_ru.json"
 hash = "d7e7daa9ab99201428ba90b3765aa288890bfd4e052340b55f837592d5b36f03"
 
 [[files]]
+file = "kubejs/assets/fastbench/lang/ru_ru.json"
+hash = "45bc4b72768f5a6a4b18419e1830d9068e4a0a843ae660ffe560900587bdf773"
+
+[[files]]
 file = "kubejs/assets/ftblibrary/lang/ru_ru.json"
 hash = "b81d3f41dbff796707f11c4d77740b561726588ae2d60dce66f79a70191fd7b5"
 
