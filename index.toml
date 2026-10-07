@@ -133,6 +133,10 @@ file = "config/simplebackups-common.toml"
 hash = "aa43bd1fa24ca98430de6ce531d1c6e4862ec455a86dc663182dd6c2e480db58"
 
 [[files]]
+file = "kubejs/assets/apollib/lang/ru_ru.json"
+hash = "7cabb97a1894a0ee08061f11540ebdb5c1828f0e80bb0f9ec3805eb61bfa3501"
+
+[[files]]
 file = "kubejs/assets/appleskin/lang/ru_ru.json"
 hash = "cf714eaa291a38ff61e4b85c41529e6a25b58215d51dd31902ad0472bf5660bd"
 
