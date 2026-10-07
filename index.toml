@@ -181,6 +181,10 @@ file = "kubejs/assets/createaddition/lang/ru_ru.json"
 hash = "29b215c0a61248ec57a41ed24c1fa7de5b860d80618e582e1c2dec353da6a25d"
 
 [[files]]
+file = "kubejs/assets/createbigcannons/lang/ru_ru.json"
+hash = "addb220049f88d30e12e1886b3fb3ea581da111bf1f1edb26fd0e7248bd4307d"
+
+[[files]]
 file = "kubejs/assets/createoreexcavation/lang/ru_ru.json"
 hash = "46f5867450ba09f9836776d91ab7ccd92a898cc3c10a960dd92158063cb77a4e"
 
