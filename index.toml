@@ -3322,7 +3322,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "a903a6aa95cf6de1c1a20886671ca9111b0b00881064c308a8d3ebee23cc618e"
+hash = "260fb41a3cead07e478cf9c6c729c1e14b5d3a455a544516d31a71f878e5caaa"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
