@@ -10,6 +10,7 @@
 //  - Охват: 7×7 чанков на высоте 150+, 9×9 на 200+, 11×11 на 250+. Только загруженные чанки (под самолётом они есть).
 //  - Новые жилы: путевые точки Xaero — строка «xaero-waypoint:…» в чате, мод показывает её как «[Добавить]»;
 //    и запись в общий атлас сервера (команда /veins [тип] — ближайшие известные жилы и точки к ним).
+//  - Окно атласа (08.10): вкладка «Жилы» — все снятые жилы измерения на карте (nsCamAtlasMenu); /veins открывает её.
 // Правило Rhino: только var. Состояние атласа — server.persistentData 'ns_vein_atlas' (JSON).
 // ==========================================================================
 
@@ -26,31 +27,54 @@ var NS_CAM_SHOW = 6 // путевых точек за снимок (ближай
 var NS_CAM_ATLAS_MAX = 4000 // записей в атласе
 var NS_CAM_CHECK = 10 // проверка пассивной съёмки раз в 0,5 с
 
-// жилы: ключ (как в economy/10_probes.js) → имя, буква точки, цвет Xaero (0–15: 0 чёрный … 15 белый)
+// жилы: ключ (как в economy/10_probes.js) → имя, буква точки, цвет Xaero (0–15: 0 чёрный … 15 белый),
+// цвет точки на карте окна атласа, значок (предмет из рецепта жилы)
 var NS_CAM_VEINS = {
-	coal: ['Уголь', 'У', 8],
-	copper: ['Медь', 'М', 6],
-	iron: ['Железо', 'Ж', 7],
-	gold: ['Золото', 'З', 14],
-	zinc: ['Цинк', 'Ц', 3],
-	redstone: ['Редстоун', 'Р', 12],
-	lapis: ['Лазурит', 'Л', 9],
-	diamond: ['Алмазы', 'А', 11],
-	emerald: ['Изумруды', 'И', 10],
-	quartz: ['Кварц', 'К', 15],
-	glowstone: ['Светокамень', 'С', 14],
-	netherite: ['Незерит', 'Н', 5],
-	hardened_diamond: ['Твёрдые алмазы', 'ТА', 11],
-	lead: ['Свинец', 'Св', 1],
-	nickel: ['Никель', 'Ни', 2],
-	lithium: ['Литий', 'Ли', 13],
-	sulfur: ['Сера', 'Се', 14],
-	platinum: ['Платина', 'Пл', 15],
-	thorium: ['Торий', 'То', 10],
-	titanium: ['Титан', 'Ти', 7],
-	tungsten: ['Вольфрам', 'В', 8],
-	martian_iron: ['Марсианское железо', 'МЖ', 4],
+	coal: ['Уголь', 'У', 8, 0x8a8a8a, 'minecraft:coal'],
+	copper: ['Медь', 'М', 6, 0xe0773a, 'minecraft:raw_copper'],
+	iron: ['Железо', 'Ж', 7, 0xd8b79a, 'minecraft:raw_iron'],
+	gold: ['Золото', 'З', 14, 0xffd700, 'minecraft:raw_gold'],
+	zinc: ['Цинк', 'Ц', 3, 0x9fd0b8, 'create:raw_zinc'],
+	redstone: ['Редстоун', 'Р', 12, 0xff2a2a, 'createoreexcavation:raw_redstone'],
+	lapis: ['Лазурит', 'Л', 9, 0x3a62e8, 'minecraft:lapis_lazuli'],
+	diamond: ['Алмазы', 'А', 11, 0x4fe8e0, 'createoreexcavation:raw_diamond'],
+	emerald: ['Изумруды', 'И', 10, 0x30d060, 'createoreexcavation:raw_emerald'],
+	quartz: ['Кварц', 'К', 15, 0xf0e8e0, 'minecraft:quartz'],
+	glowstone: ['Светокамень', 'С', 14, 0xffc040, 'minecraft:glowstone_dust'],
+	netherite: ['Незерит', 'Н', 5, 0xa0706a, 'minecraft:ancient_debris'],
+	nether_gold: ['Незерское золото', 'НЗ', 14, 0xf0b030, 'minecraft:gold_nugget'],
+	hardened_diamond: ['Твёрдые алмазы', 'ТА', 11, 0xb8f4ff, 'createoreexcavation:raw_diamond'],
+	lead: ['Свинец', 'Св', 1, 0x7a7ab0, 'tfmg:raw_lead'],
+	nickel: ['Никель', 'Ни', 2, 0xc8c890, 'tfmg:raw_nickel'],
+	lithium: ['Литий', 'Ли', 13, 0xf0a0f0, 'tfmg:raw_lithium'],
+	sulfur: ['Сера', 'Се', 14, 0xe8e040, 'tfmg:sulfur'],
+	platinum: ['Платина', 'Пл', 15, 0xdfe8f2, 'createpropulsion:raw_platinum'],
+	thorium: ['Торий', 'То', 10, 0x9ccc65, 'create_new_age:thorium'],
+	titanium: ['Титан', 'Ти', 7, 0xb0c0d0, 'northstar:raw_titanium_ore'],
+	tungsten: ['Вольфрам', 'В', 8, 0x8890a8, 'northstar:raw_tungsten_ore'],
+	martian_iron: ['Марсианское железо', 'МЖ', 4, 0xc0502a, 'northstar:raw_martian_iron_ore'],
+	water: ['Вода', 'Вд', 9, 0x3f8cff, 'minecraft:water_bucket'],
 }
+
+// Окно атласа, вкладка «Жилы»: какие жилы родятся в измерении (biomeWhitelist рецептов жил Create Ore Excavation и
+// kubejs/data/nightshift/recipe/ore_vein_type) и насколько редки (шаг сетки жил: 128 — частая, 192–256 — редкая,
+// 384–512 — очень редкая)
+var NS_CAM_DIM_VEINS = {
+	'minecraft:overworld': ['coal', 'copper', 'iron', 'gold', 'zinc', 'redstone', 'lapis', 'diamond', 'emerald', 'hardened_diamond', 'lead', 'nickel', 'lithium', 'platinum', 'thorium', 'water'],
+	'minecraft:the_nether': ['quartz', 'glowstone', 'nether_gold', 'netherite', 'sulfur'],
+	'northstar:moon': ['titanium'],
+	'northstar:mars': ['martian_iron', 'titanium'],
+	'northstar:mercury': ['tungsten', 'titanium'],
+	'northstar:venus': ['titanium'],
+}
+var NS_CAM_RARE = { diamond: 2, emerald: 2, lithium: 2, platinum: 2, tungsten: 2, nether_gold: 2, thorium: 3, hardened_diamond: 3, netherite: 3 }
+var NS_CAM_RARE_TEXT = [
+	null,
+	['частая', 'хватит облететь окрестности базы — жила частая.'],
+	['редкая — облетай шире', 'облетай шире, полосами — жила редкая.'],
+	['очень редкая — дальний облёт', 'нужны дальние облёты — жила очень редкая.'],
+]
+var NS_CAM_MENU_MAX = 2500 // точек жил в окне (ближайшие)
 
 var nsCamMem = {} // имя → {t: тик прошлого снимка, x, z, hint}
 var nsCamTick = 0
@@ -65,7 +89,7 @@ function nsCamVeinKey(recipeId) {
 }
 
 function nsCamVeinInfo(key) {
-	return NS_CAM_VEINS[key] || [key, key.substring(0, 1).toUpperCase(), 7]
+	return NS_CAM_VEINS[key] || [key, key.substring(0, 1).toUpperCase(), 7, 0xa8a29a, '']
 }
 
 function nsCamRadius(y) {
@@ -300,6 +324,51 @@ ItemEvents.rightClicked(NS_CAM_ITEM, function (event) {
 	}
 })
 
+// ---------- окно атласа, вкладка «Жилы» (shift/20_atlas.js, nsAtlasMenuData) ----------
+// Виды жил измерения и все снятые точки в нём. whoOf(имя) — номер в общем списке «кто снял».
+function nsCamAtlasMenu(server, dim, px, pz, whoOf) {
+	var atlas = nsCamAtlasLoad(server)
+	var keys = NS_CAM_DIM_VEINS[dim] || []
+	var types = [],
+		index = {}
+	function addType(key) {
+		var info = nsCamVeinInfo(key)
+		var rare = NS_CAM_RARE_TEXT[NS_CAM_RARE[key] || 1]
+		index[key] = types.length
+		types.push({ k: 'vein:' + key, name: info[0], wn: 'Жила ' + String(info[0]).toLowerCase(), ini: info[1], wc: info[2], color: info[3], icon: info[4], n: 0, where: rare[0], tip: rare[1] })
+	}
+	for (var i = 0; i < keys.length; i++) addType(keys[i])
+	var list = [],
+		total = 0
+	for (var id in atlas) {
+		if (id.indexOf(dim + '|') !== 0) continue
+		var a = atlas[id]
+		if (index[a[0]] === undefined) addType(a[0]) // жила вне списка (новый мод) — тоже в окно
+		var ti = index[a[0]]
+		types[ti].n++
+		total++
+		list.push([ti, Math.round(a[1]), Math.round(a[2]), Math.round(a[3]), whoOf(a[4]), (a[1] - px) * (a[1] - px) + (a[3] - pz) * (a[3] - pz)])
+	}
+	if (list.length > NS_CAM_MENU_MAX) {
+		list.sort(function (x, y) {
+			return x[5] - y[5]
+		})
+		list.length = NS_CAM_MENU_MAX
+	}
+	var pts = []
+	for (var j = 0; j < list.length; j++) pts.push(list[j].slice(0, 5))
+	var here = types.length > 0
+	return {
+		here: here,
+		dim: dim,
+		wy: 0,
+		types: types,
+		pts: pts,
+		hint: 'Жилы снимает аэрофотоаппарат: в руке или в багажнике самолёта, с аэрофотоплёнкой, в полёте выше y 150.',
+		empty: here ? 'Жил в этом измерении ещё не снимали. Аэрофотоаппарат снимает их в полёте на самолёте выше y 150.' : 'В этом измерении жил нет.',
+	}
+}
+
 // ---------- /veins (атлас жил) ----------
 function nsCamAtlasCmd(ctx, filter) {
 	var p = ctx.source.getPlayer()
@@ -347,12 +416,20 @@ function nsCamAtlasCmd(ctx, filter) {
 
 // Финальный аудит 06.10: /atlas без слов с 3.4.0 — «Атлас месторождений» (shift/20_atlas.js, он регистрируется позже
 // и перебивал этот корень). Атлас жил — своя команда /veins [тип]; /atlas <тип> по-прежнему ищет жилы (старые квесты).
+// С 08.10 /veins без слов — окно атласа на вкладке «Жилы»; /veins <тип> — как раньше, в чат.
 ServerEvents.commandRegistry(function (event) {
 	var C = event.commands
 	var A = event.arguments
 	event.register(
 		C.literal('veins')
 			.executes(function (ctx) {
+				// окно атласа на вкладке «Жилы» (08.10); нет окна — список в чат
+				try {
+					var p = ctx.source.getPlayer()
+					if (p && typeof nsAtlasOpen === 'function' && nsAtlasOpen(p, 'veins')) return 1
+				} catch (e) {
+					console.error('[аэрофото] /veins: ' + e)
+				}
 				return nsCamAtlasCmd(ctx, '')
 			})
 			.then(

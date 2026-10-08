@@ -8,6 +8,10 @@
 //    сообщение всем. Экструдеры сети форпостов (state.outposts) тоже попадают в атлас.
 //  - Предзаполнен геологоразведкой: месторождения, найденные по сиду основного мира 05.10 (вне старых чанков).
 //  - Первый вход после 3.4.0 — атлас каждому в инвентарь (тег ns_atlas_given). Рецепт: деплоер, компас на книгу.
+//  - Окно (08.10, аддон Axiomativ Industries: AtlasMenu.open): ПКМ атласом и /atlas открывают окно — вкладки
+//    «Месторождения» и «Жилы» (атлас аэрофотоаппарата, aviation/30_aerial_camera.js), сверху карта вокруг игрока.
+//    Клик по строке или точке — метка Xaero (окно Xaero с клиента; без Xaero — /atlas wp_at x y z <вид>, строка в чат).
+//    Строки в чат — /atlas chat и запасной путь, если окна нет (старый jar аддона, клиент без аддона).
 // Состояние — server.persistentData «ns_atlas_json».
 // ==========================================================================
 
@@ -53,6 +57,42 @@ var NS_ATLAS_DEPOSIT_IDS = {}
 NS_ATLAS_TYPES.forEach(function (t) {
 	NS_ATLAS_DEPOSIT_IDS[t[0]] = true
 })
+
+// Окно атласа: [цвет точки на карте, цвет метки Xaero (0–15), буквы метки, где искать коротко, где искать подробно]
+// (где искать — как в подсказках JEI client_scripts/outposts_jei.js и описаниях блоков аддона)
+var NS_ATLAS_LOOK = {
+	'nightshift:salt_deposit': [0xffb3c7, 13, 'Сл', 'пляжи, у самой воды', 'пляжи — розово-белый пласт у самой воды.'],
+	'nightshift:hevea_soil': [0x4caf50, 2, 'Кп', 'джунгли', 'джунгли — красная почва с серыми деревьями-гевеями.'],
+	'nightshift:sulfur_spring': [0xffeb3b, 14, 'Си', 'бесплодные земли, пещеры', 'бесплодные земли (озерца на поверхности) и глубокие пещеры ниже −12 — жёлтое озеро жидкой серы, над ним дымок.'],
+	'nightshift:magnetic_anomaly': [0xe040fb, 5, 'Ма', 'горы выше 120', 'горы выше высоты 120 — фиолетовый камень с искрами.'],
+	'nightshift:quartz_vein': [0xffffff, 15, 'Кк', 'пустыни', 'пустыни — белая блестящая жила.'],
+	'nightshift:bauxite_deposit': [0xe07b39, 6, 'Бк', 'саванны и плато', 'саванны и плато — рыжий пласт.'],
+	'nightshift:mycelium_vein': [0x00e5a0, 3, 'Гп', 'грибные поля, пещеры', 'грибные поля и пышные пещеры — светящаяся синяя грибница.'],
+	'nightshift:peat_bog': [0x8d6e63, 8, 'Тф', 'болота', 'болота — тёмная тлеющая земля, над ней дым.'],
+	'nightshift:permafrost': [0xa8e6ff, 11, 'Лд', 'ледяные биомы', 'ледяные биомы (ледяные шипы, морозные пики) — сине-белая мёрзлая земля в снежинках.'],
+	'nightshift:helium_ice': [0x26c6da, 3, 'Вк', 'горы выше 180', 'горы выше высоты 180 — голубой лёд с облачками.'],
+	'nightshift:star_stone': [0x7e57c2, 1, 'Об', 'пики выше 200', 'самые высокие пики, выше 200 — тёмно-синий камень со звёздами, светится.'],
+	'axiomativ:geothermal_source': [0xf44336, 12, 'Гт', 'вулканы, бесплодные земли', 'на поверхности — вулканы, базальтовые скалы, Йеллоустоун, бесплодные земли; глубоко — термальные и мантийные пещеры. Над жерлом курится дым.'],
+	'axiomativ:river_rapids': [0x1e88e5, 9, 'Рп', 'реки', 'реки — над каменной грядой пенится вода, со дна идут пузыри.'],
+}
+var NS_ATLAS_DIM_NAMES = {
+	'minecraft:overworld': 'Верхний мир',
+	'minecraft:the_nether': 'Незер',
+	'minecraft:the_end': 'Край',
+	'nightshift:arena': 'Арена',
+	'northstar:moon': 'Луна',
+	'northstar:mars': 'Марс',
+	'northstar:mercury': 'Меркурий',
+	'northstar:venus': 'Венера',
+}
+
+// Окно аддона (старый jar без класса — null, атлас пишет в чат)
+var NS_ATLAS_MENU = null
+try {
+	NS_ATLAS_MENU = Java.loadClass('com.axiomativ.industries.content.atlas.AtlasMenu')
+} catch (e) {
+	console.info('[atlas] окна атласа нет (аддон Axiomativ Industries без AtlasMenu) — атлас пишет в чат')
+}
 
 function nsAtlasState() {
 	if (NSG.nsAtlas) return NSG.nsAtlas
@@ -148,7 +188,7 @@ function nsAtlasShow(p) {
 				text: Math.round(best.x) + ' ' + Math.round(best.y) + ' ' + Math.round(best.z),
 				color: 'yellow',
 				underlined: true,
-				clickEvent: { action: 'run_command', value: '/atlas wp ' + idx },
+				clickEvent: { action: 'run_command', value: '/atlas wp_at ' + Math.round(best.x) + ' ' + Math.round(best.y + 1) + ' ' + Math.round(best.z) + ' ' + k },
 				hoverEvent: { action: 'show_text', contents: 'Поставить метку Xaero' },
 			},
 			{ text: ' · ' + Math.round(bd) + ' бл. ' + nsAtlasDir(best.x - px, best.z - pz), color: 'gray' },
@@ -161,6 +201,131 @@ function nsAtlasShow(p) {
 	srv.runCommandSilent('tellraw ' + name + ' ' + JSON.stringify({ text: 'Известно видов: ' + known + ' из ' + NS_ATLAS_TYPES.length + '. Новые месторождения атлас записывает сам, когда на них встаёшь. Жилы руды с аэрофотоаппарата — /veins [тип].', color: 'dark_gray' }))
 }
 
+// --------------------------------------------------------------------------
+// Окно атласа: данные (схема — AtlasMenu.java аддона) и открытие
+// --------------------------------------------------------------------------
+function nsAtlasWindowOk(p) {
+	try {
+		return !!(NS_ATLAS_MENU && p && NS_ATLAS_MENU.canOpen(p))
+	} catch (e) {
+		return false
+	}
+}
+
+// tab: 'deps' | 'veins' | null (окно откроется на прошлой вкладке)
+function nsAtlasMenuData(p, tab) {
+	var st = nsAtlasState()
+	var rs = nsGetStateRO()
+	var outs = rs.outposts || []
+	var dim = String(p.getLevel().getDimension())
+	var px = Math.floor(Number(p.getX())),
+		py = Math.floor(Number(p.getY())),
+		pz = Math.floor(Number(p.getZ()))
+	var who = [],
+		whoIdx = {}
+	function whoOf(s) {
+		s = s ? String(s) : ''
+		if (!s) return -1
+		if (whoIdx[s] === undefined) {
+			whoIdx[s] = who.length
+			who.push(s)
+		}
+		return whoIdx[s]
+	}
+	var base = [],
+		seen = {}
+	var alts = rs.altars || []
+	for (var a = 0; a < alts.length; a++) {
+		if (String(alts[a].dim) !== dim) continue
+		var bx = Math.round(Number(alts[a].x)),
+			bz = Math.round(Number(alts[a].z))
+		if (seen[bx + ',' + bz]) continue // алтарь с несколькими записями (арена) — одна метка
+		seen[bx + ',' + bz] = true
+		base.push({ x: bx, z: bz })
+	}
+	// месторождения форпостов: все известные точки, «форпост» — экструдер сети в 24 блоках
+	var types = [],
+		index = {}
+	for (var t = 0; t < NS_ATLAS_TYPES.length; t++) {
+		var k = NS_ATLAS_TYPES[t][0]
+		var look = NS_ATLAS_LOOK[k] || [0xa8a29a, 11, NS_ATLAS_TYPES[t][1].charAt(0), '', '']
+		index[k] = types.length
+		types.push({ k: k, name: NS_ATLAS_TYPES[t][1], wn: NS_ATLAS_TYPES[t][1], ini: look[2], wc: look[1], color: look[0], icon: k, n: 0, where: look[3], tip: look[4] })
+	}
+	var pts = []
+	for (var i = 0; i < st.deps.length; i++) {
+		var d = st.deps[i]
+		var ti = index[d.k]
+		if (ti === undefined) continue
+		var built = 0
+		for (var o = 0; o < outs.length; o++) if (outs[o].deposit === d.k && Math.abs(outs[o].x - d.x) <= 24 && Math.abs(outs[o].z - d.z) <= 24) built = 1
+		types[ti].n++
+		pts.push([ti, Math.round(d.x), Math.round(d.y), Math.round(d.z), built, whoOf(d.by)])
+	}
+	var data = {
+		v: 1,
+		x: px,
+		y: py,
+		z: pz,
+		dim: dim,
+		dimName: NS_ATLAS_DIM_NAMES[dim] || '',
+		base: base,
+		deps: {
+			here: dim === 'minecraft:overworld',
+			dim: 'minecraft:overworld',
+			wy: 1,
+			types: types,
+			pts: pts,
+			hint: 'Новое месторождение атлас записывает сам, когда встаёшь на него; дрон в «Разведке» находит их в 64 блоках.',
+			empty: 'Атлас пуст. Встань на месторождение — атлас запишет его сам.',
+		},
+	}
+	if (tab) data.tab = tab
+	if (typeof nsCamAtlasMenu === 'function') data.veins = nsCamAtlasMenu(p.getServer(), dim, px, pz, whoOf)
+	data.who = who
+	return data
+}
+
+// Открыть окно. false — окна нет (старый аддон, клиент без аддона) или не собралось: тогда — чат
+function nsAtlasOpen(p, tab) {
+	if (!nsAtlasWindowOk(p)) return false
+	try {
+		return !!NS_ATLAS_MENU.open(p, JSON.stringify(nsAtlasMenuData(p, tab)), true)
+	} catch (e) {
+		console.error('[atlas] окно не открыто: ' + e)
+		return false
+	}
+}
+
+// ПКМ атласом и /atlas: окно, запасной путь — строки в чат
+function nsAtlasUse(p, tab) {
+	if (!nsAtlasOpen(p, tab)) nsAtlasShow(p)
+}
+
+// Метка Xaero по координатам (клик в чате и окно без Xaero). kind — id месторождения или «vein:<жила>»
+function nsAtlasWpAt(p, x, y, z, kind) {
+	var k = String(kind || '').trim()
+	var name, ini, wc, dim
+	if (k.indexOf('vein:') === 0) {
+		var info = typeof nsCamVeinInfo === 'function' ? nsCamVeinInfo(k.substring(5)) : [k.substring(5), 'Ж', 7]
+		name = 'Жила ' + String(info[0]).toLowerCase()
+		ini = info[1]
+		wc = info[2]
+		dim = String(p.getLevel().getDimension())
+	} else {
+		name = NS_ATLAS_NAME[k] || 'Месторождение'
+		var look = NS_ATLAS_LOOK[k]
+		ini = look ? look[2] : name.charAt(0)
+		wc = look ? look[1] : 11
+		dim = 'minecraft:overworld'
+	}
+	name = name.replace(/[:]/g, ' ')
+	var line = 'xaero-waypoint:' + name + ':' + ini + ':' + x + ':' + y + ':' + z + ':' + wc + ':false:0'
+	var vanilla = { 'minecraft:overworld': 'overworld', 'minecraft:the_nether': 'the_nether', 'minecraft:the_end': 'the_end' }
+	if (vanilla[dim]) line += ':Internal-' + vanilla[dim] + '-waypoints'
+	p.tell(Text.of(line))
+}
+
 ItemEvents.rightClicked('nightshift:deposit_atlas', event => {
 	try {
 		var p = event.getPlayer()
@@ -170,7 +335,7 @@ ItemEvents.rightClicked('nightshift:deposit_atlas', event => {
 		NSG.nsAtlasCd = NSG.nsAtlasCd || {}
 		if (NSG.nsAtlasCd[key] && now - NSG.nsAtlasCd[key] < 20) return
 		NSG.nsAtlasCd[key] = now
-		nsAtlasShow(p)
+		nsAtlasUse(p, null)
 		p.playSound('minecraft:item.book.page_turn', 1, 1)
 	} catch (e) {
 		console.error('[atlas] ПКМ: ' + e)
@@ -220,7 +385,7 @@ PlayerEvents.loggedIn(event => {
 		if (p.getTags().contains('ns_atlas_given')) return
 		p.addTag('ns_atlas_given')
 		p.give(Item.of('nightshift:deposit_atlas'))
-		p.tell(Text.aqua('[Атлас] ').append(Text.white('Геологоразведка прислала атлас месторождений — ПКМ им: где ближайшая Солеварня, Гевея, Сера…')))
+		p.tell(Text.aqua('[Атлас] ').append(Text.white('Геологоразведка прислала атлас месторождений — ПКМ им: окно с картой, где ближайшая Солеварня, Гевея, Сера…')))
 	} catch (e) {}
 })
 
@@ -228,17 +393,55 @@ ServerEvents.recipes(event => {
 	event.recipes.create.deploying('nightshift:deposit_atlas', ['minecraft:book', 'minecraft:compass']).id('nightshift:shift/deploying/deposit_atlas')
 })
 
+// /atlas — окно (запасной путь — чат), /atlas chat — строками в чат, /atlas wp_at x y z <вид> — метка Xaero строкой в чат,
+// /atlas wp <N> — метка по номеру строки (старые строки чата до 08.10). /atlas <тип жилы> — жилы (aviation/30_aerial_camera.js).
 ServerEvents.commandRegistry(event => {
 	var C = event.commands
 	var I = event.arguments.INTEGER
+	var S = event.arguments.GREEDY_STRING
 	event.register(
 		C.literal('atlas')
 			.executes(ctx => {
-				var p = ctx.source.getPlayer()
-				if (p) nsAtlasShow(p)
-				else ctx.source.sendSystemMessage(Text.of('[atlas] записей: ' + nsAtlasState().deps.length + ' — ' + JSON.stringify(nsAtlasState().deps.slice(0, 20))))
+				try {
+					var p = ctx.source.getPlayer()
+					if (p) nsAtlasUse(p, null)
+					else ctx.source.sendSystemMessage(Text.of('[atlas] записей: ' + nsAtlasState().deps.length + ' — ' + JSON.stringify(nsAtlasState().deps.slice(0, 20))))
+				} catch (e) {
+					console.error('[atlas] /atlas: ' + e)
+				}
 				return 1
 			})
+			.then(
+				C.literal('chat').executes(ctx => {
+					try {
+						var p = ctx.source.getPlayer()
+						if (p) nsAtlasShow(p)
+					} catch (e) {
+						console.error('[atlas] /atlas chat: ' + e)
+					}
+					return 1
+				})
+			)
+			.then(
+				C.literal('wp_at').then(
+					C.argument('x', I.create(event)).then(
+						C.argument('y', I.create(event)).then(
+							C.argument('z', I.create(event)).then(
+								C.argument('kind', S.create(event)).executes(ctx => {
+									try {
+										var p = ctx.source.getPlayer()
+										if (!p) return 0
+										nsAtlasWpAt(p, Number(I.getResult(ctx, 'x')), Number(I.getResult(ctx, 'y')), Number(I.getResult(ctx, 'z')), String(S.getResult(ctx, 'kind')))
+									} catch (e) {
+										console.error('[atlas] /atlas wp_at: ' + e)
+									}
+									return 1
+								})
+							)
+						)
+					)
+				)
+			)
 			.then(
 				C.literal('wp').then(
 					C.argument('i', I.create(event)).executes(ctx => {
@@ -247,8 +450,7 @@ ServerEvents.commandRegistry(event => {
 						var picks = (NSG.nsAtlasLast || {})[String(p.getUsername())] || []
 						var d = picks[Number(I.getResult(ctx, 'i'))]
 						if (!d) return 0
-						var nm = (NS_ATLAS_NAME[d.k] || 'Месторождение').replace(/[:]/g, ' ')
-						p.tell(Text.of('xaero-waypoint:' + nm + ':' + nm.charAt(0) + ':' + Math.round(d.x) + ':' + Math.round(d.y + 1) + ':' + Math.round(d.z) + ':11:false:0:Internal-overworld-waypoints'))
+						nsAtlasWpAt(p, Math.round(d.x), Math.round(d.y + 1), Math.round(d.z), d.k)
 						return 1
 					})
 				)
