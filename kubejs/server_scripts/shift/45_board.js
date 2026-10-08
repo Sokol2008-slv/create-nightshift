@@ -432,7 +432,9 @@ function nsBrdCrownGive(p) {
 	var srv = NSG.nsServer
 	srv.runCommandSilent('give ' + name + ' ' + nsBrdCrownItem(c))
 	srv.runCommandSilent('title ' + name + ' times 10 80 20')
-	srv.runCommandSilent('title ' + name + ' subtitle ' + JSON.stringify({ text: 'Корона в инвентаре · «Удача +1» и «+10 % к скорости добычи» на неделю', color: 'yellow' }))
+	// подзаголовок короткий: длинный обрезается по краям экрана (снимок 08.10, 1600×900); подробности — строкой в чат
+	srv.runCommandSilent('title ' + name + ' subtitle ' + JSON.stringify({ text: 'Корона — в инвентаре', color: 'yellow' }))
+	p.tell(Text.gold('♛ Ты — работник недели ' + (c.wk + 1) + ' (' + nsBrdPlural(c.pts, 'очко', 'очка', 'очков') + '). ').append(Text.white('Корона — в инвентаре, на неделю «Удача +1» и «+10 % к скорости добычи». ')).append(Text.gray('Места — /pochet')))
 	srv.runCommandSilent('title ' + name + ' title ' + JSON.stringify({ text: '♛ Работник недели', color: 'gold', bold: true }))
 	srv.runCommandSilent('execute as ' + name + ' at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1')
 	nsBrdBuff(p, true)
@@ -494,10 +496,13 @@ function nsBrdBoardText(st) {
 	for (var i = 0; i < rows.length && i < 3; i++) ex.push({ text: i + 1 + '. ' + rows[i].n + ' — ' + Math.round(rows[i].pts) + '\n', color: i ? 'white' : 'yellow' }, { text: '   ' + nsBrdWhy(rows[i].w, 2) + '\n', color: 'gray' })
 	var tot = { raids: 0, kills: 0, shards: 0 }
 	for (var n in st.p) for (var k in tot) tot[k] += st.p[n].a[k] || 0
-	ex.push({ text: 'За всё время: побед ' + nsBrdNum(tot.raids) + ' · мобов ' + nsBrdNum(tot.kills) + ' · осколков ' + nsBrdNum(tot.shards) + '\n', color: 'dark_gray' })
+	ex.push({ text: 'За всё время: побед ' + nsBrdNum(tot.raids) + ' · мобов ' + nsBrdNum(tot.kills) + ' · осколков ' + nsBrdNum(tot.shards) + '\n', color: 'gray' })
 	ex.push({ text: '/pochet — кто и за что', color: 'aqua' })
 	return { text: '', extra: ex }
 }
+// Вид табло (08.10, снимок с 6 блоков: при 1.2 и фоне 27 % не читалось): крупнее и фон плотнее. Ставится и при
+// обновлении текста — старые табло подхватят его сами.
+var NS_BRD_LOOK = 'background:-1728053248,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.8f,1.8f,1.8f]}'
 function nsBrdBoardTick(force) {
 	var st = nsBrdState()
 	var pos = nsBrdPos(st)
@@ -518,12 +523,12 @@ function nsBrdBoardTick(force) {
 	var ver = st.ver + ':' + nsBrdDay() + ':' + pos.x + ',' + pos.y + ',' + pos.z
 	var text = JSON.stringify(JSON.stringify(nsBrdBoardText(st)))
 	if (!have.length) {
-		NSG.nsServer.runCommandSilent('execute in ' + pos.dim + ' run summon minecraft:text_display ' + pos.x.toFixed(2) + ' ' + pos.y.toFixed(2) + ' ' + pos.z.toFixed(2) + ' {Tags:["ns_fun_npc","ns_board"],billboard:"center",alignment:"center",line_width:240,view_range:2f,shadow:1b,background:1140850688,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]},text:' + text + '}')
+		NSG.nsServer.runCommandSilent('execute in ' + pos.dim + ' run summon minecraft:text_display ' + pos.x.toFixed(2) + ' ' + pos.y.toFixed(2) + ' ' + pos.z.toFixed(2) + ' {Tags:["ns_fun_npc","ns_board"],billboard:"center",alignment:"center",line_width:240,view_range:2f,shadow:1b,brightness:{sky:15,block:15},' + NS_BRD_LOOK + ',text:' + text + '}')
 		NSG.nsBrdBoardVer = ver
 		return 'поставлено'
 	}
 	if (NSG.nsBrdBoardVer !== ver) {
-		NSG.nsServer.runCommandSilent('execute in ' + pos.dim + ' run data merge entity ' + have[0].getStringUuid() + ' {text:' + text + '}')
+		NSG.nsServer.runCommandSilent('execute in ' + pos.dim + ' run data merge entity ' + have[0].getStringUuid() + ' {' + NS_BRD_LOOK + ',text:' + text + '}')
 		for (var h = 1; h < have.length; h++) have[h].discard()
 		NSG.nsBrdBoardVer = ver
 		return 'обновлено'

@@ -2942,7 +2942,7 @@ hash = "34898052c22033a4efe606953f3409cdb9d1add6e5d221aa8038a403275e6eb5"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "2d18c98f5a669535bfbfc99e2134528d2292590161b018ed19b90fff9e6e45a7"
+hash = "37c5e366a5249c5909ea182d6b01a93a6a653c2b31ac0569681e19ba479e17ea"
 
 [[files]]
 file = "kubejs/server_scripts/raids/42_raid_signal.js"
@@ -3026,7 +3026,7 @@ hash = "3121001134956cda51c1f9d5b3b95785c9554ada5c7c84121767cde84ac44e60"
 
 [[files]]
 file = "kubejs/server_scripts/shift/45_board.js"
-hash = "a280943a273fd014980dfa0a3a36b9476eb071450f5f1ffb1b28588caeddd66e"
+hash = "5d109526442df387e271525b14b38932eacb4b976e28456fcbeeea0b28c87b8c"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
@@ -3322,7 +3322,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "60e85197830e312eaff0e33cb33119f087dafab7b7a506dfc79d337343e58039"
+hash = "54298fdd091999ac587867c7fd967140c810579374c0a6bd1378a87c9fe44e9e"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"

@@ -1895,10 +1895,19 @@ function nsTickCooldown(state) {
 // первого алтаря.
 // --------------------------------------------------------------------------
 // Алтарь базы для малого набега: алтарь арены не в счёт (арена — полигон, малый набег там повис бы без игроков)
+// Алтарь базы: первый алтарь Верхнего мира (не арена) — как база факторий и диспетчерской в аддоне. Нет такого —
+// первый не-аренный в любом измерении (08.10: на тестовом мире первым стоял алтарь «Инь-Ян», и табло доски почёта
+// с салютом уехали туда).
 function nsHomeAltar(state) {
 	var arenaId = state.arena && state.arena.altarId
-	for (var i = 0; i < state.altars.length; i++) if (state.altars[i].id !== arenaId) return state.altars[i]
-	return null
+	var any = null
+	for (var i = 0; i < state.altars.length; i++) {
+		var a = state.altars[i]
+		if (a.id === arenaId) continue
+		if ((a.dim || 'minecraft:overworld') === 'minecraft:overworld') return a
+		if (!any) any = a
+	}
+	return any
 }
 
 function nsCheckMinorRaidSchedule(state) {
