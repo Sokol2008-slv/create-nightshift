@@ -5,7 +5,7 @@
 //  - убито мобов набега (последний удар игрока; турели и ловушки — в счёт смены, не игрока);
 //  - контракты бригадира (всем в сети в момент выполнения), звёздные осколки (звездопад), метеоритное железо (доля);
 //  - рекорды гонок и тира (побитые чужие или свои, не эталон новой трассы), налёт (аэроклуб), сданное в фактории
-//    (труд строк заказа; засчитывается тем, кто был у фактории, когда заказ пополнился, — сдал руками или привёз).
+//    (труд строк заказа; сдал сам — тебе, по журналу сдачи аддона; груз автоматики — тем, кто был у фактории).
 // Очки недели — NS_BRD_DEF (подсказка в /pochet): победа 10 + волна/5 (впервые +10, ночной вызов +5), моб 0,2,
 // подволна выживания 1, контракт 15, осколок 2, метеоритное железо 0,5, рекорд 10, налёт 1 за 2 000 блоков (до 30
 // в неделю), фактория 1 за «жетон труда» (труд строки / 30 — как плата заказа).
@@ -20,7 +20,8 @@
 //   test display (поставить табло без игроков рядом) | test reset.
 // Хуки (одна строка в каждом): raids/40_nightshift_raid.js (победа), raids/48_night_call.js (выживание),
 // raids/14_contracts.js (контракт), sky/10_meteor.js (доля руды), sky/40_night_sky.js (звезда),
-// zabava/20_race.js и zabava/30_tir.js (рекорд). Убийства, налёт и фактории считает этот файл.
+// zabava/20_race.js и zabava/30_tir.js (рекорд). Убийства, налёт и фактории считает этот файл (фактории — по журналу
+// сдачи FactoryApi.drainJson; он же копит итоги заказов для сводки смены — nsBoardFactOutcomes).
 // Состояние — server.persistentData «ns_board_json».
 // KubeJS 2101 / Rhino: только var; тела обработчиков — в try.
 // ==========================================================================
@@ -52,7 +53,7 @@ var NS_BRD_ORDER = ['raids', 'calls', 'kills', 'arena', 'contracts', 'shards', '
 var NS_BRD_HOW =
 	'Очки недели: победа в набеге — 10 + волна/5 (волна впервые — ещё 10, ночной вызов — ещё 5); 5 мобов набега — 1; ' +
 	'подволна выживания — 1; контракт — 15; звёздный осколок — 2; 2 метеоритного железа — 1; рекорд трассы или тира — 10; ' +
-	'2 000 блоков налёта — 1 (до 30 в неделю); фактория — 1 за жетон труда (сдал руками или был у фактории, когда пришёл груз). ' +
+	'2 000 блоков налёта — 1 (до 30 в неделю); фактория — 1 за жетон труда (сдал сам — тебе; груз с ленты или поезда — тем, кто был у фактории). ' +
 	'Раз в 7 игровых дней лидер (от ' + NS_BRD.minPts + ' очков) — работник недели: корона и на неделю «Удача +1», «+10 % к скорости добычи».'
 
 // --------------------------------------------------------------------------
@@ -237,6 +238,8 @@ function nsBrdWeight(id) {
 }
 function nsBrdFactTick() {
 	if (typeof NSF_API === 'undefined' || !NSF_API) return
+	// аддон с журналом сдачи (08.10) — точный счёт; старый jar — по приросту заказов, тем, кто рядом
+	if (typeof NSF_API.drainJson === 'function') return nsBrdFactLedger()
 	var list = JSON.parse(String(NSF_API.listJson()))
 	var prev = NSG.nsBrdFact
 	var cur = {}
@@ -258,7 +261,54 @@ function nsBrdFactTick() {
 	}
 	NSG.nsBrdFact = cur
 }
-function nsBrdFactCredit(f, tokens) {
+// Журнал сдачи аддона (FactoryApi.drainJson, 08.10): сдал сам (ПКМ по терминалу, «Сдать из инвентаря») — очки ему;
+// груз автоматики (воронки, лента, поезд, деплоер) — тем, кто был у фактории, как раньше. Итоги заказов — в state.factOut
+// (для сводки смены: что закрыли и что сгорело со вчерашнего утра).
+function nsBrdFactLedger() {
+	var j = JSON.parse(String(NSF_API.drainJson()))
+	var dl = j.deliveries || []
+	for (var i = 0; i < dl.length; i++) {
+		var e = dl[i]
+		var tokens = (e.n * nsBrdWeight(e.id)) / 30
+		if (tokens > 0) nsBrdFactCredit(e, tokens, e.who)
+	}
+	var os = j.orders || []
+	if (!os.length) return
+	var st = nsBrdState()
+	if (!st.factOut) st.factOut = []
+	var day = nsBrdDay()
+	for (var k = 0; k < os.length; k++) {
+		var o = os[k]
+		st.factOut.push({ d: day, f: o.name, no: o.no, r: o.result, t: (o.reward || 0) + (o.bonus || 0), pc: o.progress })
+	}
+	if (st.factOut.length > 30) st.factOut.splice(0, st.factOut.length - 30)
+	NSG.nsBrdDirty = true
+}
+// Итоги заказов с утра дня from (для сводки): {done, failed, tokens, lines: ['№12 «Север» — закрыт, +40', …]}
+function nsBoardFactOutcomes(from) {
+	var out = { done: 0, failed: 0, tokens: 0, lines: [] }
+	var fo = nsBrdState().factOut || []
+	for (var i = 0; i < fo.length; i++) {
+		var o = fo[i]
+		if (o.d < from) continue
+		if (o.r !== 'done' && !(o.pc > 0)) continue // нетронутый сгоревший — молча, как и в чате (фактории 06.10)
+		if (o.r === 'done') {
+			out.done++
+			out.tokens += o.t
+			out.lines.push('№' + o.no + ' «' + o.f + '» — закрыт, +' + o.t)
+		} else {
+			out.failed++
+			out.lines.push('№' + o.no + ' «' + o.f + '» — сгорел (сдано ' + o.pc + ' %)')
+		}
+	}
+	return out
+}
+function nsBrdFactCredit(f, tokens, who) {
+	var st = nsBrdState()
+	st.factTeam = (st.factTeam || 0) + tokens // всё сданное (и автоматикой) — в счёт смены
+	NSG.nsBrdDirty = true
+	if (who) return nsBoardAdd(who, 'fact', tokens)
+	if (f.x === undefined) return
 	var near = []
 	var ps = NSG.nsServer.getPlayers()
 	for (var i = 0; i < ps.length; i++) {
@@ -268,9 +318,6 @@ function nsBrdFactCredit(f, tokens) {
 			dz = p.getZ() - f.z
 		if (dx * dx + dz * dz <= NS_BRD.factR * NS_BRD.factR) near.push(String(p.getUsername()))
 	}
-	var st = nsBrdState()
-	st.factTeam = (st.factTeam || 0) + tokens // всё сданное (и автоматикой) — в счёт смены
-	NSG.nsBrdDirty = true
 	for (var j = 0; j < near.length; j++) nsBoardAdd(near[j], 'fact', tokens / near.length)
 }
 

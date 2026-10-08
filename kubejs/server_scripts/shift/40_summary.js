@@ -135,6 +135,20 @@ function nsSumFactories() {
 			hover.push(nsSumT('     ' + Math.min(ln.have, ln.need) + '/' + ln.need + ' ', ln.have >= ln.need ? 'green' : 'gray'), Object.assign(nsSumItem(ln.id), { color: 'aqua' }), nsSumT('\n'))
 		}
 	}
+	// итоги заказов за сутки — из журнала сдачи (shift/45_board.js, аддон с FactoryApi.drainJson)
+	var fo = null
+	try {
+		if (typeof nsBoardFactOutcomes === 'function' && typeof nsBrdDay === 'function') fo = nsBoardFactOutcomes(nsBrdDay() - 1)
+	} catch (e) {}
+	if (fo && fo.done + fo.failed > 0) {
+		var tag2 = (fo.done ? '✔' + fo.done : '') + (fo.done && fo.failed ? ' ' : '') + (fo.failed ? '✖' + fo.failed : '')
+		if (extra.length) extra.push(nsSumT(', ', 'gray'))
+		extra.push(nsSumT('за сутки ' + tag2, fo.failed && !fo.done ? 'red' : 'green'))
+		plain.push('за сутки ' + tag2)
+		hover.push(nsSumT('За сутки: закрыто ' + fo.done + (fo.tokens ? ' (+' + nsSumPlural(fo.tokens, 'жетон', 'жетона', 'жетонов') + ')' : '') + ', сгорело ' + fo.failed + '\n', 'gold'))
+		for (var q = 0; q < fo.lines.length; q++) hover.push(nsSumT('   ' + fo.lines[q] + '\n', fo.lines[q].indexOf('сгорел') >= 0 ? 'red' : 'green'))
+		any = true
+	}
 	if (!any) return null
 	hover.push(nsSumT('Сдать — в терминал фактории (руками, лентой, поездом). Клик — /factory', 'dark_gray'))
 	return { text: 'Заказы: ', color: 'gold', extra: extra, hover: hover, click: { action: 'run_command', value: '/factory' }, plain: 'Заказы: ' + plain.join(', ') }

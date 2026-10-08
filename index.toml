@@ -3022,11 +3022,11 @@ hash = "68df423898beacb9ac5a630eced9ff319c21eca9bbbf5a9968b985e3cb415c04"
 
 [[files]]
 file = "kubejs/server_scripts/shift/40_summary.js"
-hash = "11ac655c0eb236f6a5460439d10ff0349178e5c9602c06724996dcbc2da920f5"
+hash = "3121001134956cda51c1f9d5b3b95785c9554ada5c7c84121767cde84ac44e60"
 
 [[files]]
 file = "kubejs/server_scripts/shift/45_board.js"
-hash = "ee6bd64e165cb5df212fc19485571af5632beb8e5ac775671d2d164c32649f93"
+hash = "7edab2128afb34c83691dc3cffe22f7699a0067f85923050e6603f1f567bfd9f"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
@@ -3322,7 +3322,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "41f004402c7af2d0b41ed374b473b6dd5576728836456a104e90afb6c988a759"
+hash = "f9ea0e435aac827f42cf0777a68a20eb6bd40f9230de10ed481cbfebe2928dd7"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
