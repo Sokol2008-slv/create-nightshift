@@ -2826,7 +2826,7 @@ hash = "2429042fd45700c9be676dcf9f7835472a95910f8e043f54b6ca7f9b4f12632c"
 
 [[files]]
 file = "kubejs/server_scripts/hud/20_ideas.js"
-hash = "896c5f72ed6ba332b26a47c9a0fafc31bef6e9ab47c3557ad7d442700b817919"
+hash = "8a6f30f069d494f58044b92deb60ad12a55c2d1eaf8640a1a7a5503d0fec271b"
 
 [[files]]
 file = "kubejs/server_scripts/hud/30_help.js"
