@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "92538727a9b4a3b65f87e42190060742a08843082785adc0b8a7d435a08d50ef"
+hash = "f8ecb7bbb7737a543c609a7f14a0fd2b84963a70b84f677d42b04dbbd4885cea"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "92538727a9b4a3b65f87e42190060742a08843082785adc0b8a7d435a08d50ef"
+hash = "f8ecb7bbb7737a543c609a7f14a0fd2b84963a70b84f677d42b04dbbd4885cea"
 
 [[files]]
 file = "config/iris.properties"
@@ -1822,7 +1822,7 @@ hash = "443d365bfa45979772785c64134180b2e874ef0501d174892167e5ab9469b649"
 
 [[files]]
 file = "kubejs/client_scripts/aviation_tooltips.js"
-hash = "35d035208bbc4b3132635f74c127cae25fcc8660d4bc12b702dc948170752c0b"
+hash = "22805e469f951e525f6e615ada3a64ce36d8087a63b3d98fd3d53e94a6378f6c"
 
 [[files]]
 file = "kubejs/client_scripts/axiomativ_dispatch_jei.js"
@@ -1890,11 +1890,11 @@ hash = "f5476f4651e9bf3aa05546f85ee8a851005cfe3976a250c9546ed6eb8e1472a9"
 
 [[files]]
 file = "kubejs/client_scripts/outposts_jei.js"
-hash = "92c6d304a6914ca8aeec15f4485d1c6cb7c8d470599ac458342c0946aadc6154"
+hash = "2abac803bd3a71cee7f738264e85941890f798ab9bc4e53c361a42c5cd9031f1"
 
 [[files]]
 file = "kubejs/client_scripts/sanity_items_jei.js"
-hash = "5bed5b3797e131e0328c772519047cfeea107f4c5062108768e8c3d652e1d6e0"
+hash = "c1f5f4836c3a8be70be6591b5735979ec571668fddc59982ea84ad68d20bad50"
 
 [[files]]
 file = "kubejs/client_scripts/special_stage_tooltips.js"
@@ -2782,7 +2782,7 @@ hash = "5caa74ce533e1a6644b2203d79702aa522335f41aa7644e23831ff341bc3eb15"
 
 [[files]]
 file = "kubejs/server_scripts/aviation/30_aerial_camera.js"
-hash = "cc33990e6cf812898162ffc71f02db508d6b2d4afa8c4d8cd8c00a6dacecba38"
+hash = "559bbb3eb3307b3544cd336d47a8546d556d3e5fa7c3420d4e247f170c49283d"
 
 [[files]]
 file = "kubejs/server_scripts/aviation/40_airdrop.js"
@@ -2830,7 +2830,7 @@ hash = "896c5f72ed6ba332b26a47c9a0fafc31bef6e9ab47c3557ad7d442700b817919"
 
 [[files]]
 file = "kubejs/server_scripts/hud/30_help.js"
-hash = "ef6c22ed9003b343f278e9722793b8f8570dd9ceb8b51f9ca54f568df80b12f6"
+hash = "f8cc4326483de3ec1ad2c9b9ec4ccd1eb76ffefc12d6b1b1a51d6039e37b3681"
 
 [[files]]
 file = "kubejs/server_scripts/hud/31_keys.js"
@@ -2838,7 +2838,7 @@ hash = "bce4d8d763c6e9e8b06d46c6206bd899fe12deabc3109aeab3f1bc3abce24e48"
 
 [[files]]
 file = "kubejs/server_scripts/hud/40_first_hints.js"
-hash = "5462f8d6b27152652b4e369ae6048d7ce8b9244556baec630139dbe6e9b13066"
+hash = "a4de96492c4f4509dd8646d8d0c872fbd414050904f8eb5dcfa929a3aa57554d"
 
 [[files]]
 file = "kubejs/server_scripts/nightshift/00_stages.js"
@@ -3002,7 +3002,7 @@ hash = "c7c83bbb21959f6c9e56950472441bbc49c3e172d9b34e161be1405d3fa7e310"
 
 [[files]]
 file = "kubejs/server_scripts/shift/20_atlas.js"
-hash = "26b8615250354dd4b9d3dba68f05975ae6eeeede0f1ef0761cd21e76a17f247f"
+hash = "5d95bb3cb5423fd339067647221d904262aa2e7822d985a691a6cbfcbf539b93"
 
 [[files]]
 file = "kubejs/server_scripts/shift/25_atlas_drones.js"
@@ -3322,7 +3322,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "41f004402c7af2d0b41ed374b473b6dd5576728836456a104e90afb6c988a759"
+hash = "a903a6aa95cf6de1c1a20886671ca9111b0b00881064c308a8d3ebee23cc618e"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
