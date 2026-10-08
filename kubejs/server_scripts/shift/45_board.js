@@ -22,7 +22,7 @@
 // raids/14_contracts.js (контракт), sky/10_meteor.js (доля руды), sky/40_night_sky.js (звезда),
 // zabava/20_race.js и zabava/30_tir.js (рекорд). Убийства, налёт и фактории считает этот файл (фактории — по журналу
 // сдачи FactoryApi.drainJson; он же копит итоги заказов для сводки смены — nsBoardFactOutcomes).
-// Состояние — server.persistentData «ns_board_json».
+// Состояние — server.persistentData «ns_board_json»; для вкладки «Почёт» диспетчерской — «ns_board_view_json» (nsBrdView).
 // KubeJS 2101 / Rhino: только var; тела обработчиков — в try.
 // ==========================================================================
 
@@ -530,6 +530,32 @@ function nsBrdBoardTick(force) {
 	}
 	return 'без изменений'
 }
+// Вкладка «Почёт» в окне диспетчерской (аддон читает persistentData «ns_board_view_json», 08.10): неделя, места
+// с очками и «за что», корона, прошлые работники недели, счёт смены. Пишется, когда счёт или день сменились.
+var NS_BRD_VIEW_KEY = 'ns_board_view_json'
+function nsBrdView(st) {
+	var day = nsBrdDay()
+	var wk = nsBrdWeekOf(day)
+	var v = { week: wk + 1, day: (day % NS_BRD.weekDays) + 1, days: NS_BRD.weekDays, minPts: NS_BRD.minPts, rows: [], champs: [] }
+	var c = st.crown
+	if (c && day < c.until) v.crown = { name: c.name, pts: c.pts, why: c.why, left: c.until - day }
+	var rows = nsBrdRank(st, wk)
+	for (var i = 0; i < rows.length && i < 8; i++) v.rows.push({ n: rows[i].n, pts: Math.round(rows[i].pts), why: nsBrdWhy(rows[i].w, 0) })
+	for (var j = st.champs.length - 1; j >= 0 && v.champs.length < 5; j--) v.champs.push({ wk: st.champs[j].wk + 1, n: st.champs[j].name, pts: st.champs[j].pts })
+	var tot = { raids: 0, kills: 0, shards: 0 }
+	for (var n in st.p) for (var k in tot) tot[k] += st.p[n].a[k] || 0
+	v.tot = tot
+	v.fact = Math.round(st.factTeam || 0)
+	v.how = NS_BRD_HOW
+	return v
+}
+function nsBrdViewTick() {
+	var st = nsBrdState()
+	var ver = st.ver + ':' + nsBrdDay() + ':' + st.champs.length
+	if (NSG.nsBrdViewVer === ver) return
+	NSG.nsServer.persistentData.putString(NS_BRD_VIEW_KEY, JSON.stringify(nsBrdView(st)))
+	NSG.nsBrdViewVer = ver
+}
 // убрать табло у старой точки (перенос /pochet place)
 function nsBrdBoardRemove(pos) {
 	if (!pos) return
@@ -584,6 +610,7 @@ ServerEvents.tick(event => {
 		}
 		if (sec % 10 === 0) for (var j = 0; j < ps.length; j++) nsBrdBuff(ps[j], false)
 		if (sec % 2 === 0 && ps.length) nsBrdBoardTick(false)
+		if (sec % 2 === 0) nsBrdViewTick()
 		if (NSG.nsBrdDirty && sec % 5 === 0) nsBrdSave()
 	} catch (e) {
 		console.error('[почёт] тик: ' + e)

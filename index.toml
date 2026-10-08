@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "92538727a9b4a3b65f87e42190060742a08843082785adc0b8a7d435a08d50ef"
+hash = "7b154ea4b8c75dc960f1c228c06730615fe294878e8c9122232c1e0d76b51898"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "92538727a9b4a3b65f87e42190060742a08843082785adc0b8a7d435a08d50ef"
+hash = "7b154ea4b8c75dc960f1c228c06730615fe294878e8c9122232c1e0d76b51898"
 
 [[files]]
 file = "config/iris.properties"
@@ -3026,7 +3026,7 @@ hash = "3121001134956cda51c1f9d5b3b95785c9554ada5c7c84121767cde84ac44e60"
 
 [[files]]
 file = "kubejs/server_scripts/shift/45_board.js"
-hash = "7edab2128afb34c83691dc3cffe22f7699a0067f85923050e6603f1f567bfd9f"
+hash = "a280943a273fd014980dfa0a3a36b9476eb071450f5f1ffb1b28588caeddd66e"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
@@ -3322,7 +3322,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "f9ea0e435aac827f42cf0777a68a20eb6bd40f9230de10ed481cbfebe2928dd7"
+hash = "60e85197830e312eaff0e33cb33119f087dafab7b7a506dfc79d337343e58039"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
