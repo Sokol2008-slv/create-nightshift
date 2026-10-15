@@ -6,7 +6,7 @@ hash = "4a5eeec4a187e35158c99d3c379e985bf1454eac72deb911c4f0788928cfc5d9"
 
 [[files]]
 file = "config/ProjectE/custom_emc.json"
-hash = "1231514bec41a4072135ada7c1422048fb357ee997e8edf64918d6a6e4c242a9"
+hash = "76fda8776daae527d7ab661d3c68025d353026b56ea449d408c36176e1cff9a2"
 
 [[files]]
 file = "config/ProjectE/mapping.toml"

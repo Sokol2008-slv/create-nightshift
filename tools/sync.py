@@ -16,6 +16,26 @@ import urllib.parse
 import urllib.request
 
 PACK = pathlib.Path(__file__).resolve().parent.parent
+
+
+def check_custom_emc():
+    """Повтор id в custom_emc.json — ProjectE отбрасывает ВЕСЬ файл (15.10: из-за двух повторов с 06.10 не работали
+    ни нули на технику Create, ни цены металлов; в логе сервера — «Couldn't parse custom emc: Duplicate entry»)."""
+    import json
+    f = PACK / "config" / "ProjectE" / "custom_emc.json"
+    if not f.exists():
+        return
+    seen, dups = set(), []
+    for e in json.loads(f.read_text(encoding="utf-8")).get("entries", []):
+        k = e.get("id") or ("#" + str(e.get("tag")))
+        if k in seen:
+            dups.append(k)
+        seen.add(k)
+    if dups:
+        sys.exit("ОШИБКА: повторы в config/ProjectE/custom_emc.json — ProjectE не примет файл целиком: " + ", ".join(dups))
+
+
+check_custom_emc()
 side = sys.argv[1]
 target = pathlib.Path(sys.argv[2])
 mods_dir = target / "mods"
