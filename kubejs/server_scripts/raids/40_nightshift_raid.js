@@ -847,7 +847,10 @@ function nsWaveBar(state, alive, cfg) {
 }
 
 // Размер команды: числа в конфиге — на одного игрока. 1 → ×1, 2 → ×1,5, 3 → ×2.
-function nsPartyScale() {
+// n — сколько бойцов (15.10, игра вдвоём: орда — по тем, кто у алтаря, а не по всем в сети: напарник на планете или
+// в творческом не утяжеляет волну). Без n — все в сети (прогноз в пульте и досье — «потолок»).
+function nsPartyScale(n) {
+	if (n !== undefined && n !== null) return 1 + 0.5 * Math.max(0, n - 1)
 	var n = 0
 	var players = NSG.nsServer.getPlayers()
 	for (var i = 0; i < players.length; i++) {
@@ -975,7 +978,7 @@ function nsSpawnCurrentWave(state, level, altar) {
 		state.raid.present[hn] = (state.raid.present[hn] || 0) + 1
 	}
 	var size = 0
-	var scale = nsPartyScale() * (hordeCfg.mult || 1)
+	var scale = nsPartyScale(Math.max(1, nsFighterCount(here))) * (hordeCfg.mult || 1)
 	var queue = []
 	for (var i = 0; i < wave.length; i++) {
 		var n = Math.ceil(wave[i].count * scale)
@@ -1435,6 +1438,18 @@ function nsParticipants(altar) {
 		out.push(p)
 	}
 	return out
+}
+
+// Бойцы из списка игроков: без творческого режима (наблюдатели в nsParticipants уже отсеяны)
+function nsFighterCount(list) {
+	var n = 0
+	for (var i = 0; i < list.length; i++) {
+		try {
+			if (list[i].isCreative()) continue
+		} catch (e) {}
+		n++
+	}
+	return n
 }
 
 function nsPick(list) {

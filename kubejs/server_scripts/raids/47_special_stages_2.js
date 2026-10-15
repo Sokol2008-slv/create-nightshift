@@ -121,7 +121,7 @@ function nsSp2Leaders(state, level, altar, mobs, p) {
 	if (!sp || sp.key !== 'leaders') sp = state.raid.sp = { key: 'leaders', t: 0, n: 0, zero: 0 }
 	sp.t++
 	if (!sp.spawned && state.raid.waveSeen) {
-		var n = p.n + Math.round((nsPartyScale() - 1) / 0.5)
+		var n = p.n + Math.max(0, nsFighterCount(nsParticipants(altar)) - 1) // вожаков — по бойцам у алтаря (15.10)
 		for (var i = 0; i < n; i++) {
 			var pt = nsRingPoint(level, altar, state)
 			if (!pt) continue
