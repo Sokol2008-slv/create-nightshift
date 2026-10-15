@@ -5,6 +5,9 @@
 //  - Тревоги диспетчерской (форпост встал / снова работает, поезд сошёл с рельс, ток на исходе) — в журнал смены
 //    (shift/10_journal.js, nsJournal), чтобы их видели и те, кого не было в игре. Пишет аддон, только если в мире
 //    есть экран диспетчерской.
+//  - Окно диспетчерской из команд пака (15.10, «меньше чата, больше окон»): nsBazaOpen(игрок, вкладка) — /pochet
+//    открывает «Почёт», клик по заказам утренней сводки — «Смену». Диспетчерской нет (ни одного экрана) или у игрока
+//    нет окна — false, вызывающий пишет в чат как раньше. Игроку то же — /baza [вкладка] (команда аддона).
 // Аддона нет (старый jar) — скрипт молчит. Правило Rhino: только var; тело обработчика — в try.
 // ==========================================================================
 var NS_DSP_API = null
@@ -12,6 +15,26 @@ try {
 	NS_DSP_API = Java.loadClass('com.axiomativ.industries.content.dispatch.DispatchApi')
 } catch (e) {
 	console.info('[dispatch] аддона с диспетчерской нет — связь с паком выключена')
+}
+
+// Построена ли диспетчерская (в мире есть экран); старый jar без DispatchApi.exists — нет
+function nsBazaReady() {
+	if (!NS_DSP_API) return false
+	try {
+		return !!NS_DSP_API.exists()
+	} catch (e) {
+		return false
+	}
+}
+
+// Окно диспетчерской игроку на вкладке (board, power, outposts, trains, shift, honor, log); false — пиши в чат
+function nsBazaOpen(player, tab) {
+	if (!NS_DSP_API || !player) return false
+	try {
+		return !!NS_DSP_API.open(player, tab || '')
+	} catch (e) {
+		return false
+	}
 }
 
 function nsDspNames() {

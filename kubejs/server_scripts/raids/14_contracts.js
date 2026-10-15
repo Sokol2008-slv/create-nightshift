@@ -5,7 +5,8 @@
 // с волны повыше), ресурсы, иногда «Сердце ночи». Выполненный контракт меняется на новый с рассветом; висящий
 // дольше 3 игровых дней — тоже. Цели — по лучшей пройденной волне (state.phase).
 // Хуки: победа — nsContractsOnVictory (40_nightshift_raid.js), меню алтаря — nsContractsRows (30_), убийства и
-// смерти — здесь. Команда: /nscontracts.
+// смерти — здесь. Команда: /nscontracts — пульт алтаря на вкладке «Контракты» (15.10; нет окна — строкой в чат),
+// /nscontracts chat — строкой в чат.
 // 05.10 (поток W) — новые виды: «Чистая оборона» (волна без единого удара по алтарю), «Блиц» (волна быстрее срока),
 // «Оборона работает сама» (турели и ловушки убили больше всех бойцов вместе), «Особая стадия» (пройти любую особую),
 // «Ночной вызов» (принять и выиграть). Босс-цели — и варианты боссов для фарма (Мёртвый король, Эхо Тироса…).
@@ -324,8 +325,8 @@ function nsContractsRows(state) {
 }
 
 ServerEvents.commandRegistry(event => {
-	event.register(
-		event.commands.literal('nscontracts').executes(ctx => {
+	var show = function (ctx, chat) {
+		try {
 			var p = ctx.source.getPlayer()
 			if (!p) {
 				// из консоли — списком в лог
@@ -333,8 +334,17 @@ ServerEvents.commandRegistry(event => {
 				for (var i = 0; i < L.length; i++) console.info('[nightshift] контракт ' + (i + 1) + ': ' + L[i].text + ' — ' + (L[i].have || 0) + '/' + L[i].need + (L[i].done ? ' (выполнен)' : '') + (L[i].target ? ' [' + L[i].target + ']' : ''))
 				return 1
 			}
+			if (!chat && typeof nsAltarScreenTab === 'function' && nsAltarScreenTab(p, 'contracts', 0)) return 1
 			p.tell(nsContractsRows(nsGetState()))
-			return 1
-		})
+		} catch (e) {
+			console.error('[nightshift] /nscontracts: ' + e)
+		}
+		return 1
+	}
+	event.register(
+		event.commands
+			.literal('nscontracts')
+			.executes(ctx => show(ctx, false))
+			.then(event.commands.literal('chat').executes(ctx => show(ctx, true)))
 	)
 })

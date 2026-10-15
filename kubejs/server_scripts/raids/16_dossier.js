@@ -17,7 +17,9 @@
 //    /nightshift menu_json <с какой> <выбранная> (обновить данные).
 //
 // Команды (любой игрок): /nightshift menu_json [с какой волны] [выбранная] — открыть/обновить пульт;
-// /nightshift dossier <N> — досье волны N текстом в чат (и в консоль).
+// /nightshift dossier <N> — пульт на вкладке «Досье» волны N (15.10; нет окна — текстом в чат, из консоли — в консоль),
+// /nightshift dossier <N> chat — текстом в чат, как раньше.
+// Пульт на нужной вкладке из других команд — nsAltarScreenTab (/nscontracts → «Контракты», /nsart → «Артефакты»).
 // Правило Rhino: только var; Java-строки — через String().
 // ==========================================================================
 
@@ -649,6 +651,11 @@ function nsDosArt(player, next) {
 			return a.tier - b.tier
 		})
 		if (typeof NSG.nsNsArtifactHoverText === 'function') out.odds = 'На следующей волне (' + next + '): ' + String(NSG.nsNsArtifactHoverText(next, true))
+		// надето и что даёт (15.10: /nsart открывает эту вкладку — раньше было только в чате)
+		var w = player && typeof nsArtWornInfo === 'function' ? nsArtWornInfo(player) : null
+		out.worn = w ? { items: w.ids.map(function (x) { return String(x) }), text: w.parts.join('; '), hp: w.hp } : { items: [], text: '' }
+		var pool = typeof NSG.nsNsHordeShardCount === 'function' ? NSG.nsNsHordeShardCount() : 0
+		if (pool > 0) out.pool = 'Осколков орды в копилке набега: ' + pool + ' (раздадут победителям)'
 	} catch (e) {
 		console.warn('[nightshift] пульт: артефакты: ' + e)
 	}
@@ -681,6 +688,14 @@ function nsAltarScreenSend(player, state, view, open) {
 	}
 }
 
+// Пульт сразу на вкладке (15.10, «меньше чата, больше окон»): tab — waves|dossier|bestiary|mut|contracts|art|itogi,
+// sel > 0 — выбранная волна (досье). false — окна нет (клиент без аддона): вызывающий пишет в чат как раньше.
+function nsAltarScreenTab(player, tab, sel) {
+	if (!nsAltarScreenOk(player)) return false
+	var v = NSG.nsAltarView[String(player.getUsername())] || {}
+	return nsAltarScreenSend(player, null, sel > 0 ? { from: 0, sel: sel, tab: tab } : { from: v.from || 0, sel: v.sel || 0, tab: tab }, true)
+}
+
 // ПКМ по алтарю и nsShowAltarMenu (30_): from > 0 — с какой волны (листание из чата)
 function nsAltarScreenOpen(player, state, from) {
 	var name = String(player.getUsername())
@@ -694,8 +709,8 @@ function nsDosRaidButton(player) {
 		var st = nsGetState()
 		if (!nsRaidActive(st)) return Text.of('')
 		var d = st.raid.kind === 'minor' ? nsMinorWave(st.phase) : st.raid.difficulty || 1
-		var cmd = nsAltarScreenOk(player) ? '/nightshift menu_json 0 ' + d : '/nightshift dossier ' + d
-		return Text.of(' ').append(Text.yellow('[Досье волны]').clickRunCommand(cmd).hover(Text.gray('Состав, метки угроз и чем бить')))
+		// 15.10: «/nightshift menu_json 0 N» только обновлял открытое окно — из чата пульт не открывался
+		return Text.of(' ').append(Text.yellow('[Досье волны]').clickRunCommand('/nightshift dossier ' + d).hover(Text.gray('Состав, метки угроз и чем бить')))
 	} catch (e) {
 		return Text.of('')
 	}
@@ -814,6 +829,20 @@ ServerEvents.commandRegistry(event => {
 			return 0
 		}
 	}
+	// Досье волны: окном (вкладка «Досье» пульта) или текстом — из консоли, без аддона и по «chat»
+	function dossier(ctx, chat) {
+		try {
+			var n = Math.max(1, Number(A.INTEGER.getResult(ctx, 'n')))
+			var p = ctx.source.getPlayer()
+			if (!chat && p && nsAltarScreenTab(p, 'dossier', n)) return 1
+			var lines = nsDosChatLines(n, nsGetState())
+			for (var i = 0; i < lines.length; i++) ctx.source.sendSystemMessage(lines[i])
+			return 1
+		} catch (e) {
+			console.error('[nightshift] /nightshift dossier: ' + e)
+			return 0
+		}
+	}
 	// «nightshift» уже есть (50_nightshift_admin.js) — Brigadier сливает ветки одного имени
 	event.register(
 		C.literal('nightshift')
@@ -829,16 +858,9 @@ ServerEvents.commandRegistry(event => {
 			)
 			.then(
 				C.literal('dossier').then(
-					C.argument('n', A.INTEGER.create(event)).executes(ctx => {
-						try {
-							var lines = nsDosChatLines(Math.max(1, Number(A.INTEGER.getResult(ctx, 'n'))), nsGetState())
-							for (var i = 0; i < lines.length; i++) ctx.source.sendSystemMessage(lines[i])
-							return 1
-						} catch (e) {
-							console.error('[nightshift] /nightshift dossier: ' + e)
-							return 0
-						}
-					})
+					C.argument('n', A.INTEGER.create(event))
+						.executes(ctx => dossier(ctx, false))
+						.then(C.literal('chat').executes(ctx => dossier(ctx, true)))
 				)
 			)
 	)

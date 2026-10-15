@@ -29,7 +29,7 @@
 // пробуждает артефакт эпического уровня и выше (art_<id>_aw: +50 % к числам). Обычный и пробуждённый одного
 // вида вместе не надеваются; здоровье от артефактов — не больше caps.hp.
 // Справка — глава квест-бука «Артефакты смены» (tools/quests/spec_artifacts.json).
-// Команды: /nsart — что даёт надетое; /nsart reforge — переплавка; /nsart odds <волна> — шансы;
+// Команды: /nsart — пульт на вкладке «Артефакты» (/nsart chat — в чат); /nsart reforge — переплавка; /nsart odds <волна> — шансы;
 // оператор: /nsart roll <волна> [first], /nsart rolltheme <тема> — 1000 бросков.
 //
 // ВАЖНО (30.09): исключение внутри нативного обработчика роняет сервер — тело КАЖДОГО обработчика в try/catch.
@@ -1211,29 +1211,21 @@ function nsArtReforgeCmd(ctx) {
 }
 
 // --------------------------------------------------------------------------
-// Команды: /nsart — что даёт надетое; /nsart reforge; /nsart odds <волна>;
-// оператор: /nsart roll <волна> [first], /nsart rolltheme <тема> — 1000 бросков
+// Команды: /nsart — пульт на вкладке «Артефакты» (надето и что даёт, переплавка, шансы); /nsart chat — то же в чат;
+// /nsart reforge; /nsart odds <волна>; оператор: /nsart roll <волна> [first], /nsart rolltheme <тема> — 1000 бросков
 // --------------------------------------------------------------------------
 
 function nsArtNum(x) {
 	return String(Math.round(x * 100) / 100).replace('.', ',')
 }
 
-function nsArtStatus(ctx) {
-	var p = ctx.source.getPlayer()
-	if (!p) return 0
+// Что надето и что даёт: {ids, parts, hp} или null — ничего не надето. Общее для /nsart chat и вкладки
+// «Артефакты» пульта алтаря (16_dossier.js, nsDosArt).
+function nsArtWornInfo(p) {
 	var u = nsArtUuid(p)
 	var ids = nsArtWorn(p)
-	if (!ids.length) {
-		ctx.source.sendSystemMessage(Text.gold('[Ночная смена] ').append(Text.white('Артефактов смены в слотах «Реликвия» нет (кнопка Curios в инвентаре).')))
-		return 1
-	}
+	if (!ids.length) return null
 	var a = nsArtSum(ids)
-	var t = Text.gold('[Ночная смена] Надето: ')
-	for (var i = 0; i < ids.length; i++) {
-		if (i > 0) t = t.append(Text.gray(', '))
-		t = t.append(Text.translate('item.' + ids[i].replace(':', '.')))
-	}
 	var parts = []
 	if (a.hp) parts.push('здоровье +' + nsArtNum(a.hp))
 	if (a.armor) parts.push('броня +' + nsArtNum(a.armor))
@@ -1259,9 +1251,26 @@ function nsArtStatus(ctx) {
 		var left = pd.contains('ns_art_wind') ? Number(pd.getLong('ns_art_wind')) - nsArtNow(p) : 0
 		parts.push('второе дыхание ' + (left > 0 ? 'через ' + Math.ceil(left / 20) + ' с' : 'готово'))
 	}
+	return { ids: ids, parts: parts, hp: 'Здоровье ' + nsArtNum(p.getHealth()) + ' / ' + nsArtNum(p.getMaxHealth()) + (NS_ART_P[u] ? '' : ' (эффекты включатся в течение секунды)') }
+}
+
+// /nsart chat (и /nsart без окна): что надето — в чат
+function nsArtStatus(ctx) {
+	var p = ctx.source.getPlayer()
+	if (!p) return 0
+	var w = nsArtWornInfo(p)
+	if (!w) {
+		ctx.source.sendSystemMessage(Text.gold('[Ночная смена] ').append(Text.white('Артефактов смены в слотах «Реликвия» нет (кнопка Curios в инвентаре).')))
+		return 1
+	}
+	var t = Text.gold('[Ночная смена] Надето: ')
+	for (var i = 0; i < w.ids.length; i++) {
+		if (i > 0) t = t.append(Text.gray(', '))
+		t = t.append(Text.translate('item.' + w.ids[i].replace(':', '.')))
+	}
 	ctx.source.sendSystemMessage(t)
-	ctx.source.sendSystemMessage(Text.white(parts.join('; ')))
-	ctx.source.sendSystemMessage(Text.gray('Здоровье ' + nsArtNum(p.getHealth()) + ' / ' + nsArtNum(p.getMaxHealth()) + (NS_ART_P[u] ? '' : ' (эффекты включатся в течение секунды)')))
+	ctx.source.sendSystemMessage(Text.white(w.parts.join('; ')))
+	ctx.source.sendSystemMessage(Text.gray(w.hp))
 	var btn = NSG.nsNsArtifactReforgeText(p)
 	if (btn) ctx.source.sendSystemMessage(Text.gray('Есть что переплавить: ').append(btn))
 	var pool = NSG.nsNsHordeShardCount()
@@ -1269,12 +1278,20 @@ function nsArtStatus(ctx) {
 	return 1
 }
 
+// /nsart: пульт алтаря на вкладке «Артефакты» (15.10; нет окна — в чат)
+function nsArtOpen(ctx) {
+	var p = ctx.source.getPlayer()
+	if (p && typeof nsAltarScreenTab === 'function' && nsAltarScreenTab(p, 'art', 0)) return 1
+	return nsArtStatus(ctx)
+}
+
 ServerEvents.commandRegistry(event => {
 	var Commands = event.commands
 	var Arguments = event.arguments
 	event.register(
 		Commands.literal('nsart')
-			.executes(ctx => nsArtStatus(ctx))
+			.executes(ctx => nsArtOpen(ctx))
+			.then(Commands.literal('chat').executes(ctx => nsArtStatus(ctx)))
 			.then(Commands.literal('reforge').executes(ctx => nsArtReforgeCmd(ctx)))
 			.then(
 				Commands.literal('odds').then(

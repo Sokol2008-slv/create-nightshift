@@ -15,7 +15,8 @@
 // добычи» (модификатор nightshift:week_champion; снимается сам, когда неделя короны кончилась).
 // Табло — текст над алтарём базы (обновляется, когда кто-то ближе 64 блоков); /pochet place — перенести табло туда,
 // где стоишь, /pochet place clear — назад к алтарю.
-// Команды: /pochet (или /board) — неделя: места, очки, за что (наведи); /pochet all — за всё время.
+// Команды: /pochet (или /board) — вкладка «Почёт» окна диспетчерской (15.10; диспетчерской нет или нет окна — в чат);
+// /pochet chat — неделя в чат: места, очки, за что (наведи); /pochet all — за всё время.
 // Оператор: /pochet test add <ник> <что> <n> | test week (подвести неделю сейчас) | test log (табло и места в лог) |
 //   test display (поставить табло без игроков рядом) | test reset.
 // Хуки (одна строка в каждом): raids/40_nightshift_raid.js (победа), raids/48_night_call.js (выживание),
@@ -462,7 +463,7 @@ function nsBoardSummaryChip(day) {
 	if (c && c.day === day) {
 		var hover = [{ text: '♛ Работник недели ' + (c.wk + 1) + ': ' + c.name + '\n', color: 'gold' }, { text: nsBrdPlural(c.pts, 'очко', 'очка', 'очков') + ' — ' + c.why + '\n', color: 'white' }]
 		for (var i = 1; i < (c.top || []).length; i++) hover.push({ text: i + 1 + '-е место: ' + c.top[i][0] + ' — ' + c.top[i][1] + '\n', color: 'gray' })
-		hover.push({ text: 'Корона и на неделю «Удача +1», «+10 % к скорости добычи». Новая неделя — счёт с нуля.\nКлик — /pochet', color: 'dark_gray' })
+		hover.push({ text: 'Корона и на неделю «Удача +1», «+10 % к скорости добычи». Новая неделя — счёт с нуля.\nКлик — доска почёта', color: 'dark_gray' })
 		return { text: '♛ Работник недели — ' + c.name, color: 'light_purple', hover: hover, click: { action: 'run_command', value: '/pochet' }, plain: 'Работник недели — ' + c.name + ' (' + c.pts + ')' }
 	}
 	if (day % NS_BRD.weekDays === NS_BRD.weekDays - 1) {
@@ -471,7 +472,7 @@ function nsBoardSummaryChip(day) {
 		var lead = rows[0]
 		var h2 = [{ text: 'Последний день недели — завтра с рассветом работник недели получит корону.\n', color: 'gold' }]
 		for (var j = 0; j < rows.length && j < 3; j++) h2.push({ text: j + 1 + '. ' + rows[j].n + ' — ' + Math.round(rows[j].pts) + '\n', color: j ? 'white' : 'yellow' })
-		h2.push({ text: 'Клик — /pochet', color: 'dark_gray' })
+		h2.push({ text: 'Клик — доска почёта', color: 'dark_gray' })
 		return { text: 'Лидер недели — ' + lead.n + ' (' + Math.round(lead.pts) + ')', color: 'light_purple', hover: h2, click: { action: 'run_command', value: '/pochet' }, plain: 'Лидер недели — ' + lead.n + ' (' + Math.round(lead.pts) + ')' }
 	}
 	return null
@@ -780,7 +781,14 @@ ServerEvents.commandRegistry(event => {
 	var reg = function (lit) {
 		event.register(
 			C.literal(lit)
-				.executes(ctx => safe('', () => nsBrdShowWeek(ctx.source)))
+				.executes(ctx =>
+					safe('', () => {
+						// окном — вкладка «Почёт» диспетчерской (shift/30_dispatch.js); нет её — в чат, как раньше
+						if (typeof nsBazaOpen === 'function' && nsBazaOpen(ctx.source.getPlayer(), 'honor')) return 1
+						return nsBrdShowWeek(ctx.source)
+					})
+				)
+				.then(C.literal('chat').executes(ctx => safe('chat', () => nsBrdShowWeek(ctx.source))))
 				.then(C.literal('all').executes(ctx => safe('all', () => nsBrdShowAll(ctx.source))))
 				.then(
 					C.literal('place')

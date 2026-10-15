@@ -4,6 +4,9 @@
 // сколько до срока), метеорит (остывает / ждём сегодня), снабженец (у базы / придёт утром), что ждёт ночью (ночной
 // вызов этой ночи), контракты бригадира; в первый день недели — работник недели (shift/45_board.js).
 // Наведи на пункт — подробности, клик — нужная команда. Чат она сокращает: всё дневное — одной строкой.
+// 15.10 («меньше чата, больше окон»): клики открывают окна — заказы → диспетчерская «Смена» (/baza shift; диспетчерской
+// нет — /factory в чат), контракты → пульт алтаря «Контракты» (/nscontracts), доска → «Почёт» (/pochet), вызов →
+// досье волны в пульте (/nightshift dossier N). Без окна (клиент без аддона) те же команды пишут в чат.
 //  - Когда: время суток 400…12000 (утро и день) и не во время набега (дождётся конца). Кто зашёл позже — получит её
 //    через 8 с после входа (после журнала смены), один раз за игровой день. Рассказать нечего — не шлём.
 //  - Объявления событий в свой час остаются. Убран только утренний дубль: напоминание снабженца над хотбаром при
@@ -150,8 +153,10 @@ function nsSumFactories() {
 		any = true
 	}
 	if (!any) return null
-	hover.push(nsSumT('Сдать — в терминал фактории (руками, лентой, поездом). Клик — /factory', 'dark_gray'))
-	return { text: 'Заказы: ', color: 'gold', extra: extra, hover: hover, click: { action: 'run_command', value: '/factory' }, plain: 'Заказы: ' + plain.join(', ') }
+	// окном — вкладка «Смена» диспетчерской (там заказы с полосками), нет диспетчерской — список в чат
+	var baza = typeof nsBazaReady === 'function' && nsBazaReady()
+	hover.push(nsSumT('Сдать — в терминал фактории (руками, лентой, поездом). Клик — ' + (baza ? 'заказы в диспетчерской' : '/factory'), 'dark_gray'))
+	return { text: 'Заказы: ', color: 'gold', extra: extra, hover: hover, click: { action: 'run_command', value: baza ? '/baza shift' : '/factory' }, plain: 'Заказы: ' + plain.join(', ') }
 }
 
 // Метеорит: остывает (где, сколько), падает, или ждём сегодня
@@ -270,7 +275,7 @@ function nsSumContracts(rs) {
 		var prog = c.need > 1 ? ' — ' + Math.min(c.have || 0, c.need) + '/' + c.need : ''
 		hover.push(nsSumT((c.done ? '✔ ' : '• ') + c.text + prog + '\n', c.done ? 'green' : 'white'))
 	}
-	hover.push(nsSumT('В работе — ' + open + ' из ' + list.length + '. Награда каждому в сети: артефакт смены и ресурсы. Клик — /nscontracts', 'dark_gray'))
+	hover.push(nsSumT('В работе — ' + open + ' из ' + list.length + '. Награда каждому в сети: артефакт смены и ресурсы. Клик — контракты в пульте алтаря', 'dark_gray'))
 	var text = open ? 'Контракты: ' + open : 'Контракты сданы'
 	return { text: text, color: 'aqua', hover: hover, click: { action: 'run_command', value: '/nscontracts' }, plain: text }
 }
