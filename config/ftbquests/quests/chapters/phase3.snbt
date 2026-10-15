@@ -140,6 +140,16 @@
 			y: -3.00d
 		}
 		{
+			dependencies: ["01668E9F955D55AE"]
+			id: "2DD20814F20D40DA"
+			rewards: [{ id: "7711E93D36B506F5", type: "xp", xp: 10 }]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "6E6D1823E85326CD", item: { count: 1, id: "create:factory_gauge" }, type: "item" }]
+			x: 2.60d
+			y: -4.50d
+		}
+		{
 			dependencies: ["5F03E560473FFEB2"]
 			id: "104662E6DA217044"
 			rewards: [{ id: "46CA0512E3B2E391", type: "xp", xp: 10 }]
