@@ -52,9 +52,23 @@ PlayerEvents.loggedIn(event => {
 	} catch (e) {
 		console.warn('[nightshift] планшет: подсказка 15.10 не показана: ' + e)
 	}
+	// 15.10, вторая порция: Ctrl + P, P в окнах аддона, кнопки окон в шапке J, «Закрепить недостающее» в фактории
+	try {
+		if (p.persistentData.getBoolean('ns_tablet_hint1') && !p.persistentData.getBoolean('ns_tablet_hint3')) {
+			p.persistentData.putBoolean('ns_tablet_hint3', true)
+			p.tell(Text.gold('[Планшет] ').append(Text.yellow('P'))
+				.append(Text.gold(' теперь и в окнах ранца, фактории, алтаря и диспетчерской; '))
+				.append(Text.yellow('Ctrl + P')).append(Text.gold(' — закрепить стопкой. В фактории — кнопка «Закрепить недостающее», в шапке '))
+				.append(Text.yellow('J')).append(Text.gold(' — кнопки окон: набеги, атлас, база, фактории.')))
+			return
+		}
+	} catch (e) {
+		console.warn('[nightshift] планшет: подсказка 15.10 (2) не показана: ' + e)
+	}
 	if (p.persistentData.getBoolean('ns_tablet_hint1')) return
 	p.persistentData.putBoolean('ns_tablet_hint1', true)
 	p.persistentData.putBoolean('ns_tablet_hint2', true)
+	p.persistentData.putBoolean('ns_tablet_hint3', true)
 	p.tell(Text.gold('[Новое] Планшет инженера: ').append(Text.yellow('J'))
 		.append(Text.gold(' — поиск и цепочка до сырья, у каждого шага машина. '))
 		.append(Text.yellow('P')).append(Text.gold(' над предметом в JEI — закрепить (справа сверху «▶ СЕЙЧАС» — что делать прямо сейчас), '))

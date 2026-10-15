@@ -112,6 +112,6 @@
 | O / Alt + K | шейдеры: список / вкл-выкл |
 | Num 0–5 | Jade: настройки, подсказки, рецепты |
 | [ / ] в окне рюкзака | переложить в рюкзак / в инвентарь; колёсико — сортировка |
-| R / U в окнах | JEI: рецепт / применения; P / Shift + P — закрепить / цель смены |
+| R / U в окнах | JEI: рецепт / применения; P / Shift + P / Ctrl + P — закрепить / цель смены / закрепить стопкой (и в окнах ранца, фактории, алтаря, диспетчерской) |
 
 Без клавиши (есть кнопки в окнах или не нужно на вахте): `key.saveToolbarActivator`, `key.loadToolbarActivator`, `key.craftingtweaks.compress_one`, `key.craftingtweaks.compress_stack`, `key.craftingtweaks.compress_all`, `key.craftingtweaks.refill_last`, `key.craftingtweaks.refill_last_stack`, `gui.xaero_open_settings`, `gui.xaero_minimap_settings`, `key.advancements`, `key.socialInteractions`, `iris.keybind.reload`, `key.curios.open.desc`, `key.kubejs.kubedex`, `key.voice_chat_group`, `key.hide_icons`, `placebo.toggleWings`, `placebo.toggleTrails`, `key.sophisticatedbackpacks.toggle_upgrade_3`, `key.sophisticatedbackpacks.toggle_upgrade_4`, `key.sophisticatedbackpacks.toggle_upgrade_5`
