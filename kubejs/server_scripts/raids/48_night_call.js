@@ -10,7 +10,8 @@
 // Включение — NIGHTSHIFT_TUNABLES.nightCall (00_), с какой пройденной волны — nightCallFrom.
 // Тише (15.10, «меньше чата»): колокол, строка над хотбаром и кнопки в чате — только тем, кто в Верхнем мире ближе
 // NS_CALL_NEAR блоков к алтарю базы; остальным ничего, а вернутся на базу ночью — тихая строка над хотбаром, один раз.
-// Две ночи подряд без ответа (не приняли и не отказались) — вызовы на паузе, одна строка в журнал смены; вернуть —
+// Две ночи подряд, когда вызов кто-то получил (колокол или строка над хотбаром) и не ответил, — вызовы на паузе,
+// одна строка в журнал смены; ночь, когда у базы никого не было, не в счёт (и обрывает «подряд»). Вернуть —
 // /nightshift call (сразу и принять, если ночь) или /nightshift call resume и строка в пульте (только снять паузу и
 // предложить вызов этой ночи). Награды и сам вызов прежние.
 //
@@ -96,11 +97,12 @@ ServerEvents.tick(event => {
 		var st = nsGetStateRO()
 		if (!st) return
 		var c = st.call
-		// просроченное предложение — тихо снять; вторая ночь подряд без ответа — вызовы на паузу
+		// просроченное предложение — тихо снять; вторая ночь подряд без ответа — вызовы на паузу.
+		// Без ответа — только если вызов кто-то получил (call.seen); никого у базы не было — не в счёт, счёт с нуля
 		if (c && c.status === 'offer' && (c.day !== now.day || now.tod >= 23000)) {
 			var s1 = nsGetState()
 			s1.call.status = 'expired'
-			s1.callIgnored = (s1.callIgnored || 0) + 1
+			s1.callIgnored = s1.call.seen ? (s1.callIgnored || 0) + 1 : 0
 			if (s1.callIgnored >= NS_CALL_IGNORE_MAX && !s1.callPause) {
 				s1.callPause = true
 				if (typeof nsJournal === 'function') nsJournal('call', 'Ночные вызовы на паузе: ' + NS_CALL_IGNORE_MAX + ' ночи без ответа. Вернуть — /nightshift call или строка в пульте алтаря', 'gray')
@@ -138,8 +140,9 @@ function nsCallOfferNow(who, silent) {
 	if (!w) return null
 	var s2 = nsGetState()
 	s2.call = { day: now.day, wave: w, mut: nsCallTwistFor(now.day, w), status: 'offer' }
-	nsSaveState(s2)
 	var n = silent ? 0 : nsCallNotify(s2, s2.call, who)
+	if (n > 0) s2.call.seen = true // кто-то получил — ночь без ответа пойдёт в счёт паузы
+	nsSaveState(s2)
 	console.info('[nightshift] ночной вызов: волна ' + w + ', условие ' + s2.call.mut + '; у базы ' + n)
 	return s2.call
 }
@@ -193,6 +196,14 @@ function nsCallQuietReminders(st, c) {
 		var name = String(ps[i].getUsername())
 		if (told[name] || !nsCallNearBase(ps[i], altar)) continue
 		told[name] = 1
+		if (!c.seen) {
+			var s3 = nsGetState()
+			if (s3.call) {
+				s3.call.seen = true
+				nsSaveState(s3)
+			}
+			c.seen = true
+		}
 		try {
 			ps[i].setStatusMessage(Text.gold('Ночной вызов ждёт: ').append(Text.yellow(nsDifficultyName(c.wave))).append(Text.gray(' — /nightshift call или «Старт» в пульте')))
 		} catch (e2) {}
@@ -463,9 +474,10 @@ ServerEvents.commandRegistry(event => {
 							if (now.tod < 13000 || now.tod >= 21000) NSG.nsServer.runCommandSilent('time set 13500')
 							var n2 = nsCallDay()
 							st.call = { day: n2.day, wave: w, mut: nsCallTwistFor(n2.day, w), status: 'offer' }
-							nsSaveState(st)
 							// как в сумерки: колокол и кнопки — тем, кто у базы (и оператору)
 							var n = nsCallNotify(st, st.call, ctx.source.getPlayer() ? String(ctx.source.getPlayer().getUsername()) : null)
+							if (n > 0) st.call.seen = true
+							nsSaveState(st)
 							ctx.source.sendSystemMessage(Text.gray('[nightshift] вызов предложен: волна ' + w + ', сказали ' + n + ' (у базы ближе ' + NS_CALL_NEAR + ' бл.)'))
 							return 1
 						})
