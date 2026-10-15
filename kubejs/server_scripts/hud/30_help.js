@@ -1,9 +1,11 @@
 // ==========================================================================
 // «/smena» — справка смены одним экраном (финальный аудит 06.10.2026: «у каждой системы своя команда, общей
-// справки нет»). Строки кликабельные: клик вставляет команду в чат (suggest_command) — Enter, и готово.
-//   /smena          — все разделы коротко: раздел строкой, наведи на команду — что делает
-//   /smena full     — подробно, каждая команда строкой
-//   /smena keys [N] — раскладка смены: разделы строкой (наведи — что делает), N — раздел подробно
+// справки нет»). С 15.10 — окном-списком аддона (hud/05_list_window.js): вкладки «Команды» и «Клавиши», строка —
+// «команда — что делает», клик — выполнить (команды с аргументом — вставить в чат), Shift+клик — вставить в чат.
+//   /smena          — окно на «Командах» (без окна — как /smena chat)
+//   /smena chat     — все разделы коротко в чат: раздел строкой, наведи на команду — что делает, клик — в чат
+//   /smena full     — подробно в чат, каждая команда строкой
+//   /smena keys     — окно на «Клавишах» (без окна — в чат); /smena keys chat — в чат; /smena keys N — раздел N в чат
 // Подсказка «/smena — все команды» приходит один раз каждому (тег ns_help_hint), через минуту после входа,
 // чтобы не теряться в стене текста при входе.
 // KubeJS 2101 / Rhino: только var; тела обработчиков — в try.
@@ -23,6 +25,7 @@ var NS_HELP = [
 		['/nightshift altar', '/nightshift altar', 'во время набега — к алтарю и обратно'],
 		['/arena', '/arena', 'на арену и обратно; /arena endless — «Выживание» на рекорд'],
 		['/nightshift dossier ', '/nightshift dossier <N>', 'досье волны N в пульте: мобы, угрозы, чем бить, босс (… chat — в чат)'],
+		['/nightshift itogi', '/nightshift itogi', 'итоги последнего набега — пульт на вкладке «Итоги» (… chat — в чат)'],
 		['/nscontracts', '/nscontracts', 'контракты бригадира — пульт на вкладке «Контракты» (/nscontracts chat — в чат)'],
 		['/nsart', '/nsart', 'артефакты смены — пульт на вкладке «Артефакты»: надето, переплавка, шансы (/nsart chat — в чат)'],
 	]],
@@ -50,6 +53,55 @@ var NS_HELP = [
 ]
 
 // Клавиши — раскладка смены: NS_KEYS_GROUPS в 31_keys.js (генерирует tools/keys_scheme.py, ставит всем аддон)
+
+// Данные окна-списка /smena (схема — ListMenu.java аддона). page — 'cmds' или 'keys'.
+// Команда с пробелом в конце ждёт аргумент — клик вставляет её в чат, остальные выполняются сразу.
+function nsHelpMenu(page) {
+	var cmds = []
+	for (var s = 0; s < NS_HELP.length; s++) {
+		var rows = []
+		for (var r = 0; r < NS_HELP[s][1].length; r++) {
+			var h = NS_HELP[s][1][r]
+			var row = { k: h[1], t: h[2] }
+			if (h[0]) {
+				row.cmd = h[0]
+				if (/ $/.test(h[0])) row.act = 'suggest'
+			}
+			rows.push(row)
+		}
+		cmds.push({ title: NS_HELP[s][0], rows: rows })
+	}
+	var keys = []
+	var G = typeof NS_KEYS_GROUPS !== 'undefined' ? NS_KEYS_GROUPS : []
+	for (var g = 0; g < G.length; g++) {
+		var kr = []
+		for (var k = 0; k < G[g][1].length; k++) kr.push({ k: G[g][1][k][0], t: G[g][1][k][1] })
+		keys.push({ title: G[g][0], rows: kr })
+	}
+	return {
+		v: 1,
+		id: 'smena',
+		title: 'Смена: команды и клавиши',
+		sub: 'частые вопросы — книга (L)',
+		page: page || 'cmds',
+		pages: [
+			{ key: 'cmds', title: 'Команды', hint: 'Клик — выполнить, Shift+клик — вставить в чат', sections: cmds },
+			{
+				key: 'keys',
+				title: 'Клавиши',
+				hint: 'Сбилась раскладка — /nskeys apply или «Сброс» в «Управлении»',
+				note: 'Раскладка смены v' + (typeof NS_KEYS_VERSION !== 'undefined' ? NS_KEYS_VERSION : 1) + ' — одна на всех, ставится сама при первом запуске новой версии.',
+				sections: keys,
+			},
+		],
+		foot: [{ t: 'В чат', cmd: page === 'keys' ? '/smena keys chat' : '/smena chat', tip: ['Показать то же строками в чате'] }],
+	}
+}
+
+// Окно /smena; false — окна нет (вызывающий пишет в чат)
+function nsHelpWindow(p, page) {
+	return typeof nsListOpen === 'function' && nsListOpen(p, nsHelpMenu(page))
+}
 
 function nsHelpLine(srv, name, cmd, show, what) {
 	var parts = [{ text: ' ▸ ', color: 'dark_gray' }]
@@ -141,12 +193,23 @@ ServerEvents.commandRegistry(event => {
 				.executes(ctx => {
 					try {
 						var p = ctx.source.getPlayer()
-						if (p) nsHelpShow(p)
+						if (p && !nsHelpWindow(p, 'cmds')) nsHelpShow(p)
 					} catch (e) {
 						console.warn('[help] ' + e)
 					}
 					return 1
 				})
+				.then(
+					C.literal('chat').executes(ctx => {
+						try {
+							var p = ctx.source.getPlayer()
+							if (p) nsHelpShow(p)
+						} catch (e) {
+							console.warn('[help] ' + e)
+						}
+						return 1
+					})
+				)
 				.then(
 					C.literal('full').executes(ctx => {
 						try {
@@ -163,12 +226,23 @@ ServerEvents.commandRegistry(event => {
 						.executes(ctx => {
 							try {
 								var p = ctx.source.getPlayer()
-								if (p) nsHelpKeys(p, null)
+								if (p && !nsHelpWindow(p, 'keys')) nsHelpKeys(p, null)
 							} catch (e) {
 								console.warn('[help] ' + e)
 							}
 							return 1
 						})
+						.then(
+							C.literal('chat').executes(ctx => {
+								try {
+									var p = ctx.source.getPlayer()
+									if (p) nsHelpKeys(p, null)
+								} catch (e) {
+									console.warn('[help] ' + e)
+								}
+								return 1
+							})
+						)
 						.then(
 							C.argument('n', IA.create(event)).executes(ctx => {
 								try {

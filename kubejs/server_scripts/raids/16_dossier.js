@@ -607,6 +607,13 @@ function nsDosMenuData(player, state, view) {
 	}
 	// артефакты смены
 	data.art = nsDosArt(player, next)
+	// итоги последнего набега (41_raid_results.js): строки — JSON компонентов
+	try {
+		var vic = typeof nsVicMenu === 'function' ? nsVicMenu(player) : null
+		if (vic) data.itogi = vic
+	} catch (e) {
+		console.warn('[nightshift] пульт: итоги: ' + e)
+	}
 	// бестиарий
 	var cat = nsDosCatalog()
 	data.bestiary = []
@@ -693,7 +700,7 @@ function nsAltarScreenSend(player, state, view, open) {
 	}
 }
 
-// Пульт сразу на вкладке (15.10, «меньше чата, больше окон»): tab — waves|dossier|bestiary|mut|contracts|art,
+// Пульт сразу на вкладке (15.10, «меньше чата, больше окон»): tab — waves|dossier|bestiary|mut|contracts|art|itogi,
 // sel > 0 — выбранная волна (досье). false — окна нет (клиент без аддона): вызывающий пишет в чат как раньше.
 function nsAltarScreenTab(player, tab, sel) {
 	if (!nsAltarScreenOk(player)) return false

@@ -198,6 +198,7 @@ function nsCtComplete(st, c) {
 	c.doneDay = nsCtDay()
 	nsSaveState(st)
 	nsTellAll(Text.gold('[Ночная смена] Контракт бригадира выполнен: ').append(Text.white(c.text)))
+	if (typeof nsVicNote === 'function') nsVicNote('contract') // после победы — пункт строки итогов (41_)
 	try {
 		if (typeof nsBoardOnContract === 'function') nsBoardOnContract() // доска почёта: всем в сети (shift/45_board.js)
 	} catch (e) {}
@@ -276,6 +277,7 @@ function nsContractsOnVictory(d, raid, altar) {
 	if (total > 0) {
 		console.info('[nightshift] итог боя: ' + parts.join(', '))
 		nsTellAll(Text.gold('[Ночная смена] Итог боя: ').append(Text.white('убито ' + total + '. ' + parts.join(', ') + '.')).append(best ? Text.yellow(' Лучший боец смены — ' + best + '!') : Text.of('')))
+		if (best && typeof nsVicNote === 'function') nsVicNote('best', best + ' (' + K[best] + ')')
 	}
 	NSG.nsRaidKills = {}
 	var st = nsGetState()
