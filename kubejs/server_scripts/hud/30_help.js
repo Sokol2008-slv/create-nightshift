@@ -19,7 +19,7 @@ var NS_HELP = [
 	]],
 	['Набеги и арена', [
 		['', 'ПКМ по алтарю', 'пульт алтаря: волны, досье, старт набега'],
-		['/nightshift call', '/nightshift call', 'принять ночной вызов (в сумерки); /nightshift call no — отказаться'],
+		['/nightshift call', '/nightshift call', 'принять ночной вызов (в сумерки); /nightshift call no — отказаться; … resume — вернуть вызовы с паузы'],
 		['/nightshift altar', '/nightshift altar', 'во время набега — к алтарю и обратно'],
 		['/arena', '/arena', 'на арену и обратно; /arena endless — «Выживание» на рекорд'],
 		['/nightshift dossier ', '/nightshift dossier <N>', 'досье волны N в пульте: мобы, угрозы, чем бить, босс (… chat — в чат)'],

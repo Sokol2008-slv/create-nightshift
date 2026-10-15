@@ -8,6 +8,11 @@
 // (как с волны «лучшая + 5»), осколки орды и обычная добыча волны. Отказ (или просто не принять до рассвета) и
 // провал — без штрафа: ни проклятия, ни ран от провала. Одно предложение за ночь, только пока набега нет.
 // Включение — NIGHTSHIFT_TUNABLES.nightCall (00_), с какой пройденной волны — nightCallFrom.
+// Тише (15.10, «меньше чата»): колокол, строка над хотбаром и кнопки в чате — только тем, кто в Верхнем мире ближе
+// NS_CALL_NEAR блоков к алтарю базы; остальным ничего, а вернутся на базу ночью — тихая строка над хотбаром, один раз.
+// Две ночи подряд без ответа (не приняли и не отказались) — вызовы на паузе, одна строка в журнал смены; вернуть —
+// /nightshift call (сразу и принять, если ночь) или /nightshift call resume и строка в пульте (только снять паузу и
+// предложить вызов этой ночи). Награды и сам вызов прежние.
 //
 // Выживание (/arena endless, только на арене): подволны лучшей обычной волны идут по кругу без конца, каждый круг
 // орда на 15 % толще, на 8 % злее и на 10 % многочисленнее. Забег кончается, когда прочность алтаря кончилась
@@ -18,6 +23,8 @@
 // ==========================================================================
 
 var NS_CALL_TWISTS = ['double', 'glass', 'rage', 'bosses', 'champions', 'escalation', 'regen', 'blast', 'dark']
+var NS_CALL_NEAR = 300 // блоков до алтаря базы (по горизонтали, Верхний мир): кому звонит колокол
+var NS_CALL_IGNORE_MAX = 2 // ночей подряд без ответа — и вызовы на паузе
 
 function nsCallDay() {
 	try {
@@ -89,41 +96,138 @@ ServerEvents.tick(event => {
 		var st = nsGetStateRO()
 		if (!st) return
 		var c = st.call
-		// просроченное предложение — тихо снять
+		// просроченное предложение — тихо снять; вторая ночь подряд без ответа — вызовы на паузу
 		if (c && c.status === 'offer' && (c.day !== now.day || now.tod >= 23000)) {
 			var s1 = nsGetState()
 			s1.call.status = 'expired'
+			s1.callIgnored = (s1.callIgnored || 0) + 1
+			if (s1.callIgnored >= NS_CALL_IGNORE_MAX && !s1.callPause) {
+				s1.callPause = true
+				if (typeof nsJournal === 'function') nsJournal('call', 'Ночные вызовы на паузе: ' + NS_CALL_IGNORE_MAX + ' ночи без ответа. Вернуть — /nightshift call или строка в пульте алтаря', 'gray')
+				console.info('[nightshift] ночной вызов: ' + s1.callIgnored + ' ночи без ответа — на паузе')
+			}
 			nsSaveState(s1)
+			return
+		}
+		// предложение в силе — тем, кто вернулся на базу, тихая строка над хотбаром (один раз за ночь)
+		if (c && c.status === 'offer' && c.day === now.day) {
+			nsCallQuietReminders(st, c)
 			return
 		}
 		if (now.tod < 13000 || now.tod >= 21000) return
 		if (c && c.day === now.day) return // этой ночью уже предлагали
-		if (nsRaidActive(st) || (st.phase || 0) < (T.nightCallFrom || 3) || !nsHomeAltar(st)) return
-		if (!nsCallAnyone()) return
-		var w = nsCallWaveFor(st.phase || 0, now.day)
-		if (!w) return
-		var s2 = nsGetState()
-		s2.call = { day: now.day, wave: w, mut: nsCallTwistFor(now.day, w), status: 'offer' }
-		nsSaveState(s2)
-		// 06.10 (финальный аудит): без титра на весь экран каждую ночь — строка над хотбаром и звук, кнопки — в чате
-		try {
-			var ps = NSG.nsServer.getPlayers()
-			for (var i = 0; i < ps.length; i++) {
-				ps[i].setStatusMessage(Text.gold('Ночной вызов: ').append(Text.yellow(nsDifficultyName(w) + ' за премию')).append(Text.gray(' — кнопки в чате')))
-				NSG.nsServer.runCommandSilent('execute as ' + ps[i].getUsername() + ' at @s run playsound minecraft:block.bell.use ambient @s ~ ~ ~ 0.6 0.8')
-			}
-		} catch (e2) {}
-		nsTellAll(Text.gold('[Ночная смена] ').append(Text.white(nsCallText(s2.call) + ' ')).append(nsCallButtons()))
-		console.info('[nightshift] ночной вызов: волна ' + w + ', условие ' + s2.call.mut)
+		if (st.callPause) return // две ночи без ответа — ждём /nightshift call
+		nsCallOfferNow(null)
 	} catch (e) {
 		console.error('[nightshift] ночной вызов: ' + e)
 	}
 })
 
-// Принять вызов: игрок на арене — у алтаря арены, иначе — у алтаря базы
+// Предложить вызов этой ночи (тик в сумерки, /nightshift call resume). Возвращает предложение или null — нельзя:
+// не ночь, набег, нет алтаря, волн мало, этой ночью уже было. who — кто снял паузу (ему строка с кнопками всегда).
+function nsCallOfferNow(who, silent) {
+	var T = NSG.NIGHTSHIFT_TUNABLES
+	if (!T.nightCall) return null
+	var now = nsCallDay()
+	if (now.tod < 13000 || now.tod >= 21000) return null
+	var st = nsGetStateRO()
+	if (st.call && st.call.day === now.day) return null
+	if (nsRaidActive(st) || (st.phase || 0) < (T.nightCallFrom || 3) || !nsHomeAltar(st)) return null
+	if (!nsCallAnyone()) return null
+	var w = nsCallWaveFor(st.phase || 0, now.day)
+	if (!w) return null
+	var s2 = nsGetState()
+	s2.call = { day: now.day, wave: w, mut: nsCallTwistFor(now.day, w), status: 'offer' }
+	nsSaveState(s2)
+	var n = silent ? 0 : nsCallNotify(s2, s2.call, who)
+	console.info('[nightshift] ночной вызов: волна ' + w + ', условие ' + s2.call.mut + '; у базы ' + n)
+	return s2.call
+}
+
+// Кто у базы: Верхний мир (измерение алтаря базы), ближе NS_CALL_NEAR блоков по горизонтали
+function nsCallNearBase(p, altar) {
+	try {
+		if (!altar || String(p.getLevel().getDimension()) !== (altar.dim || 'minecraft:overworld')) return false
+		var dx = p.getX() - altar.x,
+			dz = p.getZ() - altar.z
+		return dx * dx + dz * dz <= NS_CALL_NEAR * NS_CALL_NEAR
+	} catch (e) {
+		return false
+	}
+}
+
+// Кому уже сказали про вызов этой ночи (в памяти; перезапуск сервера — скажем ещё раз, не страшно)
+function nsCallTold(c) {
+	var key = c.day + ':' + c.wave
+	if (!NSG.nsCallTold || NSG.nsCallTold.key !== key) NSG.nsCallTold = { key: key, names: {} }
+	return NSG.nsCallTold.names
+}
+
+// 06.10 (финальный аудит): без титра на весь экран — строка над хотбаром и звук, кнопки — в чате.
+// 15.10: только тем, кто у базы (и who — кто сам попросил). Возвращает, скольким сказали.
+function nsCallNotify(st, c, who) {
+	var altar = nsHomeAltar(st)
+	var told = nsCallTold(c)
+	var n = 0
+	var ps = NSG.nsServer.getPlayers()
+	for (var i = 0; i < ps.length; i++) {
+		var name = String(ps[i].getUsername())
+		if (name !== who && !nsCallNearBase(ps[i], altar)) continue
+		told[name] = 1
+		n++
+		try {
+			ps[i].setStatusMessage(Text.gold('Ночной вызов: ').append(Text.yellow(nsDifficultyName(c.wave) + ' за премию')).append(Text.gray(' — кнопки в чате')))
+			NSG.nsServer.runCommandSilent('execute as ' + name + ' at @s run playsound minecraft:block.bell.use ambient @s ~ ~ ~ 0.6 0.8')
+		} catch (e2) {}
+		ps[i].tell(Text.gold('[Ночная смена] ').append(Text.white(nsCallText(c) + ' ')).append(nsCallButtons()))
+	}
+	return n
+}
+
+// Вызов в силе, а кто-то только что вернулся на базу — тихая строка над хотбаром, без колокола и чата
+function nsCallQuietReminders(st, c) {
+	var altar = nsHomeAltar(st)
+	var told = nsCallTold(c)
+	var ps = NSG.nsServer.getPlayers()
+	for (var i = 0; i < ps.length; i++) {
+		var name = String(ps[i].getUsername())
+		if (told[name] || !nsCallNearBase(ps[i], altar)) continue
+		told[name] = 1
+		try {
+			ps[i].setStatusMessage(Text.gold('Ночной вызов ждёт: ').append(Text.yellow(nsDifficultyName(c.wave))).append(Text.gray(' — /nightshift call или «Старт» в пульте')))
+		} catch (e2) {}
+	}
+}
+
+// Снять паузу вызовов (/nightshift call, /nightshift call resume, строка в пульте)
+function nsCallResume(player) {
+	var st = nsGetState()
+	var was = !!st.callPause
+	st.callPause = false
+	st.callIgnored = 0
+	nsSaveState(st)
+	if (was) {
+		var who = player ? String(player.getUsername()) : 'Смена'
+		if (typeof nsJournal === 'function') nsJournal('call', 'Ночные вызовы снова включены (' + who + ')', 'gray')
+		console.info('[nightshift] ночной вызов: пауза снята (' + who + ')')
+	}
+	return was
+}
+
+// Принять вызов: игрок на арене — у алтаря арены, иначе — у алтаря базы.
+// Вызовы на паузе (две ночи без ответа): /nightshift call снимает паузу и, если ночь, сразу берёт вызов этой ночи.
 function nsCallAccept(player) {
 	var st = nsGetState()
 	var c = nsCallOffer(st)
+	if (!c && st.callPause) {
+		nsCallResume(player)
+		if (!nsCallOfferNow(player ? String(player.getUsername()) : null, true)) {
+			if (player) player.tell(Text.gold('[Ночная смена] ').append(Text.white('Ночные вызовы снова включены — алтарь предложит вызов в сумерки.')))
+			return 1
+		}
+		st = nsGetState()
+		c = nsCallOffer(st)
+	}
 	if (!c) {
 		if (player) player.tell(Text.gray('[Ночная смена] Сейчас вызова нет — алтарь предлагает его в сумерки, раз за ночь.'))
 		return 0
@@ -137,6 +241,7 @@ function nsCallAccept(player) {
 	if (!altar) altar = nsHomeAltar(st)
 	if (!altar) return 0
 	c.status = 'accepted'
+	st.callIgnored = 0 // ответили — счёт ночей без ответа с нуля
 	nsSaveState(st)
 	nsStartRaid('challenge', altar.id, c.wave, { call: { wave: c.wave, mut: c.mut, day: c.day, best: st.phase || 0 }, countdown: NSG.NIGHTSHIFT_TUNABLES.nightCallCountdown || 20 })
 	nsTellAll(Text.gold('[Ночная смена] ' + (player ? player.getUsername() + ' принимает' : 'Принят') + ' ночной вызов: ').append(Text.white(nsDifficultyName(c.wave) + ', условие «' + nsCallMutName(c.mut) + '»')))
@@ -148,8 +253,31 @@ function nsCallDecline(player) {
 	var c = nsCallOffer(st)
 	if (!c) return 0
 	c.status = 'declined'
+	st.callIgnored = 0 // отказ — тоже ответ, не «без ответа»
 	nsSaveState(st)
-	nsTellAll(Text.gray('[Ночная смена] ' + (player ? player.getUsername() : 'Смена') + ' отказывается от вызова этой ночью — без штрафа.'))
+	// 15.10: только тем, кому вызов предлагали (у базы), и тому, кто отказался
+	var told = nsCallTold(c)
+	var line = Text.gray('[Ночная смена] ' + (player ? player.getUsername() : 'Смена') + ' отказывается от вызова этой ночью — без штрафа.')
+	var ps = NSG.nsServer.getPlayers()
+	for (var i = 0; i < ps.length; i++) {
+		var n = String(ps[i].getUsername())
+		if (told[n] || (player && n === String(player.getUsername()))) ps[i].tell(line)
+	}
+	return 1
+}
+
+// /nightshift call resume и строка в пульте: снять паузу и, если ночь, предложить вызов этой ночи (не принимая)
+function nsCallResumeCmd(player) {
+	var was = nsCallResume(player)
+	var who = player ? String(player.getUsername()) : null
+	var off = nsCallOfferNow(who, false)
+	if (off) return 1
+	var cur = nsCallOffer(nsGetStateRO())
+	if (cur && player) {
+		player.tell(Text.gold('[Ночная смена] ').append(Text.white(nsCallText(cur) + ' ')).append(nsCallButtons()))
+		return 1
+	}
+	if (player) player.tell(Text.gold('[Ночная смена] ').append(Text.white(was ? 'Ночные вызовы снова включены — алтарь предложит вызов в сумерки.' : 'Ночные вызовы включены — алтарь предлагает вызов в сумерки, раз за ночь.')))
 	return 1
 }
 
@@ -322,6 +450,7 @@ ServerEvents.commandRegistry(event => {
 			C.literal('call')
 				.executes(ctx => nsCallAccept(ctx.source.getPlayer()))
 				.then(C.literal('no').executes(ctx => nsCallDecline(ctx.source.getPlayer())))
+				.then(C.literal('resume').executes(ctx => nsCallResumeCmd(ctx.source.getPlayer())))
 				// оператор: предложить вызов сейчас (проверка)
 				.then(
 					C.literal('offer')
@@ -335,7 +464,9 @@ ServerEvents.commandRegistry(event => {
 							var n2 = nsCallDay()
 							st.call = { day: n2.day, wave: w, mut: nsCallTwistFor(n2.day, w), status: 'offer' }
 							nsSaveState(st)
-							nsTellAll(Text.gold('[Ночная смена] ').append(Text.white(nsCallText(st.call) + ' ')).append(nsCallButtons()))
+							// как в сумерки: колокол и кнопки — тем, кто у базы (и оператору)
+							var n = nsCallNotify(st, st.call, ctx.source.getPlayer() ? String(ctx.source.getPlayer().getUsername()) : null)
+							ctx.source.sendSystemMessage(Text.gray('[nightshift] вызов предложен: волна ' + w + ', сказали ' + n + ' (у базы ближе ' + NS_CALL_NEAR + ' бл.)'))
 							return 1
 						})
 				)

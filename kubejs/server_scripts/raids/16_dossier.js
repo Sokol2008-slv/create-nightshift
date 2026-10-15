@@ -543,9 +543,14 @@ function nsDosMenuData(player, state, view) {
 	var msn = null
 	for (var m in NSG.NS_WAVE_MILESTONES) if (Number(m) > best && (msn === null || Number(m) < msn)) msn = Number(m)
 	if (msn !== null) data.milestone = { n: msn, text: NSG.NS_WAVE_MILESTONES[msn].text }
-	// ночной вызов этой ночи — вместо вехи в верхней строке «Волн»
+	// ночной вызов этой ночи — вместо вехи в верхней строке «Волн»; plain — строка как есть (без «Ближайшая веха —»),
+	// cmd — строка-кнопка (15.10: нажми — принять вызов / снять паузу вызовов)
 	var callOffer = typeof nsCallOffer === 'function' ? nsCallOffer(state) : null
-	if (callOffer) data.milestone = { n: callOffer.wave, text: 'НОЧНОЙ ВЫЗОВ до рассвета — «Старт» на этой волне: 3 подволны, условие «' + nsCallMutName(callOffer.mut) + '», премия — артефакт смены. Отказ и провал без штрафа.' }
+	if (callOffer) data.milestone = { n: callOffer.wave, plain: true, cmd: 'nightshift call', tip: 'Нажми — принять вызов', text: 'НОЧНОЙ ВЫЗОВ до рассвета — волна ' + callOffer.wave + ': «Старт» на ней или нажми здесь. 3 подволны, условие «' + nsCallMutName(callOffer.mut) + '», премия — артефакт смены. Отказ и провал без штрафа.' }
+	else if (state.callPause && NSG.NIGHTSHIFT_TUNABLES.nightCall && typeof nsCallDay === 'function') {
+		var ctod = nsCallDay().tod
+		if (ctod >= 12000 && ctod < 23000) data.milestone = { n: 0, plain: true, cmd: 'nightshift call resume', tip: 'Нажми — вернуть ночные вызовы', text: 'Ночные вызовы на паузе: две ночи без ответа. Нажми здесь, чтобы вернуть, — алтарь сразу предложит вызов этой ночи.' }
+	}
 	data.spawns = 0
 	try {
 		var altar = player ? nsNearestAltar(state, player.createCommandSourceStack()) : null
@@ -688,7 +693,7 @@ function nsAltarScreenSend(player, state, view, open) {
 	}
 }
 
-// Пульт сразу на вкладке (15.10, «меньше чата, больше окон»): tab — waves|dossier|bestiary|mut|contracts|art|itogi,
+// Пульт сразу на вкладке (15.10, «меньше чата, больше окон»): tab — waves|dossier|bestiary|mut|contracts|art,
 // sel > 0 — выбранная волна (досье). false — окна нет (клиент без аддона): вызывающий пишет в чат как раньше.
 function nsAltarScreenTab(player, tab, sel) {
 	if (!nsAltarScreenOk(player)) return false

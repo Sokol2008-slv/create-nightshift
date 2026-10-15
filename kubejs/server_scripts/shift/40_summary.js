@@ -245,13 +245,22 @@ function nsSumCall(clk, rs) {
 		var done = { accepted: 'Вызов принят', won: 'Вызов выигран', lost: 'Вызов не удался', declined: 'От вызова отказались' }[c.status]
 		return done ? { text: done, color: 'gray', hover: [nsSumT('Ночной вызов этой ночи — ' + nsDifficultyName(c.wave) + '. Следующий — следующей ночью.', 'gray')], plain: done } : null
 	}
+	// две ночи без ответа — вызовы на паузе (48_night_call.js): тихий пункт вместо «Ночью вызов»
+	if (rs.callPause)
+		return {
+			text: 'Вызовы на паузе',
+			color: 'gray',
+			hover: [nsSumT('Ночные вызовы на паузе: две ночи никто не ответил.\n', 'gray'), nsSumT('Вернуть — /nightshift call resume (или строка в пульте алтаря ночью). Клик — вставить команду', 'dark_gray')],
+			click: { action: 'suggest_command', value: '/nightshift call resume' },
+			plain: 'Вызовы на паузе',
+		}
 	var w = nsCallWaveFor(rs.phase || 0, clk.day)
 	if (!w) return null
 	var mut = nsCallTwistFor(clk.day, w)
 	var hover = [
 		nsSumT('Ночью алтарь предложит вызов: ', 'gold'),
 		nsSumT(nsDifficultyName(w) + ', 3 подволны, условие «' + nsCallMutName(mut) + '».\n'),
-		nsSumT('Премия — артефакт смены наверняка; отказ и провал — без штрафа. Кнопки «Принять» придут в чат в сумерки.\n', 'gray'),
+		nsSumT('Премия — артефакт смены наверняка; отказ и провал — без штрафа. Колокол и кнопки «Принять» — в сумерки тем, кто у базы.\n', 'gray'),
 	]
 	try {
 		var poster = typeof nsMutPoster === 'function' ? nsMutPoster(rs) : []
