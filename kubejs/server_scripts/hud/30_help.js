@@ -25,6 +25,7 @@ var NS_HELP = [
 		['/nightshift altar', '/nightshift altar', 'во время набега — к алтарю и обратно'],
 		['/arena', '/arena', 'на арену и обратно; /arena endless — «Выживание» на рекорд'],
 		['/nightshift dossier ', '/nightshift dossier <N>', 'досье волны N в пульте: мобы, угрозы, чем бить, босс (… chat — в чат)'],
+		['/nightshift itogi', '/nightshift itogi', 'итоги последнего набега — пульт на вкладке «Итоги» (… chat — в чат)'],
 		['/nscontracts', '/nscontracts', 'контракты бригадира — пульт на вкладке «Контракты» (/nscontracts chat — в чат)'],
 		['/nsart', '/nsart', 'артефакты смены — пульт на вкладке «Артефакты»: надето, переплавка, шансы (/nsart chat — в чат)'],
 	]],

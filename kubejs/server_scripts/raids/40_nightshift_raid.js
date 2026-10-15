@@ -773,6 +773,8 @@ function nsAltarHearts(hp, max) {
 
 // {waves, boss, buff, mult} текущего набега: выбранная сложность или малый набег по силам команды
 function nsTellAll(component) {
+	// идёт подсчёт итогов победы (41_raid_results.js) — строка уйдёт в подсказку «[Итоги волны N]»
+	if (typeof nsVicTellAll === 'function' && nsVicTellAll(component)) return
 	var players = NSG.nsServer.getPlayers()
 	for (var i = 0; i < players.length; i++) players[i].tell(component)
 }
@@ -1088,6 +1090,25 @@ function nsRaidVictory(state) {
 	nsBossbarRemove('nightshift:raid_wave')
 	NSG.nsServer.runCommandSilent('weather clear')
 
+	// 15.10: всё, что победа пишет в чат (добыча, артефакты, итог боя, контракты, проклятие, раны, веха), копится и
+	// уходит каждому одной строкой «[Итоги волны N]» с подсказкой (41_raid_results.js)
+	if (kind !== 'minor' && typeof nsVicBegin === 'function') nsVicBegin(d)
+	try {
+		nsRaidVictoryRewards(state, raid, kind, altar, d, first, reached, atAltar, foughtBosses, curseLifted)
+	} finally {
+		if (typeof nsVicFlush === 'function') nsVicFlush(raid.call ? 'Ночной вызов — волна ' + d + ', победа' : nsDifficultyName(d) + ' — победа' + (first ? ' (впервые)' : ''))
+	}
+	// телепортированных к алтарю — домой, уже после добычи
+	nsTry('возврат игроков', function () {
+		var st = nsGetState()
+		nsReturnAll(st)
+		nsSaveState(st)
+	})
+}
+
+// Награды и объявления победы (вынесено из nsRaidVictory 15.10 — вокруг них буфер итогов)
+function nsRaidVictoryRewards(state, raid, kind, altar, d, first, reached, atAltar, foughtBosses, curseLifted) {
+	var T = NSG.NIGHTSHIFT_TUNABLES
 	if (kind !== 'minor') {
 		console.info('[nightshift] сложность ' + d + ' пройдена' + (first ? ' впервые' : '') + (raid.call ? ' (ночной вызов)' : ''))
 		nsTitleAll(raid.call ? 'Вызов принят и выигран!' : nsDifficultyName(d) + ' — победа!', {
@@ -1097,7 +1118,11 @@ function nsRaidVictory(state) {
 			subColor: 'white',
 		})
 		NSG.nsServer.runCommandSilent('playsound minecraft:ui.toast.challenge_complete master @a')
-		if (curseLifted) nsTellAll(Text.green('[Ночная смена] Победа ослабила проклятие алтаря: ' + (state.curse > 0 ? 'осталось −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + '.' : 'проклятие снято.')))
+		if (first && typeof nsVicNote === 'function') nsVicNote('first', d + 1)
+		if (curseLifted) {
+			nsTellAll(Text.green('[Ночная смена] Победа ослабила проклятие алтаря: ' + (state.curse > 0 ? 'осталось −' + nsPlural(state.curse, 'сердце', 'сердца', 'сердец') + '.' : 'проклятие снято.')))
+			if (typeof nsVicNote === 'function') nsVicNote('curse', state.curse > 0 ? 'проклятие −1 ♥' : 'проклятие снято')
+		}
 		var rewarded = []
 		nsTry('награды за волну ' + d, function () {
 			// ночной вызов — свои броски (3 подволны), остальное как у волны
@@ -1146,12 +1171,6 @@ function nsRaidVictory(state) {
 			nsApplyPenalty(null)
 		})
 	}
-	// телепортированных к алтарю — домой, уже после добычи
-	nsTry('возврат игроков', function () {
-		var st = nsGetState()
-		nsReturnAll(st)
-		nsSaveState(st)
-	})
 }
 
 function nsRaidFail(state, mobs) {
@@ -1223,6 +1242,7 @@ function nsHealWoundsOnWin(names) {
 	nsSaveState(st)
 	nsApplyPenalty(null)
 	nsTellAll(Text.green('[Ночная смена] Победа затянула раны: ' + healed.join(', ') + ' (−' + n + ').'))
+	if (typeof nsVicNote === 'function') nsVicNote('wounds')
 }
 
 // Якорь волны d: [номер прежней сложности 1–10, прогресс внутри якоря 0..1] (шкала — NS_WAVE_ANCHORS)
@@ -1443,7 +1463,11 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut, bos
 		var an = String(all[a].getUsername())
 		var was = (present || {})[an] || 0
 		if (was >= need) ps.push(all[a])
-		else all[a].tell(Text.gray('[Ночная смена] Добыча — тем, кто держал алтарь хотя бы ' + nsPlural(need, 'волну', 'волны', 'волн') + ' (у тебя ' + was + '). В следующий раз приходите к началу.'))
+		else {
+			var noLoot = Text.gray('[Ночная смена] Добыча — тем, кто держал алтарь хотя бы ' + nsPlural(need, 'волну', 'волны', 'волн') + ' (у тебя ' + was + '). В следующий раз приходите к началу.')
+			if (typeof nsVicTell === 'function') nsVicTell(all[a], noLoot)
+			else all[a].tell(noLoot)
+		}
 		logLine.push(an + ' ' + was + '/' + waves + (was >= need ? ' — добыча' : ' — нет'))
 	}
 	console.info('[nightshift] добыча волны ' + d + ' (нужно ' + need + ' подволн): ' + (logLine.length ? logLine.join('; ') : 'у алтаря никого') + '; присутствие: ' + JSON.stringify(present || {}))
@@ -1499,7 +1523,10 @@ function nsRaidRewards(altar, d, rolls, first, present, waves, atAltar, mut, bos
 	}
 	// веха: объявление всем
 	var milestone = first ? NSG.NS_WAVE_MILESTONES[d] : null
-	if (milestone && ps.length > 0) nsTellAll(Text.gold('[Ночная смена] Веха — ' + nsDifficultyName(d) + ': ').append(Text.white(milestone.text)))
+	if (milestone && ps.length > 0) {
+		nsTellAll(Text.gold('[Ночная смена] Веха — ' + nsDifficultyName(d) + ': ').append(Text.white(milestone.text)))
+		if (typeof nsVicNote === 'function') nsVicNote('milestone')
+	}
 	// первое прохождение первой волны нового состава (до 70-й): один зонд жилы на команду
 	var probes = first && k === 0 && nsWaveAnchor(d)[1] === 0 ? NSG.NIGHTSHIFT_FIRST_CLEAR_PROBES[tier] : null
 	if (probes && ps.length > 0) {
@@ -1542,6 +1569,8 @@ function nsGiveLoot(player, got) {
 		}
 	}
 	var line = Text.gold('[Ночная смена] Добыча: ')
+	var lootN = 0,
+		lootRare = 0
 	for (var m = 0; m < merged.length; m++) {
 		var e = merged[m]
 		if (e[0].indexOf('loot:') === 0) {
@@ -1549,16 +1578,23 @@ function nsGiveLoot(player, got) {
 			for (var lr = 0; lr < e[1]; lr++) NSG.nsServer.runCommandSilent('loot give ' + name + ' loot ' + e[0].substring(5))
 			if (m > 0) line = line.append(Text.gray(', '))
 			line = line.append(Text.white(e[1] + '× ')).append(Text.lightPurple(e[3] || 'добыча ' + e[0].substring(5)))
+			lootN += e[1]
 			continue
 		}
 		NSG.nsServer.runCommandSilent('give ' + name + ' ' + e[0] + ' ' + e[1])
 		if (m > 0) line = line.append(Text.gray(', '))
 		var rare = e[0].indexOf('artifacts:') === 0 || e[0] === 'nightshift:night_heart' || (NSG.nsNsArtifactIs && NSG.nsNsArtifactIs(e[0]))
+		lootN += e[1]
+		if (rare) lootRare += e[1]
 		var itemText = nsItemText(e[2] || e[0])
 		if (e[3]) itemText = itemText.append(Text.of(' (' + e[3] + ')'))
 		line = line.append(Text.white(e[1] + '× ')).append(rare ? Text.lightPurple('').append(itemText) : itemText)
 	}
-	player.tell(line)
+	// после победы — в итоги одной строкой (41_raid_results.js), иначе сразу
+	if (typeof nsVicTell === 'function') {
+		nsVicTell(player, line)
+		nsVicLoot(name, lootN, lootRare)
+	} else player.tell(line)
 	for (var a = 0; a < merged.length; a++) {
 		if (merged[a][0].indexOf('artifacts:') === 0) nsTellAll(Text.lightPurple('[Ночная смена] ' + name + ' получает артефакт: ').append(nsItemText(merged[a][0])))
 		// артефакт смены легендарный и выше (уровень 4+) — объявление всем
