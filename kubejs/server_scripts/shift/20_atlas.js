@@ -12,6 +12,9 @@
 //    «Месторождения» и «Жилы» (атлас аэрофотоаппарата, aviation/30_aerial_camera.js), сверху карта вокруг игрока.
 //    Клик по строке или точке — метка Xaero (окно Xaero с клиента; без Xaero — /atlas wp_at x y z <вид>, строка в чат).
 //    Строки в чат — /atlas chat и запасной путь, если окна нет (старый jar аддона, клиент без аддона).
+//  - «Карта смены» (15.10): вкладка «Смена» и слои над картой (nsAtlasShift) — метеорит, снабженец, фактории, звёзды,
+//    клады, напарники, алтарь и арена. /atlas smena — окно сразу на ней. Открытое окно раз в 4 с шлёт /atlas refresh
+//    (только «Смена» и место игрока, part), сменил измерение — /atlas refresh full.
 // Состояние — server.persistentData «ns_atlas_json».
 // ==========================================================================
 
@@ -212,8 +215,265 @@ function nsAtlasWindowOk(p) {
 	}
 }
 
-// tab: 'deps' | 'veins' | null (окно откроется на прошлой вкладке)
-function nsAtlasMenuData(p, tab) {
+// --------------------------------------------------------------------------
+// «Карта смены» (15.10, Георгий: «больше удобства, меню вместо чата»): вкладка «Смена» и слои над картой —
+// метеорит, снабженец, фактории (заказ и срок), упавшие звёзды, купленные клады, напарники, алтарь базы и арена.
+// Объект (схема — AtlasMenu.java аддона): {L: слой, k: ключ, name, icon, color, wn, ini, wc, dim, dn, wy,
+//   pts: [[x, y, z]], st: коротко справа, sc: цвет st, cd: секунд до конца (окно само отсчитывает {t}),
+//   none: вместо координат, если точки нет, where: подробнее серым, tip: [строка | {s, i: id предмета, c: цвет}]}
+// Слои: meteor, trader, factory, sky (звёзды и сияние), stash (клады), mate (напарники), base (алтари и арена).
+// --------------------------------------------------------------------------
+var NS_ATLAS_MATE_COLORS = [0x6fb8ff, 0xff9ad5, 0xb6f56a, 0xffd86b, 0xc792ea, 0x7fe0d0]
+
+function nsAtlasShift(p, rs) {
+	var objs = []
+	var me = String(p.getUsername())
+	function add(o) {
+		if (!o.dim) o.dim = 'minecraft:overworld'
+		o.dn = NS_ATLAS_DIM_NAMES[o.dim] || o.dim
+		objs.push(o)
+	}
+	function days(n, one) {
+		return n <= 0 ? one : n === 1 ? 'завтра' : 'через ' + n + ' дн.'
+	}
+	// метеорит: горячий (остывает, стража, руда) или когда ждать
+	try {
+		if (typeof nsSkyState === 'function') {
+			var sk = nsSkyState()
+			var m = sk.m
+			var mo = { L: 'meteor', k: 'meteor', name: 'Метеорит', icon: 'nightshift:meteor_ore', color: 0xff8a3d, wn: 'Метеорит', ini: 'М', wc: 6, wy: 1, pts: [] }
+			if (m) {
+				var hot = m.stage === 'hot'
+				var paused = typeof nsSkyRaidBusy === 'function' && nsSkyRaidBusy(rs)
+				var alive = Math.max(0, (m.guards || 0) - (m.killed || 0))
+				var ore = Math.max(0, (m.ore ? m.ore.length : 0) - (m.mined || 0))
+				mo.pts.push([m.x, m.y, m.z])
+				mo.st = !hot ? 'падает!' : paused ? 'остывание — пауза' : 'остынет через {t}'
+				mo.sc = hot ? 0xf2c14e : 0xe86a5c
+				if (hot && !paused) mo.cd = Math.max(0, Math.round(m.left || 0))
+				mo.tip = [
+					!hot ? 'Падает — удар через несколько секунд' : paused ? 'Остывание на паузе, пока идёт набег' : 'Остынет через {t} — потом руда тускнеет в камень',
+					alive > 0 ? { s: 'Стража: ' + alive + ' из ' + m.guards + ' — пока жива, руда под щитом', c: 0xe86a5c } : { s: 'Стража пала — руда открыта', c: 0x7bd36b },
+					'Руды в кратере: ' + ore,
+					'Долю с каждого блока руды получает каждый в 32 блоках от кратера. Пешком не успеть — летите.',
+				]
+			} else {
+				var minPhase = typeof NS_SKY !== 'undefined' ? NS_SKY.minPhase : 10
+				mo.none = 'сейчас нет'
+				if ((rs.phase || 0) < minPhase) mo.where = 'начнут падать после ' + minPhase + '-й волны'
+				else if (sk.search) mo.where = 'вот-вот: ищет место'
+				else if (sk.bonus) mo.where = 'внеочередной — утром'
+				else if (sk.nextDay >= 0) mo.where = 'по графику ' + days(sk.nextDay - nsSkyDay(), 'сегодня') + ' днём'
+				else mo.where = 'днём, раз в 2–3 дня'
+				mo.tip = ['Падает днём в 400–900 блоках от алтаря базы: титр, координаты и метка придут сами.', 'Остывает 20 минут, руду стережёт стража.']
+				if (sk.last) mo.tip.push('Прошлый: ' + sk.last.x + ' ' + sk.last.z + ' (день ' + sk.last.day + ')')
+			}
+			add(mo)
+		}
+	} catch (e) {
+		console.warn('[atlas] смена: метеорит — ' + e)
+	}
+	// снабженец: у базы (до когда) или когда придёт; купленные карты кладов
+	try {
+		if (typeof nsTrState === 'function') {
+			var tr = nsTrState()
+			var v = tr.v
+			var to = { L: 'trader', k: 'trader', name: 'Снабженец', icon: 'minecraft:emerald', color: 0x52e07a, wn: 'Снабженец', ini: 'С', wc: 10, wy: 1, pts: [] }
+			if (v) {
+				var leftT = Math.max(0, Number(v.leaveAt) - nsTrNow())
+				to.dim = v.dim
+				to.name = 'Снабженец ' + v.name
+				to.pts.push([v.x, v.y, v.z])
+				to.st = 'уйдёт через {t}'
+				to.sc = 0x7bd36b
+				to.cd = Math.round(leftT / 20)
+				to.tip = ['Товара: ' + v.lots + ' лотов, только то, чего машинами не сделать', 'Уйдёт через {t}', 'Валюта — жетоны смены. /trader — где он и что у него']
+			} else {
+				to.none = 'не у базы'
+				to.where = tr.nextDay >= 0 ? 'придёт ' + days(tr.nextDay - nsFunDay(), 'этим') + ' утром' : 'раз в 2–3 дня утром'
+				to.tip = ['Приходит к алтарю базы (или к лавке, /trader post) и стоит сутки.']
+			}
+			add(to)
+			var list = tr.stashes || []
+			var day = nsFunDay()
+			for (var s = 0; s < list.length; s++) {
+				var S = list[s]
+				if (!S.bought || S.done) continue
+				var camp = S.kind === 'camp'
+				add({
+					L: 'stash',
+					k: 'stash:' + S.id,
+					name: camp ? 'Схрон разбойников' : 'Клад',
+					icon: camp ? 'minecraft:crossbow' : 'minecraft:chest',
+					color: camp ? 0xff5a4a : 0xffc54a,
+					wn: camp ? 'Схрон' : 'Клад',
+					ini: camp ? 'Сх' : 'Кл',
+					wc: camp ? 12 : 6,
+					wy: S.placed ? 1 : 0,
+					pts: [[S.x, S.placed ? S.y : 64, S.z]],
+					st: 'карта у ' + S.bought,
+					tip: [camp ? 'Сундук у костра, его стерегут разбойники' : 'Сундук зарыт у крестика — копай на 2–3 блока вниз', 'Над местом — столб света, пока сундук не открыт', 'Пропадёт через ' + Math.max(1, 12 - (day - S.made)) + ' дн.'],
+				})
+			}
+		}
+	} catch (e) {
+		console.warn('[atlas] смена: снабженец — ' + e)
+	}
+	// фактории: заказ, сданная доля, срок (лучшая строка — ближайшая к игроку, порядок наводит окно)
+	try {
+		if (typeof NSF_API !== 'undefined' && NSF_API) {
+			var fl = JSON.parse(String(NSF_API.listJson()))
+			for (var f = 0; f < fl.length; f++) {
+				var F = fl[f]
+				var fo = { L: 'factory', k: 'factory:' + F.id, name: 'Фактория «' + F.name + '»', icon: 'axiomativ:factory_terminal', color: 0xd9a63a, wn: 'Фактория ' + F.name, ini: 'Ф', wc: 6, wy: 1, pts: [[F.x, F.y, F.z]] }
+				var o = F.order
+				if (!o) {
+					fo.st = 'ждёт заказа'
+					fo.sc = 0x6e6a66
+					fo.tip = ['Новый заказ — через несколько игровых часов после закрытия прошлого']
+				} else {
+					var need = 0,
+						have = 0
+					for (var l = 0; l < o.lines.length; l++) {
+						need += o.lines[l].need
+						have += Math.min(o.lines[l].have, o.lines[l].need)
+					}
+					var pct = need ? Math.floor((have * 100) / need) : 0
+					var due = typeof nsSumGame === 'function' ? nsSumGame(o.left, true) : Math.round(o.left / 1000) + 'ч'
+					fo.st = '№' + o.no + ' · ' + pct + ' % · ' + due + (o.urgent ? ' · срочный' : '')
+					fo.sc = o.urgent ? 0xe86a5c : pct > 0 ? 0x7bd36b : 0xf0ede6
+					var title = o.title && String(o.title).indexOf('Заказ №') !== 0 ? ' «' + o.title + '»' : ''
+					fo.tip = [{ s: 'Заказ №' + o.no + title + (o.urgent ? ' — срочный, плата ×2' : ''), c: o.urgent ? 0xe86a5c : 0xf0ede6 }]
+					fo.tip.push('Сдано ' + pct + ' %, до срока ' + (typeof nsSumGame === 'function' ? nsSumGame(o.left) + ' (' + nsSumReal(o.left) + ')' : due))
+					fo.tip.push('Плата: ' + (typeof nsSumPlural === 'function' ? nsSumPlural(o.reward, 'жетон', 'жетона', 'жетонов') : o.reward + ' жет.'))
+					for (var q = 0; q < o.lines.length; q++) {
+						var ln = o.lines[q]
+						fo.tip.push({ s: '  ' + Math.min(ln.have, ln.need) + '/' + ln.need + ' ', i: ln.id, c: ln.have >= ln.need ? 0x7bd36b : 0xa8a29a })
+					}
+					fo.tip.push('Сдать — в терминал фактории: руками, лентой, поездом')
+				}
+				add(fo)
+			}
+		}
+	} catch (e) {
+		console.warn('[atlas] смена: фактории — ' + e)
+	}
+	// ночное небо: упавшие звёзды (до рассвета) или сияние
+	try {
+		if (typeof nsNskyState === 'function') {
+			var ns = nsNskyState()
+			var stars = ns.stars || []
+			var so = { L: 'sky', k: 'stars', name: 'Упавшие звёзды', icon: 'nightshift:fallen_star', color: 0x7fe9ff, wn: 'Звезда', ini: 'Зв', wc: 11, wy: 1, pts: [] }
+			for (var z = 0; z < stars.length; z++) so.pts.push([stars[z].x, stars[z].y, stars[z].z])
+			so.tip = ['Бей рукой: звёздные осколки и пыль, +5 % рассудка и желание', 'На рассвете несобранные звёзды гаснут']
+			if (stars.length) {
+				so.st = stars.length + ' шт. · до рассвета'
+				so.sc = 0x6fd3e0
+				add(so)
+			} else if (ns.ev === 'starfall') {
+				so.none = 'ещё не упали'
+				so.where = 'звездопад: у каждого раз в 25–45 с'
+				add(so)
+			} else if (ns.ev === 'aurora') {
+				add({ L: 'sky', k: 'aurora', name: 'Северное сияние', icon: 'minecraft:glow_berries', color: 0x7bd36b, pts: [], none: 'этой ночью', where: 'под открытым небом рассудок растёт', tip: ['Под сиянием рассудок не тает от темноты и понемногу растёт'] })
+			}
+		}
+	} catch (e) {
+		console.warn('[atlas] смена: ночное небо — ' + e)
+	}
+	// напарники: где сейчас (другое измерение — без точки на карте)
+	try {
+		var ps = p.getServer().getPlayers()
+		var mi = 0
+		for (var i = 0; i < ps.length; i++) {
+			var qp = ps[i]
+			var qn = String(qp.getUsername())
+			if (qn === me || qp.isSpectator()) continue
+			var air = false
+			try {
+				air = qp.isPassenger() || qp.isFallFlying()
+			} catch (e2) {}
+			add({
+				L: 'mate',
+				k: 'mate:' + qn,
+				name: qn,
+				icon: 'minecraft:player_head',
+				color: NS_ATLAS_MATE_COLORS[mi++ % NS_ATLAS_MATE_COLORS.length],
+				wn: qn,
+				ini: qn.substring(0, 2),
+				wc: 9,
+				wy: 0,
+				dim: String(qp.getLevel().getDimension()),
+				pts: [[Math.floor(Number(qp.getX())), Math.floor(Number(qp.getY())), Math.floor(Number(qp.getZ()))]],
+				st: air ? 'в полёте' : '',
+				sc: 0x6fd3e0,
+				tip: ['Здоровье: ' + Math.round(Number(qp.getHealth())) + ' из ' + Math.round(Number(qp.getMaxHealth())), 'Точка — где он сейчас; окно обновляет её само'],
+			})
+		}
+	} catch (e) {
+		console.warn('[atlas] смена: напарники — ' + e)
+	}
+	// алтари базы (с набегом — строкой) и арена
+	try {
+		var arenaId = rs.arena && rs.arena.altarId
+		var alts = rs.altars || []
+		var seen = {}
+		var arenaAlt = null
+		for (var a = 0; a < alts.length; a++) {
+			var A = alts[a]
+			if (A.id === arenaId) {
+				arenaAlt = A
+				continue
+			}
+			var ad = String(A.dim || 'minecraft:overworld')
+			var ak = ad + ',' + Math.round(A.x) + ',' + Math.round(A.z)
+			if (seen[ak]) continue
+			seen[ak] = true
+			var raid = rs.raid && rs.raid.altarId === A.id ? String(rs.raid.state) : 'idle'
+			add({
+				L: 'base',
+				k: 'altar:' + A.id,
+				name: 'Алтарь базы',
+				icon: 'nightshift:altar',
+				color: 0xe8be6e,
+				wn: 'Алтарь',
+				ini: 'Ал',
+				wc: 14,
+				wy: 1,
+				dim: ad,
+				pts: [[Math.round(A.x), Math.round(A.y), Math.round(A.z)]],
+				st: raid === 'active' ? 'набег идёт!' : raid === 'countdown' ? 'отсчёт набега' : '',
+				sc: 0xe86a5c,
+				tip: ['Сердце базы: набеги идут сюда, здесь снабженец и пульт алтаря'],
+			})
+		}
+		if (rs.arena && rs.arena.built && arenaAlt) {
+			add({
+				L: 'base',
+				k: 'arena',
+				name: 'Арена',
+				icon: 'minecraft:iron_bars',
+				color: 0xc792ea,
+				wn: 'Арена',
+				ini: 'Ар',
+				wc: 13,
+				wy: 1,
+				dim: String(arenaAlt.dim || 'nightshift:arena'),
+				pts: [[Math.round(arenaAlt.x), Math.round(arenaAlt.y), Math.round(arenaAlt.z)]],
+				st: '/arena',
+				sc: 0xa8a29a,
+				tip: ['Отдельное измерение: коридор, орда идёт на алтарь у входа', 'Постройки после набега откатываются как были', 'Войти — /arena, выйти — /arena leave'],
+			})
+		}
+	} catch (e) {
+		console.warn('[atlas] смена: алтари — ' + e)
+	}
+	return { objs: objs, hint: 'Пока окно открыто, точки обновляются сами.', empty: 'На смене пока тихо.' }
+}
+
+// tab: 'deps' | 'veins' | 'shift' | null (окно откроется на прошлой вкладке). part — только «Смена» и место игрока:
+// обновление открытого окна раз в 4 с (/atlas refresh), месторождения и жилы окно держит у себя
+function nsAtlasMenuData(p, tab, part) {
 	var st = nsAtlasState()
 	var rs = nsGetStateRO()
 	var outs = rs.outposts || []
@@ -281,6 +541,18 @@ function nsAtlasMenuData(p, tab) {
 		},
 	}
 	if (tab) data.tab = tab
+	// «Смена»: окно новее 15.10 само просит обновление (live); старое окно этих полей не знает
+	data.live = 1
+	try {
+		data.shift = nsAtlasShift(p, rs)
+	} catch (e) {
+		console.error('[atlas] смена: ' + e)
+	}
+	if (part) {
+		delete data.deps
+		data.part = 1
+		return data
+	}
 	if (typeof nsCamAtlasMenu === 'function') data.veins = nsCamAtlasMenu(p.getServer(), dim, px, pz, whoOf)
 	data.who = who
 	return data
@@ -306,7 +578,14 @@ function nsAtlasUse(p, tab) {
 function nsAtlasWpAt(p, x, y, z, kind) {
 	var k = String(kind || '').trim()
 	var name, ini, wc, dim
-	if (k.indexOf('vein:') === 0) {
+	if (k.indexOf('mark ') === 0) {
+		// объект «Смены» из окна без Xaero: «mark <цвет> <буквы> <измерение> <имя>»
+		var mp = k.split(' ')
+		wc = Math.max(0, Math.min(15, Number(mp[1]) || 0))
+		ini = String(mp[2] || 'Т').substring(0, 3)
+		dim = String(mp[3] || p.getLevel().getDimension())
+		name = mp.slice(4).join(' ') || 'Точка'
+	} else if (k.indexOf('vein:') === 0) {
 		var info = typeof nsCamVeinInfo === 'function' ? nsCamVeinInfo(k.substring(5)) : [k.substring(5), 'Ж', 7]
 		name = 'Жила ' + String(info[0]).toLowerCase()
 		ini = info[1]
@@ -421,6 +700,42 @@ ServerEvents.commandRegistry(event => {
 					}
 					return 1
 				})
+			)
+			.then(
+				C.literal('smena').executes(ctx => {
+					try {
+						var p = ctx.source.getPlayer()
+						if (p) nsAtlasUse(p, 'shift')
+					} catch (e) {
+						console.error('[atlas] /atlas smena: ' + e)
+					}
+					return 1
+				})
+			)
+			.then(
+				// открытое окно просит свежую «Смену» раз в 4 с (данные — только этому игроку, окно не открывается заново)
+				// refresh full — игрок сменил измерение: месторождения и жилы тоже заново
+				C.literal('refresh')
+					.executes(ctx => {
+						try {
+							var p = ctx.source.getPlayer()
+							if (p && nsAtlasWindowOk(p)) NS_ATLAS_MENU.open(p, JSON.stringify(nsAtlasMenuData(p, null, true)), false)
+						} catch (e) {
+							console.error('[atlas] /atlas refresh: ' + e)
+						}
+						return 1
+					})
+					.then(
+						C.literal('full').executes(ctx => {
+							try {
+								var p = ctx.source.getPlayer()
+								if (p && nsAtlasWindowOk(p)) NS_ATLAS_MENU.open(p, JSON.stringify(nsAtlasMenuData(p, null, false)), false)
+							} catch (e) {
+								console.error('[atlas] /atlas refresh full: ' + e)
+							}
+							return 1
+						})
+					)
 			)
 			.then(
 				C.literal('wp_at').then(
