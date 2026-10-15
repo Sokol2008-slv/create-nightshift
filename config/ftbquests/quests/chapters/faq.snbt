@@ -286,6 +286,18 @@
 		}
 		{
 			dependencies: ["042CEC92D46AE312"]
+			icon: { id: "minecraft:bell" }
+			id: "0FEAFEC49B32C626"
+			optional: true
+			rewards: [{ id: "3761A44594B5C091", type: "xp", xp: 10 }]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "02B482A7300A0EA1", type: "checkmark" }]
+			x: 2.00d
+			y: 4.50d
+		}
+		{
+			dependencies: ["042CEC92D46AE312"]
 			icon: { id: "minecraft:chest" }
 			id: "1B6D166467CBC5C1"
 			optional: true

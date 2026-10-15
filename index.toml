@@ -18,7 +18,7 @@ hash = "5b4f9802c51836656497f3335c52ebee061178a170d74933526edf8eb251260f"
 
 [[files]]
 file = "config/axiomativ/keys.json"
-hash = "9e39898979260602b80a66509049a253e0fc6d80efaeae77dd76bc33c7f93359"
+hash = "8b62445c0f950860e90967de438c70481370dcb5394a9ca3d291c6cd55a9873c"
 
 [[files]]
 file = "config/cataclysm-common.toml"
@@ -34,7 +34,7 @@ hash = "a5ab3bf9b5b770629252a2ea67f32f65a83c98ade32c6dd2bbb89d1e0f043067"
 
 [[files]]
 file = "config/defaultoptions/keybindings.txt"
-hash = "65515b125da904fc8bd3a24426f43edb153a66002b3e76de6994cc9dd154633a"
+hash = "c35161a603f9dff3abd97fa2c925df242145374bd10bddd3dc20db76b5dd40e8"
 
 [[files]]
 file = "config/dmr-server.toml"
@@ -54,7 +54,7 @@ hash = "7b44ed046e3ab8a4ceb61cc5206d7e59920caa001f519eaba2f6129f1e6fe989"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/faq.snbt"
-hash = "01d8ee4f981647b60ef67682ba4ff2f2470f4d2ed281598333063161d4b64de3"
+hash = "3137f992c0d00c58b2cd2ce463ca058c46df6004e4a42f103e51aca0a63e2a11"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/path.snbt"
@@ -106,11 +106,11 @@ hash = "9b5bb633ce4e66a896ff67dbc497193b847ece26efd9950b758df47e2e621e70"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "3c71d0ec7e349628a2b2756ed667dad231dcee8b33a9a04e08d475c2f0ef56ae"
+hash = "0cda9b4c4bee0fcc6ca322514b3a8ed24928eb1aa32accf7dc12c3b6bba00b1c"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ru_ru.snbt"
-hash = "3c71d0ec7e349628a2b2756ed667dad231dcee8b33a9a04e08d475c2f0ef56ae"
+hash = "0cda9b4c4bee0fcc6ca322514b3a8ed24928eb1aa32accf7dc12c3b6bba00b1c"
 
 [[files]]
 file = "config/iris.properties"
@@ -2834,11 +2834,11 @@ hash = "8a6f30f069d494f58044b92deb60ad12a55c2d1eaf8640a1a7a5503d0fec271b"
 
 [[files]]
 file = "kubejs/server_scripts/hud/30_help.js"
-hash = "ec55f819d447b35c383683b1d172d8bbc2f6b941ba066798887403bf5d9f34bc"
+hash = "bdad25aa62ec115db707f6332f7357d9015d5d4563dcefa3f4bb0d88558ea7bc"
 
 [[files]]
 file = "kubejs/server_scripts/hud/31_keys.js"
-hash = "93b4e927c65b229f2524bb7f1bc2a1541bfdecdbe2866ec3bbc4fbdf569b78f2"
+hash = "4171879256e8d742480320ef7cd0f19aa23dc4600acb4a0dce826a1521fa2d18"
 
 [[files]]
 file = "kubejs/server_scripts/hud/40_first_hints.js"
@@ -2946,7 +2946,7 @@ hash = "34898052c22033a4efe606953f3409cdb9d1add6e5d221aa8038a403275e6eb5"
 
 [[files]]
 file = "kubejs/server_scripts/raids/40_nightshift_raid.js"
-hash = "11ecf80cc6279d200399c49e281dfa7e7c8d0d38886825d9390b04ac53616d1c"
+hash = "5e5d42339c5366861c9b38bd68cdbaa3eb0fac39d0b98d67b238b701a59637d0"
 
 [[files]]
 file = "kubejs/server_scripts/raids/41_raid_results.js"
@@ -2966,7 +2966,7 @@ hash = "3ad5c5765f672140759fdefb33d8e922010498aea6d5ef7bbe26a96fa8ac0bfb"
 
 [[files]]
 file = "kubejs/server_scripts/raids/47_special_stages_2.js"
-hash = "dfcf00ae9b768d716e72390dd9c238f46ca687e9362267785694eab2435310ff"
+hash = "06edf19092799f883759ab05af91e1aec68338a0067b4e153e08aca9d59fff59"
 
 [[files]]
 file = "kubejs/server_scripts/raids/48_night_call.js"
@@ -3035,6 +3035,10 @@ hash = "b269721b94a52ba5534dac1b755eb0e7721cc4ae85cc85290f0a052c58870423"
 [[files]]
 file = "kubejs/server_scripts/shift/45_board.js"
 hash = "60e7a28de6d3732742b6c3464d1cdb7f299843665f47ce77aacd0ab88d6a922e"
+
+[[files]]
+file = "kubejs/server_scripts/shift/50_ping.js"
+hash = "fda38624a26c4faa94b2c58d48c76993936d3c697856a1b65e564a6b4aca8948"
 
 [[files]]
 file = "kubejs/server_scripts/sky/10_meteor.js"
@@ -3330,7 +3334,7 @@ metafile = true
 
 [[files]]
 file = "mods/axiomativ-0.7.0.jar"
-hash = "032d556c4256a5afbe73fd5d11d2f7251fafe9f7b18304db8a931e562c2c6c26"
+hash = "b279d4e7b328a69a02639c86c4f07b29ba29d8ebf1ca4f3d400653c6a8423663"
 
 [[files]]
 file = "mods/azimuth-api.pw.toml"
