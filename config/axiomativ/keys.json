@@ -23,6 +23,7 @@
   "gui.xaero_instant_waypoint": "key.keyboard.keypad.add",
   "gui.xaero_enlarge_map": "key.keyboard.z",
   "key.pingwheel.ping_location": "key.mouse.5",
+  "key.axiomativ.ping": "key.mouse.middle:ALT",
   "key.push_to_talk": "key.mouse.4",
   "key.voice_chat": "key.keyboard.v:ALT",
   "key.mute_microphone": "key.keyboard.m:ALT",

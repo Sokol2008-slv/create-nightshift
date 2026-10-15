@@ -16,6 +16,7 @@ key_iris.keybind.reload:key.keyboard.unknown
 key_justzoom.keybinds.keybind.zoom:key.keyboard.c
 key_key.advancements:key.keyboard.unknown
 key_key.arphex.power_bind:key.keyboard.keypad.enter
+key_key.axiomativ.ping:key.mouse.middle:ALT
 key_key.axiomativ.supply_open:key.keyboard.apostrophe
 key_key.axiomativ.tablet.hud:key.keyboard.j:SHIFT
 key_key.axiomativ.tablet.open:key.keyboard.j

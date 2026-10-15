@@ -62,6 +62,8 @@ SCHEME = [
         ("Num +", "быстрая метка там, где стоишь", {"gui.xaero_instant_waypoint": K + "keypad.add"}),
         ("Z", "мини-карта крупно", {"gui.xaero_enlarge_map": K + "z"}),
         ("Мышь 5", "метка команде; зажать — колесо меток", {"key.pingwheel.ping_location": "key.mouse.5"}),
+        ("Alt + колёсико", "пинг напарнику: столб над точкой, куда смотришь, строка в чат и стрелка над хотбаром (/ping)",
+         {"key.axiomativ.ping": "key.mouse.middle" + ALT}),
         ("Мышь 4", "рация: говорить (зажать)", {"key.push_to_talk": "key.mouse.4"}),
         ("Alt + V / Alt + M / Alt + N", "голосовой чат: меню / микрофон / выключить совсем",
          {"key.voice_chat": K + "v" + ALT, "key.mute_microphone": K + "m" + ALT, "key.disable_voice_chat": K + "n" + ALT}),
