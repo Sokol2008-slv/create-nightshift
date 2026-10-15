@@ -851,16 +851,16 @@ function nsWaveBar(state, alive, cfg) {
 // в творческом не утяжеляет волну). Без n — все в сети (прогноз в пульте и досье — «потолок»).
 function nsPartyScale(n) {
 	if (n !== undefined && n !== null) return 1 + 0.5 * Math.max(0, n - 1)
-	var n = 0
+	var cnt = 0 // не «var n»: Rhino не даёт переобъявить параметр — скрипт целиком не грузится (15.10)
 	var players = NSG.nsServer.getPlayers()
 	for (var i = 0; i < players.length; i++) {
 		try {
-			if (!players[i].isSpectator()) n++
+			if (!players[i].isSpectator()) cnt++
 		} catch (e) {
-			n++
+			cnt++
 		}
 	}
-	return 1 + 0.5 * Math.max(0, n - 1)
+	return 1 + 0.5 * Math.max(0, cnt - 1)
 }
 
 // Мобы набега ищут путь до алтаря на 64 блока (у зомби по умолчанию ~35): так они
